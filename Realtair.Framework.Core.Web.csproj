@@ -96,6 +96,11 @@
     <Compile Include="Controllers\ActionMapper.cs" />
     <Compile Include="Controllers\ActionsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DetailsController.cs" />
+    <Compile Include="Controllers\EnquiryController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="MvcExtensions.cs" />
