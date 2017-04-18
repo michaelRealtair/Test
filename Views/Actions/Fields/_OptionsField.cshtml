@@ -1,0 +1,36 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute;
+    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+    var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
+}
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        @if (options.Count() == 0)
+        {
+            <select id="@hopefullyUniqueId" class="form-control" disabled>
+                <option>None to display</option>
+            </select>
+        }
+        else
+        {
+            <select id="@hopefullyUniqueId" class="form-control" name="@Model.PropertyInfo.Name">
+                @foreach (var option in options)
+                {
+                    <option @(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
+                }
+            </select>
+        }
+
+	    <script>
+    	    $('#@(hopefullyUniqueId)').select2();
+    	</script>
+    </div>
+</div>
+

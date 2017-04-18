@@ -1,0 +1,52 @@
+﻿@model Realtair.Framework.Core.Entities.Display.TableWidget
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>@Model.Name</h2>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped" style="width: 100%">
+            <thead>
+                <tr>
+                    @foreach (var h in Model.Header)
+                    {
+                    <th class="col-md-@h.ColumnWidth">@h.Name</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var row in Model.Contents)
+            {
+                <tr>
+                    @foreach (var item in row)
+                        {
+                        <td>@item</td>
+                        }
+                </tr>
+                }
+
+                @if (Model.Totals != null)
+            {
+                <tr style="background: #222; color: #fff;">
+                    @foreach (var item in Model.Totals)
+                        {
+                        <td>@item</td>
+                        }
+                </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr class="visible-xs">
+                    <td colspan="6">
+                        swipe to see more
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+</div>

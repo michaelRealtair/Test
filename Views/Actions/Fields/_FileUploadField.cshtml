@@ -1,0 +1,36 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        <script src="~/Scripts/fileupload.js"></script>
+        <script src="~/Scripts/load-image.min.js"></script>
+        <div class="file-attachment">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="attachment-upload pull-left btn btn-info btn-border">
+                        <input name="@Model.UniqueName" id="@Model.UniqueName" class="hidden-upload" accept="text/csv,image/jpeg,image/png,application/pdf" multiple="" capture="camera" type="file">
+                        <a class="button">Attach Files or Photos <i class="icon icon-PaperClip"></i></a>
+                    </label>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-9">
+                    <div class="file-attachment-thumbnails"></div>
+                </div>
+            </div>                       
+        </div>
+    </div>
+</div>
+<script>
+    $('.attachment-upload>input[type="file"]').change(function () {
+        setInterval(function () {
+            $('.preview').css({
+                'width': '100',
+                'height': '100'
+            });
+        }, 100);
+    });
+</script>

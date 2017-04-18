@@ -1,0 +1,16 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8" style="padding-top: 12px;">
+        @{
+            var formValue = "";
+            if (Convert.ToBoolean(Model.FormValue)) { formValue = "checked='checked'"; }
+        }
+
+        <input type="checkbox" name="@Model.PropertyInfo.Name" @formValue />
+    </div>
+</div>

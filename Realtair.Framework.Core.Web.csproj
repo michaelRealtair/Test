@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D75FA72-7202-4CC1-8573-0DB1D7727BD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Realtair.Framework.Core.Web</RootNamespace>
+    <AssemblyName>Realtair.Framework.Core.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.50813.1\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Controllers\ActionMapper.cs" />
+    <Compile Include="Controllers\ActionsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Example.cs" />
+    <Compile Include="MvcExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Authentication.cs" />
+    <Compile Include="App_Start\ConfigureRoutes.cs" />
+    <Compile Include="Utilities\CoreExtensions.cs" />
+    <Compile Include="Views\Actions\Action.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Action.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Actions\EmptyAction.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyAction.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_BulkFileUploadField.generated.cs">
+      <DependentUpon>_BulkFileUploadField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_CheckboxField.generated.cs">
+      <DependentUpon>_CheckboxField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_DateTime_Field.generated.cs">
+      <DependentUpon>_DateTime_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_Decimal_Field.generated.cs">
+      <DependentUpon>_Decimal_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_FileUploadField.generated.cs">
+      <DependentUpon>_FileUploadField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_HiddenField.generated.cs">
+      <DependentUpon>_HiddenField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_HttpPostedFileWrapper_Field.generated.cs">
+      <DependentUpon>_HttpPostedFileWrapper_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_Int32_Field.generated.cs">
+      <DependentUpon>_Int32_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_OptionsField.generated.cs">
+      <DependentUpon>_OptionsField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_String_EmailField.generated.cs">
+      <DependentUpon>_String_EmailField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_String_Field.generated.cs">
+      <DependentUpon>_String_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_String_PasswordField.generated.cs">
+      <DependentUpon>_String_PasswordField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Actions\Fields\_TextAreaField.generated.cs">
+      <DependentUpon>_TextAreaField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Report\Widget\Table.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Table.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search\Search.generated.cs">
+      <DependentUpon>Search.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\BackMenu.generated.cs">
+      <DependentUpon>BackMenu.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Branding.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Branding.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Error.generated.cs">
+      <DependentUpon>Error.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\NotFound.generated.cs">
+      <DependentUpon>NotFound.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Unauthorize.generated.cs">
+      <DependentUpon>Unauthorize.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Actions\Fields\_BulkFileUploadField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_BulkFileUploadField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_CheckboxField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CheckboxField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_DateTime_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DateTime_Field.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_Decimal_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Decimal_Field.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_FileUploadField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_FileUploadField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_HiddenField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_HiddenField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_HttpPostedFileWrapper_Field.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_Int32_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Int32_Field.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_OptionsField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_OptionsField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_String_EmailField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_EmailField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_String_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_Field.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_String_PasswordField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_PasswordField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Actions\Fields\_TextAreaField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TextAreaField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Report\Widget\Table.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Table.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Search\Search.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Search.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\BackMenu.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BackMenu.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Branding.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Branding.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Error.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\NotFound.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotFound.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Unauthorize.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Unauthorize.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="Views\Actions\Action.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Action.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Actions\EmptyAction.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmptyAction.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Realtair.Framework.Core\Realtair.Framework.Core.csproj">
+      <Project>{fcba7ca6-d63c-4b39-a800-1e48f239ce95}</Project>
+      <Name>Realtair.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Realtair.Framework.Enquiries\Realtair.Framework.Enquiries.csproj">
+      <Project>{b9005397-363c-40ef-a531-5793a2606e42}</Project>
+      <Name>Realtair.Framework.Enquiries</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Details\" />
+    <Folder Include="Views\Settings\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
