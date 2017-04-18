@@ -15,17 +15,22 @@ namespace ASP
     {
         public static User LoggedInUser(this HtmlHelper helper)
         {
-            //var session = (LoginSession)helper.ViewBag.LoginSession;
-            //if (session == null)
-            //    return LoginSession.LoggedOutSession.User;
-            //else
-            //    return session.User;
+            var session = (LoginSession)helper.ViewBag.LoginSession;
+            if (session == null)
+                return LoginSession.LoggedOutSession.User;
+            else
+                return session.User;
 
-            return null;
+            //return null;
         }
-        
-        public static bool ViewExists(this HtmlHelper helper, string path)
+
+        public static DbContext DbContext(this ViewContext helper)
         {
+            return (helper.Controller as Realtair.Framework.Core.Web.Controllers.BaseController).DbContext;
+        }
+
+        public static bool ViewExists(this HtmlHelper helper, string path)
+        {            
             return ViewEngines.Engines.FindView(helper.ViewContext.Controller.ControllerContext, path, null).View != null;
         }
 

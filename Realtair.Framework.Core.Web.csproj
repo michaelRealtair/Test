@@ -56,28 +56,28 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.50813.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -118,80 +118,115 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmptyAction.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_BulkFileUploadField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_BulkFileUploadField.generated.cs">
       <DependentUpon>_BulkFileUploadField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_CheckboxField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_CheckboxField.generated.cs">
       <DependentUpon>_CheckboxField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_DateTime_Field.generated.cs">
+    <Compile Include="Views\Shared\Fields\_DateTime_Field.generated.cs">
       <DependentUpon>_DateTime_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_Decimal_Field.generated.cs">
+    <Compile Include="Views\Shared\Fields\_Decimal_Field.generated.cs">
       <DependentUpon>_Decimal_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_FileUploadField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_FileUploadField.generated.cs">
       <DependentUpon>_FileUploadField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_HiddenField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_HiddenField.generated.cs">
       <DependentUpon>_HiddenField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_HttpPostedFileWrapper_Field.generated.cs">
+    <Compile Include="Views\Shared\Fields\_HttpPostedFileWrapper_Field.generated.cs">
       <DependentUpon>_HttpPostedFileWrapper_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_Int32_Field.generated.cs">
+    <Compile Include="Views\Shared\Fields\_Int32_Field.generated.cs">
       <DependentUpon>_Int32_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_OptionsField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_OptionsField.generated.cs">
       <DependentUpon>_OptionsField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_String_EmailField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_PhoneNumberViewModel_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PhoneNumberViewModel_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\_String_EmailField.generated.cs">
       <DependentUpon>_String_EmailField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_String_Field.generated.cs">
+    <Compile Include="Views\Shared\Fields\_String_Field.generated.cs">
       <DependentUpon>_String_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_String_PasswordField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_String_PasswordField.generated.cs">
       <DependentUpon>_String_PasswordField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Views\Actions\Fields\_TextAreaField.generated.cs">
+    <Compile Include="Views\Shared\Fields\_TextAreaField.generated.cs">
       <DependentUpon>_TextAreaField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Details\Details.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enquiry\Enquiry.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enquiry.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enquiry\Timeline.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Timeline.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\Report.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Report\Widget\Table.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Table.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Search\Results.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Results.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Search\Search.generated.cs">
       <DependentUpon>Search.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Settings\Settings.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\BackMenu.generated.cs">
       <DependentUpon>BackMenu.cshtml</DependentUpon>
@@ -230,55 +265,55 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Actions\Fields\_BulkFileUploadField.cshtml">
+    <Content Include="Views\Shared\Fields\_BulkFileUploadField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_BulkFileUploadField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_CheckboxField.cshtml">
+    <Content Include="Views\Shared\Fields\_CheckboxField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_CheckboxField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_DateTime_Field.cshtml">
+    <Content Include="Views\Shared\Fields\_DateTime_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DateTime_Field.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_Decimal_Field.cshtml">
+    <Content Include="Views\Shared\Fields\_Decimal_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Decimal_Field.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_FileUploadField.cshtml">
+    <Content Include="Views\Shared\Fields\_FileUploadField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_FileUploadField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_HiddenField.cshtml">
+    <Content Include="Views\Shared\Fields\_HiddenField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_HiddenField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml">
+    <Content Include="Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_HttpPostedFileWrapper_Field.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_Int32_Field.cshtml">
+    <Content Include="Views\Shared\Fields\_Int32_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Int32_Field.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_OptionsField.cshtml">
+    <Content Include="Views\Shared\Fields\_OptionsField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_OptionsField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_String_EmailField.cshtml">
+    <Content Include="Views\Shared\Fields\_String_EmailField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_String_EmailField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_String_Field.cshtml">
+    <Content Include="Views\Shared\Fields\_String_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_String_Field.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_String_PasswordField.cshtml">
+    <Content Include="Views\Shared\Fields\_String_PasswordField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_String_PasswordField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Actions\Fields\_TextAreaField.cshtml">
+    <Content Include="Views\Shared\Fields\_TextAreaField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TextAreaField.generated.cs</LastGenOutput>
     </Content>
@@ -318,6 +353,34 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EmptyAction.generated.cs</LastGenOutput>
     </None>
+    <None Include="Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PhoneNumberViewModel_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Details\Details.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Details.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Enquiry\Enquiry.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Enquiry.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Enquiry\Timeline.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Timeline.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Report\Report.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Report.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Search\Results.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Results.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Settings\Settings.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Settings.generated.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -335,10 +398,7 @@
       <Name>Realtair.Framework.Enquiries</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Details\" />
-    <Folder Include="Views\Settings\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

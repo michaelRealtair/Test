@@ -1,0 +1,241 @@
+﻿@using Realtair.Framework.Core.Web.Utilities
+@model Realtair.Framework.Core.Interfaces.IDisplayable
+
+<body class="page-header-hero">
+
+    <header id="section-header" class="header-admin header-sm main-in-header" role="banner">
+
+        <div class="bg-header">
+            <div class="overlay-gradient-radial"></div>
+            <div class="overlay-gradient-linear"></div>
+            <div class="bg-default" style="background-image: url(/content/img/background-desk.jpg)"></div>
+        </div>
+        @Html.Partial("BackMenu")
+        <div class="header-content">
+
+            <div class="title-hero">
+                <div class="container">
+                    <div class="row">
+                        @if (Model != null)
+                        {
+                            <div class="col-sm-4">
+                                <h1 class="ellipsis">
+                                    <strong>@Model.ActualType().Name.DisplaySafeName()</strong>
+                                    <small class="ellipsis">@Model.Description(Html.LoggedInUser())</small>
+                                </h1>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="box-btn">
+                                    <div class="row">
+                                        @{ var offset = 4 - (Model as IActionable)?.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() - (Model is IHasSettings ? 1 : 0); }
+                                        @if (offset > 0)
+                                        {
+                                            <div class="hidden-xs col-sm-@(offset * 3)">&nbsp;</div>
+                                        }
+
+                                        @if (Model is IActionable && (Model as IActionable).Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() >= 1)
+                                        {
+                                            foreach (var action in (Model as IActionable).Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
+                                            {
+                                                <div class="col-xs-6 col-sm-3">
+                                                    <a class="btn btn-primary ellipsis" href="@action.GetUrl(Html.LoggedInUser(), Url)?@(Request.QueryString)" title="#">
+                                                        @action.Description(Html.LoggedInUser())
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+
+                                        @if (Model is IHasSettings)
+                                        {
+                                            <div class="col-xs-12 col-sm-3">
+                                                <a class="btn btn-info ellipsis" href="~/@Model.UrlSafeName()/@((Model as IEntity).Id)/settings" title="Settings">
+                                                    <span class="icon icon-Settings"></span>&nbsp;&nbsp;Settings
+                                                </a>
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-sm-12">
+                                                    <h1 class="ellipsis">
+                                                        <strong>Details Not Found</strong>
+                                                    </h1>
+                                                </div>
+                                            }
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <div class="clearfix"></div>
+    @if (Model != null)
+    {
+        <main role="main" class="in-header">
+            <div class="container">
+                <div class="panel panel-default">
+                    <table class="table key-value table-striped">
+                        <tbody>
+                            @foreach (var describable in Model.Details(Html.LoggedInUser()))
+                            {
+                                <tr>
+                                    <th class="col-sm-4">@describable.Key</th>
+                                    <td data-key="@describable.Key">
+                                        @Render(describable.Value)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @foreach (var section in Model.Sections(Html.LoggedInUser()))
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h2>@(section.Name)</h2></div>
+                        <table class="table key-value table-striped">
+                            <tbody>
+                                @foreach (var describable in section.Details)
+                                {
+                                    <tr>
+                                        <th class="col-sm-4">@describable.Key</th>
+                                        <td data-key="@describable.Key">
+                                            @Render(describable.Value)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="panel panel-default panel-tab hidden-xs">
+                            <ul class="nav nav-pills nav-stacked">
+                                @if (Model.Lists(Html.LoggedInUser()) != null)
+                                {
+                                    for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
+                                    {
+                                        var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
+                                        <li class="@(listNo == 0 ? "active" : "")">
+                                            <a data-toggle="tab" href="#tab-@listNo">
+                                                @list.Name
+                                            </a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="tab-content tab-content-display">
+                            @for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
+                            {
+                                var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
+
+                                <div id="tab-@listNo" class="tab-pane fade in @(listNo == 0 ? "active" : "")">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h2>@list.Name</h2>
+                                        </div>
+                                        <ul class="list-group">
+                                            @if (list.Items == null || list.Items.Count() == 0)
+                                            {
+                                                <li>
+                                                    <div class="panel-heading">
+                                                        No @list.Name.ToLower() to show
+                                                    </div>
+                                                </li>
+                                            }
+                                            else {
+                                                foreach (var item in list.Items)
+                                                {
+                                                    <li class="list-group-item">
+                                                        <a href="@item.GetUrl(Html.LoggedInUser(), Url)" @Html.Raw(item is Attachment ? "target=\"_blank\"" : "") class="panel-heading">
+                                                            <span class="icon @Html.IconForDescribable(item) pull-left icon-hero hidden-xs"></span>
+                                                            <div class="inner-content">
+                                                                <strong class="ellipsis">@item.Description(Html.LoggedInUser())</strong>
+                                                                <em class="ellipsis">@item.ActualType().Name.DisplaySafeName()</em>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    }
+</body>
+
+@helper Render(object describable)
+{
+if (describable == null)
+{
+        @("N/A")
+}
+else if (describable is string)
+{
+        @describable
+}
+else if (describable is decimal || describable is double || describable is int)
+{
+        @describable.ToString()
+}
+else if (describable is DateTime)
+{
+        @(((DateTime)describable).ToString("d MMM yyyy"));
+}
+else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable>)
+{
+    var d = describable as IEnumerable<IDescribable>;
+    for (int i = 0; i < d.Count(); i++)
+    {
+            <a href="@d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)">@d.ElementAt(i).Description(Html.LoggedInUser())</a>
+
+        if (i < d.Count() - 1)
+        {
+                @(" & ");
+        }
+    }
+}
+else if (describable is IDisplayable || describable is IHasDisplayable)
+{
+        <a href="@((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url))">@((describable as IDescribable).Description(Html.LoggedInUser()))</a>
+}
+else if (describable is IEnumerable<IDescribable>)
+{
+    var d = describable as IEnumerable<IDescribable>;
+    for (int i = 0; i < d.Count(); i++)
+    {
+            @d.ElementAt(i).Description(Html.LoggedInUser())
+
+        if (i < d.Count() - 1)
+        {
+                @(" & ");
+        }
+    }
+}
+else if (describable is IDescribable)
+{
+        @((describable as IDescribable).Description(Html.LoggedInUser()))
+}
+else if (describable is Enum)
+{
+        @((describable as Enum).Description())
+}
+
+}

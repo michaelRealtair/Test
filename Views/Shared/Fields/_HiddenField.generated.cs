@@ -26,39 +26,44 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Realtair.Framework.Core.Actions;
+    using Realtair.Framework.Core.Entities;
+    using Realtair.Framework.Core.Interfaces;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Actions/Fields/_HiddenField.cshtml")]
-    public partial class _Views_Actions_Fields__HiddenField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_HiddenField.cshtml")]
+    public partial class _Views_Shared_Fields__HiddenField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Actions_Fields__HiddenField_cshtml()
+        public _Views_Shared_Fields__HiddenField_cshtml()
         {
         }
         public override void Execute()
         {
+WriteLiteral("<input");
 
-WriteLiteral("\r\n<input name=\"");
-
-
+WriteAttribute("name", Tuple.Create(" name=\"", 54), Tuple.Create("\"", 78)
             
-            #line 3 "..\..\Views\Actions\Fields\_HiddenField.cshtml"
-        Write(Model.UniqueName);
-
+            #line 3 "..\..\Views\Shared\Fields\_HiddenField.cshtml"
+, Tuple.Create(Tuple.Create("", 61), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-WriteLiteral("\" type=\"hidden\" value=\"");
+, 61), false)
+);
 
+WriteLiteral(" type=\"hidden\"");
 
+WriteAttribute("value", Tuple.Create(" value=\"", 93), Tuple.Create("\"", 117)
             
-            #line 3 "..\..\Views\Actions\Fields\_HiddenField.cshtml"
-                                                Write(Model.FormValue);
-
+            #line 3 "..\..\Views\Shared\Fields\_HiddenField.cshtml"
+, Tuple.Create(Tuple.Create("", 101), Tuple.Create<System.Object, System.Int32>(Model.FormValue
             
             #line default
             #line hidden
-WriteLiteral("\" />");
+, 101), false)
+);
 
+WriteLiteral(" />");
 
         }
     }

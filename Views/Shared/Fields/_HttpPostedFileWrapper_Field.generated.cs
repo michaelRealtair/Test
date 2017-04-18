@@ -26,33 +26,35 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Realtair.Framework.Core.Actions;
+    using Realtair.Framework.Core.Entities;
+    using Realtair.Framework.Core.Interfaces;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Actions/Fields/_HttpPostedFileWrapper_Field.cshtml")]
-    public partial class _Views_Actions_Fields__HttpPostedFileWrapper_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_HttpPostedFileWrapper_Field.cshtml")]
+    public partial class _Views_Shared_Fields__HttpPostedFileWrapper_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Actions_Fields__HttpPostedFileWrapper_Field_cshtml()
+        public _Views_Shared_Fields__HttpPostedFileWrapper_Field_cshtml()
         {
         }
         public override void Execute()
         {
-
-WriteLiteral("\r\n");
-
-
             
-            #line 3 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
  if (Model.HasError)
 {
 
             
             #line default
             #line hidden
-WriteLiteral("    <label style=\"color:red\">");
+WriteLiteral("    <label");
 
+WriteLiteral(" style=\"color:red\"");
+
+WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 5 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
                         Write(Model.FieldAttribute.Label);
 
             
@@ -60,27 +62,30 @@ WriteLiteral("    <label style=\"color:red\">");
             #line hidden
 WriteLiteral("</label>\r\n");
 
+WriteLiteral("    <input");
 
-
-WriteLiteral("    <input name=\"");
-
-
+WriteAttribute("name", Tuple.Create(" name=\"", 149), Tuple.Create("\"", 173)
             
-            #line 6 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
-            Write(Model.UniqueName);
-
+            #line 6 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 156), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-WriteLiteral("\" type=\"file\" />\r\n");
+, 156), false)
+);
 
+WriteLiteral(" type=\"file\"");
 
+WriteLiteral(" />\r\n");
 
-WriteLiteral("    <small style=\"color:red\">");
+WriteLiteral("    <small");
 
+WriteLiteral(" style=\"color:red\"");
+
+WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 7 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
                         Write(Model.ErrorMessage);
 
             
@@ -88,9 +93,8 @@ WriteLiteral("    <small style=\"color:red\">");
             #line hidden
 WriteLiteral("</small>\r\n");
 
-
             
-            #line 8 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 8 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
 }
 else
 {
@@ -100,9 +104,8 @@ else
             #line hidden
 WriteLiteral("    <label>");
 
-
             
-            #line 11 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
       Write(Model.FieldAttribute.Label);
 
             
@@ -110,29 +113,29 @@ WriteLiteral("    <label>");
             #line hidden
 WriteLiteral("</label>\r\n");
 
+WriteLiteral("    <input");
 
-
-WriteLiteral("    <input name=\"");
-
-
+WriteAttribute("name", Tuple.Create(" name=\"", 319), Tuple.Create("\"", 343)
             
-            #line 12 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
-            Write(Model.UniqueName);
-
+            #line 12 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 326), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-WriteLiteral("\" type=\"file\" />\r\n");
+, 326), false)
+);
 
+WriteLiteral(" type=\"file\"");
+
+WriteLiteral(" />\r\n");
 
             
-            #line 13 "..\..\Views\Actions\Fields\_HttpPostedFileWrapper_Field.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
 }
 
             
             #line default
             #line hidden
-
         }
     }
 }

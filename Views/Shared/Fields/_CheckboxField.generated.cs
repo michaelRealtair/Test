@@ -26,64 +26,87 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Realtair.Framework.Core.Actions;
+    using Realtair.Framework.Core.Entities;
+    using Realtair.Framework.Core.Interfaces;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Actions/Fields/_CheckboxField.cshtml")]
-    public partial class _Views_Actions_Fields__CheckboxField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_CheckboxField.cshtml")]
+    public partial class _Views_Shared_Fields__CheckboxField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Actions_Fields__CheckboxField_cshtml()
+        public _Views_Shared_Fields__CheckboxField_cshtml()
         {
         }
         public override void Execute()
         {
+WriteLiteral("<div");
 
-WriteLiteral("\r\n<div class=\"form-group\">\r\n    <div class=\"col-md-3 col-sm-4\">\r\n        <label c" +
-"lass=\"control-label\">");
+WriteLiteral(" class=\"form-group\"");
 
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+
+WriteLiteral(">\r\n        <label");
+
+WriteLiteral(" class=\"control-label\"");
+
+WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Actions\Fields\_CheckboxField.cshtml"
+            #line 5 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                 Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div class=\"col-md-9 col-sm-8\" style=\"padding-top: 12" +
-"px;\">\r\n");
+WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
+WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+
+WriteLiteral(" style=\"padding-top: 12px;\"");
+
+WriteLiteral(">\r\n");
 
             
-            #line 9 "..\..\Views\Actions\Fields\_CheckboxField.cshtml"
+            #line 9 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 9 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
           
             var formValue = "";
             if (Convert.ToBoolean(Model.FormValue)) { formValue = "checked='checked'"; }
         
-
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <input type=\"checkbox\" name=\"");
+WriteLiteral("\r\n\r\n        <input");
 
+WriteLiteral(" type=\"checkbox\"");
 
+WriteAttribute("name", Tuple.Create(" name=\"", 426), Tuple.Create("\"", 457)
             
-            #line 14 "..\..\Views\Actions\Fields\_CheckboxField.cshtml"
-                                Write(Model.PropertyInfo.Name);
-
+            #line 14 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 433), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-WriteLiteral("\" ");
+, 433), false)
+);
 
+WriteLiteral(" ");
 
             
-            #line 14 "..\..\Views\Actions\Fields\_CheckboxField.cshtml"
+            #line 14 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                                           Write(formValue);
 
             
             #line default
             #line hidden
 WriteLiteral(" />\r\n    </div>\r\n</div>");
-
 
         }
     }

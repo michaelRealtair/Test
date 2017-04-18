@@ -1,0 +1,51 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var phone = new PhoneNumber.PhoneNumberViewModel();
+    if (Model.Value is PhoneNumber.PhoneNumberViewModel)
+    {
+        phone = Model.Value as PhoneNumber.PhoneNumberViewModel;
+    }
+}
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        <input id="@Model.UniqueName" type="tel" value="@phone.Number" class="form-control">
+    </div>
+</div>
+
+<input type="hidden" name="@Model.UniqueName" />
+
+<link rel="stylesheet" href="~/Content/plugins/intl-tel-input/intlTelInput.css" />
+<script src="~/Content/plugins/intl-tel-input/intlTelInput.js"></script>
+<script>
+    $(function () {
+        var input = $("#@Model.UniqueName");
+        input.intlTelInput({
+            nationalMode: true,
+            preferredCountries: ["au"],
+            utilsScript: '../../../../Content/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
+        });
+
+        $('#@Model.UniqueName').intlTelInput("setNumber", "@phone.Number");
+        $('#@Model.UniqueName').intlTelInput("setCountry", "au");
+
+        input.on("keyup change click", function () {
+            var countryData = input.intlTelInput("getSelectedCountryData");
+            var phoneNumber = {
+                DialCode: '+'+countryData.dialCode,
+                CountryName: countryData.name,
+                Iso2: countryData.iso2.toUpperCase(),
+                Number: input.intlTelInput("getNumber")
+            }
+
+            $('input[name=@Model.UniqueName]').val(JSON.stringify(phoneNumber));
+        });
+
+        $('#@Model.UniqueName').trigger('click');
+    });
+</script>
