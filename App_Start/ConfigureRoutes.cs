@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.Utilities.ConfigureRoutes), "Start")]
 namespace Realtair.Framework.Core.Web.Utilities
 {
     public static class ConfigureRoutes
     {
-        public static void ConfigureBase(this RouteCollection routes)
+        public static void Start()
         {
-            ControllerBuilder.Current.DefaultNamespaces.Add("Realtair.Framework.Core.Web.Controllers");
-
-            var db = Activator.CreateInstance("Realtair.LeadManagement.Core", "Realtair.LeadManagement.Core.Data.DbContext").Unwrap();
-            routes.MapRoute("Test", "test", new { controller = "Test", action = "Test" });
+            var routes = RouteTable.Routes;
+            ControllerBuilder.Current.DefaultNamespaces.Add("Realtair.Framework.Core.Web.Controllers");           
 
             #region Action Routes
             routes.MapRoute("NewWorkflowAction", "{workflowName}/run/{actionName}",
