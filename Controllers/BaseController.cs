@@ -13,10 +13,10 @@ namespace Realtair.Framework.Core.Web.Controllers
 
     public class BaseController : System.Web.Mvc.Controller
     {
-        private Core.Data.DbContext _Database;
+        private DbContext _Database;
         private User _User;
 
-        public Core.Data.DbContext DbContext
+        public DbContext DbContext
         {
             get
             {
@@ -25,7 +25,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                     var a = ConfigurationManager.AppSettings["CoreAssembly"];
                     var c = ConfigurationManager.AppSettings["CoreContext"];
 
-                    _Database = (Data.DbContext)Activator.CreateInstance(a, c).Unwrap();
+                    _Database = (DbContext)Activator.CreateInstance(a, c).Unwrap();
                     _Database.Database.CommandTimeout = 180;
                 }
 
@@ -42,7 +42,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                 if (Auth.IsLoggedIn && (_User == null || _User.RoleType == UserRoleType.LoggedOut))
                     _User = DbContext.Set<User>().Include(u => u.Person).SingleOrDefault(u => u.Id == Auth.LoggedInUserId);
                 else if (_User == null)
-                    _User = DbContext.LoggedOutUser as User;
+                    _User = DbContext.Set<User>().First(u => u.RoleType == UserRoleType.LoggedOut);
 
                 return _User;
             }

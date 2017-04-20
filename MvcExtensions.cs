@@ -3,6 +3,7 @@ using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web;
