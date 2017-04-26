@@ -193,11 +193,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Details.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Enquiry\Enquiry.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Enquiry.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Enquiry\Timeline.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

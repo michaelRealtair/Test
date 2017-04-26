@@ -5,6 +5,7 @@ using System.Web;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using Action = Realtair.Framework.Core.Actions.Action;
+using System.Data.Entity;
 
 namespace Realtair.Framework.Core.Web.Utilities
 {

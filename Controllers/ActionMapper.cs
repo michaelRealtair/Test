@@ -12,6 +12,7 @@ using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Actions.FieldAttributes;
 using Realtair.Framework.Core.Actions;
 using Realtair.Framework.Core.Data;
+using System.Data.Entity;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
