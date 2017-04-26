@@ -30,8 +30,14 @@ namespace ASP
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     
-    #line 1 "..\..\Views\Details\Details.cshtml"
+    #line 2 "..\..\Views\Details\Details.cshtml"
     using Realtair.Framework.Core.Web.Utilities;
+    
+    #line default
+    #line hidden
+    
+    #line 1 "..\..\Views\Details\Details.cshtml"
+    using Realtair.Framework.Enquiries.Entities;
     
     #line default
     #line hidden
@@ -41,14 +47,14 @@ namespace ASP
     public partial class _Views_Details_Details_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Interfaces.IDisplayable>
     {
 
-#line 184 "..\..\Views\Details\Details.cshtml"
+#line 185 "..\..\Views\Details\Details.cshtml"
 public System.Web.WebPages.HelperResult Render(object describable)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 185 "..\..\Views\Details\Details.cshtml"
+#line 186 "..\..\Views\Details\Details.cshtml"
  
 if (describable == null)
 {
@@ -57,14 +63,14 @@ if (describable == null)
 #line default
 #line hidden
 
-#line 188 "..\..\Views\Details\Details.cshtml"
+#line 189 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, "N/A");
 
 
 #line default
 #line hidden
 
-#line 188 "..\..\Views\Details\Details.cshtml"
+#line 189 "..\..\Views\Details\Details.cshtml"
                 
 }
 else if (describable is string)
@@ -74,14 +80,14 @@ else if (describable is string)
 #line default
 #line hidden
 
-#line 192 "..\..\Views\Details\Details.cshtml"
+#line 193 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, describable);
 
 
 #line default
 #line hidden
 
-#line 192 "..\..\Views\Details\Details.cshtml"
+#line 193 "..\..\Views\Details\Details.cshtml"
                     
 }
 else if (describable is decimal || describable is double || describable is int)
@@ -91,14 +97,14 @@ else if (describable is decimal || describable is double || describable is int)
 #line default
 #line hidden
 
-#line 196 "..\..\Views\Details\Details.cshtml"
+#line 197 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, describable.ToString());
 
 
 #line default
 #line hidden
 
-#line 196 "..\..\Views\Details\Details.cshtml"
+#line 197 "..\..\Views\Details\Details.cshtml"
                                
 }
 else if (describable is DateTime)
@@ -108,14 +114,14 @@ else if (describable is DateTime)
 #line default
 #line hidden
 
-#line 200 "..\..\Views\Details\Details.cshtml"
+#line 201 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, ((DateTime)describable).ToString("d MMM yyyy"));
 
 
 #line default
 #line hidden
 
-#line 200 "..\..\Views\Details\Details.cshtml"
+#line 201 "..\..\Views\Details\Details.cshtml"
                                                          ;
 }
 else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable>)
@@ -129,20 +135,20 @@ else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "            <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 10718), Tuple.Create("\"", 10773)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 10764), Tuple.Create("\"", 10819)
 
-#line 207 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 10725), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
+#line 208 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 10771), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 10725), false)
+, 10771), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 207 "..\..\Views\Details\Details.cshtml"
+#line 208 "..\..\Views\Details\Details.cshtml"
                                          WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 
 
@@ -151,7 +157,7 @@ WriteLiteralTo(__razor_helper_writer, ">");
 WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 
 
-#line 208 "..\..\Views\Details\Details.cshtml"
+#line 209 "..\..\Views\Details\Details.cshtml"
 
         if (i < d.Count() - 1)
         {
@@ -160,19 +166,19 @@ WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 #line default
 #line hidden
 
-#line 211 "..\..\Views\Details\Details.cshtml"
+#line 212 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, " & ");
 
 
 #line default
 #line hidden
 
-#line 211 "..\..\Views\Details\Details.cshtml"
+#line 212 "..\..\Views\Details\Details.cshtml"
                         ;
         }
     }
 }
-else if (describable is IDisplayable || describable is IHasDisplayable)
+else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry || describable is IExtendedEnquiry)
 {
 
 
@@ -180,20 +186,20 @@ else if (describable is IDisplayable || describable is IHasDisplayable)
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "        <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 11008), Tuple.Create("\"", 11080)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 11115), Tuple.Create("\"", 11187)
 
-#line 217 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 11015), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
+#line 218 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 11122), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 11015), false)
+, 11122), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 217 "..\..\Views\Details\Details.cshtml"
+#line 218 "..\..\Views\Details\Details.cshtml"
                                                        WriteTo(__razor_helper_writer, (describable as IDescribable).Description(Html.LoggedInUser()));
 
 
@@ -202,7 +208,7 @@ WriteLiteralTo(__razor_helper_writer, ">");
 WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 
 
-#line 218 "..\..\Views\Details\Details.cshtml"
+#line 219 "..\..\Views\Details\Details.cshtml"
 }
 else if (describable is IEnumerable<IDescribable>)
 {
@@ -214,14 +220,14 @@ else if (describable is IEnumerable<IDescribable>)
 #line default
 #line hidden
 
-#line 224 "..\..\Views\Details\Details.cshtml"
+#line 225 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 
 
 #line default
 #line hidden
 
-#line 224 "..\..\Views\Details\Details.cshtml"
+#line 225 "..\..\Views\Details\Details.cshtml"
                                                             
 
         if (i < d.Count() - 1)
@@ -231,14 +237,14 @@ WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 #line default
 #line hidden
 
-#line 228 "..\..\Views\Details\Details.cshtml"
+#line 229 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, " & ");
 
 
 #line default
 #line hidden
 
-#line 228 "..\..\Views\Details\Details.cshtml"
+#line 229 "..\..\Views\Details\Details.cshtml"
                         ;
         }
     }
@@ -250,14 +256,14 @@ else if (describable is IDescribable)
 #line default
 #line hidden
 
-#line 234 "..\..\Views\Details\Details.cshtml"
+#line 235 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, (describable as IDescribable).Description(Html.LoggedInUser()));
 
 
 #line default
 #line hidden
 
-#line 234 "..\..\Views\Details\Details.cshtml"
+#line 235 "..\..\Views\Details\Details.cshtml"
                                                                          
 }
 else if (describable is Enum)
@@ -267,14 +273,14 @@ else if (describable is Enum)
 #line default
 #line hidden
 
-#line 238 "..\..\Views\Details\Details.cshtml"
+#line 239 "..\..\Views\Details\Details.cshtml"
 WriteTo(__razor_helper_writer, (describable as Enum).Description());
 
 
 #line default
 #line hidden
 
-#line 238 "..\..\Views\Details\Details.cshtml"
+#line 239 "..\..\Views\Details\Details.cshtml"
                                               
 }
 
@@ -284,7 +290,7 @@ WriteTo(__razor_helper_writer, (describable as Enum).Description());
 #line hidden
 });
 
-#line 241 "..\..\Views\Details\Details.cshtml"
+#line 242 "..\..\Views\Details\Details.cshtml"
 }
 #line default
 #line hidden
@@ -329,7 +335,7 @@ WriteLiteral("></div>\r\n        </div>\r\n");
 WriteLiteral("        ");
 
             
-            #line 13 "..\..\Views\Details\Details.cshtml"
+            #line 14 "..\..\Views\Details\Details.cshtml"
    Write(Html.Partial("BackMenu"));
 
             
@@ -354,13 +360,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 19 "..\..\Views\Details\Details.cshtml"
+            #line 20 "..\..\Views\Details\Details.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Details\Details.cshtml"
+            #line 20 "..\..\Views\Details\Details.cshtml"
                          if (Model != null)
                         {
 
@@ -378,7 +384,7 @@ WriteLiteral(" class=\"ellipsis\"");
 WriteLiteral(">\r\n                                    <strong>");
 
             
-            #line 23 "..\..\Views\Details\Details.cshtml"
+            #line 24 "..\..\Views\Details\Details.cshtml"
                                        Write(Model.ActualType().Name.DisplaySafeName());
 
             
@@ -391,7 +397,7 @@ WriteLiteral(" class=\"ellipsis\"");
 WriteLiteral(">");
 
             
-            #line 24 "..\..\Views\Details\Details.cshtml"
+            #line 25 "..\..\Views\Details\Details.cshtml"
                                                        Write(Model.Description(Html.LoggedInUser()));
 
             
@@ -415,13 +421,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 30 "..\..\Views\Details\Details.cshtml"
+            #line 31 "..\..\Views\Details\Details.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 30 "..\..\Views\Details\Details.cshtml"
+            #line 31 "..\..\Views\Details\Details.cshtml"
                                            var offset = 4 - (Model as IActionable)?.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() - (Model is IHasSettings ? 1 : 0); 
             
             #line default
@@ -429,13 +435,13 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 31 "..\..\Views\Details\Details.cshtml"
+            #line 32 "..\..\Views\Details\Details.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 31 "..\..\Views\Details\Details.cshtml"
+            #line 32 "..\..\Views\Details\Details.cshtml"
                                          if (offset > 0)
                                         {
 
@@ -444,22 +450,22 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("                                            <div");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1667), Tuple.Create("\"", 1705)
-, Tuple.Create(Tuple.Create("", 1675), Tuple.Create("hidden-xs", 1675), true)
-, Tuple.Create(Tuple.Create(" ", 1684), Tuple.Create("col-sm-", 1685), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1713), Tuple.Create("\"", 1751)
+, Tuple.Create(Tuple.Create("", 1721), Tuple.Create("hidden-xs", 1721), true)
+, Tuple.Create(Tuple.Create(" ", 1730), Tuple.Create("col-sm-", 1731), true)
             
-            #line 33 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 1692), Tuple.Create<System.Object, System.Int32>(offset * 3
+            #line 34 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 1738), Tuple.Create<System.Object, System.Int32>(offset * 3
             
             #line default
             #line hidden
-, 1692), false)
+, 1738), false)
 );
 
 WriteLiteral(">&nbsp;</div>\r\n");
 
             
-            #line 34 "..\..\Views\Details\Details.cshtml"
+            #line 35 "..\..\Views\Details\Details.cshtml"
                                         }
 
             
@@ -468,13 +474,13 @@ WriteLiteral(">&nbsp;</div>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 36 "..\..\Views\Details\Details.cshtml"
+            #line 37 "..\..\Views\Details\Details.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 36 "..\..\Views\Details\Details.cshtml"
+            #line 37 "..\..\Views\Details\Details.cshtml"
                                          if (Model is IActionable && (Model as IActionable).Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() >= 1)
                                         {
                                             foreach (var action in (Model as IActionable).Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
@@ -491,22 +497,22 @@ WriteLiteral(">\r\n                                                    <a");
 
 WriteLiteral(" class=\"btn btn-primary ellipsis\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2357), Tuple.Create("\"", 2427)
+WriteAttribute("href", Tuple.Create(" href=\"", 2403), Tuple.Create("\"", 2473)
             
-            #line 41 "..\..\Views\Details\Details.cshtml"
-              , Tuple.Create(Tuple.Create("", 2364), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
-            
-            #line default
-            #line hidden
-, 2364), false)
-, Tuple.Create(Tuple.Create("", 2404), Tuple.Create("?", 2404), true)
-            
-            #line 41 "..\..\Views\Details\Details.cshtml"
-                                                        , Tuple.Create(Tuple.Create("", 2405), Tuple.Create<System.Object, System.Int32>(Request.QueryString
+            #line 42 "..\..\Views\Details\Details.cshtml"
+              , Tuple.Create(Tuple.Create("", 2410), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 2405), false)
+, 2410), false)
+, Tuple.Create(Tuple.Create("", 2450), Tuple.Create("?", 2450), true)
+            
+            #line 42 "..\..\Views\Details\Details.cshtml"
+                                                        , Tuple.Create(Tuple.Create("", 2451), Tuple.Create<System.Object, System.Int32>(Request.QueryString
+            
+            #line default
+            #line hidden
+, 2451), false)
 );
 
 WriteLiteral(" title=\"#\"");
@@ -516,7 +522,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                                        ");
 
             
-            #line 42 "..\..\Views\Details\Details.cshtml"
+            #line 43 "..\..\Views\Details\Details.cshtml"
                                                    Write(action.Description(Html.LoggedInUser()));
 
             
@@ -526,7 +532,7 @@ WriteLiteral("\r\n                                                    </a>\r\n  
 "                           </div>\r\n");
 
             
-            #line 45 "..\..\Views\Details\Details.cshtml"
+            #line 46 "..\..\Views\Details\Details.cshtml"
                                             }
                                         }
 
@@ -536,13 +542,13 @@ WriteLiteral("\r\n                                                    </a>\r\n  
 WriteLiteral("\r\n");
 
             
-            #line 48 "..\..\Views\Details\Details.cshtml"
+            #line 49 "..\..\Views\Details\Details.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 48 "..\..\Views\Details\Details.cshtml"
+            #line 49 "..\..\Views\Details\Details.cshtml"
                                          if (Model is IHasSettings)
                                         {
 
@@ -557,25 +563,25 @@ WriteLiteral(">\r\n                                                <a");
 
 WriteLiteral(" class=\"btn btn-info ellipsis\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3015), Tuple.Create("\"", 3078)
-, Tuple.Create(Tuple.Create("", 3022), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 3022), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 3061), Tuple.Create("\"", 3124)
+, Tuple.Create(Tuple.Create("", 3068), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 3068), false)
             
-            #line 51 "..\..\Views\Details\Details.cshtml"
-         , Tuple.Create(Tuple.Create("", 3024), Tuple.Create<System.Object, System.Int32>(Model.UrlSafeName()
-            
-            #line default
-            #line hidden
-, 3024), false)
-, Tuple.Create(Tuple.Create("", 3044), Tuple.Create("/", 3044), true)
-            
-            #line 51 "..\..\Views\Details\Details.cshtml"
-                               , Tuple.Create(Tuple.Create("", 3045), Tuple.Create<System.Object, System.Int32>((Model as IEntity).Id
+            #line 52 "..\..\Views\Details\Details.cshtml"
+         , Tuple.Create(Tuple.Create("", 3070), Tuple.Create<System.Object, System.Int32>(Model.UrlSafeName()
             
             #line default
             #line hidden
-, 3045), false)
-, Tuple.Create(Tuple.Create("", 3069), Tuple.Create("/settings", 3069), true)
+, 3070), false)
+, Tuple.Create(Tuple.Create("", 3090), Tuple.Create("/", 3090), true)
+            
+            #line 52 "..\..\Views\Details\Details.cshtml"
+                               , Tuple.Create(Tuple.Create("", 3091), Tuple.Create<System.Object, System.Int32>((Model as IEntity).Id
+            
+            #line default
+            #line hidden
+, 3091), false)
+, Tuple.Create(Tuple.Create("", 3115), Tuple.Create("/settings", 3115), true)
 );
 
 WriteLiteral(" title=\"Settings\"");
@@ -588,7 +594,7 @@ WriteLiteral("></span>&nbsp;&nbsp;Settings\r\n                                  
 ">\r\n                                            </div>\r\n");
 
             
-            #line 55 "..\..\Views\Details\Details.cshtml"
+            #line 56 "..\..\Views\Details\Details.cshtml"
                                         }
 
             
@@ -603,7 +609,7 @@ WriteLiteral("></div>\r\n                                </div>\r\n             
 "v>\r\n");
 
             
-            #line 61 "..\..\Views\Details\Details.cshtml"
+            #line 62 "..\..\Views\Details\Details.cshtml"
                                             }
                                             else
                                             {
@@ -624,7 +630,7 @@ WriteLiteral(">\r\n                                                        <stro
 "                                         </div>\r\n");
 
             
-            #line 69 "..\..\Views\Details\Details.cshtml"
+            #line 70 "..\..\Views\Details\Details.cshtml"
                                             }
 
             
@@ -642,13 +648,13 @@ WriteLiteral(" class=\"clearfix\"");
 WriteLiteral("></div>\r\n");
 
             
-            #line 78 "..\..\Views\Details\Details.cshtml"
+            #line 79 "..\..\Views\Details\Details.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 78 "..\..\Views\Details\Details.cshtml"
+            #line 79 "..\..\Views\Details\Details.cshtml"
      if (Model != null)
     {
 
@@ -676,13 +682,13 @@ WriteLiteral(" class=\"table key-value table-striped\"");
 WriteLiteral(">\r\n                        <tbody>\r\n");
 
             
-            #line 85 "..\..\Views\Details\Details.cshtml"
+            #line 86 "..\..\Views\Details\Details.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 85 "..\..\Views\Details\Details.cshtml"
+            #line 86 "..\..\Views\Details\Details.cshtml"
                              foreach (var describable in Model.Details(Html.LoggedInUser()))
                             {
 
@@ -696,7 +702,7 @@ WriteLiteral(" class=\"col-sm-4\"");
 WriteLiteral(">");
 
             
-            #line 88 "..\..\Views\Details\Details.cshtml"
+            #line 89 "..\..\Views\Details\Details.cshtml"
                                                     Write(describable.Key);
 
             
@@ -707,7 +713,7 @@ WriteLiteral("</th>\r\n                                    <td");
 WriteLiteral(" data-key=\"");
 
             
-            #line 89 "..\..\Views\Details\Details.cshtml"
+            #line 90 "..\..\Views\Details\Details.cshtml"
                                              Write(describable.Key);
 
             
@@ -720,7 +726,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                        ");
 
             
-            #line 90 "..\..\Views\Details\Details.cshtml"
+            #line 91 "..\..\Views\Details\Details.cshtml"
                                    Write(Render(describable.Value));
 
             
@@ -730,7 +736,7 @@ WriteLiteral("\r\n                                    </td>\r\n                 
 ">\r\n");
 
             
-            #line 93 "..\..\Views\Details\Details.cshtml"
+            #line 94 "..\..\Views\Details\Details.cshtml"
                             }
 
             
@@ -740,13 +746,13 @@ WriteLiteral("                        </tbody>\r\n                    </table>\r
 "/div>\r\n\r\n");
 
             
-            #line 98 "..\..\Views\Details\Details.cshtml"
+            #line 99 "..\..\Views\Details\Details.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 98 "..\..\Views\Details\Details.cshtml"
+            #line 99 "..\..\Views\Details\Details.cshtml"
                  foreach (var section in Model.Sections(Html.LoggedInUser()))
                 {
 
@@ -764,7 +770,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral("><h2>");
 
             
-            #line 101 "..\..\Views\Details\Details.cshtml"
+            #line 102 "..\..\Views\Details\Details.cshtml"
                                                    Write(section.Name);
 
             
@@ -777,13 +783,13 @@ WriteLiteral(" class=\"table key-value table-striped\"");
 WriteLiteral(">\r\n                            <tbody>\r\n");
 
             
-            #line 104 "..\..\Views\Details\Details.cshtml"
+            #line 105 "..\..\Views\Details\Details.cshtml"
                                 
             
             #line default
             #line hidden
             
-            #line 104 "..\..\Views\Details\Details.cshtml"
+            #line 105 "..\..\Views\Details\Details.cshtml"
                                  foreach (var describable in section.Details)
                                 {
 
@@ -798,7 +804,7 @@ WriteLiteral(" class=\"col-sm-4\"");
 WriteLiteral(">");
 
             
-            #line 107 "..\..\Views\Details\Details.cshtml"
+            #line 108 "..\..\Views\Details\Details.cshtml"
                                                         Write(describable.Key);
 
             
@@ -809,7 +815,7 @@ WriteLiteral("</th>\r\n                                        <td");
 WriteLiteral(" data-key=\"");
 
             
-            #line 108 "..\..\Views\Details\Details.cshtml"
+            #line 109 "..\..\Views\Details\Details.cshtml"
                                                  Write(describable.Key);
 
             
@@ -822,7 +828,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                            ");
 
             
-            #line 109 "..\..\Views\Details\Details.cshtml"
+            #line 110 "..\..\Views\Details\Details.cshtml"
                                        Write(Render(describable.Value));
 
             
@@ -832,7 +838,7 @@ WriteLiteral("\r\n                                        </td>\r\n             
 "    </tr>\r\n");
 
             
-            #line 112 "..\..\Views\Details\Details.cshtml"
+            #line 113 "..\..\Views\Details\Details.cshtml"
                                 }
 
             
@@ -842,7 +848,7 @@ WriteLiteral("                            </tbody>\r\n                        </
 "           </div>\r\n");
 
             
-            #line 116 "..\..\Views\Details\Details.cshtml"
+            #line 117 "..\..\Views\Details\Details.cshtml"
                 }
 
             
@@ -867,13 +873,13 @@ WriteLiteral(" class=\"nav nav-pills nav-stacked\"");
 WriteLiteral(">\r\n");
 
             
-            #line 122 "..\..\Views\Details\Details.cshtml"
+            #line 123 "..\..\Views\Details\Details.cshtml"
                                 
             
             #line default
             #line hidden
             
-            #line 122 "..\..\Views\Details\Details.cshtml"
+            #line 123 "..\..\Views\Details\Details.cshtml"
                                  if (Model.Lists(Html.LoggedInUser()) != null)
                                 {
                                     for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
@@ -885,29 +891,29 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                        <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 6749), Tuple.Create("\"", 6787)
+WriteAttribute("class", Tuple.Create(" class=\"", 6795), Tuple.Create("\"", 6833)
             
-            #line 127 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6757), Tuple.Create<System.Object, System.Int32>(listNo == 0 ? "active" : ""
+            #line 128 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 6803), Tuple.Create<System.Object, System.Int32>(listNo == 0 ? "active" : ""
             
             #line default
             #line hidden
-, 6757), false)
+, 6803), false)
 );
 
 WriteLiteral(">\r\n                                            <a");
 
 WriteLiteral(" data-toggle=\"tab\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6855), Tuple.Create("\"", 6874)
-, Tuple.Create(Tuple.Create("", 6862), Tuple.Create("#tab-", 6862), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 6901), Tuple.Create("\"", 6920)
+, Tuple.Create(Tuple.Create("", 6908), Tuple.Create("#tab-", 6908), true)
             
-            #line 128 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 6867), Tuple.Create<System.Object, System.Int32>(listNo
+            #line 129 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 6913), Tuple.Create<System.Object, System.Int32>(listNo
             
             #line default
             #line hidden
-, 6867), false)
+, 6913), false)
 );
 
 WriteLiteral(">\r\n");
@@ -915,7 +921,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                                ");
 
             
-            #line 129 "..\..\Views\Details\Details.cshtml"
+            #line 130 "..\..\Views\Details\Details.cshtml"
                                            Write(list.Name);
 
             
@@ -925,7 +931,7 @@ WriteLiteral("\r\n                                            </a>\r\n          
 "           </li>\r\n");
 
             
-            #line 132 "..\..\Views\Details\Details.cshtml"
+            #line 133 "..\..\Views\Details\Details.cshtml"
                                     }
                                 }
 
@@ -948,13 +954,13 @@ WriteLiteral(" class=\"tab-content tab-content-display\"");
 WriteLiteral(">\r\n");
 
             
-            #line 140 "..\..\Views\Details\Details.cshtml"
+            #line 141 "..\..\Views\Details\Details.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 140 "..\..\Views\Details\Details.cshtml"
+            #line 141 "..\..\Views\Details\Details.cshtml"
                              for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
                             {
                                 var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
@@ -965,28 +971,28 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 7654), Tuple.Create("\"", 7670)
-, Tuple.Create(Tuple.Create("", 7659), Tuple.Create("tab-", 7659), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 7700), Tuple.Create("\"", 7716)
+, Tuple.Create(Tuple.Create("", 7705), Tuple.Create("tab-", 7705), true)
             
-            #line 144 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 7663), Tuple.Create<System.Object, System.Int32>(listNo
+            #line 145 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 7709), Tuple.Create<System.Object, System.Int32>(listNo
             
             #line default
             #line hidden
-, 7663), false)
+, 7709), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 7671), Tuple.Create("\"", 7726)
-, Tuple.Create(Tuple.Create("", 7679), Tuple.Create("tab-pane", 7679), true)
-, Tuple.Create(Tuple.Create(" ", 7687), Tuple.Create("fade", 7688), true)
-, Tuple.Create(Tuple.Create(" ", 7692), Tuple.Create("in", 7693), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 7717), Tuple.Create("\"", 7772)
+, Tuple.Create(Tuple.Create("", 7725), Tuple.Create("tab-pane", 7725), true)
+, Tuple.Create(Tuple.Create(" ", 7733), Tuple.Create("fade", 7734), true)
+, Tuple.Create(Tuple.Create(" ", 7738), Tuple.Create("in", 7739), true)
             
-            #line 144 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create(" ", 7695), Tuple.Create<System.Object, System.Int32>(listNo == 0 ? "active" : ""
+            #line 145 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create(" ", 7741), Tuple.Create<System.Object, System.Int32>(listNo == 0 ? "active" : ""
             
             #line default
             #line hidden
-, 7696), false)
+, 7742), false)
 );
 
 WriteLiteral(">\r\n                                    <div");
@@ -1000,7 +1006,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral(">\r\n                                            <h2>");
 
             
-            #line 147 "..\..\Views\Details\Details.cshtml"
+            #line 148 "..\..\Views\Details\Details.cshtml"
                                            Write(list.Name);
 
             
@@ -1014,13 +1020,13 @@ WriteLiteral(" class=\"list-group\"");
 WriteLiteral(">\r\n");
 
             
-            #line 150 "..\..\Views\Details\Details.cshtml"
+            #line 151 "..\..\Views\Details\Details.cshtml"
                                             
             
             #line default
             #line hidden
             
-            #line 150 "..\..\Views\Details\Details.cshtml"
+            #line 151 "..\..\Views\Details\Details.cshtml"
                                              if (list.Items == null || list.Items.Count() == 0)
                                             {
 
@@ -1035,7 +1041,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral(">\r\n                                                        No ");
 
             
-            #line 154 "..\..\Views\Details\Details.cshtml"
+            #line 155 "..\..\Views\Details\Details.cshtml"
                                                       Write(list.Name.ToLower());
 
             
@@ -1045,7 +1051,7 @@ WriteLiteral(" to show\r\n                                                    </
 "                                     </li>\r\n");
 
             
-            #line 157 "..\..\Views\Details\Details.cshtml"
+            #line 158 "..\..\Views\Details\Details.cshtml"
                                             }
                                             else {
                                                 foreach (var item in list.Items)
@@ -1060,20 +1066,20 @@ WriteLiteral(" class=\"list-group-item\"");
 
 WriteLiteral(">\r\n                                                        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 8903), Tuple.Create("\"", 8948)
+WriteAttribute("href", Tuple.Create(" href=\"", 8949), Tuple.Create("\"", 8994)
             
-            #line 162 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create("", 8910), Tuple.Create<System.Object, System.Int32>(item.GetUrl(Html.LoggedInUser(), Url)
+            #line 163 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 8956), Tuple.Create<System.Object, System.Int32>(item.GetUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 8910), false)
+, 8956), false)
 );
 
 WriteLiteral(" ");
 
             
-            #line 162 "..\..\Views\Details\Details.cshtml"
+            #line 163 "..\..\Views\Details\Details.cshtml"
                                                                                                     Write(Html.Raw(item is Attachment ? "target=\"_blank\"" : ""));
 
             
@@ -1082,18 +1088,18 @@ WriteLiteral(" ");
 WriteLiteral(" class=\"panel-heading\">\r\n                                                        " +
 "    <span");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 9096), Tuple.Create("\"", 9169)
-, Tuple.Create(Tuple.Create("", 9104), Tuple.Create("icon", 9104), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 9142), Tuple.Create("\"", 9215)
+, Tuple.Create(Tuple.Create("", 9150), Tuple.Create("icon", 9150), true)
             
-            #line 163 "..\..\Views\Details\Details.cshtml"
-, Tuple.Create(Tuple.Create(" ", 9108), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(item)
+            #line 164 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create(" ", 9154), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(item)
             
             #line default
             #line hidden
-, 9109), false)
-, Tuple.Create(Tuple.Create(" ", 9139), Tuple.Create("pull-left", 9140), true)
-, Tuple.Create(Tuple.Create(" ", 9149), Tuple.Create("icon-hero", 9150), true)
-, Tuple.Create(Tuple.Create(" ", 9159), Tuple.Create("hidden-xs", 9160), true)
+, 9155), false)
+, Tuple.Create(Tuple.Create(" ", 9185), Tuple.Create("pull-left", 9186), true)
+, Tuple.Create(Tuple.Create(" ", 9195), Tuple.Create("icon-hero", 9196), true)
+, Tuple.Create(Tuple.Create(" ", 9205), Tuple.Create("hidden-xs", 9206), true)
 );
 
 WriteLiteral("></span>\r\n                                                            <div");
@@ -1107,7 +1113,7 @@ WriteLiteral(" class=\"ellipsis\"");
 WriteLiteral(">");
 
             
-            #line 165 "..\..\Views\Details\Details.cshtml"
+            #line 166 "..\..\Views\Details\Details.cshtml"
                                                                                     Write(item.Description(Html.LoggedInUser()));
 
             
@@ -1120,7 +1126,7 @@ WriteLiteral(" class=\"ellipsis\"");
 WriteLiteral(">");
 
             
-            #line 166 "..\..\Views\Details\Details.cshtml"
+            #line 167 "..\..\Views\Details\Details.cshtml"
                                                                                 Write(item.ActualType().Name.DisplaySafeName());
 
             
@@ -1131,7 +1137,7 @@ WriteLiteral("</em>\r\n                                                         
 "                            </li>\r\n");
 
             
-            #line 170 "..\..\Views\Details\Details.cshtml"
+            #line 171 "..\..\Views\Details\Details.cshtml"
                                                 }
                                             }
 
@@ -1142,7 +1148,7 @@ WriteLiteral("                                        </ul>\r\n                 
 "  </div>\r\n                                </div>\r\n");
 
             
-            #line 175 "..\..\Views\Details\Details.cshtml"
+            #line 176 "..\..\Views\Details\Details.cshtml"
                             }
 
             
@@ -1152,7 +1158,7 @@ WriteLiteral("                        </div>\r\n                    </div>\r\n  
 ">\r\n            </div>\r\n        </main>\r\n");
 
             
-            #line 181 "..\..\Views\Details\Details.cshtml"
+            #line 182 "..\..\Views\Details\Details.cshtml"
     }
 
             

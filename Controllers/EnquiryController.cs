@@ -42,7 +42,9 @@ namespace Realtair.Framework.Core.Web.Controllers
             model.Conversations = conversationEnquiry.Conversations.Where(c => c.Users.Contains(User)).ToList();
 
             model.ExternalConversations = model.Workflow.Conversations.Where(c => !c.Users.Contains(User) && c.AccessibleTo(User, DbContext)).ToList();
-            conversationId = conversationId.HasValue ? conversationId : model.Conversations?.OrderByDescending(c => c.ActiveNotifications(User, model.Workflow).Count())?.FirstOrDefault()?.Id ?? model.ExternalConversations.First().Id;
+            conversationId = conversationId.HasValue ? conversationId : model.Conversations?.OrderByDescending(c => c.ActiveNotifications(User, model.Workflow).Count())?.FirstOrDefault()?.Id ?? (model.ExternalConversations.Count() > 0 ? model.ExternalConversations?.First().Id : null);
+
+            if(conversationId == null) return Redirect("/");
 
             model.Conversation = conversationEnquiry.Conversations.Single(c => c.Id == conversationId);
             model.Participants = conversationEnquiry.Conversations.Single(c => c.Id == conversationId).Users.ToList();
