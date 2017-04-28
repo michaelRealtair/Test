@@ -14,23 +14,14 @@ namespace Realtair.Framework.Core.Web.Controllers
 
     public class BaseController : System.Web.Mvc.Controller
     {
-        private DbContext _Database;
+        //private DbContext _Database;
         private User _User;
 
         public DbContext DbContext
         {
             get
             {
-                if (_Database == null)
-                {
-                    var a = ConfigurationManager.AppSettings["CoreAssembly"];
-                    var c = ConfigurationManager.AppSettings["CoreContext"];
-
-                    _Database = (DbContext)Activator.CreateInstance(a, c).Unwrap();
-                    _Database.Database.CommandTimeout = 180;
-                }
-
-                return _Database;
+                return SingletonDbContext.Instance.DbContext;
             }
         }
 
@@ -51,12 +42,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _Database != null)
+            if (disposing && SingletonDbContext.Instance.DbContext != null)
             {
-                if (_Database.ChangeTracker.Entries().Any())
-                    _Database.SaveChanges();
-                _Database.Dispose();
-                _Database = null;
+                if (SingletonDbContext.Instance.DbContext.ChangeTracker.Entries().Any())
+                    SingletonDbContext.Instance.DbContext.SaveChanges();
+                SingletonDbContext.Instance.DbContext.Dispose();
                 _User = null;
             }
         }

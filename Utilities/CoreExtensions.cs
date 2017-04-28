@@ -16,6 +16,7 @@ namespace Realtair.Framework.Core.Web.Utilities
     using Framework.Enquiries.Entities;
     using Framework.Enquiries.Interfaces;
     using System.Configuration;
+    using System.Data.Entity;
     using System.Data.Entity.Core.Objects;
     using System.Reflection;
     public static class CoreExtensions

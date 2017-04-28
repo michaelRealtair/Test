@@ -5,7 +5,8 @@ using RazorGenerator.Mvc;
 
 [assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Realtair.Framework.Core.Web.RazorGeneratorMvcStart), "Start")]
 
-namespace Realtair.Framework.Core.Web {
+namespace Realtair.Framework.Core.Web
+{
     public static class RazorGeneratorMvcStart {
         public static void Start() {
             var engine = new PrecompiledMvcEngine(typeof(RazorGeneratorMvcStart).Assembly) {
