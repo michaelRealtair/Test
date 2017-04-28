@@ -19,7 +19,7 @@ namespace Realtair.Framework.Core.Web.Utilities
             Request = request;
         }
 
-        private static string CookieName => "REALTAIR_LEADS_SESSION";
+        private static string CookieName => "REALTAIR_SESSION";
 
         public bool IsLoggedIn => GetUserID() != -1;
         public int LoggedInUserId => GetUserID();

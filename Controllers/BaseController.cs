@@ -3,15 +3,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Realtair.Framework.Core.Entities;
+using Realtair.Framework.Core.Data;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
-    using Core.Data;
-    using Core.Entities;
-    using System;
-    using System.Configuration;
-    using System.Data.Entity;
-
     public class BaseController : System.Web.Mvc.Controller
     {
         //private DbContext _Database;
@@ -32,7 +28,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             get
             {
                 if (Auth.IsLoggedIn && (_User == null || _User.RoleType == UserRoleType.LoggedOut))
-                    _User = DbContext.Set<User>().Include(u => u.Person).SingleOrDefault(u => u.Id == Auth.LoggedInUserId);
+                    _User = DbContext.Set<User>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
                 else if (_User == null)
                     _User = DbContext.Set<User>().First(u => u.RoleType == UserRoleType.LoggedOut);
 
@@ -42,11 +38,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && SingletonDbContext.Instance.DbContext != null)
+            if (disposing && DbContext != null)
             {
-                if (SingletonDbContext.Instance.DbContext.ChangeTracker.Entries().Any())
-                    SingletonDbContext.Instance.DbContext.SaveChanges();
-                SingletonDbContext.Instance.DbContext.Dispose();
+                if (DbContext.ChangeTracker.Entries().Any())
+                    DbContext.SaveChanges();
+                DbContext.Dispose();
                 _User = null;
             }
         }
