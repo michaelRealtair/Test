@@ -1858,16 +1858,8 @@ WriteAttribute("href", Tuple.Create(" href=\"", 23313), Tuple.Create("\"", 23365
 , 23320), false)
 );
 
-WriteLiteral(">\r\n                                                    <strong>&nbsp; ");
-
-            
-            #line 353 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                              Write(task.Heading);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                                    <span");
+WriteLiteral(">                                                    \r\n                          " +
+"                          <span");
 
 WriteLiteral(" href=\"#\"");
 
@@ -1876,7 +1868,7 @@ WriteLiteral(" class=\"brand-provider ellipsis\"");
 WriteLiteral(">&nbsp; ");
 
             
-            #line 354 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 353 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                      Write(task.Record.Enquiry.Description(Html.LoggedInUser()));
 
             
@@ -1891,7 +1883,7 @@ WriteLiteral(" class=\"clearfix\"");
 WriteLiteral("></div>\r\n                                        </div>\r\n");
 
             
-            #line 359 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 358 "..\..\Views\Enquiry\Enquiry.cshtml"
                                     }
 
             
@@ -1900,7 +1892,7 @@ WriteLiteral("></div>\r\n                                        </div>\r\n");
 WriteLiteral("\r\n                                </div>\r\n");
 
             
-            #line 362 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 361 "..\..\Views\Enquiry\Enquiry.cshtml"
                             }
 
             
@@ -1928,7 +1920,7 @@ WriteLiteral(">\r\n\r\n");
 WriteLiteral("                        ");
 
             
-            #line 373 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 372 "..\..\Views\Enquiry\Enquiry.cshtml"
                    Write(Html.Partial("Timeline", Model.Timeline));
 
             
@@ -1959,16 +1951,16 @@ WriteLiteral(" class=\"col-sm-9 col-sm-offset-3 part-top\"");
 
 WriteLiteral(">\r\n                            <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24759), Tuple.Create("\"", 24788)
-, Tuple.Create(Tuple.Create("", 24765), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
-, 24765), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 24720), Tuple.Create("\"", 24749)
+, Tuple.Create(Tuple.Create("", 24726), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
+, 24726), false)
 );
 
 WriteLiteral("></script>\r\n                            <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 24836), Tuple.Create("\"", 24869)
-, Tuple.Create(Tuple.Create("", 24842), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
-, 24842), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 24797), Tuple.Create("\"", 24830)
+, Tuple.Create(Tuple.Create("", 24803), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
+, 24803), false)
 );
 
 WriteLiteral("></script>\r\n                            <div");
@@ -2004,13 +1996,13 @@ WriteLiteral(" class=\"inner-content ellipsis\"");
 WriteLiteral(">\r\n");
 
             
-            #line 394 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 393 "..\..\Views\Enquiry\Enquiry.cshtml"
                                         
             
             #line default
             #line hidden
             
-            #line 394 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 393 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                                         {
 
@@ -2021,24 +2013,24 @@ WriteLiteral("                                            <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 25669), Tuple.Create("\"", 25697)
+WriteAttribute("action", Tuple.Create(" action=\"", 25630), Tuple.Create("\"", 25658)
             
-            #line 396 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 25678), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+            #line 395 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 25639), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 25678), false)
+, 25639), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 25698), Tuple.Create("\"", 25753)
+WriteAttribute("method", Tuple.Create(" method=\"", 25659), Tuple.Create("\"", 25714)
             
-            #line 396 "..\..\Views\Enquiry\Enquiry.cshtml"
-                      , Tuple.Create(Tuple.Create("", 25707), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 395 "..\..\Views\Enquiry\Enquiry.cshtml"
+                      , Tuple.Create(Tuple.Create("", 25668), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 25707), false)
+, 25668), false)
 );
 
 WriteLiteral(">\r\n                                                <input");
@@ -2047,14 +2039,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 25842), Tuple.Create("\"", 25875)
+WriteAttribute("value", Tuple.Create(" value=\"", 25803), Tuple.Create("\"", 25836)
             
-            #line 397 "..\..\Views\Enquiry\Enquiry.cshtml"
-            , Tuple.Create(Tuple.Create("", 25850), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 396 "..\..\Views\Enquiry\Enquiry.cshtml"
+            , Tuple.Create(Tuple.Create("", 25811), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 25850), false)
+, 25811), false)
 );
 
 WriteLiteral(" />\r\n                                                <button");
@@ -2066,7 +2058,7 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 398 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 397 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                 Write(action.Description(Html.LoggedInUser()));
 
             
@@ -2075,7 +2067,7 @@ WriteLiteral(">");
 WriteLiteral("</button>\r\n                                            </form>\r\n");
 
             
-            #line 400 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 399 "..\..\Views\Enquiry\Enquiry.cshtml"
                                         }
 
             
@@ -2318,23 +2310,23 @@ WriteLiteral(" class=\"pswp__caption__center\"");
 WriteLiteral("></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n" +
 "    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 31064), Tuple.Create("\"", 31100)
-, Tuple.Create(Tuple.Create("", 31070), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery.easing.min.js")
-, 31070), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 31025), Tuple.Create("\"", 31061)
+, Tuple.Create(Tuple.Create("", 31031), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery.easing.min.js")
+, 31031), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 31124), Tuple.Create("\"", 31157)
-, Tuple.Create(Tuple.Create("", 31130), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe.min.js")
-, 31130), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 31085), Tuple.Create("\"", 31118)
+, Tuple.Create(Tuple.Create("", 31091), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe.min.js")
+, 31091), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 31181), Tuple.Create("\"", 31225)
-, Tuple.Create(Tuple.Create("", 31187), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe-ui-default.min.js")
-, 31187), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 31142), Tuple.Create("\"", 31186)
+, Tuple.Create(Tuple.Create("", 31148), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe-ui-default.min.js")
+, 31148), false)
 );
 
 WriteLiteral("></script>\r\n\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollT" +
@@ -2389,14 +2381,14 @@ WriteLiteral("></script>\r\n\r\n    <script>\r\n        var tempSentMessageId = 
 "-circle\">");
 
             
-            #line 573 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 572 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 573 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 572 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                             Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -2428,7 +2420,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 "uiry/");
 
             
-            #line 608 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 607 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -2437,7 +2429,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 WriteLiteral("/chat/");
 
             
-            #line 608 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 607 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -2464,7 +2456,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 626 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 625 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -2473,7 +2465,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 626 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 625 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
