@@ -1,5 +1,6 @@
 ﻿@using Realtair.Framework.Enquiries.Entities
 @using Realtair.Framework.Core.Web.Utilities
+@using Realtair.Framework.Core.Entities.Display
 @model Realtair.Framework.Core.Interfaces.IDisplayable
 
 <body class="page-header-hero">
@@ -80,29 +81,13 @@
     {
         <main role="main" class="in-header">
             <div class="container">
-                <div class="panel panel-default">
-                    <table class="table key-value table-striped">
-                        <tbody>
-                            @foreach (var describable in Model.Details(Html.LoggedInUser()))
-                            {
-                                <tr>
-                                    <th class="col-sm-4">@describable.Key</th>
-                                    <td data-key="@describable.Key">
-                                        @Render(describable.Value)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-                @foreach (var section in Model.Sections(Html.LoggedInUser()))
+                @foreach (var detailWidget in Model.Sections(Html.LoggedInUser()).Where(w => w is DetailWidget))
                 {
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h2>@(section.Name)</h2></div>
+                        <div class="panel-heading"><h2>@((detailWidget as DetailWidget).Name)</h2></div>
                         <table class="table key-value table-striped">
                             <tbody>
-                                @foreach (var describable in section.Details)
+                                @foreach (var describable in (detailWidget as DetailWidget).Details)
                                 {
                                     <tr>
                                         <th class="col-sm-4">@describable.Key</th>
@@ -120,11 +105,11 @@
                     <div class="col-sm-4">
                         <div class="panel panel-default panel-tab hidden-xs">
                             <ul class="nav nav-pills nav-stacked">
-                                @if (Model.Lists(Html.LoggedInUser()) != null)
+                                @if (Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget) != null)
                                 {
-                                    for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
+                                    for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
                                     {
-                                        var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
+                                        var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
                                         <li class="@(listNo == 0 ? "active" : "")">
                                             <a data-toggle="tab" href="#tab-@listNo">
                                                 @list.Name
@@ -138,9 +123,9 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="tab-content tab-content-display">
-                            @for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
+                            @for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
                             {
-                                var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
+                                var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
 
                                 <div id="tab-@listNo" class="tab-pane fade in @(listNo == 0 ? "active" : "")">
                                     <div class="panel panel-default">
