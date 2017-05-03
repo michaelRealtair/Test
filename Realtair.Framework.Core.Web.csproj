@@ -131,6 +131,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_ColourPickerField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ColourPickerField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_DateTime_Field.generated.cs">
       <DependentUpon>_DateTime_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -350,6 +355,10 @@
     <None Include="Views\Actions\EmptyAction.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EmptyAction.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\_ColourPickerField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ColourPickerField.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml">
       <Generator>RazorGenerator</Generator>
