@@ -18,7 +18,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             public Enquiry Workflow { get; set; }
             public Conversation Conversation { get; set; }
-            public List<User> Participants { get; set; }
+            public List<BaseUser> Participants { get; set; }
             public List<Conversation> Conversations { get; set; }
             public List<Conversation> ExternalConversations { get; set; }
             public List<Attachment> Attachments { get; set; } = new List<Attachment>();

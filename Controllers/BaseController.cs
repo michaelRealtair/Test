@@ -11,7 +11,7 @@ namespace Realtair.Framework.Core.Web.Controllers
     public class BaseController : System.Web.Mvc.Controller
     {
         //private DbContext _Database;
-        private User _User;
+        private BaseUser _User;
 
         public DbContext DbContext
         {
@@ -23,14 +23,14 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         protected Utilities.Authentication Auth => new Utilities.Authentication(Response, Request);
 
-        protected new User User
+        protected new BaseUser User
         {
             get
             {
                 if (Auth.IsLoggedIn && (_User == null || _User.RoleType == UserRoleType.LoggedOut))
-                    _User = DbContext.Set<User>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
+                    _User = DbContext.Set<BaseUser>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
                 else if (_User == null)
-                    _User = DbContext.Set<User>().First(u => u.RoleType == UserRoleType.LoggedOut);
+                    _User = DbContext.Set<BaseUser>().First(u => u.RoleType == UserRoleType.LoggedOut);
 
                 return _User;
             }

@@ -14,7 +14,7 @@ namespace ASP
 {
     public static class MvcExtensions
     {
-        public static User LoggedInUser(this HtmlHelper helper)
+        public static BaseUser LoggedInUser(this HtmlHelper helper)
         {
             var session = (LoginSession)helper.ViewBag.LoginSession;
             if (session == null)
@@ -53,7 +53,7 @@ namespace ASP
             public bool UseHttpPost { get; set; } = false;
         }
         
-        public static IEnumerable<MenuItem> ConciergeActions(this User user)
+        public static IEnumerable<MenuItem> ConciergeActions(this BaseUser user)
         {
             yield break;
         }
