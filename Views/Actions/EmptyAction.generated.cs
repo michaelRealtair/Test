@@ -39,25 +39,20 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<body");
+            
+            #line 2 "..\..\Views\Actions\EmptyAction.cshtml"
+Write(Html.Partial("Menu"));
 
-WriteLiteral(" id=\"page-confirmation\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral(" class=\"animate-in\"");
+WriteLiteral(" id=\"page-wrapper\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"loading\"");
-
-WriteLiteral(" style=\"display: none;\"");
-
-WriteLiteral("><span");
-
-WriteLiteral(" class=\"message\"");
-
-WriteLiteral(">Loading...</span></div>\r\n    <div");
-
-WriteLiteral(" class=\"container text-center\"");
+WriteLiteral(" class=\"panel panel-default container\"");
 
 WriteLiteral(">\r\n        <div");
 
@@ -79,7 +74,7 @@ WriteLiteral(" class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-
 WriteLiteral(">\r\n                        <h1>");
 
             
-            #line 9 "..\..\Views\Actions\EmptyAction.cshtml"
+            #line 10 "..\..\Views\Actions\EmptyAction.cshtml"
                        Write(Model.Action.Description(Html.LoggedInUser()));
 
             
@@ -110,7 +105,7 @@ WriteLiteral(" id=\"main-form\"");
 
 WriteLiteral(" method=\"POST\"");
 
-WriteLiteral("></form>\r\n</body>");
+WriteLiteral("></form>\r\n</div>");
 
         }
     }

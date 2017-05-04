@@ -39,6 +39,10 @@
         @Html.Partial("Menu")
 
         <div id="page-wrapper">
+            <div class="bg-title">
+                <h4 class="page-title">@Model.Action.Description(Html.LoggedInUser())</h4>
+            </div>
+
             <div class="panel panel-default container">
                 <form class="autoform form-horizontal" id="main-form" method="post">
                     <div class="panel-body">
@@ -52,7 +56,6 @@
                                 }
                             </div>
                         }
-
 
                         @foreach (var field in shown)
                         {
@@ -206,7 +209,7 @@
                 });
 
                 if (bValid) {
-                    $('.loading').css('display', 'block');
+                    $('.preloader').css('display', 'block');
                     $('#main-form').submit.disabled = true;
                     $('#main-form').submit();
                 }
