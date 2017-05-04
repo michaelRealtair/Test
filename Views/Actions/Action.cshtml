@@ -39,27 +39,23 @@
         @Html.Partial("Menu")
 
         <div id="page-wrapper">
-            <div class="bg-title">
-                <h4 class="page-title">@Model.Action.Description(Html.LoggedInUser())</h4>
-            </div>
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">@Model.Action.Description(Html.LoggedInUser()).ToUpper()</div>
+                    <form class="autoform form-horizontal" id="main-form" method="post">
+                        <div class="panel-body">
+                            @if (Model.Action.HasValidated && !Model.Action.IsValid)
+                            {
+                                <div class="col-md-12">
+                                    @foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
+                                    {
+                                        <p class="brand-danger">@error.ErrorMessage</p>
+                                    }
+                                </div>
+                            }
 
-            <div class="panel panel-default container">
-                <form class="autoform form-horizontal" id="main-form" method="post">
-                    <div class="panel-body">
-
-                        @if (Model.Action.HasValidated && !Model.Action.IsValid)
-                        {
-                            <div class="col-md-12">
-                                @foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
-                                {
-                                    <p class="brand-danger">@error.ErrorMessage</p>
-                                }
-                            </div>
-                        }
-
-                        @foreach (var field in shown)
-                        {
-                            <div class="col-md-12">
+                            @foreach (var field in shown)
+                            {
                                 @{
                                     var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
                                     var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
@@ -77,72 +73,8 @@
                                         <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
                                     }
                                 }
-                            </div>
                                     }
 
-                        @if (hidden != null)
-                        {
-                            foreach (var field in hidden)
-                            {
-                                if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
-                                {
-                                    <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
-                                }
-                                else if (field.Value is IList<Attachment>)
-                                {
-                                    <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
-                                }
-                                else if (field.Value is ICustomViewModel)
-                                {
-                                    <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
-                                }
-                                else if (field.Value is IEnumerable<ICustomViewModel>)
-                                {
-                                    if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
-                                    {
-                                        <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
-                                    }
-                                }
-                                else if (field.Value is Entity)
-                                {
-                                    <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
-                                }
-                                else
-                                {
-                                    <input type="hidden" name="@field.UniqueName" value="@field.Value" />
-                                }
-                            }
-
-                            <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
-                            <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
-                        }
-
-                        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-                    </div>
-                </form>
-
-                @if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
-                {
-                    <div class="panel-footer">
-                        @if ((bool)TempData["ShowSubmit"])
-                        {
-                            <button data-next class="btn btn-primary pull-right" id="main-form-submit">@Model.Action.Description(Html.LoggedInUser())</button>
-                        }
-
-                        @if (Model.SubmittedPages.Count != 0)
-                        {
-                            <button class="btn btn-default pull-right" onclick='$("#back-form").submit();'>Back</button>
-                        }
-
-                        <div class="clearfix"></div>
-                    </div>
-                }
-
-                @if (Model.IsMultiPage)
-                {
-                    if (Model.SubmittedPages.Count != 0)
-                    {
-                        <form method="post" id="back-form">
                             @if (hidden != null)
                             {
                                 foreach (var field in hidden)
@@ -151,12 +83,9 @@
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
                                     }
-                                    else if (field.Value is IEnumerable<Attachment>)
+                                    else if (field.Value is IList<Attachment>)
                                     {
-                                        foreach (var file in (IEnumerable<Attachment>)field.Value)
-                                        {
-                                            <input type="hidden" name="@field.UniqueName" value="@(file.Id)" />
-                                        }
+                                        <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
                                     }
                                     else if (field.Value is ICustomViewModel)
                                     {
@@ -178,13 +107,81 @@
                                         <input type="hidden" name="@field.UniqueName" value="@field.Value" />
                                     }
                                 }
+
                                 <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
                                 <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
-                                <input type="hidden" name="back" value="true" />
                             }
-                        </form>
+
+                            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+                        </div>
+                    </form>
+
+                    @if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
+                {
+                        <div class="panel-footer">
+                            @if ((bool)TempData["ShowSubmit"])
+                            {
+                                <button data-next class="btn btn-primary pull-right" id="main-form-submit">@Model.Action.Description(Html.LoggedInUser())</button>
+                            }
+
+                            @if (Model.SubmittedPages.Count != 0)
+                            {
+                                <button class="btn btn-default pull-right" onclick='$("#back-form").submit();'>Back</button>
+                            }
+
+                            <div class="clearfix"></div>
+                        </div>
                     }
-                }
+
+                    @if (Model.IsMultiPage)
+                {
+                    if (Model.SubmittedPages.Count != 0)
+                    {
+                            <form method="post" id="back-form">
+                                @if (hidden != null)
+                                {
+                                    foreach (var field in hidden)
+                                    {
+                                        if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
+                                        }
+                                        else if (field.Value is IEnumerable<Attachment>)
+                                        {
+                                            foreach (var file in (IEnumerable<Attachment>)field.Value)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@(file.Id)" />
+                                            }
+                                        }
+                                        else if (field.Value is ICustomViewModel)
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
+                                        }
+                                        else if (field.Value is IEnumerable<ICustomViewModel>)
+                                        {
+                                            if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
+                                            }
+                                        }
+                                        else if (field.Value is Entity)
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                        }
+                                        else
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="@field.Value" />
+                                        }
+                                    }
+                                    <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
+                                    <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                    <input type="hidden" name="back" value="true" />
+                                }
+                            </form>
+                        }
+                    }
+                </div>
+
             </div>
         </div>
         <script>
