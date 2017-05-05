@@ -1,5 +1,6 @@
 ﻿@using Realtair.Framework.Enquiries.Entities
 @using Realtair.Framework.Core.Web.Utilities
+@using Realtair.Framework.Core.Entities.Display
 @model Realtair.Framework.Core.Interfaces.IDisplayable
 
 <body class="page-header-hero">
@@ -11,7 +12,7 @@
             <div class="overlay-gradient-linear"></div>
             <div class="bg-default" style="background-image: url(/content/img/background-desk.jpg)"></div>
         </div>
-        @Html.Partial("BackMenu")
+        @Html.Partial("Menu")
         <div class="header-content">
 
             <div class="title-hero">
@@ -80,100 +81,75 @@
     {
         <main role="main" class="in-header">
             <div class="container">
-                <div class="panel panel-default">
-                    <table class="table key-value table-striped">
-                        <tbody>
-                            @foreach (var describable in Model.Details(Html.LoggedInUser()))
-                            {
-                                <tr>
-                                    <th class="col-sm-4">@describable.Key</th>
-                                    <td data-key="@describable.Key">
-                                        @Render(describable.Value)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-                @foreach (var section in Model.Sections(Html.LoggedInUser()))
+                @foreach (var detailWidget in Model.Sections(Html.LoggedInUser()).Where(w => w is DetailWidget))
                 {
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h2>@(section.Name)</h2></div>
-                        <table class="table key-value table-striped">
-                            <tbody>
-                                @foreach (var describable in section.Details)
-                                {
-                                    <tr>
-                                        <th class="col-sm-4">@describable.Key</th>
-                                        <td data-key="@describable.Key">
-                                            @Render(describable.Value)
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><h2>@((detailWidget as DetailWidget).Name)</h2></div>
+                        <div class="panel-wrapper collapse in">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+                                    @foreach (var describable in (detailWidget as DetailWidget).Details)
+                                    {
+                                        <tr>
+                                            <th class="col-sm-4">@describable.Key</th>
+                                            <td data-key="@describable.Key">
+                                                @Render(describable.Value)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 }
 
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="panel panel-default panel-tab hidden-xs">
-                            <ul class="nav nav-pills nav-stacked">
-                                @if (Model.Lists(Html.LoggedInUser()) != null)
-                                {
-                                    for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
+                <div class="panel panel-default">
+                    <div class="panel-wrapper collapse in">
+                        <div class="vtabs customvtab full-width">
+                            <div class="col-sm-4">
+                                <ul class="nav tabs-vertical" style="width: 0;">
+                                    @if (Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget) != null)
                                     {
-                                        var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
-                                        <li class="@(listNo == 0 ? "active" : "")">
-                                            <a data-toggle="tab" href="#tab-@listNo">
-                                                @list.Name
-                                            </a>
-                                        </li>
+                                        for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
+                                        {
+                                            var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
+                                            <li class="tab @(listNo == 0 ? "active" : "")">
+                                                <a data-toggle="tab" href="#tab-@listNo">
+                                                    @list.Name
+                                                </a>
+                                            </li>
+                                        }
                                     }
-                                }
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="tab-content tab-content-display">
-                            @for (var listNo = 0; listNo < Model.Lists(Html.LoggedInUser()).Count(); listNo++)
-                            {
-                                var list = Model.Lists(Html.LoggedInUser()).ElementAt(listNo);
+                                </ul>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="tab-content full-width" style="padding: 0;">
+                                    @for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
+                                    {
+                                        var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
 
-                                <div id="tab-@listNo" class="tab-pane fade in @(listNo == 0 ? "active" : "")">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h2>@list.Name</h2>
-                                        </div>
-                                        <ul class="list-group">
-                                            @if (list.Items == null || list.Items.Count() == 0)
-                                            {
-                                                <li>
-                                                    <div class="panel-heading">
-                                                        No @list.Name.ToLower() to show
-                                                    </div>
-                                                </li>
-                                            }
-                                            else {
-                                                foreach (var item in list.Items)
-                                                {
+                                        <div id="tab-@listNo" class="tab-pane fade in @(listNo == 0 ? "active" : "")">                                            
+                                            <ul class="list-group">                                                
+                                                @if (list.Items == null || list.Items.Count() == 0)
+                                                {                                                    
                                                     <li class="list-group-item">
-                                                        <a href="@item.GetUrl(Html.LoggedInUser(), Url)" @Html.Raw(item is Attachment ? "target=\"_blank\"" : "") class="panel-heading">
-                                                            <span class="icon @Html.IconForDescribable(item) pull-left icon-hero hidden-xs"></span>
-                                                            <div class="inner-content">
-                                                                <strong class="ellipsis">@item.Description(Html.LoggedInUser())</strong>
-                                                                <em class="ellipsis">@item.ActualType().Name.DisplaySafeName()</em>
-                                                            </div>
-                                                        </a>
+                                                        <h3><a href="javacript:void(0)">No @list.Name.ToLower() to show</a></h3>                                                                                                            
                                                     </li>
                                                 }
-                                            }
-                                        </ul>
-                                    </div>
+                                                else {
+                                                    foreach (var item in list.Items)
+                                                    {
+                                                        <li class="list-group-item">
+                                                            <h3><a href="@item.GetUrl(Html.LoggedInUser(), Url)" @Html.Raw(item is Attachment ? "target=\"_blank\"" : "")>@item.Description(Html.LoggedInUser())</a></h3>
+                                                            <p>@item.ActualType().Name.DisplaySafeName()</p>
+                                                        </li>                                                       
+                                                    }
+                                                }
+                                            </ul>                                           
+                                        </div>
+                                    }
                                 </div>
-                            }
+                            </div>                            
                         </div>
                     </div>
                 </div>
