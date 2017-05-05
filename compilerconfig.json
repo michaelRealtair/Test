@@ -1,0 +1,82 @@
+﻿[
+  {
+    "outputFile": "Content/css/colors/blue-dark.css",
+    "inputFile": "Content/less/colors/blue-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/blue.css",
+    "inputFile": "Content/less/colors/blue.less"
+  },
+  {
+    "outputFile": "Content/css/colors/default-dark.css",
+    "inputFile": "Content/less/colors/default-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/default.css",
+    "inputFile": "Content/less/colors/default.less"
+  },
+  {
+    "outputFile": "Content/css/colors/gray-dark.css",
+    "inputFile": "Content/less/colors/gray-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/gray.css",
+    "inputFile": "Content/less/colors/gray.less"
+  },
+  {
+    "outputFile": "Content/css/colors/green-dark.css",
+    "inputFile": "Content/less/colors/green-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/green.css",
+    "inputFile": "Content/less/colors/green.less"
+  },
+  {
+    "outputFile": "Content/css/colors/megna-dark.css",
+    "inputFile": "Content/less/colors/megna-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/megna.css",
+    "inputFile": "Content/less/colors/megna.less"
+  },
+  {
+    "outputFile": "Content/css/colors/purple-dark.css",
+    "inputFile": "Content/less/colors/purple-dark.less"
+  },
+  {
+    "outputFile": "Content/css/colors/purple.css",
+    "inputFile": "Content/less/colors/purple.less"
+  },
+  {
+    "outputFile": "Content/css/colors/red-dark.css",
+    "inputFile": "Content/less/colors/red-dark.less"
+  },
+  {
+    "outputFile": "Content/css/common.css",
+    "inputFile": "Content/less/common.less"
+  },
+  {
+    "outputFile": "Content/css/pages.css",
+    "inputFile": "Content/less/pages.less"
+  },
+  {
+    "outputFile": "Content/css/responsive.css",
+    "inputFile": "Content/less/responsive.less"
+  },
+  {
+    "outputFile": "Content/css/sidebar-nav.css",
+    "inputFile": "Content/less/sidebar-nav.less"
+  },
+  {
+    "outputFile": "Content/css/style.css",
+    "inputFile": "Content/less/style.less"
+  },
+  {
+    "outputFile": "Content/css/variables.css",
+    "inputFile": "Content/less/variables.less"
+  },
+  {
+    "outputFile": "Content/css/widgets.css",
+    "inputFile": "Content/less/widgets.less"
+  }
+]
