@@ -30,14 +30,14 @@ namespace Realtair.Framework.Core.Web.Utilities
             });
         }
 
-        public static string GetUrl(this object Object, BaseUser user, UrlHelper url)
+        public static string GetUrl(this object Object, IBaseUser user, UrlHelper url)
         {
             if (Object is MessageNotification)
                 return GetUrl((Object as MessageNotification).Message.Conversation, user, url);
             if (Object is EventNotification)
                 return GetUrl((Object as EventNotification).Enquiry, user, url);
-            if (Object is Enquiry)
-                return GetUrl(Object as Enquiry, url);
+            if (Object is BaseEnquiry)
+                return GetUrl(Object as BaseEnquiry, url);
             if (Object is Conversation)
                 return GetUrl(Object as Conversation, (Object as Conversation).Enquiry, url);
             if (Object is IExtendedEnquiry)
@@ -56,7 +56,7 @@ namespace Realtair.Framework.Core.Web.Utilities
                 return GetDetailsUrl(Object, user, url);
         }
 
-        public static string GetUrl(this Action action, UrlHelper url, string redirectUrl = null, BaseUser u = null)
+        public static string GetUrl(this Action action, UrlHelper url, string redirectUrl = null, IBaseUser u = null)
         {
             if (action.CalledBy == null || action.CalledBy.Id == 0)
                 return url.Action("NewWorkflowAction", "Actions", new
@@ -86,10 +86,10 @@ namespace Realtair.Framework.Core.Web.Utilities
             }
         }
 
-        public static string GetUrl(this TimelineEvent timelineEvent, BaseUser user, UrlHelper url)
+        public static string GetUrl(this TimelineEvent timelineEvent, IBaseUser user, UrlHelper url)
         {
-            var enquiry = timelineEvent.Workflow is Enquiry ?
-                timelineEvent.Workflow as Enquiry : timelineEvent.Workflow.ParentEnquiry;
+            var enquiry = timelineEvent.Workflow is BaseEnquiry ?
+                timelineEvent.Workflow as BaseEnquiry : timelineEvent.Workflow.ParentEnquiry;
 
             var conversation = enquiry.Conversations.FirstOrDefault(
                 c => c.Users.Contains(user) && c.Users.Contains(timelineEvent.UserResponsible));
@@ -100,7 +100,7 @@ namespace Realtair.Framework.Core.Web.Utilities
                 return enquiry.GetUrl(url);
         }
 
-        public static string GetUrl(this Notification timelineEvent, Enquiry forEnquiry, BaseUser user, UrlHelper url)
+        public static string GetUrl(this Notification timelineEvent, BaseEnquiry forEnquiry, IBaseUser user, UrlHelper url)
         {
             if (timelineEvent is MessageNotification)
                 return (timelineEvent as MessageNotification).Message.Conversation.GetUrl(forEnquiry, url);
@@ -108,7 +108,7 @@ namespace Realtair.Framework.Core.Web.Utilities
                 return forEnquiry.GetUrl(url);
         }
 
-        public static string GetUrl(this Conversation conversation, Enquiry forEnquiry, UrlHelper url)
+        public static string GetUrl(this Conversation conversation, BaseEnquiry forEnquiry, UrlHelper url)
         {
             return url.Action("Conversation", "Enquiry", new
             {
@@ -123,7 +123,7 @@ namespace Realtair.Framework.Core.Web.Utilities
             return $"/report/generate/{report.UrlSafeName()}";
         }
 
-        public static string GetDetailsUrl(this object entity, Framework.Core.Entities.BaseUser user, UrlHelper url)
+        public static string GetDetailsUrl(this object entity, Framework.Core.Entities.IBaseUser user, UrlHelper url)
         {
             if (entity is IProtectedAccess)
                 if (!(entity as IProtectedAccess).AccessibleTo(user, null)) return null;
@@ -226,9 +226,9 @@ namespace Realtair.Framework.Core.Web.Utilities
                 (match) => match.Value.Replace("-", "").ToUpper());
         }
         
-        public static Enquiry GetEnquiry(DbContext db, int id)
+        public static BaseEnquiry GetEnquiry(DbContext db, int id)
         {
-            return db.Set<Enquiry>().First(w => w.Id == id);
+            return db.Set<BaseEnquiry>().First(w => w.Id == id);
         }
 
         //FILE ASSET EXTENSIONS

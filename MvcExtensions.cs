@@ -14,7 +14,7 @@ namespace ASP
 {
     public static class MvcExtensions
     {
-        public static BaseUser LoggedInUser(this HtmlHelper helper)
+        public static IBaseUser LoggedInUser(this HtmlHelper helper)
         {
             var session = (LoginSession)helper.ViewBag.LoginSession;
             if (session == null)

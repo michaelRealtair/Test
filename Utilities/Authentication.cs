@@ -25,7 +25,7 @@ namespace Realtair.Framework.Core.Web.Utilities
         public int LoggedInUserId => GetUserID();
 
         public void LogOut() => Response.Cookies.Set(new HttpCookie(CookieName, ""));
-        public void LogIn(Framework.Core.Entities.BaseUser user)
+        public void LogIn(Framework.Core.Entities.IBaseUser user)
         {
             //create the authentication ticket
             var authTicket = new FormsAuthenticationTicket(
