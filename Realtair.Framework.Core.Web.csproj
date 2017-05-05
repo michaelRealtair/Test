@@ -72,10 +72,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
@@ -106,8 +102,8 @@
     <Compile Include="MvcExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton.cs" />
-    <Compile Include="Utilities\Authentication.cs" />
     <Compile Include="App_Start\ConfigureRoutes.cs" />
+    <Compile Include="Utilities\Authentication.cs" />
     <Compile Include="Utilities\CoreExtensions.cs" />
     <Compile Include="Views\Actions\Action.generated.cs">
       <DependentUpon>Action.cshtml</DependentUpon>
@@ -118,6 +114,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmptyAction.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enquiry\Enquiry.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enquiry.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Fields\_BulkFileUploadField.generated.cs">
       <DependentUpon>_BulkFileUploadField.cshtml</DependentUpon>
@@ -198,11 +199,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Details.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Enquiry\Enquiry.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Enquiry.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Enquiry\Timeline.generated.cs">
       <AutoGen>True</AutoGen>
@@ -307,7 +303,6 @@
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\css\variables.css" />
     <Content Include="Content\css\variables.min.css" />
-    <Content Include="Content\index.html" />
     <Content Include="Content\js\cbpFWTabs.js" />
     <Content Include="Content\js\chat.js" />
     <Content Include="Content\js\custom.js" />
@@ -351,7 +346,6 @@
     <Content Include="Content\less\icons\themify-icons\ie7\ie7.css" />
     <Content Include="Content\less\icons\themify-icons\ie7\ie7.js" />
     <Content Include="Content\less\icons\themify-icons\themify-icons.css" />
-    <Content Include="Content\less\icons\themify-icons\themify-icons.min.css" />
     <Content Include="Content\less\icons\weather-icons\css\weather-icons-core.css" />
     <Content Include="Content\less\icons\weather-icons\css\weather-icons-variables.css" />
     <Content Include="Content\less\icons\weather-icons\css\weather-icons-wind.css" />
@@ -566,6 +560,7 @@
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-de-DE.js" />
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-el-GR.js" />
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-en-US.js" />
+    <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-en-US.js.template" />
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-es-AR.js" />
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-es-CR.js" />
     <Content Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-es-MX.js" />
@@ -1149,6 +1144,8 @@
     <Content Include="Content\plugins\bower_components\jquery-sparkline\jquery.sparkline.min.js" />
     <Content Include="Content\plugins\bower_components\jquery-steps-master\.gitattributes" />
     <Content Include="Content\plugins\bower_components\jquery-steps-master\.gitignore" />
+    <Content Include="Content\plugins\bower_components\jquery-steps-master\build\jquery.steps.js" />
+    <Content Include="Content\plugins\bower_components\jquery-steps-master\build\jquery.steps.min.js" />
     <Content Include="Content\plugins\bower_components\jquery-steps-master\demo\css\jquery.steps.css" />
     <Content Include="Content\plugins\bower_components\jquery-steps-master\demo\css\main.css" />
     <Content Include="Content\plugins\bower_components\jquery-steps-master\demo\css\normalize.css" />
@@ -1631,6 +1628,32 @@
     <Content Include="Content\plugins\bower_components\multiselect\js\jquery.multi-select.js" />
     <Content Include="Content\plugins\bower_components\nestable\jquery.nestable.js" />
     <Content Include="Content\plugins\bower_components\nestable\nestable.css" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\Gruntfile.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\affix.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\alert.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\button.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\carousel.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\collapse.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\dropdown.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\modal.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\popover.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\scrollspy.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\tab.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\tooltip.js" />
+    <Content Include="Content\plugins\bower_components\node_modules\bootstrap\js\transition.js" />
     <Content Include="Content\plugins\bower_components\owl.carousel\owl.carousel.js" />
     <Content Include="Content\plugins\bower_components\owl.carousel\owl.carousel.min.css" />
     <Content Include="Content\plugins\bower_components\owl.carousel\owl.carousel.min.js" />
@@ -2253,6 +2276,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="compilerconfig.json" />
     <None Include="Content\bootstrap\CHANGELOG.md" />
     <None Include="Content\bootstrap\dist\css\bootstrap-theme.css.map" />
     <None Include="Content\bootstrap\dist\css\bootstrap-theme.min.css.map" />
@@ -2635,7 +2659,6 @@
     <None Include="Content\plugins\bower_components\bootstrap-table\src\extensions\reorder-rows\README.md" />
     <None Include="Content\plugins\bower_components\bootstrap-table\src\extensions\resizable\README.md" />
     <None Include="Content\plugins\bower_components\bootstrap-table\src\extensions\toolbar\README.md" />
-    <None Include="Content\plugins\bower_components\bootstrap-table\src\locale\bootstrap-table-en-US.js.template" />
     <None Include="Content\plugins\bower_components\bootstrap-table\src\locale\README.md" />
     <None Include="Content\plugins\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput-angular.min.js.map" />
     <None Include="Content\plugins\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput.less" />
@@ -2846,6 +2869,8 @@
     <None Include="Content\plugins\bower_components\jquery-asColorPicker-master\src\.jshintrc" />
     <None Include="Content\plugins\bower_components\jquery-steps-master\.travis.yml" />
     <None Include="Content\plugins\bower_components\jquery-steps-master\bower.json" />
+    <None Include="Content\plugins\bower_components\jquery-steps-master\build\jquery.steps-1.1.0.zip" />
+    <None Include="Content\plugins\bower_components\jquery-steps-master\build\jQuery.Steps.1.1.0.nupkg" />
     <None Include="Content\plugins\bower_components\jquery-steps-master\CHANGELOG.md" />
     <None Include="Content\plugins\bower_components\jquery-steps-master\nuget\jQuery.Steps.nuspec" />
     <None Include="Content\plugins\bower_components\jquery-steps-master\package.json" />
@@ -2921,6 +2946,96 @@
     <None Include="Content\plugins\bower_components\morrisjs\spec\lib\parse_time_spec.coffee" />
     <None Include="Content\plugins\bower_components\morrisjs\spec\support\placeholder.coffee" />
     <None Include="Content\plugins\bower_components\morrisjs\spec\viz\run.sh" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\CHANGELOG.md" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\.jshintrc" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\configBridge.json" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\sauce_browsers.yml" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\alerts.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\badges.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\bootstrap.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\breadcrumbs.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\button-groups.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\buttons.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\carousel.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\close.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\code.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\component-animations.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\dropdowns.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\forms.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\glyphicons.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\grid.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\input-groups.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\jumbotron.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\labels.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\list-group.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\media.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\alerts.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\background-variant.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\border-radius.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\buttons.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\center-block.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\clearfix.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\forms.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\gradients.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\grid-framework.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\grid.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\hide-text.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\image.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\labels.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\list-group.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\nav-divider.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\opacity.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\pagination.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\panels.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\progress-bar.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\reset-filter.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\reset-text.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\resize.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\responsive-visibility.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\size.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\tab-focus.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\table-row.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\text-emphasis.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\text-overflow.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\modals.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\navbar.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\navs.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\normalize.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\pager.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\pagination.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\panels.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\popovers.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\print.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\progress-bars.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\responsive-embed.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\responsive-utilities.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\scaffolding.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\tables.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\theme.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\thumbnails.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\tooltip.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\type.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\utilities.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\variables.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\less\wells.less" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\LICENSE" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\package.json" />
+    <None Include="Content\plugins\bower_components\node_modules\bootstrap\README.md" />
     <None Include="Content\plugins\bower_components\owl.carousel\owl.carousel - Shortcut.lnk" />
     <None Include="Content\plugins\bower_components\raphael\.bower.json" />
     <None Include="Content\plugins\bower_components\raphael\bower.json" />
@@ -3105,7 +3220,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Realtair.Framework.Core\Realtair.Framework.Core.csproj">
-      <Project>{fcba7ca6-d63c-4b39-a800-1e48f239ce95}</Project>
+      <Project>{fbebc04f-985d-47c9-af19-d2fd50850942}</Project>
       <Name>Realtair.Framework.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Realtair.Framework.Enquiries\Realtair.Framework.Enquiries.csproj">
@@ -3115,14 +3230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\plugins\bower_components\etc\" />
-    <Folder Include="Content\plugins\bower_components\jquery-steps-master\build\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\dist\css\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\dist\fonts\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\dist\js\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\fonts\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\grunt\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\js\" />
-    <Folder Include="Content\plugins\bower_components\node_modules\bootstrap\less\mixins\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

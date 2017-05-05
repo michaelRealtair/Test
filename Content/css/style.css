@@ -16846,3 +16846,14 @@ ul.pro-amenities li span i {
 .white-box .dropdown a {
   color: #313131;
 }
+@media (max-width: 768px) {
+  .chat-main-box {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+    margin-bottom: -60px;
+  }
+  .chat-list {
+    min-height: calc(100vh - 150px) !important;
+  }
+}
