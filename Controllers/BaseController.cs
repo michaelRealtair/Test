@@ -8,10 +8,10 @@ using Realtair.Framework.Core.Data;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
-    public class BaseController : System.Web.Mvc.Controller
+    public abstract class BaseController : System.Web.Mvc.Controller
     {
         //private DbContext _Database;
-        private BaseUser _User;
+        private IBaseUser _User;
 
         public DbContext DbContext
         {
@@ -23,7 +23,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         protected Utilities.Authentication Auth => new Utilities.Authentication(Response, Request);
 
-        protected new BaseUser User
+        protected new IBaseUser User
         {
             get
             {
