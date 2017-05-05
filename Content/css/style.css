@@ -16829,6 +16829,9 @@ ul.pro-amenities li span i {
     width: 1170px;
   }
 }
+#page-wrapper {
+  padding-top: 15px;
+}
 @media (min-width: 768px) {
   #page-wrapper {
     padding-top: 75px;
@@ -16836,4 +16839,10 @@ ul.pro-amenities li span i {
 }
 .top-left-part {
   border-right: none;
+}
+.two-part li {
+  width: auto;
+}
+.white-box .dropdown a {
+  color: #313131;
 }

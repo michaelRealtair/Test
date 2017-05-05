@@ -19,7 +19,7 @@
 }
 /*Just change your choise color here its theme Colors*/
 body {
-  background: #616161;
+  background: #ffffff;
 }
 /*Top Header Part*/
 .logo i {
@@ -56,21 +56,21 @@ body {
 }
 /*Sidebar*/
 .sidebar {
-  background: #616161;
+  background: #ffffff;
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
 }
 .sidebar .label-custom {
   background: #fff;
 }
 .sidebar .sidebar-head {
-  background: #616161;
+  background: #ffffff;
 }
 #side-menu li a {
-  color: #fff;
+  color: #616161;
 }
 #side-menu li a {
-  color: #fff;
-  border-left: 0px solid #616161;
+  color: #616161;
+  border-left: 0px solid #ffffff;
 }
 #side-menu > li > a:hover,
 #side-menu > li > a:focus {
@@ -89,7 +89,7 @@ body {
   font-weight: 500;
 }
 .user-profile .user-pro-body .u-dropdown {
-  color: #fff;
+  color: #616161;
 }
 /*themecolor*/
 .bg-theme {
@@ -100,12 +100,19 @@ body {
 }
 #page-wrapper {
   background: #f2f2f3;
+}
+#page-wrapper.with-background {
   background-image: url(https://theagency.com.au/img/header_preload_bg.jpg);
   background-size: cover;
   background-position: top right;
-  /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);*/
+}
+.new-login-register .lg-info-panel {
+  background-image: url(https://theagency.com.au/img/header_preload_bg.jpg);
 }
 /*Button*/
+.text-custom {
+  color: #ff4637;
+}
 .btn-custom {
   background: #ff4637;
   border: 1px solid #ff4637;
