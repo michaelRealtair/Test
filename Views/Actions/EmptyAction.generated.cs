@@ -50,6 +50,8 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" id=\"page-wrapper\"");
 
+WriteLiteral(" class=\"with-background\"");
+
 WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"panel panel-default container\"");
