@@ -225,7 +225,12 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
             else if (RedirectLocation is RedirectToEntity && (RedirectLocation as RedirectToEntity).Entity.Id != 0)
             {
-                return base.Redirect((RedirectLocation as RedirectToEntity).Entity.GetUrl((Framework.Core.Entities.User)User, Url));
+                //return base.Redirect((RedirectLocation as RedirectToEntity).Entity.GetUrl((Framework.Core.Entities.User)User, Url));
+
+                var redirectLocation = (RedirectLocation as RedirectToEntity);
+                var entity = redirectLocation.Entity;
+                var url = entity.GetUrl((Framework.Core.Entities.User)User, Url);
+                return base.Redirect(url);
             }
             else if (RedirectLocation is RedirectToAction)
             {

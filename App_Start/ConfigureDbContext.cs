@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Realtair.Framework.Core.Web.Utilities.ConfigureDbContext), "Start")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.Utilities.ConfigureDbContext), "Start")]
 namespace Realtair.Framework.Core.Web.Utilities
 {
     public static class ConfigureDbContext

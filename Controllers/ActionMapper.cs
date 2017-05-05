@@ -50,7 +50,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                     return MapFileAsset(value);
             else if (field.FieldAttribute is BulkFileUploadFieldAttribute)
                 return MapUnusedExistingFileAsset(value);
-            else if (field.FieldAttribute.Provider != null)
+            else if (field.FieldAttribute.Provider != null && !field.FieldAttribute.DisableProviderReturnValue)
                 return MapProvided(action, field, type, value);
             else if (type == typeof(PhoneNumber.PhoneNumberViewModel))
                 return MapPhoneNumberViewModel(value);
