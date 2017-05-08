@@ -124,7 +124,7 @@ WriteTo(__razor_helper_writer, ((DateTime)describable).ToString("d MMM yyyy"));
 #line 249 "..\..\Views\Enquiry\Timeline.cshtml"
                                                          ;
 }
-else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable> || describable is IEnumerable<BaseEnquiry>)
+else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable> || describable is IEnumerable<Enquiry>)
 {
     var d = describable as IEnumerable<IDescribable>;
     for (int i = 0; i < d.Count(); i++)
@@ -178,7 +178,7 @@ WriteTo(__razor_helper_writer, " & ");
         }
     }
 }
-else if (describable is IDisplayable || describable is IHasDisplayable || describable is BaseEnquiry)
+else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry)
 {
 
 

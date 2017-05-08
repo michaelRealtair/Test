@@ -16,13 +16,13 @@ namespace Realtair.Framework.Core.Web.Controllers
     {
         public class EnquiryViewModel
         {
-            public BaseEnquiry Workflow { get; set; }
+            public Enquiry Workflow { get; set; }
             public Conversation Conversation { get; set; }
-            public List<IBaseUser> Participants { get; set; }
+            public List<User> Participants { get; set; }
             public List<Conversation> Conversations { get; set; }
             public List<Conversation> ExternalConversations { get; set; }
             public List<Attachment> Attachments { get; set; } = new List<Attachment>();
-            public List<BaseEnquiry> RelatedEnquiries { get; set; } = new List<BaseEnquiry>();
+            public List<Enquiry> RelatedEnquiries { get; set; } = new List<Enquiry>();
             public List<Task> RelatedTasks { get; set; } = new List<Task>();
             public IEnumerable<ITimelineItem> Timeline { get; set; }
         }

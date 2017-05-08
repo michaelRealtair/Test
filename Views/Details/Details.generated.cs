@@ -184,7 +184,7 @@ WriteTo(__razor_helper_writer, " & ");
         }
     }
 }
-else if (describable is IDisplayable || describable is IHasDisplayable || describable is BaseEnquiry || describable is IExtendedEnquiry)
+else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry || describable is IExtendedEnquiry)
 {
 
 

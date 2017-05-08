@@ -39,21 +39,21 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         public ActionResult NewWorkflowAction(string workflowName, string actionName, string page = null, string submittedpagenames = null, bool back = false)
         {
-            var action = CoreExtensions.GetAction(workflowName, DbContext, Auth, actionName, (Framework.Core.Entities.IBaseUser)User);
+            var action = CoreExtensions.GetAction(workflowName, DbContext, Auth, actionName, (Framework.Core.Entities.User)User);
 
             return RunAction(action, User, page, submittedpagenames, back);
         }
 
         public ActionResult LoadWorkflowAction(string workflowName, int id, string actionName, string page = null, string submittedpagenames = null, bool back = false)
         {
-            var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.IBaseUser)User);
+            var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.User)User);
             return RunAction(action, User, page, submittedpagenames, back);
         }
 
         public ActionResult LoadWorkflowActionAsUser(string workflowName, int id, string actionName, int asUserId, string page = null, string submittedpagenames = null, bool back = false)
         {
             if (!(User.MeetsAuthLevel(UserRoleType.Admin))) throw new AccessViolationException("Only Property Managers can run actions as another user");
-            var user = DbContext.Set<BaseUser>().Single(u => u.Id == asUserId);
+            var user = DbContext.Set<User>().Single(u => u.Id == asUserId);
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, user);
 
             return RunAction(action, user, page, submittedpagenames, back);
@@ -85,7 +85,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             return Content("");
         }
 
-        ActionResult RunAction(Action action, Framework.Core.Entities.IBaseUser userToRunAs, string currentPageName, string submittedPageNames, bool back, AuthorisedAction auth = null)
+        ActionResult RunAction(Action action, Framework.Core.Entities.User userToRunAs, string currentPageName, string submittedPageNames, bool back, AuthorisedAction auth = null)
         {
             MultiPageAction.Page givenPage = null;
 
@@ -120,7 +120,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
         }
 
-        private ActionResult HandlePostAction(Action action, Framework.Core.Entities.IBaseUser userToRunAs, bool back, MultiPageAction.Page givenPage, ActionViewModel model, AuthorisedAction auth)
+        private ActionResult HandlePostAction(Action action, Framework.Core.Entities.User userToRunAs, bool back, MultiPageAction.Page givenPage, ActionViewModel model, AuthorisedAction auth)
         {
             if (back)
             {
@@ -149,7 +149,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
         }
 
-        private MultiPageAction.Page PrepareMultipageAction(Action action, Framework.Core.Entities.IBaseUser userToRunAs, string currentPageName, string submittedPageNames, bool back, ActionViewModel model)
+        private MultiPageAction.Page PrepareMultipageAction(Action action, Framework.Core.Entities.User userToRunAs, string currentPageName, string submittedPageNames, bool back, ActionViewModel model)
         {
             var multipageAction = (MultiPageAction)action;
 
@@ -178,7 +178,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
             else
             {
-                action.Run((Framework.Core.Entities.IBaseUser)User);
+                action.Run((Framework.Core.Entities.User)User);
             }
 
             action.StoreRecord();
@@ -229,7 +229,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
                 var redirectLocation = (RedirectLocation as RedirectToEntity);
                 var entity = redirectLocation.Entity;
-                var url = entity.GetUrl((Framework.Core.Entities.IBaseUser)User, Url);
+                var url = entity.GetUrl((Framework.Core.Entities.User)User, Url);
                 return base.Redirect(url);
             }
             else if (RedirectLocation is RedirectToAction)
@@ -267,7 +267,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             else if (RedirectLocation is RedirectToActionAsUser)
             {
                 var redirect = (RedirectToActionAsUser)RedirectLocation;
-                return base.Redirect(redirect.Action.GetUrl(Url, null, (Framework.Core.Entities.IBaseUser)redirect.User));
+                return base.Redirect(redirect.Action.GetUrl(Url, null, (Framework.Core.Entities.User)redirect.User));
             }
             else if (RedirectLocation is RedirectToHomepage)
             {
@@ -330,14 +330,14 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         public ActionResult QueryProvider(string workflowName, int id, string actionName, string fieldName, string query)
         {
-            var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.IBaseUser)User);
+            var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.User)User);
 
             SetGetParams(action);
             SetPostValues(action, action.Fields);
 
             var fieldProvider = action.Fields.First(f => f.PropertyInfo.Name == fieldName).FieldAttribute.GetProvider();
 
-            return View("Fields/_ListFieldQueryResults", fieldProvider.Options(action, (Framework.Core.Entities.IBaseUser)User, query));
+            return View("Fields/_ListFieldQueryResults", fieldProvider.Options(action, (Framework.Core.Entities.User)User, query));
         }
     }
 }
