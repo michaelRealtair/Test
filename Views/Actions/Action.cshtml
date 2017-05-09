@@ -56,24 +56,24 @@
 
                             @foreach (var field in shown)
                             {
-                                @{
-                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
 
-                                    if (Html.ViewExists(fieldWithReturnType))
-                                    {
-                                        Html.RenderPartial(fieldWithReturnType, field);
-                                    }
-                                    else if (Html.ViewExists(fieldWithoutReturnType))
-                                    {
-                                        Html.RenderPartial(fieldWithoutReturnType, field);
-                                    }
-                                    else
-                                    {
-                                        <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
-                                    }
+                                var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+
+                                if (Html.ViewExists(fieldWithReturnType))
+                                {
+                                    Html.RenderPartial(fieldWithReturnType, field);
                                 }
-                                    }
+                                else if (Html.ViewExists(fieldWithoutReturnType))
+                                {
+                                    Html.RenderPartial(fieldWithoutReturnType, field);
+                                }
+                                else
+                                {
+                                    <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
+                                }
+
+                            }
 
                             @if (hidden != null)
                             {
@@ -212,5 +212,5 @@
                 }
             });
         </script>
-                                    }
+    }
 }

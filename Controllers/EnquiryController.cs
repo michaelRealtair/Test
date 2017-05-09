@@ -30,7 +30,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         //[Route("{enquiryTypeName}/{id:int}/chat")]
         public ActionResult Enquiry(string enquiryTypeName, int id, int? conversationId)
         {
-            if (User.RoleType == UserRoleType.LoggedOut)
+            if (User.RoleType == BaseRoleType.LoggedOut)
                 return Redirect("/");
 
             var model = new EnquiryViewModel();

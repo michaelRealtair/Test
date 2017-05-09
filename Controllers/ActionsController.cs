@@ -52,7 +52,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         public ActionResult LoadWorkflowActionAsUser(string workflowName, int id, string actionName, int asUserId, string page = null, string submittedpagenames = null, bool back = false)
         {
-            if (!(User.MeetsAuthLevel(UserRoleType.Admin))) throw new AccessViolationException("Only Property Managers can run actions as another user");
+            if (!(User.MeetsAuthLevel(BaseRoleType.Admin))) throw new AccessViolationException("Only Property Managers can run actions as another user");
             var user = DbContext.Set<User>().Single(u => u.Id == asUserId);
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, user);
 
