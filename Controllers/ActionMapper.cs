@@ -58,6 +58,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                 return MapEntity(type, value);
             else if (type == typeof(HttpPostedFileWrapper))
                 return value;
+            else if (typeof(IEnumerable<RecurringFieldModel>).IsAssignableFrom(type))
+                return MapRecurringField(action, type, value, field);
             else if (typeof(ICustomViewModel).IsAssignableFrom(type))
                 return MapCustomViewModel(type, value);
             else
@@ -112,6 +114,38 @@ namespace Realtair.Framework.Core.Web.Controllers
             {
                 return new PhoneNumber.PhoneNumberViewModel { Number = value.ToString() };
             }
+        }
+
+        object MapRecurringField(Action action, Type modelType, object value, Field f)
+        {
+            modelType = modelType.GetGenericArguments().FirstOrDefault();
+            var v = (IList)Activator.CreateInstance(typeof(List<>).MakeGenericType(modelType));
+            dynamic t;
+
+            if (value is IEnumerable<string>)
+            {
+                t = JsonConvert.DeserializeObject<dynamic[][]>((value as IEnumerable<string>).ElementAt(0));
+            }
+            else
+            {
+                t = JsonConvert.DeserializeObject<dynamic[][]>(value.ToString());
+            }
+
+            if (t == null) return null;
+            foreach (var item in t)
+            {
+                RecurringFieldModel model = Activator.CreateInstance(modelType) as RecurringFieldModel;
+                foreach (var field in item)
+                {
+                    var fField = RecurringFieldModel.Fields(modelType, null).FirstOrDefault(s => $"{f.UniqueName}_{s.UniqueName}" == field.name.Value);
+                    if (fField == null) fField = RecurringFieldModel.Fields(modelType, null).FirstOrDefault(s => s.UniqueName == field.name.Value);
+                    var mapped = Map(action, fField, fField.PropertyType, field.value.ToString());
+                    fField.PropertyInfo.SetValue(model, mapped);
+                }
+
+                v.Add(model);
+            }
+            return v;
         }
 
         object MapCustomViewModel(Type modelType, object value)
