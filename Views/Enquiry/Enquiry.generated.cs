@@ -30,2470 +30,703 @@ namespace ASP
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     
-    #line 1 "..\..\Views\Enquiry\Enquiry.cshtml"
-    using Realtair.Framework.Core.Web.Utilities;
-    
-    #line default
-    #line hidden
-    
-    #line 3 "..\..\Views\Enquiry\Enquiry.cshtml"
-    using Realtair.Framework.Enquiries.Entities;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Enquiry/Enquiry.cshtml")]
-    public partial class _Views_Enquiry_Enquiry_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Web.Controllers.EnquiryController.EnquiryViewModel>
+    public partial class _Views_Enquiry_Enquiry_cshtml : System.Web.Mvc.WebViewPage<dynamic>
     {
         public _Views_Enquiry_Enquiry_cshtml()
         {
         }
         public override void Execute()
         {
-WriteLiteral("\r\n<body");
+            
+            #line 1 "..\..\Views\Enquiry\Enquiry.cshtml"
+Write(Html.Partial("Menu"));
 
-WriteLiteral(" id=\"page-enquiry\"");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral(" class=\"with-image-background\"");
+WriteLiteral(" id=\"page-wrapper\"");
 
-WriteLiteral(">\r\n\r\n    <div");
+WriteLiteral(" class=\"with-background\"");
 
-WriteLiteral(" class=\"modal fade\"");
+WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" id=\"modal-action\"");
+WriteLiteral(" class=\"container\"");
 
-WriteLiteral(" tabindex=\"-1\"");
+WriteLiteral(">\r\n        <!-- .chat-row -->\r\n        <div");
 
-WriteLiteral(" role=\"dialog\"");
+WriteLiteral(" class=\"chat-main-box\"");
 
-WriteLiteral(" aria-labelledby=\"modal-action-Label\"");
+WriteLiteral(">\r\n            <!-- .chat-left-panel -->\r\n            <div");
 
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"vertical-alignment-helper\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
+WriteLiteral(" class=\"chat-left-aside\"");
 
 WriteLiteral(">\r\n                <div");
 
-WriteLiteral(" class=\"modal-dialog\"");
+WriteLiteral(" class=\"open-panel\"");
 
-WriteLiteral(" role=\"document\"");
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"ti-angle-right\"");
+
+WriteLiteral("></i></div>\r\n                <div");
+
+WriteLiteral(" class=\"chat-left-inner\"");
 
 WriteLiteral(">\r\n                    <div");
 
-WriteLiteral(" class=\"modal-content\"");
+WriteLiteral(" class=\"form-material\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <input");
 
-WriteLiteral(" class=\"modal-header\"");
+WriteLiteral(" class=\"form-control p-20\"");
 
-WriteLiteral(">\r\n                            <button");
+WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" type=\"button\"");
+WriteLiteral(" placeholder=\"Search Contact\"");
 
-WriteLiteral(" class=\"close\"");
+WriteLiteral(">\r\n                    </div>\r\n                    <ul");
 
-WriteLiteral(" data-dismiss=\"modal\"");
+WriteLiteral(" class=\"chatonline style-none \"");
 
-WriteLiteral(" aria-label=\"Close\"");
+WriteLiteral(">\r\n                        <li>\r\n                            <a");
 
-WriteLiteral("><span");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-WriteLiteral(" aria-hidden=\"true\"");
+WriteLiteral("><img");
 
-WriteLiteral(">×</span></button>\r\n                            <h4");
+WriteLiteral(" src=\"../plugins/images/users/varun.jpg\"");
 
-WriteLiteral(" class=\"modal-title\"");
+WriteLiteral(" alt=\"user-img\"");
 
-WriteLiteral(" id=\"modal-action-Label\"");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteLiteral(">\r\n                                Actions for \"");
+WriteLiteral("> <span>Varun Dhavan <small");
 
-            
-            #line 15 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        Write(Model.Workflow.Description(Html.LoggedInUser()));
+WriteLiteral(" class=\"text-success\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\"\r\n                            </h4>\r\n                        </div>\r\n           " +
-"             <div");
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
 
-WriteLiteral(" class=\"modal-body\"");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-WriteLiteral(">\r\n                            <div");
+WriteLiteral(" class=\"active\"");
 
-WriteLiteral(" class=\"lst-links-modal\"");
+WriteLiteral("><img");
 
-WriteLiteral(">\r\n");
+WriteLiteral(" src=\"../plugins/images/users/genu.jpg\"");
 
-            
-            #line 20 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 20 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                 foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
-                                {
+WriteLiteral(" alt=\"user-img\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    <form");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1335), Tuple.Create("\"", 1363)
-            
-            #line 22 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 1344), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 1344), false)
-);
+WriteLiteral("> <span>Genelia Deshmukh <small");
 
-WriteAttribute("method", Tuple.Create(" method=\"", 1364), Tuple.Create("\"", 1419)
-            
-            #line 22 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 1373), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
-            
-            #line default
-            #line hidden
-, 1373), false)
-);
+WriteLiteral(" class=\"text-warning\"");
 
-WriteLiteral(">\r\n                                        <input");
+WriteLiteral(">Away</small></span></a>\r\n                        </li>\r\n                        " +
+"<li>\r\n                            <a");
 
-WriteLiteral(" name=\"ReturnUrl\"");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-WriteLiteral(" type=\"hidden\"");
+WriteLiteral("><img");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1500), Tuple.Create("\"", 1533)
-            
-            #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
-     , Tuple.Create(Tuple.Create("", 1508), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
-            
-            #line default
-            #line hidden
-, 1508), false)
-);
+WriteLiteral(" src=\"../plugins/images/users/ritesh.jpg\"");
 
-WriteLiteral(" />\r\n                                        <button");
+WriteLiteral(" alt=\"user-img\"");
 
-WriteLiteral(" class=\"btn btn-default input-block-level form-control\"");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("> <span>Ritesh Deshmukh <small");
 
-WriteLiteral(">");
+WriteLiteral(" class=\"text-danger\"");
 
-            
-            #line 24 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                Write(action.Description(Html.LoggedInUser()));
+WriteLiteral(">Busy</small></span></a>\r\n                        </li>\r\n                        " +
+"<li>\r\n                            <a");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</button>\r\n                                    </form>\r\n");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-            
-            #line 26 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                }
+WriteLiteral("><img");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                                ");
+WriteLiteral(" src=\"../plugins/images/users/arijit.jpg\"");
 
-            
-            #line 27 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                 foreach (var action in Model.Workflow.BaseActions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
-                                {
+WriteLiteral(" alt=\"user-img\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    <form");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2007), Tuple.Create("\"", 2035)
-            
-            #line 29 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2016), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 2016), false)
-);
+WriteLiteral("> <span>Arijit Sinh <small");
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2036), Tuple.Create("\"", 2091)
-            
-            #line 29 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2045), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
-            
-            #line default
-            #line hidden
-, 2045), false)
-);
+WriteLiteral(" class=\"text-muted\"");
 
-WriteLiteral(">\r\n                                        <input");
+WriteLiteral(">Offline</small></span></a>\r\n                        </li>\r\n                     " +
+"   <li>\r\n                            <a");
 
-WriteLiteral(" name=\"ReturnUrl\"");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-WriteLiteral(" type=\"hidden\"");
+WriteLiteral("><img");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2172), Tuple.Create("\"", 2205)
-            
-            #line 30 "..\..\Views\Enquiry\Enquiry.cshtml"
-     , Tuple.Create(Tuple.Create("", 2180), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
-            
-            #line default
-            #line hidden
-, 2180), false)
-);
+WriteLiteral(" src=\"../plugins/images/users/govinda.jpg\"");
 
-WriteLiteral(" />\r\n                                        <button");
+WriteLiteral(" alt=\"user-img\"");
 
-WriteLiteral(" class=\"btn btn-default input-block-level form-control\"");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("> <span>Govinda Star <small");
 
-WriteLiteral(">");
+WriteLiteral(" class=\"text-success\"");
 
-            
-            #line 31 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                Write(action.Description(Html.LoggedInUser()));
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("</button>\r\n                                    </form>\r\n");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-            
-            #line 33 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                }
+WriteLiteral("><img");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </div>\r\n                        </div>\r\n             " +
-"       </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    <" +
-"/div>\r\n    <div");
+WriteLiteral(" src=\"../plugins/images/users/hritik.jpg\"");
 
-WriteLiteral(" class=\"modal modal-conversation fade\"");
+WriteLiteral(" alt=\"user-img\"");
 
-WriteLiteral(" id=\"modal-current-conversation\"");
+WriteLiteral(" class=\"img-circle\"");
 
-WriteLiteral(" tabindex=\"-1\"");
+WriteLiteral("> <span>John Abraham<small");
 
-WriteLiteral(" role=\"dialog\"");
+WriteLiteral(" class=\"text-success\"");
 
-WriteLiteral(" aria-labelledby=\"modal-action-Label\"");
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
 
-WriteLiteral(" style=\"display: none;\"");
+WriteLiteral(" href=\"javascript:void(0)\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral("><img");
 
-WriteLiteral(" class=\"vertical-alignment-helper\"");
+WriteLiteral(" src=\"../plugins/images/users/john.jpg\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(" alt=\"user-img\"");
 
-WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Hritik Roshan<small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/pawandeep.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Pwandeep rajan <small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li");
+
+WriteLiteral(" class=\"p-20\"");
+
+WriteLiteral("></li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n  " +
+"          <!-- .chat-left-panel -->\r\n            <!-- .chat-right-panel -->\r\n   " +
+"         <div");
+
+WriteLiteral(" class=\"chat-right-aside\"");
 
 WriteLiteral(">\r\n                <div");
 
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(" role=\"document\"");
+WriteLiteral(" class=\"chat-main-header hidden-xs\"");
 
 WriteLiteral(">\r\n                    <div");
 
-WriteLiteral(" class=\"modal-content\"");
+WriteLiteral(" class=\"p-20 b-b\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <h3");
 
-WriteLiteral(" class=\"modal-header\"");
+WriteLiteral(" class=\"box-title\"");
 
-WriteLiteral(">\r\n                            <button");
+WriteLiteral(">Chat Message</h3>\r\n                    </div>\r\n                </div>\r\n         " +
+"       <div");
 
-WriteLiteral(" type=\"button\"");
+WriteLiteral(" class=\"chat-box\"");
 
-WriteLiteral(" class=\"close\"");
+WriteLiteral(">\r\n                    <ul");
 
-WriteLiteral(" data-dismiss=\"modal\"");
+WriteLiteral(" class=\"chat-list slimscroll p-t-30\"");
 
-WriteLiteral(" aria-label=\"Close\"");
+WriteLiteral(">\r\n                        <li>\r\n                            <div");
 
-WriteLiteral("><span");
+WriteLiteral(" class=\"chat-image\"");
 
-WriteLiteral(" aria-hidden=\"true\"");
+WriteLiteral("> <img");
 
-WriteLiteral(">×</span></button>\r\n                            <h4");
+WriteLiteral(" alt=\"male\"");
 
-WriteLiteral(" class=\"modal-title\"");
+WriteLiteral(" src=\"../plugins/images/users/ritesh.jpg\"");
 
-WriteLiteral(" id=\"modal-action-Label\"");
+WriteLiteral("> </div>\r\n                            <div");
 
-WriteLiteral(">\r\n                                <span");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 3331), Tuple.Create("\"", 3400)
-, Tuple.Create(Tuple.Create("", 3339), Tuple.Create("icon", 3339), true)
-            
-            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3343), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(Model.Workflow as IDescribable)
-            
-            #line default
-            #line hidden
-, 3344), false)
-);
-
-WriteLiteral("></span> ");
-
-            
-            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                               Write(Model.Workflow.ActualType().Name.DisplaySafeName());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                <small>");
-
-            
-            #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                  Write(Model.Workflow.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</small>\r\n                            </h4>\r\n                        </div>\r\n    " +
-"                    <div");
-
-WriteLiteral(" class=\"modal-body\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"panel panel-default panel-conversation\"");
+WriteLiteral(" class=\"chat-body\"");
 
 WriteLiteral(">\r\n                                <div");
 
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 56 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 56 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                     foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <div");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n                                            <span");
-
-WriteLiteral(" class=\"img-circle pull-left\"");
-
-WriteLiteral(">");
-
-            
-            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                          Write(user.Person.Initials);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 60 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                            
-            
-            #line default
-            #line hidden
-            
-            #line 60 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                             if (!string.IsNullOrEmpty(user.Person.MobileNo))
-                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 4359), Tuple.Create("\"", 4391)
-, Tuple.Create(Tuple.Create("", 4366), Tuple.Create("tel:", 4366), true)
-            
-            #line 62 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 4370), Tuple.Create<System.Object, System.Int32>(user.Person.MobileNo
-            
-            #line default
-            #line hidden
-, 4370), false)
-);
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">");
-
-            
-            #line 62 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                  Write(user.Person.MobileNo);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n");
-
-            
-            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <span");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                                                <strong>");
-
-            
-            #line 65 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                   Write(user.Person.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                                <span");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"brand-provider\"");
-
-WriteLiteral(">");
-
-            
-            #line 66 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                 Write(user.RoleType);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                            </span>\r\n                   " +
-"                         <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                        </div>\r\n");
-
-            
-            #line 70 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                </div>\r\n\r\n                            </div>\r\n   " +
-"                     </div>\r\n                    </div>\r\n                </div>\r" +
-"\n            </div>\r\n        </div>\r\n    </div>\r\n    <div");
-
-WriteLiteral(" class=\"modal modal-conversation fade\"");
-
-WriteLiteral(" id=\"modal-other-conversation\"");
-
-WriteLiteral(" tabindex=\"-1\"");
-
-WriteLiteral(" role=\"dialog\"");
-
-WriteLiteral(" aria-labelledby=\"modal-action-Label\"");
-
-WriteLiteral(" style=\"display: none;\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"vertical-alignment-helper\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(" role=\"document\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"modal-content\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"modal-header\"");
-
-WriteLiteral(">\r\n                            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"close\"");
-
-WriteLiteral(" data-dismiss=\"modal\"");
-
-WriteLiteral(" aria-label=\"Close\"");
-
-WriteLiteral("><span");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral(">×</span></button>\r\n                            <h4");
-
-WriteLiteral(" class=\"modal-title\"");
-
-WriteLiteral(" id=\"modal-action-Label\"");
-
-WriteLiteral(">\r\n                                <span");
-
-WriteLiteral(" class=\"icon icon-comments-o\"");
-
-WriteLiteral("></span> Other conversation\r\n                            </h4>\r\n                 " +
-"       </div>\r\n                        <div");
-
-WriteLiteral(" class=\"modal-body\"");
-
-WriteLiteral(">\r\n\r\n                            <div");
-
-WriteLiteral(" class=\"panel panel-default panel-conversation\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"other-conversartion\"");
-
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 96 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 96 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                          
-                                            var otherConversationCount = Model.Conversations.Where(c => c != Model.Conversation).Count();
-                                            if (otherConversationCount > 0)
-                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                <div");
-
-WriteLiteral(" class=\"other-conversartion\"");
-
-WriteLiteral(">\r\n                                                    <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 102 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                        
-            
-            #line default
-            #line hidden
-            
-            #line 102 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                         foreach (var conversation in Model.Conversations)
-                                                        {
-                                                            if (conversation != Model.Conversation)
-                                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 7132), Tuple.Create("\"", 7164)
-            
-            #line 106 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 7139), Tuple.Create<System.Object, System.Int32>(conversation.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 7139), false)
-);
-
-WriteLiteral(" class=\"list-group-item ellipsis\"");
-
-WriteLiteral(">\r\n                                                                    <i");
-
-WriteLiteral(" class=\"fa fa-comments pull-left\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n");
-
-            
-            #line 108 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                    
-            
-            #line default
-            #line hidden
-            
-            #line 108 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                      
-                                                                        var notificationCount = conversation.ActiveNotifications(Html.LoggedInUser(), Model.Workflow).Count(a => a is MessageNotification || (a is EventNotification));
-                                                                        if (notificationCount > 0)
-                                                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                                            <span" +
-"");
-
-WriteLiteral(" class=\"badge pull-right\"");
-
-WriteLiteral(">");
-
-            
-            #line 112 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                      Write(notificationCount);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 113 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                        }
-                                                                    
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                                                                    ");
-
-            
-            #line 115 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                               Write(string.Join(", ", conversation.Users.Where(u => u != Html.LoggedInUser()).Select(u => u.Person.Name + " (" + u.RoleType + ")")));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                                                    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                                                </a>\r\n");
-
-            
-            #line 118 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                            }
-                                                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                    </div>\r\n                     " +
-"                           </div>\r\n");
-
-            
-            #line 122 "..\..\Views\Enquiry\Enquiry.cshtml"
-
-                                                                        }
-                                        
-            
-            #line default
-            #line hidden
-WriteLiteral(@"
-                                    </div>
+WriteLiteral(" class=\"chat-text\"");
+
+WriteLiteral(@">
+                                    <h4>Ritesh</h4>
+                                    <p> Hi, Genelia how are you and my son? </p> <b>10.00 am</b>
                                 </div>
+                            </div>
+                        </li>
+                        <li");
 
+WriteLiteral(" class=\"odd\"");
+
+WriteLiteral(">\r\n                            <div");
+
+WriteLiteral(" class=\"chat-image\"");
+
+WriteLiteral("> <img");
+
+WriteLiteral(" alt=\"Female\"");
+
+WriteLiteral(" src=\"../plugins/images/users/genu.jpg\"");
+
+WriteLiteral("> </div>\r\n                            <div");
+
+WriteLiteral(" class=\"chat-body\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"chat-text\"");
+
+WriteLiteral(@">
+                                    <h4>Genelia</h4>
+                                    <p> Hi, How are you Ritesh!!! We both are fine sweetu. </p> <b>10.03 am</b>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div");
+
+WriteLiteral(" class=\"chat-image\"");
+
+WriteLiteral("> <img");
+
+WriteLiteral(" alt=\"male\"");
+
+WriteLiteral(" src=\"../plugins/images/users/ritesh.jpg\"");
+
+WriteLiteral("> </div>\r\n                            <div");
+
+WriteLiteral(" class=\"chat-body\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"chat-text\"");
+
+WriteLiteral(@">
+                                    <h4>Ritesh</h4>
+                                    <p> Oh great!!! just enjoy you all day and keep rocking</p> <b>10.05 am</b>
+                                </div>
+                            </div>
+                        </li>
+                        <li");
+
+WriteLiteral(" class=\"odd\"");
+
+WriteLiteral(">\r\n                            <div");
+
+WriteLiteral(" class=\"chat-image\"");
+
+WriteLiteral("> <img");
+
+WriteLiteral(" alt=\"Female\"");
+
+WriteLiteral(" src=\"../plugins/images/users/genu.jpg\"");
+
+WriteLiteral("> </div>\r\n                            <div");
+
+WriteLiteral(" class=\"chat-body\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"chat-text\"");
+
+WriteLiteral(@">
+                                    <h4>Genelia</h4>
+                                    <p> Your movei was superb and your acting is mindblowing </p> <b>10.07 am</b>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div");
+
+WriteLiteral(" class=\"row send-chat-box\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"col-sm-12\"");
+
+WriteLiteral(">\r\n                            <textarea");
+
+WriteLiteral(" class=\"form-control\"");
+
+WriteLiteral(" placeholder=\"Type your message\"");
+
+WriteLiteral("></textarea>\r\n                            <div");
+
+WriteLiteral(" class=\"custom-send\"");
+
+WriteLiteral(">\r\n                                <a");
+
+WriteLiteral(" href=\"javacript:void(0)\"");
+
+WriteLiteral(" class=\"cst-icon\"");
+
+WriteLiteral(" data-toggle=\"tooltip\"");
+
+WriteLiteral(" title=\"Insert Emojis\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"ti-face-smile\"");
+
+WriteLiteral("></i></a> <a");
+
+WriteLiteral(" href=\"javacript:void(0)\"");
+
+WriteLiteral(" class=\"cst-icon\"");
+
+WriteLiteral(" data-toggle=\"tooltip\"");
+
+WriteLiteral(" title=\"File Attachment\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"fa fa-paperclip\"");
+
+WriteLiteral("></i></a>\r\n                                <button");
+
+WriteLiteral(" class=\"btn btn-danger btn-rounded\"");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(@">Send</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- .chat-right-panel -->
         </div>
+        <!-- /.chat-row -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <div");
+
+WriteLiteral(" class=\"right-sidebar\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"slimscrollright\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"rpanel-title\"");
+
+WriteLiteral("> Service Panel <span><i");
+
+WriteLiteral(" class=\"ti-close right-side-toggle\"");
+
+WriteLiteral("></i></span> </div>\r\n                <div");
+
+WriteLiteral(" class=\"r-panel-body\"");
+
+WriteLiteral(">\r\n                    <ul");
+
+WriteLiteral(" id=\"themecolors\"");
+
+WriteLiteral(" class=\"m-t-20\"");
+
+WriteLiteral(">\r\n                        <li><b>With Light sidebar</b></li>\r\n                  " +
+"      <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"default\"");
+
+WriteLiteral(" class=\"default-theme\"");
+
+WriteLiteral(">1</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"green\"");
+
+WriteLiteral(" class=\"green-theme\"");
+
+WriteLiteral(">2</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"gray\"");
+
+WriteLiteral(" class=\"yellow-theme\"");
+
+WriteLiteral(">3</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"blue\"");
+
+WriteLiteral(" class=\"blue-theme\"");
+
+WriteLiteral(">4</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"purple\"");
+
+WriteLiteral(" class=\"purple-theme\"");
+
+WriteLiteral(">5</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"megna\"");
+
+WriteLiteral(" class=\"megna-theme\"");
+
+WriteLiteral(">6</a></li>\r\n                        <li><b>With Dark sidebar</b></li>\r\n         " +
+"               <br />\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"default-dark\"");
+
+WriteLiteral(" class=\"default-dark-theme\"");
+
+WriteLiteral(">7</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"green-dark\"");
+
+WriteLiteral(" class=\"green-dark-theme\"");
+
+WriteLiteral(">8</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"gray-dark\"");
+
+WriteLiteral(" class=\"yellow-dark-theme\"");
+
+WriteLiteral(">9</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"blue-dark\"");
+
+WriteLiteral(" class=\"blue-dark-theme\"");
+
+WriteLiteral(">10</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"purple-dark\"");
+
+WriteLiteral(" class=\"purple-dark-theme\"");
+
+WriteLiteral(">11</a></li>\r\n                        <li><a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral(" data-theme=\"megna-dark\"");
+
+WriteLiteral(" class=\"megna-dark-theme working\"");
+
+WriteLiteral(">12</a></li>\r\n                    </ul>\r\n                    <ul");
+
+WriteLiteral(" class=\"m-t-20 all-demos\"");
+
+WriteLiteral(">\r\n                        <li><b>Choose other demos</b></li>\r\n                  " +
+"  </ul>\r\n                    <ul");
+
+WriteLiteral(" class=\"m-t-20 chatonline\"");
+
+WriteLiteral(">\r\n                        <li><b>Chat option</b></li>\r\n                        <" +
+"li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/varun.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Varun Dhavan <small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/genu.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Genelia Deshmukh <small");
+
+WriteLiteral(" class=\"text-warning\"");
+
+WriteLiteral(">Away</small></span></a>\r\n                        </li>\r\n                        " +
+"<li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/ritesh.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Ritesh Deshmukh <small");
+
+WriteLiteral(" class=\"text-danger\"");
+
+WriteLiteral(">Busy</small></span></a>\r\n                        </li>\r\n                        " +
+"<li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/arijit.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Arijit Sinh <small");
+
+WriteLiteral(" class=\"text-muted\"");
+
+WriteLiteral(">Offline</small></span></a>\r\n                        </li>\r\n                     " +
+"   <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/govinda.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Govinda Star <small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/hritik.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>John Abraham<small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/john.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Hritik Roshan<small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">online</small></span></a>\r\n                        </li>\r\n                      " +
+"  <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><img");
+
+WriteLiteral(" src=\"../plugins/images/users/pawandeep.jpg\"");
+
+WriteLiteral(" alt=\"user-img\"");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral("> <span>Pwandeep rajan <small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(@">online</small></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
     </div>
-    <div");
+    <!-- /.container-fluid -->
+    <footer");
 
-WriteLiteral(" class=\"modal fade\"");
+WriteLiteral(" class=\"footer text-center hidden-xs\"");
 
-WriteLiteral(" id=\"modal-attachments\"");
+WriteLiteral("> Powered by Realtair</footer>\r\n</div>\r\n<!-- /#page-wrapper -->\r\n\r\n");
 
-WriteLiteral(" tabindex=\"-1\"");
+DefineSection("Styles", () => {
 
-WriteLiteral(" role=\"dialog\"");
+WriteLiteral("\r\n    <script");
 
-WriteLiteral(" aria-labelledby=\"modal-action-Label\"");
+WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral("></script>\r\n");
 
-WriteLiteral(" class=\"vertical-alignment-helper\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"modal-dialog vertical-align-center\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"modal-dialog\"");
-
-WriteLiteral(" role=\"document\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"modal-content\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"modal-header\"");
-
-WriteLiteral(">\r\n                            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"close\"");
-
-WriteLiteral(" data-dismiss=\"modal\"");
-
-WriteLiteral(" aria-label=\"Close\"");
-
-WriteLiteral("><span");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral(">×</span></button>\r\n                            <h4");
-
-WriteLiteral(" class=\"modal-title\"");
-
-WriteLiteral(" id=\"modal-action-Label\"");
-
-WriteLiteral(">\r\n                                Attachments\r\n                            </h4>" +
-"\r\n                        </div>\r\n                        <div");
-
-WriteLiteral(" class=\"modal-body\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"col-md-12\"");
-
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"existing-file-picker\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 150 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 150 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         foreach (var attachment in Model.Attachments.Unique())
-                                        {
-                                            if (attachment.IsImage)
-                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                <div");
-
-WriteLiteral(" class=\"pickable\"");
-
-WriteLiteral(" onclick=\'$(this).toggleClass(\"picked\");\'");
-
-WriteLiteral(">\r\n                                                    <i");
-
-WriteLiteral(" class=\"fa fa-check tick\"");
-
-WriteLiteral("></i>\r\n                                                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 10565), Tuple.Create("\"", 10604)
-            
-            #line 156 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 10571), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
-            
-            #line default
-            #line hidden
-, 10571), false)
-);
-
-WriteAttribute("storageguid", Tuple.Create(" storageguid=\"", 10605), Tuple.Create("\"", 10642)
-            
-            #line 156 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             , Tuple.Create(Tuple.Create("", 10619), Tuple.Create<System.Object, System.Int32>(attachment.StorageGuid
-            
-            #line default
-            #line hidden
-, 10619), false)
-);
-
-WriteLiteral(" />\r\n                                                </div>\r\n");
-
-            
-            #line 158 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                            }
-                                            else
-                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                <div");
-
-WriteLiteral(" class=\"pickable\"");
-
-WriteLiteral(" onclick=\'$(this).toggleClass(\"picked\");\'");
-
-WriteLiteral(">\r\n                                                    <i");
-
-WriteLiteral(" class=\"fa fa-check tick\"");
-
-WriteLiteral("></i>\r\n                                                    <img");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 11103), Tuple.Create("\"", 11135)
-, Tuple.Create(Tuple.Create("", 11109), Tuple.Create<System.Object, System.Int32>(Href("~/Content/img/icon-pdf.png")
-, 11109), false)
-);
-
-WriteAttribute("storageguid", Tuple.Create(" storageguid=\"", 11136), Tuple.Create("\"", 11173)
-            
-            #line 163 "..\..\Views\Enquiry\Enquiry.cshtml"
-                      , Tuple.Create(Tuple.Create("", 11150), Tuple.Create<System.Object, System.Int32>(attachment.StorageGuid
-            
-            #line default
-            #line hidden
-, 11150), false)
-);
-
-WriteLiteral(" />\r\n                                                </div>\r\n");
-
-            
-            #line 165 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                            }
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    </div>\r\n                                </div" +
-">\r\n                            </div>\r\n                        </div>\r\n         " +
-"               <div");
-
-WriteLiteral(" class=\"modal-footer\"");
-
-WriteLiteral(">\r\n                            <button");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"btn btn-primary\"");
-
-WriteLiteral(" id=\"selectPhotosBtn\"");
-
-WriteLiteral(" data-dismiss=\"modal\"");
-
-WriteLiteral(">Select Photos</button>\r\n                        </div>\r\n                    </di" +
-"v>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    " +
-"<header");
-
-WriteLiteral(" id=\"section-header\"");
-
-WriteLiteral(" class=\"header-admin with-image-background\"");
-
-WriteLiteral(" role=\"banner\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"header-content\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"main-header\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n\r\n                    <div");
-
-WriteLiteral(" class=\"row row-no-gutter\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"col-sm-3\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"box-title\"");
-
-WriteLiteral(">\r\n                                <a");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" data-toggle=\"modal\"");
-
-WriteLiteral(" data-target=\"#modal-current-conversation\"");
-
-WriteLiteral(" class=\"pull-right btn btn-links visible-xs\"");
-
-WriteLiteral(">\r\n                                    <i");
-
-WriteLiteral(" class=\"fa fa-phone\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                </a>\r\n                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 12479), Tuple.Create("\"", 12488)
-, Tuple.Create(Tuple.Create("", 12486), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 12486), false)
-);
-
-WriteLiteral(" class=\"pull-left btn btn-back\"");
-
-WriteLiteral(">\r\n                                    <i");
-
-WriteLiteral(" class=\"fa fa-chevron-left\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                </a>\r\n                                <a");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" data-toggle=\"modal\"");
-
-WriteLiteral(" data-target=\"#modal-other-conversation\"");
-
-WriteLiteral(" class=\"pull-right btn btn-conversation visible-xs\"");
-
-WriteLiteral(">\r\n                                    <i");
-
-WriteLiteral(" class=\"fa fa-comments\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                    <span");
-
-WriteLiteral(" class=\"badge\"");
-
-WriteLiteral(">");
-
-            
-            #line 195 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                   Write(Model.Workflow.Conversations.Where(c => c != Model.Conversation).Count());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                </a>\r\n                                <d" +
-"iv");
-
-WriteLiteral(" class=\"box-enquiry inner-content\"");
-
-WriteLiteral(">\r\n                                    <em");
-
-WriteLiteral(" class=\"ellipsis\"");
-
-WriteLiteral("><span");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 13212), Tuple.Create("\"", 13281)
-, Tuple.Create(Tuple.Create("", 13220), Tuple.Create("icon", 13220), true)
-            
-            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create(" ", 13224), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(Model.Workflow as IDescribable)
-            
-            #line default
-            #line hidden
-, 13225), false)
-);
-
-WriteLiteral("></span>");
-
-            
-            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                       Write(Model.Workflow.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em>\r\n                                    <strong");
-
-WriteLiteral(" class=\"ellipsis hidden-xxl hidden-xl hidden-lg hidden-md hidden-sm\"");
-
-WriteLiteral(">");
-
-            
-            #line 199 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                           Write(string.Join(", ", Model.Conversation.Users.Where(u => u != Html.LoggedInUser()).Select(u => u.Person.Name + " (" + u.RoleType + ")")));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                    <strong");
-
-WriteLiteral(" class=\"ellipsis hidden-xs hidden-xxs\"");
-
-WriteLiteral(">");
-
-            
-            #line 200 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                             Write(Model.Workflow.ParentDescription(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                </div>\r\n                              " +
-"  <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                            </div>\r\n                        </div>\r\n\r\n  " +
-"                      <div");
-
-WriteLiteral(" class=\"col-sm-9\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"title-messagebox hidden-xs\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">\r\n\r\n");
-
-            
-            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                     if (Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() > 3 || Html.LoggedInUser().MeetsAuthLevel(Realtair.Framework.Core.Entities.UserRoleType.Admin))
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" data-toggle=\"modal\"");
-
-WriteLiteral(" data-target=\"#modal-action\"");
-
-WriteLiteral(" class=\"btn btn-default btn-more pull-right\"");
-
-WriteLiteral(">\r\n                                            see all\r\n                         " +
-"                   <i");
-
-WriteLiteral(" class=\"fa fa-plus\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                        </a>\r\n");
-
-            
-            #line 216 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                     foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <form");
-
-WriteLiteral(" class=\"pull-right inline\"");
-
-WriteAttribute("action", Tuple.Create(" action=\"", 15029), Tuple.Create("\"", 15057)
-            
-            #line 220 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 15038), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 15038), false)
-);
-
-WriteAttribute("method", Tuple.Create(" method=\"", 15058), Tuple.Create("\"", 15113)
-            
-            #line 220 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             , Tuple.Create(Tuple.Create("", 15067), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
-            
-            #line default
-            #line hidden
-, 15067), false)
-);
-
-WriteLiteral(">\r\n                                            <input");
-
-WriteLiteral(" name=\"ReturnUrl\"");
-
-WriteLiteral(" type=\"hidden\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 15198), Tuple.Create("\"", 15231)
-            
-            #line 221 "..\..\Views\Enquiry\Enquiry.cshtml"
-        , Tuple.Create(Tuple.Create("", 15206), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
-            
-            #line default
-            #line hidden
-, 15206), false)
-);
-
-WriteLiteral(" />\r\n                                            <button");
-
-WriteLiteral(" class=\"btn btn-default pull-right\"");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(">");
-
-            
-            #line 222 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                Write(action.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</button>\r\n                                        </form>\r\n");
-
-            
-            #line 224 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                </div>\r\n                                <div");
-
-WriteLiteral(" class=\"clearfix visible-xs\"");
-
-WriteLiteral("></div>\r\n                            </div>\r\n                        </div>\r\n    " +
-"                </div>\r\n\r\n                </div>\r\n            </div>\r\n        </" +
-"div>\r\n    </header>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n\r\n    <main");
-
-WriteLiteral(" role=\"main\"");
-
-WriteLiteral(" id=\"main\"");
-
-WriteLiteral(">\r\n        <aside>\r\n            <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"row row-no-gutter\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-sm-3 sidebox\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"panel panel-default panel-conversation hidden-xs\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                <i");
-
-WriteLiteral(" class=\"fa fa-comments\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i> Current conversation\r\n                            </div>\r\n\r\n               " +
-"             <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 249 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                
-            
-            #line default
-            #line hidden
-            
-            #line 249 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                 foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    <div");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n                                        <span");
-
-WriteLiteral(" class=\"img-circle pull-left hidden-sm hidden-md\"");
-
-WriteLiteral(">");
-
-            
-            #line 252 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                          Write(user.Person.Initials);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 253 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 253 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         if (!string.IsNullOrEmpty(user.Person.MobileNo))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 16865), Tuple.Create("\"", 16897)
-, Tuple.Create(Tuple.Create("", 16872), Tuple.Create("tel:", 16872), true)
-            
-            #line 255 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 16876), Tuple.Create<System.Object, System.Int32>(user.Person.MobileNo
-            
-            #line default
-            #line hidden
-, 16876), false)
-);
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">");
-
-            
-            #line 255 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                              Write(user.Person.MobileNo);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</a>\r\n");
-
-            
-            #line 256 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <span");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                                            <strong>&nbsp; ");
-
-            
-            #line 258 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                      Write(user.Person.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                            <span");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"brand-provider ellipsis\"");
-
-WriteLiteral(">&nbsp; ");
-
-            
-            #line 259 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                             Write(user.RoleType);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                        </span>\r\n                       " +
-"                 <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                    </div>\r\n");
-
-            
-            #line 263 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            </div>\r\n");
-
-            
-            #line 265 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 265 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             if (otherConversationCount > 0)
-                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"other-conversartion\"");
-
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                        Other conversations (");
-
-            
-            #line 269 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                        Write(Model.Conversations.Where(c => c != Model.Conversation).Count());
-
-            
-            #line default
-            #line hidden
-WriteLiteral(")\r\n                                    </div>\r\n\r\n                                " +
-"    <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 273 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 273 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         foreach (var conversation in Model.Conversations.Where(c => c != Model.Conversation))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 18178), Tuple.Create("\"", 18226)
-            
-            #line 275 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 18185), Tuple.Create<System.Object, System.Int32>(conversation.GetUrl(Model.Workflow, Url)
-            
-            #line default
-            #line hidden
-, 18185), false)
-);
-
-WriteLiteral(" class=\"list-group-item ellipsis\"");
-
-WriteLiteral(">\r\n                                                <i");
-
-WriteLiteral(" class=\"fa fa-comments pull-left\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n");
-
-            
-            #line 277 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                
-            
-            #line default
-            #line hidden
-            
-            #line 277 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                  
-                                                    var notificationCount = conversation.ActiveNotifications(Html.LoggedInUser(), Model.Workflow).Count(a => a is MessageNotification || (a is EventNotification));
-                                                    if (notificationCount > 0)
-                                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                        <span");
-
-WriteLiteral(" class=\"badge pull-right\"");
-
-WriteLiteral(">");
-
-            
-            #line 281 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                  Write(notificationCount);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-            
-            #line 282 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                    }
-                                                
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-WriteLiteral("                                                ");
-
-            
-            #line 284 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                           Write(string.Join(", ", conversation.Users.Where(u => u != Html.LoggedInUser()).Select(u => u.Person.Name + " (" + u.RoleType + ")")));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                                <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                            </a>\r\n");
-
-            
-            #line 287 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    </div>\r\n                                </div" +
-">\r\n");
-
-            
-            #line 290 "..\..\Views\Enquiry\Enquiry.cshtml"
-
-                                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                            ");
-
-            
-            #line 292 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             if (Model.ExternalConversations.Count > 0)
-                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"other-conversartion\"");
-
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                        External conversations (");
-
-            
-            #line 296 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                           Write(Model.ExternalConversations.Where(c => c != Model.Conversation).Count());
-
-            
-            #line default
-            #line hidden
-WriteLiteral(")\r\n                                    </div>\r\n\r\n                                " +
-"    <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         foreach (var conversation in Model.ExternalConversations)
-                                        {
-                                            if (conversation != Model.Conversation)
-                                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 20302), Tuple.Create("\"", 20350)
-            
-            #line 304 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 20309), Tuple.Create<System.Object, System.Int32>(conversation.GetUrl(Model.Workflow, Url)
-            
-            #line default
-            #line hidden
-, 20309), false)
-);
-
-WriteLiteral(" class=\"list-group-item ellipsis\"");
-
-WriteLiteral(">\r\n                                                    <i");
-
-WriteLiteral(" class=\"fa fa-comments pull-left\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                                    <span");
-
-WriteLiteral(" class=\"badge pull-right\"");
-
-WriteLiteral(">");
-
-            
-            #line 306 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                              Write(conversation.ActiveNotifications(Html.LoggedInUser()).Count(a => a is MessageNotification || (a is EventNotification)));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n");
-
-WriteLiteral("                                                    ");
-
-            
-            #line 307 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                               Write(string.Join(", ", conversation.Users.Where(u => u != Html.LoggedInUser()).Select(u => u.Person.Name + " (" + u.RoleType + ")")));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(")\r\n                                                    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                                </a>\r\n");
-
-            
-            #line 310 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                            }
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    </div>\r\n                                </div" +
-">\r\n");
-
-            
-            #line 314 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 316 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 316 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             if (Model.RelatedEnquiries.Count() > 0)
-                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                    <i");
-
-WriteLiteral(" class=\"icon pull-left icon-hero\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i> Enquiries\r\n                                </div>\r\n");
-
-            
-            #line 321 "..\..\Views\Enquiry\Enquiry.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n\r\n");
-
-            
-            #line 324 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 324 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                     foreach (var enquiry in Model.RelatedEnquiries.ToList())
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <div");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n                                            <span");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 21946), Tuple.Create("\"", 21993)
-            
-            #line 328 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 21953), Tuple.Create<System.Object, System.Int32>(Model.Conversation.GetUrl(enquiry, Url)
-            
-            #line default
-            #line hidden
-, 21953), false)
-);
-
-WriteLiteral(">\r\n                                                    <strong>&nbsp; ");
-
-            
-            #line 329 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                              Write(enquiry.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                                                    <span");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"brand-provider ellipsis\"");
-
-WriteLiteral(">&nbsp; ");
-
-            
-            #line 330 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                      Write(enquiry.IsClosed ? "(Closed)" : "");
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                                </a>\r\n                  " +
-"                          </span>\r\n                                            <" +
-"div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                        </div>\r\n");
-
-            
-            #line 335 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n");
-
-            
-            #line 338 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 340 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 340 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             if (Model.RelatedTasks.Count() > 0)
-                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                    <i");
-
-WriteLiteral(" class=\"icon pull-left icon-hero\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i> Pending Tasks\r\n                                </div>\r\n");
-
-            
-            #line 345 "..\..\Views\Enquiry\Enquiry.cshtml"
-
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <div");
-
-WriteLiteral(" class=\"list-group\"");
-
-WriteLiteral(">\r\n\r\n");
-
-            
-            #line 348 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    
-            
-            #line default
-            #line hidden
-            
-            #line 348 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                     foreach (var task in Model.RelatedTasks.ToList())
-                                    {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                        <div");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"list-group-item\"");
-
-WriteLiteral(">\r\n                                            <span");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                                                <a");
-
-WriteAttribute("href", Tuple.Create(" href=\"", 23313), Tuple.Create("\"", 23365)
-            
-            #line 352 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 23320), Tuple.Create<System.Object, System.Int32>(task.GetDetailsUrl(Html.LoggedInUser(), Url)
-            
-            #line default
-            #line hidden
-, 23320), false)
-);
-
-WriteLiteral(">                                                    \r\n                          " +
-"                          <span");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"brand-provider ellipsis\"");
-
-WriteLiteral(">&nbsp; ");
-
-            
-            #line 353 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                     Write(task.Record.Enquiry.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\r\n                                                </a>\r\n                  " +
-"                          </span>\r\n                                            <" +
-"div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                        </div>\r\n");
-
-            
-            #line 358 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                </div>\r\n");
-
-            
-            #line 361 "..\..\Views\Enquiry\Enquiry.cshtml"
-                            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                        </div>\r\n                    </div>\r\n                </div" +
-">\r\n            </div>\r\n        </aside>\r\n        <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"panel panel-default panel-hero\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"row row-no-gutter\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-sm-9 col-sm-offset-3 messagebox\"");
-
-WriteLiteral(">\r\n\r\n");
-
-WriteLiteral("                        ");
-
-            
-            #line 372 "..\..\Views\Enquiry\Enquiry.cshtml"
-                   Write(Html.Partial("Timeline", Model.Timeline));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n\r\n                    </div>\r\n                </div>\r\n            </div>\r\n     " +
-"   </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"sendbox\"");
-
-WriteLiteral(">\r\n            <form");
-
-WriteLiteral(" class=\"form-inline\"");
-
-WriteLiteral(" id=\"send-message-form\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"row row-no-gutter\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"col-sm-9 col-sm-offset-3 part-top\"");
-
-WriteLiteral(">\r\n                            <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 24720), Tuple.Create("\"", 24749)
-, Tuple.Create(Tuple.Create("", 24726), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
-, 24726), false)
-);
-
-WriteLiteral("></script>\r\n                            <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 24797), Tuple.Create("\"", 24830)
-, Tuple.Create(Tuple.Create("", 24803), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
-, 24803), false)
-);
-
-WriteLiteral("></script>\r\n                            <div");
-
-WriteLiteral(" class=\"bar-actions visible-xs\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">\r\n                                    <a");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" data-toggle=\"modal\"");
-
-WriteLiteral(" data-target=\"#modal-action\"");
-
-WriteLiteral(" class=\"btn btn-sm btn-default btn-fixed pull-right\"");
-
-WriteLiteral(">\r\n                                        see more\r\n                            " +
-"            <i");
-
-WriteLiteral(" class=\"fa fa-plus\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral("></i>\r\n                                    </a>\r\n                                " +
-"    <div");
-
-WriteLiteral(" class=\"inner-content ellipsis\"");
-
-WriteLiteral(">\r\n");
-
-            
-            #line 393 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        
-            
-            #line default
-            #line hidden
-            
-            #line 393 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
-                                        {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <form");
-
-WriteLiteral(" class=\"inline\"");
-
-WriteAttribute("action", Tuple.Create(" action=\"", 25630), Tuple.Create("\"", 25658)
-            
-            #line 395 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 25639), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 25639), false)
-);
-
-WriteAttribute("method", Tuple.Create(" method=\"", 25659), Tuple.Create("\"", 25714)
-            
-            #line 395 "..\..\Views\Enquiry\Enquiry.cshtml"
-                      , Tuple.Create(Tuple.Create("", 25668), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
-            
-            #line default
-            #line hidden
-, 25668), false)
-);
-
-WriteLiteral(">\r\n                                                <input");
-
-WriteLiteral(" name=\"ReturnUrl\"");
-
-WriteLiteral(" type=\"hidden\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 25803), Tuple.Create("\"", 25836)
-            
-            #line 396 "..\..\Views\Enquiry\Enquiry.cshtml"
-            , Tuple.Create(Tuple.Create("", 25811), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
-            
-            #line default
-            #line hidden
-, 25811), false)
-);
-
-WriteLiteral(" />\r\n                                                <button");
-
-WriteLiteral(" class=\"btn btn-sm btn-primary\"");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(">");
-
-            
-            #line 397 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                Write(action.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</button>\r\n                                            </form>\r\n");
-
-            
-            #line 399 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                    </div>\r\n                                </div" +
-">\r\n                            </div>\r\n\r\n                            <div");
-
-WriteLiteral(" id=\"file-attachment\"");
-
-WriteLiteral(" class=\"file-attachment\"");
-
-WriteLiteral(" style=\"display: none\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"file-attachment-thumbnails ellipsis\"");
-
-WriteLiteral("></div>\r\n                            </div>\r\n\r\n                            <div");
-
-WriteLiteral(" class=\"newmessage\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"pull-left\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"attachment-upload pull-left\"");
-
-WriteLiteral(">\r\n                                        <input");
-
-WriteLiteral(" name=\"attachments\"");
-
-WriteLiteral(" id=\"attachments\"");
-
-WriteLiteral(" class=\"hidden-upload pull-right\"");
-
-WriteLiteral(" accept=\"text/csv,image/jpeg,image/png,application/pdf\"");
-
-WriteLiteral(" multiple=\"\"");
-
-WriteLiteral(" capture=\"camera\"");
-
-WriteLiteral(" type=\"file\"");
-
-WriteLiteral(">\r\n                                        <a");
-
-WriteLiteral(" class=\"btn btn-icon\"");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"#\"");
-
-WriteLiteral(">\r\n                                            <i");
-
-WriteLiteral(" class=\"icon icon-PaperClip\"");
-
-WriteLiteral("></i>\r\n                                        </a>\r\n                            " +
-"        </label>\r\n                                    <label");
-
-WriteLiteral(" class=\"attachment-upload pull-left hidden-xs\"");
-
-WriteLiteral(">\r\n                                        <a");
-
-WriteLiteral(" class=\"btn btn-icon\"");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" data-toggle=\"modal\"");
-
-WriteLiteral(" data-target=\"#modal-attachments\"");
-
-WriteLiteral(" title=\"#\"");
-
-WriteLiteral(">\r\n                                            <i");
-
-WriteLiteral(" class=\"icon icon-FileBox\"");
-
-WriteLiteral("></i>\r\n                                        </a>\r\n                            " +
-"        </label>\r\n                                    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                </div>\r\n\r\n                              " +
-"  <button");
-
-WriteLiteral(" type=\"submit\"");
-
-WriteLiteral(" class=\"btn btn-default pull-right\"");
-
-WriteLiteral(">\r\n                                    Send <span");
-
-WriteLiteral(" class=\"icon icon-Plaine\"");
-
-WriteLiteral("></span>\r\n                                </button>\r\n\r\n                          " +
-"      <div");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                                    <textarea");
-
-WriteLiteral(" autocomplete=\"off\"");
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(" name=\"messageText\"");
-
-WriteLiteral(" placeholder=\"send message...\"");
-
-WriteLiteral("></textarea>\r\n                                </div>\r\n                           " +
-" </div>\r\n                        </div>\r\n                    </div>\r\n           " +
-"     </div>\r\n            </form>\r\n            <div");
-
-WriteLiteral(" class=\"part-bottom hidden-xs with-image-background\"");
-
-WriteLiteral("></div>\r\n        </div>\r\n    </main>\r\n\r\n    <!-- Root element of PhotoSwipe. Must" +
-" have class pswp. -->\r\n    <div");
-
-WriteLiteral(" class=\"pswp\"");
-
-WriteLiteral(" tabindex=\"-1\"");
-
-WriteLiteral(" role=\"dialog\"");
-
-WriteLiteral(" aria-hidden=\"true\"");
-
-WriteLiteral(">\r\n        <!-- Background of PhotoSwipe.\r\n             It\'s a separate element a" +
-"s animating opacity is faster than rgba(). -->\r\n        <div");
-
-WriteLiteral(" class=\"pswp__bg\"");
-
-WriteLiteral("></div>\r\n        <!-- Slides wrapper with overflow:hidden. -->\r\n        <div");
-
-WriteLiteral(" class=\"pswp__scroll-wrap\"");
-
-WriteLiteral(">\r\n            <!-- Container that holds slides.\r\n                PhotoSwipe keep" +
-"s only 3 of them in the DOM to save memory.\r\n                Don\'t modify these " +
-"3 pswp__item elements, data is added later on. -->\r\n            <div");
-
-WriteLiteral(" class=\"pswp__container\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"pswp__item\"");
-
-WriteLiteral("></div>\r\n                <div");
-
-WriteLiteral(" class=\"pswp__item\"");
-
-WriteLiteral("></div>\r\n                <div");
-
-WriteLiteral(" class=\"pswp__item\"");
-
-WriteLiteral("></div>\r\n            </div>\r\n            <!-- Default (PhotoSwipeUI_Default) inte" +
-"rface on top of sliding area. Can be changed. -->\r\n            <div");
-
-WriteLiteral(" class=\"pswp__ui pswp__ui--hidden\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"pswp__top-bar\"");
-
-WriteLiteral(">\r\n                    <!--  Controls are self-explanatory. Order can be changed." +
-" -->\r\n                    <div");
-
-WriteLiteral(" class=\"pswp__counter\"");
-
-WriteLiteral("></div>\r\n                    <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--close\"");
-
-WriteLiteral(" title=\"Close (Esc)\"");
-
-WriteLiteral("></button>\r\n                    <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--share\"");
-
-WriteLiteral(" title=\"Share\"");
-
-WriteLiteral("></button>\r\n                    <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--fs\"");
-
-WriteLiteral(" title=\"Toggle fullscreen\"");
-
-WriteLiteral("></button>\r\n                    <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--zoom\"");
-
-WriteLiteral(" title=\"Zoom in/out\"");
-
-WriteLiteral("></button>\r\n                    <!-- Preloader demo http://codepen.io/dimsemenov/" +
-"pen/yyBWoR -->\r\n                    <!-- element will get class pswp__preloader-" +
-"-active when preloader is running -->\r\n                    <div");
-
-WriteLiteral(" class=\"pswp__preloader\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"pswp__preloader__icn\"");
-
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"pswp__preloader__cut\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"pswp__preloader__donut\"");
-
-WriteLiteral("></div>\r\n                            </div>\r\n                        </div>\r\n    " +
-"                </div>\r\n                </div>\r\n                <div");
-
-WriteLiteral(" class=\"pswp__share-modal pswp__share-modal--hidden pswp__single-tap\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"pswp__share-tooltip\"");
-
-WriteLiteral("></div>\r\n                </div>\r\n                <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--arrow--left\"");
-
-WriteLiteral(" title=\"Previous (arrow left)\"");
-
-WriteLiteral("></button>\r\n                <button");
-
-WriteLiteral(" class=\"pswp__button pswp__button--arrow--right\"");
-
-WriteLiteral(" title=\"Next (arrow right)\"");
-
-WriteLiteral("></button>\r\n                <div");
-
-WriteLiteral(" class=\"pswp__caption\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"pswp__caption__center\"");
-
-WriteLiteral("></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n" +
-"    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 31025), Tuple.Create("\"", 31061)
-, Tuple.Create(Tuple.Create("", 31031), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery.easing.min.js")
-, 31031), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 31085), Tuple.Create("\"", 31118)
-, Tuple.Create(Tuple.Create("", 31091), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe.min.js")
-, 31091), false)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 31142), Tuple.Create("\"", 31186)
-, Tuple.Create(Tuple.Create("", 31148), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/photoswipe-ui-default.min.js")
-, 31148), false)
-);
-
-WriteLiteral("></script>\r\n\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollT" +
-"ime = 1000 * 10;\r\n\r\n        $(function () {\r\n            $(document).scrollTop($" +
-"(document).height());\r\n            setTimeout(doPoll, pollTime);\r\n\r\n            " +
-"$(\'#send-message-form\').submit(function (e) {\r\n                e.preventDefault(" +
-");\r\n                sendMessage();\r\n            });\r\n\r\n            $(\'.icon-Pape" +
-"rClip\').parent().click(function () {\r\n                $(\'#attachments\').trigger(" +
-"\'click\');\r\n                $(\'.file-attachment\').show();\r\n            });\r\n\r\n   " +
-"         //$(\'.file-attachment\').hide();\r\n\r\n            $(\'.close-file\').click(f" +
-"unction () {\r\n                if ($(\"#send-message-form .file-attachment .previe" +
-"w\").length == 0) $(\'.file-attachment\').hide();\r\n            });\r\n\r\n            $" +
-"(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal-attachments\'" +
-").find(\'.picked\').each(function () {\r\n                    var image = $(this).fi" +
-"nd(\'img\').attr(\'src\');\r\n                    var storageguid = $(this).find(\'img\'" +
-").attr(\'storageguid\');\r\n                    $(\'.file-attachment-thumbnails\').app" +
-"end($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"ba" +
-"ckground-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"" +
-"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid " +
-"+ \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-attachment-thumb" +
-"nails\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n         " +
-"           $(\'.existing-preview\').each(function () {\r\n                        va" +
-"r $this = $(this);\r\n                        $(this).find(\'a.close-file\').click(f" +
-"unction () { $this.remove(); });\r\n                    });\r\n                });\r\n" +
-"            });\r\n\r\n            /* Auto popup gallery */\r\n            var url = w" +
-"indow.location.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1)" +
-";\r\n            var queries = hash.split(\"&\");\r\n            for (var i = 0; i < q" +
-"ueries.length; i++) {\r\n                if (queries[i].includes(\"pid\")) {\r\n      " +
-"              var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + p" +
-"id).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            var texta" +
-"rea = document.querySelector(\'textarea[name=messageText]\');\r\n            textare" +
-"a.addEventListener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n " +
-"               var el = this;\r\n                setTimeout(function () {\r\n       " +
-"             el.style.cssText = \'height:auto; padding:0\';\r\n                    /" +
-"/ for box-sizing other than \"content-box\" use:\r\n                    // el.style." +
-"cssText = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssText =" +
-" \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n   " +
-"     });\r\n\r\n        function sendMessage() {\r\n            tempSentMessageId++;\r\n" +
-"\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var mess" +
-"ageText = $(\'#send-message-form textarea[name=messageText]\').val();\r\n           " +
-" var attachments = $(\"#send-message-form .file-attachment .preview\");\r\n         " +
-"   var existingAttachments = $(\"#send-message-form .file-attachment .existing-pr" +
-"eview\");\r\n            var formToSubmit = $(\"#send-message-form\").serialize();\r\n\r" +
-"\n            $(\'textarea[name=messageText]\').val(\'\');\r\n            $(\'textarea[n" +
-"ame=messageText]\').css(\'height\', \'60px\');\r\n            $(\'.file-attachment-thumb" +
-"nails\').empty().hide();\r\n            $(\'#file-attachment\').hide();\r\n\r\n          " +
-"  if (attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingA" +
-"ttachments.length > 0) {\r\n                var message = $(\r\n                    " +
-"\'<div id=\"\' + messageId + \'\"class=\"row row-no-gutter answer message-provider sen" +
-"ding\">\' +\r\n                        \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n   " +
-"                     \'<figure>\' +\r\n                            \'<span class=\"img" +
-"-circle\">");
-
-            
-            #line 572 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                  Write(Html.LoggedInUser().Person.FirstName[0]);
-
-            
-            #line default
-            #line hidden
-            
-            #line 572 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                            Write(Html.LoggedInUser().Person.LastName[0]);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n                        \'<div " +
-"class=\"inner-content\">\' +\r\n                            \'<time><span>Now<span></s" +
-"pan></span></time>\' +\r\n                            \'<div class=\"clearfix\"></div>" +
-"\' +\r\n                            \'<div class=\"panel panel-default\">\' +\r\n        " +
-"                        \'<div class=\"panel-body\">\' +\r\n                          " +
-"           messageText +\r\n                                    \'</div>\' +\r\n      " +
-"                          \'</div>\' +\r\n                            \'</div>\' +\r\n  " +
-"                      \'</div>\' +\r\n                        \'<div class=\"col-md-2\"" +
-"><div class=\"circle-timeline\"></div></div>\' +\r\n                    \'</div>\');\r\n\r" +
-"\n                if (attachments.length > 0 || existingAttachments.length > 0) {" +
-"\r\n                    var attachmentHtml = \'<div class=\"file-attachment text-cen" +
-"ter\">\';\r\n\r\n                    for (var i = 0; i < attachments.length; i++) {\r\n " +
-"                       attachmentHtml += \'<div class=\"spin-icon-box\"><span class" +
-"=\"icon icon-Restart spinner\"></span></div>\';\r\n                    }\r\n\r\n         " +
-"           for (var i = 0; i < existingAttachments.length; i++) {\r\n             " +
-"           attachmentHtml += \'<div class=\"spin-icon-box\"><span class=\"icon icon-" +
-"Restart spinner\"></span></div>\';\r\n                    }\r\n\r\n                    a" +
-"ttachmentHtml += \"</div>\";\r\n                    message.find(\".panel\").append(\'<" +
-"div class=\"panel-footer\"></div>\').find(\".panel-footer\").append(attachmentHtml);\r" +
-"\n                }\r\n\r\n                var baseMainHeight = $(document).height();" +
-"\r\n                $(\".messagebox\").append(message);\r\n                $(\'html,bod" +
-"y\').animate({ scrollTop: $(document).scrollTop() + $(document).height() - baseMa" +
-"inHeight }, \"fast\");\r\n\r\n                $.ajax({\r\n                    url: \'/enq" +
-"uiry/");
-
-            
-            #line 607 "..\..\Views\Enquiry\Enquiry.cshtml"
-                              Write(Model.Workflow.Id);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("/chat/");
-
-            
-            #line 607 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                      Write(Model.Conversation.Id);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/send-message',
-                    type: ""POST"",
-                    data: formToSubmit,
-                    enctype: 'multipart/form-data',
-                    success: function (insertedId) {
-                        doPoll();
-                        $(""#"" + messageId).remove();
-                    },
-                    error: function (data) {
-                        window.location.href = ""/"";
-                    }
-                });
-
-            }
-        }
-
-        function doPoll() {
-            $.ajax({
-                url: '/enquiry/");
-
-            
-            #line 625 "..\..\Views\Enquiry\Enquiry.cshtml"
-                          Write(Model.Workflow.Id);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("/chat/");
-
-            
-            #line 625 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                  Write(Model.Conversation.Id);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/get-updated-timeline?isActive=' + true,
-                type: 'GET',
-                success: function (data) {
-
-                    var baseMainHeight = $(document).height();
-
-                    $('.messagebox').children().not('.sending').remove();
-                    $("".messagebox"").prepend(data);
-
-                    $('html,body').animate({
-                        scrollTop: $(document).scrollTop() + $(document).height() - baseMainHeight
-                    }, ""fast"");
-
-                    setTimeout(doPoll, pollTime);
-                },
-                error: function (data) {
-                    window.location.href = ""/"";
-                }
-            });
-        }
-    </script>
-
-</body>");
+});
 
         }
     }

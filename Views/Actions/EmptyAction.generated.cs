@@ -26,6 +26,9 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Realtair.Framework.Core.Actions;
+    using Realtair.Framework.Core.Entities;
+    using Realtair.Framework.Core.Interfaces;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Actions/EmptyAction.cshtml")]
@@ -36,37 +39,75 @@ namespace ASP
         }
         public override void Execute()
         {
-
-WriteLiteral(@"<body id=""page-confirmation"" class=""animate-in"">
-    <div class=""loading"" style=""display: none;""><span class=""message"">Loading...</span></div>
-    <div class=""container text-center"">
-        <div class=""content-table"">
-            <div class=""content-vertical middle"">
-                <div class=""row"">
-                    <div class=""col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-4"">
-                        <h1>");
-
+            
+            #line 2 "..\..\Views\Actions\EmptyAction.cshtml"
+Write(Html.Partial("Menu"));
 
             
-            #line 9 "..\..\Views\Actions\EmptyAction.cshtml"
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" id=\"page-wrapper\"");
+
+WriteLiteral(" class=\"with-background\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"panel panel-default container\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"content-table\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"content-vertical middle\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-" +
+"4\"");
+
+WriteLiteral(">\r\n                        <h1>");
+
+            
+            #line 10 "..\..\Views\Actions\EmptyAction.cshtml"
                        Write(Model.Action.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral(@"</h1>
-                        <div class=""pull-middle"">
-                            <a onclick=""$('#main-form').submit()"" class=""btn-primary btn-lg btn"">Confirm</a>
-                            <a class=""btn-warning btn-lg btn"" href=""/"">Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <form style=""display: none;"" id=""main-form"" method=""POST""></form>
-</body>");
+WriteLiteral("</h1>\r\n                        <div");
 
+WriteLiteral(" class=\"pull-middle\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" onclick=\"$(\'#main-form\').submit()\"");
+
+WriteLiteral(" class=\"btn-primary btn-lg btn\"");
+
+WriteLiteral(">Confirm</a>\r\n                            <a");
+
+WriteLiteral(" class=\"btn-warning btn-lg btn\"");
+
+WriteLiteral(" href=\"/\"");
+
+WriteLiteral(">Cancel</a>\r\n                        </div>\r\n                    </div>\r\n        " +
+"        </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <form");
+
+WriteLiteral(" style=\"display: none;\"");
+
+WriteLiteral(" id=\"main-form\"");
+
+WriteLiteral(" method=\"POST\"");
+
+WriteLiteral("></form>\r\n</div>");
 
         }
     }

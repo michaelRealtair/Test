@@ -1,123 +1,74 @@
 ﻿@using Realtair.Framework.Core.Web.Utilities
 @model Realtair.Framework.Core.Web.Controllers.SettingsController.ViewModel
 
-<body class="page-header-hero">
+@Html.Partial("Menu")
 
-    <header id="section-header" class="header-admin header-sm" role="banner">
+<div id="page-wrapper" class="with-background">
+    <div class="container">
+        <div class="white-box">
+            <h3 class="box-title">@Model.Description</h3>
+            <div class="vtabs customvtab">
+                <ul class="nav tabs-vertical">
 
-        <div class="bg-header">
-            <div class="overlay-gradient-radial"></div>
-            <div class="overlay-gradient-linear"></div>
-            <div class="bg-default" style="background-image: url(/content/img/background-desk.jpg)"></div>
-        </div>
-        @Html.Partial("BackMenu")
-        <div class="header-content">
-            <div class="title-hero">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h1 class="ellipsis">
-                                <strong>Settings</strong>
-                                <small class="ellipsis">@Model.Description</small>Raz
-                            </h1>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="box-btn">
-                                <div class="row">
-
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </header>
-
-    <div class="clearfix"></div>
-
-    <main role="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-default panel-tab hidden-xs">
-                        <ul class="nav nav-pills nav-stacked">
-                            @foreach (var setting in Model.Actions)
-                            {
-                                <li class="@(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
-                                    <a data-toggle="tab" href="#tab-@setting.UrlSafeName()">
-                                        @setting.Description(Html.LoggedInUser())
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="tab-content tab-content-display">
-                        @foreach (var setting in Model.Actions)
-                        {
-                            <div id="tab-@setting.UrlSafeName()" class="tab-pane fade in @(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h2>@setting.Description(Html.LoggedInUser())</h2>
+                    @foreach (var setting in Model.Actions)
+                    {
+                        <li class="tab @(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
+                            <a data-toggle="tab" href="#tab-@setting.UrlSafeName()">
+                                @setting.Description(Html.LoggedInUser())
+                            </a>
+                        </li>
+                    }
+                </ul>
+                <div class="tab-content">
+                    @foreach (var setting in Model.Actions)
+                    {
+                        <div id="tab-@setting.UrlSafeName()" class="tab-pane fade in @(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
+                            <form method="post" class="form-horizontal" action="/@Model.Entity.UrlSafeName()/@Model.Entity.Id/settings/@setting.UrlSafeName()">
+                                @if (setting.HasValidated && !setting.IsValid)
+                                {
+                                    if (setting.Errors.Where(e => e.MemberNames.Count() == 0).Count() > 0)
+                                    {
+                                        <div class="alert alert-danger">
+                                            @foreach (var error in setting.Errors.Where(e => e.MemberNames.Count() == 0))
+                                            {
+                                                <p>@error.ErrorMessage</p>
+                                            }
+                                        </div>
+                                    }
+                                }
+                                else if (setting == Model.SelectedAction && Model.Submitted)
+                                {
+                                    <div class="alert alert-success">
+                                        <p>Success!</p>
                                     </div>
-                                    <form method="post" class="form-horizontal" action="/@Model.Entity.UrlSafeName()/@Model.Entity.Id/settings/@setting.UrlSafeName()">
-                                        <div class="panel-body">
-                                            @if (setting.HasValidated && !setting.IsValid)
-                                            {
-                                                if (setting.Errors.Where(e => e.MemberNames.Count() == 0).Count() > 0)
-                                                {
-                                                    <div class="alert alert-danger">
-                                                        @foreach (var error in setting.Errors.Where(e => e.MemberNames.Count() == 0))
-                                                        {
-                                                            <p>@error.ErrorMessage</p>
-                                                        }
-                                                    </div>
-                                                }
-                                            }
-                                            else if (setting == Model.SelectedAction && Model.Submitted)
-                                            {
-                                                <div class="alert alert-success">
-                                                    <p>Success!</p>
-                                                </div>
-                                            }
+                                }
 
-                                            @foreach (var field in setting.Fields)
-                                            {
-                                                var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                                var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                @foreach (var field in setting.Fields)
+                                {
+                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
 
-                                                <div class="col-md-12">
-                                                    @if (Html.ViewExists(fieldWithReturnType))
-                                                    {
-                                                        @Html.Partial(fieldWithReturnType, field);
-                                                    }
-                                                    else if (Html.ViewExists(fieldWithoutReturnType))
-                                                    {
-                                                        @Html.Partial(fieldWithoutReturnType, field);
-                                                    }
-                                                    else
-                                                    {
-                                                        <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
-                                                    }
-                                                </div>
-                                            }
-                                        </div>
-                                        <div class="panel-footer">
-                                            <input type="submit" value="@setting.Description(Html.LoggedInUser())" class="btn btn-primary pull-right">
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        }
-                    </div>
+                                    <div class="col-md-12">
+                                        @if (Html.ViewExists(fieldWithReturnType))
+                                        {
+                                            @Html.Partial(fieldWithReturnType, field);
+                                        }
+                                        else if (Html.ViewExists(fieldWithoutReturnType))
+                                        {
+                                            @Html.Partial(fieldWithoutReturnType, field);
+                                        }
+                                        else
+                                        {
+                                            <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
+                                        }
+                                    </div>
+                                }
+                                <input type="submit" value="@setting.Description(Html.LoggedInUser())" class="btn btn-primary pull-right">
+                            </form>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
-    </main>
-</body>
+    </div>
+</div>

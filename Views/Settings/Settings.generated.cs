@@ -45,354 +45,234 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<body");
-
-WriteLiteral(" class=\"page-header-hero\"");
-
-WriteLiteral(">\r\n\r\n    <header");
-
-WriteLiteral(" id=\"section-header\"");
-
-WriteLiteral(" class=\"header-admin header-sm\"");
-
-WriteLiteral(" role=\"banner\"");
-
-WriteLiteral(">\r\n\r\n        <div");
-
-WriteLiteral(" class=\"bg-header\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"overlay-gradient-radial\"");
-
-WriteLiteral("></div>\r\n            <div");
-
-WriteLiteral(" class=\"overlay-gradient-linear\"");
-
-WriteLiteral("></div>\r\n            <div");
-
-WriteLiteral(" class=\"bg-default\"");
-
-WriteLiteral(" style=\"background-image: url(/content/img/background-desk.jpg)\"");
-
-WriteLiteral("></div>\r\n        </div>\r\n");
-
-WriteLiteral("        ");
-
             
-            #line 13 "..\..\Views\Settings\Settings.cshtml"
-   Write(Html.Partial("BackMenu"));
+            #line 4 "..\..\Views\Settings\Settings.cshtml"
+Write(Html.Partial("Menu"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <div");
+WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral(" class=\"header-content\"");
+WriteLiteral(" id=\"page-wrapper\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(" class=\"with-background\"");
 
-WriteLiteral(" class=\"title-hero\"");
-
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"row\"");
+WriteLiteral(" class=\"white-box\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n            <h3");
 
-WriteLiteral(" class=\"col-sm-4\"");
-
-WriteLiteral(">\r\n                            <h1");
-
-WriteLiteral(" class=\"ellipsis\"");
-
-WriteLiteral(">\r\n                                <strong>Settings</strong>\r\n                   " +
-"             <small");
-
-WriteLiteral(" class=\"ellipsis\"");
+WriteLiteral(" class=\"box-title\"");
 
 WriteLiteral(">");
 
             
-            #line 21 "..\..\Views\Settings\Settings.cshtml"
-                                                   Write(Model.Description);
+            #line 9 "..\..\Views\Settings\Settings.cshtml"
+                             Write(Model.Description);
 
             
             #line default
             #line hidden
-WriteLiteral("</small>Raz\r\n                            </h1>\r\n                        </div>\r\n " +
-"                       <div");
+WriteLiteral("</h3>\r\n            <div");
 
-WriteLiteral(" class=\"col-sm-8\"");
+WriteLiteral(" class=\"vtabs customvtab\"");
 
-WriteLiteral(">\r\n                            <div");
+WriteLiteral(">\r\n                <ul");
 
-WriteLiteral(" class=\"box-btn\"");
+WriteLiteral(" class=\"nav tabs-vertical\"");
 
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n\r\n                                </div>\r\n                                <div" +
-"");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                            </div>\r\n                        </div>\r\n    " +
-"                </div>\r\n                </div>\r\n            </div>\r\n            " +
-"<div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n        </div>\r\n    </header>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n\r\n    <main");
-
-WriteLiteral(" role=\"main\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"col-sm-4\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"panel panel-default panel-tab hidden-xs\"");
-
-WriteLiteral(">\r\n                        <ul");
-
-WriteLiteral(" class=\"nav nav-pills nav-stacked\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n\r\n");
 
             
-            #line 47 "..\..\Views\Settings\Settings.cshtml"
-                            
+            #line 13 "..\..\Views\Settings\Settings.cshtml"
+                    
             
             #line default
             #line hidden
             
-            #line 47 "..\..\Views\Settings\Settings.cshtml"
-                             foreach (var setting in Model.Actions)
-                            {
+            #line 13 "..\..\Views\Settings\Settings.cshtml"
+                     foreach (var setting in Model.Actions)
+                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                                <li");
+WriteLiteral("                        <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1922), Tuple.Create("\"", 2046)
+WriteAttribute("class", Tuple.Create(" class=\"", 525), Tuple.Create("\"", 653)
+, Tuple.Create(Tuple.Create("", 533), Tuple.Create("tab", 533), true)
             
-            #line 49 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 1930), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
+            #line 15 "..\..\Views\Settings\Settings.cshtml"
+, Tuple.Create(Tuple.Create(" ", 536), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
             
             #line default
             #line hidden
-, 1930), false)
+, 537), false)
 );
 
-WriteLiteral(">\r\n                                    <a");
+WriteLiteral(">\r\n                            <a");
 
 WriteLiteral(" data-toggle=\"tab\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2106), Tuple.Create("\"", 2140)
-, Tuple.Create(Tuple.Create("", 2113), Tuple.Create("#tab-", 2113), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 705), Tuple.Create("\"", 739)
+, Tuple.Create(Tuple.Create("", 712), Tuple.Create("#tab-", 712), true)
             
-            #line 50 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 2118), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+            #line 16 "..\..\Views\Settings\Settings.cshtml"
+, Tuple.Create(Tuple.Create("", 717), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 2118), false)
+, 717), false)
 );
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                                        ");
+WriteLiteral("                                ");
 
             
-            #line 51 "..\..\Views\Settings\Settings.cshtml"
-                                   Write(setting.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                    </a>\r\n                                </li>" +
-"\r\n");
-
-            
-            #line 54 "..\..\Views\Settings\Settings.cshtml"
-                            }
+            #line 17 "..\..\Views\Settings\Settings.cshtml"
+                           Write(setting.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("                        </ul>\r\n                        <div");
+WriteLiteral("\r\n                            </a>\r\n                        </li>\r\n");
 
-WriteLiteral(" class=\"clearfix\"");
+            
+            #line 20 "..\..\Views\Settings\Settings.cshtml"
+                    }
 
-WriteLiteral("></div>\r\n                    </div>\r\n                </div>\r\n                <div" +
-"");
+            
+            #line default
+            #line hidden
+WriteLiteral("                </ul>\r\n                <div");
 
-WriteLiteral(" class=\"col-sm-8\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"tab-content tab-content-display\"");
+WriteLiteral(" class=\"tab-content\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 61 "..\..\Views\Settings\Settings.cshtml"
-                        
+            #line 23 "..\..\Views\Settings\Settings.cshtml"
+                    
             
             #line default
             #line hidden
             
-            #line 61 "..\..\Views\Settings\Settings.cshtml"
-                         foreach (var setting in Model.Actions)
-                        {
+            #line 23 "..\..\Views\Settings\Settings.cshtml"
+                     foreach (var setting in Model.Actions)
+                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                            <div");
+WriteLiteral("                        <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2707), Tuple.Create("\"", 2738)
-, Tuple.Create(Tuple.Create("", 2712), Tuple.Create("tab-", 2712), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 1084), Tuple.Create("\"", 1115)
+, Tuple.Create(Tuple.Create("", 1089), Tuple.Create("tab-", 1089), true)
             
-            #line 63 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 2716), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+            #line 25 "..\..\Views\Settings\Settings.cshtml"
+, Tuple.Create(Tuple.Create("", 1093), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 2716), false)
+, 1093), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2739), Tuple.Create("\"", 2880)
-, Tuple.Create(Tuple.Create("", 2747), Tuple.Create("tab-pane", 2747), true)
-, Tuple.Create(Tuple.Create(" ", 2755), Tuple.Create("fade", 2756), true)
-, Tuple.Create(Tuple.Create(" ", 2760), Tuple.Create("in", 2761), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1116), Tuple.Create("\"", 1257)
+, Tuple.Create(Tuple.Create("", 1124), Tuple.Create("tab-pane", 1124), true)
+, Tuple.Create(Tuple.Create(" ", 1132), Tuple.Create("fade", 1133), true)
+, Tuple.Create(Tuple.Create(" ", 1137), Tuple.Create("in", 1138), true)
             
-            #line 63 "..\..\Views\Settings\Settings.cshtml"
-         , Tuple.Create(Tuple.Create(" ", 2763), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
+            #line 25 "..\..\Views\Settings\Settings.cshtml"
+     , Tuple.Create(Tuple.Create(" ", 1140), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
             
             #line default
             #line hidden
-, 2764), false)
+, 1141), false)
 );
 
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"panel panel-default\"");
-
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">\r\n                                        <h2>");
-
-            
-            #line 66 "..\..\Views\Settings\Settings.cshtml"
-                                       Write(setting.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</h2>\r\n                                    </div>\r\n                              " +
-"      <form");
+WriteLiteral(">\r\n                            <form");
 
 WriteLiteral(" method=\"post\"");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 3231), Tuple.Create("\"", 3317)
-, Tuple.Create(Tuple.Create("", 3240), Tuple.Create("/", 3240), true)
+WriteAttribute("action", Tuple.Create(" action=\"", 1332), Tuple.Create("\"", 1418)
+, Tuple.Create(Tuple.Create("", 1341), Tuple.Create("/", 1341), true)
             
-            #line 68 "..\..\Views\Settings\Settings.cshtml"
-         , Tuple.Create(Tuple.Create("", 3241), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
-            
-            #line default
-            #line hidden
-, 3241), false)
-, Tuple.Create(Tuple.Create("", 3268), Tuple.Create("/", 3268), true)
-            
-            #line 68 "..\..\Views\Settings\Settings.cshtml"
-                                     , Tuple.Create(Tuple.Create("", 3269), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
+            #line 26 "..\..\Views\Settings\Settings.cshtml"
+ , Tuple.Create(Tuple.Create("", 1342), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
             
             #line default
             #line hidden
-, 3269), false)
-, Tuple.Create(Tuple.Create("", 3285), Tuple.Create("/settings/", 3285), true)
+, 1342), false)
+, Tuple.Create(Tuple.Create("", 1369), Tuple.Create("/", 1369), true)
             
-            #line 68 "..\..\Views\Settings\Settings.cshtml"
-                                                               , Tuple.Create(Tuple.Create("", 3295), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+            #line 26 "..\..\Views\Settings\Settings.cshtml"
+                             , Tuple.Create(Tuple.Create("", 1370), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
             
             #line default
             #line hidden
-, 3295), false)
+, 1370), false)
+, Tuple.Create(Tuple.Create("", 1386), Tuple.Create("/settings/", 1386), true)
+            
+            #line 26 "..\..\Views\Settings\Settings.cshtml"
+                                                       , Tuple.Create(Tuple.Create("", 1396), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+            
+            #line default
+            #line hidden
+, 1396), false)
 );
-
-WriteLiteral(">\r\n                                        <div");
-
-WriteLiteral(" class=\"panel-body\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 70 "..\..\Views\Settings\Settings.cshtml"
-                                            
+            #line 27 "..\..\Views\Settings\Settings.cshtml"
+                                
             
             #line default
             #line hidden
             
-            #line 70 "..\..\Views\Settings\Settings.cshtml"
-                                             if (setting.HasValidated && !setting.IsValid)
-                                            {
-                                                if (setting.Errors.Where(e => e.MemberNames.Count() == 0).Count() > 0)
-                                                {
+            #line 27 "..\..\Views\Settings\Settings.cshtml"
+                                 if (setting.HasValidated && !setting.IsValid)
+                                {
+                                    if (setting.Errors.Where(e => e.MemberNames.Count() == 0).Count() > 0)
+                                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                                                    <div");
+WriteLiteral("                                        <div");
 
 WriteLiteral(" class=\"alert alert-danger\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 75 "..\..\Views\Settings\Settings.cshtml"
-                                                        
+            #line 32 "..\..\Views\Settings\Settings.cshtml"
+                                            
             
             #line default
             #line hidden
             
-            #line 75 "..\..\Views\Settings\Settings.cshtml"
-                                                         foreach (var error in setting.Errors.Where(e => e.MemberNames.Count() == 0))
-                                                        {
+            #line 32 "..\..\Views\Settings\Settings.cshtml"
+                                             foreach (var error in setting.Errors.Where(e => e.MemberNames.Count() == 0))
+                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                                            <p>");
+WriteLiteral("                                                <p>");
 
             
-            #line 77 "..\..\Views\Settings\Settings.cshtml"
-                                                          Write(error.ErrorMessage);
+            #line 34 "..\..\Views\Settings\Settings.cshtml"
+                                              Write(error.ErrorMessage);
 
             
             #line default
@@ -400,34 +280,34 @@ WriteLiteral("                                                            <p>");
 WriteLiteral("</p>\r\n");
 
             
-            #line 78 "..\..\Views\Settings\Settings.cshtml"
-                                                        }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                    </div>\r\n");
-
-            
-            #line 80 "..\..\Views\Settings\Settings.cshtml"
-                                                }
+            #line 35 "..\..\Views\Settings\Settings.cshtml"
                                             }
-                                            else if (setting == Model.SelectedAction && Model.Submitted)
-                                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                                <div");
+WriteLiteral("                                        </div>\r\n");
+
+            
+            #line 37 "..\..\Views\Settings\Settings.cshtml"
+                                    }
+                                }
+                                else if (setting == Model.SelectedAction && Model.Submitted)
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <div");
 
 WriteLiteral(" class=\"alert alert-success\"");
 
-WriteLiteral(">\r\n                                                    <p>Success!</p>\r\n         " +
-"                                       </div>\r\n");
+WriteLiteral(">\r\n                                        <p>Success!</p>\r\n                     " +
+"               </div>\r\n");
 
             
-            #line 87 "..\..\Views\Settings\Settings.cshtml"
-                                            }
+            #line 44 "..\..\Views\Settings\Settings.cshtml"
+                                }
 
             
             #line default
@@ -435,82 +315,82 @@ WriteLiteral(">\r\n                                                    <p>Succes
 WriteLiteral("\r\n");
 
             
-            #line 89 "..\..\Views\Settings\Settings.cshtml"
-                                            
+            #line 46 "..\..\Views\Settings\Settings.cshtml"
+                                
             
             #line default
             #line hidden
             
-            #line 89 "..\..\Views\Settings\Settings.cshtml"
-                                             foreach (var field in setting.Fields)
-                                            {
-                                                var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                                var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+            #line 46 "..\..\Views\Settings\Settings.cshtml"
+                                 foreach (var field in setting.Fields)
+                                {
+                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
 
 
             
             #line default
             #line hidden
-WriteLiteral("                                                <div");
+WriteLiteral("                                    <div");
 
 WriteLiteral(" class=\"col-md-12\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 95 "..\..\Views\Settings\Settings.cshtml"
-                                                    
+            #line 52 "..\..\Views\Settings\Settings.cshtml"
+                                        
             
             #line default
             #line hidden
             
-            #line 95 "..\..\Views\Settings\Settings.cshtml"
-                                                     if (Html.ViewExists(fieldWithReturnType))
-                                                    {
-                                                        
+            #line 52 "..\..\Views\Settings\Settings.cshtml"
+                                         if (Html.ViewExists(fieldWithReturnType))
+                                        {
+                                            
             
             #line default
             #line hidden
             
-            #line 97 "..\..\Views\Settings\Settings.cshtml"
-                                                   Write(Html.Partial(fieldWithReturnType, field));
+            #line 54 "..\..\Views\Settings\Settings.cshtml"
+                                       Write(Html.Partial(fieldWithReturnType, field));
 
             
             #line default
             #line hidden
             
-            #line 97 "..\..\Views\Settings\Settings.cshtml"
-                                                                                                 ;
-                                                    }
-                                                    else if (Html.ViewExists(fieldWithoutReturnType))
-                                                    {
-                                                        
+            #line 54 "..\..\Views\Settings\Settings.cshtml"
+                                                                                     ;
+                                        }
+                                        else if (Html.ViewExists(fieldWithoutReturnType))
+                                        {
+                                            
             
             #line default
             #line hidden
             
-            #line 101 "..\..\Views\Settings\Settings.cshtml"
-                                                   Write(Html.Partial(fieldWithoutReturnType, field));
+            #line 58 "..\..\Views\Settings\Settings.cshtml"
+                                       Write(Html.Partial(fieldWithoutReturnType, field));
 
             
             #line default
             #line hidden
             
-            #line 101 "..\..\Views\Settings\Settings.cshtml"
-                                                                                                    ;
-                                                    }
-                                                    else
-                                                    {
+            #line 58 "..\..\Views\Settings\Settings.cshtml"
+                                                                                        ;
+                                        }
+                                        else
+                                        {
 
             
             #line default
             #line hidden
-WriteLiteral("                                                        <p>Cannot render field vi" +
-"ew, looked for both ");
+WriteLiteral("                                            <p>Cannot render field view, looked f" +
+"or both ");
 
             
-            #line 105 "..\..\Views\Settings\Settings.cshtml"
-                                                                                                Write(fieldWithReturnType);
+            #line 62 "..\..\Views\Settings\Settings.cshtml"
+                                                                                    Write(fieldWithReturnType);
 
             
             #line default
@@ -518,8 +398,8 @@ WriteLiteral("                                                        <p>Cannot 
 WriteLiteral(" and ");
 
             
-            #line 105 "..\..\Views\Settings\Settings.cshtml"
-                                                                                                                         Write(fieldWithoutReturnType);
+            #line 62 "..\..\Views\Settings\Settings.cshtml"
+                                                                                                             Write(fieldWithoutReturnType);
 
             
             #line default
@@ -527,59 +407,47 @@ WriteLiteral(" and ");
 WriteLiteral("</p>\r\n");
 
             
-            #line 106 "..\..\Views\Settings\Settings.cshtml"
-                                                    }
+            #line 63 "..\..\Views\Settings\Settings.cshtml"
+                                        }
 
             
             #line default
             #line hidden
-WriteLiteral("                                                </div>\r\n");
+WriteLiteral("                                    </div>\r\n");
 
             
-            #line 108 "..\..\Views\Settings\Settings.cshtml"
-                                            }
+            #line 65 "..\..\Views\Settings\Settings.cshtml"
+                                }
 
             
             #line default
             #line hidden
-WriteLiteral("                                        </div>\r\n                                 " +
-"       <div");
-
-WriteLiteral(" class=\"panel-footer\"");
-
-WriteLiteral(">\r\n                                            <input");
+WriteLiteral("                                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 6561), Tuple.Create("\"", 6610)
+WriteAttribute("value", Tuple.Create(" value=\"", 4024), Tuple.Create("\"", 4073)
             
-            #line 111 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 6569), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
+            #line 66 "..\..\Views\Settings\Settings.cshtml"
+, Tuple.Create(Tuple.Create("", 4032), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
             
             #line default
             #line hidden
-, 6569), false)
+, 4032), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right\"");
 
-WriteLiteral(">\r\n                                            <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n                                        </div>\r\n                        " +
-"            </form>\r\n                                </div>\r\n                   " +
-"         </div>\r\n");
+WriteLiteral(">\r\n                            </form>\r\n                        </div>\r\n");
 
             
-            #line 117 "..\..\Views\Settings\Settings.cshtml"
-                        }
+            #line 69 "..\..\Views\Settings\Settings.cshtml"
+                    }
 
             
             #line default
             #line hidden
-WriteLiteral("                    </div>\r\n                </div>\r\n            </div>\r\n        <" +
-"/div>\r\n    </main>\r\n</body>\r\n");
+WriteLiteral("                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
         }
     }
