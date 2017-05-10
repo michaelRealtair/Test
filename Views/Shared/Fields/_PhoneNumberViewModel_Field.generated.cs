@@ -120,17 +120,11 @@ WriteLiteral(" />\r\n\r\n<link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 615), Tuple.Create("\"", 671)
-, Tuple.Create(Tuple.Create("", 622), Tuple.Create<System.Object, System.Int32>(Href("~/Content/plugins/intl-tel-input/intlTelInput.css")
-, 622), false)
-);
+WriteLiteral(" href=\"http://static.realtair.com/plugins/intl-tel-input/intlTelInput.css\"");
 
 WriteLiteral(" />\r\n<script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 684), Tuple.Create("\"", 738)
-, Tuple.Create(Tuple.Create("", 690), Tuple.Create<System.Object, System.Int32>(Href("~/Content/plugins/intl-tel-input/intlTelInput.js")
-, 690), false)
-);
+WriteLiteral(" src=\"http://static.realtair.com/plugins/intl-tel-input/intlTelInput.js\"");
 
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        var input = $(\"#");
 
@@ -141,10 +135,14 @@ WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        var input
             
             #line default
             #line hidden
-WriteLiteral("\");\r\n        input.intlTelInput({\r\n            nationalMode: true,\r\n            p" +
-"referredCountries: [\"au\"],\r\n            utilsScript: \'../../../../Content/plugin" +
-"s/intl-tel-input/utils.js\'// just for formatting/placeholders etc\r\n        });\r\n" +
-"\r\n        $(\'#");
+WriteLiteral(@""");
+        input.intlTelInput({
+            nationalMode: true,
+            preferredCountries: [""au""],
+            utilsScript: 'http://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
+        });
+
+        $('#");
 
             
             #line 34 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
