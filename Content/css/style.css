@@ -16857,3 +16857,16 @@ ul.pro-amenities li span i {
     min-height: calc(100vh - 150px) !important;
   }
 }
+footer.footer.ticker {
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  position: fixed;
+}
+footer.footer.ticker .newsticker {
+  height: 45px !important;
+}
+footer.footer.ticker .tickercontainer {
+  min-height: 0;
+  max-height: 45px;
+}
