@@ -88,6 +88,16 @@ WriteAttribute("src", Tuple.Create(" src=\"", 461), Tuple.Create("\"", 490)
 
 WriteLiteral("></script>\r\n        <script");
 
+WriteAttribute("src", Tuple.Create(" src=\"", 287), Tuple.Create("\"", 316)
+, Tuple.Create(Tuple.Create("", 293), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
+, 293), false)
+);
+
+WriteLiteral("></script>\r\n        <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 344), Tuple.Create("\"", 377)
+, Tuple.Create(Tuple.Create("", 350), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
+, 350), false)
 WriteAttribute("src", Tuple.Create(" src=\"", 518), Tuple.Create("\"", 551)
 , Tuple.Create(Tuple.Create("", 524), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
 , 524), false)
