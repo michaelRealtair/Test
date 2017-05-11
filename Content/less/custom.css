@@ -1,0 +1,68 @@
+﻿.container.navbar-header {
+  float: none;
+}
+@media (min-width: 768px) {
+  .container.navbar-header {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container.navbar-header {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container.navbar-header {
+    width: 1170px;
+  }
+}
+#page-wrapper {
+  padding-top: 15px;
+}
+@media (min-width: 768px) {
+  #page-wrapper {
+    padding-top: 75px;
+  }
+}
+.top-left-part {
+  border-right: none;
+}
+.two-part li {
+  width: auto;
+}
+.white-box .dropdown a {
+  color: #313131;
+}
+@media (max-width: 768px) {
+  .chat-main-box {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+    margin-bottom: -60px;
+  }
+  .chat-list {
+    min-height: calc(100vh - 150px) !important;
+  }
+}
+footer.footer.ticker {
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 500;
+  position: fixed;
+}
+footer.footer.ticker .newsticker {
+  height: 40px !important;
+}
+footer.footer.ticker .tickercontainer {
+  min-height: 0;
+  max-height: 40px;
+}
+.two-part li span {
+  font-size: 30px;
+}
+.two-part li i {
+  font-size: 30px;
+}
+.white-box {
+  padding: 20px;
+}
