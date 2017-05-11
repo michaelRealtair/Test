@@ -27,6 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 1 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+    using Realtair.Framework.Core.Actions.FieldAttributes;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     
@@ -39,7 +45,16 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<div");
+            
+            #line 3 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+  
+    var attribute = Model.FieldAttribute as FileUploadFieldAttribute;
+    var acceptValue = attribute.Filter ?? "text/csv,image/jpeg,image/png,application/pdf";
+ 
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -54,7 +69,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+            #line 9 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
                                 Write(Model.Label);
 
             
@@ -66,16 +81,16 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(">\r\n        <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 236), Tuple.Create("\"", 265)
-, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
-, 242), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 461), Tuple.Create("\"", 490)
+, Tuple.Create(Tuple.Create("", 467), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
+, 467), false)
 );
 
 WriteLiteral("></script>\r\n        <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 293), Tuple.Create("\"", 326)
-, Tuple.Create(Tuple.Create("", 299), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
-, 299), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 518), Tuple.Create("\"", 551)
+, Tuple.Create(Tuple.Create("", 524), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
+, 524), false)
 );
 
 WriteLiteral("></script>\r\n        <div");
@@ -96,29 +111,37 @@ WriteLiteral(" class=\"attachment-upload pull-left btn btn-info btn-border\"");
 
 WriteLiteral(">\r\n                        <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 568), Tuple.Create("\"", 592)
+WriteAttribute("name", Tuple.Create(" name=\"", 793), Tuple.Create("\"", 817)
             
-            #line 15 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 575), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 19 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 800), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 575), false)
+, 800), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 593), Tuple.Create("\"", 615)
+WriteAttribute("id", Tuple.Create(" id=\"", 818), Tuple.Create("\"", 840)
             
-            #line 15 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 598), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 19 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 823), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 598), false)
+, 823), false)
 );
 
 WriteLiteral(" class=\"hidden-upload\"");
 
-WriteLiteral(" accept=\"text/csv,image/jpeg,image/png,application/pdf\"");
+WriteAttribute("accept", Tuple.Create(" accept=\"", 863), Tuple.Create("\"", 884)
+            
+            #line 19 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+                              , Tuple.Create(Tuple.Create("", 872), Tuple.Create<System.Object, System.Int32>(acceptValue
+            
+            #line default
+            #line hidden
+, 872), false)
+);
 
 WriteLiteral(" multiple=\"\"");
 

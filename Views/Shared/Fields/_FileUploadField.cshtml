@@ -1,5 +1,9 @@
-﻿@model Realtair.Framework.Core.Actions.Field
-
+﻿@using Realtair.Framework.Core.Actions.FieldAttributes
+@model Realtair.Framework.Core.Actions.Field
+@{
+    var attribute = Model.FieldAttribute as FileUploadFieldAttribute;
+    var acceptValue = attribute.Filter ?? "text/csv,image/jpeg,image/png,application/pdf";
+ }
 <div class="form-group">
     <div class="col-md-3 col-sm-4">
         <label class="control-label">@Model.Label</label>
@@ -12,7 +16,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="attachment-upload pull-left btn btn-info btn-border">
-                        <input name="@Model.UniqueName" id="@Model.UniqueName" class="hidden-upload" accept="text/csv,image/jpeg,image/png,application/pdf" multiple="" capture="camera" type="file">
+                        <input name="@Model.UniqueName" id="@Model.UniqueName" class="hidden-upload" accept="@acceptValue" multiple="" capture="camera" type="file">
                         <a class="button">Attach Files or Photos <i class="icon icon-PaperClip"></i></a>
                     </label>
                     <div class="clearfix"></div>
