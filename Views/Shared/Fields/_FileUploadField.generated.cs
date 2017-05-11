@@ -66,16 +66,23 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(">\r\n        <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 236), Tuple.Create("\"", 265)
-, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
+WriteAttribute("src", Tuple.Create(" src=\"", 236), Tuple.Create("\"", 259)
+, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/exif.js")
 , 242), false)
 );
 
 WriteLiteral("></script>\r\n        <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 293), Tuple.Create("\"", 326)
-, Tuple.Create(Tuple.Create("", 299), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
-, 299), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 287), Tuple.Create("\"", 316)
+, Tuple.Create(Tuple.Create("", 293), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
+, 293), false)
+);
+
+WriteLiteral("></script>\r\n        <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 344), Tuple.Create("\"", 377)
+, Tuple.Create(Tuple.Create("", 350), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
+, 350), false)
 );
 
 WriteLiteral("></script>\r\n        <div");
@@ -96,24 +103,24 @@ WriteLiteral(" class=\"attachment-upload pull-left btn btn-info btn-border\"");
 
 WriteLiteral(">\r\n                        <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 568), Tuple.Create("\"", 592)
+WriteAttribute("name", Tuple.Create(" name=\"", 619), Tuple.Create("\"", 643)
             
-            #line 15 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 575), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 16 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 626), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 575), false)
+, 626), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 593), Tuple.Create("\"", 615)
+WriteAttribute("id", Tuple.Create(" id=\"", 644), Tuple.Create("\"", 666)
             
-            #line 15 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 598), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 16 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 649), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 598), false)
+, 649), false)
 );
 
 WriteLiteral(" class=\"hidden-upload\"");
