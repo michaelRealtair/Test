@@ -40,6 +40,8 @@ namespace Realtair.Framework.Core.Web.Utilities
                 return GetUrl(Object as Enquiry, url);
             if (Object is Conversation)
                 return GetUrl(Object as Conversation, (Object as Conversation).Enquiry, url);
+            else if (Object is IDisplayable)
+                return GetDetailsUrl(Object, user, url);
             if (Object is IExtendedEnquiry)
                 return GetUrl((Object as IExtendedEnquiry).Enquiry, url);
             else if (Object is Report)
