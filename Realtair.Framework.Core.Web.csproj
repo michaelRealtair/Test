@@ -121,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Enquiry.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_TableWidget_WidgetField.generated.cs">
+      <DependentUpon>_TableWidget_WidgetField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_BulkFileUploadField.generated.cs">
       <DependentUpon>_BulkFileUploadField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3189,6 +3194,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>EmptyAction.generated.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\Fields\_TableWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TableWidget_WidgetField.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Shared\Fields\_ColourPickerField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ColourPickerField.generated.cs</LastGenOutput>

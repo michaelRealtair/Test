@@ -102,6 +102,10 @@
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
                                     }
+                                    else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
+                                    {
+
+                                    }
                                     else
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="@field.Value" />
@@ -167,6 +171,10 @@
                                         else if (field.Value is Entity)
                                         {
                                             <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                        }
+                                        else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
+                                        {
+
                                         }
                                         else
                                         {

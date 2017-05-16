@@ -188,7 +188,7 @@ namespace Realtair.Framework.Core.Web.Utilities
 
         public static IEnumerable<Type> AllTypes()
         {            
-            return typeof(Entity).Assembly.GetTypes().Concat(Assembly.Load(ConfigurationManager.AppSettings["CoreAssembly"]).GetTypes());
+            return typeof(Entity).Assembly.GetTypes().Concat(typeof(Enquiry).Assembly.GetTypes()).Concat(Assembly.Load(ConfigurationManager.AppSettings["CoreAssembly"]).GetTypes());
         }
 
         public static IActionable GetActionable(string actionableName)
