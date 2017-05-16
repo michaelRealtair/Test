@@ -12,39 +12,43 @@
             </div>
         </div>
         <input name="@(Model.UniqueName)" id="@(Model.UniqueName)" type="hidden" value="[]" />
-        <link rel="stylesheet" href="~/Content/plugins/dropzone/dropzone.css" type="text/css" />
-        <script src="~/Scripts/dropzone.js"></script>
-        <script>
-            Dropzone.autoDiscover = false;
-
-            var d = $("#@(Model.UniqueName)_upload").dropzone({
-                url: "/actions/functions/upload-attachment",
-                addRemoveLinks: true,
-                success: function (file, response) {
-                    var imageId = parseInt(response);
-                    var list = JSON.parse($('#@(Model.UniqueName)').val());
-                    list.push(imageId);
-                    $('#@(Model.UniqueName)').val(JSON.stringify(list));
-
-                    file.previewElement.setAttribute('data-documentid', imageId);
-                    file.previewElement.classList.add("dz-success");
-                },
-                error: function (file, response) {
-                    file.previewElement.classList.add("dz-error");
-                },
-                removedfile: function (file) {
-                    var list = JSON.parse($('#@(Model.UniqueName)').val());
-                    var imageId = parseInt(file.previewElement.getAttribute("data-documentid"));
-                    list = list.splice(list.indexOf(imageId) - 1, 1);
-                    $('#@(Model.UniqueName)').val(JSON.stringify(list));
-                    file.previewElement.parentElement.removeChild(file.previewElement);
-                    return true;
-                }
-            });
-
-            d.on("removedFile", function (file) {
-                alert("aaa!");
-            });
-        </script>
     </div>
 </div>
+
+@using (Html.Delayed())
+{      
+    <link rel="stylesheet" href="http://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.css" type="text/css" />
+    <script src="http://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+
+        var d = $("#@(Model.UniqueName)_upload").dropzone({
+            url: "/actions/functions/upload-attachment",
+            addRemoveLinks: true,
+            success: function (file, response) {
+                var imageId = parseInt(response);
+                var list = JSON.parse($('#@(Model.UniqueName)').val());
+                list.push(imageId);
+                $('#@(Model.UniqueName)').val(JSON.stringify(list));
+
+                file.previewElement.setAttribute('data-documentid', imageId);
+                file.previewElement.classList.add("dz-success");
+            },
+            error: function (file, response) {
+                file.previewElement.classList.add("dz-error");
+            },
+            removedfile: function (file) {
+                var list = JSON.parse($('#@(Model.UniqueName)').val());
+                var imageId = parseInt(file.previewElement.getAttribute("data-documentid"));
+                list = list.splice(list.indexOf(imageId) - 1, 1);
+                $('#@(Model.UniqueName)').val(JSON.stringify(list));
+                file.previewElement.parentElement.removeChild(file.previewElement);
+                return true;
+            }
+        });
+
+        d.on("removedFile", function (file) {
+            alert("aaa!");
+        });
+    </script>
+}

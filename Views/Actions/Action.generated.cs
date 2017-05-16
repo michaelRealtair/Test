@@ -1070,6 +1070,25 @@ WriteLiteral(@"        <script>
             
             #line default
             #line hidden
+WriteLiteral("\r\n\r\n");
+
+DefineSection("Scripts", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 219 "..\..\Views\Actions\Action.cshtml"
+Write(Html.RenderDelayed());
+
+            
+            #line default
+            #line hidden
+WriteLiteral(";\r\n");
+
+});
+
         }
     }
 }

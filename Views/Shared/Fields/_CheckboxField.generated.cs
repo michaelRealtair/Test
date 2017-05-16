@@ -83,24 +83,24 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n        <input");
+WriteLiteral("\r\n        <input");
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 426), Tuple.Create("\"", 457)
+WriteAttribute("name", Tuple.Create(" name=\"", 424), Tuple.Create("\"", 455)
             
-            #line 14 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 433), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 431), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 433), false)
+, 431), false)
 );
 
 WriteLiteral(" ");
 
             
-            #line 14 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                                           Write(formValue);
 
             

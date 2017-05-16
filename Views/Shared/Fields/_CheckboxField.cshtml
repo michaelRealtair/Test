@@ -10,7 +10,6 @@
             var formValue = "";
             if (Convert.ToBoolean(Model.FormValue)) { formValue = "checked='checked'"; }
         }
-
         <input type="checkbox" name="@Model.PropertyInfo.Name" @formValue />
     </div>
 </div>

@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_BulkFileUploadField.cshtml")]
@@ -110,100 +111,113 @@ WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" value=\"[]\"");
 
-WriteLiteral(" />\r\n        <link");
+WriteLiteral(" />\r\n    </div>\r\n</div>\r\n\r\n");
+
+            
+            #line 18 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+ using (Html.Delayed())
+{      
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 579), Tuple.Create("\"", 625)
-, Tuple.Create(Tuple.Create("", 586), Tuple.Create<System.Object, System.Int32>(Href("~/Content/plugins/dropzone/dropzone.css")
-, 586), false)
-);
+WriteLiteral(" href=\"http://static.realtair.com/plugins/bower_components/dropzone-master/dist/d" +
+"ropzone.css\"");
 
 WriteLiteral(" type=\"text/css\"");
 
-WriteLiteral(" />\r\n        <script");
+WriteLiteral(" />\r\n");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 662), Tuple.Create("\"", 689)
-, Tuple.Create(Tuple.Create("", 668), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/dropzone.js")
-, 668), false)
-);
+WriteLiteral("    <script");
 
-WriteLiteral("></script>\r\n        <script>\r\n            Dropzone.autoDiscover = false;\r\n\r\n     " +
-"       var d = $(\"#");
+WriteLiteral(" src=\"http://static.realtair.com/plugins/bower_components/dropzone-master/dist/dr" +
+"opzone.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    <script>\r\n        Dropzone.autoDiscover = false;\r\n\r\n        var d = $(\"#");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                    Write(Model.UniqueName);
+            #line 25 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                Write(Model.UniqueName);
 
             
             #line default
             #line hidden
 WriteLiteral(@"_upload"").dropzone({
-                url: ""/actions/functions/upload-attachment"",
-                addRemoveLinks: true,
-                success: function (file, response) {
-                    var imageId = parseInt(response);
-                    var list = JSON.parse($('#");
+            url: ""/actions/functions/upload-attachment"",
+            addRemoveLinks: true,
+            success: function (file, response) {
+                var imageId = parseInt(response);
+                var list = JSON.parse($('#");
 
             
-            #line 25 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                                          Write(Model.UniqueName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\').val());\r\n                    list.push(imageId);\r\n                    $(\'#");
-
-            
-            #line 27 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                    Write(Model.UniqueName);
+            #line 30 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                                      Write(Model.UniqueName);
 
             
             #line default
             #line hidden
-WriteLiteral(@"').val(JSON.stringify(list));
-
-                    file.previewElement.setAttribute('data-documentid', imageId);
-                    file.previewElement.classList.add(""dz-success"");
-                },
-                error: function (file, response) {
-                    file.previewElement.classList.add(""dz-error"");
-                },
-                removedfile: function (file) {
-                    var list = JSON.parse($('#");
+WriteLiteral("\').val());\r\n                list.push(imageId);\r\n                $(\'#");
 
             
-            #line 36 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                                          Write(Model.UniqueName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\').val());\r\n                    var imageId = parseInt(file.previewElement.getAtt" +
-"ribute(\"data-documentid\"));\r\n                    list = list.splice(list.indexOf" +
-"(imageId) - 1, 1);\r\n                    $(\'#");
-
-            
-            #line 39 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                    Write(Model.UniqueName);
+            #line 32 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                Write(Model.UniqueName);
 
             
             #line default
             #line hidden
 WriteLiteral(@"').val(JSON.stringify(list));
-                    file.previewElement.parentElement.removeChild(file.previewElement);
-                    return true;
-                }
-            });
 
-            d.on(""removedFile"", function (file) {
-                alert(""aaa!"");
-            });
-        </script>
-    </div>
-</div>
+                file.previewElement.setAttribute('data-documentid', imageId);
+                file.previewElement.classList.add(""dz-success"");
+            },
+            error: function (file, response) {
+                file.previewElement.classList.add(""dz-error"");
+            },
+            removedfile: function (file) {
+                var list = JSON.parse($('#");
+
+            
+            #line 41 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                                      Write(Model.UniqueName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\').val());\r\n                var imageId = parseInt(file.previewElement.getAttribu" +
+"te(\"data-documentid\"));\r\n                list = list.splice(list.indexOf(imageId" +
+") - 1, 1);\r\n                $(\'#");
+
+            
+            #line 44 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                Write(Model.UniqueName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"').val(JSON.stringify(list));
+                file.previewElement.parentElement.removeChild(file.previewElement);
+                return true;
+            }
+        });
+
+        d.on(""removedFile"", function (file) {
+            alert(""aaa!"");
+        });
+    </script>
 ");
 
+            
+            #line 54 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }
