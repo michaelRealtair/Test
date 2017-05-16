@@ -324,6 +324,12 @@
     <Content Include="Content\js\validator.js" />
     <Content Include="Content\js\waves.js" />
     <Content Include="Content\js\widget-ext.js" />
+    <Content Include="Content\less\custom.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\custom.min.css">
+      <DependentUpon>custom.css</DependentUpon>
+    </Content>
     <Content Include="Content\less\icons\font-awesome\.gitignore" />
     <Content Include="Content\less\icons\font-awesome\css\font-awesome.css" />
     <Content Include="Content\less\icons\font-awesome\css\font-awesome.min.css" />
@@ -2277,6 +2283,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Content\bootstrap\CHANGELOG.md" />
     <None Include="Content\bootstrap\dist\css\bootstrap-theme.css.map" />
     <None Include="Content\bootstrap\dist\css\bootstrap-theme.min.css.map" />
