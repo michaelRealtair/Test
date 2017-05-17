@@ -50,7 +50,7 @@ namespace ASP
             #line hidden
 WriteLiteral("\r\n\r\n<table");
 
-WriteLiteral(" class=\"table table-striped well\"");
+WriteLiteral(" class=\"table color-bordered-table muted-bordered-table\"");
 
 WriteLiteral(" style=\"width: 100%\"");
 
@@ -72,15 +72,15 @@ WriteLiteral(">\r\n    <thead>\r\n        <tr>\r\n");
             #line hidden
 WriteLiteral("                <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 312), Tuple.Create("\"", 341)
-, Tuple.Create(Tuple.Create("", 320), Tuple.Create("col-md-", 320), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 335), Tuple.Create("\"", 364)
+, Tuple.Create(Tuple.Create("", 343), Tuple.Create("col-md-", 343), true)
             
             #line 12 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-, Tuple.Create(Tuple.Create("", 327), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
+, Tuple.Create(Tuple.Create("", 350), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
             
             #line default
             #line hidden
-, 327), false)
+, 350), false)
 );
 
 WriteLiteral(">");
