@@ -21,7 +21,7 @@ namespace Realtair.Framework.Core.Web.Utilities
     using System.Reflection;
     public static class CoreExtensions
     {
-        public static string GetUrl(this IHasEvents workflow, UrlHelper url)
+        public static string GetUrl(this IHasParentEnquiry workflow, UrlHelper url)
         {
             return url.Action("Enquiry", "Enquiry", new
             {
