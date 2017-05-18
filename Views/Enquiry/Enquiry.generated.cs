@@ -240,7 +240,7 @@ WriteLiteral("</small></span></a>\r\n                            </li>\r\n");
 
             
             #line 33 "..\..\Views\Enquiry\Enquiry.cshtml"
-                        }  
+                        }
 
             
             #line default
@@ -283,77 +283,71 @@ WriteLiteral("                        ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </div>\r\n                    <form");
-
-WriteLiteral(" class=\"form-inline\"");
-
-WriteLiteral(" id=\"send-message-form\"");
-
-WriteLiteral(">\r\n                        <div");
+WriteLiteral("\r\n                    </div>\r\n                    <div");
 
 WriteLiteral(" class=\"row send-chat-box\"");
 
-WriteLiteral(">\r\n                            <div");
+WriteLiteral(">\r\n                        <div");
 
 WriteLiteral(" class=\"col-sm-12\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                
+            #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
+                            
             
             #line default
             #line hidden
             
-            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                 foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
-                                {
+            #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
+                             foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
+                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                    <form");
+WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"pull-right inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 3030), Tuple.Create("\"", 3058)
+WriteAttribute("action", Tuple.Create(" action=\"", 2947), Tuple.Create("\"", 2975)
             
-            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 3039), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 3039), false)
-);
-
-WriteAttribute("method", Tuple.Create(" method=\"", 3059), Tuple.Create("\"", 3114)
-            
-            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
-                          , Tuple.Create(Tuple.Create("", 3068), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 53 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 2956), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 3068), false)
+, 2956), false)
 );
 
-WriteLiteral(">\r\n                                        <input");
+WriteAttribute("method", Tuple.Create(" method=\"", 2976), Tuple.Create("\"", 3031)
+            
+            #line 53 "..\..\Views\Enquiry\Enquiry.cshtml"
+                      , Tuple.Create(Tuple.Create("", 2985), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            
+            #line default
+            #line hidden
+, 2985), false)
+);
+
+WriteLiteral(">\r\n                                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3195), Tuple.Create("\"", 3228)
+WriteAttribute("value", Tuple.Create(" value=\"", 3108), Tuple.Create("\"", 3141)
             
-            #line 55 "..\..\Views\Enquiry\Enquiry.cshtml"
-     , Tuple.Create(Tuple.Create("", 3203), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
+ , Tuple.Create(Tuple.Create("", 3116), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 3203), false)
+, 3116), false)
 );
 
-WriteLiteral(" />\r\n                                        <button");
+WriteLiteral(" />\r\n                                    <button");
 
 WriteLiteral(" class=\"btn btn-default pull-right\"");
 
@@ -362,34 +356,38 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 56 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                            Write(action.Description(Html.LoggedInUser()));
+            #line 55 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                        Write(action.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("</button>\r\n                                    </form>\r\n");
+WriteLiteral("</button>\r\n                                </form>\r\n");
 
             
-            #line 58 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                }
+            #line 57 "..\..\Views\Enquiry\Enquiry.cshtml"
+                            }
 
             
             #line default
             #line hidden
-WriteLiteral("                                <textarea");
+WriteLiteral("                        </div>\r\n                        <div");
+
+WriteLiteral(" class=\"col-sm-12\"");
+
+WriteLiteral(">\r\n                            <textarea");
 
 WriteLiteral(" class=\"form-control chat-box\"");
 
 WriteLiteral(" placeholder=\"Type your message\"");
 
-WriteLiteral("  name=\"messageText\"");
+WriteLiteral(" name=\"messageText\"");
 
-WriteLiteral("></textarea>\r\n                                <div");
+WriteLiteral("></textarea>\r\n                            <div");
 
 WriteLiteral(" class=\"custom-send\"");
 
-WriteLiteral(">\r\n                                    <a");
+WriteLiteral(">\r\n                                <a");
 
 WriteLiteral(" href=\"javacript:void(0)\"");
 
@@ -403,7 +401,7 @@ WriteLiteral("><i");
 
 WriteLiteral(" class=\"ti-face-smile\"");
 
-WriteLiteral("></i></a> \r\n                                    <a");
+WriteLiteral("></i></a>\r\n                                <a");
 
 WriteLiteral(" href=\"javacript:void(0)\"");
 
@@ -417,17 +415,16 @@ WriteLiteral("><i");
 
 WriteLiteral(" class=\"fa fa-paperclip\"");
 
-WriteLiteral("></i></a>\r\n                                    <button");
+WriteLiteral("></i></a>\r\n                                <button");
 
 WriteLiteral(" type=\"submit\"");
 
 WriteLiteral(" class=\"btn btn-danger btn-rounded\"");
 
 WriteLiteral(@">Send</button>
-                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <!-- .chat-right-panel -->
@@ -723,62 +720,62 @@ WriteLiteral(" class=\"footer text-center hidden-xs\"");
 
 WriteLiteral("> Powered by Realtair</footer>\r\n</div>\r\n<!-- /#page-wrapper -->\r\n\r\n");
 
-DefineSection("Styles", () => {
+DefineSection("Scripts", () => {
 
 WriteLiteral("\r\n    <script");
 
 WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
 
-WriteLiteral("></script>\r\n<script>\r\n        var tempSentMessageId = 0;\r\n        var pollTime = " +
-"1000 * 10;\r\n\r\n        $(function () {\r\n            $(document).scrollTop($(docum" +
-"ent).height());\r\n            setTimeout(doPoll, pollTime);\r\n\r\n            $(\'#se" +
-"nd-message-form\').submit(function (e) {\r\n                e.preventDefault();\r\n  " +
-"              sendMessage();\r\n            });\r\n\r\n            $(\'.icon-PaperClip\'" +
-").parent().click(function () {\r\n                $(\'#attachments\').trigger(\'click" +
-"\');\r\n                $(\'.file-attachment\').show();\r\n            });\r\n\r\n         " +
-"   //$(\'.file-attachment\').hide();\r\n\r\n            $(\'.close-file\').click(functio" +
-"n () {\r\n                if ($(\"#send-message-form .file-attachment .preview\").le" +
-"ngth == 0) $(\'.file-attachment\').hide();\r\n            });\r\n\r\n            $(\'#sel" +
-"ectPhotosBtn\').click(function () {\r\n                $(\'#modal-attachments\').find" +
-"(\'.picked\').each(function () {\r\n                    var image = $(this).find(\'im" +
-"g\').attr(\'src\');\r\n                    var storageguid = $(this).find(\'img\').attr" +
-"(\'storageguid\');\r\n                    $(\'.file-attachment-thumbnails\').append($(" +
-"\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"backgrou" +
-"nd-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"></i><" +
-"/a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid + \'\"><" +
-"/div>\'));\r\n                    $(\'.file-attachment, .file-attachment-thumbnails\'" +
-").show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n               " +
-"     $(\'.existing-preview\').each(function () {\r\n                        var $thi" +
-"s = $(this);\r\n                        $(this).find(\'a.close-file\').click(functio" +
-"n () { $this.remove(); });\r\n                    });\r\n                });\r\n      " +
-"      });\r\n\r\n            /* Auto popup gallery */\r\n            var url = window." +
-"location.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1);\r\n   " +
-"         var queries = hash.split(\"&\");\r\n            for (var i = 0; i < queries" +
-".length; i++) {\r\n                if (queries[i].includes(\"pid\")) {\r\n            " +
-"        var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + pid).tr" +
-"igger(\'click\');\r\n                }\r\n            }\r\n\r\n            var textarea = " +
-"document.querySelector(\'textarea[name=messageText]\');\r\n            textarea.addE" +
-"ventListener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n       " +
-"         var el = this;\r\n                setTimeout(function () {\r\n             " +
-"       el.style.cssText = \'height:auto; padding:0\';\r\n                    // for " +
-"box-sizing other than \"content-box\" use:\r\n                    // el.style.cssTex" +
-"t = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssText = \'heig" +
-"ht:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n        }" +
-");\r\n\r\n        function sendMessage() {\r\n            tempSentMessageId++;\r\n\r\n    " +
-"        var messageId = \"sent-\" + tempSentMessageId;\r\n            var messageTex" +
-"t = $(\'#send-message-form textarea[name=messageText]\').val();\r\n            var a" +
-"ttachments = $(\"#send-message-form .file-attachment .preview\");\r\n            var" +
-" existingAttachments = $(\"#send-message-form .file-attachment .existing-preview\"" +
-");\r\n            var formToSubmit = $(\"#send-message-form\").serialize();\r\n\r\n     " +
-"       $(\'textarea[name=messageText]\').val(\'\');\r\n            $(\'textarea[name=me" +
-"ssageText]\').css(\'height\', \'60px\');\r\n            $(\'.file-attachment-thumbnails\'" +
-").empty().hide();\r\n            $(\'#file-attachment\').hide();\r\n\r\n            if (" +
-"attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingAttachm" +
-"ents.length > 0) {\r\n                var message = $(\r\n                    \'<div " +
-"id=\"\' + messageId + \'\"class=\"row row-no-gutter answer message-provider sending\">" +
-"\' +\r\n                        \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n         " +
-"               \'<figure>\' +\r\n                            \'<span class=\"img-circl" +
-"e\">");
+WriteLiteral("></script>\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollTim" +
+"e = 1000 * 10;\r\n\r\n        $(function () {\r\n            $(document).scrollTop($(d" +
+"ocument).height());\r\n            //setTimeout(doPoll, pollTime);\r\n\r\n            " +
+"$(\'#send-message-form\').submit(function (e) {\r\n                e.preventDefault(" +
+");\r\n                sendMessage();\r\n            });\r\n\r\n            $(\'.icon-Pape" +
+"rClip\').parent().click(function () {\r\n                $(\'#attachments\').trigger(" +
+"\'click\');\r\n                $(\'.file-attachment\').show();\r\n            });\r\n\r\n   " +
+"         //$(\'.file-attachment\').hide();\r\n\r\n            $(\'.close-file\').click(f" +
+"unction () {\r\n                if ($(\"#send-message-form .file-attachment .previe" +
+"w\").length == 0) $(\'.file-attachment\').hide();\r\n            });\r\n\r\n            $" +
+"(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal-attachments\'" +
+").find(\'.picked\').each(function () {\r\n                    var image = $(this).fi" +
+"nd(\'img\').attr(\'src\');\r\n                    var storageguid = $(this).find(\'img\'" +
+").attr(\'storageguid\');\r\n                    $(\'.file-attachment-thumbnails\').app" +
+"end($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"ba" +
+"ckground-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"" +
+"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid " +
+"+ \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-attachment-thumb" +
+"nails\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n         " +
+"           $(\'.existing-preview\').each(function () {\r\n                        va" +
+"r $this = $(this);\r\n                        $(this).find(\'a.close-file\').click(f" +
+"unction () { $this.remove(); });\r\n                    });\r\n                });\r\n" +
+"            });\r\n\r\n            /* Auto popup gallery */\r\n            var url = w" +
+"indow.location.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1)" +
+";\r\n            var queries = hash.split(\"&\");\r\n            for (var i = 0; i < q" +
+"ueries.length; i++) {\r\n                if (queries[i].includes(\"pid\")) {\r\n      " +
+"              var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + p" +
+"id).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            var texta" +
+"rea = document.querySelector(\'textarea[name=messageText]\');\r\n            textare" +
+"a.addEventListener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n " +
+"               var el = this;\r\n                setTimeout(function () {\r\n       " +
+"             el.style.cssText = \'height:auto; padding:0\';\r\n                    /" +
+"/ for box-sizing other than \"content-box\" use:\r\n                    // el.style." +
+"cssText = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssText =" +
+" \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n   " +
+"     });\r\n\r\n        function sendMessage() {\r\n            tempSentMessageId++;\r\n" +
+"\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var mess" +
+"ageText = $(\'#send-message-form textarea[name=messageText]\').val();\r\n           " +
+" var attachments = $(\"#send-message-form .file-attachment .preview\");\r\n         " +
+"   var existingAttachments = $(\"#send-message-form .file-attachment .existing-pr" +
+"eview\");\r\n            var formToSubmit = $(\"#send-message-form\").serialize();\r\n\r" +
+"\n            $(\'textarea[name=messageText]\').val(\'\');\r\n            $(\'textarea[n" +
+"ame=messageText]\').css(\'height\', \'60px\');\r\n            $(\'.file-attachment-thumb" +
+"nails\').empty().hide();\r\n            $(\'#file-attachment\').hide();\r\n\r\n          " +
+"  if (attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingA" +
+"ttachments.length > 0) {\r\n                var message = $(\r\n                    " +
+"\'<div id=\"\' + messageId + \'\"class=\"row row-no-gutter answer message-provider sen" +
+"ding\">\' +\r\n                        \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n   " +
+"                     \'<figure>\' +\r\n                            \'<span class=\"img" +
+"-circle\">");
 
             
             #line 225 "..\..\Views\Enquiry\Enquiry.cshtml"
@@ -891,7 +888,7 @@ WriteLiteral(@"/get-updated-timeline?isActive=' + true,
                 }
             });
         }
-</script>
+    </script>
 ");
 
 });

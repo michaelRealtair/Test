@@ -30,7 +30,7 @@
                             <li>
                                 <a href="javascript:void(0)"><img src="http://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@user.RoleType</small></span></a>
                             </li>
-                        }  
+                        }
                     </ul>
                 </div>
             </div>
@@ -46,25 +46,25 @@
                     <div class="messagebox">
                         @Html.Partial("Timeline", Model.Timeline)
                     </div>
-                    <form class="form-inline" id="send-message-form">
-                        <div class="row send-chat-box">
-                            <div class="col-sm-12">
-                                @foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
-                                {
-                                    <form class="pull-right inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
-                                        <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
-                                        <button class="btn btn-default pull-right" type="submit">@action.Description(Html.LoggedInUser())</button>
-                                    </form>
-                                }
-                                <textarea class="form-control chat-box" placeholder="Type your message"  name="messageText"></textarea>
-                                <div class="custom-send">
-                                    <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a> 
-                                    <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
-                                    <button type="submit" class="btn btn-danger btn-rounded">Send</button>
-                                </div>
+                    <div class="row send-chat-box">
+                        <div class="col-sm-12">
+                            @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
+                            {
+                                <form class="pull-right inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
+                                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                                    <button class="btn btn-default pull-right" type="submit">@action.Description(Html.LoggedInUser())</button>
+                                </form>
+                            }
+                        </div>
+                        <div class="col-sm-12">
+                            <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
+                            <div class="custom-send">
+                                <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
+                                <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
+                                <button type="submit" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <!-- .chat-right-panel -->
@@ -137,15 +137,15 @@
 </div>
 <!-- /#page-wrapper -->
 
-@section Styles {
+@section Scripts {
     <script src="http://static.realtair.com/js/chat.js"></script>
-<script>
+    <script>
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
 
         $(function () {
             $(document).scrollTop($(document).height());
-            setTimeout(doPoll, pollTime);
+            //setTimeout(doPoll, pollTime);
 
             $('#send-message-form').submit(function (e) {
                 e.preventDefault();
@@ -295,5 +295,5 @@
                 }
             });
         }
-</script>
+    </script>
 }
