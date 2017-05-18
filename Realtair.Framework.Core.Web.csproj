@@ -121,6 +121,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Enquiry.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_Attachment_PreviewField.generated.cs">
+      <DependentUpon>_Attachment_PreviewField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\_String_PreviewField.generated.cs">
+      <DependentUpon>_String_PreviewField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_TableWidget_WidgetField.generated.cs">
       <DependentUpon>_TableWidget_WidgetField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -260,6 +270,21 @@
       <DependentUpon>Unauthorize.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_Table.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Table.cshtml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2150,6 +2175,7 @@
     <Content Include="Content\plugins\images\error-bg.jpg" />
     <Content Include="Content\plugins\images\favicon.png" />
     <Content Include="Content\plugins\images\features-bg.jpg" />
+    <Content Include="Content\plugins\images\header_bg.jpg" />
     <Content Include="Content\plugins\images\heading-bg\banner-1.jpg" />
     <Content Include="Content\plugins\images\heading-bg\slide1.jpg" />
     <Content Include="Content\plugins\images\heading-bg\slide2.jpg" />
@@ -3229,6 +3255,26 @@
     <None Include="Views\Settings\Settings.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Settings.generated.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Shared\Fields\_String_PreviewField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_PreviewField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Fields\_Attachment_PreviewField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Attachment_PreviewField.generated.cs</LastGenOutput>
+    </Content>
+    <None Include="Views\Shared\Widgets\_Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Detail.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Widgets\_List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_List.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Widgets\_Table.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Table.generated.cs</LastGenOutput>
     </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

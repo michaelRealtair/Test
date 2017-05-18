@@ -1,0 +1,16 @@
+﻿@model Realtair.Framework.Core.Entities.Display.ListWidget
+<div class="panel">
+    <div class="panel-heading">@Model.Name</div>
+    <div class="panel-wrapper collapse in">
+        <table class="table">
+            <tbody>
+                @foreach (var describable in Model.Items)
+                {
+                    <tr>
+                        <td>@Html.Render(Url, describable)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
