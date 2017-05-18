@@ -4,7 +4,8 @@
 
 @{ Layout = ""; }
 @{ var attachmentId = 0; }
-<div class="content">
+
+<ul class="chat-list slimscroll p-t-30">
     @foreach (var timelineItem in Model)
     {
         if (timelineItem is TimelineEvent)
@@ -32,74 +33,26 @@
                 typeString = "step-danger";
             }
 
-            <div class="step @typeString" id="event_@thisState.Id">
-                <div class="step-heading">
-                    <h3>
+            <li>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
                         @thisState.Description(Html.LoggedInUser())
-                        <small>
-                            <span class="date">@thisState.TimelineDate.UTCToLocal().ToString("h:mmtt ddd dd MMM")</span>
-                            <span class="by">
-                                by @(thisState.UserResponsible != null ? thisState.UserResponsible.Description(Html.LoggedInUser()) : null)
-                            </span>
-                            <span class="for">for @thisState.ParentEnquiry.Description(Html.LoggedInUser())</span>
-                        </small>
-                    </h3>
-                    @if (!string.IsNullOrEmpty(thisState.NowWhat(Html.LoggedInUser())))
-                    {
-                        <p class="help-block text-center">
-                            @thisState.NowWhat(Html.LoggedInUser()).ToString()
-                        </p>
-                    }
-                </div>
-                <div class="step-body">
-                    @if (thisState.Details(Html.LoggedInUser()).Count() > 0)
-                    {
-                        <ul>
-                            @foreach (var describable in thisState.Details(Html.LoggedInUser()))
+                    </div>
+                    <div class="panel-wrapper collapse in" aria-expanded="true">
+                        <div class="panel-body">
+                            @if (thisState.Details(Html.LoggedInUser()).Count() > 0)
                             {
-                                <li><strong>@describable.Key:</strong>	@Render(describable.Value)</li>
-                            }
-                        </ul>
-                    }
-
-                    @if (thisState is IShowAttachments && (thisState as IShowAttachments).Attachments.Count() > 0)
-                    {
-                        <div class="file-attachment text-center">
-                            @foreach (var attachment in (thisState as IShowAttachments).Attachments)
-                        {
-                                attachmentId++;
-                            if (attachment.IsImage)
-                            {
-                                    <a href="@attachment.GetUrl(0)" class="gallery-item" id="@attachmentId"  itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
-                                        <img src="@Html.Raw(attachment.GetUrl(100))" style="width: 100px !important; height: 100px !important;" alt="#" itemprop="thumbnail">
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a href="@attachment.GetUrl(0)" target="_blank">
-                                        <img src="~/Content/img/icon-pdf.png" alt="#" width="80" height="80">
-                                    </a>
-                                }
-                            }
-                            <div class="clearfix"></div>
-                        </div>
-                    }
-                </div>
-                @if (thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() >= 1)
-                {
-                    <div class="step-actions">
-                        <div class="pull-middle">
-                            @foreach (var action in thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
-                        {
-                                <form action="@action.GetUrl(Url)" method="@(action.Fields.Count() >=1 ? "GET" : "POST")">
-                                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
-                                    <button class="btn btn-sm btn-@typeString" type="submit">@action.Description(Html.LoggedInUser())</button>
-                                </form>
+                                <ul>
+                                    @foreach (var describable in thisState.Details(Html.LoggedInUser()))
+                                    {
+                                        <li><strong>@describable.Key:</strong>	@Render(describable.Value)</li>
+                                    }
+                                </ul>
                             }
                         </div>
                     </div>
-                }
-            </div>
+                </div>
+            </li>
         }
         else if (timelineItem is Message)
         {
@@ -107,128 +60,35 @@
 
             if (thisMessage.User != Html.LoggedInUser())
             {
-                <div class="row row-no-gutter message-me">
-                    <div class="col-md-5">
-                        <figure>
-                            <span class="img-circle">@(thisMessage.User.Person.Initials)</span>
-                        </figure>
-                        <div class="inner-content">
-                            <time datetime="@thisMessage.TimelineDate.ToString()">
-                                <div class="date">
-                                    @thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span>
-                                </div>
-                                <em>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    @Html.ToRelativeDate(thisMessage.TimelineDate)
-                                </em>
-
-                            </time>
-                            <div class="clearfix"></div>
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h4>
-                                        @thisMessage.User.Person.Description(Html.LoggedInUser())
-                                        <span href="#" class="brand-@thisMessage.User.RoleType">(@thisMessage.User.RoleType)</span>
-                                    </h4>
-                                    @Html.TextToHtml(thisMessage.Content)
-                                </div>
-
-                                @if (thisMessage.Attachments.Count > 0)
-                                {
-                                    <div class="panel-footer">
-                                        <div class="row">
-                                            <div class="file-attachment text-center">
-                                                @foreach (var attachment in thisMessage.Attachments)
-                                                {
-                                                    attachmentId++;
-                                                    if (attachment.IsImage)
-                                                    {
-                                                        <a href="@attachment.GetUrl(0)" class="gallery-item" id="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"  data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
-                                                            <img src="@Html.Raw(attachment.GetUrl(100))" width="100" height="100" alt="#" itemprop="thumbnail">
-                                                        </a>
-                                                    }
-                                                    else
-                                                    {
-                                                        <a href="@attachment.GetUrl(0)" target="_blank">
-                                                            <img src="~/Content/img/icon-pdf.png" alt="#" width="100" height="100">
-                                                        </a>
-                                                    }
-                                                }
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            </div>
+                <li class="odd">
+                    <div class="chat-image"> <img alt="Female" src="http://static.realtair.com/plugins/images/users/genu.jpg"> </div>
+                    <div class="chat-body">
+                        <div class="chat-text">
+                            <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>
+                            <p> @Html.TextToHtml(thisMessage.Content) </p>
+                            <b>@thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="circle-timeline"></div>
-                    </div>
-
-                </div>
+                </li>
             }
             else
             {
-                <div class="row row-no-gutter answer message-provider">
-                    <div class="col-md-5 col-md-push-7">
-                        <figure>
-                            <span class="img-circle">@(thisMessage.User.Person.FirstName[0])@(thisMessage.User.Person.LastName[0])</span>
-                        </figure>
-                        <div class="inner-content">
-                            <time datetime="@thisMessage.TimelineDate.ToString()">
-                                <div class="date">
-                                    @thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span>
-                                </div>
-                                <em>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    @Html.ToRelativeDate(thisMessage.TimelineDate)
-                                </em>
-                            </time>
-                            <div class="clearfix"></div>
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    @Html.TextToHtml(thisMessage.Content)
-                                </div>
-                                @if (thisMessage.Attachments.Count > 0)
-                                {
-                                    <div class="panel-footer timeline-attachment">
-                                        <div class="row">
-                                            <div class="file-attachment text-center" itemscope="" itemtype="http://schema.org/ImageGallery">
-                                                @foreach (var attachment in thisMessage.Attachments)
-                                                {
-                                                    attachmentId++;
-                                                    if (attachment.IsImage)
-                                                    {
-                                                        <a href="@attachment.GetUrl(0)" class="gallery-item" id="@attachmentId" data-pid="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-caption="" data-width="1600" data-height="1200">
-                                                            <img src="@Html.Raw(attachment.GetUrl(100))" width="100" height="100" alt="#" itemprop="thumbnail">
-                                                        </a>
-                                                    }
-                                                    else
-                                                    {
-                                                        <a href="@attachment.GetUrl(0)" target="_blank">
-                                                            <img src="~/Content/img/icon-pdf.png" alt="#" width="100" height="100">
-                                                        </a>
-                                                    }
-                                                }
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            </div>
+                <li>
+                    <div class="chat-image"> <img alt="male" src="http://static.realtair.com/plugins/images/users/varun.jpg"> </div>
+                    <div class="chat-body">
+                        <div class="chat-text">
+                            <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>
+                            <p> @Html.TextToHtml(thisMessage.Content) </p>
+                            <b>@thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="circle-timeline"></div>
-                    </div>
-                </div>
+                </li>
             }
         }
     }
-</div>
+</ul>
 
-<script src="~/Scripts/gallery.js"></script>
+
 
 @helper Render(object describable)
 {
