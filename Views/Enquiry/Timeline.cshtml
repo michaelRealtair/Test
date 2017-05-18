@@ -15,26 +15,26 @@
             var typeString = "";
             if (thisState.Type == TimelineEvent.EventType.Progress)
             {
-                typeString = "step-primary";
+                typeString = "panel-success";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Info)
             {
-                typeString = "step-info";
+                typeString = "panel-info";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Warning)
             {
-                typeString = "step-warning";
+                typeString = "panel-warning";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Exception)
             {
-                typeString = "step-danger";
+                typeString = "panel-danger";
             }
 
             <li>
-                <div class="panel panel-info">
+                <div class="panel @typeString">
                     <div class="panel-heading">
                         @thisState.Description(Html.LoggedInUser())
                     </div>

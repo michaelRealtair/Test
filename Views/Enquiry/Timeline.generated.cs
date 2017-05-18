@@ -135,14 +135,14 @@ else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "            <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4292), Tuple.Create("\"", 4347)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4297), Tuple.Create("\"", 4352)
 
 #line 116 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 4299), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 4304), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 4299), false)
+, 4304), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -186,14 +186,14 @@ else if (describable is IDisplayable || describable is IHasDisplayable || descri
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "        <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4608), Tuple.Create("\"", 4680)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4613), Tuple.Create("\"", 4685)
 
 #line 126 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 4615), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 4620), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 4615), false)
+, 4620), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
@@ -322,22 +322,22 @@ WriteLiteral(">\r\n");
             var typeString = "";
             if (thisState.Type == TimelineEvent.EventType.Progress)
             {
-                typeString = "step-primary";
+                typeString = "panel-success";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Info)
             {
-                typeString = "step-info";
+                typeString = "panel-info";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Warning)
             {
-                typeString = "step-warning";
+                typeString = "panel-warning";
             }
 
             if (thisState.Type == TimelineEvent.EventType.Exception)
             {
-                typeString = "step-danger";
+                typeString = "panel-danger";
             }
 
 
@@ -346,7 +346,16 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <li>\r\n                <div");
 
-WriteLiteral(" class=\"panel panel-info\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 1078), Tuple.Create("\"", 1103)
+, Tuple.Create(Tuple.Create("", 1086), Tuple.Create("panel", 1086), true)
+            
+            #line 37 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create(" ", 1091), Tuple.Create<System.Object, System.Int32>(typeString
+            
+            #line default
+            #line hidden
+, 1092), false)
+);
 
 WriteLiteral(">\r\n                    <div");
 

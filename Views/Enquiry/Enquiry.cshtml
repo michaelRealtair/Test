@@ -37,11 +37,6 @@
             <!-- .chat-left-panel -->
             <!-- .chat-right-panel -->
             <div class="chat-right-aside">
-                <div class="chat-main-header hidden-xs">
-                    <div class="p-20 b-b">
-                        <h3 class="box-title">Chat Message</h3>
-                    </div>
-                </div>
                 <div class="chat-box">
                     <div class="messagebox">
                         @Html.Partial("Timeline", Model.Timeline)
@@ -61,7 +56,7 @@
                             <div class="custom-send">
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
-                                <button type="submit" class="btn btn-danger btn-rounded">Send</button>
+                                <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
                     </div>
@@ -70,70 +65,7 @@
             <!-- .chat-right-panel -->
         </div>
         <!-- /.chat-row -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <div class="right-sidebar">
-            <div class="slimscrollright">
-                <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                <div class="r-panel-body">
-                    <ul id="themecolors" class="m-t-20">
-                        <li><b>With Light sidebar</b></li>
-                        <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                        <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                        <li><a href="javascript:void(0)" data-theme="gray" class="yellow-theme">3</a></li>
-                        <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                        <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                        <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                        <li><b>With Dark sidebar</b></li>
-                        <br />
-                        <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
-                        <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                        <li><a href="javascript:void(0)" data-theme="gray-dark" class="yellow-dark-theme">9</a></li>
-                        <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                        <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                        <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme working">12</a></li>
-                    </ul>
-                    <ul class="m-t-20 all-demos">
-                        <li><b>Choose other demos</b></li>
-                    </ul>
-                    <ul class="m-t-20 chatonline">
-                        <li><b>Chat option</b></li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"><img src="../plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
     </div>
-    <!-- /.container-fluid -->
-    <footer class="footer text-center hidden-xs"> Powered by Realtair</footer>
 </div>
 <!-- /#page-wrapper -->
 
@@ -147,8 +79,7 @@
             $(document).scrollTop($(document).height());
             //setTimeout(doPoll, pollTime);
 
-            $('#send-message-form').submit(function (e) {
-                e.preventDefault();
+            $('#send-button').click(function (e) {
                 sendMessage();
             });
 
@@ -207,10 +138,10 @@
             tempSentMessageId++;
 
             var messageId = "sent-" + tempSentMessageId;
-            var messageText = $('#send-message-form textarea[name=messageText]').val();
-            var attachments = $("#send-message-form .file-attachment .preview");
-            var existingAttachments = $("#send-message-form .file-attachment .existing-preview");
-            var formToSubmit = $("#send-message-form").serialize();
+            var messageText = $('textarea[name=messageText]').val();
+            var attachments = $(".file-attachment .preview");
+            var existingAttachments = $(".file-attachment .existing-preview");
+            //var formToSubmit = $("#send-message-form").serialize();
 
             $('textarea[name=messageText]').val('');
             $('textarea[name=messageText]').css('height', '60px');
@@ -259,7 +190,7 @@
                 $.ajax({
                     url: '/enquiry/@Model.Workflow.Id/chat/@Model.Conversation.Id/send-message',
                     type: "POST",
-                    data: formToSubmit,
+                    data: { messageText: messageText },
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
                         doPoll();
