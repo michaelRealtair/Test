@@ -297,9 +297,89 @@ WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"col-sm-12\"");
 
-WriteLiteral(">\r\n                                <textarea");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" class=\"form-control\"");
+            
+            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                
+            
+            #line default
+            #line hidden
+            
+            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                 foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <form");
+
+WriteLiteral(" class=\"pull-right inline\"");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 3030), Tuple.Create("\"", 3058)
+            
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 3039), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+            
+            #line default
+            #line hidden
+, 3039), false)
+);
+
+WriteAttribute("method", Tuple.Create(" method=\"", 3059), Tuple.Create("\"", 3114)
+            
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
+                          , Tuple.Create(Tuple.Create("", 3068), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            
+            #line default
+            #line hidden
+, 3068), false)
+);
+
+WriteLiteral(">\r\n                                        <input");
+
+WriteLiteral(" name=\"ReturnUrl\"");
+
+WriteLiteral(" type=\"hidden\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 3195), Tuple.Create("\"", 3228)
+            
+            #line 55 "..\..\Views\Enquiry\Enquiry.cshtml"
+     , Tuple.Create(Tuple.Create("", 3203), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            
+            #line default
+            #line hidden
+, 3203), false)
+);
+
+WriteLiteral(" />\r\n                                        <button");
+
+WriteLiteral(" class=\"btn btn-default pull-right\"");
+
+WriteLiteral(" type=\"submit\"");
+
+WriteLiteral(">");
+
+            
+            #line 56 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                            Write(action.Description(Html.LoggedInUser()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</button>\r\n                                    </form>\r\n");
+
+            
+            #line 58 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <textarea");
+
+WriteLiteral(" class=\"form-control chat-box\"");
 
 WriteLiteral(" placeholder=\"Type your message\"");
 
@@ -323,7 +403,7 @@ WriteLiteral("><i");
 
 WriteLiteral(" class=\"ti-face-smile\"");
 
-WriteLiteral("></i></a> <a");
+WriteLiteral("></i></a> \r\n                                    <a");
 
 WriteLiteral(" href=\"javacript:void(0)\"");
 
@@ -701,14 +781,14 @@ WriteLiteral("></script>\r\n<script>\r\n        var tempSentMessageId = 0;\r\n  
 "e\">");
 
             
-            #line 217 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 225 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 217 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 225 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                             Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -740,7 +820,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 "uiry/");
 
             
-            #line 252 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -749,7 +829,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 WriteLiteral("/chat/");
 
             
-            #line 252 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -776,7 +856,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 270 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 278 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -785,7 +865,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 270 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 278 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             

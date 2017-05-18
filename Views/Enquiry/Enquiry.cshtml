@@ -49,9 +49,17 @@
                     <form class="form-inline" id="send-message-form">
                         <div class="row send-chat-box">
                             <div class="col-sm-12">
-                                <textarea class="form-control" placeholder="Type your message"  name="messageText"></textarea>
+                                @foreach (var action in Model.Workflow.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
+                                {
+                                    <form class="pull-right inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
+                                        <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                                        <button class="btn btn-default pull-right" type="submit">@action.Description(Html.LoggedInUser())</button>
+                                    </form>
+                                }
+                                <textarea class="form-control chat-box" placeholder="Type your message"  name="messageText"></textarea>
                                 <div class="custom-send">
-                                    <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a> <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
+                                    <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a> 
+                                    <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
                                     <button type="submit" class="btn btn-danger btn-rounded">Send</button>
                                 </div>
                             </div>
