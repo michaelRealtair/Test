@@ -1,6 +1,8 @@
 ﻿using Realtair.Framework.Core.Data;
 using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
+using Realtair.Framework.Core.Web.Utilities;
+using Realtair.Framework.Enquiries.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -31,7 +33,7 @@ namespace ASP
         }
 
         public static bool ViewExists(this HtmlHelper helper, string path)
-        {            
+        {
             return ViewEngines.Engines.FindView(helper.ViewContext.Controller.ControllerContext, path, null).View != null;
         }
 
@@ -39,7 +41,7 @@ namespace ASP
         {
             return new MvcHtmlString("");
         }
-        
+
         public static MvcHtmlString IconForDescribableType(this HtmlHelper helper, Type describable)
         {
             return MvcHtmlString.Create("icon-Info");
@@ -52,7 +54,7 @@ namespace ASP
             public string Url { get; set; }
             public bool UseHttpPost { get; set; } = false;
         }
-        
+
         public static IEnumerable<MenuItem> ConciergeActions(this User user)
         {
             yield break;
@@ -145,6 +147,70 @@ namespace ASP
         public static string Description(this Enum withDesc)
         {
             return Realtair.Framework.Core.Entities.Display.DisplayableExtensions.Description(withDesc);
+        }
+
+        public static MvcHtmlString Render(this HtmlHelper html, UrlHelper url, object describable)
+        {
+            if (describable == null)
+            {
+                return new MvcHtmlString("N/A");
+            }
+            else if (describable is string)
+            {
+                return new MvcHtmlString(describable as string);
+            }
+            else if (describable is decimal || describable is double || describable is int)
+            {
+                return new MvcHtmlString(describable.ToString());
+            }
+            else if (describable is DateTime)
+            {
+                return new MvcHtmlString(((DateTime)describable).ToString("d MMM yyyy"));
+            }
+            else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable>)
+            {
+                string s = "";
+                var d = describable as IEnumerable<IDescribable>;
+                for (int i = 0; i < d.Count(); i++)
+                {
+                    s += $"<a href=\"{d.ElementAt(i).GetUrl(html.LoggedInUser(), url)}\">{d.ElementAt(i).Description(html.LoggedInUser())}</a>";
+                    if (i < d.Count() - 1)
+                    {
+                        s += " & ";
+                    }
+                }
+
+                return new MvcHtmlString(s);
+            }
+            else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry || describable is IExtendedEnquiry)
+            {
+                return new MvcHtmlString($"<a href=\"{(describable as IDescribable).GetUrl(html.LoggedInUser(), url)}\">{(describable as IDescribable).Description(html.LoggedInUser())}</a>");
+            }
+            else if (describable is IEnumerable<IDescribable>)
+            {
+                string s = "";
+                var d = describable as IEnumerable<IDescribable>;
+                for (int i = 0; i < d.Count(); i++)
+                {
+                    s += d.ElementAt(i).Description(html.LoggedInUser());
+                    if (i < d.Count() - 1)
+                    {
+                        s += " & ";
+                    }
+                }
+
+                return new MvcHtmlString(s);
+            }
+            else if (describable is IDescribable)
+            {
+                return new MvcHtmlString((describable as IDescribable).Description(html.LoggedInUser()));
+            }
+            else if (describable is Enum)
+            {
+                return new MvcHtmlString((describable as Enum).Description());
+            }
+
+            return new MvcHtmlString("N/A");
         }
     }
 }

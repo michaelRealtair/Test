@@ -7,53 +7,45 @@
 
 <div id="page-wrapper" class="with-background">
     <div class="container">
-        @if (Model != null)
+        @foreach (var section in Model.Sections(Html.LoggedInUser()))
         {
-            foreach (var detailWidget in Model.Sections(Html.LoggedInUser()).Where(w => w is DetailWidget)) {
-                <div class="panel">
-                    <div class="panel-heading">@((detailWidget as DetailWidget).Name)</div>
-                    <div class="panel-wrapper collapse in">
-                        <table class="table table-hover table-striped">
-                            <tbody>
-                                @foreach (var describable in (detailWidget as DetailWidget).Details)
-                                        {
-                                    <tr>
-                                        <th class="col-sm-4">@describable.Key</th>
-                                        <td data-key="@describable.Key">
-                                            @Render(describable.Value)
-                                        </td>
-                                    </tr>
-                                        }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            }
+            var widgetView = $"Widgets/_{section.GetType().Name.Substring(0, section.GetType().Name.Length - "Widget".Length)}";
 
-            <div class="panel panel-default">
-                <div class="panel-wrapper collapse in">
-                    <div class="vtabs customvtab">
-                        <div class="col-sm-4">
-                            <ul class="nav tabs-vertical" style="width: 0;">
-                                @if (Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget) != null)
-                                        {
-                                            for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
-                                            {
-                                                var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
-                                        <li class="tab @(listNo == 0 ? "active" : "")">
-                                            <a data-toggle="tab" href="#tab-@listNo">
-                                                @list.Name
-                                            </a>
-                                        </li>
-                                            }
-                                        }
-                            </ul>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="tab-content" style="padding: 0;">
-                                @for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
+            if (Html.ViewExists(widgetView))
+            {
+                Html.RenderPartial(widgetView, section);
+            }
+            else
+            {
+                <p>Cannot render widget view</p>
+            }
+        }
+        @*@if (Model != null)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-wrapper collapse in">
+                        <div class="vtabs customvtab">
+                            <div class="col-sm-4">
+                                <ul class="nav tabs-vertical" style="width: 0;">
+                                    @if (Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget) != null)
+                                    {
+                                        for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
                                         {
                                             var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
+                                            <li class="tab @(listNo == 0 ? "active" : "")">
+                                                <a data-toggle="tab" href="#tab-@listNo">
+                                                    @list.Name
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="tab-content" style="padding: 0;">
+                                    @for (var listNo = 0; listNo < Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).Count(); listNo++)
+                                    {
+                                        var list = Model.Sections(Html.LoggedInUser()).Where(w => w is ListWidget).ElementAt(listNo) as ListWidget;
 
                                         <div id="tab-@listNo" class="tab-pane fade in @(listNo == 0 ? "active" : "")">
                                             <h3 class="box-title m-b-0">@list.Name</h3>
@@ -65,26 +57,26 @@
                                                 </thead>
                                                 <tbody>
                                                     @if (list.Items != null || list.Items.Count() > 0)
+                                                    {
+                                                        foreach (var item in list.Items)
                                                         {
-                                                            foreach (var item in list.Items)
-                                                            {
-                                                    <tr>
-                                                        <td>
-                                                            <div>
-                                                                <div class="media-left">
-                                                                    <a href="@item.GetUrl(Html.LoggedInUser(), Url)" @Html.Raw(item is Attachment ? "target=\"_blank\"" : "")>
-                                                                        <i class="ti-user" style="font-size: 40px;"></i>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="media-body">
-                                                                    <h4 class="media-heading">@item.Description(Html.LoggedInUser())</h4>
-                                                                    <em class="ellipsis">@item.ActualType().Name.DisplaySafeName()</em>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                            }
+                                                            <tr>
+                                                                <td>
+                                                                    <div>
+                                                                        <div class="media-left">
+                                                                            <a href="@item.GetUrl(Html.LoggedInUser(), Url)" @Html.Raw(item is Attachment ? "target=\"_blank\"" : "")>
+                                                                                <i class="ti-user" style="font-size: 40px;"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="media-body">
+                                                                            <h4 class="media-heading">@item.Description(Html.LoggedInUser())</h4>
+                                                                            <em class="ellipsis">@item.ActualType().Name.DisplaySafeName()</em>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
                                                         }
+                                                    }
                                                 </tbody>
                                             </table>
                                             <link href="http://static.realtair.com/ample/plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -94,85 +86,25 @@
                                             <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
 
                                             <script>
-                                                    $(document).ready(function () {
-                                                        //$('#listWidget_@listNo').DataTable({
-                                                        //    "bFilter": true,
-                                                        //    "bInfo": false,
-                                                        //    "sorting": false,
-                                                        //    "bLengthChange": false
-                                                        //});
-                                                    });
+                                                $(document).ready(function () {
+                                                    //$('#listWidget_@listNo').DataTable({
+                                                    //    "bFilter": true,
+                                                    //    "bInfo": false,
+                                                    //    "sorting": false,
+                                                    //    "bLengthChange": false
+                                                    //});
+                                                });
                                             </script>
 
                                         </div>
-                                        }
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }*@
     </div>
 </div>
 
 <footer class="footer text-center hidden-xs">Powered by Realtair</footer>
-
-
-@helper Render(object describable)
-        {
-if (describable == null)
-{
-        @("N/A")
-}
-else if (describable is string)
-{
-        @describable
-}
-else if (describable is decimal || describable is double || describable is int)
-{
-        @describable.ToString()
-}
-else if (describable is DateTime)
-{
-        @(((DateTime)describable).ToString("d MMM yyyy"));
-}
-else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable>)
-{
-    var d = describable as IEnumerable<IDescribable>;
-    for (int i = 0; i < d.Count(); i++)
-    {
-            <a href="@d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)">@d.ElementAt(i).Description(Html.LoggedInUser())</a>
-
-        if (i < d.Count() - 1)
-        {
-                @(" & ");
-        }
-    }
-}
-else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry || describable is IExtendedEnquiry)
-{
-        <a href="@((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url))">@((describable as IDescribable).Description(Html.LoggedInUser()))</a>
-}
-else if (describable is IEnumerable<IDescribable>)
-{
-    var d = describable as IEnumerable<IDescribable>;
-    for (int i = 0; i < d.Count(); i++)
-    {
-            @d.ElementAt(i).Description(Html.LoggedInUser())
-
-        if (i < d.Count() - 1)
-        {
-                @(" & ");
-        }
-    }
-}
-else if (describable is IDescribable)
-{
-        @((describable as IDescribable).Description(Html.LoggedInUser()))
-}
-else if (describable is Enum)
-{
-        @((describable as Enum).Description())
-}
-
-}
