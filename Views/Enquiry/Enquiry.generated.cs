@@ -309,26 +309,26 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                <form");
 
-WriteLiteral(" class=\"pull-right inline\"");
+WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2947), Tuple.Create("\"", 2975)
+WriteAttribute("action", Tuple.Create(" action=\"", 2936), Tuple.Create("\"", 2964)
             
             #line 53 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2956), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2945), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2956), false)
+, 2945), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2976), Tuple.Create("\"", 3031)
+WriteAttribute("method", Tuple.Create(" method=\"", 2965), Tuple.Create("\"", 3020)
             
             #line 53 "..\..\Views\Enquiry\Enquiry.cshtml"
-                      , Tuple.Create(Tuple.Create("", 2985), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2974), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2985), false)
+, 2974), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -337,14 +337,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3108), Tuple.Create("\"", 3141)
+WriteAttribute("value", Tuple.Create(" value=\"", 3097), Tuple.Create("\"", 3130)
             
             #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 3116), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 3105), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 3116), false)
+, 3105), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");

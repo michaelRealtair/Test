@@ -50,7 +50,7 @@
                         <div class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
                             {
-                                <form class="pull-right inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
+                                <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
                                     <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
                                     <button class="btn btn-default pull-right" type="submit">@action.Description(Html.LoggedInUser())</button>
                                 </form>
