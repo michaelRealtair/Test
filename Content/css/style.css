@@ -16846,6 +16846,9 @@ ul.pro-amenities li span i {
 .white-box .dropdown a {
   color: #313131;
 }
+.chat-list {
+  min-height: calc(100vh - 320px) !important;
+}
 @media (max-width: 768px) {
   .chat-main-box {
     margin-left: -15px;
@@ -16854,7 +16857,7 @@ ul.pro-amenities li span i {
     margin-bottom: -60px;
   }
   .chat-list {
-    min-height: calc(100vh - 150px) !important;
+    min-height: calc(100vh - 184px) !important;
   }
 }
 footer.footer.ticker {
