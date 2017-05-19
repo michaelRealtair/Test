@@ -78,5 +78,9 @@
   {
     "outputFile": "Content/css/widgets.css",
     "inputFile": "Content/less/widgets.less"
+  },
+  {
+    "outputFile": "Content/less/custom.css",
+    "inputFile": "Content/less/custom.less"
   }
 ]

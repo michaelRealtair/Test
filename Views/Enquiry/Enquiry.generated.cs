@@ -360,9 +360,56 @@ WriteLiteral("</button>\r\n                                </form>\r\n");
             #line hidden
 WriteLiteral("                        </div>\r\n                        <div");
 
-WriteLiteral(" class=\"col-sm-12\"");
+WriteLiteral(" class=\"col-sm-12 newmessage\"");
 
-WriteLiteral(">\r\n                            <textarea");
+WriteLiteral(">\r\n                            <form");
+
+WriteAttribute("action", Tuple.Create(" action=\"", 3289), Tuple.Create("\"", 3321)
+, Tuple.Create(Tuple.Create("", 3298), Tuple.Create<System.Object, System.Int32>(Href("~/Home/SaveUploadedFile")
+, 3298), false)
+);
+
+WriteLiteral(" method=\"post\"");
+
+WriteLiteral(" enctype=\"multipart/form-data\"");
+
+WriteLiteral(" class=\"dropzone\"");
+
+WriteLiteral(" id=\"dropzoneForm\"");
+
+WriteLiteral(" style=\"width: 50px; background: none; border: none; display: none;\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"fallback\"");
+
+WriteLiteral(">\r\n                                    <input");
+
+WriteLiteral(" name=\"file\"");
+
+WriteLiteral(" type=\"file\"");
+
+WriteLiteral(" multiple />\r\n                                    <input");
+
+WriteLiteral(" type=\"submit\"");
+
+WriteLiteral(" value=\"Upload\"");
+
+WriteLiteral(" />\r\n                                </div>\r\n                            </form>\r" +
+"\n                            <div");
+
+WriteLiteral(" id=\"file-attachment\"");
+
+WriteLiteral(" class=\"file-attachment\"");
+
+WriteLiteral(" style=\"display: none\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"file-attachment-thumbnails ellipsis\"");
+
+WriteLiteral("></div>\r\n                            </div>\r\n                            <textare" +
+"a");
 
 WriteLiteral(" class=\"form-control chat-box\"");
 
@@ -388,21 +435,28 @@ WriteLiteral("><i");
 
 WriteLiteral(" class=\"ti-face-smile\"");
 
-WriteLiteral("></i></a>\r\n                                <a");
+WriteLiteral("></i></a>\r\n                                <label");
 
-WriteLiteral(" href=\"javacript:void(0)\"");
+WriteLiteral(" class=\"attachment-upload pull-left\"");
 
-WriteLiteral(" class=\"cst-icon\"");
+WriteLiteral(">\r\n                                    ");
 
-WriteLiteral(" data-toggle=\"tooltip\"");
+WriteLiteral("\r\n                                    <a");
 
-WriteLiteral(" title=\"File Attachment\"");
+WriteLiteral(" id=\"attach-file\"");
 
-WriteLiteral("><i");
+WriteLiteral(" class=\"btn btn-icon\"");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(">\r\n                                        <i");
 
 WriteLiteral(" class=\"fa fa-paperclip\"");
 
-WriteLiteral("></i></a>\r\n                                <button");
+WriteLiteral("></i>\r\n                                    </a>\r\n                                " +
+"</label>\r\n                                <button");
 
 WriteLiteral(" type=\"button\"");
 
@@ -415,10 +469,10 @@ WriteLiteral(@">Send</button>
                         </div>
                     </div>
                 </div>
+                <!-- .chat-right-panel -->
             </div>
-            <!-- .chat-right-panel -->
+            <!-- /.chat-row -->
         </div>
-        <!-- /.chat-row -->
     </div>
 </div>
 <!-- /#page-wrapper -->
@@ -431,64 +485,75 @@ WriteLiteral("\r\n    <script");
 
 WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
 
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"http://static.realtair.com/js/exif.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"http://static.realtair.com/js/fileupload.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"http://static.realtair.com/js/dropzone.js\"");
+
 WriteLiteral("></script>\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollTim" +
 "e = 1000 * 10;\r\n\r\n        $(function () {\r\n            $(document).scrollTop($(d" +
 "ocument).height());\r\n            //setTimeout(doPoll, pollTime);\r\n\r\n            " +
 "$(\'#send-button\').click(function (e) {\r\n                sendMessage();\r\n        " +
-"    });\r\n\r\n            $(\'.icon-PaperClip\').parent().click(function () {\r\n      " +
-"          $(\'#attachments\').trigger(\'click\');\r\n                $(\'.file-attachme" +
-"nt\').show();\r\n            });\r\n\r\n            //$(\'.file-attachment\').hide();\r\n\r\n" +
-"            $(\'.close-file\').click(function () {\r\n                if ($(\"#send-m" +
-"essage-form .file-attachment .preview\").length == 0) $(\'.file-attachment\').hide(" +
-");\r\n            });\r\n\r\n            $(\'#selectPhotosBtn\').click(function () {\r\n  " +
-"              $(\'#modal-attachments\').find(\'.picked\').each(function () {\r\n      " +
-"              var image = $(this).find(\'img\').attr(\'src\');\r\n                    " +
-"var storageguid = $(this).find(\'img\').attr(\'storageguid\');\r\n                    " +
-"$(\'.file-attachment-thumbnails\').append($(\'<div class=\"existing-preview\" storage" +
-"guid=\"\' + storageguid + \'\" style=\"background-image: url(\' + image + \')\"><a class" +
-"=\"close-file\"><i class=\"fa fa-times\"></i></a><input type=\"hidden\" name=\"existing" +
-"Attachments\" value=\"\' + storageguid + \'\"></div>\'));\r\n                    $(\'.fil" +
-"e-attachment, .file-attachment-thumbnails\').show();\r\n                    $(this)" +
-".toggleClass(\"picked\");\r\n\r\n                    $(\'.existing-preview\').each(funct" +
-"ion () {\r\n                        var $this = $(this);\r\n                        " +
-"$(this).find(\'a.close-file\').click(function () { $this.remove(); });\r\n          " +
-"          });\r\n                });\r\n            });\r\n\r\n            /* Auto popup" +
-" gallery */\r\n            var url = window.location.href;\r\n            var hash =" +
-" url.substring(url.indexOf(\'#\') + 1);\r\n            var queries = hash.split(\"&\")" +
-";\r\n            for (var i = 0; i < queries.length; i++) {\r\n                if (q" +
-"ueries[i].includes(\"pid\")) {\r\n                    var pid = queries[i].split(\"=\"" +
-")[1];\r\n                    $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n  " +
-"          }\r\n\r\n            var textarea = document.querySelector(\'textarea[name=" +
-"messageText]\');\r\n            textarea.addEventListener(\'keydown\', autosize);\r\n\r\n" +
-"            function autosize() {\r\n                var el = this;\r\n             " +
-"   setTimeout(function () {\r\n                    el.style.cssText = \'height:auto" +
-"; padding:0\';\r\n                    // for box-sizing other than \"content-box\" us" +
-"e:\r\n                    // el.style.cssText = \'-moz-box-sizing:content-box\';\r\n  " +
-"                  el.style.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n      " +
-"          }, 0);\r\n            }\r\n        });\r\n\r\n        function sendMessage() {" +
-"\r\n            tempSentMessageId++;\r\n\r\n            var messageId = \"sent-\" + temp" +
-"SentMessageId;\r\n            var messageText = $(\'textarea[name=messageText]\').va" +
-"l();\r\n            var attachments = $(\".file-attachment .preview\");\r\n           " +
-" var existingAttachments = $(\".file-attachment .existing-preview\");\r\n           " +
-" //var formToSubmit = $(\"#send-message-form\").serialize();\r\n\r\n            $(\'tex" +
-"tarea[name=messageText]\').val(\'\');\r\n            $(\'textarea[name=messageText]\')." +
-"css(\'height\', \'60px\');\r\n            $(\'.file-attachment-thumbnails\').empty().hid" +
-"e();\r\n            $(\'#file-attachment\').hide();\r\n\r\n            if (attachments.l" +
-"ength > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length >" +
-" 0) {\r\n                var message = $(\r\n                    \'<div id=\"\' + messa" +
-"geId + \'\"class=\"row row-no-gutter answer message-provider sending\">\' +\r\n        " +
-"                \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n                      " +
-"  \'<figure>\' +\r\n                            \'<span class=\"img-circle\">");
+"    });\r\n\r\n            $(\'#attach-file\').click(function () {\r\n                Dr" +
+"opzone.\r\n            });\r\n\r\n            //$(\'.file-attachment\').hide();\r\n\r\n     " +
+"       $(\'.close-file\').click(function () {\r\n                if ($(\"#send-messag" +
+"e-form .file-attachment .preview\").length == 0) $(\'.file-attachment\').hide();\r\n " +
+"           });\r\n\r\n            $(\'#selectPhotosBtn\').click(function () {\r\n       " +
+"         $(\'#modal-attachments\').find(\'.picked\').each(function () {\r\n           " +
+"         var image = $(this).find(\'img\').attr(\'src\');\r\n                    var s" +
+"torageguid = $(this).find(\'img\').attr(\'storageguid\');\r\n                    $(\'.f" +
+"ile-attachment-thumbnails\').append($(\'<div class=\"existing-preview\" storageguid=" +
+"\"\' + storageguid + \'\" style=\"background-image: url(\' + image + \')\"><a class=\"clo" +
+"se-file\"><i class=\"fa fa-times\"></i></a><input type=\"hidden\" name=\"existingAttac" +
+"hments\" value=\"\' + storageguid + \'\"></div>\'));\r\n                    $(\'.file-att" +
+"achment, .file-attachment-thumbnails\').show();\r\n                    $(this).togg" +
+"leClass(\"picked\");\r\n\r\n                    $(\'.existing-preview\').each(function (" +
+") {\r\n                        var $this = $(this);\r\n                        $(thi" +
+"s).find(\'a.close-file\').click(function () { $this.remove(); });\r\n               " +
+"     });\r\n                });\r\n            });\r\n\r\n            /* Auto popup gall" +
+"ery */\r\n            var url = window.location.href;\r\n            var hash = url." +
+"substring(url.indexOf(\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n  " +
+"          for (var i = 0; i < queries.length; i++) {\r\n                if (querie" +
+"s[i].includes(\"pid\")) {\r\n                    var pid = queries[i].split(\"=\")[1];" +
+"\r\n                    $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n       " +
+"     }\r\n\r\n            var textarea = document.querySelector(\'textarea[name=messa" +
+"geText]\');\r\n            textarea.addEventListener(\'keydown\', autosize);\r\n\r\n     " +
+"       function autosize() {\r\n                var el = this;\r\n                se" +
+"tTimeout(function () {\r\n                    el.style.cssText = \'height:auto; pad" +
+"ding:0\';\r\n                    // for box-sizing other than \"content-box\" use:\r\n " +
+"                   // el.style.cssText = \'-moz-box-sizing:content-box\';\r\n       " +
+"             el.style.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n           " +
+"     }, 0);\r\n            }\r\n        });\r\n\r\n        function sendMessage() {\r\n   " +
+"         tempSentMessageId++;\r\n\r\n            var messageId = \"sent-\" + tempSentM" +
+"essageId;\r\n            var messageText = $(\'textarea[name=messageText]\').val();\r" +
+"\n            var attachments = $(\".file-attachment .preview\");\r\n            var " +
+"existingAttachments = $(\".file-attachment .existing-preview\");\r\n            //va" +
+"r formToSubmit = $(\"#send-message-form\").serialize();\r\n\r\n            $(\'textarea" +
+"[name=messageText]\').val(\'\');\r\n            $(\'textarea[name=messageText]\').css(\'" +
+"height\', \'60px\');\r\n            $(\'.file-attachment-thumbnails\').empty().hide();\r" +
+"\n            $(\'#file-attachment\').hide();\r\n\r\n            if (attachments.length" +
+" > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {" +
+"\r\n                var message = $(\r\n                    \'<div id=\"\' + messageId " +
+"+ \'\"class=\"row row-no-gutter answer message-provider sending\">\' +\r\n             " +
+"           \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n                        \'<f" +
+"igure>\' +\r\n                            \'<span class=\"img-circle\">");
 
             
-            #line 156 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 178 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 156 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 178 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                             Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -520,7 +585,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 "uiry/");
 
             
-            #line 191 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 213 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -529,7 +594,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 WriteLiteral("/chat/");
 
             
-            #line 191 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 213 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -556,7 +621,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 209 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 231 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -565,7 +630,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 209 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 231 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -593,6 +658,26 @@ WriteLiteral(@"/get-updated-timeline?isActive=' + true,
         }
     </script>
 ");
+
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("Styles", () => {
+
+WriteLiteral("\r\n    <link");
+
+WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/basic.css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/dropzone.css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n");
 
 });
 

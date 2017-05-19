@@ -51,26 +51,49 @@
                                 </form>
                             }
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 newmessage">
+                            <form action="~/Home/SaveUploadedFile" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm" style="width: 50px; background: none; border: none; display: none;">
+                                <div class="fallback">
+                                    <input name="file" type="file" multiple />
+                                    <input type="submit" value="Upload" />
+                                </div>
+                            </form>
+                            <div id="file-attachment" class="file-attachment" style="display: none">
+                                <div class="file-attachment-thumbnails ellipsis"></div>
+                            </div>
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
                             <div class="custom-send">
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
-                                <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
+                                <label class="attachment-upload pull-left">
+                                    @*<input name="attachments"
+                                        id="attachments"
+                                        class="hidden-upload pull-right"
+                                        accept="text/csv,image/jpeg,image/png,application/pdf"
+                                        multiple=""
+                                        capture="camera"
+                                        type="file">*@
+                                    <a id="attach-file" class="btn btn-icon" href="#" title="#">
+                                        <i class="fa fa-paperclip"></i>
+                                    </a>
+                                </label>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- .chat-right-panel -->
             </div>
-            <!-- .chat-right-panel -->
+            <!-- /.chat-row -->
         </div>
-        <!-- /.chat-row -->
     </div>
 </div>
 <!-- /#page-wrapper -->
 
 @section Scripts {
     <script src="http://static.realtair.com/js/chat.js"></script>
+    <script src="http://static.realtair.com/js/exif.js"></script>
+    <script src="http://static.realtair.com/js/fileupload.js"></script>
+    <script src="http://static.realtair.com/js/dropzone.js"></script>
     <script>
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
@@ -83,9 +106,8 @@
                 sendMessage();
             });
 
-            $('.icon-PaperClip').parent().click(function () {
-                $('#attachments').trigger('click');
-                $('.file-attachment').show();
+            $('#attach-file').click(function () {
+                Dropzone.
             });
 
             //$('.file-attachment').hide();
@@ -227,4 +249,9 @@
             });
         }
     </script>
+}
+
+@section Styles {
+    <link href="http://static.realtair.com/css/dropzone/basic.css" rel="stylesheet">
+    <link href="http://static.realtair.com/css/dropzone/dropzone.css" rel="stylesheet">
 }
