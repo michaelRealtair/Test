@@ -55,6 +55,20 @@
                             </div>
                         </div>
                     }
+
+                    @if (thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() > 0)
+                    {
+                        <div class="panel-footer">
+                            @foreach (var action in thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
+                            {
+                                <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
+                                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                                    <button class="btn btn-sm btn-default btn-rounded m-l-5 m-r-5" type="submit">@action.Description(Html.LoggedInUser())</button>
+                                </form>
+                            }
+                        </div>
+                    }
+
                 </div>
             </li>
         }

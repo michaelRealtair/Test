@@ -16885,3 +16885,25 @@ footer.footer.ticker .tickercontainer {
 .white-box {
   padding: 20px;
 }
+.chat-list li .panel {
+  text-align: center;
+  margin-bottom: 0;
+  border-radius: 6px;
+}
+.chat-list li .panel .panel-heading {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.chat-list li .panel .panel-body {
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.chat-list li .panel ul {
+  padding: 0;
+}
+.chat-list li .panel li {
+  text-align: center;
+  margin-bottom: 0;
+}
