@@ -47,14 +47,14 @@ namespace ASP
     public partial class _Views_Enquiry_Timeline_cshtml : System.Web.Mvc.WebViewPage<IEnumerable<Realtair.Framework.Core.Interfaces.ITimelineItem>>
     {
 
-#line 93 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 97 "..\..\Views\Enquiry\Timeline.cshtml"
 public System.Web.WebPages.HelperResult Render(object describable)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 94 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 98 "..\..\Views\Enquiry\Timeline.cshtml"
  
 if (describable == null)
 {
@@ -63,14 +63,14 @@ if (describable == null)
 #line default
 #line hidden
 
-#line 97 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 101 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, "N/A");
 
 
 #line default
 #line hidden
 
-#line 97 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 101 "..\..\Views\Enquiry\Timeline.cshtml"
                 
 }
 else if (describable is string)
@@ -80,14 +80,14 @@ else if (describable is string)
 #line default
 #line hidden
 
-#line 101 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 105 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, describable);
 
 
 #line default
 #line hidden
 
-#line 101 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 105 "..\..\Views\Enquiry\Timeline.cshtml"
                     
 }
 else if (describable is decimal || describable is double || describable is int)
@@ -97,14 +97,14 @@ else if (describable is decimal || describable is double || describable is int)
 #line default
 #line hidden
 
-#line 105 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 109 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, describable.ToString());
 
 
 #line default
 #line hidden
 
-#line 105 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 109 "..\..\Views\Enquiry\Timeline.cshtml"
                                
 }
 else if (describable is DateTime)
@@ -114,14 +114,14 @@ else if (describable is DateTime)
 #line default
 #line hidden
 
-#line 109 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 113 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, ((DateTime)describable).ToString("d MMM yyyy"));
 
 
 #line default
 #line hidden
 
-#line 109 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 113 "..\..\Views\Enquiry\Timeline.cshtml"
                                                          ;
 }
 else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable> || describable is IEnumerable<Enquiry>)
@@ -135,20 +135,20 @@ else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "            <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4297), Tuple.Create("\"", 4352)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4555), Tuple.Create("\"", 4610)
 
-#line 116 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 4304), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
+#line 120 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 4562), Tuple.Create<System.Object, System.Int32>(d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 4304), false)
+, 4562), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 116 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 120 "..\..\Views\Enquiry\Timeline.cshtml"
                                          WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 
 
@@ -157,7 +157,7 @@ WriteLiteralTo(__razor_helper_writer, ">");
 WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 
 
-#line 117 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 121 "..\..\Views\Enquiry\Timeline.cshtml"
 
         if (i < d.Count() - 1)
         {
@@ -166,14 +166,14 @@ WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 #line default
 #line hidden
 
-#line 120 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 124 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, " & ");
 
 
 #line default
 #line hidden
 
-#line 120 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 124 "..\..\Views\Enquiry\Timeline.cshtml"
                         ;
         }
     }
@@ -186,20 +186,20 @@ else if (describable is IDisplayable || describable is IHasDisplayable || descri
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "        <a");
 
-WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4613), Tuple.Create("\"", 4685)
+WriteAttributeTo(__razor_helper_writer, "href", Tuple.Create(" href=\"", 4871), Tuple.Create("\"", 4943)
 
-#line 126 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 4620), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
+#line 130 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 4878), Tuple.Create<System.Object, System.Int32>((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url)
 
 #line default
 #line hidden
-, 4620), false)
+, 4878), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">");
 
 
-#line 126 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 130 "..\..\Views\Enquiry\Timeline.cshtml"
                                                        WriteTo(__razor_helper_writer, (describable as IDescribable).Description(Html.LoggedInUser()));
 
 
@@ -208,7 +208,7 @@ WriteLiteralTo(__razor_helper_writer, ">");
 WriteLiteralTo(__razor_helper_writer, "</a>\r\n");
 
 
-#line 127 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 131 "..\..\Views\Enquiry\Timeline.cshtml"
 }
 else if (describable is IEnumerable<IDescribable>)
 {
@@ -220,14 +220,14 @@ else if (describable is IEnumerable<IDescribable>)
 #line default
 #line hidden
 
-#line 133 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 137 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 
 
 #line default
 #line hidden
 
-#line 133 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 137 "..\..\Views\Enquiry\Timeline.cshtml"
                                                             
 
         if (i < d.Count() - 1)
@@ -237,14 +237,14 @@ WriteTo(__razor_helper_writer, d.ElementAt(i).Description(Html.LoggedInUser()));
 #line default
 #line hidden
 
-#line 137 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 141 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, " & ");
 
 
 #line default
 #line hidden
 
-#line 137 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 141 "..\..\Views\Enquiry\Timeline.cshtml"
                         ;
         }
     }
@@ -256,14 +256,14 @@ else if (describable is IDescribable)
 #line default
 #line hidden
 
-#line 143 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 147 "..\..\Views\Enquiry\Timeline.cshtml"
 WriteTo(__razor_helper_writer, (describable as IDescribable).Description(Html.LoggedInUser()));
 
 
 #line default
 #line hidden
 
-#line 143 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 147 "..\..\Views\Enquiry\Timeline.cshtml"
                                                                          
 }
 
@@ -273,7 +273,7 @@ WriteTo(__razor_helper_writer, (describable as IDescribable).Description(Html.Lo
 #line hidden
 });
 
-#line 146 "..\..\Views\Enquiry\Timeline.cshtml"
+#line 150 "..\..\Views\Enquiry\Timeline.cshtml"
 }
 #line default
 #line hidden
@@ -344,70 +344,93 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("            <li>\r\n                <div");
+WriteLiteral("            <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1078), Tuple.Create("\"", 1103)
-, Tuple.Create(Tuple.Create("", 1086), Tuple.Create("panel", 1086), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1055), Tuple.Create("\"", 1127)
             
-            #line 37 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1091), Tuple.Create<System.Object, System.Int32>(typeString
+            #line 36 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 1063), Tuple.Create<System.Object, System.Int32>(thisState.UserResponsible == Html.LoggedInUser() ? "odd" : ""
             
             #line default
             #line hidden
-, 1092), false)
+, 1063), false)
+);
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"chat-image\"");
+
+WriteLiteral(">\r\n                    <img");
+
+WriteLiteral(" alt=\"Female\"");
+
+WriteLiteral(" src=\"http://static.realtair.com/plugins/images/users/genu.jpg\"");
+
+WriteLiteral(">\r\n                </div>\r\n                <div");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 1320), Tuple.Create("\"", 1355)
+, Tuple.Create(Tuple.Create("", 1328), Tuple.Create("chat-body", 1328), true)
+, Tuple.Create(Tuple.Create(" ", 1337), Tuple.Create("panel", 1338), true)
+            
+            #line 40 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create(" ", 1343), Tuple.Create<System.Object, System.Int32>(typeString
+            
+            #line default
+            #line hidden
+, 1344), false)
 );
 
 WriteLiteral(">\r\n                    <div");
 
-WriteLiteral(" class=\"panel-heading\"");
+WriteLiteral(" class=\"panel-heading text-center\"");
 
 WriteLiteral(">\r\n");
 
 WriteLiteral("                        ");
 
             
-            #line 39 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 42 "..\..\Views\Enquiry\Timeline.cshtml"
                    Write(thisState.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </div>\r\n                    <div");
+WriteLiteral("\r\n                    </div>\r\n\r\n");
+
+            
+            #line 45 "..\..\Views\Enquiry\Timeline.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 45 "..\..\Views\Enquiry\Timeline.cshtml"
+                     if (thisState.Details(Html.LoggedInUser()).Count() > 0)
+                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        <div");
 
 WriteLiteral(" class=\"panel-wrapper collapse in\"");
 
 WriteLiteral(" aria-expanded=\"true\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                            <div");
 
 WriteLiteral(" class=\"panel-body\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n                                <ul>\r\n");
 
             
-            #line 43 "..\..\Views\Enquiry\Timeline.cshtml"
-                            
-            
-            #line default
-            #line hidden
-            
-            #line 43 "..\..\Views\Enquiry\Timeline.cshtml"
-                             if (thisState.Details(Html.LoggedInUser()).Count() > 0)
-                            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                <ul>\r\n");
-
-            
-            #line 46 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 50 "..\..\Views\Enquiry\Timeline.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 46 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 50 "..\..\Views\Enquiry\Timeline.cshtml"
                                      foreach (var describable in thisState.Details(Html.LoggedInUser()))
                                     {
 
@@ -417,7 +440,7 @@ WriteLiteral("                                <ul>\r\n");
 WriteLiteral("                                        <li><strong>");
 
             
-            #line 48 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 52 "..\..\Views\Enquiry\Timeline.cshtml"
                                                Write(describable.Key);
 
             
@@ -426,7 +449,7 @@ WriteLiteral("                                        <li><strong>");
 WriteLiteral(":</strong>\t");
 
             
-            #line 48 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 52 "..\..\Views\Enquiry\Timeline.cshtml"
                                                                            Write(Render(describable.Value));
 
             
@@ -435,26 +458,26 @@ WriteLiteral(":</strong>\t");
 WriteLiteral("</li>\r\n");
 
             
-            #line 49 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 53 "..\..\Views\Enquiry\Timeline.cshtml"
                                     }
 
             
             #line default
             #line hidden
-WriteLiteral("                                </ul>\r\n");
+WriteLiteral("                                </ul>\r\n                            </div>\r\n      " +
+"                  </div>\r\n");
 
             
-            #line 51 "..\..\Views\Enquiry\Timeline.cshtml"
-                            }
+            #line 57 "..\..\Views\Enquiry\Timeline.cshtml"
+                    }
 
             
             #line default
             #line hidden
-WriteLiteral("                        </div>\r\n                    </div>\r\n                </div" +
-">\r\n            </li>\r\n");
+WriteLiteral("                </div>\r\n            </li>\r\n");
 
             
-            #line 56 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 60 "..\..\Views\Enquiry\Timeline.cshtml"
         }
         else if (timelineItem is Message)
         {
@@ -466,11 +489,7 @@ WriteLiteral("                        </div>\r\n                    </div>\r\n  
             
             #line default
             #line hidden
-WriteLiteral("                <li");
-
-WriteLiteral(" class=\"odd\"");
-
-WriteLiteral(">\r\n                    <div");
+WriteLiteral("                <li>\r\n                    <div");
 
 WriteLiteral(" class=\"chat-image\"");
 
@@ -491,7 +510,7 @@ WriteLiteral(" class=\"chat-text\"");
 WriteLiteral(">\r\n                            <h4>");
 
             
-            #line 67 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 71 "..\..\Views\Enquiry\Timeline.cshtml"
                            Write(thisMessage.User.Person.Description(Html.LoggedInUser()));
 
             
@@ -500,7 +519,7 @@ WriteLiteral(">\r\n                            <h4>");
 WriteLiteral("</h4>\r\n                            <p> ");
 
             
-            #line 68 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 72 "..\..\Views\Enquiry\Timeline.cshtml"
                            Write(Html.TextToHtml(thisMessage.Content));
 
             
@@ -509,7 +528,7 @@ WriteLiteral("</h4>\r\n                            <p> ");
 WriteLiteral(" </p>\r\n                            <b>");
 
             
-            #line 69 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 73 "..\..\Views\Enquiry\Timeline.cshtml"
                           Write(thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy"));
 
             
@@ -518,7 +537,7 @@ WriteLiteral(" </p>\r\n                            <b>");
 WriteLiteral(" <span> - ");
 
             
-            #line 69 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 73 "..\..\Views\Enquiry\Timeline.cshtml"
                                                                                                  Write(thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt"));
 
             
@@ -528,7 +547,7 @@ WriteLiteral("</span></b>\r\n                        </div>\r\n                 
 "        </li>\r\n");
 
             
-            #line 73 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 77 "..\..\Views\Enquiry\Timeline.cshtml"
             }
             else
             {
@@ -536,7 +555,11 @@ WriteLiteral("</span></b>\r\n                        </div>\r\n                 
             
             #line default
             #line hidden
-WriteLiteral("                <li>\r\n                    <div");
+WriteLiteral("                <li");
+
+WriteLiteral(" class=\"odd\"");
+
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"chat-image\"");
 
@@ -557,7 +580,7 @@ WriteLiteral(" class=\"chat-text\"");
 WriteLiteral(">\r\n                            <h4>");
 
             
-            #line 80 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 84 "..\..\Views\Enquiry\Timeline.cshtml"
                            Write(thisMessage.User.Person.Description(Html.LoggedInUser()));
 
             
@@ -566,7 +589,7 @@ WriteLiteral(">\r\n                            <h4>");
 WriteLiteral("</h4>\r\n                            <p> ");
 
             
-            #line 81 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 85 "..\..\Views\Enquiry\Timeline.cshtml"
                            Write(Html.TextToHtml(thisMessage.Content));
 
             
@@ -575,7 +598,7 @@ WriteLiteral("</h4>\r\n                            <p> ");
 WriteLiteral(" </p>\r\n                            <b>");
 
             
-            #line 82 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 86 "..\..\Views\Enquiry\Timeline.cshtml"
                           Write(thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy"));
 
             
@@ -584,7 +607,7 @@ WriteLiteral(" </p>\r\n                            <b>");
 WriteLiteral(" <span> - ");
 
             
-            #line 82 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 86 "..\..\Views\Enquiry\Timeline.cshtml"
                                                                                                  Write(thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt"));
 
             
@@ -594,7 +617,7 @@ WriteLiteral("</span></b>\r\n                        </div>\r\n                 
 "        </li>\r\n");
 
             
-            #line 86 "..\..\Views\Enquiry\Timeline.cshtml"
+            #line 90 "..\..\Views\Enquiry\Timeline.cshtml"
             }
         }
     }

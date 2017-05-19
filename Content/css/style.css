@@ -16849,6 +16849,9 @@ ul.pro-amenities li span i {
 .chat-list {
   min-height: calc(100vh - 320px) !important;
 }
+.chat-list .chat-text {
+  word-break: break-all;
+}
 @media (max-width: 768px) {
   .chat-main-box {
     margin-left: -15px;

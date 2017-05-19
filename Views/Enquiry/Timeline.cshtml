@@ -33,24 +33,28 @@
                 typeString = "panel-danger";
             }
 
-            <li>
-                <div class="panel @typeString">
-                    <div class="panel-heading">
+            <li class="@(thisState.UserResponsible == Html.LoggedInUser() ? "odd" : "")">
+                <div class="chat-image">
+                    <img alt="Female" src="http://static.realtair.com/plugins/images/users/genu.jpg">
+                </div>
+                <div class="chat-body panel @typeString">
+                    <div class="panel-heading text-center">
                         @thisState.Description(Html.LoggedInUser())
                     </div>
-                    <div class="panel-wrapper collapse in" aria-expanded="true">
-                        <div class="panel-body">
-                            @if (thisState.Details(Html.LoggedInUser()).Count() > 0)
-                            {
+
+                    @if (thisState.Details(Html.LoggedInUser()).Count() > 0)
+                    {
+                        <div class="panel-wrapper collapse in" aria-expanded="true">
+                            <div class="panel-body">
                                 <ul>
                                     @foreach (var describable in thisState.Details(Html.LoggedInUser()))
                                     {
                                         <li><strong>@describable.Key:</strong>	@Render(describable.Value)</li>
                                     }
                                 </ul>
-                            }
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </li>
         }
@@ -60,7 +64,7 @@
 
             if (thisMessage.User != Html.LoggedInUser())
             {
-                <li class="odd">
+                <li>
                     <div class="chat-image"> <img alt="Female" src="http://static.realtair.com/plugins/images/users/genu.jpg"> </div>
                     <div class="chat-body">
                         <div class="chat-text">
@@ -73,7 +77,7 @@
             }
             else
             {
-                <li>
+                <li class="odd">
                     <div class="chat-image"> <img alt="male" src="http://static.realtair.com/plugins/images/users/varun.jpg"> </div>
                     <div class="chat-body">
                         <div class="chat-text">

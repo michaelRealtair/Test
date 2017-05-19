@@ -336,7 +336,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 2878), Tuple.Create("\"", 2911
 
 WriteLiteral(" />\r\n                                    <button");
 
-WriteLiteral(" class=\"btn btn-default pull-right\"");
+WriteLiteral(" class=\"btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10\"");
 
 WriteLiteral(" type=\"submit\"");
 
@@ -344,7 +344,7 @@ WriteLiteral(">");
 
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                        Write(action.Description(Html.LoggedInUser()));
+                                                                                                                       Write(action.Description(Html.LoggedInUser()));
 
             
             #line default
