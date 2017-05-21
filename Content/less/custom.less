@@ -95,12 +95,17 @@ footer.footer.ticker {
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
-     
-    .panel-body {
+
+    .panel-body, .panel-footer {
+        border-top: none;
         padding: 15px;
         background-color: #f7f7f7;
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
+
+        form.inline {
+            display: inline-block;
+        }
     }
 
     ul {
@@ -111,4 +116,10 @@ footer.footer.ticker {
         text-align: center;
         margin-bottom: 0;
     }
+}
+
+.send-chat-box
+
+form.inline {
+    display: inline-block;
 }
