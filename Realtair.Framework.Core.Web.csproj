@@ -346,8 +346,6 @@
     <Content Include="Content\js\dashboard3.js" />
     <Content Include="Content\js\dashboard4.js" />
     <Content Include="Content\js\dropzone.js" />
-    <Content Include="Content\js\exif.js" />
-    <Content Include="Content\js\fileupload.js" />
     <Content Include="Content\js\flot-data.js" />
     <Content Include="Content\js\footable-init.js" />
     <Content Include="Content\js\jasny-bootstrap.js" />

@@ -61,7 +61,7 @@
                                 <div id="file-attachment-thumbnails" class="file-attachment-thumbnails ellipsis">
                                     <span class="preview">
                                         <img data-dz-thumbnail />
-                                        <a class="close-file"><i class="fa fa-times"></i></a>
+                                        <a data-dz-remove class="close-file"><i class="fa fa-times"></i></a>
                                     </span>    
                                 </div>
                             </div>
@@ -104,20 +104,23 @@
             thumbnailHeight: 40,
             parallelUploads: 10,
             previewTemplate: previewTemplate,
-            autoQueue: false, // Make sure the files aren't queued until manually added
-            previewsContainer: '#file-attachment', // Define the container to display the previews
-            clickable: '.attachment-upload' // Define the element that should be used as click trigger to select files.
+            autoQueue: false,
+            previewsContainer: '#file-attachment',
+            clickable: '.attachment-upload'
         });
 
         // Events
         dz.on('addedfile', function (file) {
-            console.log(file);
-        })
+            var query = $('#file-attachment');
+            if (!query.is(':visible')) {
+                query.show();
+            }
+        });
 
         // On-click Handlers
         $('#send-button').click(function () {
-            dz.options.autoProcessQueue = true;
-            dz.enqueueFiles(dz.getFilesWithStatus(Dropzone.ADDED))
+            sendMessage();
+            dz.removeAllFiles(true);
         });
 
 
@@ -176,6 +179,9 @@
             var messageText = $('textarea[name=messageText]').val();
             var attachments = $(".file-attachment .preview");
             var existingAttachments = $(".file-attachment .existing-preview");
+            var files = dz.files.map(function (a, i) {
+                return `${a.name}|${$('span.preview > img', a.previewTemplate).attr('src')}`;
+            });
             //var formToSubmit = $("#send-message-form").serialize();
 
             $('textarea[name=messageText]').val('');
@@ -225,7 +231,10 @@
                 $.ajax({
                     url: '/enquiry/@Model.Workflow.Id/chat/@Model.Conversation.Id/send-message',
                     type: "POST",
-                    data: { messageText: messageText },
+                    data: {
+                        messageText: messageText,
+                        attachments: files
+                    },
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
                         doPoll();
