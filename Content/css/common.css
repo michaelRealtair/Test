@@ -99,6 +99,9 @@ a:focus {
   outline: 0;
   text-decoration: none;
 }
+a:hover {
+  cursor: pointer !important;
+}
 .clear {
   clear: both;
 }

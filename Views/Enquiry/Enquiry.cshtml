@@ -1,4 +1,5 @@
-﻿@using Realtair.Framework.Core.Web.Utilities
+﻿@using Realtair.Framework.Core.Web
+@using Realtair.Framework.Core.Web.Utilities
 @model Realtair.Framework.Core.Web.Controllers.EnquiryController.EnquiryViewModel
 @using Realtair.Framework.Enquiries.Entities;
 
@@ -42,6 +43,7 @@
                         @Html.Partial("Timeline", Model.Timeline)
                     </div>
                     <div class="row send-chat-box">
+                        <!-- Action Buttons -->
                         <div class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
                             {
@@ -51,28 +53,23 @@
                                 </form>
                             }
                         </div>
+                        <!-- End of Action Buttons -->
+                        <!-- -------------------------------------------------- -->
+                        <!--  -->
                         <div class="col-sm-12 newmessage">
-                            <form action="~/Home/SaveUploadedFile" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm" style="width: 50px; background: none; border: none; display: none;">
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
-                                    <input type="submit" value="Upload" />
+                            <div id="file-attachment" class="file-attachment">
+                                <div id="file-attachment-thumbnails" class="file-attachment-thumbnails ellipsis">
+                                    <span class="preview">
+                                        <img data-dz-thumbnail />
+                                        <a class="close-file"><i class="fa fa-times"></i></a>
+                                    </span>    
                                 </div>
-                            </form>
-                            <div id="file-attachment" class="file-attachment" style="display: none">
-                                <div class="file-attachment-thumbnails ellipsis"></div>
                             </div>
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
                             <div class="custom-send">
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
                                 <label class="attachment-upload pull-left">
-                                    @*<input name="attachments"
-                                        id="attachments"
-                                        class="hidden-upload pull-right"
-                                        accept="text/csv,image/jpeg,image/png,application/pdf"
-                                        multiple=""
-                                        capture="camera"
-                                        type="file">*@
-                                    <a id="attach-file" class="btn btn-icon" href="#" title="#">
+                                    <a id="attach-file" class="btn btn-icon start" href="#" title="#">
                                         <i class="fa fa-paperclip"></i>
                                     </a>
                                 </label>
@@ -92,29 +89,45 @@
 @section Scripts {
     <script src="http://static.realtair.com/js/chat.js"></script>
     <script src="http://static.realtair.com/js/exif.js"></script>
-    <script src="http://static.realtair.com/js/fileupload.js"></script>
     <script src="http://static.realtair.com/js/dropzone.js"></script>
+    <script>
+        // Setup preview node...
+        var previewNode = document.querySelector("#file-attachment-thumbnails");
+        previewNode.id = "";
+        var previewTemplate = previewNode.parentNode.innerHTML;
+        previewNode.parentNode.removeChild(previewNode);
+
+        // Initialize Dropzone
+        var dz = new Dropzone(document.body, {
+            url: '/',
+            thumbnailWidth: 40,
+            thumbnailHeight: 40,
+            parallelUploads: 10,
+            previewTemplate: previewTemplate,
+            autoQueue: false, // Make sure the files aren't queued until manually added
+            previewsContainer: '#file-attachment', // Define the container to display the previews
+            clickable: '.attachment-upload' // Define the element that should be used as click trigger to select files.
+        });
+
+        // Events
+        dz.on('addedfile', function (file) {
+            console.log(file);
+        })
+
+        // On-click Handlers
+        $('#send-button').click(function () {
+            dz.options.autoProcessQueue = true;
+            dz.enqueueFiles(dz.getFilesWithStatus(Dropzone.ADDED))
+        });
+
+
+    </script>
     <script>
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
 
         $(function () {
             $(document).scrollTop($(document).height());
-            //setTimeout(doPoll, pollTime);
-
-            $('#send-button').click(function (e) {
-                sendMessage();
-            });
-
-            $('#attach-file').click(function () {
-                Dropzone.
-            });
-
-            //$('.file-attachment').hide();
-
-            $('.close-file').click(function () {
-                if ($("#send-message-form .file-attachment .preview").length == 0) $('.file-attachment').hide();
-            });
 
             $('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
