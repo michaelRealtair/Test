@@ -16847,7 +16847,7 @@ ul.pro-amenities li span i {
   color: #313131;
 }
 .chat-list {
-  min-height: calc(100vh - 320px) !important;
+  min-height: calc(100vh - 325px) !important;
 }
 .chat-list .chat-text {
   word-break: break-all;
