@@ -71,7 +71,7 @@
 
                     @if (thisState is IShowAttachments)
                     {
-                        <div class="file-attachment panel-footer">
+                        <div class="file-attachment text-center panel-footer">
                             @foreach (var attachment in (thisState as IShowAttachments).Attachments)
                             {
                                 if (attachment.IsImage)

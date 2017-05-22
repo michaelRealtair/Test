@@ -35,6 +35,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                 return MapInt(value);
             else if (type == typeof(decimal))
                 return MapDecimal(value);
+            else if (typeof(IEnumerable<bool?>).IsAssignableFrom(type))
+                return MapChecklist(value);
             else if (field.FieldAttribute is CheckboxFieldAttribute)
                 return MapCheckbox(value);
             else if (type == typeof(bool))
@@ -94,6 +96,11 @@ namespace Realtair.Framework.Core.Web.Controllers
         bool MapBool(object value)
         {
             return Convert.ToBoolean(value);
+        }
+
+        bool?[] MapChecklist(object value)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<bool?[]>(value.ToString());
         }
 
         object MapEnum(Type type, object value)
@@ -156,7 +163,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         
         IEnumerable<int> MapMultiSelectList(object value)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(value.ToString());
+            return JsonConvert.DeserializeObject<int[]>(value.ToString());
         }
 
         IEnumerable<Attachment> MapExistingFileAsset(object value)
