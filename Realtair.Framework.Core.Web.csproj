@@ -277,6 +277,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Detail.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Widgets\_Actions.generated.cs">
+      <DependentUpon>_Actions.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Widgets\_List.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3274,6 +3279,10 @@
     <None Include="Views\Shared\Widgets\_Detail.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Detail.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Widgets\_Actions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Actions.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Widgets\_List.cshtml">
       <Generator>RazorGenerator</Generator>
