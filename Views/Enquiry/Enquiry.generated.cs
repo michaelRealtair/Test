@@ -294,7 +294,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 48 "..\..\Views\Enquiry\Enquiry.cshtml"
-                             foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Take(3).Reverse())
+                             foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
 
             
@@ -304,24 +304,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2802), Tuple.Create("\"", 2830)
+WriteAttribute("action", Tuple.Create(" action=\"", 2784), Tuple.Create("\"", 2812)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2811), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2793), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2811), false)
+, 2793), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2831), Tuple.Create("\"", 2886)
+WriteAttribute("method", Tuple.Create(" method=\"", 2813), Tuple.Create("\"", 2868)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2840), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2822), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2840), false)
+, 2822), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -330,14 +330,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2963), Tuple.Create("\"", 2996)
+WriteAttribute("value", Tuple.Create(" value=\"", 2945), Tuple.Create("\"", 2978)
             
             #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2971), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2953), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2971), false)
+, 2953), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
