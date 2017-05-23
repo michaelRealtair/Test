@@ -1093,7 +1093,7 @@ Write(Html.RenderDelayed());
             
             #line default
             #line hidden
-WriteLiteral(";\r\n");
+WriteLiteral("\r\n");
 
 });
 
