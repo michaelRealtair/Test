@@ -357,6 +357,7 @@
     <Content Include="Content\js\jasny-bootstrap.js" />
     <Content Include="Content\js\jquery.PrintArea.js" />
     <Content Include="Content\js\jquery.slimscroll.js" />
+    <Content Include="Content\js\jscolor.min.js" />
     <Content Include="Content\js\jsgrid-init.js" />
     <Content Include="Content\js\mask.js" />
     <Content Include="Content\js\morris-data.js" />

@@ -155,6 +155,10 @@ namespace ASP
             {
                 return new MvcHtmlString("N/A");
             }
+            else if (describable is string && ((describable as string).ToLower().StartsWith("https://") || (describable as string).ToLower().StartsWith("http://")))
+            {
+                return new MvcHtmlString($"<a href=\"{describable as string}\">{(describable as string).Split(new[] { "://" }, StringSplitOptions.None)[1]}</a>");
+            }
             else if (describable is string)
             {
                 return new MvcHtmlString(describable as string);

@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_ColourPickerField.cshtml")]
@@ -112,10 +113,7 @@ WriteLiteral(" class=\"jscolor form-control\"");
 
 WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n<script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 418), Tuple.Create("\"", 448)
-, Tuple.Create(Tuple.Create("", 424), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jscolor.min.js")
-, 424), false)
-);
+WriteLiteral(" src=\"http://static.realtair.com/js/jscolor.min.js\"");
 
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        $(\'#");
 
