@@ -62,7 +62,7 @@
                                     <span class="preview">
                                         <img data-dz-thumbnail />
                                         <a data-dz-remove class="close-file"><i class="fa fa-times"></i></a>
-                                    </span>    
+                                    </span>
                                 </div>
                             </div>
                             <div id="file-attachment-progress" class="file-attachment-progress">
@@ -71,11 +71,7 @@
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
                             <div class="custom-send">
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
-                                <label class="attachment-upload pull-left">
-                                    <a id="attach-file" class="btn btn-icon start" href="#" title="#">
-                                        <i class="fa fa-paperclip"></i>
-                                    </a>
-                                </label>
+                                <a id="attach-file" class="cst-icon" href="#" title="#"><i class="fa fa-paperclip"></i></a>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
@@ -114,7 +110,7 @@
             previewTemplate: previewTemplate,
             autoQueue: false,
             previewsContainer: '#file-attachment',
-            clickable: '.attachment-upload',
+            clickable: '#attach-file',
             init: function () {
                 this.on('addedfile', function (file) {
                     var query = $('#file-attachment');
@@ -283,5 +279,4 @@
 @section Styles {
     <link href="http://static.realtair.com/css/dropzone/basic.css" rel="stylesheet">
     <link href="http://static.realtair.com/css/dropzone/dropzone.css" rel="stylesheet">
-    <link href="http://static.realtair.com/css/responsive-admin.css" rel="stylesheet">
 }

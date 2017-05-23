@@ -88,27 +88,9 @@ footer.footer.ticker {
 
 .attachment-upload {
     margin: 0;
-    height: 60px;
-    width: 60px;
     position: relative;
 }
 
-.attachment-upload:after {
-    height: 20px;
-    width: 1px;
-    background: #eee;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 22px;
-}
-
-.attachment-upload .btn.btn-icon {
-    font-size: 1.5em;
-    padding: 8px 0;
-    width: 40px;
-    text-align: center;
-}
 
 .attachment-upload .btn.btn-icon .icon {
     font-size: 1em;
@@ -142,7 +124,7 @@ footer.footer.ticker {
     margin: 0;
 }
 
-.file-attachment .file-attachment-thumbnails .preview, .file-attachment .file-attachment-thumbnails .existing-preview {
+.newmessage .file-attachment .file-attachment-thumbnails .preview, .file-attachment .file-attachment-thumbnails .existing-preview {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px;
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px;
     box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px;
@@ -160,12 +142,12 @@ footer.footer.ticker {
     float: right;
 }
 
-.file-attachment .file-attachment-thumbnails .preview img, .file-attachment .file-attachment-thumbnails .existing-preview img{
+.newmessage .file-attachment .file-attachment-thumbnails .preview img, .file-attachment .file-attachment-thumbnails .existing-preview img {
     border: none;
     border-radius: 3px;
 }
 
-.file-attachment .file-attachment-thumbnails .preview .close-file, .file-attachment .file-attachment-thumbnails .existing-preview .close-file {
+.newmessage .file-attachment .file-attachment-thumbnails .preview .close-file, .file-attachment .file-attachment-thumbnails .existing-preview .close-file {
     right: -6px;
     top: -6px;
     padding: 1px;
@@ -183,11 +165,11 @@ footer.footer.ticker {
     opacity: 1;
 }
 
-.file-attachment .file-attachment-thumbnails .preview .close-file:hover, .file-attachment .file-attachment-thumbnails .existing-preview .close-file:hover {
+.newmessage .file-attachment .file-attachment-thumbnails .preview .close-file:hover, .file-attachment .file-attachment-thumbnails .existing-preview .close-file:hover {
     opacity: .6;
 }
 
-.file-attachment {
+.newmessage .file-attachment {
     background: #fff;
     height: 60px;
     padding: 0 15px;
@@ -201,6 +183,10 @@ footer.footer.ticker {
     clear: both;
     position: relative;
     z-index: 11;
+}
+
+.chat-list li {
+    overflow: hidden;
 }
 
 .chat-list li .panel {
@@ -235,8 +221,16 @@ footer.footer.ticker {
     }
 }
 
-.send-chat-box
-
-form.inline {
+.send-chat-box form.inline {
     display: inline-block;
+}
+
+.send-chat-box .col-sm-12 {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.chat-main-box .chat-right-aside .send-chat-box .form-control {
+    min-height: 80px;
+    max-height: 80px;
 }
