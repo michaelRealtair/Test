@@ -1,4 +1,5 @@
-﻿@using Realtair.Framework.Core.Web.Utilities
+﻿@using Realtair.Framework.Core.Web
+@using Realtair.Framework.Core.Web.Utilities
 @model Realtair.Framework.Core.Web.Controllers.EnquiryController.EnquiryViewModel
 @using Realtair.Framework.Enquiries.Entities;
 
@@ -42,6 +43,7 @@
                         @Html.Partial("Timeline", Model.Timeline)
                     </div>
                     <div class="row send-chat-box">
+                        <!-- Action Buttons -->
                         <div class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
@@ -51,48 +53,91 @@
                                 </form>
                             }
                         </div>
-                        <div class="col-sm-12">
+                        <!-- End of Action Buttons -->
+                        <!-- -------------------------------------------------- -->
+                        <!--  -->
+                        <div class="col-sm-12 newmessage">
+                            <div id="file-attachment" class="file-attachment" style="display: none;">
+                                <div id="file-attachment-thumbnails" class="file-attachment-thumbnails ellipsis">
+                                    <span class="preview">
+                                        <img data-dz-thumbnail />
+                                        <a data-dz-remove class="close-file"><i class="fa fa-times"></i></a>
+                                    </span>    
+                                </div>
+                            </div>
+                            <div id="file-attachment-progress" class="file-attachment-progress">
+                                <h3>Uploading...</h3>
+                            </div>
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
                             <div class="custom-send">
                                 <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
-                                <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
+                                <label class="attachment-upload pull-left">
+                                    <a id="attach-file" class="btn btn-icon start" href="#" title="#">
+                                        <i class="fa fa-paperclip"></i>
+                                    </a>
+                                </label>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- .chat-right-panel -->
             </div>
-            <!-- .chat-right-panel -->
+            <!-- /.chat-row -->
         </div>
-        <!-- /.chat-row -->
     </div>
 </div>
 <!-- /#page-wrapper -->
 
 @section Scripts {
     <script src="http://static.realtair.com/js/chat.js"></script>
+    <script src="http://static.realtair.com/js/dropzone.js"></script>
+    <script>
+        // Setup preview node...
+        var previewNode = document.querySelector("#file-attachment-thumbnails");
+        previewNode.id = "";
+        var previewTemplate = previewNode.parentNode.innerHTML;
+        previewNode.parentNode.removeChild(previewNode);
+
+        // Setup progress node...
+        var progressNode = document.querySelector('#file-attachment-progress');
+        progressNode.id = '';
+        var progressTemplate = progressNode.parentNode.innerHTML;
+        progressNode.parentNode.removeChild(progressNode);
+
+        // Initialize Dropzone
+        var dz = new Dropzone(document.body, {
+            url: '/',
+            thumbnailWidth: 40,
+            thumbnailHeight: 40,
+            parallelUploads: 10,
+            previewTemplate: previewTemplate,
+            autoQueue: false,
+            previewsContainer: '#file-attachment',
+            clickable: '.attachment-upload',
+            init: function () {
+                this.on('addedfile', function (file) {
+                    var query = $('#file-attachment');
+                    if (!query.is(':visible')) {
+                        query.show();
+                    }
+                });
+            }
+        });
+
+        // On-click Handlers
+        $('#send-button').click(function () {
+            sendMessage();
+            dz.removeAllFiles(true);
+        });
+
+    </script>
     <script>
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
 
         $(function () {
             $(document).scrollTop($(document).height());
-            //setTimeout(doPoll, pollTime);
-
-            $('#send-button').click(function (e) {
-                sendMessage();
-            });
-
-            $('.icon-PaperClip').parent().click(function () {
-                $('#attachments').trigger('click');
-                $('.file-attachment').show();
-            });
-
-            //$('.file-attachment').hide();
-
-            $('.close-file').click(function () {
-                if ($("#send-message-form .file-attachment .preview").length == 0) $('.file-attachment').hide();
-            });
 
             $('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
@@ -141,6 +186,9 @@
             var messageText = $('textarea[name=messageText]').val();
             var attachments = $(".file-attachment .preview");
             var existingAttachments = $(".file-attachment .existing-preview");
+            var files = dz.files.map(function (a, i) {
+                return `${a.name}|${$('span.preview > img', a.previewTemplate).attr('src')}`;
+            });
             //var formToSubmit = $("#send-message-form").serialize();
 
             $('textarea[name=messageText]').val('');
@@ -190,11 +238,14 @@
                 $.ajax({
                     url: '/enquiry/@Model.Workflow.Id/chat/@Model.Conversation.Id/send-message',
                     type: "POST",
-                    data: { messageText: messageText },
+                    data: {
+                        messageText: messageText,
+                        attachments: files
+                    },
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
                         doPoll();
-                        $("#" + messageId).remove();
+                        //$("#" + messageId).remove();
                     },
                     error: function (data) {
                         window.location.href = "/";
@@ -227,4 +278,10 @@
             });
         }
     </script>
+}
+
+@section Styles {
+    <link href="http://static.realtair.com/css/dropzone/basic.css" rel="stylesheet">
+    <link href="http://static.realtair.com/css/dropzone/dropzone.css" rel="stylesheet">
+    <link href="http://static.realtair.com/css/responsive-admin.css" rel="stylesheet">
 }

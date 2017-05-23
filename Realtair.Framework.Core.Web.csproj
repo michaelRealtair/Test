@@ -99,6 +99,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Sections.cs" />
     <Compile Include="MvcExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton.cs" />
@@ -315,12 +316,14 @@
     <Content Include="Content\bootstrap\js\tooltip.js" />
     <Content Include="Content\bootstrap\js\transition.js" />
     <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\dropzone\basic.css" />
     <Content Include="Content\css\colors\default.css" />
     <Content Include="Content\css\colors\default.min.css" />
     <Content Include="Content\css\colors\megna-dark.css" />
     <Content Include="Content\css\colors\megna-dark.min.css" />
     <Content Include="Content\css\common.css" />
     <Content Include="Content\css\common.min.css" />
+    <Content Include="Content\css\dropzone\dropzone.css" />
     <Content Include="Content\css\icons\linea-icons\linea.css" />
     <Content Include="Content\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
     <Content Include="Content\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
@@ -329,6 +332,7 @@
     <Content Include="Content\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
     <Content Include="Content\css\pages.css" />
     <Content Include="Content\css\pages.min.css" />
+    <Content Include="Content\css\responsive-admin.css" />
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
@@ -342,6 +346,7 @@
     <Content Include="Content\js\dashboard2.js" />
     <Content Include="Content\js\dashboard3.js" />
     <Content Include="Content\js\dashboard4.js" />
+    <Content Include="Content\js\dropzone.js" />
     <Content Include="Content\js\flot-data.js" />
     <Content Include="Content\js\footable-init.js" />
     <Content Include="Content\js\jasny-bootstrap.js" />
@@ -350,6 +355,8 @@
     <Content Include="Content\js\jsgrid-init.js" />
     <Content Include="Content\js\mask.js" />
     <Content Include="Content\js\morris-data.js" />
+    <Content Include="Content\js\photoswipe-ui-default.min.js" />
+    <Content Include="Content\js\photoswipe.min.js" />
     <Content Include="Content\js\real-estate.js" />
     <Content Include="Content\js\toastr.js" />
     <Content Include="Content\js\validator.js" />

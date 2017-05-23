@@ -100,14 +100,6 @@ namespace Realtair.Framework.Core.Web.Controllers
             return View("Enquiry", model);
         }
 
-        public void DismissAllNotifications(IEnumerable<int> notificationIds)
-        {
-            var notifications = DbContext.Set<Notification>().Where(n => notificationIds.Contains(n.Id));
-            foreach (var n in notifications)
-                n.Dismissed = true;
-            DbContext.SaveChanges();
-        }
-
         //[Route("{enquiryTypeName}/{id:int}/chat/{conversationId:int}")]
         public ActionResult Conversation(string enquiryTypeName, int id, int conversationId)
         {
@@ -174,6 +166,15 @@ namespace Realtair.Framework.Core.Web.Controllers
                 DbContext.Set<Notification>().Where(n => n.User.Id == User.Id).ToList().ForEach(f => { f.LastSeen = DateTime.Now; });
 
             return View("Timeline", timeline);
+        }
+        
+        // Other Methods
+        public void DismissAllNotifications(IEnumerable<int> notificationIds)
+        {
+            var notifications = DbContext.Set<Notification>().Where(n => notificationIds.Contains(n.Id));
+            foreach (var n in notifications)
+                n.Dismissed = true;
+            DbContext.SaveChanges();
         }
     }
 
