@@ -376,6 +376,8 @@ WriteLiteral(" id=\"file-attachment\"");
 
 WriteLiteral(" class=\"file-attachment\"");
 
+WriteLiteral(" style=\"display: none;\"");
+
 WriteLiteral(">\r\n                                <div");
 
 WriteLiteral(" id=\"file-attachment-thumbnails\"");
@@ -397,7 +399,14 @@ WriteLiteral(" class=\"fa fa-times\"");
 
 WriteLiteral("></i></a>\r\n                                    </span>    \r\n                     " +
 "           </div>\r\n                            </div>\r\n                         " +
-"   <textarea");
+"   <div");
+
+WriteLiteral(" id=\"file-attachment-progress\"");
+
+WriteLiteral(" class=\"file-attachment-progress\"");
+
+WriteLiteral(">\r\n                                <h3>Uploading...</h3>\r\n                       " +
+"     </div>\r\n                            <textarea");
 
 WriteLiteral(" class=\"form-control chat-box\"");
 
@@ -473,79 +482,79 @@ WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/exif.js\"");
-
-WriteLiteral("></script>\r\n    <script");
-
 WriteLiteral(" src=\"http://static.realtair.com/js/dropzone.js\"");
 
 WriteLiteral("></script>\r\n    <script>\r\n        // Setup preview node...\r\n        var previewNo" +
 "de = document.querySelector(\"#file-attachment-thumbnails\");\r\n        previewNode" +
 ".id = \"\";\r\n        var previewTemplate = previewNode.parentNode.innerHTML;\r\n    " +
-"    previewNode.parentNode.removeChild(previewNode);\r\n\r\n        // Initialize Dr" +
-"opzone\r\n        var dz = new Dropzone(document.body, {\r\n            url: \'/\',\r\n " +
-"           thumbnailWidth: 40,\r\n            thumbnailHeight: 40,\r\n            pa" +
-"rallelUploads: 10,\r\n            previewTemplate: previewTemplate,\r\n            a" +
-"utoQueue: false,\r\n            previewsContainer: \'#file-attachment\',\r\n          " +
-"  clickable: \'.attachment-upload\'\r\n        });\r\n\r\n        // Events\r\n        dz." +
-"on(\'addedfile\', function (file) {\r\n            var query = $(\'#file-attachment\')" +
-";\r\n            if (!query.is(\':visible\')) {\r\n                query.show();\r\n    " +
-"        }\r\n        });\r\n\r\n        // On-click Handlers\r\n        $(\'#send-button\'" +
-").click(function () {\r\n            sendMessage();\r\n            dz.removeAllFiles" +
-"(true);\r\n        });\r\n\r\n\r\n    </script>\r\n    <script>\r\n        var tempSentMessa" +
-"geId = 0;\r\n        var pollTime = 1000 * 10;\r\n\r\n        $(function () {\r\n       " +
-"     $(document).scrollTop($(document).height());\r\n\r\n            $(\'#selectPhoto" +
-"sBtn\').click(function () {\r\n                $(\'#modal-attachments\').find(\'.picke" +
-"d\').each(function () {\r\n                    var image = $(this).find(\'img\').attr" +
-"(\'src\');\r\n                    var storageguid = $(this).find(\'img\').attr(\'storag" +
-"eguid\');\r\n                    $(\'.file-attachment-thumbnails\').append($(\'<div cl" +
-"ass=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"background-image" +
-": url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"></i></a><inpu" +
-"t type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid + \'\"></div>\'))" +
-";\r\n                    $(\'.file-attachment, .file-attachment-thumbnails\').show()" +
-";\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n                    $(\'" +
-".existing-preview\').each(function () {\r\n                        var $this = $(th" +
-"is);\r\n                        $(this).find(\'a.close-file\').click(function () { $" +
-"this.remove(); });\r\n                    });\r\n                });\r\n            })" +
-";\r\n\r\n            /* Auto popup gallery */\r\n            var url = window.location" +
-".href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1);\r\n           " +
-" var queries = hash.split(\"&\");\r\n            for (var i = 0; i < queries.length;" +
-" i++) {\r\n                if (queries[i].includes(\"pid\")) {\r\n                    " +
-"var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + pid).trigger(\'c" +
-"lick\');\r\n                }\r\n            }\r\n\r\n            var textarea = document" +
-".querySelector(\'textarea[name=messageText]\');\r\n            textarea.addEventList" +
-"ener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n               " +
-" var el = this;\r\n                setTimeout(function () {\r\n                    e" +
-"l.style.cssText = \'height:auto; padding:0\';\r\n                    // for box-sizi" +
-"ng other than \"content-box\" use:\r\n                    // el.style.cssText = \'-mo" +
-"z-box-sizing:content-box\';\r\n                    el.style.cssText = \'height:\' + e" +
-"l.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n        });\r\n\r\n  " +
-"      function sendMessage() {\r\n            tempSentMessageId++;\r\n\r\n            " +
-"var messageId = \"sent-\" + tempSentMessageId;\r\n            var messageText = $(\'t" +
-"extarea[name=messageText]\').val();\r\n            var attachments = $(\".file-attac" +
-"hment .preview\");\r\n            var existingAttachments = $(\".file-attachment .ex" +
-"isting-preview\");\r\n            var files = dz.files.map(function (a, i) {\r\n     " +
-"           return `${a.name}|${$(\'span.preview > img\', a.previewTemplate).attr(\'" +
-"src\')}`;\r\n            });\r\n            //var formToSubmit = $(\"#send-message-for" +
-"m\").serialize();\r\n\r\n            $(\'textarea[name=messageText]\').val(\'\');\r\n      " +
-"      $(\'textarea[name=messageText]\').css(\'height\', \'60px\');\r\n            $(\'.fi" +
-"le-attachment-thumbnails\').empty().hide();\r\n            $(\'#file-attachment\').hi" +
-"de();\r\n\r\n            if (attachments.length > 0 || jQuery.trim(messageText).leng" +
-"th > 0 || existingAttachments.length > 0) {\r\n                var message = $(\r\n " +
-"                   \'<div id=\"\' + messageId + \'\"class=\"row row-no-gutter answer m" +
-"essage-provider sending\">\' +\r\n                        \'<div class=\"col-md-5 col-" +
-"md-push-7\">\' +\r\n                        \'<figure>\' +\r\n                          " +
-"  \'<span class=\"img-circle\">");
+"    previewNode.parentNode.removeChild(previewNode);\r\n\r\n        // Setup progres" +
+"s node...\r\n        var progressNode = document.querySelector(\'#file-attachment-p" +
+"rogress\');\r\n        progressNode.id = \'\';\r\n        var progressTemplate = progre" +
+"ssNode.parentNode.innerHTML;\r\n        progressNode.parentNode.removeChild(progre" +
+"ssNode);\r\n\r\n        // Initialize Dropzone\r\n        var dz = new Dropzone(docume" +
+"nt.body, {\r\n            url: \'/\',\r\n            thumbnailWidth: 40,\r\n            " +
+"thumbnailHeight: 40,\r\n            parallelUploads: 10,\r\n            previewTempl" +
+"ate: previewTemplate,\r\n            autoQueue: false,\r\n            previewsContai" +
+"ner: \'#file-attachment\',\r\n            clickable: \'.attachment-upload\',\r\n        " +
+"    init: function () {\r\n                this.on(\'addedfile\', function (file) {\r" +
+"\n                    var query = $(\'#file-attachment\');\r\n                    if " +
+"(!query.is(\':visible\')) {\r\n                        query.show();\r\n              " +
+"      }\r\n                });\r\n            }\r\n        });\r\n\r\n        // On-click " +
+"Handlers\r\n        $(\'#send-button\').click(function () {\r\n            sendMessage" +
+"();\r\n            dz.removeAllFiles(true);\r\n        });\r\n\r\n    </script>\r\n    <sc" +
+"ript>\r\n        var tempSentMessageId = 0;\r\n        var pollTime = 1000 * 10;\r\n\r\n" +
+"        $(function () {\r\n            $(document).scrollTop($(document).height())" +
+";\r\n\r\n            $(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#" +
+"modal-attachments\').find(\'.picked\').each(function () {\r\n                    var " +
+"image = $(this).find(\'img\').attr(\'src\');\r\n                    var storageguid = " +
+"$(this).find(\'img\').attr(\'storageguid\');\r\n                    $(\'.file-attachmen" +
+"t-thumbnails\').append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageg" +
+"uid + \'\" style=\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i c" +
+"lass=\"fa fa-times\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value" +
+"=\"\' + storageguid + \'\"></div>\'));\r\n                    $(\'.file-attachment, .fil" +
+"e-attachment-thumbnails\').show();\r\n                    $(this).toggleClass(\"pick" +
+"ed\");\r\n\r\n                    $(\'.existing-preview\').each(function () {\r\n        " +
+"                var $this = $(this);\r\n                        $(this).find(\'a.cl" +
+"ose-file\').click(function () { $this.remove(); });\r\n                    });\r\n   " +
+"             });\r\n            });\r\n\r\n            /* Auto popup gallery */\r\n     " +
+"       var url = window.location.href;\r\n            var hash = url.substring(url" +
+".indexOf(\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n            for" +
+" (var i = 0; i < queries.length; i++) {\r\n                if (queries[i].includes" +
+"(\"pid\")) {\r\n                    var pid = queries[i].split(\"=\")[1];\r\n           " +
+"         $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n   " +
+"         var textarea = document.querySelector(\'textarea[name=messageText]\');\r\n " +
+"           textarea.addEventListener(\'keydown\', autosize);\r\n\r\n            functi" +
+"on autosize() {\r\n                var el = this;\r\n                setTimeout(func" +
+"tion () {\r\n                    el.style.cssText = \'height:auto; padding:0\';\r\n   " +
+"                 // for box-sizing other than \"content-box\" use:\r\n              " +
+"      // el.style.cssText = \'-moz-box-sizing:content-box\';\r\n                    " +
+"el.style.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n" +
+"            }\r\n        });\r\n\r\n        function sendMessage() {\r\n            temp" +
+"SentMessageId++;\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n  " +
+"          var messageText = $(\'textarea[name=messageText]\').val();\r\n            " +
+"var attachments = $(\".file-attachment .preview\");\r\n            var existingAttac" +
+"hments = $(\".file-attachment .existing-preview\");\r\n            var files = dz.fi" +
+"les.map(function (a, i) {\r\n                return `${a.name}|${$(\'span.preview >" +
+" img\', a.previewTemplate).attr(\'src\')}`;\r\n            });\r\n            //var for" +
+"mToSubmit = $(\"#send-message-form\").serialize();\r\n\r\n            $(\'textarea[name" +
+"=messageText]\').val(\'\');\r\n            $(\'textarea[name=messageText]\').css(\'heigh" +
+"t\', \'60px\');\r\n            $(\'.file-attachment-thumbnails\').empty().hide();\r\n    " +
+"        $(\'#file-attachment\').hide();\r\n\r\n            if (attachments.length > 0 " +
+"|| jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {\r\n   " +
+"             var message = $(\r\n                    \'<div id=\"\' + messageId + \'\"c" +
+"lass=\"row row-no-gutter answer message-provider sending\">\' +\r\n                  " +
+"      \'<div class=\"col-md-5 col-md-push-7\">\' +\r\n                        \'<figure" +
+">\' +\r\n                            \'<span class=\"img-circle\">");
 
             
-            #line 197 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 204 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 197 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 204 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                             Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -577,7 +586,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 "uiry/");
 
             
-            #line 232 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 239 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -586,7 +595,7 @@ WriteLiteral("</span>\' +\r\n                        \'</figure>\' +\r\n        
 WriteLiteral("/chat/");
 
             
-            #line 232 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 239 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -601,7 +610,7 @@ WriteLiteral(@"/send-message',
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
                         doPoll();
-                        $(""#"" + messageId).remove();
+                        //$(""#"" + messageId).remove();
                     },
                     error: function (data) {
                         window.location.href = ""/"";
@@ -616,7 +625,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 253 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -625,7 +634,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 253 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -669,6 +678,12 @@ WriteLiteral(" rel=\"stylesheet\"");
 WriteLiteral(">\r\n    <link");
 
 WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/dropzone.css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(">\r\n    <link");
+
+WriteLiteral(" href=\"http://static.realtair.com/css/responsive-admin.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 

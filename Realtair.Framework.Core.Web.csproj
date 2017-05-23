@@ -332,6 +332,7 @@
     <Content Include="Content\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
     <Content Include="Content\css\pages.css" />
     <Content Include="Content\css\pages.min.css" />
+    <Content Include="Content\css\responsive-admin.css" />
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
