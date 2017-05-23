@@ -49,7 +49,7 @@
                                 <ul>
                                     @foreach (var describable in thisState.Details(Html.LoggedInUser()))
                                     {
-                                        <li><strong>@describable.Key:</strong>	@Render(describable.Value)</li>
+                                        <li><strong>@describable.Key:</strong> @Html.Render(Url, describable.Value)</li>
                                     }
                                 </ul>
                             </div>
@@ -167,60 +167,3 @@
         }
     }
 </ul>
-
-
-
-@helper Render(object describable)
-{
-if (describable == null)
-{
-        @("N/A")
-}
-else if (describable is string)
-{
-        @describable
-}
-else if (describable is decimal || describable is double || describable is int)
-{
-        @describable.ToString()
-}
-else if (describable is DateTime)
-{
-        @(((DateTime)describable).ToString("d MMM yyyy"));
-}
-else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable> || describable is IEnumerable<Enquiry>)
-{
-    var d = describable as IEnumerable<IDescribable>;
-    for (int i = 0; i < d.Count(); i++)
-    {
-            <a href="@d.ElementAt(i).GetUrl(Html.LoggedInUser(), Url)">@d.ElementAt(i).Description(Html.LoggedInUser())</a>
-
-        if (i < d.Count() - 1)
-        {
-                @(" & ");
-        }
-    }
-}
-else if (describable is IDisplayable || describable is IHasDisplayable || describable is Enquiry)
-{
-        <a href="@((describable as IDescribable).GetUrl(Html.LoggedInUser(), Url))">@((describable as IDescribable).Description(Html.LoggedInUser()))</a>
-}
-else if (describable is IEnumerable<IDescribable>)
-{
-    var d = describable as IEnumerable<IDescribable>;
-    for (int i = 0; i < d.Count(); i++)
-    {
-            @d.ElementAt(i).Description(Html.LoggedInUser())
-
-        if (i < d.Count() - 1)
-        {
-                @(" & ");
-        }
-    }
-}
-else if (describable is IDescribable)
-{
-        @((describable as IDescribable).Description(Html.LoggedInUser()))
-}
-
-}

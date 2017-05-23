@@ -17008,6 +17008,10 @@ footer.footer.ticker .tickercontainer {
   text-align: center;
   margin-bottom: 0;
 }
+.chat-list li .panel li a {
+  text-decoration: underline;
+  color: #2cabe3;
+}
 .send-chat-box form.inline {
   display: inline-block;
 }
