@@ -104,7 +104,28 @@
                     <div class="chat-body">
                         <div class="chat-text">
                             <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>
-                            <p> @Html.TextToHtml(thisMessage.Content) </p>
+                            <p> @Html.TextToHtml(thisMessage.Content)</p>
+
+                            @if (thisMessage.Attachments.Count > 0)
+                            {
+                                <div class="file-attachment text-right m-t-10 m-b-10">
+                                    @foreach (var attachment in thisMessage.Attachments)
+                                    {
+                                        if (attachment.IsImage)
+                                        {
+                                            <a href="@attachment.GetUrl(0)" class="gallery-item text-center" id="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
+                                                <img src="@Html.Raw(attachment.GetUrl(100))" class="img-rounded" alt="#" width="80" height="80">
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@attachment.GetUrl(0)" class="text-center" target="_blank">
+                                                <img src="https://realtair.com/Content/img/icon-pdf.png" class="img-rounded" alt="#" width="80" height="80">
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            }
                             <b>@thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
                         </div>
                     </div>
@@ -118,6 +139,26 @@
                         <div class="chat-text">
                             <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>
                             <p> @Html.TextToHtml(thisMessage.Content) </p>
+                            @if (thisMessage.Attachments.Count > 0)
+                            {
+                                <div class="file-attachment text-right m-t-10 m-b-5">
+                                    @foreach (var attachment in thisMessage.Attachments)
+                                    {
+                                        if (attachment.IsImage)
+                                        {
+                                            <a href="@attachment.GetUrl(0)" class="gallery-item text-center" id="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
+                                                <img src="@Html.Raw(attachment.GetUrl(100))" class="img-rounded" alt="#" width="80" height="80">
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@attachment.GetUrl(0)" class="text-center" target="_blank">
+                                                <img src="https://realtair.com/Content/img/icon-pdf.png" class="img-rounded" alt="#" width="80" height="80">
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                            }
                             <b>@thisMessage.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisMessage.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
                         </div>
                     </div>
