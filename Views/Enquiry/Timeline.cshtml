@@ -114,13 +114,13 @@
                                         if (attachment.IsImage)
                                         {
                                             <a href="@attachment.GetUrl(0)" class="gallery-item text-center" id="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
-                                                <img src="@Html.Raw(attachment.GetUrl(100))" style="width: 100px !important; height: 100px !important;" alt="#" itemprop="thumbnail">
+                                                <img src="@Html.Raw(attachment.GetUrl(100))" class="img-rounded" alt="#" width="80" height="80">
                                             </a>
                                         }
                                         else
                                         {
                                             <a href="@attachment.GetUrl(0)" class="text-center" target="_blank">
-                                                <img src="https://realtair.com/Content/img/icon-pdf.png" alt="#" width="80" height="80">
+                                                <img src="https://realtair.com/Content/img/icon-pdf.png" class="img-rounded" alt="#" width="80" height="80">
                                             </a>
                                         }
                                     }
@@ -147,13 +147,13 @@
                                         if (attachment.IsImage)
                                         {
                                             <a href="@attachment.GetUrl(0)" class="gallery-item text-center" id="@attachmentId" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject" data-pid="@attachmentId" data-caption="" data-width="1600" data-height="1200">
-                                                <img src="@Html.Raw(attachment.GetUrl(100))" style="width: 100px !important; height: 100px !important;" alt="#" itemprop="thumbnail">
+                                                <img src="@Html.Raw(attachment.GetUrl(100))" class="img-rounded" alt="#" width="80" height="80">
                                             </a>
                                         }
                                         else
                                         {
                                             <a href="@attachment.GetUrl(0)" class="text-center" target="_blank">
-                                                <img src="https://realtair.com/Content/img/icon-pdf.png" alt="#" width="80" height="80">
+                                                <img src="https://realtair.com/Content/img/icon-pdf.png" class="img-rounded" alt="#" width="80" height="80">
                                             </a>
                                         }
                                     }
