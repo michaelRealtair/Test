@@ -43,13 +43,13 @@ namespace ASP
 WriteLiteral("<div>\r\n");
 
             
-            #line 3 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 4 "..\..\Views\Shared\Widgets\_Actions.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 3 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 4 "..\..\Views\Shared\Widgets\_Actions.cshtml"
      if (!string.IsNullOrEmpty(Model.Name))
     {
 
@@ -63,7 +63,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral(">Model.Name</div>\r\n");
 
             
-            #line 6 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 7 "..\..\Views\Shared\Widgets\_Actions.cshtml"
     }
 
             
@@ -78,62 +78,67 @@ WriteLiteral(" style=\"margin-bottom: 10px;\"");
 WriteLiteral(">\r\n");
 
             
-            #line 8 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 9 "..\..\Views\Shared\Widgets\_Actions.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 8 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 9 "..\..\Views\Shared\Widgets\_Actions.cshtml"
          foreach (var action in Model.Actions)
         {
+            var user = Html.LoggedInUser();
+            var db = action.Db;
+
+            if (action.AccessibleTo(user, db))
+            {
 
             
             #line default
             #line hidden
-WriteLiteral("            <!-- Action Buttons -->\r\n");
+WriteLiteral("                <!-- Action Buttons -->\r\n");
 
-WriteLiteral("            <form");
+WriteLiteral("                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 384), Tuple.Create("\"", 412)
+WriteAttribute("action", Tuple.Create(" action=\"", 537), Tuple.Create("\"", 565)
             
-            #line 11 "..\..\Views\Shared\Widgets\_Actions.cshtml"
-, Tuple.Create(Tuple.Create("", 393), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
-            
-            #line default
-            #line hidden
-, 393), false)
-);
-
-WriteAttribute("method", Tuple.Create(" method=\"", 413), Tuple.Create("\"", 468)
-            
-            #line 11 "..\..\Views\Shared\Widgets\_Actions.cshtml"
-, Tuple.Create(Tuple.Create("", 422), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 17 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+, Tuple.Create(Tuple.Create("", 546), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 422), false)
+, 546), false)
 );
 
-WriteLiteral(">\r\n                <input");
+WriteAttribute("method", Tuple.Create(" method=\"", 566), Tuple.Create("\"", 621)
+            
+            #line 17 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+, Tuple.Create(Tuple.Create("", 575), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            
+            #line default
+            #line hidden
+, 575), false)
+);
+
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 525), Tuple.Create("\"", 558)
+WriteAttribute("value", Tuple.Create(" value=\"", 682), Tuple.Create("\"", 715)
             
-            #line 12 "..\..\Views\Shared\Widgets\_Actions.cshtml"
-, Tuple.Create(Tuple.Create("", 533), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 18 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+, Tuple.Create(Tuple.Create("", 690), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 533), false)
+, 690), false)
 );
 
-WriteLiteral(" />\r\n                <button");
+WriteLiteral(" />\r\n                    <button");
 
 WriteLiteral(" class=\"btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10\"");
 
@@ -142,18 +147,19 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 13 "..\..\Views\Shared\Widgets\_Actions.cshtml"
-                                                                                                   Write(action.Description(Html.LoggedInUser()));
+            #line 19 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+                                                                                                       Write(action.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("</button>\r\n            </form>\r\n");
+WriteLiteral("</button>\r\n                </form>\r\n");
 
-WriteLiteral("            <!-- End of Action Buttons -->\r\n");
+WriteLiteral("                <!-- End of Action Buttons -->\r\n");
 
             
-            #line 16 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            #line 22 "..\..\Views\Shared\Widgets\_Actions.cshtml"
+            }
         }
 
             

@@ -1,4 +1,5 @@
 ﻿@model Realtair.Framework.Core.Entities.Display.ActionsWidget
+
 <div>
     @if (!string.IsNullOrEmpty(Model.Name))
     {
@@ -7,12 +8,18 @@
     <div class="panel-wrapper collapse in" style="margin-bottom: 10px;">
         @foreach (var action in Model.Actions)
         {
-            <!-- Action Buttons -->
-            <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
-                <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
-                <button class="btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10" type="submit">@action.Description(Html.LoggedInUser())</button>
-            </form>
-            <!-- End of Action Buttons -->
+            var user = Html.LoggedInUser();
+            var db = action.Db;
+
+            if (action.AccessibleTo(user, db))
+            {
+                <!-- Action Buttons -->
+                <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
+                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                    <button class="btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10" type="submit">@action.Description(Html.LoggedInUser())</button>
+                </form>
+                <!-- End of Action Buttons -->
+            }
         }
     </div>
 </div>
