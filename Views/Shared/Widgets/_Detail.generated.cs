@@ -83,13 +83,13 @@ WriteLiteral(">\r\n            <tbody>\r\n");
             #line hidden
 WriteLiteral("                    <tr>\r\n                        <th");
 
-WriteLiteral(" class=\"col-sm-4\"");
+WriteLiteral(" class=\"col-sm-4 p-l-30\"");
 
 WriteLiteral(">");
 
             
             #line 10 "..\..\Views\Shared\Widgets\_Detail.cshtml"
-                                        Write(describable.Key);
+                                               Write(describable.Key);
 
             
             #line default
