@@ -7,7 +7,7 @@
                 @foreach (var describable in Model.Details)
                 {
                     <tr>
-                        <th class="col-sm-4 p-l-30">@describable.Key</th>
+                        <th class="col-sm-4 p-l-40">@describable.Key</th>
                         <td data-key="@describable.Key">
                             @Html.Render(Url, describable.Value)
                         </td>

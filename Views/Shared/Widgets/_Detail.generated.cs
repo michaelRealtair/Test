@@ -83,7 +83,7 @@ WriteLiteral(">\r\n            <tbody>\r\n");
             #line hidden
 WriteLiteral("                    <tr>\r\n                        <th");
 
-WriteLiteral(" class=\"col-sm-4 p-l-30\"");
+WriteLiteral(" class=\"col-sm-4 p-l-40\"");
 
 WriteLiteral(">");
 
