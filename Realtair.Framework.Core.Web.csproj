@@ -227,11 +227,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Report.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Report\Widget\Table.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Table.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Search\Results.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3196,10 +3191,6 @@
     <Content Include="Views\Shared\Fields\_TextAreaField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TextAreaField.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Report\Widget\Table.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Table.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Search\Search.cshtml">
       <Generator>RazorGenerator</Generator>

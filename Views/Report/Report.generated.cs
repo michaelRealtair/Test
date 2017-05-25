@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Report/Report.cshtml")]
@@ -39,126 +40,58 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<body");
-
-WriteLiteral(" class=\"page-header-hero\"");
-
-WriteLiteral(">\r\n\r\n    <header");
-
-WriteLiteral(" id=\"section-header\"");
-
-WriteLiteral(" class=\"header-admin header-sm main-in-header\"");
-
-WriteLiteral(" role=\"banner\"");
-
-WriteLiteral(">\r\n\r\n        <div");
-
-WriteLiteral(" class=\"bg-header\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"overlay-gradient-radial\"");
-
-WriteLiteral("></div>\r\n            <div");
-
-WriteLiteral(" class=\"overlay-gradient-linear\"");
-
-WriteLiteral("></div>\r\n            <div");
-
-WriteLiteral(" class=\"bg-default\"");
-
-WriteLiteral(" style=\"background-image: url(/content/img/background-desk.jpg)\"");
-
-WriteLiteral("></div>\r\n        </div>\r\n");
-
-WriteLiteral("        ");
-
             
-            #line 12 "..\..\Views\Report\Report.cshtml"
-   Write(Html.Partial("BackMenu"));
+            #line 2 "..\..\Views\Report\Report.cshtml"
+Write(Html.Partial("Menu"));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <div");
+WriteLiteral("\r\n<div");
 
-WriteLiteral(" class=\"header-content\"");
+WriteLiteral(" id=\"page-wrapper\"");
 
-WriteLiteral(">\r\n\r\n            <div");
+WriteLiteral(" class=\"\"");
 
-WriteLiteral(" class=\"title-hero\"");
-
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                        <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                            <h1");
-
-WriteLiteral(" class=\"ellipsis\"");
-
-WriteLiteral(">\r\n                                <strong>");
-
-            
-            #line 20 "..\..\Views\Report\Report.cshtml"
-                                   Write(Model.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                            </h1>\r\n                        </div>\r\n   " +
-"                 </div>\r\n                </div>\r\n            </div>\r\n           " +
-" <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n        </div>\r\n    </header>\r\n\r\n    <div");
-
-WriteLiteral(" class=\"clearfix\"");
-
-WriteLiteral("></div>\r\n    <main");
-
-WriteLiteral(" role=\"main\"");
-
-WriteLiteral(" class=\"in-header\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"container\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 34 "..\..\Views\Report\Report.cshtml"
-                
+            #line 5 "..\..\Views\Report\Report.cshtml"
+        
             
             #line default
             #line hidden
             
-            #line 34 "..\..\Views\Report\Report.cshtml"
-                 foreach (var w in Model.Widgets)
-                {
-                    if (w is Realtair.Framework.Core.Entities.Display.TableWidget)
-                    {
-                        Html.RenderPartial($"Widget/Table", w);
-                    }
-                }
+            #line 5 "..\..\Views\Report\Report.cshtml"
+         foreach (var section in Model.Widgets)
+        {
+            var widgetView = $"Widgets/_{section.GetType().Name.Substring(0, section.GetType().Name.Length - "Widget".Length)}";
+
+            if (Html.ViewExists(widgetView))
+            {
+                Html.RenderPartial(widgetView, section);
+            }
+            else
+            {
 
             
             #line default
             #line hidden
-WriteLiteral("            </div>\r\n\r\n        </div>\r\n    </main>\r\n</body>");
+WriteLiteral("                <p>Cannot render widget view</p>\r\n");
+
+            
+            #line 16 "..\..\Views\Report\Report.cshtml"
+            }
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    </div>\r\n</div>");
 
         }
     }

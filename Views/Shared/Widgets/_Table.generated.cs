@@ -42,7 +42,7 @@ namespace ASP
         {
 WriteLiteral("<div");
 
-WriteLiteral(" class=\"panel\"");
+WriteLiteral(" class=\"panel panel-default\"");
 
 WriteLiteral(">\r\n    <div");
 
@@ -63,7 +63,7 @@ WriteLiteral(" class=\"panel-wrapper collapse in\"");
 
 WriteLiteral(">\r\n        <table");
 
-WriteLiteral(" class=\"table\"");
+WriteLiteral(" class=\"table table-responsive\"");
 
 WriteLiteral(">\r\n            <thead>\r\n                <tr>                \r\n");
 
@@ -81,11 +81,24 @@ WriteLiteral(">\r\n            <thead>\r\n                <tr>                \r
             
             #line default
             #line hidden
-WriteLiteral("                        <th>");
+WriteLiteral("                        <th");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 407), Tuple.Create("\"", 443)
+, Tuple.Create(Tuple.Create("", 415), Tuple.Create("col-xs-", 415), true)
+            
+            #line 10 "..\..\Views\Shared\Widgets\_Table.cshtml"
+, Tuple.Create(Tuple.Create("", 422), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            
+            #line default
+            #line hidden
+, 422), false)
+);
+
+WriteLiteral(">");
 
             
             #line 10 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                       Write(column);
+                                                            Write(column.Name);
 
             
             #line default
@@ -153,6 +166,71 @@ WriteLiteral("                    </tr>\r\n");
 
             
             #line 23 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+            
+            #line 25 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                 if (Model.Totals != null)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <tr");
+
+WriteLiteral(" class=\"bg-inverse text-white\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 28 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 28 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                         foreach (var total in Model.Totals)
+                        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <td>\r\n");
+
+WriteLiteral("                                ");
+
+            
+            #line 31 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                           Write(total);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                            </td>\r\n");
+
+            
+            #line 33 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    </tr>\r\n");
+
+            
+            #line 35 "..\..\Views\Shared\Widgets\_Table.cshtml"
                 }
 
             

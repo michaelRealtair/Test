@@ -254,6 +254,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                     else if (v is DateTime)
                         //url += ((DateTime)v).ToString("dd-MM-yyyy");
                         url += ((DateTime)v).ToString("yyyy-MM-dd");
+                    else if (v == null)
+                        url += "";
                     else
                         url += v.ToString();
                 }

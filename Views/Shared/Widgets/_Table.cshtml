@@ -1,13 +1,13 @@
 ﻿@model Realtair.Framework.Core.Entities.Display.TableWidget
-<div class="panel">
+<div class="panel panel-default">
     <div class="panel-heading">@Model.Name</div>
     <div class="panel-wrapper collapse in">
-        <table class="table">
+        <table class="table table-responsive">
             <thead>
                 <tr>                
                     @foreach (var column in Model.Header)
                     {
-                        <th>@column</th>
+                        <th class="col-xs-@(column.ColumnWidth)">@column.Name</th>
                     }
                 </tr>
             </thead>
@@ -18,6 +18,18 @@
                         @foreach (var column in row)
                         {
                             <td>@column</td>
+                        }
+                    </tr>
+                }
+
+                @if (Model.Totals != null)
+                {
+                    <tr class="bg-inverse text-white">
+                        @foreach (var total in Model.Totals)
+                        {
+                            <td>
+                                @total
+                            </td>
                         }
                     </tr>
                 }
