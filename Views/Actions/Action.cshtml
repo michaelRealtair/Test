@@ -172,6 +172,10 @@
                                         {
                                             <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
                                         }
+                                        else if (field.Value is IEnumerable<Entity>)
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
+                                        }
                                         else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
                                         {
 

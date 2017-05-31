@@ -52,6 +52,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                     return MapFileAsset(value);
             else if (field.FieldAttribute is BulkFileUploadFieldAttribute)
                 return MapUnusedExistingFileAsset(value);
+            else if (typeof(IEnumerable<Entity>).IsAssignableFrom(type))
+                return MapEntityArray(type, value);
             else if (field.FieldAttribute.Provider != null && !field.FieldAttribute.DisableProviderReturnValue)
                 return MapProvided(action, field, type, value);
             else if (type == typeof(PhoneNumber.PhoneNumberViewModel))
@@ -67,7 +69,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             else
                 throw new NotImplementedException($"Can't map {type.FullName}, you need to add a custom mapping.");
         }
-        
+
         object MapProvided(Action action, Field field, Type type, object value)
         {
             return field.FieldAttribute.GetProvider().Single(action, action.User, value.ToString());
@@ -110,7 +112,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             else
                 return null;
         }
-        
+
         object MapPhoneNumberViewModel(object value)
         {
             try
@@ -160,7 +162,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             var a = Activator.CreateInstance(modelType) as ICustomViewModel;
             return a.Deserialize(value as string);
         }
-        
+
         IEnumerable<int> MapMultiSelectList(object value)
         {
             return JsonConvert.DeserializeObject<int[]>(value.ToString());
@@ -170,7 +172,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             var strings = (string[])value;
             var ids = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(strings.ElementAt(0));
-            if (ids == null) return new Attachment[] {};
+            if (ids == null) return new Attachment[] { };
             var attachments = new List<Attachment>();
             foreach (var id in ids)
             {
@@ -215,6 +217,20 @@ namespace Realtair.Framework.Core.Web.Controllers
         Entity MapEntity(Type type, object value)
         {
             return Db.Set(type).Find(new object[] { Convert.ToInt32(value) }) as Entity;
+        }
+
+        IEnumerable<Entity> MapEntityArray(Type type, object value)
+        {
+            if (value as string == null) return null;
+
+            var listType = typeof(List<>);
+            var constructedListType = listType.MakeGenericType(type);
+            var instance = Activator.CreateInstance(constructedListType) as IList;
+
+            foreach (var n in JsonConvert.DeserializeObject<int[]>(value as string))
+                instance.Add(Db.Set(type).Find(new object[] { Convert.ToInt32(value) }));
+
+            return instance as IEnumerable<Entity>;
         }
 
         public Attachment MapUploadedFile(object value, Field field)
