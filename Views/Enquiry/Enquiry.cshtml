@@ -15,9 +15,9 @@
                 <div class="chat-left-inner">
                     <ul class="chatonline style-none ">
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {
+                        {                            
                             <li>
-                                <a href="javascript:void(0)"><img src="http://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@user.Role.Description(Html.LoggedInUser())</small></span></a>
+                                <a href="javascript:void(0)"><img src="http://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
                             </li>
                         }
                     </ul>

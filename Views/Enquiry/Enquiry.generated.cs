@@ -111,7 +111,7 @@ WriteLiteral(">\r\n");
             
             #line 17 "..\..\Views\Enquiry\Enquiry.cshtml"
                          foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {
+                        {                            
 
             
             #line default
@@ -145,7 +145,7 @@ WriteLiteral(">");
 
             
             #line 20 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                                                                                                   Write(user.Role.Description(Html.LoggedInUser()));
+                                                                                                                                                                                                                    Write(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()));
 
             
             #line default
@@ -212,24 +212,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1914), Tuple.Create("\"", 1942)
+WriteAttribute("action", Tuple.Create(" action=\"", 1976), Tuple.Create("\"", 2004)
             
             #line 38 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 1923), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 1985), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 1923), false)
+, 1985), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 1943), Tuple.Create("\"", 1998)
+WriteAttribute("method", Tuple.Create(" method=\"", 2005), Tuple.Create("\"", 2060)
             
             #line 38 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 1952), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2014), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 1952), false)
+, 2014), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -238,14 +238,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2075), Tuple.Create("\"", 2108)
+WriteAttribute("value", Tuple.Create(" value=\"", 2137), Tuple.Create("\"", 2170)
             
             #line 39 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2083), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2145), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2083), false)
+, 2145), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
