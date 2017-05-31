@@ -16,31 +16,8 @@ namespace Realtair.Framework.Core.Web.Utilities
         private IPrincipal user;
 
         // Properties
-        public bool IsLoggedIn
-        {
-            get
-            {
-                return GetUserID() != -1;
-            }
-        }
-
-        public int LoggedInUserId
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void LogIn(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void LogOut()
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsLoggedIn => GetUserID() != -1;
+        public int LoggedInUserId => GetUserID();
 
         // Constructors
         public SingleSignOnAuthentication(IPrincipal user)
@@ -49,32 +26,54 @@ namespace Realtair.Framework.Core.Web.Utilities
         }
 
         // Methods
+        public void LogIn(User user)
+        {
+            throw new NotImplementedException();
+        }
+        public void LogOut()
+        {
+            throw new NotImplementedException();
+        }
         protected int GetUserID()
         {
             int userId;
 
             try
             {
-                var claimsPrincipal = (this.user.Identity as ClaimsPrincipal);
-                if (claimsPrincipal != null && claimsPrincipal.HasClaim(c => c.Type == "email"))
+                String sub = null;
+                String email = null;
+                Boolean hasExpired = false;
+                ClaimsPrincipal claimsPrincipal = this.user as ClaimsPrincipal;
+
+                // Check if user id is included
+                if (claimsPrincipal != null && claimsPrincipal.HasClaim(c => c.Type == "sub"))
                 {
-                    claimsPrincipal.FindFirst(c => c.Type == "email").Value;
+                    sub = claimsPrincipal.FindFirst(c => c.Type == "sub")?.Value;
                 }
 
-                var cookie = Request.Cookies.Get(CookieName);
-                var cookieValue = cookie != null ? Request.Cookies.Get(CookieName).Value : "";
-                var ticket = FormsAuthentication.Decrypt(cookieValue);
-                
-                if (string.IsNullOrEmpty(cookieValue) || ticket.Expired || !int.TryParse(ticket.Name, out userId))
-                    return -1;
+                // Check if email is included
+                if (claimsPrincipal != null && claimsPrincipal.HasClaim(c => c.Type == "email"))
+                {
+                    email = claimsPrincipal.FindFirst(c => c.Type == "email")?.Value;
+                }
 
-                return userId;
+                // Check if expiry date is included and if it has expired or not...
+                DateTime expires_at;
+                hasExpired = claimsPrincipal != null &&
+                    DateTime.TryParse(claimsPrincipal.FindFirst(c => c.Type == "expires_at")?.Value, out expires_at) &&
+                    expires_at > DateTime.UtcNow;
+
+                if (string.IsNullOrEmpty(sub) || string.IsNullOrEmpty(email) || hasExpired || !int.TryParse(sub, out userId))
+                {
+                    userId = -1;
+                }
             }
-
-            catch (ArgumentException)
+            catch
             {
-                return -1;
+                userId = -1;
             }
+
+            return userId;
         }
     }
 }
