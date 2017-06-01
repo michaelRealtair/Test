@@ -185,7 +185,6 @@ namespace Realtair.Framework.Core.Web.Controllers
             return attachments;
         }
 
-
         IEnumerable<Attachment> MapUnusedExistingFileAsset(object value)
         {
             var strings = (string[])value;
@@ -221,14 +220,14 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         IEnumerable<Entity> MapEntityArray(Type type, object value)
         {
-            if (value as string == null) return null;
+            if (value as string[] == null) return null;
 
             var listType = typeof(List<>);
-            var constructedListType = listType.MakeGenericType(type);
+            var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
             var instance = Activator.CreateInstance(constructedListType) as IList;
 
-            foreach (var n in JsonConvert.DeserializeObject<int[]>(value as string))
-                instance.Add(Db.Set(type).Find(new object[] { Convert.ToInt32(value) }));
+            foreach (var n in JsonConvert.DeserializeObject<int[]>((value as string[])[0]))
+                instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(n)));
 
             return instance as IEnumerable<Entity>;
         }
