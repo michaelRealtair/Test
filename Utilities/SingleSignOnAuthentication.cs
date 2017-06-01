@@ -61,7 +61,7 @@ namespace Realtair.Framework.Core.Web.Utilities
                 DateTime expires_at;
                 hasExpired = claimsPrincipal != null &&
                     DateTime.TryParse(claimsPrincipal.FindFirst(c => c.Type == "expires_at")?.Value, out expires_at) &&
-                    expires_at > DateTime.UtcNow;
+                    expires_at <= DateTime.UtcNow;
 
                 if (string.IsNullOrEmpty(sub) || string.IsNullOrEmpty(email) || hasExpired || !int.TryParse(sub, out userId))
                 {
