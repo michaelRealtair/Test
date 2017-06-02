@@ -3301,6 +3301,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Realtair.Framework.Core.IdentityServer\Realtair.Framework.Core.IdentityServer.csproj">
+      <Project>{cac3a4d8-8cb3-4b7d-b717-56e7874be32a}</Project>
+      <Name>Realtair.Framework.Core.IdentityServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Realtair.Framework.Core\Realtair.Framework.Core.csproj">
       <Project>{fbebc04f-985d-47c9-af19-d2fd50850942}</Project>
       <Name>Realtair.Framework.Core</Name>

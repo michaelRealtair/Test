@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web;
+using Realtair.Framework.Core.IdentityServer.Utilities;
 
 namespace Realtair.Framework.Core.Web.Utilities
 {
@@ -31,7 +32,30 @@ namespace Realtair.Framework.Core.Web.Utilities
         public bool IsLoggedIn => GetUserID() != -1;
         public int LoggedInUserId => GetUserID();
 
-        public void LogOut() => response.Cookies.Set(new HttpCookie(CookieName, ""));
+        public void LogOut()
+        {
+            // Clear all cookies...
+            foreach (var key in request.Cookies.AllKeys)
+            {
+                var cookie = new HttpCookie(key);
+                cookie.Expires = DateTime.Now.AddDays(-1d);
+                response.Cookies.Add(cookie);
+            }
+
+            // Redirect to identity server sign out...
+            if (claimsPrincipal != null)
+            {
+                UriBuilder ub = new UriBuilder();
+                ub.Scheme = request.Url.Scheme;
+                ub.Host = request.Url.Host;
+                ub.Path = "signout";
+                var query = HttpUtility.ParseQueryString(ub.Query);
+                query["token"] = claimsPrincipal.GetValue("id_token");
+                query["issuerUri"] = claimsPrincipal.GetValue("issuer_uri");
+                ub.Query = query.ToString();
+                response.Redirect(ub.ToString());
+            }
+        }
         public void LogIn(Framework.Core.Entities.User user)
         {
             //create the authentication ticket
@@ -58,26 +82,14 @@ namespace Realtair.Framework.Core.Web.Utilities
                 // If claims principal is not null, use identity server cookies...
                 if (claimsPrincipal != null)
                 {
-                    String sub = null;
-                    String email = null;
+                    String sub = sub = claimsPrincipal.GetValue("sub");
+                    String email = claimsPrincipal.GetValue("email"); ;
                     Boolean hasExpired = false;
-
-                    // Check if user id is included
-                    if (claimsPrincipal != null && claimsPrincipal.HasClaim(c => c.Type == "sub"))
-                    {
-                        sub = claimsPrincipal.FindFirst(c => c.Type == "sub")?.Value;
-                    }
-
-                    // Check if email is included
-                    if (claimsPrincipal != null && claimsPrincipal.HasClaim(c => c.Type == "email"))
-                    {
-                        email = claimsPrincipal.FindFirst(c => c.Type == "email")?.Value;
-                    }
-
+                    
                     // Check if expiry date is included and if it has expired or not...
                     DateTime expires_at;
                     hasExpired = claimsPrincipal != null &&
-                        DateTime.TryParse(claimsPrincipal.FindFirst(c => c.Type == "expires_at")?.Value, out expires_at) &&
+                        DateTime.TryParse(claimsPrincipal.GetValue("expires_at"), out expires_at) &&
                         expires_at <= DateTime.UtcNow;
 
                     if (string.IsNullOrEmpty(sub) || string.IsNullOrEmpty(email) || hasExpired || !int.TryParse(sub, out userId))
