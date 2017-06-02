@@ -20,15 +20,15 @@
 
 <input type="hidden" name="@Model.UniqueName" />
 
-<link rel="stylesheet" href="http://static.realtair.com/plugins/intl-tel-input/intlTelInput.css" />
-<script src="http://static.realtair.com/plugins/intl-tel-input/intlTelInput.js"></script>
+<link rel="stylesheet" href="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.css" />
+<script src="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.js"></script>
 <script>
     $(function () {
         var input = $("#@Model.UniqueName");
         input.intlTelInput({
             nationalMode: true,
             preferredCountries: ["au"],
-            utilsScript: 'http://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
+            utilsScript: 'https://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
         });
 
         $('#@Model.UniqueName').intlTelInput("setNumber", "@phone.Number");

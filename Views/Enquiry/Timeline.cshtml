@@ -35,7 +35,7 @@
 
             <li class="@(thisState.UserResponsible == Html.LoggedInUser() ? "odd" : "")">
                 <div class="chat-image">
-                    <img alt="Female" src="http://static.realtair.com/plugins/images/users/genu.jpg">
+                    <img alt="Female" src="https://static.realtair.com/plugins/images/users/genu.jpg">
                 </div>
                 <div class="chat-body panel @typeString">
                     <div class="panel-heading text-center">
@@ -100,7 +100,7 @@
             if (thisMessage.User != Html.LoggedInUser())
             {
                 <li>
-                    <div class="chat-image"> <img alt="Female" src="http://static.realtair.com/plugins/images/users/genu.jpg"> </div>
+                    <div class="chat-image"> <img alt="Female" src="https://static.realtair.com/plugins/images/users/genu.jpg"> </div>
                     <div class="chat-body">
                         <div class="chat-text">
                             <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>
@@ -134,7 +134,7 @@
             else
             {
                 <li class="odd">
-                    <div class="chat-image"> <img alt="male" src="http://static.realtair.com/plugins/images/users/varun.jpg"> </div>
+                    <div class="chat-image"> <img alt="male" src="https://static.realtair.com/plugins/images/users/varun.jpg"> </div>
                     <div class="chat-body">
                         <div class="chat-text">
                             <h4>@thisMessage.User.Person.Description(Html.LoggedInUser())</h4>

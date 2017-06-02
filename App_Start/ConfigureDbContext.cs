@@ -14,7 +14,7 @@ namespace Realtair.Framework.Core.Web.Utilities
     {
         public static void Start()
         {
-            SingletonDbContext.Instance = new Singleton();
+            Data.SingletonDbContext.Instance = new Singleton();
         }
     }
 }

@@ -134,7 +134,7 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteLiteral(" src=\"http://static.realtair.com/plugins/images/users/varun.jpg\"");
+WriteLiteral(" src=\"https://static.realtair.com/plugins/images/users/varun.jpg\"");
 
 WriteLiteral(" alt=\"user-img\"");
 
@@ -144,7 +144,7 @@ WriteLiteral("> <span>");
 
             
             #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                                                      Write(user.Person.Name);
+                                                                                                                                                                       Write(user.Person.Name);
 
             
             #line default
@@ -157,7 +157,7 @@ WriteLiteral(">");
 
             
             #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                                                                                                   Write(user.RoleType);
+                                                                                                                                                                                                                    Write(user.RoleType);
 
             
             #line default
@@ -214,7 +214,7 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 
 WriteLiteral("><img");
 
-WriteLiteral(" src=\"http://static.realtair.com/plugins/images/users/varun.jpg\"");
+WriteLiteral(" src=\"https://static.realtair.com/plugins/images/users/varun.jpg\"");
 
 WriteLiteral(" alt=\"user-img\"");
 
@@ -224,7 +224,7 @@ WriteLiteral("> <span>");
 
             
             #line 32 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                                                      Write(user.Person.Name);
+                                                                                                                                                                       Write(user.Person.Name);
 
             
             #line default
@@ -237,7 +237,7 @@ WriteLiteral(">");
 
             
             #line 32 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                                                                                                                                   Write(user.RoleType);
+                                                                                                                                                                                                                    Write(user.RoleType);
 
             
             #line default
@@ -304,24 +304,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2784), Tuple.Create("\"", 2812)
+WriteAttribute("action", Tuple.Create(" action=\"", 2786), Tuple.Create("\"", 2814)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2793), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2795), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2793), false)
+, 2795), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2813), Tuple.Create("\"", 2868)
+WriteAttribute("method", Tuple.Create(" method=\"", 2815), Tuple.Create("\"", 2870)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2822), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2824), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2822), false)
+, 2824), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -330,14 +330,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2945), Tuple.Create("\"", 2978)
+WriteAttribute("value", Tuple.Create(" value=\"", 2947), Tuple.Create("\"", 2980)
             
             #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2953), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2955), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2953), false)
+, 2955), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -473,11 +473,11 @@ DefineSection("Scripts", () => {
 
 WriteLiteral("\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/chat.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/dropzone.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/dropzone.js\"");
 
 WriteLiteral("></script>\r\n    <script>\r\n        // Setup preview node...\r\n        var previewNo" +
 "de = document.querySelector(\"#file-attachment-thumbnails\");\r\n        previewNode" +
@@ -666,13 +666,13 @@ DefineSection("Styles", () => {
 
 WriteLiteral("\r\n    <link");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/basic.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/dropzone/basic.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <link");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/dropzone.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/dropzone/dropzone.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 

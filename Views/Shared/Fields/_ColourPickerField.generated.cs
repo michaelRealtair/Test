@@ -113,7 +113,7 @@ WriteLiteral(" class=\"jscolor form-control\"");
 
 WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/jscolor.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/jscolor.min.js\"");
 
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        $(\'#");
 
