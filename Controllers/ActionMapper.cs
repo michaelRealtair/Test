@@ -221,6 +221,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         IEnumerable<Entity> MapEntityArray(Type type, object value)
         {
             if (value as string[] == null) return null;
+            if (string.IsNullOrEmpty((value as string[])[0])) return null;
 
             var listType = typeof(List<>);
             var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
