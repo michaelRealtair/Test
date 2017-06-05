@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Realtair.Framework.Core.IdentityServer.Utilities;
 using System.Web;
-using Realtair.Framework.Core.IdentityServer.Utilities;
 
 namespace Realtair.Framework.Core.Web.Utilities
 {
-    using Core.Entities;
-    using System.Web.Security;
-    using System;
     using Framework.Core.Interfaces;
-    using System.Security.Principal;
+    using System;
     using System.Security.Claims;
+    using System.Security.Principal;
+    using System.Web.Security;
 
     public class Authentication : IAuthentication
     {
@@ -45,15 +43,18 @@ namespace Realtair.Framework.Core.Web.Utilities
             // Redirect to identity server sign out...
             if (claimsPrincipal != null)
             {
-                UriBuilder ub = new UriBuilder();
-                ub.Scheme = request.Url.Scheme;
-                ub.Host = request.Url.Host;
-                ub.Path = "signout";
-                var query = HttpUtility.ParseQueryString(ub.Query);
-                query["token"] = claimsPrincipal.GetValue("id_token");
-                query["issuerUri"] = claimsPrincipal.GetValue("issuer_uri");
-                ub.Query = query.ToString();
-                response.Redirect(ub.ToString());
+                request.GetOwinContext().Authentication.SignOut();
+
+
+                //UriBuilder ub = new UriBuilder();
+                //ub.Scheme = request.Url.Scheme;
+                //ub.Host = request.Url.Host;
+                //ub.Path = "signout";
+                //var query = HttpUtility.ParseQueryString(ub.Query);
+                //query["token"] = claimsPrincipal.GetValue("id_token");
+                //query["issuerUri"] = claimsPrincipal.GetValue("issuer_uri");
+                //ub.Query = query.ToString();
+                //response.Redirect(ub.ToString());
             }
         }
         public void LogIn(Framework.Core.Entities.User user)
