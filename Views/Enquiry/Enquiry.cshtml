@@ -17,7 +17,7 @@
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
                         {                            
                             <li>
-                                <a href="javascript:void(0)"><img src="http://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
+                                <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>                                
                             </li>
                         }
                     </ul>
@@ -57,8 +57,7 @@
                                 <h3>Uploading...</h3>
                             </div>
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
-                            <div class="custom-send">
-                                <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a>
+                            <div class="custom-send">                                
                                 <a id="attach-file" class="cst-icon" href="#" title="#"><i class="fa fa-paperclip"></i></a>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
@@ -73,7 +72,58 @@
 </div>
 <!-- /#page-wrapper -->
 
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="http://static.realtair.com/css/photoswipe.css" />
+
 @section Scripts {
+    <script src="http://static.realtair.com/js/jquery.easing.min.js"></script>
+    <script src="http://static.realtair.com/js/photoswipe.min.js"></script>
+    <script src="http://static.realtair.com/js/photoswipe-ui-default.min.js"></script>
+    
     <script src="http://static.realtair.com/js/chat.js"></script>
     <script src="http://static.realtair.com/js/dropzone.js"></script>
     <script>
@@ -92,8 +142,8 @@
         // Initialize Dropzone
         var dz = new Dropzone(document.body, {
             url: '/',
-            thumbnailWidth: 40,
-            thumbnailHeight: 40,
+            thumbnailWidth: null,
+            thumbnailHeight: null,
             parallelUploads: 10,
             previewTemplate: previewTemplate,
             autoQueue: false,
@@ -103,6 +153,7 @@
                 this.on('addedfile', function (file) {
                     var query = $('#file-attachment');
                     if (!query.is(':visible')) {
+                        query.find('img').attr('style','height: 40px; width: 40px;');
                         query.show();
                     }
                 });
@@ -173,7 +224,19 @@
             var files = dz.files.map(function (a, i) {
                 return `${a.name}|${$('span.preview > img', a.previewTemplate).attr('src')}`;
             });
+
+            var message = $('<li class="odd">' +
+                            '<div class="chat-image"> <span class="img-circle">@Html.LoggedInUser().Person.Initials</span> </div>' +
+                            '    <div class="chat-body">' +
+                            '        <div class="chat-text">' +
+                            '            <h4>@(Html.LoggedInUser().Person.FirstName[0])@(Html.LoggedInUser().Person.LastName[0])</h4>' +
+                            '            <p> ' + messageText + ' </p>' +                            
+                            '        </div>' +
+                            '    </div>' +
+                            '</li>');
             //var formToSubmit = $("#send-message-form").serialize();
+
+            $('ul.chat-list').append(message);            
 
             $('textarea[name=messageText]').val('');
             $('textarea[name=messageText]').css('height', '60px');
