@@ -54,7 +54,7 @@
     }
 
     .chat-list {
-        min-height: ~"calc(100vh - 184px)" !important;
+        min-height: ~"calc(100vh - 190px)" !important;
     }
 }
 
@@ -197,6 +197,11 @@ footer.footer.ticker {
     .panel-heading {
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
+
+        p{ margin-bottom: -2px; }
+        small{
+            font-size: 65%;
+        }
     }
 
     .panel-body, .panel-footer {
@@ -205,10 +210,20 @@ footer.footer.ticker {
         background-color: #f7f7f7;
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
+        text-align: center;
 
         form.inline {
             display: inline-block;
         }
+
+        b.time{
+            font-size: 10px;
+            opacity: .8;
+        }
+    }
+
+    .panel-body {
+        padding-bottom: 0;
     }
 
     ul {

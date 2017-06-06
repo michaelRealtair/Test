@@ -147,6 +147,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_TimeSpan_Field.generated.cs">
+      <DependentUpon>_TimeSpan_Field.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_String_PreviewField.generated.cs">
       <DependentUpon>_String_PreviewField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3252,6 +3257,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ColourPickerField.generated.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\Fields\_TimeSpan_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TimeSpan_Field.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_PhoneNumberViewModel_Field.generated.cs</LastGenOutput>

@@ -43,6 +43,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                 return MapBool(value);
             else if (type == typeof(DateTime))
                 return MapDateTime(value);
+            else if (type == typeof(TimeSpan))
+                return MapTimeSpan(value);
             else if (type.IsEnum)
                 return MapEnum(type, value);
             else if (type == typeof(Attachment) && field.FieldAttribute is FileUploadFieldAttribute)
@@ -78,6 +80,11 @@ namespace Realtair.Framework.Core.Web.Controllers
         DateTime MapDateTime(object value)
         {
             return DateTime.Parse(value.ToString());
+        }
+
+        TimeSpan MapTimeSpan(object value)
+        {
+            return TimeSpan.Parse(value.ToString());
         }
 
         string MapString(object value)

@@ -807,3 +807,16 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
     background: none;
 }
+
+
+
+
+/* Gallery */
+.gallery{
+    padding: 0 10px 10px 10px;
+}
+
+.gallery figure{
+    display: inline-block;
+    padding: 0 5px 10px 5px;
+}

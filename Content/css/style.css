@@ -937,6 +937,17 @@ pre {
 .navbar-top-links > li > a:focus {
   background: rgba(0, 0, 0, 0);
 }
+.navbar-top-links > li > a span.img-circle {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  background: #fff;
+  color: #555;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 .nav .open > a,
 .nav .open > a:focus,
 .nav .open > a:hover {
@@ -992,6 +1003,17 @@ pre {
 }
 .navbar-top-links .dropdown-user .dw-user-box .u-text p {
   margin-bottom: 3px;
+}
+.navbar-top-links .dropdown-user .dw-user-box span.img-circle {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  background: #555;
+  color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .navbar-header .navbar-toggle {
   float: none;
@@ -2970,6 +2992,17 @@ ul.common li a:hover {
   border-radius: 100%;
   width: 100%;
 }
+.chat-list .chat-image .img-circle {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  background: #555;
+  color: #FFF;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 .chat-list .chat-text {
   background: #e5f7ff;
   border-radius: 0px 8px 8px 8px;
@@ -3985,7 +4018,7 @@ table.focus-on tbody tr.focused td {
 }
 /* Login- register pages */
 .login-register {
-  background: url(../../plugins/images/login-register.jpg) no-repeat center center / cover !important;
+  background: url(../https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/login-register.jpg) no-repeat center center / cover !important;
   height: 100%;
   position: fixed;
 }
@@ -4012,7 +4045,7 @@ table.focus-on tbody tr.focused td {
   height: 100%;
 }
 .new-login-register .lg-info-panel {
-  background: url(../plugins/images/login-register.jpg) no-repeat center center / cover !important;
+  background: url(https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/login-register.jpg) no-repeat center center / cover !important;
   width: 500px;
   height: 100%;
   position: fixed;
@@ -4433,6 +4466,19 @@ table.focus-on tbody tr.focused td {
 .chatonline li a span small {
   display: block;
   font-size: 10px;
+  margin-left: 43px;
+  margin-top: -10px;
+}
+.chatonline li a span.img-circle {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+  background: #555;
+  color: #FFF;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 /*Style switcher*/
 ul#themecolors {
@@ -15240,13 +15286,13 @@ a.mytooltip {
   margin: -7px 0 0 -15px;
   width: 30px;
   height: 20px;
-  background: url(../plugins/images/tooltip/tooltip1.svg) no-repeat center center;
+  background: url(https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/tooltip/tooltip1.svg) no-repeat center center;
   background-size: 100%;
 }
 /***********Bloated Tooltip ***********/
 .tooltip-content3 {
   position: absolute;
-  background: url(../plugins/images/tooltip/shape1.svg) no-repeat center bottom;
+  background: url(https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/tooltip/shape1.svg) no-repeat center bottom;
   background-size: 100% 100%;
   z-index: 9999;
   width: 200px;
@@ -16866,7 +16912,7 @@ ul.pro-amenities li span i {
     margin-bottom: -60px;
   }
   .chat-list {
-    min-height: calc(100vh - 184px) !important;
+    min-height: calc(100vh - 190px) !important;
   }
 }
 footer.footer.ticker {
@@ -16992,6 +17038,12 @@ footer.footer.ticker .tickercontainer {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
+.chat-list li .panel .panel-heading p {
+  margin-bottom: -2px;
+}
+.chat-list li .panel .panel-heading small {
+  font-size: 65%;
+}
 .chat-list li .panel .panel-body,
 .chat-list li .panel .panel-footer {
   border-top: none;
@@ -16999,10 +17051,19 @@ footer.footer.ticker .tickercontainer {
   background-color: #f7f7f7;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  text-align: center;
 }
 .chat-list li .panel .panel-body form.inline,
 .chat-list li .panel .panel-footer form.inline {
   display: inline-block;
+}
+.chat-list li .panel .panel-body b.time,
+.chat-list li .panel .panel-footer b.time {
+  font-size: 10px;
+  opacity: .8;
+}
+.chat-list li .panel .panel-body {
+  padding-bottom: 0;
 }
 .chat-list li .panel ul {
   padding: 0;

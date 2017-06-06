@@ -89,7 +89,7 @@ WriteLiteral(" class=\"panel-wrapper collapse in\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"my-gallery\"");
+WriteLiteral(" class=\"gallery\"");
 
 WriteLiteral(" itemscope");
 
@@ -105,13 +105,17 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 11 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-             foreach (var item in Model.Items)
-            {
+              
+                bool isFirstImg = true;
+                foreach (var item in Model.Items)
+                {
+                    if (isFirstImg)
+                    {
 
             
             #line default
             #line hidden
-WriteLiteral("                <figure");
+WriteLiteral("                        <figure");
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
 
@@ -119,36 +123,96 @@ WriteLiteral(" itemscope");
 
 WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
 
-WriteLiteral(">\r\n                    <a");
+WriteLiteral(">\r\n                            <a");
 
-WriteLiteral(" href=\"item.Url(0)\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 967), Tuple.Create("\"", 986)
+            
+            #line 18 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
+, Tuple.Create(Tuple.Create("", 974), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+            
+            #line default
+            #line hidden
+, 974), false)
+);
+
+WriteLiteral(" class=\"gallery-item\"");
 
 WriteLiteral(" itemprop=\"contentUrl\"");
 
-WriteLiteral(" data-size=\"600x400\"");
+WriteLiteral(">\r\n                                <img");
 
-WriteLiteral(">\r\n                        <img");
-
-WriteLiteral(" src=\"item.Url(0)\"");
-
-WriteLiteral(" itemprop=\"thumbnail\"");
-
-WriteLiteral(" alt=\"Image description\"");
-
-WriteLiteral(" />\r\n                    </a>\r\n                    <figcaption");
-
-WriteLiteral(" itemprop=\"caption description\"");
-
-WriteLiteral(">Image caption</figcaption>\r\n                </figure>                \r\n");
-
+WriteAttribute("src", Tuple.Create(" src=\"", 1069), Tuple.Create("\"", 1087)
             
             #line 19 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-            }           
+, Tuple.Create(Tuple.Create("", 1075), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+            
+            #line default
+            #line hidden
+, 1075), false)
+);
+
+WriteLiteral(" style=\"width: 100%; height: 100%;\"");
+
+WriteLiteral(" />\r\n                            </a>\r\n                        </figure>\r\n");
+
+            
+            #line 22 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
+                        isFirstImg = false;
+                    }
+                    else {
 
             
             #line default
             #line hidden
-WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n\r\n<div");
+WriteLiteral("                        <figure");
+
+WriteLiteral(" itemprop=\"associatedMedia\"");
+
+WriteLiteral(" itemscope");
+
+WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
+
+WriteLiteral(" style=\"display: none\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1457), Tuple.Create("\"", 1476)
+            
+            #line 26 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
+, Tuple.Create(Tuple.Create("", 1464), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+            
+            #line default
+            #line hidden
+, 1464), false)
+);
+
+WriteLiteral(" class=\"gallery-item\"");
+
+WriteLiteral(" itemprop=\"contentUrl\"");
+
+WriteLiteral(">\r\n                                <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 1559), Tuple.Create("\"", 1577)
+            
+            #line 27 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
+, Tuple.Create(Tuple.Create("", 1565), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+            
+            #line default
+            #line hidden
+, 1565), false)
+);
+
+WriteLiteral(" />\r\n                            </a>\r\n                        </figure>\r\n");
+
+            
+            #line 30 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
+                        }
+                    }
+                
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n            \r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"pswp\"");
 
