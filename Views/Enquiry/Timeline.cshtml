@@ -44,22 +44,19 @@
 
                     @if (thisState.Details(Html.LoggedInUser()).Count() > 0)
                     {
-                        <div class="panel-wrapper collapse in" aria-expanded="true">
-                            <div class="panel-body">
-                                <ul>
-                                    @foreach (var describable in thisState.Details(Html.LoggedInUser()))
-                                    {
-                                        <li><strong>@describable.Key:</strong> @Html.Render(Url, describable.Value)</li>
-                                    }
-                                </ul>
-                                <b class="time">@thisState.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisState.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
-                            </div>
+                        <div class="panel-body">
+                            <ul>
+                                @foreach (var describable in thisState.Details(Html.LoggedInUser()))
+                                {
+                                    <li><strong>@describable.Key:</strong> @Html.Render(Url, describable.Value)</li>
+                                }
+                            </ul>
                         </div>
                     }
 
                     @if (thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()).Count() > 0)
                     {
-                        <div class="panel-footer">
+                        <div class="panel-body">
                             @foreach (var action in thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
                                 <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
@@ -72,7 +69,7 @@
 
                     @if (thisState is IShowAttachments)
                     {
-                        <div class="file-attachment text-center panel-footer">
+                        <div class="file-attachment text-center panel-body">
                             @foreach (var attachment in (thisState as IShowAttachments).Attachments)
                             {
                                 if (attachment.IsImage)
@@ -89,7 +86,11 @@
                                 }
                             }
                         </div>
-                    }                    
+                    }
+
+                    <div class="panel-footer">
+                        <b class="time">@thisState.TimelineDate.UTCToLocal().ToString("d MMM yyyy") <span> - @thisState.TimelineDate.UTCToLocal().ToString("h:mm tt")</span></b>
+                    </div>
                 </div>
             </li>
         }

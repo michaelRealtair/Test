@@ -17062,6 +17062,9 @@ footer.footer.ticker .tickercontainer {
   font-size: 10px;
   opacity: .8;
 }
+.chat-list li .panel .panel-body {
+  padding-bottom: 0;
+}
 .chat-list li .panel ul {
   padding: 0;
 }
