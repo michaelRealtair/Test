@@ -12,18 +12,29 @@ namespace Realtair.Framework.Core.Web
 {
     public class Singleton : ISingletonDbContext
     {
+        static DbContext dbContext;
         public DbContext DbContext
         {
             get
             {
-                if (!HttpContext.Current.Items.Contains("dbContext"))
+                var a = ConfigurationManager.AppSettings["CoreAssembly"];
+                var c = ConfigurationManager.AppSettings["CoreContext"];
+         
+                if (HttpContext.Current != null)
                 {
-                    var a = ConfigurationManager.AppSettings["CoreAssembly"];
-                    var c = ConfigurationManager.AppSettings["CoreContext"];
+                    if (!HttpContext.Current.Items.Contains("dbContext"))
+                    {                        
 
-                    HttpContext.Current.Items.Add("dbContext", (DbContext)Activator.CreateInstance(a, c).Unwrap());
+                        HttpContext.Current.Items.Add("dbContext", (DbContext)Activator.CreateInstance(a, c).Unwrap());
+                    }
+                    return HttpContext.Current.Items["dbContext"] as DbContext;
                 }
-                return HttpContext.Current.Items["dbContext"] as DbContext;
+                else
+                {                    
+                    if (dbContext == null) 
+                        dbContext = (DbContext)Activator.CreateInstance(a, c).Unwrap();
+                    return dbContext;
+                }                
             }
         }
     }

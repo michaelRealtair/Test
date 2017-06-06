@@ -247,11 +247,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Report.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Report\Widget\Table.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Table.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Search\Results.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +291,11 @@
       <DependentUpon>_Actions.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_Gallery.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Gallery.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Widgets\_List.generated.cs">
       <AutoGen>True</AutoGen>
@@ -352,6 +352,7 @@
     <Content Include="Content\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
     <Content Include="Content\css\pages.css" />
     <Content Include="Content\css\pages.min.css" />
+    <Content Include="Content\css\photoswipe.css" />
     <Content Include="Content\css\responsive-admin.css" />
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
@@ -369,7 +370,9 @@
     <Content Include="Content\js\dropzone.js" />
     <Content Include="Content\js\flot-data.js" />
     <Content Include="Content\js\footable-init.js" />
+    <Content Include="Content\js\gallery.js" />
     <Content Include="Content\js\jasny-bootstrap.js" />
+    <Content Include="Content\js\jquery.easing.min.js" />
     <Content Include="Content\js\jquery.PrintArea.js" />
     <Content Include="Content\js\jquery.slimscroll.js" />
     <Content Include="Content\js\jscolor.min.js" />
@@ -3212,10 +3215,6 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TextAreaField.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\Report\Widget\Table.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Table.generated.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Search\Search.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Search.generated.cs</LastGenOutput>
@@ -3296,6 +3295,10 @@
     <None Include="Views\Shared\Widgets\_Actions.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Actions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Widgets\_Gallery.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Gallery.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Widgets\_List.cshtml">
       <Generator>RazorGenerator</Generator>

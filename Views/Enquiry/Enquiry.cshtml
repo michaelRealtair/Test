@@ -13,23 +13,11 @@
             <div class="chat-left-aside">
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
                 <div class="chat-left-inner">
-                    <div class="form-material">
-                        <input class="form-control p-20" type="text" placeholder="Search Contact">
-                    </div>
                     <ul class="chatonline style-none ">
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {
+                        {                            
                             <li>
-                                <a href="javascript:void(0)"><img src="https://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@user.RoleType</small></span></a>
-                            </li>
-                        }
-                        <li class="p-20"></li>
-                        <li class="divider"></li>
-                        <li class="box-label">Other conversations (@Model.Conversations.Where(c => c != Model.Conversation).Count())</li>
-                        @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {
-                            <li>
-                                <a href="javascript:void(0)"><img src="https://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@user.RoleType</small></span></a>
+                                <a href="javascript:void(0)"><img src="http://static.realtair.com/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
                             </li>
                         }
                     </ul>
@@ -86,8 +74,8 @@
 <!-- /#page-wrapper -->
 
 @section Scripts {
-    <script src="https://static.realtair.com/js/chat.js"></script>
-    <script src="https://static.realtair.com/js/dropzone.js"></script>
+    <script src="http://static.realtair.com/js/chat.js"></script>
+    <script src="http://static.realtair.com/js/dropzone.js"></script>
     <script>
         // Setup preview node...
         var previewNode = document.querySelector("#file-attachment-thumbnails");
@@ -193,42 +181,8 @@
             $('#file-attachment').hide();
 
             if (attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {
-                var message = $(
-                    '<div id="' + messageId + '"class="row row-no-gutter answer message-provider sending">' +
-                        '<div class="col-md-5 col-md-push-7">' +
-                        '<figure>' +
-                            '<span class="img-circle">@(Html.LoggedInUser().Person.FirstName[0])@(Html.LoggedInUser().Person.LastName[0])</span>' +
-                        '</figure>' +
-                        '<div class="inner-content">' +
-                            '<time><span>Now<span></span></span></time>' +
-                            '<div class="clearfix"></div>' +
-                            '<div class="panel panel-default">' +
-                                '<div class="panel-body">' +
-                                     messageText +
-                                    '</div>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>' +
-                        '<div class="col-md-2"><div class="circle-timeline"></div></div>' +
-                    '</div>');
-
-                if (attachments.length > 0 || existingAttachments.length > 0) {
-                    var attachmentHtml = '<div class="file-attachment text-center">';
-
-                    for (var i = 0; i < attachments.length; i++) {
-                        attachmentHtml += '<div class="spin-icon-box"><span class="icon icon-Restart spinner"></span></div>';
-                    }
-
-                    for (var i = 0; i < existingAttachments.length; i++) {
-                        attachmentHtml += '<div class="spin-icon-box"><span class="icon icon-Restart spinner"></span></div>';
-                    }
-
-                    attachmentHtml += "</div>";
-                    message.find(".panel").append('<div class="panel-footer"></div>').find(".panel-footer").append(attachmentHtml);
-                }
 
                 var baseMainHeight = $(document).height();
-                $(".messagebox").append(message);
                 $('html,body').animate({ scrollTop: $(document).scrollTop() + $(document).height() - baseMainHeight }, "fast");
 
                 $.ajax({
@@ -277,6 +231,6 @@
 }
 
 @section Styles {
-    <link href="https://static.realtair.com/css/dropzone/basic.css" rel="stylesheet">
-    <link href="https://static.realtair.com/css/dropzone/dropzone.css" rel="stylesheet">
+    <link href="http://static.realtair.com/css/dropzone/basic.css" rel="stylesheet">
+    <link href="http://static.realtair.com/css/dropzone/dropzone.css" rel="stylesheet">
 }
