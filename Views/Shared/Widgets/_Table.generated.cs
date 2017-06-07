@@ -17,6 +17,12 @@ namespace ASP
     using System.Linq;
     using System.Net;
     using System.Text;
+    
+    #line 2 "..\..\Views\Shared\Widgets\_Table.cshtml"
+    using System.Text.RegularExpressions;
+    
+    #line default
+    #line hidden
     using System.Web;
     using System.Web.Helpers;
     using System.Web.Mvc;
@@ -28,7 +34,12 @@ namespace ASP
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
+    
+    #line 1 "..\..\Views\Shared\Widgets\_Table.cshtml"
     using Realtair.Framework.Core.Interfaces;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
@@ -51,7 +62,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral(">");
 
             
-            #line 3 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 5 "..\..\Views\Shared\Widgets\_Table.cshtml"
                           Write(Model.Name);
 
             
@@ -63,18 +74,34 @@ WriteLiteral(" class=\"panel-wrapper collapse in\"");
 
 WriteLiteral(">\r\n        <table");
 
-WriteLiteral(" class=\"table table-responsive\"");
+WriteLiteral(" class=\"table\"");
 
-WriteLiteral(">\r\n            <thead>\r\n                <tr>                \r\n");
+WriteLiteral(">\r\n");
 
             
             #line 8 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                    
+            
             
             #line default
             #line hidden
             
             #line 8 "..\..\Views\Shared\Widgets\_Table.cshtml"
+             if (Model.Header != null)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <thead>\r\n                <tr>                \r\n");
+
+            
+            #line 12 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 12 "..\..\Views\Shared\Widgets\_Table.cshtml"
                      foreach (var column in Model.Header)
                     {
 
@@ -83,21 +110,21 @@ WriteLiteral(">\r\n            <thead>\r\n                <tr>                \r
             #line hidden
 WriteLiteral("                        <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 407), Tuple.Create("\"", 443)
-, Tuple.Create(Tuple.Create("", 415), Tuple.Create("col-xs-", 415), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 527), Tuple.Create("\"", 563)
+, Tuple.Create(Tuple.Create("", 535), Tuple.Create("col-xs-", 535), true)
             
-            #line 10 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 422), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            #line 14 "..\..\Views\Shared\Widgets\_Table.cshtml"
+, Tuple.Create(Tuple.Create("", 542), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 422), false)
+, 542), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 10 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 14 "..\..\Views\Shared\Widgets\_Table.cshtml"
                                                             Write(column.Name);
 
             
@@ -106,22 +133,31 @@ WriteLiteral(">");
 WriteLiteral("</th>\r\n");
 
             
-            #line 11 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 15 "..\..\Views\Shared\Widgets\_Table.cshtml"
                     }
 
             
             #line default
             #line hidden
-WriteLiteral("                </tr>\r\n            </thead>\r\n            <tbody>\r\n");
+WriteLiteral("                </tr>\r\n            </thead>\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 18 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <tbody>\r\n");
+
+            
+            #line 20 "..\..\Views\Shared\Widgets\_Table.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 20 "..\..\Views\Shared\Widgets\_Table.cshtml"
                  foreach (var row in Model.Contents)
                 {
 
@@ -131,24 +167,51 @@ WriteLiteral("                </tr>\r\n            </thead>\r\n            <tbod
 WriteLiteral("                    <tr>\r\n");
 
             
-            #line 18 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 23 "..\..\Views\Shared\Widgets\_Table.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 23 "..\..\Views\Shared\Widgets\_Table.cshtml"
                          foreach (var column in row)
                         {
+                            if (column is Attachment)
+                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                            <td>");
+WriteLiteral("                                <td><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 992), Tuple.Create("\"", 1039)
+            
+            #line 27 "..\..\Views\Shared\Widgets\_Table.cshtml"
+, Tuple.Create(Tuple.Create("", 999), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+            
+            #line default
+            #line hidden
+, 999), false)
+);
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteLiteral(">View</a></td>\r\n");
 
             
-            #line 20 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                           Write(column);
+            #line 28 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                            }
+                            else if (column is IDisplayable)
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <td>");
+
+            
+            #line 31 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                               Write(Html.Render(Url, column));
 
             
             #line default
@@ -156,7 +219,61 @@ WriteLiteral("                            <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 21 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 32 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                            }
+                            else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <td><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1552), Tuple.Create("\"", 1566)
+            
+            #line 35 "..\..\Views\Shared\Widgets\_Table.cshtml"
+, Tuple.Create(Tuple.Create("", 1559), Tuple.Create<System.Object, System.Int32>(column
+            
+            #line default
+            #line hidden
+, 1559), false)
+);
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteLiteral(">");
+
+            
+            #line 35 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                                                                 Write(column);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></td>\r\n");
+
+            
+            #line 36 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                            }
+                            else {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <td>");
+
+            
+            #line 38 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                               Write(column);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</td>\r\n");
+
+            
+            #line 39 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                            }
                         }
 
             
@@ -165,7 +282,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                    </tr>\r\n");
 
             
-            #line 23 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 42 "..\..\Views\Shared\Widgets\_Table.cshtml"
                 }
 
             
@@ -174,13 +291,13 @@ WriteLiteral("                    </tr>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 25 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 44 "..\..\Views\Shared\Widgets\_Table.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 44 "..\..\Views\Shared\Widgets\_Table.cshtml"
                  if (Model.Totals != null)
                 {
 
@@ -194,13 +311,13 @@ WriteLiteral(" class=\"bg-inverse text-white\"");
 WriteLiteral(">\r\n");
 
             
-            #line 28 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 47 "..\..\Views\Shared\Widgets\_Table.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 47 "..\..\Views\Shared\Widgets\_Table.cshtml"
                          foreach (var total in Model.Totals)
                         {
 
@@ -212,7 +329,7 @@ WriteLiteral("                            <td>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 31 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 50 "..\..\Views\Shared\Widgets\_Table.cshtml"
                            Write(total);
 
             
@@ -221,7 +338,7 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </td>\r\n");
 
             
-            #line 33 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 52 "..\..\Views\Shared\Widgets\_Table.cshtml"
                         }
 
             
@@ -230,7 +347,7 @@ WriteLiteral("\r\n                            </td>\r\n");
 WriteLiteral("                    </tr>\r\n");
 
             
-            #line 35 "..\..\Views\Shared\Widgets\_Table.cshtml"
+            #line 54 "..\..\Views\Shared\Widgets\_Table.cshtml"
                 }
 
             
