@@ -196,7 +196,7 @@ namespace Realtair.Framework.Core.Web.Utilities
             return (IActionable)Activator.CreateInstance(GetEntityType(DashesToCamelcase(actionableName)), true);
         }
 
-        public static Action GetAction(IActionable actionable, DbContext db, Utilities.Authentication auth, string actionName, Framework.Core.Entities.User user)
+        public static Action GetAction(IActionable actionable, DbContext db, IAuthentication auth, string actionName, Framework.Core.Entities.User user)
         {
             var actionType = GetActionType(actionable.ActualType(), actionName);
             var action = (Action)Activator.CreateInstance(actionType, actionable);
@@ -205,13 +205,13 @@ namespace Realtair.Framework.Core.Web.Utilities
             return action;
         }
 
-        public static Action GetAction(DbContext db, Authentication auth, string workflowName, int workflowId, string actionName, Framework.Core.Entities.User user)
+        public static Action GetAction(DbContext db, IAuthentication auth, string workflowName, int workflowId, string actionName, Framework.Core.Entities.User user)
         {
             var actionable = GetEntity(db, workflowName, workflowId) as IActionable;
             return GetAction(actionable, db, auth, actionName, user);
         }
 
-        public static Action GetAction(string workflowName, DbContext db, Authentication auth, string actionName, Framework.Core.Entities.User user)
+        public static Action GetAction(string workflowName, DbContext db, IAuthentication auth, string actionName, Framework.Core.Entities.User user)
         {
             var actionable = GetActionable(workflowName);
             return GetAction(actionable, db, auth, actionName, user);

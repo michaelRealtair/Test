@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_PhoneNumberViewModel_Field.cshtml")]
@@ -120,11 +121,11 @@ WriteLiteral(" />\r\n\r\n<link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/plugins/intl-tel-input/intlTelInput.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/plugins/intl-tel-input/intlTelInput.css\"");
 
 WriteLiteral(" />\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/plugins/intl-tel-input/intlTelInput.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/plugins/intl-tel-input/intlTelInput.js\"");
 
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        var input = $(\"#");
 
@@ -139,7 +140,7 @@ WriteLiteral(@""");
         input.intlTelInput({
             nationalMode: true,
             preferredCountries: [""au""],
-            utilsScript: 'http://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
+            utilsScript: 'https://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
         });
 
         $('#");

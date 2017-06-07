@@ -1,22 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using Realtair.Framework.Core.IdentityServer.Utilities;
 using System.Web;
 
 namespace Realtair.Framework.Core.Web.Utilities
 {
-    using Core.Entities;
-    using System.Web.Security;
-    using System;
     using Framework.Core.Interfaces;
+    using System;
+    using System.Security.Claims;
+    using System.Security.Principal;
+    using System.Web.Security;
 
     public class Authentication : IAuthentication
     {
-        readonly HttpResponseBase Response;
-        readonly HttpRequestBase Request;
+        readonly ClaimsPrincipal claimsPrincipal;
+        readonly HttpResponseBase response;
+        readonly HttpRequestBase request;
 
         public Authentication(HttpResponseBase response, HttpRequestBase request)
         {
-            Response = response;
-            Request = request;
+            this.response = response;
+            this.request = request;
+        }
+        public Authentication(HttpResponseBase response, HttpRequestBase request, IPrincipal user) : this(response, request)
+        {
+            claimsPrincipal = user as ClaimsPrincipal;
         }
 
         private static string CookieName => "REALTAIR_SESSION";
@@ -24,7 +30,33 @@ namespace Realtair.Framework.Core.Web.Utilities
         public bool IsLoggedIn => GetUserID() != -1;
         public int LoggedInUserId => GetUserID();
 
-        public void LogOut() => Response.Cookies.Set(new HttpCookie(CookieName, ""));
+        public void LogOut()
+        {
+            // Clear all cookies...
+            foreach (var key in request.Cookies.AllKeys)
+            {
+                var cookie = new HttpCookie(key);
+                cookie.Expires = DateTime.Now.AddDays(-1d);
+                response.Cookies.Add(cookie);
+            }
+
+            // Redirect to identity server sign out...
+            if (claimsPrincipal != null)
+            {
+                request.GetOwinContext().Authentication.SignOut();
+
+
+                //UriBuilder ub = new UriBuilder();
+                //ub.Scheme = request.Url.Scheme;
+                //ub.Host = request.Url.Host;
+                //ub.Path = "signout";
+                //var query = HttpUtility.ParseQueryString(ub.Query);
+                //query["token"] = claimsPrincipal.GetValue("id_token");
+                //query["issuerUri"] = claimsPrincipal.GetValue("issuer_uri");
+                //ub.Query = query.ToString();
+                //response.Redirect(ub.ToString());
+            }
+        }
         public void LogIn(Framework.Core.Entities.User user)
         {
             //create the authentication ticket
@@ -39,25 +71,54 @@ namespace Realtair.Framework.Core.Web.Utilities
 
             var encryptedTicket = FormsAuthentication.Encrypt(authTicket);
 
-            Response.Cookies.Set(new HttpCookie(CookieName, encryptedTicket));
+            response.Cookies.Set(new HttpCookie(CookieName, encryptedTicket));
         }
 
         protected int GetUserID()
         {
+            int userId;
+
             try
             {
-                var cookie = Request.Cookies.Get(CookieName);
-                var cookieValue = cookie != null ? Request.Cookies.Get(CookieName).Value : "";
-                var ticket = FormsAuthentication.Decrypt(cookieValue);
+                // If claims principal is not null, use identity server cookies...
+                if (claimsPrincipal != null)
+                {
+                    String sub = sub = claimsPrincipal.GetValue("sub");
+                    String email = claimsPrincipal.GetValue("email"); ;
+                    Boolean hasExpired = false;
+                    
+                    // Check if expiry date is included and if it has expired or not...
+                    DateTime expires_at;
+                    hasExpired = claimsPrincipal != null &&
+                        DateTime.TryParse(claimsPrincipal.GetValue("expires_at"), out expires_at) &&
+                        expires_at <= DateTime.UtcNow;
 
-                var userId = -1;
-                if (string.IsNullOrEmpty(cookieValue) || ticket.Expired || !int.TryParse(ticket.Name, out userId))
-                    return -1;
+                    if (string.IsNullOrEmpty(sub) || string.IsNullOrEmpty(email) || hasExpired || !int.TryParse(sub, out userId))
+                    {
+                        userId = -1;
+                    }
+                }
+                // Else, use forms authentication cookie
+                else
+                { 
+                    var cookie = request.Cookies.Get(CookieName);
+                    var cookieValue = cookie != null ? request.Cookies.Get(CookieName).Value : "";
+                    var ticket = FormsAuthentication.Decrypt(cookieValue);
 
-                return userId;
+                    if (string.IsNullOrEmpty(cookieValue) || ticket.Expired || !int.TryParse(ticket.Name, out userId))
+                    {
+                        userId = -1;
+                    } 
+                }
             }
 
-            catch (ArgumentException) { return -1; }
+            catch (ArgumentException)
+            {
+                userId = -1;
+            }
+
+            return userId;
+
         }
     }
 }

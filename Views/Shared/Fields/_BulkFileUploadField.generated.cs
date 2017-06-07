@@ -125,8 +125,8 @@ WriteLiteral("    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/plugins/bower_components/dropzone-master/dist/d" +
-"ropzone.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/dropzone-master/dist/" +
+"dropzone.css\"");
 
 WriteLiteral(" type=\"text/css\"");
 
@@ -134,8 +134,8 @@ WriteLiteral(" />\r\n");
 
 WriteLiteral("    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/plugins/bower_components/dropzone-master/dist/dr" +
-"opzone.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/dropzone-master/dist/d" +
+"ropzone.js\"");
 
 WriteLiteral("></script>\r\n");
 

@@ -5,11 +5,17 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Data;
+using System.Security.Principal;
+using Realtair.Framework.Core.Interfaces;
+using System;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
     public abstract class BaseController : System.Web.Mvc.Controller
     {
+        // Properties
+        public IPrincipal Principal => base.User;
+
         //private DbContext _Database;
         private User _User;
 
@@ -21,7 +27,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
         }
 
-        protected Utilities.Authentication Auth => new Utilities.Authentication(Response, Request);
+        protected virtual IAuthentication Auth => new Utilities.Authentication(Response, Request, base.User);
 
         protected new User User
         {
