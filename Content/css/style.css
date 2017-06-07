@@ -17074,7 +17074,7 @@ footer.footer.ticker .tickercontainer {
 }
 .chat-list li .panel li a {
   text-decoration: underline;
-  color: #2cabe3;
+  /*color: @info;*/
 }
 .send-chat-box form.inline {
   display: inline-block;
@@ -17089,4 +17089,25 @@ footer.footer.ticker .tickercontainer {
 }
 table.table.table-responsive {
   display: block;
+}
+img.grayscale {
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%) opacity(55%);
+  /* Chrome 19+ & Safari 6+ */
+  -webkit-transition: all .4s ease;
+  /* Fade to color for Chrome and Safari */
+  -webkit-backface-visibility: hidden;
+  /* Fix for transition flickering */
+}
+img.grayscale:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+a.btn-social {
+  text-decoration: none;
+  margin: 0px 24px;
 }

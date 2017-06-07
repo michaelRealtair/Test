@@ -83,9 +83,9 @@ namespace Realtair.Framework.Core.Web.Utilities
                 // If claims principal is not null, use identity server cookies...
                 if (claimsPrincipal != null)
                 {
-                    String sub = sub = claimsPrincipal.GetValue("sub");
-                    String email = claimsPrincipal.GetValue("email"); ;
-                    Boolean hasExpired = false;
+                    string sub = sub = claimsPrincipal.GetValue("sub");
+                    string email = claimsPrincipal.GetValue("email"); ;
+                    bool hasExpired = false;
                     
                     // Check if expiry date is included and if it has expired or not...
                     DateTime expires_at;
