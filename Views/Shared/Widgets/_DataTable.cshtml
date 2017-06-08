@@ -1,0 +1,81 @@
+﻿@using Realtair.Framework.Core.Interfaces
+@using System.Text.RegularExpressions
+@model Realtair.Framework.Core.Entities.Display.DataTableWidget
+
+@{ 
+    Guid guid = Guid.NewGuid();
+    string uniqueId = guid.ToString();
+}
+<div class="panel panel-default">
+    <div class="panel-heading">@Model.Name</div>
+    <div class="panel-wrapper collapse in">
+        <table id="@uniqueId" class="table table-striped">
+            @if (Model.Header != null)
+            {
+                <thead>
+                    <tr>
+                        @foreach (var column in Model.Header)
+                        {
+                            <th class="col-xs-@(column.ColumnWidth)">@column.Name</th>
+                        }
+                    </tr>
+                </thead>
+            }
+            <tbody>
+                @foreach (var row in Model.Contents)
+                {
+                    <tr>
+                        @foreach (var column in row)
+                        {
+                            if (column is Attachment)
+                            {
+                                <td><a href="@Html.Raw((column as Attachment).Url(0))" target="_blank">View</a></td>
+                            }
+                            else if (column is IDisplayable)
+                            {
+                                <td>@Html.Render(Url, column)</td>
+                            }
+                            else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
+                            {
+                                <td><a href="@column" target="_blank">@column</a></td>
+                            }
+                            else {
+                                <td>@column</td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+            @if (Model.Totals != null)
+            {
+                <tfoot>
+                    <tr>
+                        @foreach (var total in Model.Totals)
+                        {
+                            <th>
+                                @total
+                            </th>
+                        }
+                    </tr>
+                </tfoot>
+            }
+        </table>
+    </div>
+</div>
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+<script src="https://static.realtair.com/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#@uniqueId').DataTable({
+            "searching": false,
+            "lengthChange": false,
+            "paging": false,
+            "bInfo": false,
+            "responsive": true
+        });
+    });    
+</script>
