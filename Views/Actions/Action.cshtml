@@ -41,7 +41,16 @@
         <div id="page-wrapper" class="with-background">
             <div class="container">
                 <div class="panel panel-default">
-                    <div class="panel-heading">@Model.Action.Description(Html.LoggedInUser()).ToUpper()</div>
+                    <div class="panel-heading">
+                        @if (Model.IsMultiPage)
+                        {
+                            @Model.Page.Name.ToUpper()
+                        }
+                        else
+                        {
+                            @Model.Action.Description(Html.LoggedInUser()).ToUpper()
+                        }
+                    </div>
                     <form class="autoform form-horizontal" id="main-form" method="post">
                         <div class="panel-body">
                             @if (Model.Action.HasValidated && !Model.Action.IsValid)
@@ -140,12 +149,16 @@
                         <div class="panel-footer">
                             @if ((bool)TempData["ShowSubmit"])
                             {
-                                <button data-next class="btn btn-primary pull-right" id="main-form-submit">@Model.Action.Description(Html.LoggedInUser())</button>
+                                <button data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">Submit</button>
                             }
 
                             @if (Model.SubmittedPages.Count != 0)
                             {
                                 <button class="btn btn-default pull-right" onclick='$("#back-form").submit();'>Back</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-default pull-right" onclick='window.history.back();'>Cancel</button>
                             }
 
                             <div class="clearfix"></div>
