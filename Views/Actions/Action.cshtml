@@ -110,6 +110,17 @@
                                     {
 
                                     }
+                                    else if (field.Value is bool?[])
+                                    {
+                                        var values = "";
+                                        foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
+                                        {
+                                            if (v != null) { values += v + ","; }
+                                            else { values += "null,"; }
+
+                                        }
+                                        <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                    }
                                     else
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="@field.Value" />
@@ -183,6 +194,17 @@
                                         else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
                                         {
 
+                                        }
+                                        else if (field.Value is bool?[])
+                                        {                                            
+                                            var values = "";
+                                            foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
+                                            {
+                                                if (v != null) { values += v + ","; }
+                                                else { values += "null,"; }
+
+                                            }
+                                            <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
                                         }
                                         else
                                         {
