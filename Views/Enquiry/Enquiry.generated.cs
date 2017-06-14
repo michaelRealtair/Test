@@ -495,7 +495,7 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" type=\"text/css\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/photoswipe.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/photoswipe.css\"");
 
 WriteLiteral(" />\r\n\r\n");
 
@@ -503,23 +503,23 @@ DefineSection("Scripts", () => {
 
 WriteLiteral("\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/jquery.easing.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/jquery.easing.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/photoswipe.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/photoswipe.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/photoswipe-ui-default.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/photoswipe-ui-default.min.js\"");
 
 WriteLiteral("></script>\r\n    \r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/chat.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/chat.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/dropzone.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/dropzone.js\"");
 
 WriteLiteral("></script>\r\n    <script>\r\n        // Setup preview node...\r\n        var previewNo" +
 "de = document.querySelector(\"#file-attachment-thumbnails\");\r\n        previewNode" +
@@ -710,13 +710,13 @@ DefineSection("Styles", () => {
 
 WriteLiteral("\r\n    <link");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/basic.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/dropzone/basic.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(">\r\n    <link");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/dropzone/dropzone.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/dropzone/dropzone.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
