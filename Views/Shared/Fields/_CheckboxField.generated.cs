@@ -65,7 +65,7 @@ WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(" style=\"padding-top: 7px;\"");
+WriteLiteral(" style=\"padding-top: 8px;\"");
 
 WriteLiteral(">\r\n");
 
