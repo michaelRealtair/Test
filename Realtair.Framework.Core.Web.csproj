@@ -296,6 +296,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_DataTable.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_ParagraphWidget_WidgetField.generated.cs">
+      <DependentUpon>_ParagraphWidget_WidgetField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Widgets\_Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3309,6 +3314,10 @@
     <None Include="Views\Shared\Widgets\_DataTable.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DataTable.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ParagraphWidget_WidgetField.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Widgets\_Detail.cshtml">
       <Generator>RazorGenerator</Generator>

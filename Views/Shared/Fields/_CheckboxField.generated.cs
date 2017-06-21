@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_CheckboxField.cshtml")]
@@ -64,7 +65,7 @@ WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(" style=\"padding-top: 12px;\"");
+WriteLiteral(" style=\"padding-top: 8px;\"");
 
 WriteLiteral(">\r\n");
 
@@ -87,14 +88,14 @@ WriteLiteral("\r\n        <input");
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 424), Tuple.Create("\"", 455)
+WriteAttribute("name", Tuple.Create(" name=\"", 423), Tuple.Create("\"", 454)
             
             #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 431), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 430), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 431), false)
+, 430), false)
 );
 
 WriteLiteral(" ");

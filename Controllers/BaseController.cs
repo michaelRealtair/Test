@@ -27,7 +27,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
         }
 
-        protected virtual IAuthentication Auth => new Utilities.Authentication(Response, Request, base.User);
+        protected virtual IAuthentication Auth => new Utilities.Authentication(Response, Request, Principal);
 
         protected new User User
         {
