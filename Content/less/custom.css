@@ -246,3 +246,22 @@ a.btn-social {
   text-decoration: none;
   margin: 0px 24px;
 }
+.rb-container {
+  padding: 12px 0;
+}
+.rb {
+  width: 24px;
+  float: left;
+  text-align: left;
+}
+.rb > input {
+  margin: 0;
+}
+.rb-content {
+  padding-left: 24px;
+}
+.rb,
+.rb-label {
+  display: inline-block;
+  cursor: pointer;
+}
