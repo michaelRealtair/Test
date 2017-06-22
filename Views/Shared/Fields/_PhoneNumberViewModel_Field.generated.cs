@@ -103,18 +103,81 @@ WriteAttribute("value", Tuple.Create(" value=\"", 473), Tuple.Create("\"", 494)
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n<input");
+WriteLiteral(">\r\n");
 
-WriteLiteral(" type=\"hidden\"");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 561), Tuple.Create("\"", 585)
             
-            #line 21 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 568), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 18 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+        
             
             #line default
             #line hidden
-, 568), false)
+            
+            #line 18 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+         if (Model.HasError)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 20 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+                                Write(Model.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 21 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    </div>\r\n</div>\r\n\r\n<input");
+
+WriteLiteral(" type=\"hidden\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 678), Tuple.Create("\"", 702)
+            
+            #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 685), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 685), false)
+);
+
+WriteAttribute("value", Tuple.Create(" value=\"", 703), Tuple.Create("\"", 753)
+, Tuple.Create(Tuple.Create("", 711), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+
+            
+            #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+                                                      if (phone != null) { 
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+                                    WriteTo(__razor_attribute_value_writer, phone.Serialize());
+
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+                                                                                              }
+            
+            #line default
+            #line hidden
+}), 711), false)
 );
 
 WriteLiteral(" />\r\n\r\n<link");
@@ -130,7 +193,7 @@ WriteLiteral(" src=\"https://static.realtair.com/plugins/intl-tel-input/intlTelI
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        var input = $(\"#");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 31 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
                    Write(Model.UniqueName);
 
             
@@ -146,7 +209,7 @@ WriteLiteral(@""");
         $('#");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 38 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
        Write(Model.UniqueName);
 
             
@@ -155,7 +218,7 @@ WriteLiteral(@""");
 WriteLiteral("\').intlTelInput(\"setNumber\", \"");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 38 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
                                                       Write(phone.Number);
 
             
@@ -164,7 +227,7 @@ WriteLiteral("\').intlTelInput(\"setNumber\", \"");
 WriteLiteral("\");\r\n        $(\'#");
 
             
-            #line 35 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 39 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
        Write(Model.UniqueName);
 
             
@@ -184,7 +247,7 @@ WriteLiteral(@"').intlTelInput(""setCountry"", ""au"");
             $('input[name=");
 
             
-            #line 46 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 50 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
                      Write(Model.UniqueName);
 
             
@@ -193,7 +256,7 @@ WriteLiteral(@"').intlTelInput(""setCountry"", ""au"");
 WriteLiteral("]\').val(JSON.stringify(phoneNumber));\r\n        });\r\n\r\n        $(\'#");
 
             
-            #line 49 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+            #line 53 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
        Write(Model.UniqueName);
 
             

@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_DateTime_Field.cshtml")]
@@ -41,148 +42,118 @@ namespace ASP
         {
             
             #line 3 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
- if (Model.HasError)
-{
+  
+    var Date = Convert.ToDateTime(Model.Value);
 
             
             #line default
             #line hidden
-WriteLiteral("    <div");
+WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral(" class=\"form-group has-error\"");
+WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"col-md-3 col-sm-4\"");
 
-WriteLiteral(">\r\n            <label");
+WriteLiteral(">\r\n        <label");
 
 WriteLiteral(" class=\"control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                    Write(Model.Label);
+            #line 9 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n        <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 294), Tuple.Create("\"", 318)
+WriteAttribute("name", Tuple.Create(" name=\"", 293), Tuple.Create("\"", 317)
             
-            #line 11 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 301), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 300), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 301), false)
+, 300), false)
 );
 
 WriteLiteral(" type=\"date\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 331), Tuple.Create("\"", 351)
+WriteAttribute("value", Tuple.Create(" value=\"", 330), Tuple.Create("\"", 401)
+, Tuple.Create(Tuple.Create("", 338), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+
             
-            #line 11 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 339), Tuple.Create<System.Object, System.Int32>(Model.Value
+            #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                                            if (Date > DateTime.MinValue) { 
             
             #line default
             #line hidden
-, 339), false)
+            
+            #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                                     WriteTo(__razor_attribute_value_writer, Date.ToString("yyyy-MM-dd"));
+
+            
+            #line default
+            #line hidden
+            
+            #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                                                                                                         }
+            
+            #line default
+            #line hidden
+}), 338), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(">\r\n            <span");
+WriteLiteral(">\r\n");
+
+            
+            #line 14 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 14 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+         if (Model.HasError)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <span");
 
 WriteLiteral(" class=\"help-block\"");
 
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
                                 Write(Model.ErrorMessage);
 
             
             #line default
             #line hidden
-WriteLiteral("</span>\r\n        </div>\r\n    </div>\r\n");
+WriteLiteral("</span>\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-
-}
-else
-{
+            #line 17 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+        }
 
             
             #line default
             #line hidden
-WriteLiteral("    <div");
+WriteLiteral("    </div>\r\n</div>\r\n");
 
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n            <label");
-
-WriteLiteral(" class=\"control-label\"");
-
-WriteLiteral(">");
-
-            
-            #line 21 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                    Write(Model.Label);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
-
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
-
-WriteLiteral(">\r\n            <input");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 694), Tuple.Create("\"", 718)
-            
-            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 701), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 701), false)
-);
-
-WriteLiteral(" type=\"date\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 731), Tuple.Create("\"", 794)
-            
-            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 739), Tuple.Create<System.Object, System.Int32>(Convert.ToDateTime(Model.Value).ToString("yyyy-MM-dd")
-            
-            #line default
-            #line hidden
-, 739), false)
-);
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");
-
-            
-            #line 28 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-}
-
-            
-            #line default
-            #line hidden
         }
     }
 }
