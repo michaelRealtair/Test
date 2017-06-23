@@ -23,7 +23,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         public FileContentResult Report(string reportName)
         {
             var r = GetReport(reportName);
-            return new FileContentResult(r.Render(User, DbContext), "application/pdf");            
+            return new FileContentResult(r.RenderPdf(User, DbContext), "application/pdf");            
         }
 
         //[Route("report/generate/{reportName}")]
