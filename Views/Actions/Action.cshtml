@@ -130,6 +130,11 @@
                                         }
                                         <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
                                     }
+                                    else if (field.Value is DateTime)
+                                    {
+                                        var date = (DateTime)field.Value;
+                                        <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                    }
                                     else
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="@field.Value" />
@@ -209,7 +214,7 @@
 
                                         }
                                         else if (field.Value is bool?[])
-                                        {                                            
+                                        {
                                             var values = "";
                                             foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
                                             {
@@ -218,6 +223,11 @@
 
                                             }
                                             <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                        }
+                                        else if (field.Value is DateTime)
+                                        {
+                                            var date = (DateTime)field.Value;
+                                            <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
                                         }
                                         else
                                         {
