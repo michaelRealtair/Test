@@ -48,24 +48,16 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<div");
-
-WriteLiteral(" class=\"panel\"");
-
-WriteLiteral(">\r\n    <p");
-
-WriteLiteral(" class=\"panel-heading\"");
-
-WriteLiteral(">");
+WriteLiteral("\r\n\r\n<h3>");
 
             
-            #line 8 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
-                        Write(Paragraph.Text);
+            #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+Write(Paragraph.Text);
 
             
             #line default
             #line hidden
-WriteLiteral("</p>\r\n</div>");
+WriteLiteral("</h3>");
 
         }
     }
