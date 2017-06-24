@@ -4,34 +4,37 @@
     var Table = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
 }
 
-<table class="table color-bordered-table muted-bordered-table" style="width: 100%">
-    <thead>
-        <tr>
-            @foreach (var h in Table.Header)
-            {
-                <th class="col-md-@h.ColumnWidth">@h.Name</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var row in Table.Contents)
-            {
+@if (Table != null)
+{
+    <table class="table color-bordered-table muted-bordered-table" style="width: 100%">
+        <thead>
             <tr>
-                @foreach (var item in row)
+                @foreach (var h in Table.Header)
                 {
-                    <td>@item</td>
+                    <th class="col-md-@h.ColumnWidth">@h.Name</th>
                 }
             </tr>
-        }
-
-        @if (Table.Totals != null)
+        </thead>
+        <tbody>
+            @foreach (var row in Table.Contents)
             {
-            <tr style="background: #222; color: #fff;">
-                @foreach (var item in Table.Totals)
-                {
-                    <td>@item</td>
-                }
-            </tr>
-        }
-    </tbody>
-</table>
+                <tr>
+                    @foreach (var item in row)
+                    {
+                        <td>@item</td>
+                    }
+                </tr>
+            }
+
+            @if (Table.Totals != null)
+            {
+                <tr style="background: #222; color: #fff;">
+                    @foreach (var item in Table.Totals)
+                    {
+                        <td>@item</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

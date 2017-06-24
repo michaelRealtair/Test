@@ -48,46 +48,56 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<table");
+WriteLiteral("\r\n\r\n");
+
+            
+            #line 7 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+ if (Table != null)
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <table");
 
 WriteLiteral(" class=\"table color-bordered-table muted-bordered-table\"");
 
 WriteLiteral(" style=\"width: 100%\"");
 
-WriteLiteral(">\r\n    <thead>\r\n        <tr>\r\n");
+WriteLiteral(">\r\n        <thead>\r\n            <tr>\r\n");
 
-            
-            #line 10 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-            
-            
-            #line default
-            #line hidden
-            
-            #line 10 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-             foreach (var h in Table.Header)
-            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <th");
-
-WriteAttribute("class", Tuple.Create(" class=\"", 335), Tuple.Create("\"", 364)
-, Tuple.Create(Tuple.Create("", 343), Tuple.Create("col-md-", 343), true)
             
             #line 12 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-, Tuple.Create(Tuple.Create("", 350), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
+                
             
             #line default
             #line hidden
-, 350), false)
+            
+            #line 12 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                 foreach (var h in Table.Header)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <th");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 383), Tuple.Create("\"", 412)
+, Tuple.Create(Tuple.Create("", 391), Tuple.Create("col-md-", 391), true)
+            
+            #line 14 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+, Tuple.Create(Tuple.Create("", 398), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
+            
+            #line default
+            #line hidden
+, 398), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                                             Write(h.Name);
+            #line 14 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                                                 Write(h.Name);
 
             
             #line default
@@ -95,49 +105,49 @@ WriteLiteral(">");
 WriteLiteral("</th>\r\n");
 
             
-            #line 13 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-            }
+            #line 15 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                }
 
             
             #line default
             #line hidden
-WriteLiteral("        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
+WriteLiteral("            </tr>\r\n        </thead>\r\n        <tbody>\r\n");
 
             
-            #line 17 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-        
+            #line 19 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+            
             
             #line default
             #line hidden
             
-            #line 17 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-         foreach (var row in Table.Contents)
+            #line 19 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+             foreach (var row in Table.Contents)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("            <tr>\r\n");
-
-            
-            #line 20 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                
-            
-            #line default
-            #line hidden
-            
-            #line 20 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                 foreach (var item in row)
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <td>");
+WriteLiteral("                <tr>\r\n");
 
             
             #line 22 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                   Write(item);
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 22 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                     foreach (var item in row)
+                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        <td>");
+
+            
+            #line 24 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                       Write(item);
 
             
             #line default
@@ -145,17 +155,17 @@ WriteLiteral("                    <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 23 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                }
+            #line 25 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                    }
 
             
             #line default
             #line hidden
-WriteLiteral("            </tr>\r\n");
+WriteLiteral("                </tr>\r\n");
 
             
-            #line 25 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-        }
+            #line 27 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+            }
 
             
             #line default
@@ -163,44 +173,44 @@ WriteLiteral("            </tr>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-        
+            #line 29 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+            
             
             #line default
             #line hidden
             
-            #line 27 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-         if (Table.Totals != null)
+            #line 29 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+             if (Table.Totals != null)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("            <tr");
+WriteLiteral("                <tr");
 
 WriteLiteral(" style=\"background: #222; color: #fff;\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 30 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                
+            #line 32 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                    
             
             #line default
             #line hidden
-            
-            #line 30 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                 foreach (var item in Table.Totals)
-                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                    <td>");
-
             
             #line 32 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                   Write(item);
+                     foreach (var item in Table.Totals)
+                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        <td>");
+
+            
+            #line 34 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+                       Write(item);
 
             
             #line default
@@ -208,23 +218,29 @@ WriteLiteral("                    <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 33 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("            </tr>\r\n");
-
-            
             #line 35 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-        }
+                    }
 
             
             #line default
             #line hidden
-WriteLiteral("    </tbody>\r\n</table>");
+WriteLiteral("                </tr>\r\n");
 
+            
+            #line 37 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        </tbody>\r\n    </table>\r\n");
+
+            
+            #line 40 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }
