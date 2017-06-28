@@ -26,6 +26,10 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    using Realtair.Framework.Core.Actions;
+    using Realtair.Framework.Core.Entities;
+    using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Search/Search.cshtml")]
@@ -36,199 +40,121 @@ namespace ASP
         }
         public override void Execute()
         {
-
-WriteLiteral(@"
-<body>
-    <header id=""section-header"" class=""header-admin"" role=""banner"" style=""margin-bottom: 15px;"">
-        <div class=""bg-header"">
-            <div class=""overlay-gradient-radial""></div>
-            <div class=""overlay-gradient-linear""></div>
-            <div class=""bg-default"" style='background-image: url(""/content/img/background-desk.jpg"");'></div>
-        </div>
-
-");
-
-
             
-            #line 11 "..\..\Views\Search\Search.cshtml"
-         if (Html.ShouldShowMenu(Request))
-        {
-            
-            
-            #line default
-            #line hidden
-            
-            #line 13 "..\..\Views\Search\Search.cshtml"
-       Write(Html.Partial("Menu"));
+            #line 3 "..\..\Views\Search\Search.cshtml"
+Write(Html.Partial("Menu"));
 
             
             #line default
             #line hidden
-            
-            #line 13 "..\..\Views\Search\Search.cshtml"
-                                 ;
-        }
-        else
-        {
-            
-            
-            #line default
-            #line hidden
-            
-            #line 17 "..\..\Views\Search\Search.cshtml"
-       Write(Html.Partial("BackMenu"));
+WriteLiteral("\r\n<div");
 
-            
-            #line default
-            #line hidden
-            
-            #line 17 "..\..\Views\Search\Search.cshtml"
-                                     
-        }
+WriteLiteral(" id=\"page-wrapper\"");
 
+WriteLiteral(" class=\"\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"header m-b-15\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"input-group\"");
+
+WriteLiteral(">\r\n                <input");
+
+WriteLiteral(" id=\"search-box\"");
+
+WriteLiteral(" name=\"query\"");
+
+WriteLiteral(" type=\"text\"");
+
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 291), Tuple.Create("\"", 324)
+, Tuple.Create(Tuple.Create("", 305), Tuple.Create("Find", 305), true)
             
-            #line default
-            #line hidden
-WriteLiteral(@"
-        <div class=""header-content"">
-            <div class=""clearfix""></div>
-            <div class=""title-hero"">
-                <div class=""container"">
-                    <div class=""row"">
-                        <div class=""col-sm-4"">
-                            <h1 style=""margin-top: 30px;"">");
-
-
-            
-            #line 26 "..\..\Views\Search\Search.cshtml"
-                                                     Write(Model.SetName);
-
+            #line 8 "..\..\Views\Search\Search.cshtml"
+  , Tuple.Create(Tuple.Create(" ", 309), Tuple.Create<System.Object, System.Int32>(Model.SetName
             
             #line default
             #line hidden
-WriteLiteral(" <small>search</small></h1>\r\n                        </div>\r\n                    " +
-"    <div class=\"col-sm-8\">\r\n                            <div class=\"box-btn\">\r\n " +
-"                               <div class=\"row\">\r\n");
+, 310), false)
+);
 
+WriteLiteral(" class=\"form-control\"");
 
-            
-            #line 31 "..\..\Views\Search\Search.cshtml"
-                                     if (Model.ActionLinks != null)
-                                    {
-                                        var offset = 4 - Model.ActionLinks.Count();
-                                        if (offset > 0)
-                                        {
+WriteLiteral(">\r\n                <span");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <div class=\"hidden-xs col-sm-");
+WriteLiteral(" class=\"input-group-addon\"");
 
+WriteLiteral("><i");
 
-            
-            #line 36 "..\..\Views\Search\Search.cshtml"
-                                                                     Write(offset * 3);
+WriteLiteral(" class=\"fa fa-search\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\">&nbsp;</div>\r\n");
+WriteLiteral("></i></span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div");
 
+WriteLiteral(" class=\"container\"");
 
-            
-            #line 37 "..\..\Views\Search\Search.cshtml"
-                                        }
+WriteLiteral(">\r\n        <div");
 
-                                        foreach (var action in Model.ActionLinks)
-                                        {
+WriteLiteral(" class=\"row\"");
 
-            
-            #line default
-            #line hidden
-WriteLiteral("                                            <div class=\"col-xs-6 col-sm-3\">\r\n    " +
-"                                            <a class=\"btn btn-primary ellipsis\" " +
-"href=\"/");
+WriteLiteral(">\r\n            <div");
 
+WriteLiteral(" class=\"col-md-12\"");
 
-            
-            #line 42 "..\..\Views\Search\Search.cshtml"
-                                                                                      Write(action.Url);
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"panel\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"panel-wrapper collapse-in\"");
+
+WriteLiteral(">\r\n                        <ul");
+
+WriteLiteral(" id=\"results\"");
+
+WriteLiteral(" class=\"list-group\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                            ");
 
             
-            #line default
-            #line hidden
-WriteLiteral("\" title=\"#\">\r\n                                                    ");
-
-
-            
-            #line 43 "..\..\Views\Search\Search.cshtml"
-                                               Write(action.Description);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n                                                </a>\r\n                         " +
-"                   </div>\r\n");
-
-
-            
-            #line 46 "..\..\Views\Search\Search.cshtml"
-                                        }
-                                    }
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"                                </div>
-                                <div class=""clearfix""></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=""row"">
-                        <div class=""col-sm-12"">
-                            <input id=""search-box"" name=""query"" type=""text"" placeholder=""Search..."" style=""margin-top: 30px; margin-bottom: 20px;width: 100%;padding: 10px 15px;border: none;background: rgba(255,255,255,0.3);border-bottom: 3px solid #fff;font-size: 1.2em;/* background-color: white; */"" value=""");
-
-
-            
-            #line 55 "..\..\Views\Search\Search.cshtml"
-                                                                                                                                                                                                                                                                                                                Write(Model.Query);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@""">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class=""clearfix""></div>
-
-    <main role=""main"" id=""main"">
-        <div class=""container"">
-            <div class=""row"">
-                <div class=""col-md-12"">
-                    <div class=""panel panel-default"">
-                        <ul class=""list-group"" id=""results"">
-                            ");
-
-
-            
-            #line 71 "..\..\Views\Search\Search.cshtml"
+            #line 19 "..\..\Views\Search\Search.cshtml"
                        Write(Html.Partial("Results", Model));
 
             
             #line default
             #line hidden
+WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                </di" +
+"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<footer");
+
+WriteLiteral(" class=\"footer text-center\"");
+
+WriteLiteral(">\r\n    Powered by <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">Realtair</a>\r\n    <span");
+
+WriteLiteral(" class=\"pull-right\"");
+
+WriteLiteral(">Technical Support: <a");
+
+WriteLiteral(" href=\"mailto:support@realtair.com\"");
+
+WriteLiteral(">support");
+
+WriteLiteral("@realtair.com</a></span>\r\n</footer>\r\n\r\n");
+
+DefineSection("Scripts", () => {
+
 WriteLiteral(@"
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
     <script>
         var timeoutID = null;
 
@@ -238,20 +164,71 @@ WriteLiteral(@"
             timeoutID = setTimeout(function () { search(); }, 300);
         });
 
-        function search() {            
+        function search() {
             $.post(""");
 
-
             
-            #line 88 "..\..\Views\Search\Search.cshtml"
+            #line 44 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             
             #line default
             #line hidden
 WriteLiteral("?query=\" + $(\"#search-box\").val(), function (data) {\r\n                $(\"#results" +
-"\").html(data);\r\n            });\r\n        }\r\n    </script>\r\n</body>");
+"\").html(data);\r\n            });\r\n        }\r\n    </script>\r\n");
 
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("Styles", () => {
+
+WriteLiteral(@"
+    <style>
+        #page-wrapper .header {
+            padding: 10px 0;
+            margin-top: -15px;
+            background: url(""https://static.realtair.com/plugins/images/header_bg.jpg"");
+            background-position: center left;
+        }
+
+            #page-wrapper .header .input-group {
+                margin-bottom: 10px;
+            }
+
+                #page-wrapper .header .input-group input {
+                    padding: 25px;
+                }
+
+                    #page-wrapper .header .input-group input:focus {
+                        border-color: #e4e7ea;
+                    }
+
+
+        ");
+
+WriteLiteral("@media (min-width: 768px) {\r\n            #page-wrapper .header {\r\n               " +
+" margin-top: -26px;\r\n                padding-top: 40px;\r\n                padding" +
+"-bottom: 40px;\r\n            }\r\n        }\r\n\r\n        /*.sidebar {\r\n            ba" +
+"ckground: #5f5e5c;\r\n        }\r\n\r\n        #side-menu li a {\r\n            color: #" +
+"fff;\r\n        }*/\r\n\r\n        a.action {\r\n            font-size: 18px;\r\n         " +
+"   color: #fff;\r\n            font-weight: 400;\r\n        }\r\n\r\n            a.actio" +
+"n:hover {\r\n                color: #ff4637;\r\n                transition: color ea" +
+"se-in 0.2s;\r\n            }\r\n\r\n            a.action i {\r\n                font-siz" +
+"e: 25px;\r\n                display: block;\r\n                margin-bottom: 15px;\r" +
+"\n            }\r\n\r\n        #page-wrapper li.list-group-item {\r\n            paddin" +
+"g: 15px 20px;\r\n            border-left: none;\r\n            border-right: none;\r\n" +
+"        }\r\n\r\n            #page-wrapper li.list-group-item a {\r\n                c" +
+"olor: #313131;\r\n            }\r\n\r\n                #page-wrapper li.list-group-ite" +
+"m i, #page-wrapper li.list-group-item b, #page-wrapper li.list-group-item a.btn " +
+"{\r\n                    overflow: hidden;\r\n                    white-space: nowra" +
+"p;\r\n                    text-overflow: ellipsis;\r\n                    display: b" +
+"lock;\r\n                    max-width: 100%;\r\n                    font-style: nor" +
+"mal;\r\n                }\r\n\r\n\r\n            #page-wrapper li.list-group-item .empty" +
+"-filler * {\r\n                display: inline-block;\r\n            }\r\n    </style>" +
+"\r\n");
+
+});
 
         }
     }

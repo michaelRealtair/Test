@@ -1,80 +1,36 @@
 ﻿@model Realtair.Framework.Core.Actions.Providers.SearchResults
 
-<body>
-    <header id="section-header" class="header-admin" role="banner" style="margin-bottom: 15px;">
-        <div class="bg-header">
-            <div class="overlay-gradient-radial"></div>
-            <div class="overlay-gradient-linear"></div>
-            <div class="bg-default" style='background-image: url("/content/img/background-desk.jpg");'></div>
-        </div>
-
-        @if (Html.ShouldShowMenu(Request))
-        {
-            @Html.Partial("Menu");
-        }
-        else
-        {
-            @Html.Partial("BackMenu")
-        }
-
-        <div class="header-content">
-            <div class="clearfix"></div>
-            <div class="title-hero">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <h1 style="margin-top: 30px;">@Model.SetName <small>search</small></h1>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="box-btn">
-                                <div class="row">
-                                    @if (Model.ActionLinks != null)
-                                    {
-                                        var offset = 4 - Model.ActionLinks.Count();
-                                        if (offset > 0)
-                                        {
-                                            <div class="hidden-xs col-sm-@(offset * 3)">&nbsp;</div>
-                                        }
-
-                                        foreach (var action in Model.ActionLinks)
-                                        {
-                                            <div class="col-xs-6 col-sm-3">
-                                                <a class="btn btn-primary ellipsis" href="/@action.Url" title="#">
-                                                    @action.Description
-                                                </a>
-                                            </div>
-                                        }
-                                    }
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <input id="search-box" name="query" type="text" placeholder="Search..." style="margin-top: 30px; margin-bottom: 20px;width: 100%;padding: 10px 15px;border: none;background: rgba(255,255,255,0.3);border-bottom: 3px solid #fff;font-size: 1.2em;/* background-color: white; */" value="@Model.Query">
-                        </div>
-                    </div>
-                </div>
+@Html.Partial("Menu")
+<div id="page-wrapper" class="">
+    <div class="header m-b-15">
+        <div class="container">
+            <div class="input-group">
+                <input id="search-box" name="query" type="text" placeholder="Find @Model.SetName" class="form-control">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
             </div>
         </div>
-    </header>
-
-    <div class="clearfix"></div>
-
-    <main role="main" id="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <ul class="list-group" id="results">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-wrapper collapse-in">
+                        <ul id="results" class="list-group">
                             @Html.Partial("Results", Model)
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</div>
+
+<footer class="footer text-center">
+    Powered by <a href="#">Realtair</a>
+    <span class="pull-right">Technical Support: <a href="mailto:support@realtair.com">support@@realtair.com</a></span>
+</footer>
+
+@section Scripts {
     <script>
         var timeoutID = null;
 
@@ -84,10 +40,91 @@
             timeoutID = setTimeout(function () { search(); }, 300);
         });
 
-        function search() {            
+        function search() {
             $.post("@Request.Url.AbsolutePath?query=" + $("#search-box").val(), function (data) {
                 $("#results").html(data);
             });
         }
     </script>
-</body>
+}
+
+@section Styles {
+    <style>
+        #page-wrapper .header {
+            padding: 10px 0;
+            margin-top: -15px;
+            background: url("https://static.realtair.com/plugins/images/header_bg.jpg");
+            background-position: center left;
+        }
+
+            #page-wrapper .header .input-group {
+                margin-bottom: 10px;
+            }
+
+                #page-wrapper .header .input-group input {
+                    padding: 25px;
+                }
+
+                    #page-wrapper .header .input-group input:focus {
+                        border-color: #e4e7ea;
+                    }
+
+
+        @@media (min-width: 768px) {
+            #page-wrapper .header {
+                margin-top: -26px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        /*.sidebar {
+            background: #5f5e5c;
+        }
+
+        #side-menu li a {
+            color: #fff;
+        }*/
+
+        a.action {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 400;
+        }
+
+            a.action:hover {
+                color: #ff4637;
+                transition: color ease-in 0.2s;
+            }
+
+            a.action i {
+                font-size: 25px;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+        #page-wrapper li.list-group-item {
+            padding: 15px 20px;
+            border-left: none;
+            border-right: none;
+        }
+
+            #page-wrapper li.list-group-item a {
+                color: #313131;
+            }
+
+                #page-wrapper li.list-group-item i, #page-wrapper li.list-group-item b, #page-wrapper li.list-group-item a.btn {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: block;
+                    max-width: 100%;
+                    font-style: normal;
+                }
+
+
+            #page-wrapper li.list-group-item .empty-filler * {
+                display: inline-block;
+            }
+    </style>
+}

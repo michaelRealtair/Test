@@ -2,36 +2,26 @@
 @model Realtair.Framework.Core.Actions.Providers.SearchResults
 @{ Layout = ""; }
 
-@if (!Model.AllowMultipleSelection)
-{
-    foreach (IDescribable result in Model.Value)
+    @foreach (var result in Model.Value)
     {
         <li class="list-group-item">
-            <a class="panel-heading" href="@Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))">
-                <span class="icon @Html.IconForDescribable(result) pull-left icon-hero hidden-xs"></span>
-                <div class="inner-content">
-                    <strong>@result.Description(Html.LoggedInUser())</strong>
-                    <em>@result.ActualType().Name.DisplaySafeName()</em>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="@Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))">
+                        <b>@result.Description(Html.LoggedInUser())</b>
+                        <i>@result.ActualType().Name.DisplaySafeName()</i>
+                    </a>
                 </div>
-                <div class="clearfix"></div>
-            </a>
+            </div>
         </li>
     }
-}
-else {
-    foreach (var result in Model.Value.ToList())
-    {
-        var e = result as Entity;
-        <div class="multi-select-field-item" id="objectId_@e.Id" optionid="@e.Id" uniquename="@Model.SetName">
-            <i class="fa fa-times tick"></i>
-            <div class="pull-left">
-                <span class="icon @Html.IconForDescribable(result) pull-left icon-hero hidden-xs"></span>
-            </div>
 
-            <div class="inner-content">
-                <strong class="title">@result.Description(Html.LoggedInUser())</strong>
-                <p><em>@result.ActualType().Name.DisplaySafeName()</em></p>
+    @if (Model.Value.Count() == 0)
+    {
+        <li class="list-group-item">
+            <div class="empty-filler">
+                <div class="circle-sm circle bg-inverse pull-left"><i class="ti-home"></i></div>
+                <i class="m-l-15 m-t-10 m-b-5">No Campaigns</i>
             </div>
-        </div>
+        </li>
     }
-}

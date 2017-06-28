@@ -55,9 +55,13 @@ WriteLiteral("\r\n\r\n");
 
             
             #line 5 "..\..\Views\Search\Results.cshtml"
- if (!Model.AllowMultipleSelection)
-{
-    foreach (IDescribable result in Model.Value)
+    
+            
+            #line default
+            #line hidden
+            
+            #line 5 "..\..\Views\Search\Results.cshtml"
+     foreach (var result in Model.Value)
     {
 
             
@@ -67,167 +71,95 @@ WriteLiteral("        <li");
 
 WriteLiteral(" class=\"list-group-item\"");
 
-WriteLiteral(">\r\n            <a");
+WriteLiteral(">\r\n            <div");
 
-WriteLiteral(" class=\"panel-heading\"");
+WriteLiteral(" class=\"row\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 302), Tuple.Create("\"", 359)
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"col-xs-12\"");
+
+WriteLiteral(">\r\n                    <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 312), Tuple.Create("\"", 369)
             
             #line 10 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create("", 309), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
+, Tuple.Create(Tuple.Create("", 319), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
             
             #line default
             #line hidden
-, 309), false)
+, 319), false)
 );
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(">\r\n                        <b>");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 384), Tuple.Create("\"", 459)
-, Tuple.Create(Tuple.Create("", 392), Tuple.Create("icon", 392), true)
             
             #line 11 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create(" ", 396), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(result)
-            
-            #line default
-            #line hidden
-, 397), false)
-, Tuple.Create(Tuple.Create(" ", 429), Tuple.Create("pull-left", 430), true)
-, Tuple.Create(Tuple.Create(" ", 439), Tuple.Create("icon-hero", 440), true)
-, Tuple.Create(Tuple.Create(" ", 449), Tuple.Create("hidden-xs", 450), true)
-);
-
-WriteLiteral("></span>\r\n                <div");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                    <strong>");
-
-            
-            #line 13 "..\..\Views\Search\Results.cshtml"
-                       Write(result.Description(Html.LoggedInUser()));
+                      Write(result.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("</strong>\r\n                    <em>");
+WriteLiteral("</b>\r\n                        <i>");
 
             
-            #line 14 "..\..\Views\Search\Results.cshtml"
-                   Write(result.ActualType().Name.DisplaySafeName());
+            #line 12 "..\..\Views\Search\Results.cshtml"
+                      Write(result.ActualType().Name.DisplaySafeName());
 
             
             #line default
             #line hidden
-WriteLiteral("</em>\r\n                </div>\r\n                <div");
+WriteLiteral("</i>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n     " +
+"   </li>\r\n");
 
-WriteLiteral(" class=\"clearfix\"");
+            
+            #line 17 "..\..\Views\Search\Results.cshtml"
+    }
 
-WriteLiteral("></div>\r\n            </a>\r\n        </li>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
             
             #line 19 "..\..\Views\Search\Results.cshtml"
-    }
-}
-else {
-    foreach (var result in Model.Value.ToList())
+    
+            
+            #line default
+            #line hidden
+            
+            #line 19 "..\..\Views\Search\Results.cshtml"
+     if (Model.Value.Count() == 0)
     {
-        var e = result as Entity;
 
             
             #line default
             #line hidden
-WriteLiteral("        <div");
+WriteLiteral("        <li");
 
-WriteLiteral(" class=\"multi-select-field-item\"");
+WriteLiteral(" class=\"list-group-item\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 925), Tuple.Create("\"", 944)
-, Tuple.Create(Tuple.Create("", 930), Tuple.Create("objectId_", 930), true)
-            
-            #line 25 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create("", 939), Tuple.Create<System.Object, System.Int32>(e.Id
-            
-            #line default
-            #line hidden
-, 939), false)
-);
+WriteLiteral(">\r\n            <div");
 
-WriteAttribute("optionid", Tuple.Create(" optionid=\"", 945), Tuple.Create("\"", 961)
-            
-            #line 25 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create("", 956), Tuple.Create<System.Object, System.Int32>(e.Id
-            
-            #line default
-            #line hidden
-, 956), false)
-);
+WriteLiteral(" class=\"empty-filler\"");
 
-WriteAttribute("uniquename", Tuple.Create(" uniquename=\"", 962), Tuple.Create("\"", 989)
-            
-            #line 25 "..\..\Views\Search\Results.cshtml"
-               , Tuple.Create(Tuple.Create("", 975), Tuple.Create<System.Object, System.Int32>(Model.SetName
-            
-            #line default
-            #line hidden
-, 975), false)
-);
+WriteLiteral(">\r\n                <div");
 
-WriteLiteral(">\r\n            <i");
+WriteLiteral(" class=\"circle-sm circle bg-inverse pull-left\"");
 
-WriteLiteral(" class=\"fa fa-times tick\"");
+WriteLiteral("><i");
 
-WriteLiteral("></i>\r\n            <div");
+WriteLiteral(" class=\"ti-home\"");
 
-WriteLiteral(" class=\"pull-left\"");
+WriteLiteral("></i></div>\r\n                <i");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral(" class=\"m-l-15 m-t-10 m-b-5\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1097), Tuple.Create("\"", 1172)
-, Tuple.Create(Tuple.Create("", 1105), Tuple.Create("icon", 1105), true)
-            
-            #line 28 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create(" ", 1109), Tuple.Create<System.Object, System.Int32>(Html.IconForDescribable(result)
-            
-            #line default
-            #line hidden
-, 1110), false)
-, Tuple.Create(Tuple.Create(" ", 1142), Tuple.Create("pull-left", 1143), true)
-, Tuple.Create(Tuple.Create(" ", 1152), Tuple.Create("icon-hero", 1153), true)
-, Tuple.Create(Tuple.Create(" ", 1162), Tuple.Create("hidden-xs", 1163), true)
-);
-
-WriteLiteral("></span>\r\n            </div>\r\n\r\n            <div");
-
-WriteLiteral(" class=\"inner-content\"");
-
-WriteLiteral(">\r\n                <strong");
-
-WriteLiteral(" class=\"title\"");
-
-WriteLiteral(">");
+WriteLiteral(">No Campaigns</i>\r\n            </div>\r\n        </li>\r\n");
 
             
-            #line 32 "..\..\Views\Search\Results.cshtml"
-                                 Write(result.Description(Html.LoggedInUser()));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</strong>\r\n                <p><em>");
-
-            
-            #line 33 "..\..\Views\Search\Results.cshtml"
-                  Write(result.ActualType().Name.DisplaySafeName());
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</em></p>\r\n            </div>\r\n        </div>\r\n");
-
-            
-            #line 36 "..\..\Views\Search\Results.cshtml"
+            #line 27 "..\..\Views\Search\Results.cshtml"
     }
-}
             
             #line default
             #line hidden
