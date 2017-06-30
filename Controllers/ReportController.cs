@@ -13,17 +13,22 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class ReportController : BaseController
     {
-        public class ReportViewModel
-        {
-            public string Name { get; set; }
-            public IEnumerable<IWidget> Widgets { get; set; }
-        }
+        //public class ReportViewModel
+        //{
+        //    public string Name { get; set; }
+        //    public IEnumerable<IWidget> Widgets { get; set; }
+        //}
 
         //[Route("report/{reportName}")]
         public FileContentResult Report(string reportName)
         {
             var r = GetReport(reportName);
-            return new FileContentResult(r.RenderPdf(User, DbContext), "application/pdf");            
+            var model = TempData[reportName];
+            var fileContents = model == null ?
+                r.RenderPdf(User, DbContext) :
+                r.RenderPdf(User, DbContext, model);
+            
+            return new FileContentResult(fileContents, "application/pdf");            
         }
 
         //[Route("report/generate/{reportName}")]

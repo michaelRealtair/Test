@@ -326,6 +326,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_List.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Widgets\_Paragraph.generated.cs">
+      <DependentUpon>_Paragraph.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Widgets\_Table.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3343,6 +3348,10 @@
     <None Include="Views\Shared\Widgets\_List.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_List.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Widgets\_Paragraph.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Paragraph.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Widgets\_Table.cshtml">
       <Generator>RazorGenerator</Generator>

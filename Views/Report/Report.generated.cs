@@ -33,7 +33,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Report/Report.cshtml")]
-    public partial class _Views_Report_Report_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Web.Controllers.ReportController.ReportViewModel>
+    public partial class _Views_Report_Report_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Reports.ReportViewModel>
     {
         public _Views_Report_Report_cshtml()
         {

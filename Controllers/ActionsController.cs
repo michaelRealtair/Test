@@ -260,6 +260,13 @@ namespace Realtair.Framework.Core.Web.Controllers
                         url += v.ToString();
                 }
 
+                // If the report includes a model, send it with the redirection 
+                if (newReport.Model != null)
+                {
+                    // Sample: report-name
+                    TempData[newReport.GetUrlSafeName()] = newReport.Model;
+                }
+
                 return Redirect(url);
             }
             else if (RedirectLocation is RedirectToURL)

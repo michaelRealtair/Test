@@ -122,7 +122,15 @@ namespace Realtair.Framework.Core.Web.Utilities
                 
         public static string GetUrl(this Report report, UrlHelper url)
         {
-            return $"/report/generate/{report.UrlSafeName()}";
+            var redirectUrl = "/report";
+            
+            // Redirect to render the report as HTML if generate is true
+            if (report.Generate)
+            {
+                redirectUrl += "/generate";
+            }
+
+            return $"{redirectUrl}/{report.UrlSafeName()}";
         }
 
         public static string GetDetailsUrl(this object entity, Framework.Core.Entities.User user, UrlHelper url)
