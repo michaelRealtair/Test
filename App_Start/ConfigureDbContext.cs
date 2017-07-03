@@ -6,15 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web;
+using Ninject;
+using System.Configuration;
+using Realtair.Framework.Core.Web.DependencyInjection;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.Utilities.ConfigureDbContext), "Start")]
-namespace Realtair.Framework.Core.Web.Utilities
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.ConfigureDbContext), "Start")]
+namespace Realtair.Framework.Core.Web
 {
     public static class ConfigureDbContext
     {
         public static void Start()
         {
-            Data.SingletonDbContext.Instance = new Singleton();
+            using (var kernel = new StandardKernel())
+            {
+                Data.SingletonDbContext.Instance = KernelWrapper.Get<ISingletonDbContext>();
+            }
         }
     }
 }
