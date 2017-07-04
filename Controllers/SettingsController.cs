@@ -12,6 +12,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class SettingsController : BaseController
     {
+        public SettingsController(IAuthenticationFactory authenticationFactory)
+            : base(authenticationFactory)
+        {
+        }
+
         public class ViewModel
         {
             public IHasSettings Entity { get; set; }

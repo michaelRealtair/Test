@@ -13,7 +13,6 @@ namespace Realtair.Framework.Core.Web.Utilities
         public SingleSignOnAuthentication(HttpResponseBase response, HttpRequestBase request)
             : base(response, request)
         {
-
         }
         public SingleSignOnAuthentication(HttpResponseBase response, HttpRequestBase request, IPrincipal user)
             : base(response, request, user)

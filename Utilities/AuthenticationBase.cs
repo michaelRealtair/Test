@@ -26,6 +26,9 @@ namespace Realtair.Framework.Core.Web.Utilities
         public int LoggedInUserId => GetUserID();
 
         // Constructors
+        public AuthenticationBase()
+        {
+        }
         public AuthenticationBase(HttpResponseBase response, HttpRequestBase request)
         {
             this.response = response;

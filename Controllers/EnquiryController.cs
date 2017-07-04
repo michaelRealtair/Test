@@ -14,6 +14,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class EnquiryController : BaseController
     {
+        public EnquiryController(IAuthenticationFactory authenticationFactory)
+            : base(authenticationFactory)
+        {
+        }
+
         public class EnquiryViewModel
         {
             public Enquiry Workflow { get; set; }
