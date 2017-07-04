@@ -172,10 +172,11 @@
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;       
         
-        $('.chat-list').slimScroll({
-            height: '600px',
+        $('.chat-list').slimScroll({            
             start: 'bottom'
         });
+
+        $('.slimScrollDiv').css("height", "");
 
         $(function () {            
             $('#selectPhotosBtn').click(function () {
@@ -280,7 +281,13 @@
                     var baseMainHeight = $(document).height();
 
                     $('.messagebox').children().not('.sending').remove();
-                    $(".messagebox").prepend(data);                    
+                    $(".messagebox").prepend(data);
+                    
+                    $('.chat-list').slimScroll({
+                        start: 'bottom'
+                    });
+                    $('.slimScrollDiv').css("height", "");
+
                     setTimeout(doPoll, pollTime);
                 },
                 error: function (data) {
