@@ -129,8 +129,11 @@
     <Compile Include="Singleton.cs" />
     <Compile Include="App_Start\ConfigureRoutes.cs" />
     <Compile Include="Utilities\Authentication.cs" />
+    <Compile Include="Utilities\AuthenticationBase.cs" />
     <Compile Include="Utilities\CoreExtensions.cs" />
+    <Compile Include="Utilities\IAuthenticationFactory.cs" />
     <Compile Include="Utilities\RenderSections.cs" />
+    <Compile Include="Utilities\SingleSignOnAuthentication.cs" />
     <Compile Include="Views\Actions\Action.generated.cs">
       <DependentUpon>Action.cshtml</DependentUpon>
       <DesignTime>True</DesignTime>

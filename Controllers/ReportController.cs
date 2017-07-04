@@ -13,6 +13,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class ReportController : BaseController
     {
+        public ReportController(IAuthenticationFactory authenticationFactory)
+            : base(authenticationFactory)
+        {
+        }
+
         //public class ReportViewModel
         //{
         //    public string Name { get; set; }

@@ -7,6 +7,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class DetailsController : BaseController
     {
+        public DetailsController(IAuthenticationFactory authenticationFactory)
+            : base(authenticationFactory)
+        {
+        }
+
         //[Route("{entityTypeName}/{id:int}/details")]
         public ActionResult Details(string entityTypeName, int id)
         {
