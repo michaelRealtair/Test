@@ -481,7 +481,7 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                        <img");
 
-WriteLiteral(" src=\"https://realtair.com/Content/img/icon-pdf.png\"");
+WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
 
 WriteLiteral(" alt=\"#\"");
 
@@ -727,7 +727,7 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteLiteral(" src=\"https://realtair.com/Content/img/icon-pdf.png\"");
+WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
 
 WriteLiteral(" class=\"img-rounded\"");
 
@@ -984,7 +984,7 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                                    <img");
 
-WriteLiteral(" src=\"https://realtair.com/Content/img/icon-pdf.png\"");
+WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
 
 WriteLiteral(" class=\"img-rounded\"");
 
