@@ -125,7 +125,8 @@
     <script src="https://static.realtair.com/js/photoswipe-ui-default.min.js"></script>
     
     <script src="https://static.realtair.com/js/chat.js"></script>
-    <script src="https://static.realtair.com/js/dropzone.js"></script>
+    <script src="https://static.realtair.com/js/dropzone.js"></script>        
+
     <script>
         // Setup preview node...
         var previewNode = document.querySelector("#file-attachment-thumbnails");
@@ -169,11 +170,14 @@
     </script>
     <script>
         var tempSentMessageId = 0;
-        var pollTime = 1000 * 10;
+        var pollTime = 1000 * 10;       
+        
+        $('.chat-list').slimScroll({
+            height: '600px',
+            start: 'bottom'
+        });
 
-        $(function () {
-            $(document).scrollTop($(document).height());
-
+        $(function () {            
             $('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
                     var image = $(this).find('img').attr('src');
@@ -211,7 +215,7 @@
                     // el.style.cssText = '-moz-box-sizing:content-box';
                     el.style.cssText = 'height:' + el.scrollHeight + 'px';
                 }, 0);
-            }
+            }  
         });
 
         function sendMessage() {
@@ -257,8 +261,7 @@
                     },
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
-                        doPoll();
-                        //$("#" + messageId).remove();
+                        doPoll();                        
                     },
                     error: function (data) {
                         window.location.href = "/";
@@ -277,12 +280,7 @@
                     var baseMainHeight = $(document).height();
 
                     $('.messagebox').children().not('.sending').remove();
-                    $(".messagebox").prepend(data);
-
-                    /*$('html,body').animate({
-                        scrollTop: $(document).scrollTop() + $(document).height() - baseMainHeight
-                    }, "fast");*/
-
+                    $(".messagebox").prepend(data);                    
                     setTimeout(doPoll, pollTime);
                 },
                 error: function (data) {
