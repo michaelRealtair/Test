@@ -13,6 +13,9 @@
             <div class="chat-left-aside">
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
                 <div class="chat-left-inner">
+                    <div class="chat-description text-truncate">
+                        @Model.Workflow.Extension.Description(Html.LoggedInUser())
+                    </div>
                     <ul class="chatonline style-none ">
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
                         {                            
