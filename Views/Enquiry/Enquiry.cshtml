@@ -13,8 +13,13 @@
             <div class="chat-left-aside">
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
                 <div class="chat-left-inner">
-                    <div class="chat-description text-truncate">
-                        @Model.Workflow.Extension.Description(Html.LoggedInUser())
+                    <div class="chat-left-header text-truncate">
+                        <button class="chat-left-back btn btn-block btn-outline btn-default" onclick="location.href = '/';">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                        <div class="chat-left-description">
+                            @Model.Workflow.Extension.Description(Html.LoggedInUser())
+                        </div>
                     </div>
                     <ul class="chatonline style-none ">
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))

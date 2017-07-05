@@ -98,33 +98,48 @@ WriteLiteral(" class=\"chat-left-inner\"");
 
 WriteLiteral(">\r\n                    <div");
 
-WriteLiteral(" class=\"chat-description text-truncate\"");
+WriteLiteral(" class=\"chat-left-header text-truncate\"");
+
+WriteLiteral(">\r\n                        <button");
+
+WriteLiteral(" class=\"chat-left-back btn btn-block btn-outline btn-default\"");
+
+WriteLiteral(" onclick=\"location.href = \'/\';\"");
+
+WriteLiteral(">\r\n                            <i");
+
+WriteLiteral(" class=\"fa fa-angle-left\"");
+
+WriteLiteral("></i>\r\n                        </button>\r\n                        <div");
+
+WriteLiteral(" class=\"chat-left-description\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("                        ");
+WriteLiteral("                            ");
 
             
-            #line 17 "..\..\Views\Enquiry\Enquiry.cshtml"
-                   Write(Model.Workflow.Extension.Description(Html.LoggedInUser()));
+            #line 21 "..\..\Views\Enquiry\Enquiry.cshtml"
+                       Write(Model.Workflow.Extension.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </div>\r\n                    <ul");
+WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                   " +
+" <ul");
 
 WriteLiteral(" class=\"chatonline style-none \"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 20 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 25 "..\..\Views\Enquiry\Enquiry.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 25 "..\..\Views\Enquiry\Enquiry.cshtml"
                          foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
                         {                            
 
@@ -142,7 +157,7 @@ WriteLiteral(" class=\"img-circle\"");
 WriteLiteral(">");
 
             
-            #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                   Write(user.Person.Initials);
 
             
@@ -151,7 +166,7 @@ WriteLiteral(">");
 WriteLiteral("</span> <span>");
 
             
-            #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                       Write(user.Person.Name);
 
             
@@ -164,7 +179,7 @@ WriteLiteral(" class=\"text-success\"");
 WriteLiteral(">");
 
             
-            #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                                                                     Write(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()));
 
             
@@ -174,7 +189,7 @@ WriteLiteral("</small></span></a>                                \r\n           
 "</li>\r\n");
 
             
-            #line 25 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 30 "..\..\Views\Enquiry\Enquiry.cshtml"
                         }
 
             
@@ -199,7 +214,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 34 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 39 "..\..\Views\Enquiry\Enquiry.cshtml"
                    Write(Html.Partial("Timeline", Model.Timeline));
 
             
@@ -216,13 +231,13 @@ WriteLiteral(" class=\"col-sm-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 39 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 44 "..\..\Views\Enquiry\Enquiry.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 39 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 44 "..\..\Views\Enquiry\Enquiry.cshtml"
                              foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
 
@@ -233,24 +248,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2138), Tuple.Create("\"", 2166)
+WriteAttribute("action", Tuple.Create(" action=\"", 2458), Tuple.Create("\"", 2486)
             
-            #line 41 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2147), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+            #line 46 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 2467), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2147), false)
+, 2467), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2167), Tuple.Create("\"", 2222)
+WriteAttribute("method", Tuple.Create(" method=\"", 2487), Tuple.Create("\"", 2542)
             
-            #line 41 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2176), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 46 "..\..\Views\Enquiry\Enquiry.cshtml"
+           , Tuple.Create(Tuple.Create("", 2496), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2176), false)
+, 2496), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -259,14 +274,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2299), Tuple.Create("\"", 2332)
+WriteAttribute("value", Tuple.Create(" value=\"", 2619), Tuple.Create("\"", 2652)
             
-            #line 42 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2307), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
+ , Tuple.Create(Tuple.Create("", 2627), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2307), false)
+, 2627), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -278,7 +293,7 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 48 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                        Write(action.Description(Html.LoggedInUser()));
 
             
@@ -287,7 +302,7 @@ WriteLiteral(">");
 WriteLiteral("</button>\r\n                                </form>\r\n");
 
             
-            #line 45 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
                             }
 
             
@@ -594,7 +609,7 @@ WriteLiteral("></script>        \r\n\r\n    <script>\r\n        // Setup preview
 "                           \'<div class=\"chat-image\"> <span class=\"img-circle\">");
 
             
-            #line 237 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 242 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -605,14 +620,14 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 240 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 245 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 240 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 245 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                    Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -641,7 +656,7 @@ WriteLiteral(@"</h4>' +
                     url: '/enquiry/");
 
             
-            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 265 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -650,7 +665,7 @@ WriteLiteral(@"</h4>' +
 WriteLiteral("/chat/");
 
             
-            #line 260 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 265 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -679,7 +694,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 280 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 285 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -688,7 +703,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 280 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 285 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             

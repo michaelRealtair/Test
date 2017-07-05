@@ -17147,10 +17147,33 @@ textarea.form-control.chat-box {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.chat-description {
-  padding: 10px 15px;
+.chat-left-header {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
   font-weight: 500;
   font-size: small;
-  /* min-height: 60px; */
+  min-height: 40px;
+}
+.chat-left-back {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline;
+  border-radius: 0;
+  border-width: 0 1px 0px 0px;
+  border-right: 1px solid rgba(120, 130, 140, 0.13);
+  font-size: x-large;
+  float: left;
+  background-color: #dddddd !important;
+  color: #666;
+}
+.chat-left-back:hover {
+  color: #ffffff;
+  border: 0;
+  opacity: 1;
+  background-color: #555 !important;
+}
+.chat-left-description {
+  display: inline;
+  padding: 10px;
+  line-height: 40px;
 }
