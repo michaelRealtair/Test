@@ -17130,3 +17130,15 @@ a.btn-social {
   display: inline-block;
   cursor: pointer;
 }
+.chat-left-aside {
+  height: 100%;
+}
+.col-sm-12.newmessage {
+  padding: 0;
+}
+.row.send-chat-box {
+  margin: 0;
+}
+textarea.form-control.chat-box {
+  border-radius: 0;
+}
