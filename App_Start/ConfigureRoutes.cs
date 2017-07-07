@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.ConfigureRoutes), "Start")]
-namespace Realtair.Framework.Core.Web
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Realtair.Framework.Core.Web.Utilities.ConfigureRoutes), "Start")]
+namespace Realtair.Framework.Core.Web.Utilities
 {
     public static class ConfigureRoutes
     {
