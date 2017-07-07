@@ -12,6 +12,11 @@ namespace Realtair.Framework.Core.Web.Controllers
 {
     public class SearchController : BaseController
     {
+        public SearchController(IAuthenticationFactory authenticationFactory)
+            : base(authenticationFactory)
+        {
+        }
+
         //[Route("{entityTypeName}/search")]
         public ActionResult Search(string entityTypeName, string query, bool allowMultipleSelection = false, string text = "")
         {

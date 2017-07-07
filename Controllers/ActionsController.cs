@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Action = Realtair.Framework.Core.Actions.Action;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
@@ -13,9 +12,16 @@ namespace Realtair.Framework.Core.Web.Controllers
     using Framework.Core.Entities;
     using System.Web;
     using Utilities;
+    using Interfaces;
+
     public class ActionsController : BaseController
     {
         bool PostValuesSet;
+
+        public ActionsController(IAuthenticationFactory authenticationFactory) 
+            : base(authenticationFactory)
+        {
+        }
 
         public class ActionViewModel
         {

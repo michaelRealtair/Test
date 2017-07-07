@@ -8,17 +8,18 @@ using Realtair.Framework.Core.Data;
 using System.Security.Principal;
 using Realtair.Framework.Core.Interfaces;
 using System;
+using Realtair.Framework.Core.Web.Utilities;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
     public abstract class BaseController : System.Web.Mvc.Controller
     {
+        // Fields
+        private User user;
+        private IAuthenticationFactory authenticationFactory;
+
         // Properties
         public IPrincipal Principal => base.User;
-
-        //private DbContext _Database;
-        private User _User;
-
         public DbContext DbContext
         {
             get
@@ -26,22 +27,27 @@ namespace Realtair.Framework.Core.Web.Controllers
                 return SingletonDbContext.Instance.DbContext;
             }
         }
-
-        protected virtual IAuthentication Auth => new Utilities.Authentication(Response, Request, Principal);
-
+        protected virtual IAuthentication Auth => authenticationFactory.CreateInstance(Response, Request, Principal);
         protected new User User
         {
             get
             {
-                if (Auth.IsLoggedIn && (_User == null || _User.RoleType == BaseRoleType.LoggedOut))
-                    _User = DbContext.Set<User>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
-                else if (_User == null)
-                    _User = DbContext.Set<User>().First(u => u.RoleType == BaseRoleType.LoggedOut);
+                if (Auth.IsLoggedIn && (user == null || user.RoleType == BaseRoleType.LoggedOut))
+                    user = DbContext.Set<User>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
+                else if (user == null)
+                    user = DbContext.Set<User>().First(u => u.RoleType == BaseRoleType.LoggedOut);
 
-                return _User;
+                return user;
             }
         }
+        
+        // Constructors
+        public BaseController(IAuthenticationFactory authenticationFactory)
+        {
+            this.authenticationFactory = authenticationFactory;
+        }
 
+        // Methods
         protected override void Dispose(bool disposing)
         {
             if (disposing && DbContext != null)
@@ -49,16 +55,14 @@ namespace Realtair.Framework.Core.Web.Controllers
                 if (DbContext.ChangeTracker.Entries().Any())
                     DbContext.SaveChanges();
                 DbContext.Dispose();
-                _User = null;
+                user = null;
             }
         }
-
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             ViewBag.LoginSession = new LoginSession() { User = User };
             base.OnActionExecuting(filterContext);
         }
-
         protected string RenderPartialViewToString(string viewName, object model)
         {
             if (string.IsNullOrEmpty(viewName))
@@ -76,7 +80,6 @@ namespace Realtair.Framework.Core.Web.Controllers
                 return sw.GetStringBuilder().ToString();
             }
         }
-
         protected override void OnException(ExceptionContext filterContext)
         {
             if (!HttpContext.IsDebuggingEnabled)
