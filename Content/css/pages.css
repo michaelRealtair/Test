@@ -1016,13 +1016,13 @@ a.mytooltip {
   margin: -7px 0 0 -15px;
   width: 30px;
   height: 20px;
-  background: url(../plugins/images/tooltip/tooltip1.svg) no-repeat center center;
+  background: url(https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/tooltip/tooltip1.svg) no-repeat center center;
   background-size: 100%;
 }
 /***********Bloated Tooltip ***********/
 .tooltip-content3 {
   position: absolute;
-  background: url(../plugins/images/tooltip/shape1.svg) no-repeat center bottom;
+  background: url(https://wrappixel.com/ampleadmin/ampleadmin-html/plugins/images/tooltip/shape1.svg) no-repeat center bottom;
   background-size: 100% 100%;
   z-index: 9999;
   width: 200px;
@@ -1396,7 +1396,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   resize: none;
   height: 80px;
-  padding-right: 180px;
+  padding-right: 100px;
 }
 .chat-main-box .chat-right-aside .send-chat-box .form-control:focus {
   border-color: rgba(120, 130, 140, 0.13);
@@ -1404,7 +1404,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 .chat-main-box .chat-right-aside .send-chat-box .custom-send {
   position: absolute;
   right: 20px;
-  bottom: 10px;
+  bottom: 30px;
 }
 .chat-main-box .chat-right-aside .send-chat-box .custom-send .cst-icon {
   color: #313131;

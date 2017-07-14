@@ -16,7 +16,8 @@ $(document).ready(function () {
 
     $(".open-close").on("click", function () {
         body.toggleClass("show-sidebar").toggleClass("hide-sidebar");
-        $(".sidebar-head .open-close i").toggleClass("ti-menu");
+        //$(".sidebar-head .open-close i").toggleClass("ti-menu");
+        $(".sidebar-head .open-close i").css("color", "#323232");
     });
 
     /* ===== Open-Close Right Sidebar ===== */
@@ -164,7 +165,7 @@ $(document).ready(function () {
 
     /* ===== Sidebar ===== */
 
-    $('.slimscrollright').slimScroll({
+    /*$('.slimscrollright').slimScroll({
         height: '100%',
         position: 'right',
         size: "5px",
@@ -182,7 +183,7 @@ $(document).ready(function () {
         size: "0px",
         color: '#dcdcdc'
     });
-
+    */
     /* ===== Resize all elements ===== */
 
     body.trigger("resize");
@@ -211,6 +212,6 @@ $(document).ready(function () {
     ================================================================= */
 
     $(".navbar-toggle").on("click", function () {
-        $(".navbar-toggle i").toggleClass("ti-menu").addClass("ti-close");
+        //$(".navbar-toggle i").toggleClass("ti-menu").addClass("ti-close");
     });
 });

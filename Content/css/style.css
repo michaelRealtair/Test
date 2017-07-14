@@ -15666,7 +15666,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   resize: none;
   height: 80px;
-  padding-right: 180px;
+  padding-right: 100px;
 }
 .chat-main-box .chat-right-aside .send-chat-box .form-control:focus {
   border-color: rgba(120, 130, 140, 0.13);
@@ -15674,7 +15674,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 .chat-main-box .chat-right-aside .send-chat-box .custom-send {
   position: absolute;
   right: 20px;
-  bottom: 10px;
+  bottom: 30px;
 }
 .chat-main-box .chat-right-aside .send-chat-box .custom-send .cst-icon {
   color: #313131;
@@ -16913,6 +16913,16 @@ ul.pro-amenities li span i {
   }
   .chat-list {
     min-height: calc(100vh - 190px) !important;
+  }
+  .sidebar-nav {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .send-chat-box {
+    position: fixed !important;
+    bottom: 0px !important;
   }
 }
 footer.footer.ticker {

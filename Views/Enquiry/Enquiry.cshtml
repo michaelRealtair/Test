@@ -35,12 +35,12 @@
             <!-- .chat-right-panel -->
             <div class="chat-right-aside">
                 <div class="chat-box">
-                    <div class="messagebox">
+                    <div class="messagebox" style="overflow-x: auto;">
                         @Html.Partial("Timeline", Model.Timeline)
                     </div>
                     <div class="row send-chat-box">
                         <!-- Action Buttons -->
-                        <div class="col-sm-12">
+                        <div id="actionForms" style="padding-top: 10px; background: #fff;" class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
                                 <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
@@ -64,13 +64,13 @@
                             <div id="file-attachment-progress" class="file-attachment-progress">
                                 <h3>Uploading...</h3>
                             </div>
-                            <textarea class="form-control chat-box" placeholder="Type your message" name="messageText"></textarea>
+                            <textarea class="form-control chat-box" placeholder="Type your message" name="messageText" id="messageText"></textarea>
                             <div class="custom-send">                                
                                 <a id="attach-file" class="cst-icon" href="#" title="#"><i class="fa fa-paperclip"></i></a>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
                 <!-- .chat-right-panel -->
             </div>
@@ -180,13 +180,20 @@
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;       
         
-        $('.chat-list').slimScroll({            
-            start: 'bottom'
-        });
+        //$('.chat-list').slimScroll({            
+        //    start: 'bottom'
+        //});
 
-        $('.slimScrollDiv').css("height", "");
+        $('body').css("overflow-y","hidden");
+        $("#messageText").focus();                
+        
+        //$('.slimScrollDiv').css("height", "");
 
-        $(function () {            
+        $(window).resize(function () {
+            $('.send-chat-box').css("width", parseInt($('.chat-box').width()));
+        });        
+
+        $(document).ready(function () {
             $('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
                     var image = $(this).find('img').attr('src');
@@ -224,7 +231,9 @@
                     // el.style.cssText = '-moz-box-sizing:content-box';
                     el.style.cssText = 'height:' + el.scrollHeight + 'px';
                 }, 0);
-            }  
+            }
+
+            setTimeout(function () { $('.messagebox').scrollTop(9999, "slow"); }, 3000);
         });
 
         function sendMessage() {
@@ -291,10 +300,10 @@
                     $('.messagebox').children().not('.sending').remove();
                     $(".messagebox").prepend(data);
                     
-                    $('.chat-list').slimScroll({
-                        start: 'bottom'
-                    });
-                    $('.slimScrollDiv').css("height", "");
+                    //$('.chat-list').slimScroll({
+                    //    start: 'bottom'
+                    //});
+                    //$('.slimScrollDiv').css("height", "");
 
                     setTimeout(doPoll, pollTime);
                 },

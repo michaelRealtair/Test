@@ -393,6 +393,12 @@
     <Content Include="Content\css\variables.min.css" />
     <Content Include="Content\js\cbpFWTabs.js" />
     <Content Include="Content\js\chat.js" />
+    <Content Include="Content\js\custom.es5.js">
+      <DependentUpon>custom.js</DependentUpon>
+    </Content>
+    <Content Include="Content\js\custom.es5.min.js">
+      <DependentUpon>custom.es5.js</DependentUpon>
+    </Content>
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\custom.min.js" />
     <Content Include="Content\js\dashboard1.js" />
