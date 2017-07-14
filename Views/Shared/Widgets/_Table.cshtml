@@ -1,6 +1,8 @@
 ﻿@using Realtair.Framework.Core.Interfaces
+@using Realtair.Framework.Core.Web.Utilities
 @using System.Text.RegularExpressions
 @model Realtair.Framework.Core.Entities.Display.TableWidget
+
 <div class="panel panel-default">
     <div class="panel-heading">@Model.Name</div>
     <div class="panel-wrapper collapse in">
@@ -30,11 +32,17 @@
                             {
                                 <td>@Html.Render(Url, column)</td>
                             }
-                            else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
+                            else if (column.ToString().IsValidUrl())
+                            {
+                                <td><a href="@column" target="_blank">View</a></td>
+                            }
+
+                            @*else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
                             {
                                 <td><a href="@column" target="_blank">@column</a></td>
-                            }
-                            else {
+                            }*@
+                        else
+                        {
                                 <td>@column</td>
                             }
                         }
