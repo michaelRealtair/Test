@@ -235,7 +235,13 @@ namespace Realtair.Framework.Core.Web.Utilities
             return Regex.Replace(input, @"^\w|-\w",
                 (match) => match.Value.Replace("-", "").ToUpper());
         }
-        
+
+        public static bool IsValidUrl(this string input)
+        {
+            var supportedProtocols = new[] { "http", "https" };
+            return Uri.IsWellFormedUriString(input, UriKind.Absolute) && supportedProtocols.Contains(new Uri(input).Scheme);
+        }
+
         public static Enquiry GetEnquiry(DbContext db, int id)
         {
             return db.Set<Enquiry>().First(w => w.Id == id);
