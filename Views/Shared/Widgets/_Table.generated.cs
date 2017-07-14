@@ -259,17 +259,17 @@ WriteLiteral(">View</a></td>\r\n");
             
             #line 43 "..\..\Views\Shared\Widgets\_Table.cshtml"
                                
-                        else
-                        {
+                            else
+                            {
 
             
             #line default
             #line hidden
-WriteLiteral("                                <td>");
+WriteLiteral("                                    <td>");
 
             
             #line 46 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                               Write(column);
+                                   Write(column);
 
             
             #line default
@@ -278,8 +278,8 @@ WriteLiteral("</td>\r\n");
 
             
             #line 47 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                                }
                             }
-                        }
 
             
             #line default
