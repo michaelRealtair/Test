@@ -25,7 +25,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                 var providerType = CoreExtensions.GetEntityType(entityTypeName).GetInterfaces().First(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ISearchable<>)).GetGenericArguments()[0];
                 var provider = (ISearchProvider)Activator.CreateInstance(providerType);
 
-                var searchResults = provider.Search(DbContext, User, "", "");
+                var searchResults = provider.Search(DbContext, User, query, text);
 
                 return View(searchResults);
             } else
