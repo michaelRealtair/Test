@@ -14,14 +14,17 @@ $(document).ready(function () {
     });
     $(function () {
         $(window).on("load", function () { // On load
-            $('.chat-list').css({
-                'height': (($(window).height()) - 470) + 'px'
-            });
+            //$('.chat-list').css({
+            //    'height': (($(window).height()) - 470) + 'px'
+            //});
+            //$('.send-chat-box').css("width", parseInt($('.chat-box').width()));
         });
         $(window).on("resize", function () { // On resize
-            $('.chat-list').css({
-                'height': (($(window).height()) - 470) + 'px'
-            });
+            //$('.chat-list').css({
+            //    'height': (($(window).height()) - 470) + 'px'
+            //});
+            $('.send-chat-box').css("width", parseInt($('.chat-box').width()));
+            setTimeout(function () { $('.messagebox').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow"); }, 300);
         });
     });
 
@@ -45,5 +48,4 @@ $(document).ready(function () {
         $(".chat-left-aside").toggleClass("open-pnl");
         $(".open-panel i").toggleClass("ti-angle-left");        
     });
-
 });

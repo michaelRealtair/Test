@@ -209,8 +209,6 @@ WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"messagebox\"");
 
-WriteLiteral(" style=\"overflow-x: auto;\"");
-
 WriteLiteral(">\r\n");
 
 WriteLiteral("                        ");
@@ -254,24 +252,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2534), Tuple.Create("\"", 2562)
+WriteAttribute("action", Tuple.Create(" action=\"", 2508), Tuple.Create("\"", 2536)
             
             #line 46 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2543), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2517), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2543), false)
+, 2517), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2563), Tuple.Create("\"", 2618)
+WriteAttribute("method", Tuple.Create(" method=\"", 2537), Tuple.Create("\"", 2592)
             
             #line 46 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2572), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2546), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2572), false)
+, 2546), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -280,14 +278,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2695), Tuple.Create("\"", 2728)
+WriteAttribute("value", Tuple.Create(" value=\"", 2669), Tuple.Create("\"", 2702)
             
             #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2703), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2677), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2703), false)
+, 2677), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -551,7 +549,7 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/js/photoswipe-ui-default.min.js\"");
 
-WriteLiteral("></script>\r\n    \r\n    <script");
+WriteLiteral("></script>\r\n\r\n    <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/js/chat.js\"");
 
@@ -559,70 +557,73 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/js/dropzone.js\"");
 
-WriteLiteral("></script>        \r\n\r\n    <script>\r\n        // Setup preview node...\r\n        var" +
-" previewNode = document.querySelector(\"#file-attachment-thumbnails\");\r\n        p" +
-"reviewNode.id = \"\";\r\n        var previewTemplate = previewNode.parentNode.innerH" +
-"TML;\r\n        previewNode.parentNode.removeChild(previewNode);\r\n\r\n        // Set" +
-"up progress node...\r\n        var progressNode = document.querySelector(\'#file-at" +
-"tachment-progress\');\r\n        progressNode.id = \'\';\r\n        var progressTemplat" +
-"e = progressNode.parentNode.innerHTML;\r\n        progressNode.parentNode.removeCh" +
-"ild(progressNode);\r\n\r\n        // Initialize Dropzone\r\n        var dz = new Dropz" +
-"one(document.body, {\r\n            url: \'/\',\r\n            thumbnailWidth: null,\r\n" +
-"            thumbnailHeight: null,\r\n            parallelUploads: 10,\r\n          " +
-"  previewTemplate: previewTemplate,\r\n            autoQueue: false,\r\n            " +
-"previewsContainer: \'#file-attachment\',\r\n            clickable: \'#attach-file\',\r\n" +
-"            init: function () {\r\n                this.on(\'addedfile\', function (" +
-"file) {\r\n                    var query = $(\'#file-attachment\');\r\n               " +
-"     if (!query.is(\':visible\')) {\r\n                        query.find(\'img\').att" +
-"r(\'style\',\'height: 40px; width: 40px;\');\r\n                        query.show();\r" +
-"\n                    }\r\n                });\r\n            }\r\n        });\r\n\r\n     " +
-"   // On-click Handlers\r\n        $(\'#send-button\').click(function () {\r\n        " +
-"    sendMessage();\r\n            dz.removeAllFiles(true);\r\n        });\r\n\r\n    </s" +
-"cript>\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollTime =" +
-" 1000 * 10;       \r\n        \r\n        //$(\'.chat-list\').slimScroll({            " +
-"\r\n        //    start: \'bottom\'\r\n        //});\r\n\r\n        $(\'body\').css(\"overflo" +
-"w-y\",\"hidden\");\r\n        $(\"#messageText\").focus();                \r\n        \r\n " +
-"       //$(\'.slimScrollDiv\').css(\"height\", \"\");\r\n\r\n        $(window).resize(func" +
-"tion () {\r\n            $(\'.send-chat-box\').css(\"width\", parseInt($(\'.chat-box\')." +
-"width()));\r\n        });        \r\n\r\n        $(document).ready(function () {\r\n    " +
-"        $(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal-att" +
-"achments\').find(\'.picked\').each(function () {\r\n                    var image = $" +
-"(this).find(\'img\').attr(\'src\');\r\n                    var storageguid = $(this).f" +
-"ind(\'img\').attr(\'storageguid\');\r\n                    $(\'.file-attachment-thumbna" +
-"ils\').append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" " +
-"style=\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa " +
-"fa-times\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + sto" +
-"rageguid + \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-attachm" +
-"ent-thumbnails\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n" +
-"                    $(\'.existing-preview\').each(function () {\r\n                 " +
-"       var $this = $(this);\r\n                        $(this).find(\'a.close-file\'" +
-").click(function () { $this.remove(); });\r\n                    });\r\n            " +
-"    });\r\n            });\r\n\r\n            /* Auto popup gallery */\r\n            va" +
-"r url = window.location.href;\r\n            var hash = url.substring(url.indexOf(" +
-"\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n            for (var i =" +
-" 0; i < queries.length; i++) {\r\n                if (queries[i].includes(\"pid\")) " +
-"{\r\n                    var pid = queries[i].split(\"=\")[1];\r\n                    " +
-"$(\'#\' + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            " +
-"var textarea = document.querySelector(\'textarea[name=messageText]\');\r\n          " +
-"  textarea.addEventListener(\'keydown\', autosize);\r\n\r\n            function autosi" +
-"ze() {\r\n                var el = this;\r\n                setTimeout(function () {" +
-"\r\n                    el.style.cssText = \'height:auto; padding:0\';\r\n            " +
-"        // for box-sizing other than \"content-box\" use:\r\n                    // " +
-"el.style.cssText = \'-moz-box-sizing:content-box\';\r\n                    el.style." +
-"cssText = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n         " +
-"   }\r\n\r\n            setTimeout(function () { $(\'.messagebox\').scrollTop(9999, \"s" +
-"low\"); }, 3000);\r\n        });\r\n\r\n        function sendMessage() {\r\n            t" +
-"empSentMessageId++;\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r" +
-"\n            var messageText = $(\'textarea[name=messageText]\').val();\r\n         " +
-"   var attachments = $(\".file-attachment .preview\");\r\n            var existingAt" +
-"tachments = $(\".file-attachment .existing-preview\");\r\n            var files = dz" +
-".files.map(function (a, i) {\r\n                return `${a.name}|${$(\'span.previe" +
-"w > img\', a.previewTemplate).attr(\'src\')}`;\r\n            });\r\n\r\n            var " +
-"message = $(\'<li class=\"odd\">\' +\r\n                            \'<div class=\"chat-" +
-"image\"> <span class=\"img-circle\">");
+WriteLiteral("></script> \r\n\r\n    <script>\r\n        // Setup preview node...\r\n        var previe" +
+"wNode = document.querySelector(\"#file-attachment-thumbnails\");\r\n        previewN" +
+"ode.id = \"\";\r\n        var previewTemplate = previewNode.parentNode.innerHTML;\r\n " +
+"       previewNode.parentNode.removeChild(previewNode);\r\n\r\n        // Setup prog" +
+"ress node...\r\n        var progressNode = document.querySelector(\'#file-attachmen" +
+"t-progress\');\r\n        progressNode.id = \'\';\r\n        var progressTemplate = pro" +
+"gressNode.parentNode.innerHTML;\r\n        progressNode.parentNode.removeChild(pro" +
+"gressNode);\r\n\r\n        // Initialize Dropzone\r\n        var dz = new Dropzone(doc" +
+"ument.body, {\r\n            url: \'/\',\r\n            thumbnailWidth: null,\r\n       " +
+"     thumbnailHeight: null,\r\n            parallelUploads: 10,\r\n            previ" +
+"ewTemplate: previewTemplate,\r\n            autoQueue: false,\r\n            preview" +
+"sContainer: \'#file-attachment\',\r\n            clickable: \'#attach-file\',\r\n       " +
+"     init: function () {\r\n                this.on(\'addedfile\', function (file) {" +
+"\r\n                    var query = $(\'#file-attachment\');\r\n                    if" +
+" (!query.is(\':visible\')) {\r\n                        query.find(\'img\').attr(\'styl" +
+"e\',\'height: 40px; width: 40px;\');\r\n                        query.show();\r\n      " +
+"              }\r\n                });\r\n            }\r\n        });\r\n\r\n        // O" +
+"n-click Handlers\r\n        $(\'#send-button\').click(function () {\r\n            sen" +
+"dMessage();\r\n            dz.removeAllFiles(true);\r\n        });\r\n\r\n    </script>\r" +
+"\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var pollTime = 1000 *" +
+" 10;       \r\n        \r\n        //$(\'.chat-list\').slimScroll({            \r\n     " +
+"   //    start: \'bottom\'\r\n        //});\r\n        \r\n        //$(\"#messageText\").f" +
+"ocus();                \r\n        \r\n        //$(\'.slimScrollDiv\').css(\"height\", \"" +
+"\");    \r\n        \r\n        //$(\'.sidebar\').css(\"border-bottom\", \"20px solid #F2F" +
+"2F3\");\r\n        //$(\'#page-wrapper\').css(\"padding-top\",\" 130px\");\r\n        //$(\'" +
+"body\').css(\"overflow-y\", \"hidden\");\r\n\r\n        $(document).ready(function () {\r\n" +
+"            $(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal" +
+"-attachments\').find(\'.picked\').each(function () {\r\n                    var image" +
+" = $(this).find(\'img\').attr(\'src\');\r\n                    var storageguid = $(thi" +
+"s).find(\'img\').attr(\'storageguid\');\r\n                    $(\'.file-attachment-thu" +
+"mbnails\').append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid +" +
+" \'\" style=\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i class=" +
+"\"fa fa-times\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' +" +
+" storageguid + \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-att" +
+"achment-thumbnails\').show();\r\n                    $(this).toggleClass(\"picked\");" +
+"\r\n\r\n                    $(\'.existing-preview\').each(function () {\r\n             " +
+"           var $this = $(this);\r\n                        $(this).find(\'a.close-f" +
+"ile\').click(function () { $this.remove(); });\r\n                    });\r\n        " +
+"        });\r\n            });\r\n\r\n            /* Auto popup gallery */\r\n          " +
+"  var url = window.location.href;\r\n            var hash = url.substring(url.inde" +
+"xOf(\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n            for (var" +
+" i = 0; i < queries.length; i++) {\r\n                if (queries[i].includes(\"pid" +
+"\")) {\r\n                    var pid = queries[i].split(\"=\")[1];\r\n                " +
+"    $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n        " +
+"    var textarea = document.querySelector(\'textarea[name=messageText]\');\r\n      " +
+"      textarea.addEventListener(\'keydown\', autosize);\r\n\r\n            function au" +
+"tosize() {\r\n                var el = this;\r\n                setTimeout(function " +
+"() {\r\n                    el.style.cssText = \'height:auto; padding:0\';\r\n        " +
+"            // for box-sizing other than \"content-box\" use:\r\n                   " +
+" // el.style.cssText = \'-moz-box-sizing:content-box\';\r\n                    el.st" +
+"yle.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n     " +
+"       }\r\n\r\n            if (navigator.userAgent.match(/iPhone/i)) {             " +
+"   \r\n                $(\".chat-list > li:last-child\").css(\"padding-bottom\", \"100p" +
+"x\");                \r\n            }\r\n\r\n            setTimeout(function () { $(\'b" +
+"ody\').scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\"); }, 3000);\r\n " +
+"       });\r\n\r\n        function sendMessage() {\r\n            tempSentMessageId++;" +
+"\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var me" +
+"ssageText = $(\'textarea[name=messageText]\').val();\r\n            var attachments " +
+"= $(\".file-attachment .preview\");\r\n            var existingAttachments = $(\".fil" +
+"e-attachment .existing-preview\");\r\n            var files = dz.files.map(function" +
+" (a, i) {\r\n                return `${a.name}|${$(\'span.preview > img\', a.preview" +
+"Template).attr(\'src\')}`;\r\n            });\r\n\r\n            var message = $(\'<li cl" +
+"ass=\"odd\">\' +\r\n                            \'<div class=\"chat-image\"> <span class" +
+"=\"img-circle\">");
 
             
-            #line 251 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 254 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -633,14 +634,14 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 254 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 257 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 254 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 257 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                    Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -669,7 +670,7 @@ WriteLiteral(@"</h4>' +
                     url: '/enquiry/");
 
             
-            #line 274 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 277 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -678,7 +679,7 @@ WriteLiteral(@"</h4>' +
 WriteLiteral("/chat/");
 
             
-            #line 274 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 277 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -707,7 +708,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 294 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 297 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -716,7 +717,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 294 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 297 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -735,6 +736,9 @@ WriteLiteral(@"/get-updated-timeline?isActive=' + true,
                     //    start: 'bottom'
                     //});
                     //$('.slimScrollDiv').css(""height"", """");
+                    if (navigator.userAgent.match(/iPhone/i)) {
+                        $("".chat-list > li:last-child"").css(""padding-bottom"", ""100px"");
+                    }
 
                     setTimeout(doPoll, pollTime);
                 },

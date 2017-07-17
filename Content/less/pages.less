@@ -1563,14 +1563,15 @@ table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
 
 .chat-main-box {
     position: relative;
-    background: @white;
+    /*background: @white;*/
     overflow: hidden;
     .chat-left-aside {
-        position: absolute;
+        position: fixed;
         width: 250px;
         z-index: 9;
-        top: 0px;
+        /*top: 0px;*/
         border-right: 1px solid @border;
+        background: @white;
         .open-panel {
             display: none;
             cursor: pointer;
@@ -1607,13 +1608,16 @@ table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
     }
     .chat-right-aside {
         margin-left: 250px;
+        background: @white;
+        .messagebox{    min-height: 800px;}
         .chat-list {
             max-height: none;
             height: 100%;
             padding-top: 40px;
+            padding-bottom: 60px;
             .chat-text {
                 border-radius: 6px;
-            }
+            }            
         }
         .send-chat-box {
             position: relative;

@@ -35,7 +35,7 @@
             <!-- .chat-right-panel -->
             <div class="chat-right-aside">
                 <div class="chat-box">
-                    <div class="messagebox" style="overflow-x: auto;">
+                    <div class="messagebox">
                         @Html.Partial("Timeline", Model.Timeline)
                     </div>
                     <div class="row send-chat-box">
@@ -131,9 +131,9 @@
     <script src="https://static.realtair.com/js/jquery.easing.min.js"></script>
     <script src="https://static.realtair.com/js/photoswipe.min.js"></script>
     <script src="https://static.realtair.com/js/photoswipe-ui-default.min.js"></script>
-    
+
     <script src="https://static.realtair.com/js/chat.js"></script>
-    <script src="https://static.realtair.com/js/dropzone.js"></script>        
+    <script src="https://static.realtair.com/js/dropzone.js"></script> 
 
     <script>
         // Setup preview node...
@@ -183,15 +183,14 @@
         //$('.chat-list').slimScroll({            
         //    start: 'bottom'
         //});
-
-        $('body').css("overflow-y","hidden");
-        $("#messageText").focus();                
         
-        //$('.slimScrollDiv').css("height", "");
-
-        $(window).resize(function () {
-            $('.send-chat-box').css("width", parseInt($('.chat-box').width()));
-        });        
+        //$("#messageText").focus();                
+        
+        //$('.slimScrollDiv').css("height", "");    
+        
+        //$('.sidebar').css("border-bottom", "20px solid #F2F2F3");
+        //$('#page-wrapper').css("padding-top"," 130px");
+        //$('body').css("overflow-y", "hidden");
 
         $(document).ready(function () {
             $('#selectPhotosBtn').click(function () {
@@ -233,7 +232,11 @@
                 }, 0);
             }
 
-            setTimeout(function () { $('.messagebox').scrollTop(9999, "slow"); }, 3000);
+            if (navigator.userAgent.match(/iPhone/i)) {                
+                $(".chat-list > li:last-child").css("padding-bottom", "100px");                
+            }
+
+            setTimeout(function () { $('body').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow"); }, 3000);
         });
 
         function sendMessage() {
@@ -304,6 +307,9 @@
                     //    start: 'bottom'
                     //});
                     //$('.slimScrollDiv').css("height", "");
+                    if (navigator.userAgent.match(/iPhone/i)) {
+                        $(".chat-list > li:last-child").css("padding-bottom", "100px");
+                    }
 
                     setTimeout(doPoll, pollTime);
                 },

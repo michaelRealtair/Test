@@ -15606,15 +15606,16 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 /*Chat-box page */
 .chat-main-box {
   position: relative;
-  background: #ffffff;
+  /*background: @white;*/
   overflow: hidden;
 }
 .chat-main-box .chat-left-aside {
-  position: absolute;
+  position: fixed;
   width: 250px;
   z-index: 9;
-  top: 0px;
+  /*top: 0px;*/
   border-right: 1px solid rgba(120, 130, 140, 0.13);
+  background: #ffffff;
 }
 .chat-main-box .chat-left-aside .open-panel {
   display: none;
@@ -15649,11 +15650,16 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 }
 .chat-main-box .chat-right-aside {
   margin-left: 250px;
+  background: #ffffff;
+}
+.chat-main-box .chat-right-aside .messagebox {
+  min-height: 800px;
 }
 .chat-main-box .chat-right-aside .chat-list {
   max-height: none;
   height: 100%;
   padding-top: 40px;
+  padding-bottom: 60px;
 }
 .chat-main-box .chat-right-aside .chat-list .chat-text {
   border-radius: 6px;
@@ -16468,11 +16474,13 @@ ul.pro-amenities li span i {
   .navbar-static-top {
     padding-left: 60px;
   }
+  .fix-header {
+    /*#page-wrapper {
+            margin-top: 60px;
+        }*/
+  }
   .fix-header .navbar-static-top {
     position: fixed;
-  }
-  .fix-header #page-wrapper {
-    margin-top: 60px;
   }
 }
 .navbar-top-links .dropdown-messages,
@@ -16886,7 +16894,7 @@ ul.pro-amenities li span i {
 }
 @media (min-width: 768px) {
   #page-wrapper {
-    padding-top: 75px;
+    padding-top: 125px;
   }
 }
 .top-left-part {
@@ -16923,6 +16931,8 @@ ul.pro-amenities li span i {
   .send-chat-box {
     position: fixed !important;
     bottom: 0px !important;
+    min-width: 320px;
+    width: 890px;
   }
 }
 footer.footer.ticker {
@@ -17148,6 +17158,9 @@ a.btn-social {
 }
 .row.send-chat-box {
   margin: 0;
+  position: fixed !important;
+  bottom: 0px !important;
+  width: 890px;
 }
 textarea.form-control.chat-box {
   border-radius: 0;

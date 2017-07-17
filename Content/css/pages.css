@@ -1336,15 +1336,16 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 /*Chat-box page */
 .chat-main-box {
   position: relative;
-  background: #ffffff;
+  /*background: @white;*/
   overflow: hidden;
 }
 .chat-main-box .chat-left-aside {
-  position: absolute;
+  position: fixed;
   width: 250px;
   z-index: 9;
-  top: 0px;
+  /*top: 0px;*/
   border-right: 1px solid rgba(120, 130, 140, 0.13);
+  background: #ffffff;
 }
 .chat-main-box .chat-left-aside .open-panel {
   display: none;
@@ -1379,11 +1380,16 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
 }
 .chat-main-box .chat-right-aside {
   margin-left: 250px;
+  background: #ffffff;
+}
+.chat-main-box .chat-right-aside .messagebox {
+  min-height: 800px;
 }
 .chat-main-box .chat-right-aside .chat-list {
   max-height: none;
   height: 100%;
   padding-top: 40px;
+  padding-bottom: 60px;
 }
 .chat-main-box .chat-right-aside .chat-list .chat-text {
   border-radius: 6px;
