@@ -587,48 +587,45 @@ WriteLiteral("></script> \r\n\r\n    <script>\r\n        // Setup preview node..
 "ocus();                \r\n        \r\n        //$(\'.slimScrollDiv\').css(\"height\", \"" +
 "\");    \r\n        \r\n        //$(\'.sidebar\').css(\"border-bottom\", \"20px solid #F2F" +
 "2F3\");\r\n        //$(\'#page-wrapper\').css(\"padding-top\",\" 130px\");\r\n        //$(\'" +
-"body\').css(\"overflow-y\", \"hidden\");\r\n\r\n        $(document).ready(function () {\r\n" +
-"            $(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal" +
-"-attachments\').find(\'.picked\').each(function () {\r\n                    var image" +
-" = $(this).find(\'img\').attr(\'src\');\r\n                    var storageguid = $(thi" +
-"s).find(\'img\').attr(\'storageguid\');\r\n                    $(\'.file-attachment-thu" +
-"mbnails\').append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid +" +
-" \'\" style=\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i class=" +
-"\"fa fa-times\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' +" +
-" storageguid + \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-att" +
-"achment-thumbnails\').show();\r\n                    $(this).toggleClass(\"picked\");" +
-"\r\n\r\n                    $(\'.existing-preview\').each(function () {\r\n             " +
-"           var $this = $(this);\r\n                        $(this).find(\'a.close-f" +
-"ile\').click(function () { $this.remove(); });\r\n                    });\r\n        " +
-"        });\r\n            });\r\n\r\n            /* Auto popup gallery */\r\n          " +
-"  var url = window.location.href;\r\n            var hash = url.substring(url.inde" +
-"xOf(\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n            for (var" +
-" i = 0; i < queries.length; i++) {\r\n                if (queries[i].includes(\"pid" +
-"\")) {\r\n                    var pid = queries[i].split(\"=\")[1];\r\n                " +
-"    $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n        " +
-"    var textarea = document.querySelector(\'textarea[name=messageText]\');\r\n      " +
-"      textarea.addEventListener(\'keydown\', autosize);\r\n\r\n            function au" +
-"tosize() {\r\n                var el = this;\r\n                setTimeout(function " +
-"() {\r\n                    el.style.cssText = \'height:auto; padding:0\';\r\n        " +
-"            // for box-sizing other than \"content-box\" use:\r\n                   " +
-" // el.style.cssText = \'-moz-box-sizing:content-box\';\r\n                    el.st" +
-"yle.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n     " +
-"       }\r\n\r\n            if (navigator.userAgent.match(/iPhone/i)) {             " +
-"   \r\n                $(\".chat-list > li:last-child\").css(\"padding-bottom\", \"100p" +
-"x\");                \r\n            }\r\n\r\n            setTimeout(function () { $(\'b" +
-"ody\').scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\"); }, 3000);\r\n " +
-"       });\r\n\r\n        function sendMessage() {\r\n            tempSentMessageId++;" +
-"\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var me" +
-"ssageText = $(\'textarea[name=messageText]\').val();\r\n            var attachments " +
-"= $(\".file-attachment .preview\");\r\n            var existingAttachments = $(\".fil" +
-"e-attachment .existing-preview\");\r\n            var files = dz.files.map(function" +
-" (a, i) {\r\n                return `${a.name}|${$(\'span.preview > img\', a.preview" +
-"Template).attr(\'src\')}`;\r\n            });\r\n\r\n            var message = $(\'<li cl" +
-"ass=\"odd\">\' +\r\n                            \'<div class=\"chat-image\"> <span class" +
-"=\"img-circle\">");
+"body\').css(\"overflow-y\", \"hidden\");\r\n\r\n        $(function () {\r\n            $(\'#" +
+"selectPhotosBtn\').click(function () {\r\n                $(\'#modal-attachments\').f" +
+"ind(\'.picked\').each(function () {\r\n                    var image = $(this).find(" +
+"\'img\').attr(\'src\');\r\n                    var storageguid = $(this).find(\'img\').a" +
+"ttr(\'storageguid\');\r\n                    $(\'.file-attachment-thumbnails\').append" +
+"($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"backg" +
+"round-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"></" +
+"i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid + \'" +
+"\"></div>\'));\r\n                    $(\'.file-attachment, .file-attachment-thumbnai" +
+"ls\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n            " +
+"        $(\'.existing-preview\').each(function () {\r\n                        var $" +
+"this = $(this);\r\n                        $(this).find(\'a.close-file\').click(func" +
+"tion () { $this.remove(); });\r\n                    });\r\n                });\r\n   " +
+"         });\r\n\r\n            /* Auto popup gallery */\r\n            var url = wind" +
+"ow.location.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1);\r\n" +
+"            var queries = hash.split(\"&\");\r\n            for (var i = 0; i < quer" +
+"ies.length; i++) {\r\n                if (queries[i].includes(\"pid\")) {\r\n         " +
+"           var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + pid)" +
+".trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            var textarea" +
+" = document.querySelector(\'textarea[name=messageText]\');\r\n            textarea.a" +
+"ddEventListener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n    " +
+"            var el = this;\r\n                setTimeout(function () {\r\n          " +
+"          el.style.cssText = \'height:auto; padding:0\';\r\n                    // f" +
+"or box-sizing other than \"content-box\" use:\r\n                    // el.style.css" +
+"Text = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssText = \'h" +
+"eight:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n    " +
+"        $(window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\"); " +
+"           \r\n        });\r\n\r\n        function sendMessage() {\r\n            tempSe" +
+"ntMessageId++;\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n    " +
+"        var messageText = $(\'textarea[name=messageText]\').val();\r\n            va" +
+"r attachments = $(\".file-attachment .preview\");\r\n            var existingAttachm" +
+"ents = $(\".file-attachment .existing-preview\");\r\n            var files = dz.file" +
+"s.map(function (a, i) {\r\n                return `${a.name}|${$(\'span.preview > i" +
+"mg\', a.previewTemplate).attr(\'src\')}`;\r\n            });\r\n\r\n            var messa" +
+"ge = $(\'<li class=\"odd\">\' +\r\n                            \'<div class=\"chat-image" +
+"\"> <span class=\"img-circle\">");
 
             
-            #line 255 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 251 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -639,14 +636,14 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 258 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 254 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.FirstName[0]);
 
             
             #line default
             #line hidden
             
-            #line 258 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 254 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                    Write(Html.LoggedInUser().Person.LastName[0]);
 
             
@@ -675,7 +672,7 @@ WriteLiteral(@"</h4>' +
                     url: '/enquiry/");
 
             
-            #line 278 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 274 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -684,7 +681,7 @@ WriteLiteral(@"</h4>' +
 WriteLiteral("/chat/");
 
             
-            #line 278 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 274 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -713,7 +710,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 298 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 294 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -722,7 +719,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 298 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 294 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             

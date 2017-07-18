@@ -193,7 +193,7 @@
         //$('#page-wrapper').css("padding-top"," 130px");
         //$('body').css("overflow-y", "hidden");
 
-        $(document).ready(function () {
+        $(function () {
             $('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
                     var image = $(this).find('img').attr('src');
@@ -233,11 +233,7 @@
                 }, 0);
             }
 
-            if (navigator.userAgent.match(/iPhone/i)) {                
-                $(".chat-list > li:last-child").css("padding-bottom", "100px");                
-            }
-
-            setTimeout(function () { $('body').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow"); }, 3000);
+            $(window).scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow");            
         });
 
         function sendMessage() {

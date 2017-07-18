@@ -17,14 +17,23 @@ $(document).ready(function () {
             //$('.chat-list').css({
             //    'height': (($(window).height()) - 470) + 'px'
             //});
-            //$('.send-chat-box').css("width", parseInt($('.chat-box').width()));
+            $('.send-chat-box').css("width", parseInt($('.chat-box').width()));
+            $('body').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow");
+            //var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
+            //if ($(window).height() > $('.chat-list').height())
+            //    $('.messagebox').css("min-height", $(window).height());
+            //else
+            //$('.messagebox').css("min-height", (($(window).height()) - 240) + 'px');
         });
         $(window).on("resize", function () { // On resize
             //$('.chat-list').css({
             //    'height': (($(window).height()) - 470) + 'px'
             //});
             $('.send-chat-box').css("width", parseInt($('.chat-box').width()));
-            setTimeout(function () { $('.messagebox').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow"); }, 300);
+            $('body').scrollTop(parseInt($('.chat-list')[0].scrollHeight), "slow");
+            //var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
+            //$('.messagebox').css("min-height", (height) + 'px');
+            //$('.messagebox').css("min-height", (($(window).height()) - 240) + 'px');
         });
     });
 
