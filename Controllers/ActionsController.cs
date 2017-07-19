@@ -13,6 +13,7 @@ namespace Realtair.Framework.Core.Web.Controllers
     using System.Web;
     using Utilities;
     using Interfaces;
+    using System.Net;
 
     public class ActionsController : BaseController
     {
@@ -333,10 +334,17 @@ namespace Realtair.Framework.Core.Web.Controllers
                     if (Request.Files.AllKeys.Contains(field.UniqueName))
                         value = (object)Request.Files.Get(field.UniqueName);
                     else
+                    {
                         if (typeof(IEnumerable<object>).IsAssignableFrom(field.PropertyType))
-                        value = Request.Form.GetValues(field.UniqueName);
-                    else
-                        value = (object)Request.Form.Get(field.UniqueName);
+                            value = Request.Form.GetValues(field.UniqueName);
+                        else if (typeof(RichTextAreaFieldAttribute).IsAssignableFrom(field.FieldAttribute.GetType()))
+                        {
+                            // Wrap markup with outer div to fix alignment
+                            value = (object)($"<div style=\"text-align: initial;\">{Request.Unvalidated.Form.Get(field.UniqueName)}</div>");
+                        }
+                        else
+                            value = (object)Request.Form.Get(field.UniqueName);
+                    }
 
                     field.PropertyInfo.SetValue(action, new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType, value));
                 }

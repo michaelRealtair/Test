@@ -159,6 +159,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_RadioButtonGroupField.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_RichTextAreaField1.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RichTextAreaField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_TimeSpan_Field.generated.cs">
       <DependentUpon>_TimeSpan_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -389,6 +394,7 @@
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
+    <Content Include="Content\summernote\summernote.css" />
     <Content Include="Content\css\variables.css" />
     <Content Include="Content\css\variables.min.css" />
     <Content Include="Content\js\cbpFWTabs.js" />
@@ -420,6 +426,7 @@
     <Content Include="Content\js\photoswipe-ui-default.min.js" />
     <Content Include="Content\js\photoswipe.min.js" />
     <Content Include="Content\js\real-estate.js" />
+    <Content Include="Content\summernote\summernote.min.js" />
     <Content Include="Content\js\toastr.js" />
     <Content Include="Content\js\validator.js" />
     <Content Include="Content\js\waves.js" />
@@ -3334,6 +3341,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Attachment_PreviewField.generated.cs</LastGenOutput>
     </Content>
+    <None Include="Views\Shared\Fields\_RichTextAreaField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RichTextAreaField1.generated.cs</LastGenOutput>
+    </None>
     <None Include="Views\Shared\Widgets\_DataTable.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DataTable.generated.cs</LastGenOutput>
@@ -3389,6 +3400,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\plugins\bower_components\etc\" />
+    <Folder Include="Content\summernote\font\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
