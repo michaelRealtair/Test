@@ -44,33 +44,46 @@ namespace Realtair.Framework.Core.Web.Controllers
             public IEnumerable<Field> HiddenFieldsForPage => Fields.Where(f => !FieldsForPage.Contains(f));
         }
 
-        public ActionResult NewWorkflowAction(string workflowName, string actionName, string page = null, string submittedpagenames = null, bool back = false)
+        public ActionResult NewWorkflowAction(string workflowName, string actionName, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             var action = CoreExtensions.GetAction(workflowName, DbContext, Auth, actionName, (Framework.Core.Entities.User)User);
 
+            // Redirect right away if cancelled
+            if (cancel) return HandleRedirect(action);
+
             return RunAction(action, User, page, submittedpagenames, back);
         }
 
-        public ActionResult LoadWorkflowAction(string workflowName, int id, string actionName, string page = null, string submittedpagenames = null, bool back = false)
+        public ActionResult LoadWorkflowAction(string workflowName, int id, string actionName, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.User)User);
+            
+            // Redirect right away if cancelled
+            if (cancel) return HandleRedirect(action);
+
             return RunAction(action, User, page, submittedpagenames, back);
         }
 
-        public ActionResult LoadWorkflowActionAsUser(string workflowName, int id, string actionName, int asUserId, string page = null, string submittedpagenames = null, bool back = false)
+        public ActionResult LoadWorkflowActionAsUser(string workflowName, int id, string actionName, int asUserId, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             if (!(User.MeetsAuthLevel(BaseRoleType.Admin))) throw new AccessViolationException("Only Property Managers can run actions as another user");
             var user = DbContext.Set<User>().Single(u => u.Id == asUserId);
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, user);
 
+            // Redirect right away if cancelled
+            if (cancel) return HandleRedirect(action);
+
             return RunAction(action, user, page, submittedpagenames, back);
         }
 
-        public ActionResult SecureAction(string hashedkey, string page = null, string submittedpagenames = null, bool back = false)
+        public ActionResult SecureAction(string hashedkey, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             var auth = DbContext.Set<AuthorisedAction>().Where(k => k.UniqueIdentifier == hashedkey).FirstOrDefault();
             var action = auth.GetAction(DbContext);
             action.Setup(DbContext, auth.User, Auth);
+
+            // Redirect right away if cancelled
+            if (cancel) return HandleRedirect(action);
 
             if (auth.ExpirationDate > DateTime.Now && !auth.IsUsed)
                 return RunAction(action, auth.User, page, submittedpagenames, back, auth);
@@ -156,53 +169,8 @@ namespace Realtair.Framework.Core.Web.Controllers
             }
         }
 
-        private MultiPageAction.Page PrepareMultipageAction(Action action, Framework.Core.Entities.User userToRunAs, string currentPageName, string submittedPageNames, bool back, ActionViewModel model)
+        private ActionResult HandleRedirect(Action action, AuthorisedAction auth = null, string returnUrl = null)
         {
-            var multipageAction = (MultiPageAction)action;
-
-            model.Page = currentPageName == null ? multipageAction.GetFirstPage() : multipageAction.PageByName(currentPageName);
-
-            var givenPage = model.Page;
-
-            if (Request.HttpMethod == "POST")
-                SetPostValues(multipageAction, action.Fields);
-
-            if (submittedPageNames != null && submittedPageNames.Length >= 1)
-                model.SubmittedPages = submittedPageNames.Split(',').ToList().Select(p => multipageAction.PageByName(p)).ToList();
-
-            model.Page = back ? model.SubmittedPages.Last() : givenPage;
-            model.IsMultiPage = true;
-            model.MultiPageAction = multipageAction;
-            return givenPage;
-        }
-
-        private ActionResult RunActionAndRedirect(Action action, AuthorisedAction auth)
-        {
-            if (auth != null)
-            {
-                action.Run(auth.User);
-                auth.IsUsed = true;
-            }
-            else
-            {
-                action.Run((Framework.Core.Entities.User)User);
-            }
-
-            action.StoreRecord();
-
-            DbContext.SaveChanges();
-            string returnUrl = "";
-
-            try
-            {
-                var uri = new Uri(Request.UrlReferrer.ToString());
-                returnUrl = (uri.Query != "" && uri.Query != "?") ? HttpUtility.ParseQueryString(uri.Query).Get("ReturnUrl").ToString() : "";
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-
             IRedirectLocation RedirectLocation = null;
 
             if (auth != null)
@@ -212,7 +180,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
             if (action.RedirectLocation == null)
             {
-                if (returnUrl != "")
+                if (!string.IsNullOrEmpty(returnUrl))
                 {
                     return Redirect(returnUrl);
                 }
@@ -289,9 +257,64 @@ namespace Realtair.Framework.Core.Web.Controllers
             {
                 return Redirect("/");
             }
-            else {
+            else
+            {
                 throw new ArgumentOutOfRangeException("RedirectLocation", action.RedirectLocation, "Don't know how to handle this type of RedirectLocation");
             }
+        }
+
+        private MultiPageAction.Page PrepareMultipageAction(Action action, Framework.Core.Entities.User userToRunAs, string currentPageName, string submittedPageNames, bool back, ActionViewModel model)
+        {
+            var multipageAction = (MultiPageAction)action;
+
+            model.Page = currentPageName == null ? multipageAction.GetFirstPage() : multipageAction.PageByName(currentPageName);
+
+            var givenPage = model.Page;
+
+            if (Request.HttpMethod == "POST")
+                SetPostValues(multipageAction, action.Fields);
+
+            if (submittedPageNames != null && submittedPageNames.Length >= 1)
+                model.SubmittedPages = submittedPageNames.Split(',').ToList().Select(p => multipageAction.PageByName(p)).ToList();
+
+            model.Page = back ? model.SubmittedPages.Last() : givenPage;
+            model.IsMultiPage = true;
+            model.MultiPageAction = multipageAction;
+            return givenPage;
+        }
+
+        private ActionResult RunActionAndRedirect(Action action, AuthorisedAction auth = null)
+        {
+            if (auth != null)
+            {
+                action.Run(auth.User);
+                auth.IsUsed = true;
+            }
+            else
+            {
+                action.Run((Framework.Core.Entities.User)User);
+            }
+
+            action.StoreRecord();
+
+            DbContext.SaveChanges();
+
+            return HandleRedirect(action, auth, GetReturnUrl());
+        }
+
+        private string GetReturnUrl()
+        {
+            var returnUrl = string.Empty;
+            try
+            {
+                var uri = new Uri(Request.UrlReferrer.ToString());
+                returnUrl = (uri.Query != "" && uri.Query != "?") ? HttpUtility.ParseQueryString(uri.Query).Get("ReturnUrl").ToString() : "";
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+            return returnUrl;
         }
 
         void SetGetParams(Action action)
