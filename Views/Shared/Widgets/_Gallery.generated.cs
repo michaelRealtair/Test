@@ -46,8 +46,8 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" type=\"text/css\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/plugins/bower_components/gallery/css/animated-m" +
-"asonry-gallery.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/gallery/css/animated-" +
+"masonry-gallery.css\"");
 
 WriteLiteral(" />\r\n<link");
 
@@ -55,8 +55,8 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" type=\"text/css\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/plugins/bower_components/fancybox/ekko-lightbox" +
-".min.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/fancybox/ekko-lightbo" +
+"x.min.css\"");
 
 WriteLiteral(" />\r\n<link");
 
@@ -64,7 +64,7 @@ WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" type=\"text/css\"");
 
-WriteLiteral(" href=\"http://static.realtair.com/css/photoswipe.css\"");
+WriteLiteral(" href=\"https://static.realtair.com/css/photoswipe.css\"");
 
 WriteLiteral(" />\r\n\r\n<div");
 
@@ -93,7 +93,7 @@ WriteLiteral(" class=\"gallery\"");
 
 WriteLiteral(" itemscope");
 
-WriteLiteral(" itemtype=\"http://schema.org/ImageGallery\"");
+WriteLiteral(" itemtype=\"https://schema.org/ImageGallery\"");
 
 WriteLiteral(">\r\n");
 
@@ -121,18 +121,18 @@ WriteLiteral(" itemprop=\"associatedMedia\"");
 
 WriteLiteral(" itemscope");
 
-WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
+WriteLiteral(" itemtype=\"https://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 967), Tuple.Create("\"", 986)
+WriteAttribute("href", Tuple.Create(" href=\"", 972), Tuple.Create("\"", 991)
             
             #line 18 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 974), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 979), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 974), false)
+, 979), false)
 );
 
 WriteLiteral(" class=\"gallery-item\"");
@@ -141,14 +141,14 @@ WriteLiteral(" itemprop=\"contentUrl\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1069), Tuple.Create("\"", 1087)
+WriteAttribute("src", Tuple.Create(" src=\"", 1074), Tuple.Create("\"", 1092)
             
             #line 19 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1075), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1080), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1075), false)
+, 1080), false)
 );
 
 WriteLiteral(" style=\"width: 100%; height: 100%;\"");
@@ -170,20 +170,20 @@ WriteLiteral(" itemprop=\"associatedMedia\"");
 
 WriteLiteral(" itemscope");
 
-WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
+WriteLiteral(" itemtype=\"https://schema.org/ImageObject\"");
 
 WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1457), Tuple.Create("\"", 1476)
+WriteAttribute("href", Tuple.Create(" href=\"", 1463), Tuple.Create("\"", 1482)
             
             #line 26 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1464), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1470), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1464), false)
+, 1470), false)
 );
 
 WriteLiteral(" class=\"gallery-item\"");
@@ -192,14 +192,14 @@ WriteLiteral(" itemprop=\"contentUrl\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1559), Tuple.Create("\"", 1577)
+WriteAttribute("src", Tuple.Create(" src=\"", 1565), Tuple.Create("\"", 1583)
             
             #line 27 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1565), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1571), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1565), false)
+, 1571), false)
 );
 
 WriteLiteral(" />\r\n                            </a>\r\n                        </figure>\r\n");
@@ -336,19 +336,19 @@ WriteLiteral(" class=\"pswp__caption__center\"");
 
 WriteLiteral("></div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/jquery.easing.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/jquery.easing.min.js\"");
 
 WriteLiteral("></script>\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/photoswipe.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/photoswipe.min.js\"");
 
 WriteLiteral("></script>\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/photoswipe-ui-default.min.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/photoswipe-ui-default.min.js\"");
 
 WriteLiteral("></script>\r\n<script");
 
-WriteLiteral(" src=\"http://static.realtair.com/js/gallery.js\"");
+WriteLiteral(" src=\"https://static.realtair.com/js/gallery.js\"");
 
 WriteLiteral("></script>");
 

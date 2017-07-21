@@ -86,5 +86,13 @@
   {
     "outputFile": "Content/js/custom.es5.js",
     "inputFile": "Content/js/custom.js"
+  },
+  {
+    "outputFile": "Content/less/colors/megna-dark - Copy.css",
+    "inputFile": "Content/less/colors/megna-dark - Copy.less"
+  },
+  {
+    "outputFile": "Content/less/colors/megna-dark.min.css",
+    "inputFile": "Content/less/colors/megna-dark.min.less"
   }
 ]
