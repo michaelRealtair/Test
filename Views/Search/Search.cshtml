@@ -2,14 +2,20 @@
 
 @Html.Partial("Menu")
 <div id="page-wrapper" class="">
+    <!-- Search Bar  -->
     <div class="header m-b-15">
         <div class="container">
             <div class="input-group">
-                <input id="search-box" name="query" type="text" placeholder="Find @Model.SetName" class="form-control">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input id="search-box" name="query" type="text" placeholder="Find @Model.SetName" class="form-control" value="@Model.Query" autofocus onfocus="this.value = this.value;"/>
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
             </div>
         </div>
     </div>
+    <!-- End of Search Bar  -->
+        
+    <!-- Search Results  -->
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -23,6 +29,7 @@
             </div>
         </div>
     </div>
+    <!-- End of Search Results  -->    
 </div>
 
 <footer class="footer text-center">
