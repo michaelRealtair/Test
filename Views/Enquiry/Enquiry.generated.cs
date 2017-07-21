@@ -71,7 +71,7 @@ WriteLiteral("\r\n\r\n<div");
 WriteLiteral(" class=\"fixed-bar hidden-xs\"");
 
 WriteLiteral(" style=\"position: fixed; top: 110px; height: 15px; width: 100%; background: #f2f2" +
-"f3; z-index: 1000;\"");
+"f3; z-index: 1;\"");
 
 WriteLiteral("></div>\r\n<div");
 
@@ -257,24 +257,24 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2625), Tuple.Create("\"", 2653)
+WriteAttribute("action", Tuple.Create(" action=\"", 2622), Tuple.Create("\"", 2650)
             
             #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2634), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2631), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2634), false)
+, 2631), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2654), Tuple.Create("\"", 2709)
+WriteAttribute("method", Tuple.Create(" method=\"", 2651), Tuple.Create("\"", 2706)
             
             #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2663), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+           , Tuple.Create(Tuple.Create("", 2660), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2663), false)
+, 2660), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -283,14 +283,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2786), Tuple.Create("\"", 2819)
+WriteAttribute("value", Tuple.Create(" value=\"", 2783), Tuple.Create("\"", 2816)
             
             #line 48 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2794), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2791), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2794), false)
+, 2791), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
