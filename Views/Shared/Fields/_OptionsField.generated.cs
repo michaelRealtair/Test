@@ -202,20 +202,28 @@ WriteLiteral("            </select>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <script");
+WriteLiteral("\r\n        <link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(" href=\"https://static.realtair.com/plugins/select2/css/select2.min.css\"");
+
+WriteLiteral(">\r\n        <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/plugins/select2/js/select2.min.js\"");
 
-WriteLiteral("></script>\r\n\t    <script>\r\n    \t    $(\'#");
+WriteLiteral("></script>\r\n        <script>\r\n    \t    $(\'#");
 
             
-            #line 33 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 34 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
             Write(hopefullyUniqueId);
 
             
             #line default
             #line hidden
-WriteLiteral("\').select2();\r\n    \t</script>\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("\').select2();\r\n        </script>\r\n    </div>\r\n</div>\r\n\r\n");
 
         }
     }
