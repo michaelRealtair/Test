@@ -53,7 +53,7 @@ WriteLiteral(" id=\"page-wrapper\"");
 
 WriteLiteral(" class=\"\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <!-- Search Bar  -->\r\n    <div");
 
 WriteLiteral(" class=\"header m-b-15\"");
 
@@ -73,28 +73,44 @@ WriteLiteral(" name=\"query\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 291), Tuple.Create("\"", 324)
-, Tuple.Create(Tuple.Create("", 305), Tuple.Create("Find", 305), true)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 317), Tuple.Create("\"", 350)
+, Tuple.Create(Tuple.Create("", 331), Tuple.Create("Find", 331), true)
             
-            #line 8 "..\..\Views\Search\Search.cshtml"
-  , Tuple.Create(Tuple.Create(" ", 309), Tuple.Create<System.Object, System.Int32>(Model.SetName
+            #line 9 "..\..\Views\Search\Search.cshtml"
+  , Tuple.Create(Tuple.Create(" ", 335), Tuple.Create<System.Object, System.Int32>(Model.SetName
             
             #line default
             #line hidden
-, 310), false)
+, 336), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(">\r\n                <span");
+WriteAttribute("value", Tuple.Create(" value=\"", 372), Tuple.Create("\"", 392)
+            
+            #line 9 "..\..\Views\Search\Search.cshtml"
+                                               , Tuple.Create(Tuple.Create("", 380), Tuple.Create<System.Object, System.Int32>(Model.Query
+            
+            #line default
+            #line hidden
+, 380), false)
+);
+
+WriteLiteral(" autofocus");
+
+WriteLiteral(" onfocus=\"this.value = this.value;\"");
+
+WriteLiteral("/>\r\n                <span");
 
 WriteLiteral(" class=\"input-group-addon\"");
 
-WriteLiteral("><i");
+WriteLiteral(">\r\n                    <i");
 
 WriteLiteral(" class=\"fa fa-search\"");
 
-WriteLiteral("></i></span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div");
+WriteLiteral("></i>\r\n                </span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n " +
+"   <!-- End of Search Bar  -->\r\n        \r\n    <!-- Search Results  -->\r\n    <div" +
+"");
 
 WriteLiteral(" class=\"container\"");
 
@@ -125,14 +141,15 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 19 "..\..\Views\Search\Search.cshtml"
+            #line 25 "..\..\Views\Search\Search.cshtml"
                        Write(Html.Partial("Results", Model));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                </di" +
-"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<footer");
+"v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- End of Search Resul" +
+"ts  -->    \r\n</div>\r\n\r\n<footer");
 
 WriteLiteral(" class=\"footer text-center\"");
 
@@ -168,7 +185,7 @@ WriteLiteral(@"
             $.post(""");
 
             
-            #line 44 "..\..\Views\Search\Search.cshtml"
+            #line 51 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             

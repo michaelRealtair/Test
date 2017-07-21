@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_OptionsField.cshtml")]
@@ -201,10 +202,14 @@ WriteLiteral("            </select>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t    <script>\r\n    \t    $(\'#");
+WriteLiteral("\r\n        <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/select2/js/select2.min.js\"");
+
+WriteLiteral("></script>\r\n\t    <script>\r\n    \t    $(\'#");
 
             
-            #line 32 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 33 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
             Write(hopefullyUniqueId);
 
             
