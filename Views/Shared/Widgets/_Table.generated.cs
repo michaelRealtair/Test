@@ -115,7 +115,7 @@ WriteLiteral("            <thead>\r\n                <tr>                \r\n");
             #line hidden
 WriteLiteral("                        <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 611)
+WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 618)
 , Tuple.Create(Tuple.Create("", 583), Tuple.Create("col-xs-", 583), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
@@ -124,13 +124,14 @@ WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 611)
             #line default
             #line hidden
 , 590), false)
+, Tuple.Create(Tuple.Create(" ", 611), Tuple.Create("p-l-40", 612), true)
 );
 
 WriteLiteral(">");
 
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                                                            Write(column.Name);
+                                                                   Write(column.Name);
 
             
             #line default
@@ -189,14 +190,14 @@ WriteLiteral("                    <tr>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1040), Tuple.Create("\"", 1087)
+WriteAttribute("href", Tuple.Create(" href=\"", 1047), Tuple.Create("\"", 1094)
             
             #line 29 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1047), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+, Tuple.Create(Tuple.Create("", 1054), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1047), false)
+, 1054), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -234,14 +235,14 @@ WriteLiteral("</td>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1482), Tuple.Create("\"", 1496)
+WriteAttribute("href", Tuple.Create(" href=\"", 1489), Tuple.Create("\"", 1503)
             
             #line 37 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1489), Tuple.Create<System.Object, System.Int32>(column
+, Tuple.Create(Tuple.Create("", 1496), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1489), false)
+, 1496), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
