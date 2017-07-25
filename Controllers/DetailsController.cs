@@ -17,6 +17,9 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             var entity = CoreExtensions.GetDisplayable(DbContext, entityTypeName, id);
 
+            if (entity == null)
+                return Redirect("/");
+
             if (entity is IProtectedAccess)
                 if (!(entity as IProtectedAccess).AccessibleTo(User, DbContext)) return View("Unauthorize");
 
