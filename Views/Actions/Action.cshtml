@@ -135,6 +135,10 @@
                                         var date = (DateTime)field.Value;
                                         <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
                                     }
+                                    else if (field.Value is bool)
+                                    {
+                                        <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
+                                    }
                                     else
                                     {
                                         <input type="hidden" name="@field.UniqueName" value="@field.Value" />
@@ -228,6 +232,10 @@
                                         {
                                             var date = (DateTime)field.Value;
                                             <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                        }
+                                        else if (field.Value is bool)
+                                        {
+                                            <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
                                         }
                                         else
                                         {

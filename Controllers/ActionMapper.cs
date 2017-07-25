@@ -38,7 +38,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             else if (typeof(IEnumerable<bool?>).IsAssignableFrom(type))
                 return MapChecklist(value);
             else if (field.FieldAttribute is CheckboxFieldAttribute)
-                return MapCheckbox(value);
+                return MapBool(value);
             else if (type == typeof(bool))
                 return MapBool(value);
             else if (type == typeof(DateTime))
