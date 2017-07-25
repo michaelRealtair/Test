@@ -6,10 +6,11 @@
     </div>
 
     <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
-        @{
-            var formValue = "";
-            if (Convert.ToBoolean(Model.FormValue)) { formValue = "checked='checked'"; }
-        }
-        <input type="checkbox" name="@Model.PropertyInfo.Name" @formValue />
+        <label class="radio-inline">
+            <input type="radio" name="@Model.PropertyInfo.Name" value="true" @(Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "")> Yes<br>
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="@Model.PropertyInfo.Name" value="false" @(!Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "")> No<br>
+        </label>
     </div>
 </div>

@@ -67,47 +67,65 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(" style=\"padding-top: 8px;\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <label");
 
+WriteLiteral(" class=\"radio-inline\"");
+
+WriteLiteral(">\r\n            <input");
+
+WriteLiteral(" type=\"radio\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 316), Tuple.Create("\"", 347)
             
-            #line 9 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-        
+            #line 10 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 323), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
+, 323), false)
+);
+
+WriteLiteral(" value=\"true\"");
+
+WriteLiteral(" ");
+
             
-            #line 9 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-          
-            var formValue = "";
-            if (Convert.ToBoolean(Model.FormValue)) { formValue = "checked='checked'"; }
-        
+            #line 10 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                         Write(Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
+
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <input");
+WriteLiteral("> Yes<br>\r\n        </label>\r\n        <label");
 
-WriteLiteral(" type=\"checkbox\"");
+WriteLiteral(" class=\"radio-inline\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 423), Tuple.Create("\"", 454)
+WriteLiteral(">\r\n            <input");
+
+WriteLiteral(" type=\"radio\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 524), Tuple.Create("\"", 555)
             
             #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 430), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 531), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 430), false)
+, 531), false)
 );
+
+WriteLiteral(" value=\"false\"");
 
 WriteLiteral(" ");
 
             
             #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                          Write(formValue);
+                                                                          Write(!Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(" />\r\n    </div>\r\n</div>");
+WriteLiteral("> No<br>\r\n        </label>\r\n    </div>\r\n</div>");
 
         }
     }
