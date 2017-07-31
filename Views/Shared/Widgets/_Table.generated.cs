@@ -188,16 +188,20 @@ WriteLiteral("                    <tr>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                <td><a");
+WriteLiteral("                                <td");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1047), Tuple.Create("\"", 1094)
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1062), Tuple.Create("\"", 1109)
             
             #line 29 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1054), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+, Tuple.Create(Tuple.Create("", 1069), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1054), false)
+, 1069), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -213,11 +217,15 @@ WriteLiteral(">View</a></td>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                <td>");
+WriteLiteral("                                <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
 
             
             #line 33 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                               Write(Html.Render(Url, column));
+                                              Write(Html.Render(Url, column));
 
             
             #line default
@@ -233,16 +241,20 @@ WriteLiteral("</td>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                <td><a");
+WriteLiteral("                                <td");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1489), Tuple.Create("\"", 1503)
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1534), Tuple.Create("\"", 1548)
             
             #line 37 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1496), Tuple.Create<System.Object, System.Int32>(column
+, Tuple.Create(Tuple.Create("", 1541), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1496), false)
+, 1541), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -266,11 +278,15 @@ WriteLiteral(">View</a></td>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                    <td>");
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
 
             
             #line 46 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                                   Write(column);
+                                                  Write(column);
 
             
             #line default

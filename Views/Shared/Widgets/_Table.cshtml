@@ -26,15 +26,15 @@
                         {
                             if (column is Attachment)
                             {
-                                <td><a href="@Html.Raw((column as Attachment).Url(0))" target="_blank">View</a></td>
+                                <td class="p-l-40"><a href="@Html.Raw((column as Attachment).Url(0))" target="_blank">View</a></td>
                             }
                             else if (column is IDisplayable)
                             {
-                                <td>@Html.Render(Url, column)</td>
+                                <td class="p-l-40">@Html.Render(Url, column)</td>
                             }
                             else if (column.ToString().IsValidUrl())
                             {
-                                <td><a href="@column" target="_blank">View</a></td>
+                                <td class="p-l-40"><a href="@column" target="_blank">View</a></td>
                             }
 
                             @*else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
@@ -43,7 +43,7 @@
                             }*@
                             else
                             {
-                                    <td>@column</td>
+                                    <td class="p-l-40">@column</td>
                                 }
                             }
                     </tr>
