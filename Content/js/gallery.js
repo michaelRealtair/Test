@@ -4,14 +4,14 @@
     // Init empty gallery array
     var container = [];
     // Loop over gallery items and push it to the array
-    $('a.gallery-item').each(function () {
+    $('a.gallery-item').each(function (i) {
         var $link = $(this);
         var item = {
             src: $link.attr('href'),
             w: 0,
             h: 0,
             title: $link.data('caption'),
-            pid: $link.data('pid')
+            pid: i
         };
         container.push(item);
         // Define click event on gallery item
@@ -22,7 +22,7 @@
             console.log(this);
             var $pswp = $('.pswp')[0],
                 options = {
-                    index: item.pid - 1,
+                    index: item.pid,
                     bgOpacity: 0.85,
                     showHideOpacity: true,
                     history: true,
