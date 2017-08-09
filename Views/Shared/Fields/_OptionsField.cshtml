@@ -31,6 +31,10 @@
         <link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
         <script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
         <script>
+            $(window).resize(function () {
+                $('.select2').css('width', "100%");
+            });
+
     	    $('#@(hopefullyUniqueId)').select2();
         </script>
     </div>

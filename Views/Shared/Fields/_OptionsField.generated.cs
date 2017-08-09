@@ -214,10 +214,11 @@ WriteLiteral(">\r\n        <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/plugins/select2/js/select2.min.js\"");
 
-WriteLiteral("></script>\r\n        <script>\r\n    \t    $(\'#");
+WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(function () {\r\n       " +
+"         $(\'.select2\').css(\'width\', \"100%\");\r\n            });\r\n\r\n    \t    $(\'#");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 38 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
             Write(hopefullyUniqueId);
 
             
