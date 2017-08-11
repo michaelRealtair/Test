@@ -69,7 +69,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                     if (timelineItem is TimelineEvent)
                     {
                         var thisState = timelineItem as TimelineEvent;
-                        if (thisState is IShowAttachments && (thisState as IShowAttachments).Attachments.Count() > 0)
+                        if (thisState is IShowAttachments && (thisState as IShowAttachments).Attachments != null && (thisState as IShowAttachments).Attachments.Count() > 0)
                         {
                             foreach (var attachment in (thisState as IShowAttachments).Attachments)
                             {

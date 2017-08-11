@@ -67,7 +67,7 @@
                         </div>
                     }
 
-                    @if (thisState is IShowAttachments)
+                    @if (thisState is IShowAttachments && (thisState as IShowAttachments).Attachments != null)
                     {
                         <div class="file-attachment text-center panel-body">
                             @foreach (var attachment in (thisState as IShowAttachments).Attachments)
