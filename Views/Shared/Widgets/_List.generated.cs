@@ -81,11 +81,15 @@ WriteLiteral(">\r\n            <tbody>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                    <tr>\r\n                        <td>");
+WriteLiteral("                    <tr>\r\n                        <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
 
             
             #line 10 "..\..\Views\Shared\Widgets\_List.cshtml"
-                       Write(Html.Render(Url, describable));
+                                      Write(Html.Render(Url, describable));
 
             
             #line default

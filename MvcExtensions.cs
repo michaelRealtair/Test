@@ -171,6 +171,11 @@ namespace ASP
             {
                 return new MvcHtmlString(((DateTime)describable).ToString("d MMM yyyy"));
             }
+            else if (describable is Attachment)
+            {
+                var attachment = (describable as Attachment);
+                return new MvcHtmlString($"<a href=\"{attachment.Url(0)}\" target=\"_blank\">{attachment.OriginalFileName}</a>");
+            }
             else if (describable is IEnumerable<IDisplayable> || describable is IEnumerable<IHasDisplayable>)
             {
                 string s = "";
