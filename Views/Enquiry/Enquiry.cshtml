@@ -19,7 +19,9 @@
                             <i class="fa fa-angle-left"></i>
                         </button>
                         <div class="chat-left-description">
-                            @Model.Workflow.Extension.Description(Html.LoggedInUser())
+                            <a href="@Model.Workflow.Extension.GetUrl(Html.LoggedInUser(), Url)">
+                                @Model.Workflow.Extension.Description(Html.LoggedInUser())
+                            </a>
                         </div>
                     </div>
                     <ul class="chatonline style-none ">
