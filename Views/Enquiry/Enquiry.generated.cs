@@ -279,30 +279,40 @@ WriteAttribute("action", Tuple.Create(" action=\"", 2759), Tuple.Create("\"", 27
 , 2768), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2788), Tuple.Create("\"", 2843)
+WriteAttribute("target", Tuple.Create(" target=\"", 2788), Tuple.Create("\"", 2816)
             
             #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 2797), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+          , Tuple.Create(Tuple.Create("", 2797), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
             
             #line default
             #line hidden
 , 2797), false)
 );
 
-WriteLiteral(">\r\n                                    <input");
+WriteAttribute("method", Tuple.Create(" method=\"", 2817), Tuple.Create("\"", 2872)
+            
+            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 2826), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            
+            #line default
+            #line hidden
+, 2826), false)
+);
+
+WriteLiteral(" >\r\n                                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2920), Tuple.Create("\"", 2953)
+WriteAttribute("value", Tuple.Create(" value=\"", 2950), Tuple.Create("\"", 2983)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2928), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2958), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2928), false)
+, 2958), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -329,9 +339,9 @@ WriteLiteral("</button>\r\n                                </form>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                        </div>\r\n                        <!-- End of Action Button" +
-"s -->\r\n                        <!-- --------------------------------------------" +
-"------ -->\r\n                        <!--  -->\r\n                        <div");
+WriteLiteral("                        </div>\r\n                        <!-- / Action Buttons -->" +
+"\r\n                        <!-- -------------------------------------------------" +
+"- -->\r\n                        <!--  -->\r\n                        <div");
 
 WriteLiteral(" class=\"col-sm-12 newmessage\"");
 

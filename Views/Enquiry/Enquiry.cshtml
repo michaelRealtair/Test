@@ -46,7 +46,7 @@
                         <div id="actionForms" style="padding-top: 10px; background: #fff;" class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
-                                <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")" target="@action.GetTarget()" >
+                                <form class="inline" action="@action.GetUrl(Url)" target="@action.GetTarget()" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")" >
                                     <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
                                     <button class="btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10" type="submit">@action.Description(Html.LoggedInUser())</button>
                                 </form>
