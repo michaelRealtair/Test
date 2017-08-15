@@ -277,20 +277,30 @@ WriteAttribute("method", Tuple.Create(" method=\"", 2651), Tuple.Create("\"", 27
 , 2660), false)
 );
 
-WriteLiteral(">\r\n                                    <input");
+WriteAttribute("target", Tuple.Create(" target=\"", 2707), Tuple.Create("\"", 2735)
+            
+            #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                  , Tuple.Create(Tuple.Create("", 2716), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
+            
+            #line default
+            #line hidden
+, 2716), false)
+);
+
+WriteLiteral(" >\r\n                                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2783), Tuple.Create("\"", 2816)
+WriteAttribute("value", Tuple.Create(" value=\"", 2813), Tuple.Create("\"", 2846)
             
             #line 48 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2791), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2821), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2791), false)
+, 2821), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -317,9 +327,9 @@ WriteLiteral("</button>\r\n                                </form>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                        </div>\r\n                        <!-- End of Action Button" +
-"s -->\r\n                        <!-- --------------------------------------------" +
-"------ -->\r\n                        <!--  -->\r\n                        <div");
+WriteLiteral("                        </div>\r\n                        <!-- / Action Buttons -->" +
+"\r\n                        <!-- -------------------------------------------------" +
+"- -->\r\n                        <!--  -->\r\n                        <div");
 
 WriteLiteral(" class=\"col-sm-12 newmessage\"");
 
