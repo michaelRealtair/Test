@@ -74,16 +74,16 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n\r\n");
 
             
-            #line 10 "..\..\Views\Details\Details.cshtml"
+            #line 11 "..\..\Views\Details\Details.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 10 "..\..\Views\Details\Details.cshtml"
+            #line 11 "..\..\Views\Details\Details.cshtml"
          foreach (var section in Model.Sections(Html.LoggedInUser()))
         {
             var widgetView = $"Widgets/_{section.GetType().Name.Substring(0, section.GetType().Name.Length - "Widget".Length)}";
@@ -101,16 +101,65 @@ WriteLiteral(">\r\n");
 WriteLiteral("                <p>Cannot render widget view</p>\r\n");
 
             
-            #line 21 "..\..\Views\Details\Details.cshtml"
+            #line 22 "..\..\Views\Details\Details.cshtml"
             }
         }
 
             
             #line default
             #line hidden
-WriteLiteral("        ");
+WriteLiteral("\r\n");
 
-WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n<footer");
+            
+            #line 25 "..\..\Views\Details\Details.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 25 "..\..\Views\Details\Details.cshtml"
+         if (Model is IHasSettings)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 825), Tuple.Create("\"", 897)
+, Tuple.Create(Tuple.Create("", 832), Tuple.Create("/", 832), true)
+            
+            #line 27 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 833), Tuple.Create<System.Object, System.Int32>(Model.UrlSafeName()
+            
+            #line default
+            #line hidden
+, 833), false)
+, Tuple.Create(Tuple.Create("", 853), Tuple.Create("/", 853), true)
+            
+            #line 27 "..\..\Views\Details\Details.cshtml"
+, Tuple.Create(Tuple.Create("", 854), Tuple.Create<System.Object, System.Int32>((Model as Entity).Id.ToString()
+            
+            #line default
+            #line hidden
+, 854), false)
+, Tuple.Create(Tuple.Create("", 888), Tuple.Create("/settings", 888), true)
+);
+
+WriteLiteral(" class=\"button btn btn-default btn-rounded m-b-20 p-10\"");
+
+WriteLiteral(" style=\"display: block;\"");
+
+WriteLiteral(">Settings</a>\r\n");
+
+            
+            #line 28 "..\..\Views\Details\Details.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    </div>\r\n</div>\r\n\r\n<footer");
 
 WriteLiteral(" class=\"footer text-center hidden-xs\"");
 
