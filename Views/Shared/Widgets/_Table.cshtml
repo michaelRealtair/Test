@@ -36,6 +36,13 @@
                             {
                                 <td class="p-l-40"><a href="@column" target="_blank">View</a></td>
                             }
+                            else if (column is KeyValuePair<string, IDisplayable>)
+                            {                                
+                                var keyObj = column.GetType().GetProperty("Key").GetValue(column, null);
+                                var valueObj = column.GetType().GetProperty("Value").GetValue(column, null);
+
+                                <td class="p-l-40"><a href="@((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url))">@keyObj</a></td>
+                            }
 
                             @*else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
                             {
