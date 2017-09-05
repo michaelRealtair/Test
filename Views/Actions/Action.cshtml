@@ -45,6 +45,7 @@
 		<div id="page-wrapper" class="with-background">
 			<div class="container">
 				<div class="panel panel-default">
+                    @* Header *@
 					<div class="panel-heading">
 						@if (Model.IsMultiPage)
 						{
@@ -55,18 +56,19 @@
 							@Model.Action.Description(Html.LoggedInUser()).ToUpper()
 						}
 					</div>
+                    @* Validation Errors *@
+					@if (Model.Action.HasValidated && !Model.Action.IsValid)
+					{
+						<div class="col-md-12" style="padding: 0;">
+							@foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
+							{
+                                <div class="alert alert-danger">@error.ErrorMessage</div>
+                            }
+						</div>
+					}
+                    @* Form *@
 					<form class="autoform form-horizontal" id="main-form" method="post">
 						<div class="panel-body">
-							@if (Model.Action.HasValidated && !Model.Action.IsValid)
-							{
-								<div class="col-md-12">
-									@foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
-									{
-										<p class="brand-danger">@error.ErrorMessage</p>
-									}
-								</div>
-							}
-
 							@foreach (var field in shown)
 							{
 								if (field.FieldSetAttribute != null)
