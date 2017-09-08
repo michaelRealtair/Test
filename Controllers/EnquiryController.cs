@@ -186,8 +186,8 @@ namespace Realtair.Framework.Core.Web.Controllers
         }        
         public ActionResult QueryUsers(string query = "")
         {
-            var users = DbContext.Set<User>().ToList().Where(p => p.Person.Name != null && p.Person.Name.ToLowerInvariant().Contains(query.ToLowerInvariant()))
-                .Select(u => new[] { new RestUsersModel { Name = u.Person.Name, Email = u.Person.Email } });
+            var users = DbContext.Set<User>().ToList().Where(u => u.ConversationRef != null && u.ConversationRef.ToLowerInvariant().Contains(query.ToLowerInvariant()))
+                .Select(u => new[] { new RestUsersModel { Name = u.Person.Name, ConversationRef = u.ConversationRef } });
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
             return Content(JsonConvert.SerializeObject(users));
         }
@@ -195,7 +195,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
     public class RestUsersModel
     {
-        public string Email { get; set; }
+        public string ConversationRef { get; set; }
         public string Name { get; set; }
     }
 
