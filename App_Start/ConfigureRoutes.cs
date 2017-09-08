@@ -68,6 +68,8 @@ namespace Realtair.Framework.Core.Web.Utilities
               new { controller = "Enquiry", action = "GetUpdatedTimeline" });
             routes.MapRoute("GetTimelineItem", "{enquiryTypeName}/{id}/chat/{conversationId}/get-timeline-item/{timelineItem}/{isActive}",
               new { controller = "Enquiry", action = "GetTimelineItem" });
+            routes.MapRoute("QueryUsers", "rest/users",
+              new { controller = "Enquiry", action = "QueryUsers" });
             #endregion
 
             #region Details Route

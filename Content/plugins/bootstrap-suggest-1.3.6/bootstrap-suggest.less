@@ -1,0 +1,29 @@
+.suggest {
+	/* position: relative; */
+	/*top: 7px;
+	z-index: 30;
+	text-align: left;*/
+
+    z-index: 30;
+	text-align: left;
+    bottom: 405px;
+    position: fixed;
+    vertical-align: bottom;
+
+	> .dropdown-menu {
+		/*margin-top: 15px;*/
+		position: absolute;
+		padding: 0;
+
+		> li {
+			border-bottom: 1px solid #eeeeee;
+			> a {
+				padding: 2px 10px;
+				cursor: default;
+			}
+
+			> a:hover *, &.active > a * { color: inherit !important; }
+			&:last-child { border-bottom: 0; }
+		}
+	}
+}
