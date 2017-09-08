@@ -9,6 +9,7 @@ using Realtair.Framework.Enquiries.Entities;
 using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
 using Realtair.Framework.Core.Web.Utilities;
+using Newtonsoft.Json;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
@@ -182,7 +183,20 @@ namespace Realtair.Framework.Core.Web.Controllers
             foreach (var n in notifications)
                 n.Dismissed = true;
             DbContext.SaveChanges();
+        }        
+        public ActionResult QueryUsers(string query = "")
+        {
+            var users = DbContext.Set<User>().ToList().Where(p => p.Person.Name != null && p.Person.Name.ToLowerInvariant().Contains(query.ToLowerInvariant()))
+                .Select(u => new[] { new RestUsersModel { Name = u.Person.Name, Email = u.Person.Email } });
+            Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            return Content(JsonConvert.SerializeObject(users));
         }
+    }
+
+    public class RestUsersModel
+    {
+        public string Email { get; set; }
+        public string Name { get; set; }
     }
 
     /*public class ConversationHub : BaseHub

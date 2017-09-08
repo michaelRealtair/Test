@@ -94,5 +94,9 @@
   {
     "outputFile": "Content/less/colors/megna-dark.min.css",
     "inputFile": "Content/less/colors/megna-dark.min.less"
+  },
+  {
+    "outputFile": "Content/plugins/bootstrap-suggest-1.3.6/bootstrap-suggest.css",
+    "inputFile": "Content/plugins/bootstrap-suggest-1.3.6/bootstrap-suggest.less"
   }
 ]

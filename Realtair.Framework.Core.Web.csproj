@@ -405,6 +405,11 @@
     <Content Include="Content\css\spinners.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style.min.css" />
+    <Content Include="Content\plugins\bootstrap-suggest-1.3.6\bootstrap-suggest.css" />
+    <Content Include="Content\plugins\bootstrap-suggest-1.3.6\bootstrap-suggest.js" />
+    <Content Include="Content\plugins\bootstrap-suggest-1.3.6\bootstrap-suggest.min.css">
+      <DependentUpon>bootstrap-suggest.css</DependentUpon>
+    </Content>
     <Content Include="Content\plugins\select2\css\select2.css" />
     <Content Include="Content\plugins\select2\css\select2.min.css" />
     <Content Include="Content\plugins\select2\js\i18n\ar.js" />
@@ -2714,6 +2719,7 @@
     <None Include="Content\less\style.less" />
     <None Include="Content\less\variables.less" />
     <None Include="Content\less\widgets.less" />
+    <None Include="Content\plugins\bootstrap-suggest-1.3.6\bootstrap-suggest.less" />
     <None Include="Content\plugins\bower_components\bootstrap-old\.bower.json" />
     <None Include="Content\plugins\bower_components\bootstrap-old\bower.json" />
     <None Include="Content\plugins\bower_components\bootstrap-old\CHANGELOG.md" />
