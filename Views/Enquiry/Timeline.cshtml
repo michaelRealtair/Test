@@ -60,7 +60,7 @@
                             @foreach (var action in thisState.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
                                 <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
-                                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                                    <input name="ReturnUrl" type="hidden" value="@thisState.ParentEnquiry.GetUrl(Url)" />
                                     <button class="btn btn-sm btn-default btn-rounded m-l-5 m-r-5" type="submit">@action.Description(Html.LoggedInUser())</button>
                                 </form>
                             }

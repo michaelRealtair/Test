@@ -306,10 +306,10 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2652), Tuple.Create("\"", 2685)
+WriteAttribute("value", Tuple.Create(" value=\"", 2652), Tuple.Create("\"", 2696)
             
             #line 63 "..\..\Views\Enquiry\Timeline.cshtml"
- , Tuple.Create(Tuple.Create("", 2660), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2660), Tuple.Create<System.Object, System.Int32>(thisState.ParentEnquiry.GetUrl(Url)
             
             #line default
             #line hidden
@@ -389,26 +389,26 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3460), Tuple.Create("\"", 3488)
+WriteAttribute("href", Tuple.Create(" href=\"", 3471), Tuple.Create("\"", 3499)
             
             #line 77 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 3467), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 3478), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 3467), false)
+, 3478), false)
 );
 
 WriteLiteral(" class=\"gallery-item text-center\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 3522), Tuple.Create("\"", 3540)
+WriteAttribute("id", Tuple.Create(" id=\"", 3533), Tuple.Create("\"", 3551)
             
             #line 77 "..\..\Views\Enquiry\Timeline.cshtml"
-                         , Tuple.Create(Tuple.Create("", 3527), Tuple.Create<System.Object, System.Int32>(attachmentId
+                         , Tuple.Create(Tuple.Create("", 3538), Tuple.Create<System.Object, System.Int32>(attachmentId
             
             #line default
             #line hidden
-, 3527), false)
+, 3538), false)
 );
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
@@ -436,14 +436,14 @@ WriteLiteral(" data-height=\"1200\"");
 
 WriteLiteral(">\r\n                                        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3747), Tuple.Create("\"", 3786)
+WriteAttribute("src", Tuple.Create(" src=\"", 3758), Tuple.Create("\"", 3797)
             
             #line 78 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 3753), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
+, Tuple.Create(Tuple.Create("", 3764), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
             
             #line default
             #line hidden
-, 3753), false)
+, 3764), false)
 );
 
 WriteLiteral(" style=\"width: 100px !important; height: 100px !important;\"");
@@ -465,14 +465,14 @@ WriteLiteral(">\r\n                                    </a>\r\n");
             #line hidden
 WriteLiteral("                                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4066), Tuple.Create("\"", 4094)
+WriteAttribute("href", Tuple.Create(" href=\"", 4077), Tuple.Create("\"", 4105)
             
             #line 83 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 4073), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 4084), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 4073), false)
+, 4084), false)
 );
 
 WriteLiteral(" class=\"text-center\"");
@@ -633,26 +633,26 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5810), Tuple.Create("\"", 5838)
+WriteAttribute("href", Tuple.Create(" href=\"", 5821), Tuple.Create("\"", 5849)
             
             #line 117 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 5817), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 5828), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 5817), false)
+, 5828), false)
 );
 
 WriteLiteral(" class=\"gallery-item text-center\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 5872), Tuple.Create("\"", 5890)
+WriteAttribute("id", Tuple.Create(" id=\"", 5883), Tuple.Create("\"", 5901)
             
             #line 117 "..\..\Views\Enquiry\Timeline.cshtml"
-                                 , Tuple.Create(Tuple.Create("", 5877), Tuple.Create<System.Object, System.Int32>(attachmentId
+                                 , Tuple.Create(Tuple.Create("", 5888), Tuple.Create<System.Object, System.Int32>(attachmentId
             
             #line default
             #line hidden
-, 5877), false)
+, 5888), false)
 );
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
@@ -680,14 +680,14 @@ WriteLiteral(" data-height=\"1200\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6105), Tuple.Create("\"", 6144)
+WriteAttribute("src", Tuple.Create(" src=\"", 6116), Tuple.Create("\"", 6155)
             
             #line 118 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 6111), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
+, Tuple.Create(Tuple.Create("", 6122), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
             
             #line default
             #line hidden
-, 6111), false)
+, 6122), false)
 );
 
 WriteLiteral(" class=\"img-rounded\"");
@@ -711,14 +711,14 @@ WriteLiteral(">\r\n                                            </a>\r\n");
             #line hidden
 WriteLiteral("                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6427), Tuple.Create("\"", 6455)
+WriteAttribute("href", Tuple.Create(" href=\"", 6438), Tuple.Create("\"", 6466)
             
             #line 123 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 6434), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 6445), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 6434), false)
+, 6445), false)
 );
 
 WriteLiteral(" class=\"text-center\"");
@@ -881,26 +881,26 @@ WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 8202), Tuple.Create("\"", 8230)
+WriteAttribute("href", Tuple.Create(" href=\"", 8213), Tuple.Create("\"", 8241)
             
             #line 151 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 8209), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 8220), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 8209), false)
+, 8220), false)
 );
 
 WriteLiteral(" class=\"gallery-item text-center\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 8264), Tuple.Create("\"", 8282)
+WriteAttribute("id", Tuple.Create(" id=\"", 8275), Tuple.Create("\"", 8293)
             
             #line 151 "..\..\Views\Enquiry\Timeline.cshtml"
-                                     , Tuple.Create(Tuple.Create("", 8269), Tuple.Create<System.Object, System.Int32>(attachmentId
+                                     , Tuple.Create(Tuple.Create("", 8280), Tuple.Create<System.Object, System.Int32>(attachmentId
             
             #line default
             #line hidden
-, 8269), false)
+, 8280), false)
 );
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
@@ -928,14 +928,14 @@ WriteLiteral(" data-height=\"1200\"");
 
 WriteLiteral(">\r\n                                                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8501), Tuple.Create("\"", 8540)
+WriteAttribute("src", Tuple.Create(" src=\"", 8512), Tuple.Create("\"", 8551)
             
             #line 152 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 8507), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
+, Tuple.Create(Tuple.Create("", 8518), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
             
             #line default
             #line hidden
-, 8507), false)
+, 8518), false)
 );
 
 WriteLiteral(" class=\"img-rounded\"");
@@ -968,14 +968,14 @@ WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 9018), Tuple.Create("\"", 9046)
+WriteAttribute("href", Tuple.Create(" href=\"", 9029), Tuple.Create("\"", 9057)
             
             #line 159 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 9025), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 9036), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 9025), false)
+, 9036), false)
 );
 
 WriteLiteral(" class=\"text-center\"");
