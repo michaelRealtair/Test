@@ -115,24 +115,22 @@ namespace Realtair.Framework.Core.Web.Controllers
         }
 
         //[Route("{enquiryTypeName}/{id:int}/chat/{conversationId:int}/send-message"), HttpPost, ValidateInput(false)]
-        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, string[] attachments, string[] existingAttachments)
+        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, int[] attachments, string[] existingAttachments)
         {
             var conversation = DbContext.Set<Conversation>().First(c => c.Id == conversationId);
 
-            if (!conversation.AccessibleTo(User, DbContext)) return new HttpStatusCodeResult(403);
+            if (!conversation.AccessibleTo(User, DbContext)) return new HttpStatusCodeResult(403);            
 
-            var attachmentsForMessage = attachments == null ? new List<Attachment>() :
-                attachments.Select(f => new ActionMapper(DbContext).MapFileAsset(f)).ToList();
-
-            if (existingAttachments != null)
+            var attachmentsForMessage = new List<Attachment>();
+            for (int i=0; i<attachments.Count(); i++)
             {
-                foreach (string existingAttachment in existingAttachments)
+                var attId = attachments[i];
+                var attachment = DbContext.Set<Attachment>().Where(a => a.Id == attId).FirstOrDefault();
+                if (attachment != null)
                 {
-                    var storageGuid = new Guid(existingAttachment);
-                    var originalAttachment = DbContext.Set<Attachment>().Where(a => a.StorageGuid == storageGuid).FirstOrDefault();
-                    attachmentsForMessage.Add(new Attachment(originalAttachment));
+                    attachmentsForMessage.Add(attachment);
                 }
-            }
+            }            
 
             var enquiry = CoreExtensions.GetEnquiry(DbContext, id);
             var message = new Message(enquiry, conversation, User, messageText, attachmentsForMessage, DbContext);

@@ -26,9 +26,9 @@
                     </div>
                     <ul class="chatonline style-none ">
                         @foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {                            
+                        {
                             <li>
-                                <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>                                
+                                <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
                             </li>
                         }
                     </ul>
@@ -46,7 +46,7 @@
                         <div id="actionForms" style="padding-top: 10px; background: #fff;" class="col-sm-12">
                             @foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
-                                <form class="inline" action="@action.GetUrl(Url)" target="@action.GetTarget()" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")" >
+                                <form class="inline" action="@action.GetUrl(Url)" target="@action.GetTarget()" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
                                     <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
                                     <button class="btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10" type="submit">@action.Description(Html.LoggedInUser())</button>
                                 </form>
@@ -68,12 +68,12 @@
                                 <h3>Uploading...</h3>
                             </div>
                             <textarea class="form-control chat-box" placeholder="Type your message" name="messageText" id="messageText"></textarea>
-                            <div class="custom-send">                                
+                            <div class="custom-send">
                                 <a id="attach-file" class="cst-icon" href="#" title="#"><i class="fa fa-paperclip"></i></a>
                                 <button type="button" id="send-button" class="btn btn-danger btn-rounded">Send</button>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <!-- .chat-right-panel -->
             </div>
@@ -137,13 +137,13 @@
     <script src="https://static.realtair.com/js/photoswipe-ui-default.min.js"></script>
 
     <script src="https://static.realtair.com/js/chat.js"></script>
-    <script src="https://static.realtair.com/js/dropzone.js"></script> 
-    <script src="https://static.realtair.com/plugins/bootstrap-suggest-1.3.6/bootstrap-suggest.js"></script> 
+    <script src="https://static.realtair.com/js/dropzone.js"></script>
+    <script src="https://static.realtair.com/plugins/bootstrap-suggest-1.3.6/bootstrap-suggest.js"></script>
 
-    
+
 
     <script>
-        $(function () {            
+        $(function () {
             $('#messageText').suggest('@@', {
                 data: function (q) {
                     if (q) {
@@ -158,7 +158,7 @@
                 }
             });
         });
-        
+
     </script>
 
     <script>
@@ -175,25 +175,12 @@
             var attachments = $(".file-attachment .preview");
             var existingAttachments = $(".file-attachment .existing-preview");
 
-            var files = dz.files.map(function (a, i) {
-                return a.name + '|' + $('span.preview > img', a.previewTemplate).attr('src');
-            });
-
-            var message = $('<li class="odd">' +
-                            '<div class="chat-image"> <span class="img-circle">@Html.LoggedInUser().Person.Initials</span> </div>' +
-                            '    <div class="chat-body">' +
-                            '        <div class="chat-text">' +
-                            '            <h4>@(Html.LoggedInUser().Person.FirstName[0])@(Html.LoggedInUser().Person.LastName[0])</h4>' +
-                            '            <p> ' + messageText + ' </p>' +
-                            '        </div>' +
-                            '    </div>' +
-                            '</li>');
-            
-            $('ul.chat-list').append(message);
-            $('textarea[name=messageText]').val('');
-            $('textarea[name=messageText]').css('height', '60px');
-            $('.file-attachment-thumbnails').empty().hide();
-            $('#file-attachment').hide();
+            //var files = dz.files.map(function (a, i) {
+            //    return a.name + '|' + $('span.preview > img', a.previewTemplate).attr('src');
+            //});
+            var files = [];
+            for (i = 0; i < dz.files.length; i++)
+                files.push(dz.files[i].xhr.response);            
 
             if (attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {
 
@@ -261,48 +248,71 @@
         progressNode.parentNode.removeChild(progressNode);
 
         // Initialize Dropzone
+        Dropzone.autoDiscover = false;
         var dz = new Dropzone(document.body, {
-            url: '/',
-            thumbnailWidth: null,
-            thumbnailHeight: null,
+            url: '/actions/functions/upload-attachment',
+            thumbnailWidth: 40,
+            thumbnailHeight: 40,
             parallelUploads: 10,
             previewTemplate: previewTemplate,
-            autoQueue: false,
+            //autoQueue: false,
             previewsContainer: '#file-attachment',
             clickable: '#attach-file',
+            autoProcessQueue:false,
             init: function () {
                 this.on('addedfile', function (file) {
                     var query = $('#file-attachment');
                     if (!query.is(':visible')) {
-                        query.find('img').attr('style','height: 40px; width: 40px;');
+                        query.find('img').attr('style','width: 40px;');
                         query.show();
                     }
-                });
+                },
+                this.on("complete", function (file) {
+                    if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                        sendMessage();
+                        dz.removeAllFiles(true);
+                    }
+                }));
             }
         });
 
         // On-click Handlers
         $('#send-button').click(function () {
-            sendMessage();
-            dz.removeAllFiles(true);
+            dz.processQueue();
+            var message = $('<li class="odd">' +
+                            '<div class="chat-image"> <span class="img-circle">@Html.LoggedInUser().Person.Initials</span> </div>' +
+                            '    <div class="chat-body">' +
+                            '        <div class="chat-text">' +
+                            '            <h4>@(Html.LoggedInUser().Person.FirstName[0])@(Html.LoggedInUser().Person.LastName[0])</h4>' +
+                            '            <p> ' + $('textarea[name=messageText]').val() + ' </p>' +
+                            '        </div>' +
+                            '    </div>' +
+                            '</li>');
+
+            $('ul.chat-list').append(message);
+            $('textarea[name=messageText]').val('');
+            $('textarea[name=messageText]').css('height', '60px');
+            $('.file-attachment-thumbnails').empty().hide();
+            $('#file-attachment').hide();
         });
 
     </script>
-    <script>  
-        //$('.chat-list').slimScroll({            
+    <script>
+
+        //$('.chat-list').slimScroll({
         //    start: 'bottom'
         //});
-        
-        //$("#messageText").focus();                
-        
-        //$('.slimScrollDiv').css("height", "");    
-        
+
+        //$("#messageText").focus();
+
+        //$('.slimScrollDiv').css("height", "");
+
         //$('.sidebar').css("border-bottom", "20px solid #F2F2F3");
         //$('#page-wrapper').css("padding-top"," 130px");
         //$('body').css("overflow-y", "hidden");
 
         $(function () {
-            $('#selectPhotosBtn').click(function () {
+            /*$('#selectPhotosBtn').click(function () {
                 $('#modal-attachments').find('.picked').each(function () {
                     var image = $(this).find('img').attr('src');
                     var storageguid = $(this).find('img').attr('storageguid');
@@ -315,7 +325,7 @@
                         $(this).find('a.close-file').click(function () { $this.remove(); });
                     });
                 });
-            });
+            });*/
 
             /* Auto popup gallery */
             var url = window.location.href;

@@ -158,7 +158,7 @@ WriteLiteral(">\r\n");
             
             #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
                          foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
-                        {                            
+                        {
 
             
             #line default
@@ -202,8 +202,7 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</small></span></a>                                \r\n                            " +
-"</li>\r\n");
+WriteLiteral("</small></span></a>\r\n                            </li>\r\n");
 
             
             #line 33 "..\..\Views\Enquiry\Enquiry.cshtml"
@@ -269,50 +268,50 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2759), Tuple.Create("\"", 2787)
+WriteAttribute("action", Tuple.Create(" action=\"", 2699), Tuple.Create("\"", 2727)
             
             #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2768), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+, Tuple.Create(Tuple.Create("", 2708), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2768), false)
+, 2708), false)
 );
 
-WriteAttribute("target", Tuple.Create(" target=\"", 2788), Tuple.Create("\"", 2816)
+WriteAttribute("target", Tuple.Create(" target=\"", 2728), Tuple.Create("\"", 2756)
             
             #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-          , Tuple.Create(Tuple.Create("", 2797), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
+          , Tuple.Create(Tuple.Create("", 2737), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
             
             #line default
             #line hidden
-, 2797), false)
+, 2737), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2817), Tuple.Create("\"", 2872)
+WriteAttribute("method", Tuple.Create(" method=\"", 2757), Tuple.Create("\"", 2812)
             
             #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        , Tuple.Create(Tuple.Create("", 2826), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+                                        , Tuple.Create(Tuple.Create("", 2766), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2826), false)
+, 2766), false)
 );
 
-WriteLiteral(" >\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2950), Tuple.Create("\"", 2983)
+WriteAttribute("value", Tuple.Create(" value=\"", 2889), Tuple.Create("\"", 2922)
             
             #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2958), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 2897), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2958), false)
+, 2897), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -395,7 +394,7 @@ WriteLiteral("></textarea>\r\n                            <div");
 
 WriteLiteral(" class=\"custom-send\"");
 
-WriteLiteral(">                                \r\n                                <a");
+WriteLiteral(">\r\n                                <a");
 
 WriteLiteral(" id=\"attach-file\"");
 
@@ -420,7 +419,7 @@ WriteLiteral(" class=\"btn btn-danger btn-rounded\"");
 WriteLiteral(@">Send</button>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <!-- .chat-right-panel -->
             </div>
@@ -593,13 +592,13 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/js/dropzone.js\"");
 
-WriteLiteral("></script> \r\n    <script");
+WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/plugins/bootstrap-suggest-1.3.6/bootstrap-sugge" +
 "st.js\"");
 
-WriteLiteral("></script> \r\n\r\n    \r\n\r\n    <script>\r\n        $(function () {            \r\n       " +
-"     $(\'#messageText\').suggest(\'");
+WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\r\n            $(\'#messageT" +
+"ext\').suggest(\'");
 
 WriteLiteral("@\', {\r\n                data: function (q) {\r\n                    if (q) {\r\n      " +
 "                  return $.getJSON(window.location.origin + \"/rest/users\", { que" +
@@ -607,117 +606,25 @@ WriteLiteral("@\', {\r\n                data: function (q) {\r\n                
 "ion (user) {\r\n                    return {\r\n                        value: user[" +
 "0].ConversationRef,\r\n                        text: \'<small>\' + user[0].Name + \'<" +
 "/small>\'\r\n                    }\r\n                }\r\n            });\r\n        });" +
-"\r\n        \r\n    </script>\r\n\r\n    <script>\r\n        // Setup preview node...\r\n   " +
-"     var previewNode = document.querySelector(\"#file-attachment-thumbnails\");\r\n " +
-"       previewNode.id = \"\";\r\n        var previewTemplate = previewNode.parentNod" +
-"e.innerHTML;\r\n        previewNode.parentNode.removeChild(previewNode);\r\n\r\n      " +
-"  // Setup progress node...\r\n        var progressNode = document.querySelector(\'" +
-"#file-attachment-progress\');\r\n        progressNode.id = \'\';\r\n        var progres" +
-"sTemplate = progressNode.parentNode.innerHTML;\r\n        progressNode.parentNode." +
-"removeChild(progressNode);\r\n\r\n        // Initialize Dropzone\r\n        var dz = n" +
-"ew Dropzone(document.body, {\r\n            url: \'/\',\r\n            thumbnailWidth:" +
-" null,\r\n            thumbnailHeight: null,\r\n            parallelUploads: 10,\r\n  " +
-"          previewTemplate: previewTemplate,\r\n            autoQueue: false,\r\n    " +
-"        previewsContainer: \'#file-attachment\',\r\n            clickable: \'#attach-" +
-"file\',\r\n            init: function () {\r\n                this.on(\'addedfile\', fu" +
-"nction (file) {\r\n                    var query = $(\'#file-attachment\');\r\n       " +
-"             if (!query.is(\':visible\')) {\r\n                        query.find(\'i" +
-"mg\').attr(\'style\',\'height: 40px; width: 40px;\');\r\n                        query." +
-"show();\r\n                    }\r\n                });\r\n            }\r\n        });\r" +
-"\n\r\n        // On-click Handlers\r\n        $(\'#send-button\').click(function () {\r\n" +
-"            sendMessage();\r\n            dz.removeAllFiles(true);\r\n        });\r\n\r" +
-"\n    </script>\r\n    <script>\r\n        var tempSentMessageId = 0;\r\n        var po" +
-"llTime = 1000 * 10;       \r\n        \r\n        //$(\'.chat-list\').slimScroll({    " +
-"        \r\n        //    start: \'bottom\'\r\n        //});\r\n        \r\n        //$(\"#" +
-"messageText\").focus();                \r\n        \r\n        //$(\'.slimScrollDiv\')." +
-"css(\"height\", \"\");    \r\n        \r\n        //$(\'.sidebar\').css(\"border-bottom\", \"" +
-"20px solid #F2F2F3\");\r\n        //$(\'#page-wrapper\').css(\"padding-top\",\" 130px\");" +
-"\r\n        //$(\'body\').css(\"overflow-y\", \"hidden\");\r\n\r\n        $(function () {\r\n " +
-"           $(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal-" +
-"attachments\').find(\'.picked\').each(function () {\r\n                    var image " +
-"= $(this).find(\'img\').attr(\'src\');\r\n                    var storageguid = $(this" +
-").find(\'img\').attr(\'storageguid\');\r\n                    $(\'.file-attachment-thum" +
-"bnails\').append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + " +
-"\'\" style=\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"" +
-"fa fa-times\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + " +
-"storageguid + \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-atta" +
-"chment-thumbnails\').show();\r\n                    $(this).toggleClass(\"picked\");\r" +
-"\n\r\n                    $(\'.existing-preview\').each(function () {\r\n              " +
-"          var $this = $(this);\r\n                        $(this).find(\'a.close-fi" +
-"le\').click(function () { $this.remove(); });\r\n                    });\r\n         " +
-"       });\r\n            });\r\n\r\n            /* Auto popup gallery */\r\n           " +
-" var url = window.location.href;\r\n            var hash = url.substring(url.index" +
-"Of(\'#\') + 1);\r\n            var queries = hash.split(\"&\");\r\n            for (var " +
-"i = 0; i < queries.length; i++) {\r\n                if (queries[i].includes(\"pid\"" +
-")) {\r\n                    var pid = queries[i].split(\"=\")[1];\r\n                 " +
-"   $(\'#\' + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n         " +
-"   var textarea = document.querySelector(\'textarea[name=messageText]\');\r\n       " +
-"     textarea.addEventListener(\'keydown\', autosize);\r\n\r\n            function aut" +
-"osize() {\r\n                var el = this;\r\n                setTimeout(function (" +
-") {\r\n                    el.style.cssText = \'height:auto; padding:0\';\r\n         " +
-"           // for box-sizing other than \"content-box\" use:\r\n                    " +
-"// el.style.cssText = \'-moz-box-sizing:content-box\';\r\n                    el.sty" +
-"le.cssText = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n      " +
-"      }\r\n\r\n            $(window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHei" +
-"ght), \"slow\");            \r\n        });\r\n\r\n        function sendMessage() {\r\n   " +
-"         tempSentMessageId++;\r\n\r\n            var messageId = \"sent-\" + tempSentM" +
-"essageId;\r\n            var messageText = $(\'textarea[name=messageText]\').val();\r" +
-"\n            var attachments = $(\".file-attachment .preview\");\r\n            var " +
-"existingAttachments = $(\".file-attachment .existing-preview\");\r\n            var " +
-"files = dz.files.map(function (a, i) {\r\n                return `${a.name}|${$(\'s" +
-"pan.preview > img\', a.previewTemplate).attr(\'src\')}`;\r\n            });\r\n\r\n      " +
-"      var message = $(\'<li class=\"odd\">\' +\r\n                            \'<div cl" +
-"ass=\"chat-image\"> <span class=\"img-circle\">");
+"\r\n\r\n    </script>\r\n\r\n    <script>\r\n        // Variable declaration\r\n        var " +
+"tempSentMessageId = 0;\r\n        var pollTime = 1000 * 10;\r\n    </script>\r\n    <s" +
+"cript>\r\n        var sendMessage = function() {\r\n            tempSentMessageId++;" +
+"\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var me" +
+"ssageText = $(\'textarea[name=messageText]\').val();\r\n            var attachments " +
+"= $(\".file-attachment .preview\");\r\n            var existingAttachments = $(\".fil" +
+"e-attachment .existing-preview\");\r\n\r\n            //var files = dz.files.map(func" +
+"tion (a, i) {\r\n            //    return a.name + \'|\' + $(\'span.preview > img\', a" +
+".previewTemplate).attr(\'src\');\r\n            //});\r\n            var files = [];\r\n" +
+"            for (i = 0; i < dz.files.length; i++)\r\n                files.push(dz" +
+".files[i].xhr.response);            \r\n\r\n            if (attachments.length > 0 |" +
+"| jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {\r\n\r\n  " +
+"              var baseMainHeight = $(document).height();\r\n                $(\'htm" +
+"l,body\').animate({ scrollTop: $(document).scrollTop() + $(document).height() - b" +
+"aseMainHeight }, \"fast\");\r\n\r\n                $.ajax({\r\n                    url: " +
+"\'/enquiry/");
 
             
-            #line 276 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                          Write(Html.LoggedInUser().Person.Initials);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</span> </div>\' +\r\n                            \'    <div class=\"chat-body\">\' +\r\n " +
-"                           \'        <div class=\"chat-text\">\' +\r\n                " +
-"            \'            <h4>");
-
-            
-            #line 279 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                         Write(Html.LoggedInUser().Person.FirstName[0]);
-
-            
-            #line default
-            #line hidden
-            
-            #line 279 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                   Write(Html.LoggedInUser().Person.LastName[0]);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"</h4>' +
-                            '            <p> ' + messageText + ' </p>' +                            
-                            '        </div>' +
-                            '    </div>' +
-                            '</li>');
-            //var formToSubmit = $(""#send-message-form"").serialize();
-
-            $('ul.chat-list').append(message);            
-
-            $('textarea[name=messageText]').val('');
-            $('textarea[name=messageText]').css('height', '60px');
-            $('.file-attachment-thumbnails').empty().hide();
-            $('#file-attachment').hide();
-
-            if (attachments.length > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {
-
-                var baseMainHeight = $(document).height();
-                $('html,body').animate({ scrollTop: $(document).scrollTop() + $(document).height() - baseMainHeight }, ""fast"");
-
-                $.ajax({
-                    url: '/enquiry/");
-
-            
-            #line 299 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 191 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -726,7 +633,7 @@ WriteLiteral(@"</h4>' +
 WriteLiteral("/chat/");
 
             
-            #line 299 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 191 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -740,7 +647,7 @@ WriteLiteral(@"/send-message',
                     },
                     enctype: 'multipart/form-data',
                     success: function (insertedId) {
-                        doPoll();                        
+                        doPoll();
                     },
                     error: function (data) {
                         window.location.href = ""/"";
@@ -750,12 +657,12 @@ WriteLiteral(@"/send-message',
             }
         }
 
-        function doPoll() {
+        var doPoll = function () {
             $.ajax({
                 url: '/enquiry/");
 
             
-            #line 319 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 211 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -764,38 +671,114 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 319 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 211 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
             #line default
             #line hidden
-WriteLiteral(@"/get-updated-timeline?isActive=' + true,
-                type: 'GET',
-                success: function (data) {
+WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type: \'GET\',\r\n         " +
+"       success: function (data) {\r\n\r\n                    var baseMainHeight = $(" +
+"document).height();\r\n\r\n                    $(\'.messagebox\').children().not(\'.sen" +
+"ding\').remove();\r\n                    $(\".messagebox\").prepend(data);\r\n\r\n       " +
+"             //$(\'.chat-list\').slimScroll({\r\n                    //    start: \'b" +
+"ottom\'\r\n                    //});\r\n                    //$(\'.slimScrollDiv\').css" +
+"(\"height\", \"\");\r\n                    if (navigator.userAgent.match(/iPhone/i)) {" +
+"\r\n                        $(\".chat-list > li:last-child\").css(\"padding-bottom\", " +
+"\"100px\");\r\n                    }\r\n\r\n                    setTimeout(doPoll, pollT" +
+"ime);\r\n                },\r\n                error: function (data) {\r\n           " +
+"         window.location.href = \"/\";\r\n                },\r\n                cache:" +
+" false\r\n            });\r\n        }\r\n    </script>\r\n    <script>\r\n        // Setu" +
+"p preview node...\r\n        var previewNode = document.querySelector(\"#file-attac" +
+"hment-thumbnails\");\r\n        previewNode.id = \"\";\r\n        var previewTemplate =" +
+" previewNode.parentNode.innerHTML;\r\n        previewNode.parentNode.removeChild(p" +
+"reviewNode);\r\n\r\n        // Setup progress node...\r\n        var progressNode = do" +
+"cument.querySelector(\'#file-attachment-progress\');\r\n        progressNode.id = \'\'" +
+";\r\n        var progressTemplate = progressNode.parentNode.innerHTML;\r\n        pr" +
+"ogressNode.parentNode.removeChild(progressNode);\r\n\r\n        // Initialize Dropzo" +
+"ne\r\n        Dropzone.autoDiscover = false;\r\n        var dz = new Dropzone(docume" +
+"nt.body, {\r\n            url: \'/actions/functions/upload-attachment\',\r\n          " +
+"  thumbnailWidth: 40,\r\n            thumbnailHeight: 40,\r\n            parallelUpl" +
+"oads: 10,\r\n            previewTemplate: previewTemplate,\r\n            //autoQueu" +
+"e: false,\r\n            previewsContainer: \'#file-attachment\',\r\n            click" +
+"able: \'#attach-file\',\r\n            autoProcessQueue:false,\r\n            init: fu" +
+"nction () {\r\n                this.on(\'addedfile\', function (file) {\r\n           " +
+"         var query = $(\'#file-attachment\');\r\n                    if (!query.is(\'" +
+":visible\')) {\r\n                        query.find(\'img\').attr(\'style\',\'width: 40" +
+"px;\');\r\n                        query.show();\r\n                    }\r\n          " +
+"      },\r\n                this.on(\"complete\", function (file) {\r\n               " +
+"     if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length =" +
+"== 0) {\r\n                        sendMessage();\r\n                        dz.remo" +
+"veAllFiles(true);\r\n                    }\r\n                }));\r\n            }\r\n " +
+"       });\r\n\r\n        // On-click Handlers\r\n        $(\'#send-button\').click(func" +
+"tion () {\r\n            dz.processQueue();\r\n            var message = $(\'<li clas" +
+"s=\"odd\">\' +\r\n                            \'<div class=\"chat-image\"> <span class=\"" +
+"img-circle\">");
 
-                    var baseMainHeight = $(document).height();
+            
+            #line 283 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                          Write(Html.LoggedInUser().Person.Initials);
 
-                    $('.messagebox').children().not('.sending').remove();
-                    $("".messagebox"").prepend(data);
-                    
-                    //$('.chat-list').slimScroll({
-                    //    start: 'bottom'
-                    //});
-                    //$('.slimScrollDiv').css(""height"", """");
-                    if (navigator.userAgent.match(/iPhone/i)) {
-                        $("".chat-list > li:last-child"").css(""padding-bottom"", ""100px"");
-                    }
+            
+            #line default
+            #line hidden
+WriteLiteral("</span> </div>\' +\r\n                            \'    <div class=\"chat-body\">\' +\r\n " +
+"                           \'        <div class=\"chat-text\">\' +\r\n                " +
+"            \'            <h4>");
 
-                    setTimeout(doPoll, pollTime);
-                },
-                error: function (data) {
-                    window.location.href = ""/"";
-                }
-            });
-        }
-    </script>
-");
+            
+            #line 286 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                         Write(Html.LoggedInUser().Person.FirstName[0]);
+
+            
+            #line default
+            #line hidden
+            
+            #line 286 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                   Write(Html.LoggedInUser().Person.LastName[0]);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h4>\' +\r\n                            \'            <p> \' + $(\'textarea[name=messa" +
+"geText]\').val() + \' </p>\' +\r\n                            \'        </div>\' +\r\n   " +
+"                         \'    </div>\' +\r\n                            \'</li>\');\r\n" +
+"\r\n            $(\'ul.chat-list\').append(message);\r\n            $(\'textarea[name=m" +
+"essageText]\').val(\'\');\r\n            $(\'textarea[name=messageText]\').css(\'height\'" +
+", \'60px\');\r\n            $(\'.file-attachment-thumbnails\').empty().hide();\r\n      " +
+"      $(\'#file-attachment\').hide();\r\n        });\r\n\r\n    </script>\r\n    <script>\r" +
+"\n\r\n        //$(\'.chat-list\').slimScroll({\r\n        //    start: \'bottom\'\r\n      " +
+"  //});\r\n\r\n        //$(\"#messageText\").focus();\r\n\r\n        //$(\'.slimScrollDiv\')" +
+".css(\"height\", \"\");\r\n\r\n        //$(\'.sidebar\').css(\"border-bottom\", \"20px solid " +
+"#F2F2F3\");\r\n        //$(\'#page-wrapper\').css(\"padding-top\",\" 130px\");\r\n        /" +
+"/$(\'body\').css(\"overflow-y\", \"hidden\");\r\n\r\n        $(function () {\r\n            " +
+"/*$(\'#selectPhotosBtn\').click(function () {\r\n                $(\'#modal-attachmen" +
+"ts\').find(\'.picked\').each(function () {\r\n                    var image = $(this)" +
+".find(\'img\').attr(\'src\');\r\n                    var storageguid = $(this).find(\'i" +
+"mg\').attr(\'storageguid\');\r\n                    $(\'.file-attachment-thumbnails\')." +
+"append($(\'<div class=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=" +
+"\"background-image: url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-tim" +
+"es\"></i></a><input type=\"hidden\" name=\"existingAttachments\" value=\"\' + storagegu" +
+"id + \'\"></div>\'));\r\n                    $(\'.file-attachment, .file-attachment-th" +
+"umbnails\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n      " +
+"              $(\'.existing-preview\').each(function () {\r\n                       " +
+" var $this = $(this);\r\n                        $(this).find(\'a.close-file\').clic" +
+"k(function () { $this.remove(); });\r\n                    });\r\n                })" +
+";\r\n            });*/\r\n\r\n            /* Auto popup gallery */\r\n            var ur" +
+"l = window.location.href;\r\n            var hash = url.substring(url.indexOf(\'#\')" +
+" + 1);\r\n            var queries = hash.split(\"&\");\r\n            for (var i = 0; " +
+"i < queries.length; i++) {\r\n                if (queries[i].indexOf(\"pid\")) {\r\n  " +
+"                  var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\'" +
+" + pid).trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            var t" +
+"extarea = document.querySelector(\'textarea[name=messageText]\');\r\n            tex" +
+"tarea.addEventListener(\'keydown\', autosize);\r\n\r\n            function autosize() " +
+"{\r\n                var el = this;\r\n                setTimeout(function () {\r\n   " +
+"                 el.style.cssText = \'height:auto; padding:0\';\r\n                 " +
+"   // for box-sizing other than \"content-box\" use:\r\n                    // el.st" +
+"yle.cssText = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssTe" +
+"xt = \'height:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r" +
+"\n\r\n            $(window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"s" +
+"low\");\r\n\r\n        });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
 
 });
 
