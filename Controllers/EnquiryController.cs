@@ -52,7 +52,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             model.ExternalConversations = model.Workflow.Conversations.Where(c => !c.Users.Contains(User) && c.AccessibleTo(User, DbContext)).ToList();
             conversationId = conversationId.HasValue ? conversationId : model.Conversations?.OrderByDescending(c => c.ActiveNotifications(User, model.Workflow).Count())?.FirstOrDefault()?.Id ?? (model.ExternalConversations.Count() > 0 ? model.ExternalConversations?.First().Id : null);
 
-            if(conversationId == null) return Redirect("/");
+            if (conversationId == null) return Redirect("/");
 
             model.Conversation = conversationEnquiry.Conversations.Single(c => c.Id == conversationId);
             model.Participants = conversationEnquiry.Conversations.Single(c => c.Id == conversationId).Users.ToList();
@@ -115,22 +115,24 @@ namespace Realtair.Framework.Core.Web.Controllers
         }
 
         //[Route("{enquiryTypeName}/{id:int}/chat/{conversationId:int}/send-message"), HttpPost, ValidateInput(false)]
-        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, int[] attachments, string[] existingAttachments)
+        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, string[] attachments, string[] existingAttachments)
         {
             var conversation = DbContext.Set<Conversation>().First(c => c.Id == conversationId);
 
-            if (!conversation.AccessibleTo(User, DbContext)) return new HttpStatusCodeResult(403);            
+            if (!conversation.AccessibleTo(User, DbContext)) return new HttpStatusCodeResult(403);
 
-            var attachmentsForMessage = new List<Attachment>();
-            for (int i=0; i<attachments.Count(); i++)
+            var attachmentsForMessage = attachments == null ? new List<Attachment>() :
+                attachments.Select(f => new ActionMapper(DbContext).MapFileAsset(f)).ToList();
+
+            if (existingAttachments != null)
             {
-                var attId = attachments[i];
-                var attachment = DbContext.Set<Attachment>().Where(a => a.Id == attId).FirstOrDefault();
-                if (attachment != null)
+                foreach (string existingAttachment in existingAttachments)
                 {
-                    attachmentsForMessage.Add(attachment);
+                    var storageGuid = new Guid(existingAttachment);
+                    var originalAttachment = DbContext.Set<Attachment>().Where(a => a.StorageGuid == storageGuid).FirstOrDefault();
+                    attachmentsForMessage.Add(new Attachment(originalAttachment));
                 }
-            }            
+            }
 
             var enquiry = CoreExtensions.GetEnquiry(DbContext, id);
             var message = new Message(enquiry, conversation, User, messageText, attachmentsForMessage, DbContext);
@@ -173,7 +175,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
             return View("Timeline", timeline);
         }
-        
+
         // Other Methods
         public void DismissAllNotifications(IEnumerable<int> notificationIds)
         {
@@ -181,7 +183,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             foreach (var n in notifications)
                 n.Dismissed = true;
             DbContext.SaveChanges();
-        }        
+        }
         public ActionResult QueryUsers(string query = "")
         {
             var users = DbContext.Set<User>().ToList().Where(u => u.ConversationRef != null && u.ConversationRef.ToLowerInvariant().Contains(query.ToLowerInvariant()))
@@ -201,12 +203,10 @@ namespace Realtair.Framework.Core.Web.Controllers
     {
         private static IHubContext hubContext = GlobalHost.ConnectionManager.GetHubContext<ConversationHub>();
         public static Dictionary<string, string> userHubs = new Dictionary<string, string>();
-
         public static void NewMessageSent(int conversationId, Guid messageId)
         {
             hubContext.Clients.Group(conversationId.ToString()).newMessageReceived(messageId.ToString());
         }
-
         public static void AddOnlineUsers(string conversationId, string userId)
         {
             if (!userHubs.ContainsKey(userId))
@@ -218,12 +218,10 @@ namespace Realtair.Framework.Core.Web.Controllers
                 userHubs[userId] = conversationId;
             }
         }
-
         public System.Threading.Tasks.Task LeaveRoom(string roomName)
         {
             return Groups.Remove(Context.ConnectionId, roomName);
         }
-
         public async System.Threading.Tasks.Task JoinRoom(string roomName)
         {
             await Groups.Add(Context.ConnectionId, roomName);
