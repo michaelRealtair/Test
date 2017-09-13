@@ -115,22 +115,23 @@ namespace Realtair.Framework.Core.Web.Controllers
         }
 
         //[Route("{enquiryTypeName}/{id:int}/chat/{conversationId:int}/send-message"), HttpPost, ValidateInput(false)]
-        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, string[] attachments, string[] existingAttachments)
+        public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, int[] attachments, string[] existingAttachments)
         {
             var conversation = DbContext.Set<Conversation>().First(c => c.Id == conversationId);
 
             if (!conversation.AccessibleTo(User, DbContext)) return new HttpStatusCodeResult(403);
 
-            var attachmentsForMessage = attachments == null ? new List<Attachment>() :
-                attachments.Select(f => new ActionMapper(DbContext).MapFileAsset(f)).ToList();
-
-            if (existingAttachments != null)
+            var attachmentsForMessage = new List<Attachment>();
+            if (attachments != null)
             {
-                foreach (string existingAttachment in existingAttachments)
+                for (int i = 0; i < attachments.Count(); i++)
                 {
-                    var storageGuid = new Guid(existingAttachment);
-                    var originalAttachment = DbContext.Set<Attachment>().Where(a => a.StorageGuid == storageGuid).FirstOrDefault();
-                    attachmentsForMessage.Add(new Attachment(originalAttachment));
+                    var attId = attachments[i];
+                    var attachment = DbContext.Set<Attachment>().Where(a => a.Id == attId).FirstOrDefault();
+                    if (attachment != null)
+                    {
+                        attachmentsForMessage.Add(attachment);
+                    }
                 }
             }
 
