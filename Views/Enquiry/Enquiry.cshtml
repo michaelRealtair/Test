@@ -32,7 +32,9 @@
                             </li>
                         }
 
+                        @if (Model.Workflow.Extension is IHasRelatedUsers)
                         {
+                            foreach (var user in (Model.Workflow.Extension as IHasRelatedUsers).RelatedUsers(Html.LoggedInUser()))
                             {
                                 <li>
                                     <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
