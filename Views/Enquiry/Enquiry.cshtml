@@ -31,6 +31,14 @@
                                 <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
                             </li>
                         }
+
+                        {
+                            {
+                                <li>
+                                    <a href="javascript:void(0)"><span class="img-circle">@(user.Person.Initials)</span> <span>@user.Person.Name<small class="text-success">@(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()))</small></span></a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -167,14 +175,14 @@
         var pollTime = 1000 * 10;
     </script>
     <script>
-        var sendMessage = function() {
+        var sendMessage = function () {
             tempSentMessageId++;
 
             var messageId = "sent-" + tempSentMessageId;
             var messageText = $('textarea[name=messageText]').val();
             var attachments = $(".file-attachment .preview");
             var existingAttachments = $(".file-attachment .existing-preview");
-            
+
             var files = [];
             for (i = 0; i < dz.files.length; i++)
                 files.push(dz.files[i].xhr.response);

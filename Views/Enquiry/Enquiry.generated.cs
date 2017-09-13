@@ -211,6 +211,73 @@ WriteLiteral("</small></span></a>\r\n                            </li>\r\n");
             
             #line default
             #line hidden
+WriteLiteral("\r\n");
+
+            
+            #line 35 "..\..\Views\Enquiry\Enquiry.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 35 "..\..\Views\Enquiry\Enquiry.cshtml"
+                         if (Model.Workflow.Extension is IHasRelatedUsers)
+                        {
+                            foreach (var user in (Model.Workflow.Extension as IHasRelatedUsers).RelatedUsers(Html.LoggedInUser()))
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <li>\r\n                                    <a");
+
+WriteLiteral(" href=\"javascript:void(0)\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"img-circle\"");
+
+WriteLiteral(">");
+
+            
+            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                      Write(user.Person.Initials);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span> <span>");
+
+            
+            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                                                          Write(user.Person.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("<small");
+
+WriteLiteral(" class=\"text-success\"");
+
+WriteLiteral(">");
+
+            
+            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                                                                                                        Write(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small></span></a>\r\n                                </li>\r\n");
+
+            
+            #line 42 "..\..\Views\Enquiry\Enquiry.cshtml"
+                            }
+                        }
+
+            
+            #line default
+            #line hidden
 WriteLiteral("                    </ul>\r\n                </div>\r\n            </div>\r\n          " +
 "  <!-- .chat-left-panel -->\r\n            <!-- .chat-right-panel -->\r\n           " +
 " <div");
@@ -230,7 +297,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 42 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
                    Write(Html.Partial("Timeline", Model.Timeline));
 
             
@@ -251,13 +318,13 @@ WriteLiteral(" class=\"col-sm-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 57 "..\..\Views\Enquiry\Enquiry.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 47 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 57 "..\..\Views\Enquiry\Enquiry.cshtml"
                              foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
 
@@ -268,34 +335,34 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 2699), Tuple.Create("\"", 2727)
+WriteAttribute("action", Tuple.Create(" action=\"", 3372), Tuple.Create("\"", 3400)
             
-            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 2708), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 3381), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 2708), false)
+, 3381), false)
 );
 
-WriteAttribute("target", Tuple.Create(" target=\"", 2728), Tuple.Create("\"", 2756)
+WriteAttribute("target", Tuple.Create(" target=\"", 3401), Tuple.Create("\"", 3429)
             
-            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-          , Tuple.Create(Tuple.Create("", 2737), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
+            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
+          , Tuple.Create(Tuple.Create("", 3410), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
             
             #line default
             #line hidden
-, 2737), false)
+, 3410), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 2757), Tuple.Create("\"", 2812)
+WriteAttribute("method", Tuple.Create(" method=\"", 3430), Tuple.Create("\"", 3485)
             
-            #line 49 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        , Tuple.Create(Tuple.Create("", 2766), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 3439), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 2766), false)
+, 3439), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -304,14 +371,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 2889), Tuple.Create("\"", 2922)
+WriteAttribute("value", Tuple.Create(" value=\"", 3562), Tuple.Create("\"", 3595)
             
-            #line 50 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 2897), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 60 "..\..\Views\Enquiry\Enquiry.cshtml"
+ , Tuple.Create(Tuple.Create("", 3570), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 2897), false)
+, 3570), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -323,7 +390,7 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 61 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                        Write(action.Description(Html.LoggedInUser()));
 
             
@@ -332,7 +399,7 @@ WriteLiteral(">");
 WriteLiteral("</button>\r\n                                </form>\r\n");
 
             
-            #line 53 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
                             }
 
             
@@ -600,28 +667,51 @@ WriteLiteral(" src=\"https://static.realtair.com/plugins/bootstrap-suggest-1.3.6
 WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\r\n            $(\'#messageT" +
 "ext\').suggest(\'");
 
-WriteLiteral("@\', {\r\n                data: function (q) {\r\n                    if (q) {\r\n      " +
-"                  return $.getJSON(window.location.origin + \"/rest/users\", { que" +
-"ry: q });\r\n                    }\r\n                },\r\n                map: funct" +
-"ion (user) {\r\n                    return {\r\n                        value: user[" +
-"0].ConversationRef,\r\n                        text: \'<small>\' + user[0].Name + \'<" +
-"/small>\'\r\n                    }\r\n                }\r\n            });\r\n        });" +
-"\r\n\r\n    </script>\r\n\r\n    <script>\r\n        // Variable declaration\r\n        var " +
-"tempSentMessageId = 0;\r\n        var pollTime = 1000 * 10;\r\n    </script>\r\n    <s" +
-"cript>\r\n        var sendMessage = function() {\r\n            tempSentMessageId++;" +
-"\r\n\r\n            var messageId = \"sent-\" + tempSentMessageId;\r\n            var me" +
-"ssageText = $(\'textarea[name=messageText]\').val();\r\n            var attachments " +
-"= $(\".file-attachment .preview\");\r\n            var existingAttachments = $(\".fil" +
-"e-attachment .existing-preview\");\r\n            \r\n            var files = [];\r\n  " +
-"          for (i = 0; i < dz.files.length; i++)\r\n                files.push(dz.f" +
-"iles[i].xhr.response);\r\n\r\n            if (files.length > 0 || jQuery.trim(messag" +
-"eText).length > 0 || existingAttachments.length > 0) {\r\n\r\n                var ba" +
-"seMainHeight = $(document).height();\r\n                $(\'html,body\').animate({ s" +
-"crollTop: $(document).scrollTop() + $(document).height() - baseMainHeight }, \"fa" +
-"st\");\r\n\r\n                $.ajax({\r\n                    url: \'/enquiry/");
+WriteLiteral(@"@', {
+                data: function (q) {
+                    if (q) {
+                        return $.getJSON(window.location.origin + ""/rest/users"", { query: q });
+                    }
+                },
+                map: function (user) {
+                    return {
+                        value: user[0].ConversationRef,
+                        text: '<small>' + user[0].Name + '</small>'
+                    }
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        // Variable declaration
+        var tempSentMessageId = 0;
+        var pollTime = 1000 * 10;
+    </script>
+    <script>
+        var sendMessage = function () {
+            tempSentMessageId++;
+
+            var messageId = ""sent-"" + tempSentMessageId;
+            var messageText = $('textarea[name=messageText]').val();
+            var attachments = $("".file-attachment .preview"");
+            var existingAttachments = $("".file-attachment .existing-preview"");
+
+            var files = [];
+            for (i = 0; i < dz.files.length; i++)
+                files.push(dz.files[i].xhr.response);
+
+            if (files.length > 0 || jQuery.trim(messageText).length > 0 || existingAttachments.length > 0) {
+
+                var baseMainHeight = $(document).height();
+                $('html,body').animate({ scrollTop: $(document).scrollTop() + $(document).height() - baseMainHeight }, ""fast"");
+
+                $.ajax({
+                    url: '/enquiry/");
 
             
-            #line 188 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -630,7 +720,7 @@ WriteLiteral("@\', {\r\n                data: function (q) {\r\n                
 WriteLiteral("/chat/");
 
             
-            #line 188 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -659,7 +749,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -668,7 +758,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -717,7 +807,7 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "img-circle\">");
 
             
-            #line 287 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 297 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -728,7 +818,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 290 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             
