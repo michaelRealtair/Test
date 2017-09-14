@@ -688,13 +688,13 @@ WriteLiteral(@"@', {
         // Variable declaration
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
+        var messageText = '';
     </script>
     <script>
         var sendMessage = function () {
             tempSentMessageId++;
 
-            var messageId = ""sent-"" + tempSentMessageId;
-            var messageText = $('textarea[name=messageText]').val();
+            var messageId = ""sent-"" + tempSentMessageId;            
             var attachments = $("".file-attachment .preview"");
             var existingAttachments = $("".file-attachment .existing-preview"");
 
@@ -798,16 +798,16 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 " === 0) {\r\n                        sendMessage();\r\n                        dz.re" +
 "moveAllFiles(true);\r\n                    }\r\n                }));\r\n            }\r" +
 "\n        });\r\n\r\n        // On-click Handlers\r\n        $(\'#send-button\').click(fu" +
-"nction () {\r\n            if (dz.files.length == 0 && jQuery.trim($(\'textarea[nam" +
-"e=messageText]\').val()).length > 0) {\r\n                sendMessage();\r\n         " +
-"   } else if (dz.files.length > 0 || jQuery.trim($(\'textarea[name=messageText]\')" +
-".val()).length > 0) {\r\n                dz.processQueue();\r\n            } else {\r" +
-"\n                return;\r\n            }\r\n\r\n            var message = $(\'<li clas" +
-"s=\"odd\">\' +\r\n                            \'<div class=\"chat-image\"> <span class=\"" +
-"img-circle\">");
+"nction () {\r\n\r\n            messageText = $(\'textarea[name=messageText]\').val();\r" +
+"\n\r\n            if (dz.files.length == 0 && jQuery.trim(messageText).length > 0) " +
+"{\r\n                sendMessage();\r\n            } else if (dz.files.length > 0 ||" +
+" jQuery.trim(messageText).length > 0) {\r\n                dz.processQueue();\r\n   " +
+"         } else {\r\n                return;\r\n            }\r\n\r\n            var mes" +
+"sage = $(\'<li class=\"odd\">\' +\r\n                            \'<div class=\"chat-ima" +
+"ge\"> <span class=\"img-circle\">");
 
             
-            #line 297 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -818,7 +818,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 303 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             

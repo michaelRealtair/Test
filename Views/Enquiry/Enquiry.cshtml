@@ -175,13 +175,13 @@
         // Variable declaration
         var tempSentMessageId = 0;
         var pollTime = 1000 * 10;
+        var messageText = '';
     </script>
     <script>
         var sendMessage = function () {
             tempSentMessageId++;
 
-            var messageId = "sent-" + tempSentMessageId;
-            var messageText = $('textarea[name=messageText]').val();
+            var messageId = "sent-" + tempSentMessageId;            
             var attachments = $(".file-attachment .preview");
             var existingAttachments = $(".file-attachment .existing-preview");
 
@@ -285,9 +285,12 @@
 
         // On-click Handlers
         $('#send-button').click(function () {
-            if (dz.files.length == 0 && jQuery.trim($('textarea[name=messageText]').val()).length > 0) {
+
+            messageText = $('textarea[name=messageText]').val();
+
+            if (dz.files.length == 0 && jQuery.trim(messageText).length > 0) {
                 sendMessage();
-            } else if (dz.files.length > 0 || jQuery.trim($('textarea[name=messageText]').val()).length > 0) {
+            } else if (dz.files.length > 0 || jQuery.trim(messageText).length > 0) {
                 dz.processQueue();
             } else {
                 return;
