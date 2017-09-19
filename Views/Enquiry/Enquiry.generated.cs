@@ -494,9 +494,31 @@ WriteLiteral(@">Send</button>
         </div>
     </div>
 </div>
-<!-- /#page-wrapper -->
+<footer");
 
-<div");
+WriteLiteral(" class=\"footer text-center hidden-xs\"");
+
+WriteLiteral(" style=\"border-top: solid 1px #F2F2F3; z-index: 10; position: fixed;\"");
+
+WriteLiteral(">\r\n    Powered by <a");
+
+WriteLiteral(" href=\"http://realtair.com/\"");
+
+WriteLiteral(">Realtair</a>\r\n    <span");
+
+WriteLiteral(" class=\"pull-right text-right\"");
+
+WriteLiteral(">\r\n        e: <a");
+
+WriteLiteral(" href=\"mailto:support@realtair.com\"");
+
+WriteLiteral(">support");
+
+WriteLiteral("@realtair.com</a>\r\n        <br />\r\n        p: <a");
+
+WriteLiteral(" href=\"mailto:support@realtair.com\"");
+
+WriteLiteral(">1300 299 357</a>\r\n    </span>\r\n</footer>\r\n\r\n<!-- /#page-wrapper -->\r\n\r\n<div");
 
 WriteLiteral(" class=\"pswp\"");
 
@@ -711,7 +733,7 @@ WriteLiteral(@"@', {
                     url: '/enquiry/");
 
             
-            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 207 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -720,7 +742,7 @@ WriteLiteral(@"@', {
 WriteLiteral("/chat/");
 
             
-            #line 198 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 207 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -749,7 +771,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 227 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -758,7 +780,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 218 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 227 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -807,7 +829,7 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "ge\"> <span class=\"img-circle\">");
 
             
-            #line 300 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 309 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -818,7 +840,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 303 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 312 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             
@@ -863,7 +885,7 @@ WriteLiteral("</h4>\' +\r\n                            \'            <p> \' + $(
 "oz-box-sizing:content-box\';\r\n                    el.style.cssText = \'height:\' + " +
 "el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n            $(" +
 "window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\");\r\n\r\n       " +
-" });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
+" });\r\n\r\n        //setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
 
 });
 

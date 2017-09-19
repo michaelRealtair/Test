@@ -1544,6 +1544,26 @@ WriteLiteral(" value=\"true\"");
 
 WriteLiteral(" />                         \r\n\t\t\t\t\t </form>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n");
 
+            
+            #line 298 "..\..\Views\Actions\Action.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 298 "..\..\Views\Actions\Action.cshtml"
+   Write(Html.Partial("Footer"));
+
+            
+            #line default
+            #line hidden
+            
+            #line 298 "..\..\Views\Actions\Action.cshtml"
+                               
+
+            
+            #line default
+            #line hidden
 WriteLiteral(@"		<script>
 			$('#main-form-submit').click(function (e) {
 				e.preventDefault()
@@ -1575,7 +1595,7 @@ WriteLiteral(@"		<script>
 ");
 
             
-            #line 326 "..\..\Views\Actions\Action.cshtml"
+            #line 327 "..\..\Views\Actions\Action.cshtml"
 	}
 
             
@@ -1590,7 +1610,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\t");
 
             
-            #line 330 "..\..\Views\Actions\Action.cshtml"
+            #line 331 "..\..\Views\Actions\Action.cshtml"
 Write(Html.RenderDelayed());
 
             

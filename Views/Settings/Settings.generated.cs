@@ -461,6 +461,15 @@ WriteLiteral(">\r\n                            </form>\r\n                      
             #line hidden
 WriteLiteral("                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
+            
+            #line 75 "..\..\Views\Settings\Settings.cshtml"
+Write(Html.Partial("Footer"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
         }
     }
 }

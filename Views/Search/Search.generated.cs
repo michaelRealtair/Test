@@ -149,25 +149,16 @@ WriteLiteral("                            ");
             #line hidden
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                </di" +
 "v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- End of Search Resul" +
-"ts  -->    \r\n</div>\r\n\r\n<footer");
+"ts  -->    \r\n</div>\r\n\r\n");
 
-WriteLiteral(" class=\"footer text-center\"");
+            
+            #line 35 "..\..\Views\Search\Search.cshtml"
+Write(Html.Partial("Footer"));
 
-WriteLiteral(">\r\n    Powered by <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Realtair</a>\r\n    <span");
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">Technical Support: <a");
-
-WriteLiteral(" href=\"mailto:support@realtair.com\"");
-
-WriteLiteral(">support");
-
-WriteLiteral("@realtair.com</a></span>\r\n</footer>\r\n\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n");
 
 DefineSection("Scripts", () => {
 
@@ -185,7 +176,7 @@ WriteLiteral(@"
             $.post(""");
 
             
-            #line 51 "..\..\Views\Search\Search.cshtml"
+            #line 48 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             
