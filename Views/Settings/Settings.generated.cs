@@ -72,10 +72,10 @@ WriteLiteral(" class=\"box-title\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 297), Tuple.Create("\"", 350)
+WriteAttribute("href", Tuple.Create(" href=\"", 297), Tuple.Create("\"", 357)
             
             #line 9 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.GetDetailsUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.Entity.GetDetailsUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
@@ -86,7 +86,7 @@ WriteLiteral(">");
 
             
             #line 9 "..\..\Views\Settings\Settings.cshtml"
-                                                                                      Write(Model.Description);
+                                                                                             Write(Model.Description);
 
             
             #line default
@@ -117,30 +117,30 @@ WriteLiteral(">\r\n\r\n");
             #line hidden
 WriteLiteral("                        <li");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 586), Tuple.Create("\"", 714)
-, Tuple.Create(Tuple.Create("", 594), Tuple.Create("tab", 594), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 593), Tuple.Create("\"", 721)
+, Tuple.Create(Tuple.Create("", 601), Tuple.Create("tab", 601), true)
             
             #line 15 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create(" ", 597), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
+, Tuple.Create(Tuple.Create(" ", 604), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
             
             #line default
             #line hidden
-, 598), false)
+, 605), false)
 );
 
 WriteLiteral(">\r\n                            <a");
 
 WriteLiteral(" data-toggle=\"tab\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 766), Tuple.Create("\"", 800)
-, Tuple.Create(Tuple.Create("", 773), Tuple.Create("#tab-", 773), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 773), Tuple.Create("\"", 807)
+, Tuple.Create(Tuple.Create("", 780), Tuple.Create("#tab-", 780), true)
             
             #line 16 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 778), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+, Tuple.Create(Tuple.Create("", 785), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 778), false)
+, 785), false)
 );
 
 WriteLiteral(">\r\n");
@@ -185,28 +185,28 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                        <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1145), Tuple.Create("\"", 1176)
-, Tuple.Create(Tuple.Create("", 1150), Tuple.Create("tab-", 1150), true)
+WriteAttribute("id", Tuple.Create(" id=\"", 1152), Tuple.Create("\"", 1183)
+, Tuple.Create(Tuple.Create("", 1157), Tuple.Create("tab-", 1157), true)
             
             #line 25 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 1154), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+, Tuple.Create(Tuple.Create("", 1161), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 1154), false)
+, 1161), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1177), Tuple.Create("\"", 1318)
-, Tuple.Create(Tuple.Create("", 1185), Tuple.Create("tab-pane", 1185), true)
-, Tuple.Create(Tuple.Create(" ", 1193), Tuple.Create("fade", 1194), true)
-, Tuple.Create(Tuple.Create(" ", 1198), Tuple.Create("in", 1199), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1184), Tuple.Create("\"", 1325)
+, Tuple.Create(Tuple.Create("", 1192), Tuple.Create("tab-pane", 1192), true)
+, Tuple.Create(Tuple.Create(" ", 1200), Tuple.Create("fade", 1201), true)
+, Tuple.Create(Tuple.Create(" ", 1205), Tuple.Create("in", 1206), true)
             
             #line 25 "..\..\Views\Settings\Settings.cshtml"
-     , Tuple.Create(Tuple.Create(" ", 1201), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
+     , Tuple.Create(Tuple.Create(" ", 1208), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
             
             #line default
             #line hidden
-, 1202), false)
+, 1209), false)
 );
 
 WriteLiteral(">\r\n                            <form");
@@ -215,31 +215,31 @@ WriteLiteral(" method=\"post\"");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1393), Tuple.Create("\"", 1479)
-, Tuple.Create(Tuple.Create("", 1402), Tuple.Create("/", 1402), true)
+WriteAttribute("action", Tuple.Create(" action=\"", 1400), Tuple.Create("\"", 1486)
+, Tuple.Create(Tuple.Create("", 1409), Tuple.Create("/", 1409), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
- , Tuple.Create(Tuple.Create("", 1403), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
+ , Tuple.Create(Tuple.Create("", 1410), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
             
             #line default
             #line hidden
-, 1403), false)
-, Tuple.Create(Tuple.Create("", 1430), Tuple.Create("/", 1430), true)
+, 1410), false)
+, Tuple.Create(Tuple.Create("", 1437), Tuple.Create("/", 1437), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
-                             , Tuple.Create(Tuple.Create("", 1431), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
+                             , Tuple.Create(Tuple.Create("", 1438), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
             
             #line default
             #line hidden
-, 1431), false)
-, Tuple.Create(Tuple.Create("", 1447), Tuple.Create("/settings/", 1447), true)
+, 1438), false)
+, Tuple.Create(Tuple.Create("", 1454), Tuple.Create("/settings/", 1454), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 1457), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+                                                       , Tuple.Create(Tuple.Create("", 1464), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 1457), false)
+, 1464), false)
 );
 
 WriteLiteral(">\r\n");
@@ -438,14 +438,14 @@ WriteLiteral("                                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4085), Tuple.Create("\"", 4134)
+WriteAttribute("value", Tuple.Create(" value=\"", 4092), Tuple.Create("\"", 4141)
             
             #line 66 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 4093), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
+, Tuple.Create(Tuple.Create("", 4100), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
             
             #line default
             #line hidden
-, 4093), false)
+, 4100), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right\"");
@@ -460,6 +460,15 @@ WriteLiteral(">\r\n                            </form>\r\n                      
             #line default
             #line hidden
 WriteLiteral("                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+
+            
+            #line 75 "..\..\Views\Settings\Settings.cshtml"
+Write(Html.Partial("Footer"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
         }
     }

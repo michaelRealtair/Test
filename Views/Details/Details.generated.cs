@@ -159,12 +159,15 @@ WriteLiteral(">Settings</a>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("    </div>\r\n</div>\r\n\r\n<footer");
+WriteLiteral("    </div>\r\n</div>\r\n\r\n");
 
-WriteLiteral(" class=\"footer text-center hidden-xs\"");
+            
+            #line 32 "..\..\Views\Details\Details.cshtml"
+Write(Html.Partial("Footer"));
 
-WriteLiteral(">Powered by Realtair</footer>\r\n");
-
+            
+            #line default
+            #line hidden
         }
     }
 }

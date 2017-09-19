@@ -300,6 +300,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Branding.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Footer.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Footer.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\NotFound.generated.cs">
       <DependentUpon>NotFound.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3418,6 +3423,10 @@
     <None Include="Views\Shared\Fields\_RichTextAreaField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_RichTextAreaField1.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Footer.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Footer.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Widgets\_DataTable.cshtml">
       <Generator>RazorGenerator</Generator>
