@@ -1,4 +1,4 @@
-﻿@model Realtair.Framework.Core.Actions.Providers.SearchResults
+﻿@model Realtair.Framework.Core.Web.Controllers.SearchController.SearchViewModel
 
 @Html.Partial("Menu")
 <div id="page-wrapper" class="">
@@ -6,15 +6,27 @@
     <div class="header m-b-15">
         <div class="container">
             <div class="input-group">
-                <input id="search-box" name="query" type="text" placeholder="Find @Model.SetName" class="form-control" value="@Model.Query" autofocus onfocus="this.value = this.value;"/>
+                <input id="search-box" name="query" type="text" placeholder="Find @Model.Results.SetName" class="form-control" value="@Model.Results.Query" autofocus onfocus="this.value = this.value;" />
                 <span class="input-group-addon">
                     <i class="fa fa-search"></i>
                 </span>
             </div>
         </div>
+        @if (Model.Provider is ISearchProviderWithActions)
+        {
+            <div class="container">
+                <div class="row m-t-20">
+                    @foreach (var action in (Model.Provider as ISearchProviderWithActions).Actions())
+                    {
+                        <div class="col-md-3">
+                            <a href="@action.GetUrl(Html.LoggedInUser(), Url)" class="btn btn-success btn-md btn-outline btn-rounded">@action.Description(Html.LoggedInUser())</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
     </div>
     <!-- End of Search Bar  -->
-        
     <!-- Search Results  -->
     <div class="container">
         <div class="row">
@@ -22,14 +34,14 @@
                 <div class="panel">
                     <div class="panel-wrapper collapse-in">
                         <ul id="results" class="list-group">
-                            @Html.Partial("Results", Model)
+                            @Html.Partial("Results", Model.Results)
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End of Search Results  -->    
+    <!-- End of Search Results  -->
 </div>
 
 @Html.Partial("Footer")
@@ -39,7 +51,6 @@
         var timeoutID = null;
 
         $('#search-box').on('input', function () {
-            console.log('did debounce')
             clearTimeout(timeoutID);
             timeoutID = setTimeout(function () { search(); }, 300);
         });
@@ -81,14 +92,6 @@
                 padding-bottom: 40px;
             }
         }
-
-        /*.sidebar {
-            background: #5f5e5c;
-        }
-
-        #side-menu li a {
-            color: #fff;
-        }*/
 
         a.action {
             font-size: 18px;
