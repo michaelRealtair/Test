@@ -33,7 +33,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Search/Search.cshtml")]
-    public partial class _Views_Search_Search_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Providers.SearchResults>
+    public partial class _Views_Search_Search_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Web.Controllers.SearchController.SearchViewModel>
     {
         public _Views_Search_Search_cshtml()
         {
@@ -73,34 +73,34 @@ WriteLiteral(" name=\"query\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 317), Tuple.Create("\"", 350)
-, Tuple.Create(Tuple.Create("", 331), Tuple.Create("Find", 331), true)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 334), Tuple.Create("\"", 375)
+, Tuple.Create(Tuple.Create("", 348), Tuple.Create("Find", 348), true)
             
             #line 9 "..\..\Views\Search\Search.cshtml"
-  , Tuple.Create(Tuple.Create(" ", 335), Tuple.Create<System.Object, System.Int32>(Model.SetName
+  , Tuple.Create(Tuple.Create(" ", 352), Tuple.Create<System.Object, System.Int32>(Model.Results.SetName
             
             #line default
             #line hidden
-, 336), false)
+, 353), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 372), Tuple.Create("\"", 392)
+WriteAttribute("value", Tuple.Create(" value=\"", 397), Tuple.Create("\"", 425)
             
             #line 9 "..\..\Views\Search\Search.cshtml"
-                                               , Tuple.Create(Tuple.Create("", 380), Tuple.Create<System.Object, System.Int32>(Model.Query
+                                                       , Tuple.Create(Tuple.Create("", 405), Tuple.Create<System.Object, System.Int32>(Model.Results.Query
             
             #line default
             #line hidden
-, 380), false)
+, 405), false)
 );
 
 WriteLiteral(" autofocus");
 
 WriteLiteral(" onfocus=\"this.value = this.value;\"");
 
-WriteLiteral("/>\r\n                <span");
+WriteLiteral(" />\r\n                <span");
 
 WriteLiteral(" class=\"input-group-addon\"");
 
@@ -108,9 +108,93 @@ WriteLiteral(">\r\n                    <i");
 
 WriteLiteral(" class=\"fa fa-search\"");
 
-WriteLiteral("></i>\r\n                </span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n " +
-"   <!-- End of Search Bar  -->\r\n        \r\n    <!-- Search Results  -->\r\n    <div" +
-"");
+WriteLiteral("></i>\r\n                </span>\r\n            </div>\r\n        </div>\r\n");
+
+            
+            #line 15 "..\..\Views\Search\Search.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 15 "..\..\Views\Search\Search.cshtml"
+         if (Model.Provider is ISearchProviderWithActions)
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"row m-t-20\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 19 "..\..\Views\Search\Search.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 19 "..\..\Views\Search\Search.cshtml"
+                     foreach (var action in (Model.Provider as ISearchProviderWithActions).Actions())
+                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        <div");
+
+WriteLiteral(" class=\"col-md-3\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 991), Tuple.Create("\"", 1038)
+            
+            #line 22 "..\..\Views\Search\Search.cshtml"
+, Tuple.Create(Tuple.Create("", 998), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
+            
+            #line default
+            #line hidden
+, 998), false)
+);
+
+WriteLiteral(" class=\"btn btn-success btn-md btn-outline btn-rounded\"");
+
+WriteLiteral(">");
+
+            
+            #line 22 "..\..\Views\Search\Search.cshtml"
+                                                                                                                                 Write(action.Description(Html.LoggedInUser()));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>\r\n                        </div>\r\n");
+
+            
+            #line 24 "..\..\Views\Search\Search.cshtml"
+                    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                </div>\r\n            </div>\r\n");
+
+            
+            #line 27 "..\..\Views\Search\Search.cshtml"
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    </div>\r\n    <!-- End of Search Bar  -->\r\n    <!-- Search Results  -->\r\n    <d" +
+"iv");
 
 WriteLiteral(" class=\"container\"");
 
@@ -141,15 +225,15 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 25 "..\..\Views\Search\Search.cshtml"
-                       Write(Html.Partial("Results", Model));
+            #line 37 "..\..\Views\Search\Search.cshtml"
+                       Write(Html.Partial("Results", Model.Results));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                </di" +
 "v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- End of Search Resul" +
-"ts  -->    \r\n</div>\r\n\r\n<footer");
+"ts  -->\r\n</div>\r\n\r\n<footer");
 
 WriteLiteral(" class=\"footer text-center\"");
 
@@ -176,7 +260,6 @@ WriteLiteral(@"
         var timeoutID = null;
 
         $('#search-box').on('input', function () {
-            console.log('did debounce')
             clearTimeout(timeoutID);
             timeoutID = setTimeout(function () { search(); }, 300);
         });
@@ -185,7 +268,7 @@ WriteLiteral(@"
             $.post(""");
 
             
-            #line 51 "..\..\Views\Search\Search.cshtml"
+            #line 62 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             
@@ -224,26 +307,56 @@ WriteLiteral(@"
 
         ");
 
-WriteLiteral("@media (min-width: 768px) {\r\n            #page-wrapper .header {\r\n               " +
-" margin-top: -26px;\r\n                padding-top: 40px;\r\n                padding" +
-"-bottom: 40px;\r\n            }\r\n        }\r\n\r\n        /*.sidebar {\r\n            ba" +
-"ckground: #5f5e5c;\r\n        }\r\n\r\n        #side-menu li a {\r\n            color: #" +
-"fff;\r\n        }*/\r\n\r\n        a.action {\r\n            font-size: 18px;\r\n         " +
-"   color: #fff;\r\n            font-weight: 400;\r\n        }\r\n\r\n            a.actio" +
-"n:hover {\r\n                color: #ff4637;\r\n                transition: color ea" +
-"se-in 0.2s;\r\n            }\r\n\r\n            a.action i {\r\n                font-siz" +
-"e: 25px;\r\n                display: block;\r\n                margin-bottom: 15px;\r" +
-"\n            }\r\n\r\n        #page-wrapper li.list-group-item {\r\n            paddin" +
-"g: 15px 20px;\r\n            border-left: none;\r\n            border-right: none;\r\n" +
-"        }\r\n\r\n            #page-wrapper li.list-group-item a {\r\n                c" +
-"olor: #313131;\r\n            }\r\n\r\n                #page-wrapper li.list-group-ite" +
-"m i, #page-wrapper li.list-group-item b, #page-wrapper li.list-group-item a.btn " +
-"{\r\n                    overflow: hidden;\r\n                    white-space: nowra" +
-"p;\r\n                    text-overflow: ellipsis;\r\n                    display: b" +
-"lock;\r\n                    max-width: 100%;\r\n                    font-style: nor" +
-"mal;\r\n                }\r\n\r\n\r\n            #page-wrapper li.list-group-item .empty" +
-"-filler * {\r\n                display: inline-block;\r\n            }\r\n    </style>" +
-"\r\n");
+WriteLiteral(@"@media (min-width: 768px) {
+            #page-wrapper .header {
+                margin-top: -26px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        a.action {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 400;
+        }
+
+            a.action:hover {
+                color: #ff4637;
+                transition: color ease-in 0.2s;
+            }
+
+            a.action i {
+                font-size: 25px;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+        #page-wrapper li.list-group-item {
+            padding: 15px 20px;
+            border-left: none;
+            border-right: none;
+        }
+
+            #page-wrapper li.list-group-item a {
+                color: #313131;
+            }
+
+                #page-wrapper li.list-group-item i, #page-wrapper li.list-group-item b, #page-wrapper li.list-group-item a.btn {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: block;
+                    max-width: 100%;
+                    font-style: normal;
+                }
+
+
+            #page-wrapper li.list-group-item .empty-filler * {
+                display: inline-block;
+            }
+    </style>
+");
 
 });
 
