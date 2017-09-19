@@ -885,7 +885,7 @@ WriteLiteral("</h4>\' +\r\n                            \'            <p> \' + $(
 "oz-box-sizing:content-box\';\r\n                    el.style.cssText = \'height:\' + " +
 "el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n            $(" +
 "window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\");\r\n\r\n       " +
-" });\r\n\r\n        //setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
+" });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
 
 });
 
