@@ -1,4 +1,8 @@
-﻿@model Realtair.Framework.Core.Actions.Field
+﻿@using Realtair.Framework.Core.Actions.FieldAttributes
+@model Realtair.Framework.Core.Actions.Field
+@{
+    var attribute = Model.FieldAttribute as BulkFileUploadFieldAttribute;
+}
 
 <div class="form-group">
     <div class="col-md-3 col-sm-4">
@@ -25,6 +29,7 @@
         var d = $("#@(Model.UniqueName)_upload").dropzone({
             url: "/actions/functions/upload-attachment",
             addRemoveLinks: true,
+            maxFiles: (@(attribute.MaxFiles) > 0  && @(attribute.MaxFiles)) || null,
             success: function (file, response) {
                 var imageId = parseInt(response);
                 var list = JSON.parse($('#@(Model.UniqueName)').val());

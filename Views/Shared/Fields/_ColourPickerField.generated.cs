@@ -27,6 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 1 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+    using Realtair.Framework.Core.Actions.FieldAttributes;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     using Realtair.Framework.Core.Web.Utilities;
@@ -40,7 +46,15 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<div");
+            
+            #line 3 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+  
+    var attribute = Model.FieldAttribute as BulkFileUploadFieldAttribute;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -55,7 +69,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+            #line 8 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
                                 Write(Model.Label);
 
             
@@ -67,46 +81,46 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(">\r\n        <input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 235), Tuple.Create("\"", 257)
+WriteAttribute("id", Tuple.Create(" id=\"", 371), Tuple.Create("\"", 393)
             
-            #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-, Tuple.Create(Tuple.Create("", 240), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 12 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+, Tuple.Create(Tuple.Create("", 376), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 240), false)
+, 376), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 258), Tuple.Create("\"", 282)
+WriteAttribute("name", Tuple.Create(" name=\"", 394), Tuple.Create("\"", 418)
             
-            #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-, Tuple.Create(Tuple.Create("", 265), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 12 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+, Tuple.Create(Tuple.Create("", 401), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 265), false)
+, 401), false)
 );
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 295), Tuple.Create("\"", 335)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 431), Tuple.Create("\"", 471)
             
-            #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-         , Tuple.Create(Tuple.Create("", 309), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+            #line 12 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+         , Tuple.Create(Tuple.Create("", 445), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 309), false)
+, 445), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 336), Tuple.Create("\"", 356)
+WriteAttribute("value", Tuple.Create(" value=\"", 472), Tuple.Create("\"", 492)
             
-            #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-                                            , Tuple.Create(Tuple.Create("", 344), Tuple.Create<System.Object, System.Int32>(Model.Value
+            #line 12 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+                                            , Tuple.Create(Tuple.Create("", 480), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 344), false)
+, 480), false)
 );
 
 WriteLiteral(" class=\"jscolor form-control\"");
@@ -118,7 +132,7 @@ WriteLiteral(" src=\"https://static.realtair.com/js/jscolor.min.js\"");
 WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        $(\'#");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
        Write(Model.UniqueName);
 
             
@@ -127,7 +141,7 @@ WriteLiteral("></script>\r\n<script>\r\n    $(function () {\r\n        $(\'#");
 WriteLiteral("\').css(\'background-color\', \'#");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
                                                      Write(Model.Value);
 
             
