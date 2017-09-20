@@ -494,31 +494,39 @@ WriteLiteral(@">Send</button>
         </div>
     </div>
 </div>
-<footer");
 
-WriteLiteral(" class=\"footer text-center hidden-xs\"");
+<div");
 
-WriteLiteral(" style=\"border-top: solid 1px #F2F2F3; z-index: 10; position: fixed;\"");
+WriteLiteral(" class=\"enquiry-footer hidden-xs\"");
 
-WriteLiteral(">\r\n    Powered by <a");
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"pull-left\"");
+
+WriteLiteral(">Powered by <a");
 
 WriteLiteral(" href=\"http://realtair.com/\"");
 
-WriteLiteral(">Realtair</a>\r\n    <span");
+WriteLiteral(">Realtair</a> </span>\r\n        <span");
 
-WriteLiteral(" class=\"pull-right text-right\"");
+WriteLiteral(" class=\"pull-right\"");
 
-WriteLiteral(">\r\n        e: <a");
+WriteLiteral(">\r\n            e: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
 WriteLiteral(">support");
 
-WriteLiteral("@realtair.com</a>\r\n        <br />\r\n        p: <a");
+WriteLiteral("@realtair.com</a> |\r\n            p: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
-WriteLiteral(">1300 299 357</a>\r\n    </span>\r\n</footer>\r\n\r\n<!-- /#page-wrapper -->\r\n\r\n<div");
+WriteLiteral(">1300 299 357</a> |\r\n            hours: 8:30 - 5:30\r\n        </span>\r\n    </div>\r" +
+"\n</div>\r\n\r\n<!-- /#page-wrapper -->\r\n\r\n<div");
 
 WriteLiteral(" class=\"pswp\"");
 
@@ -733,7 +741,7 @@ WriteLiteral(@"@', {
                     url: '/enquiry/");
 
             
-            #line 207 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -742,7 +750,7 @@ WriteLiteral(@"@', {
 WriteLiteral("/chat/");
 
             
-            #line 207 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -771,7 +779,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 227 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 230 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -780,7 +788,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 227 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 230 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -829,7 +837,7 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "ge\"> <span class=\"img-circle\">");
 
             
-            #line 309 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 312 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -840,7 +848,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 312 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 315 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             

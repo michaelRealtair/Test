@@ -844,7 +844,7 @@ pre {
   bottom: 0;
   color: #58666e;
   left: 0px;
-  padding: 10px 30px;
+  padding: 20px 30px;
   position: absolute;
   right: 0;
   background: #ffffff;
@@ -15659,7 +15659,7 @@ table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
   max-height: none;
   height: 100%;
   padding-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 .chat-main-box .chat-right-aside .chat-list .chat-text {
   border-radius: 6px;
@@ -16896,12 +16896,11 @@ ul.pro-amenities li span i {
   #page-wrapper {
     padding-top: 125px;
   }
-  .footer{
-      text-align: center !important;     
-  }
-
-  .footer span.right-text {
-      float: right;
+  .row.send-chat-box {
+    margin: 0;
+    position: fixed !important;
+    bottom: 35px !important;
+    width: 890px;
   }
 }
 .top-left-part {
@@ -16940,10 +16939,6 @@ ul.pro-amenities li span i {
     bottom: 0px !important;
     min-width: 320px;
     width: 890px;
-  }
-
-  .footer{
-      text-align: center !important;
   }
 }
 footer.footer.ticker {
@@ -17170,7 +17165,7 @@ a.btn-social {
 .row.send-chat-box {
   margin: 0;
   position: fixed !important;
-  bottom: 61px;
+  bottom: 0px;
   width: 890px;
 }
 textarea.form-control.chat-box {
@@ -17210,4 +17205,16 @@ textarea.form-control.chat-box {
   display: inline;
   padding: 10px;
   line-height: 40px;
+}
+.enquiry-footer {
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  height: 35px;
+  bottom: 0;
+  z-index: 10;
+  border-top: solid 1px #F2F2F3;
+}
+.enquiry-footer .container {
+  padding-top: 5px !important;
 }

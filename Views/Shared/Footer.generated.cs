@@ -40,37 +40,71 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<footer");
+WriteLiteral("<div");
 
-WriteLiteral(" class=\"footer\"");
+WriteLiteral(" class=\"container hidden-xs\"");
+
+WriteLiteral(" style=\"padding: 5px 5px;\"");
 
 WriteLiteral(">\r\n    <span");
 
-WriteLiteral(" class=\"powered\"");
+WriteLiteral(" class=\"pull-left\"");
 
 WriteLiteral(">Powered by <a");
 
 WriteLiteral(" href=\"http://realtair.com/\"");
 
-WriteLiteral(">Realtair</a> </span>    \r\n    <span");
+WriteLiteral(">Realtair</a> </span>\r\n    <span");
 
-WriteLiteral(" class=\"right-text\"");
+WriteLiteral(" class=\"pull-right\"");
 
-WriteLiteral(">e: <a");
+WriteLiteral(">\r\n        e: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
 WriteLiteral(">support");
 
-WriteLiteral("@realtair.com</a></span>\r\n    <br />\r\n    <span");
-
-WriteLiteral(" class=\"right-text\"");
-
-WriteLiteral(">p: <a");
+WriteLiteral("@realtair.com</a> |\r\n        p: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
-WriteLiteral(">1300 299 357</a></span>\r\n</footer>\r\n");
+WriteLiteral(">1300 299 357</a> |\r\n        hours: 8:30 - 5:30\r\n    </span>\r\n</div>\r\n\r\n<div");
+
+WriteLiteral(" class=\"container hidden-lg hidden-md hidden-sm text-center\"");
+
+WriteLiteral(" style=\"padding: 5px 5px;\"");
+
+WriteLiteral(">\r\n    <span");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">Powered by <a");
+
+WriteLiteral(" href=\"http://realtair.com/\"");
+
+WriteLiteral(">Realtair</a> </span>\r\n    <div");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n        e: <a");
+
+WriteLiteral(" href=\"mailto:support@realtair.com\"");
+
+WriteLiteral(">support");
+
+WriteLiteral("@realtair.com</a>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n        p: <a");
+
+WriteLiteral(" href=\"mailto:support@realtair.com\"");
+
+WriteLiteral(">1300 299 357</a>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"text-center\"");
+
+WriteLiteral(">\r\n        hours: 8:30 - 5:30\r\n    </div>\r\n</div>\r\n");
 
         }
     }
