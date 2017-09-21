@@ -130,7 +130,7 @@ WriteLiteral("\r\n");
             
             #line 19 "..\..\Views\Search\Results.cshtml"
      if (Model.Value.Count() == 0)
-    {
+    {        
 
             
             #line default
@@ -155,7 +155,7 @@ WriteLiteral("></i></div>\r\n                <i");
 
 WriteLiteral(" class=\"m-l-15 m-t-10 m-b-5\"");
 
-WriteLiteral(">No Campaigns</i>\r\n            </div>\r\n        </li>\r\n");
+WriteLiteral(">No Record Found</i>\r\n            </div>\r\n        </li>\r\n");
 
             
             #line 27 "..\..\Views\Search\Results.cshtml"
