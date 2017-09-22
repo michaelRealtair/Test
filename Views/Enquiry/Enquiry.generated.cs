@@ -697,10 +697,18 @@ WriteLiteral(" src=\"https://static.realtair.com/plugins/bootstrap-suggest-1.3.6
 WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\r\n            $(\'#messageT" +
 "ext\').suggest(\'");
 
-WriteLiteral(@"@', {
-                data: function (q) {
-                    if (q) {
-                        return $.getJSON(window.location.origin + ""/rest/users"", { query: q });
+WriteLiteral("@\', {\r\n                data: function (q) {\r\n                    if (q) {\r\n      " +
+"                  return $.getJSON(window.location.origin + \"/rest/users\", { que" +
+"ry: q, enquiry: ");
+
+            
+            #line 172 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                                  Write(Model.Workflow.Id);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@" });
                     }
                 },
                 map: function (user) {

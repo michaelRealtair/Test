@@ -10,6 +10,7 @@ using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
 using Realtair.Framework.Core.Web.Utilities;
 using Newtonsoft.Json;
+using Realtair.Framework.Enquiries.Entities.Communication;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
@@ -185,16 +186,20 @@ namespace Realtair.Framework.Core.Web.Controllers
                 n.Dismissed = true;
             DbContext.SaveChanges();
         }
-        public ActionResult QueryUsers(string query = "")
+        public ActionResult QueryUsers(string query = "", int enquiry = 0)
         {
-            var users = DbContext.Set<User>().ToList().Where(u => u.ConversationRef != null && u.ConversationRef.ToLowerInvariant().Contains(query.ToLowerInvariant()))
-                .Select(u => new[] { new RestUsersModel { Name = u.Person.Name, ConversationRef = u.ConversationRef } });
+            var mentions = DbContext.Set<User>().ToList().Where(u => u.ConversationRef != null && u.ConversationRef.ToLowerInvariant().Contains(query.ToLowerInvariant()))
+                .Select(u => new[] { new RestMentionsModel { Name = u.Person.Name, ConversationRef = u.ConversationRef } }).ToList();
+
+            mentions.AddRange(DbContext.Set<EnquiryAlias>().ToList().Where(a => a.AliasName.ToLowerInvariant().Contains(query.ToLowerInvariant()) && a.Enquiry.Id == enquiry)
+                .Select(a => new[] { new RestMentionsModel { Name = a.AliasName, ConversationRef = a.AliasName.ToLowerInvariant() } }));
+
             Response.AppendHeader("Access-Control-Allow-Origin", "*");
-            return Content(JsonConvert.SerializeObject(users));
+            return Content(JsonConvert.SerializeObject(mentions));
         }
     }
 
-    public class RestUsersModel
+    public class RestMentionsModel
     {
         public string ConversationRef { get; set; }
         public string Name { get; set; }

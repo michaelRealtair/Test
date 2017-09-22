@@ -169,7 +169,7 @@
             $('#messageText').suggest('@@', {
                 data: function (q) {
                     if (q) {
-                        return $.getJSON(window.location.origin + "/rest/users", { query: q });
+                        return $.getJSON(window.location.origin + "/rest/users", { query: q, enquiry: @(Model.Workflow.Id) });
                     }
                 },
                 map: function (user) {
