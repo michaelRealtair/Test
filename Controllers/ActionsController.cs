@@ -285,28 +285,22 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         private ActionResult RunActionAndRedirect(Action action, AuthorisedAction auth = null)
         {
-            try
+            // Log/save the action to the database before running...
+            action.StoreRecord();
+            DbContext.SaveChanges();
+
+            // Run the action
+            if (auth != null)
             {
-                if (auth != null)
-                {
-                    action.Run(auth.User);
-                    auth.IsUsed = true;
-                }
-                else
-                {
-                    action.Run((Framework.Core.Entities.User)User);
-                }
+                action.Run(auth.User);
+                auth.IsUsed = true;
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
-            }
-            finally
-            {
-                action.StoreRecord();
-                DbContext.SaveChanges();
+                action.Run((Framework.Core.Entities.User)User);
             }
 
+            // Redirect...
             return HandleRedirect(action, auth, GetReturnUrl());
         }
 
