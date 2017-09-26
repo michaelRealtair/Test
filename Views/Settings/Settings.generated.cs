@@ -470,6 +470,23 @@ Write(Html.Partial("Footer"));
             #line hidden
 WriteLiteral("\r\n");
 
+DefineSection("Scripts", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 77 "..\..\Views\Settings\Settings.cshtml"
+Write(Html.RenderDelayed());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
         }
     }
 }
