@@ -154,7 +154,7 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 991), Tuple.Create("\"", 1038)
+WriteAttribute("href", Tuple.Create(" href=\"", 991), Tuple.Create("\"", 1074)
             
             #line 22 "..\..\Views\Search\Search.cshtml"
 , Tuple.Create(Tuple.Create("", 998), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
@@ -162,6 +162,14 @@ WriteAttribute("href", Tuple.Create(" href=\"", 991), Tuple.Create("\"", 1038)
             #line default
             #line hidden
 , 998), false)
+, Tuple.Create(Tuple.Create("", 1038), Tuple.Create("?ReturnUrl=", 1038), true)
+            
+            #line 22 "..\..\Views\Search\Search.cshtml"
+        , Tuple.Create(Tuple.Create("", 1049), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            
+            #line default
+            #line hidden
+, 1049), false)
 );
 
 WriteLiteral(" class=\"btn btn-success btn-md btn-outline btn-rounded\"");
@@ -170,7 +178,7 @@ WriteLiteral(">");
 
             
             #line 22 "..\..\Views\Search\Search.cshtml"
-                                                                                                                                 Write(action.Description(Html.LoggedInUser()));
+                                                                                                                                                                     Write(action.Description(Html.LoggedInUser()));
 
             
             #line default
@@ -233,25 +241,16 @@ WriteLiteral("                            ");
             #line hidden
 WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\n                </di" +
 "v>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- End of Search Resul" +
-"ts  -->\r\n</div>\r\n\r\n<footer");
+"ts  -->\r\n</div>\r\n\r\n");
 
-WriteLiteral(" class=\"footer text-center\"");
+            
+            #line 47 "..\..\Views\Search\Search.cshtml"
+Write(Html.Partial("Footer"));
 
-WriteLiteral(">\r\n    Powered by <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Realtair</a>\r\n    <span");
-
-WriteLiteral(" class=\"pull-right\"");
-
-WriteLiteral(">Technical Support: <a");
-
-WriteLiteral(" href=\"mailto:support@realtair.com\"");
-
-WriteLiteral(">support");
-
-WriteLiteral("@realtair.com</a></span>\r\n</footer>\r\n\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n");
 
 DefineSection("Scripts", () => {
 
@@ -268,7 +267,7 @@ WriteLiteral(@"
             $.post(""");
 
             
-            #line 62 "..\..\Views\Search\Search.cshtml"
+            #line 59 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             

@@ -19,7 +19,7 @@
                     @foreach (var action in (Model.Provider as ISearchProviderWithActions).Actions())
                     {
                         <div class="col-md-3">
-                            <a href="@action.GetUrl(Html.LoggedInUser(), Url)" class="btn btn-success btn-md btn-outline btn-rounded">@action.Description(Html.LoggedInUser())</a>
+                            <a href="@action.GetUrl(Html.LoggedInUser(), Url)?ReturnUrl=@Request.Url.AbsolutePath" class="btn btn-success btn-md btn-outline btn-rounded">@action.Description(Html.LoggedInUser())</a>
                         </div>
                     }
                 </div>
