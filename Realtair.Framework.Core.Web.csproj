@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ConfigureDbContext.cs" />
+    <Compile Include="App_Start\ConfigureSingleton.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="Controllers\ActionMapper.cs" />
     <Compile Include="Controllers\ActionsController.cs" />
