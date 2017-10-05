@@ -827,25 +827,34 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "oads: 10,\r\n            previewTemplate: previewTemplate,\r\n            //autoQueu" +
 "e: false,\r\n            previewsContainer: \'#file-attachment\',\r\n            click" +
 "able: \'#attach-file\',\r\n            autoProcessQueue: false,\r\n            init: f" +
-"unction () {\r\n                this.on(\'addedfile\', function (file) {\r\n          " +
-"          var query = $(\'#file-attachment\');\r\n                    if (!query.is(" +
-"\':visible\')) {\r\n                        query.find(\'img\').attr(\'style\', \'width: " +
-"40px;\');\r\n                        query.show();\r\n                    }\r\n        " +
-"        },\r\n                this.on(\"complete\", function (file) {\r\n             " +
-"       if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length" +
-" === 0) {\r\n                        sendMessage();\r\n                        dz.re" +
-"moveAllFiles(true);\r\n                    }\r\n                }));\r\n            }\r" +
-"\n        });\r\n\r\n        // On-click Handlers\r\n        $(\'#send-button\').click(fu" +
-"nction () {\r\n\r\n            messageText = $(\'textarea[name=messageText]\').val();\r" +
-"\n\r\n            if (dz.files.length == 0 && jQuery.trim(messageText).length > 0) " +
-"{\r\n                sendMessage();\r\n            } else if (dz.files.length > 0 ||" +
-" jQuery.trim(messageText).length > 0) {\r\n                dz.processQueue();\r\n   " +
-"         } else {\r\n                return;\r\n            }\r\n\r\n            var mes" +
-"sage = $(\'<li class=\"odd\">\' +\r\n                            \'<div class=\"chat-ima" +
-"ge\"> <span class=\"img-circle\">");
+"unction () {\r\n                this.on(\'addedfile\', function (file) {            " +
+"         \r\n                    var query = $(\'#file-attachment\');\r\n             " +
+"       var ext = file.name.split(\'.\').pop();\r\n                    if (ext == \"pd" +
+"f\") {\r\n                        $(file.previewElement).find(\"img\").attr(\"src\", \"h" +
+"ttps://static.realtair.com/images/pdf.png\");\r\n                    } else if (ext" +
+".indexOf(\"doc\") != -1) {\r\n                        $(file.previewElement).find(\"i" +
+"mg\").attr(\"src\", \"https://static.realtair.com/images/doc.png\");\r\n               " +
+"     } else if (ext.indexOf(\"xls\") != -1) {\r\n                        $(file.prev" +
+"iewElement).find(\"img\").attr(\"src\", \"https://static.realtair.com/images/xls.png\"" +
+");\r\n                    } else if (ext.indexOf(\"ppt\") != -1) {\r\n                " +
+"        $(file.previewElement).find(\"img\").attr(\"src\", \"https://static.realtair." +
+"com/images/ppt.png\");\r\n                    }\r\n                       \r\n         " +
+"           query.find(\'img\').attr(\'style\', \'width: 40px; height: 40px;\');\r\n     " +
+"               query.show();\r\n                },\r\n                this.on(\"compl" +
+"ete\", function (file) {\r\n                    if (this.getUploadingFiles().length" +
+" === 0 && this.getQueuedFiles().length === 0) {\r\n                        sendMes" +
+"sage();\r\n                        dz.removeAllFiles(true);\r\n                    }" +
+"\r\n                }));\r\n            }\r\n        });\r\n\r\n        // On-click Handle" +
+"rs\r\n        $(\'#send-button\').click(function () {\r\n\r\n            messageText = $" +
+"(\'textarea[name=messageText]\').val();\r\n\r\n            if (dz.files.length == 0 &&" +
+" jQuery.trim(messageText).length > 0) {\r\n                sendMessage();\r\n       " +
+"     } else if (dz.files.length > 0 || jQuery.trim(messageText).length > 0) {\r\n " +
+"               dz.processQueue();\r\n            } else {\r\n                return;" +
+"\r\n            }\r\n\r\n            var message = $(\'<li class=\"odd\">\' +\r\n           " +
+"                 \'<div class=\"chat-image\"> <span class=\"img-circle\">");
 
             
-            #line 312 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 321 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -856,7 +865,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 315 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 324 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             

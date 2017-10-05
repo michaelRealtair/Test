@@ -481,7 +481,15 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                        <img");
 
-WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 4189), Tuple.Create("\"", 4219)
+            
+            #line 84 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 4195), Tuple.Create<System.Object, System.Int32>(attachment.ThumbnailUrl
+            
+            #line default
+            #line hidden
+, 4195), false)
+);
 
 WriteLiteral(" alt=\"#\"");
 
@@ -633,26 +641,26 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5821), Tuple.Create("\"", 5849)
+WriteAttribute("href", Tuple.Create(" href=\"", 5793), Tuple.Create("\"", 5821)
             
             #line 117 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 5828), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 5800), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 5828), false)
+, 5800), false)
 );
 
 WriteLiteral(" class=\"gallery-item text-center\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 5883), Tuple.Create("\"", 5901)
+WriteAttribute("id", Tuple.Create(" id=\"", 5855), Tuple.Create("\"", 5873)
             
             #line 117 "..\..\Views\Enquiry\Timeline.cshtml"
-                                 , Tuple.Create(Tuple.Create("", 5888), Tuple.Create<System.Object, System.Int32>(attachmentId
+                                 , Tuple.Create(Tuple.Create("", 5860), Tuple.Create<System.Object, System.Int32>(attachmentId
             
             #line default
             #line hidden
-, 5888), false)
+, 5860), false)
 );
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
@@ -680,14 +688,14 @@ WriteLiteral(" data-height=\"1200\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6116), Tuple.Create("\"", 6155)
+WriteAttribute("src", Tuple.Create(" src=\"", 6088), Tuple.Create("\"", 6127)
             
             #line 118 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 6122), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
+, Tuple.Create(Tuple.Create("", 6094), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
             
             #line default
             #line hidden
-, 6122), false)
+, 6094), false)
 );
 
 WriteLiteral(" class=\"img-rounded\"");
@@ -711,14 +719,14 @@ WriteLiteral(">\r\n                                            </a>\r\n");
             #line hidden
 WriteLiteral("                                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 6438), Tuple.Create("\"", 6466)
+WriteAttribute("href", Tuple.Create(" href=\"", 6410), Tuple.Create("\"", 6438)
             
             #line 123 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 6445), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 6417), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 6445), false)
+, 6417), false)
 );
 
 WriteLiteral(" class=\"text-center\"");
@@ -727,7 +735,15 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                                <img");
 
-WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 6530), Tuple.Create("\"", 6560)
+            
+            #line 124 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 6536), Tuple.Create<System.Object, System.Int32>(attachment.ThumbnailUrl
+            
+            #line default
+            #line hidden
+, 6536), false)
+);
 
 WriteLiteral(" class=\"img-rounded\"");
 
@@ -881,26 +897,26 @@ WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 8213), Tuple.Create("\"", 8241)
+WriteAttribute("href", Tuple.Create(" href=\"", 8157), Tuple.Create("\"", 8185)
             
             #line 151 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 8220), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 8164), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 8220), false)
+, 8164), false)
 );
 
 WriteLiteral(" class=\"gallery-item text-center\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 8275), Tuple.Create("\"", 8293)
+WriteAttribute("id", Tuple.Create(" id=\"", 8219), Tuple.Create("\"", 8237)
             
             #line 151 "..\..\Views\Enquiry\Timeline.cshtml"
-                                     , Tuple.Create(Tuple.Create("", 8280), Tuple.Create<System.Object, System.Int32>(attachmentId
+                                     , Tuple.Create(Tuple.Create("", 8224), Tuple.Create<System.Object, System.Int32>(attachmentId
             
             #line default
             #line hidden
-, 8280), false)
+, 8224), false)
 );
 
 WriteLiteral(" itemprop=\"associatedMedia\"");
@@ -928,14 +944,14 @@ WriteLiteral(" data-height=\"1200\"");
 
 WriteLiteral(">\r\n                                                    <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8512), Tuple.Create("\"", 8551)
+WriteAttribute("src", Tuple.Create(" src=\"", 8456), Tuple.Create("\"", 8495)
             
             #line 152 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 8518), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
+, Tuple.Create(Tuple.Create("", 8462), Tuple.Create<System.Object, System.Int32>(Html.Raw(attachment.GetUrl(100))
             
             #line default
             #line hidden
-, 8518), false)
+, 8462), false)
 );
 
 WriteLiteral(" class=\"img-rounded\"");
@@ -968,14 +984,14 @@ WriteLiteral(" itemtype=\"http://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                                                <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 9029), Tuple.Create("\"", 9057)
+WriteAttribute("href", Tuple.Create(" href=\"", 8973), Tuple.Create("\"", 9001)
             
             #line 159 "..\..\Views\Enquiry\Timeline.cshtml"
-, Tuple.Create(Tuple.Create("", 9036), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
+, Tuple.Create(Tuple.Create("", 8980), Tuple.Create<System.Object, System.Int32>(attachment.GetUrl(0)
             
             #line default
             #line hidden
-, 9036), false)
+, 8980), false)
 );
 
 WriteLiteral(" class=\"text-center\"");
@@ -984,7 +1000,15 @@ WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(">\r\n                                                    <img");
 
-WriteLiteral(" src=\"https://manage.realtair.com/Content/img/icon-pdf.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 9097), Tuple.Create("\"", 9127)
+            
+            #line 160 "..\..\Views\Enquiry\Timeline.cshtml"
+, Tuple.Create(Tuple.Create("", 9103), Tuple.Create<System.Object, System.Int32>(attachment.ThumbnailUrl
+            
+            #line default
+            #line hidden
+, 9103), false)
+);
 
 WriteLiteral(" class=\"img-rounded\"");
 
