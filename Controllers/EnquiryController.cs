@@ -116,6 +116,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         }
 
         //[Route("{enquiryTypeName}/{id:int}/chat/{conversationId:int}/send-message"), HttpPost, ValidateInput(false)]
+        [ValidateInput(false)]
         public ActionResult SendMessage(string enquiryTypeName, int id, int conversationId, string messageText, int[] attachments, string[] existingAttachments)
         {
             var conversation = DbContext.Set<Conversation>().First(c => c.Id == conversationId);
