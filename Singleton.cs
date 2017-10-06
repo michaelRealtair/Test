@@ -15,11 +15,11 @@ namespace Realtair.Framework.Core.Web
         private const string KEY_ASSEMBLY_CACHE = "ASSEMBLY_CACHE";
 
         // Fields
-        //private static string coreAssembly = ConfigurationManager.AppSettings["CoreAssembly"];
-        //private static string coreContext = ConfigurationManager.AppSettings["CoreContext"];
+        private static string coreAssembly = ConfigurationManager.AppSettings["CoreAssembly"];
+        private static string coreContext = ConfigurationManager.AppSettings["CoreContext"];
 
-        private static string coreAssembly = "Realtair.Assist.Core";
-        private static string coreContext = "Realtair.Assist.Core.Data.DbContext";
+        //private static string coreAssembly = "Realtair.Assist.Core";
+        //private static string coreContext = "Realtair.Assist.Core.Data.DbContext";
 
         private static DbContext _dbContext;
         private static AssemblyCache _assemblyCache;
