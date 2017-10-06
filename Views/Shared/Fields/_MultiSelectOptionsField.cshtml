@@ -1,0 +1,47 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute;
+    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+    var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
+    //var Values = (Model.Value as IEnumerable<Entity>).ToList();
+}
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        @if (options.Count() == 0)
+        {
+            <select id="@hopefullyUniqueId" class="form-control" disabled>
+                <option>None to display</option>
+            </select>
+        }
+        else
+        {
+            <select id="@hopefullyUniqueId" class="form-control select2-multiple" multiple="multiple">
+                @foreach (var option in options)
+                {
+                    <option @((Model.Value as IEnumerable<Entity>).Where(a => a.Id.ToString() == option.Id).Any() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
+                    
+                }
+            </select>
+        }
+
+        <link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
+        <script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
+        <script>
+            $(window).resize(function () {
+                $('.select2').css('width', "100%");
+            });
+
+            $('#@(hopefullyUniqueId)').select2();
+            $('#@hopefullyUniqueId').change(function () {
+                $('#@(Model.UniqueName)').val(JSON.stringify($(this).val()));
+            });
+        </script>
+    </div>
+    <input name="@(Model.UniqueName)" id="@(Model.UniqueName)" type="hidden" value="[]" />
+</div>
