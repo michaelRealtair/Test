@@ -103,6 +103,8 @@ WriteAttribute("value", Tuple.Create(" value=\"", 363), Tuple.Create("\"", 383)
 
 WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");
 
+WriteLiteral(" onchange=\"this.value = Math.round(this.value)\"");
+
 WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"help-block\"");
@@ -154,14 +156,14 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 768), Tuple.Create("\"", 792)
+WriteAttribute("name", Tuple.Create(" name=\"", 815), Tuple.Create("\"", 839)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 775), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 822), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 775), false)
+, 822), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -170,17 +172,19 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"1\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 837), Tuple.Create("\"", 857)
+WriteAttribute("value", Tuple.Create(" value=\"", 884), Tuple.Create("\"", 904)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 845), Tuple.Create<System.Object, System.Int32>(Model.Value
+                , Tuple.Create(Tuple.Create("", 892), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 845), false)
+, 892), false)
 );
 
 WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");
+
+WriteLiteral(" onchange=\"this.value = Math.round(this.value)\"");
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");
 
