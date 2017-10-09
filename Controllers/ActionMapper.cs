@@ -94,7 +94,9 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         int MapInt(object value)
         {
-            return Convert.ToInt32(value);
+            decimal d;
+            decimal.TryParse(value.ToString(), out d);
+            return Convert.ToInt32(d);
         }
 
         decimal MapDecimal(object value)
