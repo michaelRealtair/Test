@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_Int32_Field.cshtml")]
@@ -100,6 +101,8 @@ WriteAttribute("value", Tuple.Create(" value=\"", 363), Tuple.Create("\"", 383)
 , 371), false)
 );
 
+WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");
+
 WriteLiteral(">\r\n            <span");
 
 WriteLiteral(" class=\"help-block\"");
@@ -151,14 +154,14 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 703), Tuple.Create("\"", 727)
+WriteAttribute("name", Tuple.Create(" name=\"", 768), Tuple.Create("\"", 792)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 710), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 775), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 710), false)
+, 775), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -167,15 +170,17 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"1\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 772), Tuple.Create("\"", 792)
+WriteAttribute("value", Tuple.Create(" value=\"", 837), Tuple.Create("\"", 857)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 780), Tuple.Create<System.Object, System.Int32>(Model.Value
+                , Tuple.Create(Tuple.Create("", 845), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 780), false)
+, 845), false)
 );
+
+WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");
 
