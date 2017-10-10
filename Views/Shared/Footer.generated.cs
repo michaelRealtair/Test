@@ -68,7 +68,8 @@ WriteLiteral("@realtair.com</a> |\r\n        p: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
-WriteLiteral(">1300 299 357</a> |\r\n        hours: 8:30 - 5:30\r\n    </span>\r\n</div>\r\n\r\n<div");
+WriteLiteral(">1300 299 357</a> |\r\n        hours: 8:30 - 5:30, Mon - Fri\r\n    </span>\r\n</div>\r\n" +
+"\r\n<div");
 
 WriteLiteral(" class=\"container hidden-lg hidden-md hidden-sm text-center\"");
 
@@ -104,7 +105,7 @@ WriteLiteral(">1300 299 357</a>\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"text-center\"");
 
-WriteLiteral(">\r\n        hours: 8:30 - 5:30\r\n    </div>\r\n</div>\r\n");
+WriteLiteral(">\r\n        hours: 8:30 - 5:30, Mon - Fri\r\n    </div>\r\n</div>\r\n");
 
         }
     }
