@@ -1,8 +1,77 @@
 ﻿@using Realtair.Framework.Core.Web.Utilities
+@using Realtair.Framework.Core.Actions.Providers
 @model Realtair.Framework.Core.Actions.Providers.SearchResults
 @{ Layout = ""; }
 
-    @foreach (var result in Model.Value)
+@if (Model is SearchResultsWithTable)
+{
+    @{ 
+        var modelWithTable = Model as SearchResultsWithTable;
+    }
+
+    <div class="panel panel-default">
+        @*<div class="panel-heading">@Model.Name</div>*@
+        <div class="panel-wrapper collapse in">
+            <table class="table">
+                @if (modelWithTable.Headers != null)
+                {
+                    <thead>
+                        <tr>
+                            @foreach (var column in modelWithTable.Headers)
+                    {
+                                <th class="col-xs-@(column.ColumnWidth) p-l-40">@column.Name</th>
+                            }
+                        </tr>
+                    </thead>
+                }
+                <tbody>
+                    @foreach (var row in modelWithTable.Value)
+                {
+                        <tr>
+                            @foreach (var column in row)
+                            {
+                                if (column is Attachment)
+                                {
+                                    <td class="p-l-40"><a href="@Html.Raw((column as Attachment).Url(0))" target="_blank">View</a></td>
+                                }
+                                else if (column is IDisplayable)
+                                {
+                                    <td class="p-l-40">@Html.Render(Url, column)</td>
+                                }
+                                else if (column.ToString().IsValidUrl())
+                                {
+                                    <td class="p-l-40"><a href="@column" target="_blank">View</a></td>
+                                }
+                                else if (column is KeyValuePair<string, IDisplayable>)
+                                {
+                                    var keyObj = column.GetType().GetProperty("Key").GetValue(column, null);
+                                    var valueObj = column.GetType().GetProperty("Value").GetValue(column, null);
+
+                                    <td class="p-l-40"><a href="@((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url))">@keyObj</a></td>
+                                }
+
+                                @*
+                                    else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
+                                    {
+                                        <td><a href="@column" target="_blank">@column</a></td>
+                                    }
+                                *@
+                            else
+                            {
+                                <td class="p-l-40">@column</td>
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    foreach (var result in Model.Value)
     {
         <li class="list-group-item">
             <div class="row">
@@ -16,8 +85,8 @@
         </li>
     }
 
-    @if (Model.Value.Count() == 0)
-    {        
+    if (Model.Value.Count() == 0)
+    {
         <li class="list-group-item">
             <div class="empty-filler">
                 <div class="circle-sm circle bg-inverse pull-left"><i class="ti-home"></i></div>
@@ -25,3 +94,4 @@
             </div>
         </li>
     }
+}

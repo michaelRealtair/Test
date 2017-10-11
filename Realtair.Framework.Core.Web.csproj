@@ -150,6 +150,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Enquiry.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Search\Results.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Results.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search\Search.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_Attachment_PreviewField.generated.cs">
       <DependentUpon>_Attachment_PreviewField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -279,16 +289,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Report.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Search\Results.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Results.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Search\Search.generated.cs">
-      <DependentUpon>Search.cshtml</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Settings\Settings.generated.cs">
       <AutoGen>True</AutoGen>

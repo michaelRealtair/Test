@@ -27,6 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 2 "..\..\Views\Search\Results.cshtml"
+    using Realtair.Framework.Core.Actions.Providers;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     
@@ -46,7 +52,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Search\Results.cshtml"
+            #line 4 "..\..\Views\Search\Results.cshtml"
    Layout = ""; 
             
             #line default
@@ -54,14 +60,319 @@ namespace ASP
 WriteLiteral("\r\n\r\n");
 
             
-            #line 5 "..\..\Views\Search\Results.cshtml"
+            #line 6 "..\..\Views\Search\Results.cshtml"
+ if (Model is SearchResultsWithTable)
+{
     
             
             #line default
             #line hidden
             
-            #line 5 "..\..\Views\Search\Results.cshtml"
-     foreach (var result in Model.Value)
+            #line 8 "..\..\Views\Search\Results.cshtml"
+       
+        var modelWithTable = Model as SearchResultsWithTable;
+    
+            
+            #line default
+            #line hidden
+            
+            #line 10 "..\..\Views\Search\Results.cshtml"
+     
+
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <div");
+
+WriteLiteral(" class=\"panel panel-default\"");
+
+WriteLiteral(">\r\n        ");
+
+WriteLiteral("\r\n        <div");
+
+WriteLiteral(" class=\"panel-wrapper collapse in\"");
+
+WriteLiteral(">\r\n            <table");
+
+WriteLiteral(" class=\"table\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 16 "..\..\Views\Search\Results.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 16 "..\..\Views\Search\Results.cshtml"
+                 if (modelWithTable.Headers != null)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <thead>\r\n                        <tr>\r\n");
+
+            
+            #line 20 "..\..\Views\Search\Results.cshtml"
+                            
+            
+            #line default
+            #line hidden
+            
+            #line 20 "..\..\Views\Search\Results.cshtml"
+                             foreach (var column in modelWithTable.Headers)
+                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <th");
+
+WriteAttribute("class", Tuple.Create(" class=\"", 752), Tuple.Create("\"", 795)
+, Tuple.Create(Tuple.Create("", 760), Tuple.Create("col-xs-", 760), true)
+            
+            #line 22 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 767), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            
+            #line default
+            #line hidden
+, 767), false)
+, Tuple.Create(Tuple.Create(" ", 788), Tuple.Create("p-l-40", 789), true)
+);
+
+WriteLiteral(">");
+
+            
+            #line 22 "..\..\Views\Search\Results.cshtml"
+                                                                           Write(column.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</th>\r\n");
+
+            
+            #line 23 "..\..\Views\Search\Results.cshtml"
+                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        </tr>\r\n                    </thead>\r\n");
+
+            
+            #line 26 "..\..\Views\Search\Results.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <tbody>\r\n");
+
+            
+            #line 28 "..\..\Views\Search\Results.cshtml"
+                    
+            
+            #line default
+            #line hidden
+            
+            #line 28 "..\..\Views\Search\Results.cshtml"
+                     foreach (var row in modelWithTable.Value)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        <tr>\r\n");
+
+            
+            #line 31 "..\..\Views\Search\Results.cshtml"
+                            
+            
+            #line default
+            #line hidden
+            
+            #line 31 "..\..\Views\Search\Results.cshtml"
+                             foreach (var column in row)
+                            {
+                                if (column is Attachment)
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1305), Tuple.Create("\"", 1352)
+            
+            #line 35 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 1312), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+            
+            #line default
+            #line hidden
+, 1312), false)
+);
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteLiteral(">View</a></td>\r\n");
+
+            
+            #line 36 "..\..\Views\Search\Results.cshtml"
+                                }
+                                else if (column is IDisplayable)
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
+
+            
+            #line 39 "..\..\Views\Search\Results.cshtml"
+                                                  Write(Html.Render(Url, column));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</td>\r\n");
+
+            
+            #line 40 "..\..\Views\Search\Results.cshtml"
+                                }
+                                else if (column.ToString().IsValidUrl())
+                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1809), Tuple.Create("\"", 1823)
+            
+            #line 43 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 1816), Tuple.Create<System.Object, System.Int32>(column
+            
+            #line default
+            #line hidden
+, 1816), false)
+);
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteLiteral(">View</a></td>\r\n");
+
+            
+            #line 44 "..\..\Views\Search\Results.cshtml"
+                                }
+                                else if (column is KeyValuePair<string, IDisplayable>)
+                                {
+                                    var keyObj = column.GetType().GetProperty("Key").GetValue(column, null);
+                                    var valueObj = column.GetType().GetProperty("Value").GetValue(column, null);
+
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2297), Tuple.Create("\"", 2373)
+            
+            #line 50 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 2304), Tuple.Create<System.Object, System.Int32>((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url)
+            
+            #line default
+            #line hidden
+, 2304), false)
+);
+
+WriteLiteral(">");
+
+            
+            #line 50 "..\..\Views\Search\Results.cshtml"
+                                                                                                                                  Write(keyObj);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a></td>\r\n");
+
+            
+            #line 51 "..\..\Views\Search\Results.cshtml"
+                                }
+
+                                
+            
+            #line default
+            #line hidden
+            
+            #line 58 "..\..\Views\Search\Results.cshtml"
+                                  
+                            else
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
+
+            
+            #line 61 "..\..\Views\Search\Results.cshtml"
+                                              Write(column);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</td>\r\n");
+
+            
+            #line 62 "..\..\Views\Search\Results.cshtml"
+                                }
+                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        </tr>\r\n");
+
+            
+            #line 65 "..\..\Views\Search\Results.cshtml"
+                    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                </tbody>\r\n\r\n            </table>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 71 "..\..\Views\Search\Results.cshtml"
+}
+else
+{
+    foreach (var result in Model.Value)
     {
 
             
@@ -81,20 +392,20 @@ WriteLiteral(" class=\"col-xs-12\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 312), Tuple.Create("\"", 369)
+WriteAttribute("href", Tuple.Create(" href=\"", 3392), Tuple.Create("\"", 3449)
             
-            #line 10 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create("", 319), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
+            #line 79 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 3399), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
             
             #line default
             #line hidden
-, 319), false)
+, 3399), false)
 );
 
 WriteLiteral(">\r\n                        <b>");
 
             
-            #line 11 "..\..\Views\Search\Results.cshtml"
+            #line 80 "..\..\Views\Search\Results.cshtml"
                       Write(result.Description(Html.LoggedInUser()));
 
             
@@ -103,7 +414,7 @@ WriteLiteral(">\r\n                        <b>");
 WriteLiteral("</b>\r\n                        <i>");
 
             
-            #line 12 "..\..\Views\Search\Results.cshtml"
+            #line 81 "..\..\Views\Search\Results.cshtml"
                       Write(result.ActualType().Name.DisplaySafeName());
 
             
@@ -113,24 +424,11 @@ WriteLiteral("</i>\r\n                    </a>\r\n                </div>\r\n    
 "   </li>\r\n");
 
             
-            #line 17 "..\..\Views\Search\Results.cshtml"
+            #line 86 "..\..\Views\Search\Results.cshtml"
     }
 
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 19 "..\..\Views\Search\Results.cshtml"
-    
-            
-            #line default
-            #line hidden
-            
-            #line 19 "..\..\Views\Search\Results.cshtml"
-     if (Model.Value.Count() == 0)
-    {        
+    if (Model.Value.Count() == 0)
+    {
 
             
             #line default
@@ -158,8 +456,9 @@ WriteLiteral(" class=\"m-l-15 m-t-10 m-b-5\"");
 WriteLiteral(">No Record Found</i>\r\n            </div>\r\n        </li>\r\n");
 
             
-            #line 27 "..\..\Views\Search\Results.cshtml"
+            #line 96 "..\..\Views\Search\Results.cshtml"
     }
+}
             
             #line default
             #line hidden

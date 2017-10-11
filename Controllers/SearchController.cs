@@ -25,10 +25,10 @@ namespace Realtair.Framework.Core.Web.Controllers
             {
                 var providerType = CoreExtensions.GetEntityType(entityTypeName).GetInterfaces().First(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ISearchable<>)).GetGenericArguments()[0];
                 var provider = (ISearchProvider)Activator.CreateInstance(providerType);
-
                 var searchResults = provider.Search(DbContext, User, query, text);
+                var model = new SearchViewModel { Provider = provider, Results = searchResults };
 
-                return View(new SearchViewModel { Provider = provider, Results = searchResults });
+                return View(model);
             }
             else
             {
@@ -37,7 +37,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
                 var searchResults = provider.Search(DbContext, User, query, text);
                 searchResults.AllowMultipleSelection = allowMultipleSelection;
-
+                
                 return View("Results", searchResults);
             }
         }

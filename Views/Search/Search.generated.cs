@@ -27,6 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 1 "..\..\Views\Search\Search.cshtml"
+    using Realtair.Framework.Core.Actions.Providers;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     using Realtair.Framework.Core.Web.Utilities;
@@ -41,7 +47,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Search\Search.cshtml"
+            #line 4 "..\..\Views\Search\Search.cshtml"
 Write(Html.Partial("Menu"));
 
             
@@ -73,27 +79,27 @@ WriteLiteral(" name=\"query\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 334), Tuple.Create("\"", 375)
-, Tuple.Create(Tuple.Create("", 348), Tuple.Create("Find", 348), true)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 384), Tuple.Create("\"", 425)
+, Tuple.Create(Tuple.Create("", 398), Tuple.Create("Find", 398), true)
             
-            #line 9 "..\..\Views\Search\Search.cshtml"
-  , Tuple.Create(Tuple.Create(" ", 352), Tuple.Create<System.Object, System.Int32>(Model.Results.SetName
+            #line 10 "..\..\Views\Search\Search.cshtml"
+  , Tuple.Create(Tuple.Create(" ", 402), Tuple.Create<System.Object, System.Int32>(Model.Results.SetName
             
             #line default
             #line hidden
-, 353), false)
+, 403), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 397), Tuple.Create("\"", 425)
+WriteAttribute("value", Tuple.Create(" value=\"", 447), Tuple.Create("\"", 475)
             
-            #line 9 "..\..\Views\Search\Search.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 405), Tuple.Create<System.Object, System.Int32>(Model.Results.Query
+            #line 10 "..\..\Views\Search\Search.cshtml"
+                                                       , Tuple.Create(Tuple.Create("", 455), Tuple.Create<System.Object, System.Int32>(Model.Results.Query
             
             #line default
             #line hidden
-, 405), false)
+, 455), false)
 );
 
 WriteLiteral(" autofocus");
@@ -111,13 +117,13 @@ WriteLiteral(" class=\"fa fa-search\"");
 WriteLiteral("></i>\r\n                </span>\r\n            </div>\r\n        </div>\r\n");
 
             
-            #line 15 "..\..\Views\Search\Search.cshtml"
+            #line 16 "..\..\Views\Search\Search.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\Search\Search.cshtml"
+            #line 16 "..\..\Views\Search\Search.cshtml"
          if (Model.Provider is ISearchProviderWithActions)
         {
 
@@ -135,13 +141,13 @@ WriteLiteral(" class=\"row m-t-20\"");
 WriteLiteral(">\r\n");
 
             
-            #line 19 "..\..\Views\Search\Search.cshtml"
+            #line 20 "..\..\Views\Search\Search.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Search\Search.cshtml"
+            #line 20 "..\..\Views\Search\Search.cshtml"
                      foreach (var action in (Model.Provider as ISearchProviderWithActions).Actions())
                     {
 
@@ -154,22 +160,22 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 991), Tuple.Create("\"", 1074)
+WriteAttribute("href", Tuple.Create(" href=\"", 1041), Tuple.Create("\"", 1124)
             
-            #line 22 "..\..\Views\Search\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 998), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
-            
-            #line default
-            #line hidden
-, 998), false)
-, Tuple.Create(Tuple.Create("", 1038), Tuple.Create("?ReturnUrl=", 1038), true)
-            
-            #line 22 "..\..\Views\Search\Search.cshtml"
-        , Tuple.Create(Tuple.Create("", 1049), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 23 "..\..\Views\Search\Search.cshtml"
+, Tuple.Create(Tuple.Create("", 1048), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 1049), false)
+, 1048), false)
+, Tuple.Create(Tuple.Create("", 1088), Tuple.Create("?ReturnUrl=", 1088), true)
+            
+            #line 23 "..\..\Views\Search\Search.cshtml"
+        , Tuple.Create(Tuple.Create("", 1099), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            
+            #line default
+            #line hidden
+, 1099), false)
 );
 
 WriteLiteral(" class=\"btn btn-success btn-md btn-outline btn-rounded\"");
@@ -177,7 +183,7 @@ WriteLiteral(" class=\"btn btn-success btn-md btn-outline btn-rounded\"");
 WriteLiteral(">");
 
             
-            #line 22 "..\..\Views\Search\Search.cshtml"
+            #line 23 "..\..\Views\Search\Search.cshtml"
                                                                                                                                                                      Write(action.Description(Html.LoggedInUser()));
 
             
@@ -186,7 +192,7 @@ WriteLiteral(">");
 WriteLiteral("</a>\r\n                        </div>\r\n");
 
             
-            #line 24 "..\..\Views\Search\Search.cshtml"
+            #line 25 "..\..\Views\Search\Search.cshtml"
                     }
 
             
@@ -195,7 +201,7 @@ WriteLiteral("</a>\r\n                        </div>\r\n");
 WriteLiteral("                </div>\r\n            </div>\r\n");
 
             
-            #line 27 "..\..\Views\Search\Search.cshtml"
+            #line 28 "..\..\Views\Search\Search.cshtml"
         }
 
             
@@ -233,7 +239,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 37 "..\..\Views\Search\Search.cshtml"
+            #line 38 "..\..\Views\Search\Search.cshtml"
                        Write(Html.Partial("Results", Model.Results));
 
             
@@ -244,7 +250,7 @@ WriteLiteral("\r\n                        </ul>\r\n                    </div>\r\
 "ts  -->\r\n</div>\r\n\r\n");
 
             
-            #line 47 "..\..\Views\Search\Search.cshtml"
+            #line 48 "..\..\Views\Search\Search.cshtml"
 Write(Html.Partial("Footer"));
 
             
@@ -267,7 +273,7 @@ WriteLiteral(@"
             $.post(""");
 
             
-            #line 59 "..\..\Views\Search\Search.cshtml"
+            #line 60 "..\..\Views\Search\Search.cshtml"
                Write(Request.Url.AbsolutePath);
 
             
