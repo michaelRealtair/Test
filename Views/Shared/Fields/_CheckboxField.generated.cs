@@ -40,7 +40,15 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<div");
+            
+            #line 2 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+  
+    var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
@@ -55,7 +63,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 8 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                 Write(Model.Label);
 
             
@@ -75,14 +83,14 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"radio\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 316), Tuple.Create("\"", 347)
+WriteAttribute("name", Tuple.Create(" name=\"", 440), Tuple.Create("\"", 471)
             
-            #line 10 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 323), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 447), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 323), false)
+, 447), false)
 );
 
 WriteLiteral(" value=\"true\"");
@@ -90,13 +98,22 @@ WriteLiteral(" value=\"true\"");
 WriteLiteral(" ");
 
             
-            #line 10 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                                                          Write(Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral("> Yes<br>\r\n        </label>\r\n        <label");
+WriteLiteral("> ");
+
+            
+            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                                          Write(attribute.LabelForTrue);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("<br>\r\n        </label>\r\n        <label");
 
 WriteLiteral(" class=\"radio-inline\"");
 
@@ -104,14 +121,14 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"radio\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 524), Tuple.Create("\"", 555)
+WriteAttribute("name", Tuple.Create(" name=\"", 668), Tuple.Create("\"", 699)
             
-            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 531), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 675), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 531), false)
+, 675), false)
 );
 
 WriteLiteral(" value=\"false\"");
@@ -119,13 +136,22 @@ WriteLiteral(" value=\"false\"");
 WriteLiteral(" ");
 
             
-            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                                                           Write(!Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral("> No<br>\r\n        </label>\r\n    </div>\r\n</div>");
+WriteLiteral("> ");
+
+            
+            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                                            Write(attribute.LabelForFalse);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("<br>\r\n        </label>\r\n    </div>\r\n</div>");
 
         }
     }
