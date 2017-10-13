@@ -115,7 +115,7 @@ WriteLiteral("            <thead>\r\n                <tr>                \r\n");
             #line hidden
 WriteLiteral("                        <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 618)
+WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 705)
 , Tuple.Create(Tuple.Create("", 583), Tuple.Create("col-xs-", 583), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
@@ -124,14 +124,38 @@ WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 618)
             #line default
             #line hidden
 , 590), false)
-, Tuple.Create(Tuple.Create(" ", 611), Tuple.Create("p-l-40", 612), true)
+, Tuple.Create(Tuple.Create(" ", 611), Tuple.Create("col-sm-", 612), true)
+            
+            #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
+, Tuple.Create(Tuple.Create("", 619), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            
+            #line default
+            #line hidden
+, 619), false)
+, Tuple.Create(Tuple.Create(" ", 640), Tuple.Create("col-md-", 641), true)
+            
+            #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                      , Tuple.Create(Tuple.Create("", 648), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            
+            #line default
+            #line hidden
+, 648), false)
+, Tuple.Create(Tuple.Create(" ", 669), Tuple.Create("col-lg-", 670), true)
+            
+            #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
+                                                   , Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+            
+            #line default
+            #line hidden
+, 677), false)
+, Tuple.Create(Tuple.Create(" ", 698), Tuple.Create("p-l-40", 699), true)
 );
 
 WriteLiteral(">");
 
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                                                                   Write(column.Name);
+                                                                                                                                                          Write(column.Name);
 
             
             #line default
@@ -194,14 +218,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1062), Tuple.Create("\"", 1109)
+WriteAttribute("href", Tuple.Create(" href=\"", 1149), Tuple.Create("\"", 1196)
             
             #line 29 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1069), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+, Tuple.Create(Tuple.Create("", 1156), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1069), false)
+, 1156), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -247,14 +271,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1534), Tuple.Create("\"", 1548)
+WriteAttribute("href", Tuple.Create(" href=\"", 1621), Tuple.Create("\"", 1635)
             
             #line 37 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1541), Tuple.Create<System.Object, System.Int32>(column
+, Tuple.Create(Tuple.Create("", 1628), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1541), false)
+, 1628), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -279,14 +303,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2030), Tuple.Create("\"", 2106)
+WriteAttribute("href", Tuple.Create(" href=\"", 2117), Tuple.Create("\"", 2193)
             
             #line 44 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 2037), Tuple.Create<System.Object, System.Int32>((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 2124), Tuple.Create<System.Object, System.Int32>((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 2037), false)
+, 2124), false)
 );
 
 WriteLiteral(">");
@@ -385,7 +409,11 @@ WriteLiteral(">\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                            <td>\r\n");
+WriteLiteral("                            <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">\r\n");
 
 WriteLiteral("                                ");
 

@@ -13,7 +13,7 @@
                 <tr>                
                     @foreach (var column in Model.Header)
                     {
-                        <th class="col-xs-@(column.ColumnWidth) p-l-40">@column.Name</th>
+                        <th class="col-xs-@(column.ColumnWidth) col-sm-@(column.ColumnWidth) col-md-@(column.ColumnWidth) col-lg-@(column.ColumnWidth) p-l-40">@column.Name</th>
                     }
                 </tr>
             </thead>
@@ -61,7 +61,7 @@
                     <tr class="bg-inverse text-white">
                         @foreach (var total in Model.Totals)
                         {
-                            <td>
+                            <td class="p-l-40">
                                 @total
                             </td>
                         }
