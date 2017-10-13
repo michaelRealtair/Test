@@ -49,6 +49,10 @@
 
                                     <td class="p-l-40"><a href="@((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url))">@keyObj</a></td>
                                 }
+                                else if (column is IDescribable)
+                                {                                    
+                                    <td class="p-l-40">@Html.Render(Url, column)</td>
+                                }
 
                                 @*
                                     else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))

@@ -319,13 +319,37 @@ WriteLiteral("</a></td>\r\n");
             
             #line 51 "..\..\Views\Search\Results.cshtml"
                                 }
+                                else if (column is IDescribable)
+                                {                                    
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                    <td");
+
+WriteLiteral(" class=\"p-l-40\"");
+
+WriteLiteral(">");
+
+            
+            #line 54 "..\..\Views\Search\Results.cshtml"
+                                                  Write(Html.Render(Url, column));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</td>\r\n");
+
+            
+            #line 55 "..\..\Views\Search\Results.cshtml"
+                                }
 
                                 
             
             #line default
             #line hidden
             
-            #line 58 "..\..\Views\Search\Results.cshtml"
+            #line 62 "..\..\Views\Search\Results.cshtml"
                                   
                             else
                             {
@@ -340,7 +364,7 @@ WriteLiteral(" class=\"p-l-40\"");
 WriteLiteral(">");
 
             
-            #line 61 "..\..\Views\Search\Results.cshtml"
+            #line 65 "..\..\Views\Search\Results.cshtml"
                                               Write(column);
 
             
@@ -349,7 +373,7 @@ WriteLiteral(">");
 WriteLiteral("</td>\r\n");
 
             
-            #line 62 "..\..\Views\Search\Results.cshtml"
+            #line 66 "..\..\Views\Search\Results.cshtml"
                                 }
                             }
 
@@ -359,7 +383,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                        </tr>\r\n");
 
             
-            #line 65 "..\..\Views\Search\Results.cshtml"
+            #line 69 "..\..\Views\Search\Results.cshtml"
                     }
 
             
@@ -368,7 +392,7 @@ WriteLiteral("                        </tr>\r\n");
 WriteLiteral("                </tbody>\r\n\r\n            </table>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 71 "..\..\Views\Search\Results.cshtml"
+            #line 75 "..\..\Views\Search\Results.cshtml"
 }
 else
 {
@@ -392,20 +416,20 @@ WriteLiteral(" class=\"col-xs-12\"");
 
 WriteLiteral(">\r\n                    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3392), Tuple.Create("\"", 3449)
+WriteAttribute("href", Tuple.Create(" href=\"", 3651), Tuple.Create("\"", 3708)
             
-            #line 79 "..\..\Views\Search\Results.cshtml"
-, Tuple.Create(Tuple.Create("", 3399), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
+            #line 83 "..\..\Views\Search\Results.cshtml"
+, Tuple.Create(Tuple.Create("", 3658), Tuple.Create<System.Object, System.Int32>(Html.Raw(result.GetUrl(Html.LoggedInUser(), Url))
             
             #line default
             #line hidden
-, 3399), false)
+, 3658), false)
 );
 
 WriteLiteral(">\r\n                        <b>");
 
             
-            #line 80 "..\..\Views\Search\Results.cshtml"
+            #line 84 "..\..\Views\Search\Results.cshtml"
                       Write(result.Description(Html.LoggedInUser()));
 
             
@@ -414,7 +438,7 @@ WriteLiteral(">\r\n                        <b>");
 WriteLiteral("</b>\r\n                        <i>");
 
             
-            #line 81 "..\..\Views\Search\Results.cshtml"
+            #line 85 "..\..\Views\Search\Results.cshtml"
                       Write(result.ActualType().Name.DisplaySafeName());
 
             
@@ -424,7 +448,7 @@ WriteLiteral("</i>\r\n                    </a>\r\n                </div>\r\n    
 "   </li>\r\n");
 
             
-            #line 86 "..\..\Views\Search\Results.cshtml"
+            #line 90 "..\..\Views\Search\Results.cshtml"
     }
 
     if (Model.Value.Count() == 0)
@@ -456,7 +480,7 @@ WriteLiteral(" class=\"m-l-15 m-t-10 m-b-5\"");
 WriteLiteral(">No Record Found</i>\r\n            </div>\r\n        </li>\r\n");
 
             
-            #line 96 "..\..\Views\Search\Results.cshtml"
+            #line 100 "..\..\Views\Search\Results.cshtml"
     }
 }
             
