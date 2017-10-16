@@ -166,19 +166,17 @@
 
     <script>
         $(function () {
-            $('#messageText').suggest('@@', {
-                data: function (q) {
-                    if (q) {
-                        return $.getJSON(window.location.origin + "/rest/users", { query: q, enquiry: @(Model.Workflow.Id) });
+            $.getJSON(window.location.origin + "/rest/users", { query: "", enquiry: @(Model.Workflow.Id) }, function(userData){
+                $('#messageText').suggest('@@', {
+                    data: userData,
+                    map: function (user) {
+                        return {
+                            value: user[0].ConversationRef,
+                            text: '<small>' + user[0].Name + '</small>'
+                        }
                     }
-                },
-                map: function (user) {
-                    return {
-                        value: user[0].ConversationRef,
-                        text: '<small>' + user[0].Name + '</small>'
-                    }
-                }
-            });
+                });
+            });            
         });
 
     </script>

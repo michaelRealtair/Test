@@ -694,30 +694,28 @@ WriteLiteral("></script>\r\n    <script");
 WriteLiteral(" src=\"https://static.realtair.com/plugins/bootstrap-suggest-1.3.6/bootstrap-sugge" +
 "st.js\"");
 
-WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\r\n            $(\'#messageT" +
-"ext\').suggest(\'");
-
-WriteLiteral("@\', {\r\n                data: function (q) {\r\n                    if (q) {\r\n      " +
-"                  return $.getJSON(window.location.origin + \"/rest/users\", { que" +
-"ry: q, enquiry: ");
+WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\r\n            $.getJSON(wi" +
+"ndow.location.origin + \"/rest/users\", { query: \"\", enquiry: ");
 
             
-            #line 172 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                                                                                  Write(Model.Workflow.Id);
+            #line 169 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                                                                Write(Model.Workflow.Id);
 
             
             #line default
             #line hidden
-WriteLiteral(@" });
+WriteLiteral(" }, function(userData){\r\n                $(\'#messageText\').suggest(\'");
+
+WriteLiteral(@"@', {
+                    data: userData,
+                    map: function (user) {
+                        return {
+                            value: user[0].ConversationRef,
+                            text: '<small>' + user[0].Name + '</small>'
+                        }
                     }
-                },
-                map: function (user) {
-                    return {
-                        value: user[0].ConversationRef,
-                        text: '<small>' + user[0].Name + '</small>'
-                    }
-                }
-            });
+                });
+            });            
         });
 
     </script>
@@ -749,7 +747,7 @@ WriteLiteral(@" });
                     url: '/enquiry/");
 
             
-            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -758,7 +756,7 @@ WriteLiteral(@" });
 WriteLiteral("/chat/");
 
             
-            #line 210 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -787,7 +785,7 @@ WriteLiteral(@"/send-message',
                 url: '/enquiry/");
 
             
-            #line 230 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 228 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -796,7 +794,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 230 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 228 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -854,7 +852,7 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "                 \'<div class=\"chat-image\"> <span class=\"img-circle\">");
 
             
-            #line 321 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 319 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -865,7 +863,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 324 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 322 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             
