@@ -3024,6 +3024,8 @@ ul.common li a:hover {
 .chat-list .chat-text p {
   margin: 0px;
   padding-top: 3px;
+  text-align: left;
+  word-break: break-word;
 }
 .chat-list .chat-text b {
   font-size: 10px;
