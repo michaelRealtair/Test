@@ -20,10 +20,6 @@ namespace Realtair.Framework.Core.Web.Utilities
 
     public static class CoreExtensions
     {
-        #region Fields
-        private const string REGEX_VALID_URL = @"((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&amp;=\+\$,\w]+@)?[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&amp;;%@\.\w_]*)#?(?:[\.\!\/\\\w]*[^?.,!() ]))?)";
-        #endregion
-
         #region Methods
         public static string GetUrl(this IHasParentEnquiry workflow, UrlHelper url)
         {
@@ -252,25 +248,6 @@ namespace Realtair.Framework.Core.Web.Utilities
 
         //FILE ASSET EXTENSIONS
         public static string GetUrl(this Attachment fileAsset, int width = 300) => fileAsset?.Url(width);
-
-        //STRING EXTENSIONS
-        public static string Linkify(this string input, bool isTargetBlank = true)
-        {
-            var regex = new Regex(REGEX_VALID_URL, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            var matches = regex.Matches(input);
-            var sb = new StringBuilder();
-            var index = 0;
-
-            foreach (Match m in matches)
-            {
-                sb.Append(input.Substring(index, m.Index - index));
-                sb.Append($"<a href=\"{m.Value}\"{(isTargetBlank ? "target=\"_blank\"": "")}>{m.Value}</a>");
-                index = m.Index + m.Value.Length;
-            }
-
-            sb.Append(input.Substring(index, input.Length - index));
-            return sb.ToString();
-        }
         #endregion
     }
 }

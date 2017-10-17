@@ -1,6 +1,7 @@
 ﻿using Realtair.Framework.Core.Data;
 using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
+using Realtair.Framework.Core.Utilities;
 using Realtair.Framework.Core.Web.Utilities;
 using Realtair.Framework.Enquiries.Entities;
 using System;

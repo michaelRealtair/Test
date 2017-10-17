@@ -10,7 +10,7 @@
         <div class="gallery" itemscope itemtype="https://schema.org/ImageGallery">
             @{
                 bool isFirstImg = true;
-                foreach (var item in Model.Items)
+                foreach (var item in Model.Items.Where(i => i != null))
                 {
                     if (isFirstImg)
                     {

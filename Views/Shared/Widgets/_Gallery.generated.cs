@@ -107,7 +107,7 @@ WriteLiteral(">\r\n");
             #line 11 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
               
                 bool isFirstImg = true;
-                foreach (var item in Model.Items)
+                foreach (var item in Model.Items.Where(i => i != null))
                 {
                     if (isFirstImg)
                     {
@@ -125,14 +125,14 @@ WriteLiteral(" itemtype=\"https://schema.org/ImageObject\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 972), Tuple.Create("\"", 991)
+WriteAttribute("href", Tuple.Create(" href=\"", 994), Tuple.Create("\"", 1013)
             
             #line 18 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 979), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1001), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 979), false)
+, 1001), false)
 );
 
 WriteLiteral(" class=\"gallery-item\"");
@@ -141,14 +141,14 @@ WriteLiteral(" itemprop=\"contentUrl\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1074), Tuple.Create("\"", 1092)
+WriteAttribute("src", Tuple.Create(" src=\"", 1096), Tuple.Create("\"", 1114)
             
             #line 19 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1080), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1102), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1080), false)
+, 1102), false)
 );
 
 WriteLiteral(" style=\"width: 100%; height: 100%;\"");
@@ -176,14 +176,14 @@ WriteLiteral(" style=\"display: none\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1463), Tuple.Create("\"", 1482)
+WriteAttribute("href", Tuple.Create(" href=\"", 1485), Tuple.Create("\"", 1504)
             
             #line 26 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1470), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1492), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1470), false)
+, 1492), false)
 );
 
 WriteLiteral(" class=\"gallery-item\"");
@@ -192,14 +192,14 @@ WriteLiteral(" itemprop=\"contentUrl\"");
 
 WriteLiteral(">\r\n                                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1565), Tuple.Create("\"", 1583)
+WriteAttribute("src", Tuple.Create(" src=\"", 1587), Tuple.Create("\"", 1605)
             
             #line 27 "..\..\Views\Shared\Widgets\_Gallery.cshtml"
-, Tuple.Create(Tuple.Create("", 1571), Tuple.Create<System.Object, System.Int32>(item.Url(0)
+, Tuple.Create(Tuple.Create("", 1593), Tuple.Create<System.Object, System.Int32>(item.Url(0)
             
             #line default
             #line hidden
-, 1571), false)
+, 1593), false)
 );
 
 WriteLiteral(" />\r\n                            </a>\r\n                        </figure>\r\n");
