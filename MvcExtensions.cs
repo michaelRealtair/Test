@@ -121,6 +121,7 @@ namespace ASP
             if (text != null)
             {
                 text = HttpUtility.HtmlEncode(text);
+                text = text.Linkify();
                 text = text.Replace("\r\n", "\r");
                 text = text.Replace("\n", "\r");
                 text = text.Replace("\r", "<br>\r\n");
