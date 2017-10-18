@@ -27,7 +27,10 @@
                     <tr>
                         @foreach (var column in row)
                         {
-                            if (column is Attachment)
+                            if (column == null){
+                                <td>&nbsp;</td>
+                            }
+                            else if (column is Attachment)
                             {
                                 <td><a href="@Html.Raw((column as Attachment).Url(0))" target="_blank">View</a></td>
                             }
@@ -39,7 +42,8 @@
                             {
                                 <td><a href="@column" target="_blank">@column</a></td>
                             }
-                            else {
+                            else
+                            {
                                 <td>@column</td>
                             }
                         }
