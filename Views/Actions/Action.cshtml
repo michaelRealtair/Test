@@ -76,7 +76,7 @@
 									var fieldSetItems = shownWithFieldSets.Where(s => s.FieldSetAttribute.Legend == field.FieldSetAttribute.Legend).ToList();
 									if (fieldSetItems.Any())
 									{
-										<fieldset>
+										<fieldset style="padding: 1px;">
 											<legend>@field.FieldSetAttribute.Legend</legend>
 											<div class="p-l-30">
 												@foreach (var item in fieldSetItems)

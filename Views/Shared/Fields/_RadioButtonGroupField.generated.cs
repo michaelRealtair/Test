@@ -169,7 +169,7 @@ WriteLiteral("\t\t\t\t\t\t\t");
                        Write(Html.RadioButton(
 								Model.UniqueName,
 								option.Value.ToString(),
-								option.Value.ToString() == Model.Value.ToString(),
+								option.Value.ToString() == Model.Value?.ToString(),
 								new { id = option.Id.ToString() }));
 
             
@@ -179,14 +179,14 @@ WriteLiteral("\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<label");
 
 WriteLiteral(" class=\"rb-label\"");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 1204), Tuple.Create("\"", 1231)
+WriteAttribute("for", Tuple.Create(" for=\"", 1205), Tuple.Create("\"", 1232)
             
             #line 40 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create("", 1210), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+, Tuple.Create(Tuple.Create("", 1211), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 1210), false)
+, 1211), false)
 );
 
 WriteLiteral(">");

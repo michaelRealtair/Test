@@ -34,7 +34,7 @@
 							@Html.RadioButton(
 								Model.UniqueName,
 								option.Value.ToString(),
-								option.Value.ToString() == Model.Value.ToString(),
+								option.Value.ToString() == Model.Value?.ToString(),
 								new { id = option.Id.ToString() })
 						</div>
 						<label class="rb-label" for="@option.Id.ToString()">@option.Description</label>
