@@ -781,11 +781,12 @@ WriteLiteral(@"/send-message',
         }
 
         var doPoll = function () {
+            if ( window.blurred ) { setTimeout(doPoll, pollTime); return; }  
             $.ajax({
                 url: '/enquiry/");
 
             
-            #line 228 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 229 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -794,7 +795,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 228 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 229 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -852,7 +853,7 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "                 \'<div class=\"chat-image\"> <span class=\"img-circle\">");
 
             
-            #line 319 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 320 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -863,7 +864,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 322 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 323 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             
@@ -908,7 +909,9 @@ WriteLiteral("</h4>\' +\r\n                            \'            <p> \' + $(
 "oz-box-sizing:content-box\';\r\n                    el.style.cssText = \'height:\' + " +
 "el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n            $(" +
 "window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\");\r\n\r\n       " +
-" });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n    </script>\r\n");
+" });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n        window.onblur = function(" +
+") { window.blurred = true; };\r\n        window.onfocus = function() { window.blur" +
+"red = false; };\r\n    </script>\r\n");
 
 });
 
