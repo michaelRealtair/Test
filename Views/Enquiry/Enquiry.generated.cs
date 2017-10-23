@@ -525,8 +525,8 @@ WriteLiteral("@realtair.com</a> |\r\n            p: <a");
 
 WriteLiteral(" href=\"mailto:support@realtair.com\"");
 
-WriteLiteral(">1300 299 357</a> |\r\n            hours: 8:30 - 5:30\r\n        </span>\r\n    </div>\r" +
-"\n</div>\r\n\r\n<!-- /#page-wrapper -->\r\n\r\n<div");
+WriteLiteral(">1300 299 357</a> |\r\n            hours: Mon-Fri 8:30 - 5:30\r\n        </span>\r\n   " +
+" </div>\r\n</div>\r\n\r\n<!-- /#page-wrapper -->\r\n\r\n<div");
 
 WriteLiteral(" class=\"pswp\"");
 
