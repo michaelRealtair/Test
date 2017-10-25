@@ -1,0 +1,25 @@
+﻿@Html.Partial("Menu")
+
+<div id="page-wrapper" class="with-background">
+    <div class="panel panel-default container">
+        <div class="content-table">
+            <div class="content-vertical middle">
+                <div class="row" style="padding-bottom: 20px;">
+                    <div style="padding: 10px 0px;">
+                        <center>
+                            <h1>Submitted successfully!</h1>
+                        </center>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-4">
+                        <form class="form-horizontal new-lg-form" id="loginform" method="POST" action="/">
+                            <div class="pull-middle">
+                                <button class="btn btn-custom btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" id="login" type="submit">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form style="display: none;" id="main-form" method="POST"></form>
+</div>

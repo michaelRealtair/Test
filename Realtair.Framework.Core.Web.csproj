@@ -140,6 +140,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Views\Actions\SecureActionSuccessful.generated.cs">
+      <DependentUpon>SecureActionSuccessful.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Actions\EmptyAction.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3363,6 +3368,10 @@
     <None Include="Views\Actions\Action.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Action.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Actions\SecureActionSuccessful.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SecureActionSuccessful.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Actions\EmptyAction.cshtml">
       <Generator>RazorGenerator</Generator>
