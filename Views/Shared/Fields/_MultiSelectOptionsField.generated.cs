@@ -46,7 +46,7 @@ namespace ASP
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute;
     var options = attribute.Options(Model.Action, Html.LoggedInUser());
     var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
-    //var Values = (Model.Value as IEnumerable<Entity>).ToList();
+    var Values = Newtonsoft.Json.JsonConvert.SerializeObject((Model.Value as IEnumerable<Entity>).ToList().Select(a => a.Id).ToList());
 
             
             #line default
@@ -94,14 +94,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 623), Tuple.Create("\"", 646)
+WriteAttribute("id", Tuple.Create(" id=\"", 693), Tuple.Create("\"", 716)
             
             #line 18 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 628), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 698), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 628), false)
+, 698), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -120,14 +120,14 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 808), Tuple.Create("\"", 831)
+WriteAttribute("id", Tuple.Create(" id=\"", 878), Tuple.Create("\"", 901)
             
             #line 24 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 813), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 883), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 813), false)
+, 883), false)
 );
 
 WriteLiteral(" class=\"form-control select2-multiple\"");
@@ -240,29 +240,37 @@ WriteLiteral("\').change(function () {\r\n                $(\'#");
 WriteLiteral("\').val(JSON.stringify($(this).val()));\r\n            });\r\n        </script>\r\n    <" +
 "/div>\r\n    <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1828), Tuple.Create("\"", 1854)
+WriteAttribute("name", Tuple.Create(" name=\"", 1898), Tuple.Create("\"", 1924)
             
             #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1835), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1905), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1835), false)
+, 1905), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1855), Tuple.Create("\"", 1879)
+WriteAttribute("id", Tuple.Create(" id=\"", 1925), Tuple.Create("\"", 1949)
             
             #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1860), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1930), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1860), false)
+, 1930), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(" value=\"[]\"");
+WriteAttribute("value", Tuple.Create(" value=\"", 1964), Tuple.Create("\"", 1981)
+            
+            #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+     , Tuple.Create(Tuple.Create("", 1972), Tuple.Create<System.Object, System.Int32>(Values
+            
+            #line default
+            #line hidden
+, 1972), false)
+);
 
 WriteLiteral(" />\r\n</div>\r\n");
 

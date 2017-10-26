@@ -4,7 +4,7 @@
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute;
     var options = attribute.Options(Model.Action, Html.LoggedInUser());
     var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
-    //var Values = (Model.Value as IEnumerable<Entity>).ToList();
+    var Values = Newtonsoft.Json.JsonConvert.SerializeObject((Model.Value as IEnumerable<Entity>).ToList().Select(a => a.Id).ToList());
 }
 
 <div class="form-group">
@@ -43,5 +43,5 @@
             });
         </script>
     </div>
-    <input name="@(Model.UniqueName)" id="@(Model.UniqueName)" type="hidden" value="[]" />
+    <input name="@(Model.UniqueName)" id="@(Model.UniqueName)" type="hidden" value="@(Values)" />
 </div>
