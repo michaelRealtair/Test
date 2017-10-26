@@ -175,7 +175,14 @@ namespace Realtair.Framework.Core.Web.Controllers
 
             if (auth != null)
             {
-                return Redirect("/");
+                if (Auth.IsLoggedIn)
+                {
+                    return Redirect("/"); 
+                }
+                else
+                {
+                    return View("SecureActionSuccessful", action);
+                }
             }
 
             if (action.RedirectLocation == null)
