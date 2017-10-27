@@ -41,7 +41,7 @@
         input.on("keyup change click", function () {
             var countryData = input.intlTelInput("getSelectedCountryData");
             var phoneNumber = {
-                DialCode: '+'+countryData.dialCode,
+                DialCode: '+' + countryData.dialCode,
                 CountryName: countryData.name,
                 Iso2: countryData.iso2.toUpperCase(),
                 Number: input.intlTelInput("getNumber")
@@ -51,5 +51,10 @@
         });
 
         $('#@Model.UniqueName').trigger('click');
+
+        @if (phone != null && !string.IsNullOrEmpty(phone.Number))
+        {
+            @Html.Raw("$('input[name=" + Model.UniqueName + "]').val('" +  (phone != null ? phone.Serialize() : "") + "');")
+        }
     });
 </script>

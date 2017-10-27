@@ -238,7 +238,7 @@ WriteLiteral(@"').intlTelInput(""setCountry"", ""au"");
         input.on(""keyup change click"", function () {
             var countryData = input.intlTelInput(""getSelectedCountryData"");
             var phoneNumber = {
-                DialCode: '+'+countryData.dialCode,
+                DialCode: '+' + countryData.dialCode,
                 CountryName: countryData.name,
                 Iso2: countryData.iso2.toUpperCase(),
                 Number: input.intlTelInput(""getNumber"")
@@ -262,7 +262,38 @@ WriteLiteral("]\').val(JSON.stringify(phoneNumber));\r\n        });\r\n\r\n     
             
             #line default
             #line hidden
-WriteLiteral("\').trigger(\'click\');\r\n    });\r\n</script>\r\n");
+WriteLiteral("\').trigger(\'click\');\r\n\r\n");
+
+            
+            #line 55 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+        
+            
+            #line default
+            #line hidden
+            
+            #line 55 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+         if (phone != null && !string.IsNullOrEmpty(phone.Number))
+        {
+            
+            
+            #line default
+            #line hidden
+            
+            #line 57 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+       Write(Html.Raw("$('input[name=" + Model.UniqueName + "]').val('" +  (phone != null ? phone.Serialize() : "") + "');"));
+
+            
+            #line default
+            #line hidden
+            
+            #line 57 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
+                                                                                                                            
+        }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    });\r\n</script>\r\n");
 
         }
     }
