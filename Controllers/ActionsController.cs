@@ -144,7 +144,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             if (back)
             {
-                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => p.GetType() == model.Page.GetType()));
+                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => (p is MultiPageAction.CustomPage && model.Page is MultiPageAction.CustomPage) ? (p as MultiPageAction.CustomPage).Identifier == (model.Page as MultiPageAction.CustomPage).Identifier : p.GetType() == model.Page.GetType()));
                 return View("Action", model);
             }
             else
