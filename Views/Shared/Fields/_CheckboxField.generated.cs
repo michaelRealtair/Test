@@ -99,7 +99,7 @@ WriteLiteral(" ");
 
             
             #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                         Write(Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
+                                                                         Write(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "");
 
             
             #line default
@@ -108,7 +108,7 @@ WriteLiteral("> ");
 
             
             #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                                                          Write(attribute.LabelForTrue);
+                                                                                                                                      Write(attribute.LabelForTrue);
 
             
             #line default
@@ -121,14 +121,14 @@ WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"radio\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 668), Tuple.Create("\"", 699)
+WriteAttribute("name", Tuple.Create(" name=\"", 664), Tuple.Create("\"", 695)
             
             #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 675), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 671), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 675), false)
+, 671), false)
 );
 
 WriteLiteral(" value=\"false\"");
@@ -137,7 +137,7 @@ WriteLiteral(" ");
 
             
             #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                          Write(!Convert.ToBoolean(Model.FormValue) ? "checked='checked'" : "");
+                                                                          Write(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "");
 
             
             #line default
@@ -146,7 +146,7 @@ WriteLiteral("> ");
 
             
             #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                                                            Write(attribute.LabelForFalse);
+                                                                                                                                        Write(attribute.LabelForFalse);
 
             
             #line default
