@@ -202,7 +202,7 @@
 						</div>
 					</form>
 
-					@if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
+				@if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
 				{
 						<div class="panel-footer">
 							@if ((bool)TempData["ShowSubmit"])
@@ -223,7 +223,7 @@
 						</div>
 					}
 
-					@if (Model.IsMultiPage)
+				@if (Model.IsMultiPage)
 				{
 					if (Model.SubmittedPages.Count != 0)
 					{
@@ -307,7 +307,8 @@
 		</div>
         @Html.Partial("Footer")
 		<script>
-			$('#main-form-submit').click(function (e) {
+            $('#main-form-submit').click(function (e) {
+                console.log(e.form.checkValidity());
 				e.preventDefault()
 				var bValid = true;
 				$(document).find('input.required:visible').each(function () {
