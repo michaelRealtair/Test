@@ -80,44 +80,54 @@
 											<legend>@field.FieldSetAttribute.Legend</legend>
 											<div class="p-l-30">
 												@foreach (var item in fieldSetItems)
-												{
-													var fieldWithReturnType = $"Fields/_{item.PropertyType.Name}_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-													var fieldWithoutReturnType = $"Fields/_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                                {
+                                                    var fieldWithReturnType = $"Fields/_{item.PropertyType.Name}_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                                    var fieldWithoutReturnType = $"Fields/_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                                    var fieldThatWorksForBoth = $"Fields/_{item.PropertyType.Name}_Field";
 
-													if (Html.ViewExists(fieldWithReturnType))
-													{
-														Html.RenderPartial(fieldWithReturnType, item);
-													}
-													else if (Html.ViewExists(fieldWithoutReturnType))
-													{
-														Html.RenderPartial(fieldWithoutReturnType, item);
-													}
-													else
-													{
-														<p> Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType </p>
-													}
-												}
+                                                    if (Html.ViewExists(fieldWithReturnType))
+                                                    {
+                                                        Html.RenderPartial(fieldWithReturnType, item);
+                                                    }
+                                                    else if (Html.ViewExists(fieldWithoutReturnType))
+                                                    {
+                                                        Html.RenderPartial(fieldWithoutReturnType, item);
+                                                    }
+                                                    else if (Html.ViewExists(fieldThatWorksForBoth))
+                                                    {
+                                                        Html.RenderPartial(fieldThatWorksForBoth, item);
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <p> Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType </p>
+
+                                                    }
+                                                }
 											</div>
-										</fieldset>
+										</fieldset>shownWithFieldSets = shownWithFieldSets.Except(fieldSetItems).ToList();
+                                    }
+                                }
+                                else
+                                {
+                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldThatWorksForBoth = $"Fields/_{field.PropertyType.Name}_Field";
 
-										shownWithFieldSets = shownWithFieldSets.Except(fieldSetItems).ToList();
-									}
-								}
-								else
-								{
-									var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-									var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-
-									if (Html.ViewExists(fieldWithReturnType))
-									{
-										Html.RenderPartial(fieldWithReturnType, field);
-									}
-									else if (Html.ViewExists(fieldWithoutReturnType))
-									{
-										Html.RenderPartial(fieldWithoutReturnType, field);
-									}
-									else
-									{
+                                    if (Html.ViewExists(fieldWithReturnType))
+                                    {
+                                        Html.RenderPartial(fieldWithReturnType, field);
+                                    }
+                                    else if (Html.ViewExists(fieldWithoutReturnType))
+                                    {
+                                        Html.RenderPartial(fieldWithoutReturnType, field);
+                                    }
+                                    else if (Html.ViewExists(fieldThatWorksForBoth))
+                                    {
+                                        Html.RenderPartial(fieldThatWorksForBoth, field);
+                                    }
+                                    else
+                                    {
 										<p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
 									}
 								}
@@ -192,7 +202,7 @@
 						</div>
 					</form>
 
-					@if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
+				@if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
 				{
 						<div class="panel-footer">
 							@if ((bool)TempData["ShowSubmit"])
@@ -213,7 +223,7 @@
 						</div>
 					}
 
-					@if (Model.IsMultiPage)
+				@if (Model.IsMultiPage)
 				{
 					if (Model.SubmittedPages.Count != 0)
 					{
@@ -297,7 +307,7 @@
 		</div>
         @Html.Partial("Footer")
 		<script>
-			$('#main-form-submit').click(function (e) {
+            $('#main-form-submit').click(function (e) {
 				e.preventDefault()
 				var bValid = true;
 				$(document).find('input.required:visible').each(function () {

@@ -195,6 +195,7 @@ WriteLiteral("                    <tr>\r\n");
             #line 28 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                          foreach (var column in row)
                         {
+                            DateTime dt = new DateTime();
                             if (column == null){
 
             
@@ -203,7 +204,7 @@ WriteLiteral("                    <tr>\r\n");
 WriteLiteral("                                <td>&nbsp;</td>\r\n");
 
             
-            #line 32 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 33 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (column is Attachment)
                             {
@@ -213,14 +214,14 @@ WriteLiteral("                                <td>&nbsp;</td>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1259), Tuple.Create("\"", 1306)
+WriteAttribute("href", Tuple.Create(" href=\"", 1318), Tuple.Create("\"", 1365)
             
-            #line 35 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 1266), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+            #line 36 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+, Tuple.Create(Tuple.Create("", 1325), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1266), false)
+, 1325), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -228,7 +229,7 @@ WriteLiteral(" target=\"_blank\"");
 WriteLiteral(">View</a></td>\r\n");
 
             
-            #line 36 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 37 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (column is IDisplayable)
                             {
@@ -239,7 +240,7 @@ WriteLiteral(">View</a></td>\r\n");
 WriteLiteral("                                <td>");
 
             
-            #line 39 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 40 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                Write(Html.Render(Url, column));
 
             
@@ -248,7 +249,7 @@ WriteLiteral("                                <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 40 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 41 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
                             {
@@ -258,14 +259,14 @@ WriteLiteral("</td>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1819), Tuple.Create("\"", 1833)
+WriteAttribute("href", Tuple.Create(" href=\"", 1878), Tuple.Create("\"", 1892)
             
-            #line 43 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 1826), Tuple.Create<System.Object, System.Int32>(column
+            #line 44 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+, Tuple.Create(Tuple.Create("", 1885), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1826), false)
+, 1885), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -273,7 +274,7 @@ WriteLiteral(" target=\"_blank\"");
 WriteLiteral(">");
 
             
-            #line 43 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 44 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                                                  Write(column);
 
             
@@ -282,7 +283,41 @@ WriteLiteral(">");
 WriteLiteral("</a></td>\r\n");
 
             
-            #line 44 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 45 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                            }
+                            if (DateTime.TryParse(column.ToString(), out dt))
+                            {
+                                Int32 unixTimestamp = (Int32)(dt.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <td");
+
+WriteLiteral(" data-order=\"");
+
+            
+            #line 49 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                                           Write(unixTimestamp);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"");
+
+WriteLiteral(">");
+
+            
+            #line 49 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                                                           Write(column);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</td>\r\n");
+
+            
+            #line 50 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else
                             {
@@ -293,7 +328,7 @@ WriteLiteral("</a></td>\r\n");
 WriteLiteral("                                <td>");
 
             
-            #line 47 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 53 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                Write(column);
 
             
@@ -302,7 +337,7 @@ WriteLiteral("                                <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 48 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 54 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                         }
 
@@ -312,7 +347,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                    </tr>\r\n");
 
             
-            #line 51 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 57 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                 }
 
             
@@ -321,13 +356,13 @@ WriteLiteral("                    </tr>\r\n");
 WriteLiteral("            </tbody>\r\n");
 
             
-            #line 53 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 59 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 53 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 59 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
              if (Model.Totals != null)
             {
 
@@ -337,13 +372,13 @@ WriteLiteral("            </tbody>\r\n");
 WriteLiteral("                <tfoot>\r\n                    <tr>\r\n");
 
             
-            #line 57 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 63 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 57 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 63 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                          foreach (var total in Model.Totals)
                         {
 
@@ -355,7 +390,7 @@ WriteLiteral("                            <th>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 60 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 66 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                            Write(total);
 
             
@@ -364,7 +399,7 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </th>\r\n");
 
             
-            #line 62 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 68 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                         }
 
             
@@ -373,7 +408,7 @@ WriteLiteral("\r\n                            </th>\r\n");
 WriteLiteral("                    </tr>\r\n                </tfoot>\r\n");
 
             
-            #line 65 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 71 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
             }
 
             
@@ -403,7 +438,7 @@ WriteLiteral(" src=\"https://cdn.datatables.net/responsive/2.1.1/js/dataTables.r
 WriteLiteral("></script>\r\n<script>\r\n    $(document).ready(function () {\r\n        $(\'#");
 
             
-            #line 77 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 83 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
        Write(uniqueId);
 
             

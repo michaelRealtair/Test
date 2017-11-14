@@ -77,22 +77,46 @@ WriteAttribute("name", Tuple.Create(" name=\"", 235), Tuple.Create("\"", 259)
 , 242), false)
 );
 
-WriteLiteral(" type=\"time\"");
+WriteLiteral(" \r\n               type=\"time\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 272), Tuple.Create("\"", 306)
+WriteAttribute("value", Tuple.Create(" \r\n               value=\"", 289), Tuple.Create("\"", 340)
             
-            #line 9 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 280), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
+            #line 11 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 314), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
             
             #line default
             #line hidden
-, 280), false)
+, 314), false)
 );
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" \r\n               class=\"form-control\"");
 
-WriteLiteral(">\r\n    </div>\r\n</div>\r\n");
+WriteLiteral("\r\n               onblur=\"validateInput(this);\"");
 
+WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n");
+
+            
+            #line 17 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+ using (Html.Delayed(null, "time-span-field"))
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(">\r\n        // Reset value to 12:00AM if the input is invalid...\r\n        function" +
+" validateInput(e) {\r\n            if (!e.validity.valid) {\r\n                e.val" +
+"ue = \"00:00:00\"\r\n            }\r\n        }\r\n    </script>\r\n");
+
+            
+            #line 27 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }
