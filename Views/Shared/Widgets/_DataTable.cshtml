@@ -27,6 +27,7 @@
                     <tr>
                         @foreach (var column in row)
                         {
+                            DateTime dt = new DateTime();
                             if (column == null){
                                 <td>&nbsp;</td>
                             }
@@ -41,6 +42,11 @@
                             else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
                             {
                                 <td><a href="@column" target="_blank">@column</a></td>
+                            }
+                            if (DateTime.TryParse(column.ToString(), out dt))
+                            {
+                                Int32 unixTimestamp = (Int32)(dt.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                                <td data-order="@unixTimestamp">@column</td>
                             }
                             else
                             {
