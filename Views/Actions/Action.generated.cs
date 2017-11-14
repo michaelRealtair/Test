@@ -1582,7 +1582,6 @@ WriteLiteral(" />                         \r\n\t\t\t\t\t </form>\r\n\t\t\t\t</di
             #line hidden
 WriteLiteral(@"		<script>
             $('#main-form-submit').click(function (e) {
-                console.log(e.form.checkValidity());
 				e.preventDefault()
 				var bValid = true;
 				$(document).find('input.required:visible').each(function () {
@@ -1612,7 +1611,7 @@ WriteLiteral(@"		<script>
 ");
 
             
-            #line 338 "..\..\Views\Actions\Action.cshtml"
+            #line 337 "..\..\Views\Actions\Action.cshtml"
 	}
 
             
@@ -1627,7 +1626,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\t");
 
             
-            #line 342 "..\..\Views\Actions\Action.cshtml"
+            #line 341 "..\..\Views\Actions\Action.cshtml"
 Write(Html.RenderDelayed());
 
             
