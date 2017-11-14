@@ -308,7 +308,6 @@
         @Html.Partial("Footer")
 		<script>
             $('#main-form-submit').click(function (e) {
-                console.log(e.form.checkValidity());
 				e.preventDefault()
 				var bValid = true;
 				$(document).find('input.required:visible').each(function () {
