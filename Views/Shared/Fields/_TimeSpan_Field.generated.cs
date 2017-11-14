@@ -91,7 +91,9 @@ WriteAttribute("value", Tuple.Create(" value=\"", 272), Tuple.Create("\"", 306)
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteLiteral(">\r\n    </div>\r\n</div>\r\n");
+WriteLiteral(" onchange=\"validateTimespan(this);\"");
+
+WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n");
 
         }
     }

@@ -6,6 +6,16 @@
     </div>
 
     <div class="col-md-9 col-sm-8">
-        <input name="@Model.UniqueName" type="time" value="@(((TimeSpan)Model.Value))" class="form-control">
+        <input name="@Model.UniqueName" type="time" value="@(((TimeSpan)Model.Value))" class="form-control" onchange="validateTimespan(this);">
     </div>
 </div>
+
+@*@using (Html.Delayed(null, "time-span-field"))
+{
+    <script type="text/javascript">
+        function validateTimespan(e) {
+            console.log(e);
+            debugger;
+        }
+    </script>
+}*@

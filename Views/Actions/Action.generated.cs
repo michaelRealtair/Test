@@ -924,13 +924,13 @@ WriteLiteral(" />\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form>\r\n\r\n");
 
             
             #line 205 "..\..\Views\Actions\Action.cshtml"
-					
+				
             
             #line default
             #line hidden
             
             #line 205 "..\..\Views\Actions\Action.cshtml"
-                     if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
+                 if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
 				{
 
             
@@ -1036,13 +1036,13 @@ WriteLiteral("\r\n");
 
             
             #line 226 "..\..\Views\Actions\Action.cshtml"
-					
+				
             
             #line default
             #line hidden
             
             #line 226 "..\..\Views\Actions\Action.cshtml"
-                     if (Model.IsMultiPage)
+                 if (Model.IsMultiPage)
 				{
 					if (Model.SubmittedPages.Count != 0)
 					{
@@ -1080,19 +1080,19 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 10347), Tuple.Create("\"", 10371)
+WriteAttribute("name", Tuple.Create(" name=\"", 10345), Tuple.Create("\"", 10369)
             
             #line 237 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 10354), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 10352), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 10354), false)
+, 10352), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 10372), Tuple.Create("\"", 10458)
-, Tuple.Create(Tuple.Create("", 10380), Tuple.Create("[", 10380), true)
-, Tuple.Create(Tuple.Create("", 10381), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create(" value=\"", 10370), Tuple.Create("\"", 10456)
+, Tuple.Create(Tuple.Create("", 10378), Tuple.Create("[", 10378), true)
+, Tuple.Create(Tuple.Create("", 10379), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 237 "..\..\Views\Actions\Action.cshtml"
@@ -1113,8 +1113,8 @@ WriteAttribute("value", Tuple.Create(" value=\"", 10372), Tuple.Create("\"", 104
             
             #line default
             #line hidden
-}), 10381), false)
-, Tuple.Create(Tuple.Create("", 10457), Tuple.Create("]", 10457), true)
+}), 10379), false)
+, Tuple.Create(Tuple.Create("", 10455), Tuple.Create("]", 10455), true)
 );
 
 WriteLiteral(" />\r\n");
@@ -1134,24 +1134,24 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 10667), Tuple.Create("\"", 10691)
+WriteAttribute("name", Tuple.Create(" name=\"", 10665), Tuple.Create("\"", 10689)
             
             #line 243 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 10674), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 10672), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 10674), false)
+, 10672), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 10692), Tuple.Create("\"", 10710)
+WriteAttribute("value", Tuple.Create(" value=\"", 10690), Tuple.Create("\"", 10708)
             
             #line 243 "..\..\Views\Actions\Action.cshtml"
-                     , Tuple.Create(Tuple.Create("", 10700), Tuple.Create<System.Object, System.Int32>(file.Id
+                     , Tuple.Create(Tuple.Create("", 10698), Tuple.Create<System.Object, System.Int32>(file.Id
             
             #line default
             #line hidden
-, 10700), false)
+, 10698), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1170,24 +1170,24 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 10840), Tuple.Create("\"", 10864)
+WriteAttribute("name", Tuple.Create(" name=\"", 10838), Tuple.Create("\"", 10862)
             
             #line 248 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 10847), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 10845), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 10847), false)
+, 10845), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 10865), Tuple.Create("\"", 10921)
+WriteAttribute("value", Tuple.Create(" value=\"", 10863), Tuple.Create("\"", 10919)
             
             #line 248 "..\..\Views\Actions\Action.cshtml"
-                 , Tuple.Create(Tuple.Create("", 10873), Tuple.Create<System.Object, System.Int32>((field.Value as ICustomViewModel).Serialize()
+                 , Tuple.Create(Tuple.Create("", 10871), Tuple.Create<System.Object, System.Int32>((field.Value as ICustomViewModel).Serialize()
             
             #line default
             #line hidden
-, 10873), false)
+, 10871), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1207,26 +1207,26 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 11141), Tuple.Create("\"", 11165)
+WriteAttribute("name", Tuple.Create(" name=\"", 11139), Tuple.Create("\"", 11163)
             
             #line 254 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 11148), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 11146), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 11148), false)
+, 11146), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 11166), Tuple.Create("\"", 11270)
-, Tuple.Create(Tuple.Create("", 11174), Tuple.Create("[", 11174), true)
+WriteAttribute("value", Tuple.Create(" value=\"", 11164), Tuple.Create("\"", 11268)
+, Tuple.Create(Tuple.Create("", 11172), Tuple.Create("[", 11172), true)
             
             #line 254 "..\..\Views\Actions\Action.cshtml"
-                      , Tuple.Create(Tuple.Create("", 11175), Tuple.Create<System.Object, System.Int32>(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize()))
+                      , Tuple.Create(Tuple.Create("", 11173), Tuple.Create<System.Object, System.Int32>(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize()))
             
             #line default
             #line hidden
-, 11175), false)
-, Tuple.Create(Tuple.Create("", 11269), Tuple.Create("]", 11269), true)
+, 11173), false)
+, Tuple.Create(Tuple.Create("", 11267), Tuple.Create("]", 11267), true)
 );
 
 WriteLiteral(" />\r\n");
@@ -1245,24 +1245,24 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 11390), Tuple.Create("\"", 11414)
+WriteAttribute("name", Tuple.Create(" name=\"", 11388), Tuple.Create("\"", 11412)
             
             #line 259 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 11397), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 11395), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 11397), false)
+, 11395), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 11415), Tuple.Create("\"", 11452)
+WriteAttribute("value", Tuple.Create(" value=\"", 11413), Tuple.Create("\"", 11450)
             
             #line 259 "..\..\Views\Actions\Action.cshtml"
-                 , Tuple.Create(Tuple.Create("", 11423), Tuple.Create<System.Object, System.Int32>((field.Value as Entity).Id
+                 , Tuple.Create(Tuple.Create("", 11421), Tuple.Create<System.Object, System.Int32>((field.Value as Entity).Id
             
             #line default
             #line hidden
-, 11423), false)
+, 11421), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1280,26 +1280,26 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 11571), Tuple.Create("\"", 11595)
+WriteAttribute("name", Tuple.Create(" name=\"", 11569), Tuple.Create("\"", 11593)
             
             #line 263 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 11578), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 11576), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 11578), false)
+, 11576), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 11596), Tuple.Create("\"", 11692)
-, Tuple.Create(Tuple.Create("", 11604), Tuple.Create("[", 11604), true)
+WriteAttribute("value", Tuple.Create(" value=\"", 11594), Tuple.Create("\"", 11690)
+, Tuple.Create(Tuple.Create("", 11602), Tuple.Create("[", 11602), true)
             
             #line 263 "..\..\Views\Actions\Action.cshtml"
-                  , Tuple.Create(Tuple.Create("", 11605), Tuple.Create<System.Object, System.Int32>(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString()))
+                  , Tuple.Create(Tuple.Create("", 11603), Tuple.Create<System.Object, System.Int32>(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString()))
             
             #line default
             #line hidden
-, 11605), false)
-, Tuple.Create(Tuple.Create("", 11691), Tuple.Create("]", 11691), true)
+, 11603), false)
+, Tuple.Create(Tuple.Create("", 11689), Tuple.Create("]", 11689), true)
 );
 
 WriteLiteral(" />\r\n");
@@ -1328,26 +1328,26 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 12168), Tuple.Create("\"", 12192)
+WriteAttribute("name", Tuple.Create(" name=\"", 12166), Tuple.Create("\"", 12190)
             
             #line 278 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 12175), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 12173), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 12175), false)
+, 12173), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12193), Tuple.Create("\"", 12254)
-, Tuple.Create(Tuple.Create("", 12201), Tuple.Create("[", 12201), true)
+WriteAttribute("value", Tuple.Create(" value=\"", 12191), Tuple.Create("\"", 12252)
+, Tuple.Create(Tuple.Create("", 12199), Tuple.Create("[", 12199), true)
             
             #line 278 "..\..\Views\Actions\Action.cshtml"
-                  , Tuple.Create(Tuple.Create("", 12202), Tuple.Create<System.Object, System.Int32>(values.Substring(0, values.Length - 1).ToLower()
+                  , Tuple.Create(Tuple.Create("", 12200), Tuple.Create<System.Object, System.Int32>(values.Substring(0, values.Length - 1).ToLower()
             
             #line default
             #line hidden
-, 12202), false)
-, Tuple.Create(Tuple.Create("", 12253), Tuple.Create("]", 12253), true)
+, 12200), false)
+, Tuple.Create(Tuple.Create("", 12251), Tuple.Create("]", 12251), true)
 );
 
 WriteLiteral(" />\r\n");
@@ -1366,18 +1366,18 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 12408), Tuple.Create("\"", 12432)
+WriteAttribute("name", Tuple.Create(" name=\"", 12406), Tuple.Create("\"", 12430)
             
             #line 283 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 12415), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 12413), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 12415), false)
+, 12413), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12433), Tuple.Create("\"", 12503)
-, Tuple.Create(Tuple.Create("", 12441), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create(" value=\"", 12431), Tuple.Create("\"", 12501)
+, Tuple.Create(Tuple.Create("", 12439), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 283 "..\..\Views\Actions\Action.cshtml"
@@ -1398,7 +1398,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 12433), Tuple.Create("\"", 125
             
             #line default
             #line hidden
-}), 12441), false)
+}), 12439), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1416,24 +1416,24 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 12607), Tuple.Create("\"", 12631)
+WriteAttribute("name", Tuple.Create(" name=\"", 12605), Tuple.Create("\"", 12629)
             
             #line 287 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 12614), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 12612), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 12614), false)
+, 12612), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12632), Tuple.Create("\"", 12663)
+WriteAttribute("value", Tuple.Create(" value=\"", 12630), Tuple.Create("\"", 12661)
             
             #line 287 "..\..\Views\Actions\Action.cshtml"
-                , Tuple.Create(Tuple.Create("", 12640), Tuple.Create<System.Object, System.Int32>(field.Value.ToString()
+                , Tuple.Create(Tuple.Create("", 12638), Tuple.Create<System.Object, System.Int32>(field.Value.ToString()
             
             #line default
             #line hidden
-, 12640), false)
+, 12638), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1451,24 +1451,24 @@ WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 12742), Tuple.Create("\"", 12766)
+WriteAttribute("name", Tuple.Create(" name=\"", 12740), Tuple.Create("\"", 12764)
             
             #line 291 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 12749), Tuple.Create<System.Object, System.Int32>(field.UniqueName
+, Tuple.Create(Tuple.Create("", 12747), Tuple.Create<System.Object, System.Int32>(field.UniqueName
             
             #line default
             #line hidden
-, 12749), false)
+, 12747), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12767), Tuple.Create("\"", 12787)
+WriteAttribute("value", Tuple.Create(" value=\"", 12765), Tuple.Create("\"", 12785)
             
             #line 291 "..\..\Views\Actions\Action.cshtml"
-                , Tuple.Create(Tuple.Create("", 12775), Tuple.Create<System.Object, System.Int32>(field.Value
+                , Tuple.Create(Tuple.Create("", 12773), Tuple.Create<System.Object, System.Int32>(field.Value
             
             #line default
             #line hidden
-, 12775), false)
+, 12773), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1487,14 +1487,14 @@ WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" name=\"submittedpagenames\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12873), Tuple.Create("\"", 12950)
+WriteAttribute("value", Tuple.Create(" value=\"", 12871), Tuple.Create("\"", 12948)
             
             #line 294 "..\..\Views\Actions\Action.cshtml"
-         , Tuple.Create(Tuple.Create("", 12881), Tuple.Create<System.Object, System.Int32>(string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))
+         , Tuple.Create(Tuple.Create("", 12879), Tuple.Create<System.Object, System.Int32>(string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))
             
             #line default
             #line hidden
-, 12881), false)
+, 12879), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1505,14 +1505,14 @@ WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" name=\"page\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 12997), Tuple.Create("\"", 13031)
+WriteAttribute("value", Tuple.Create(" value=\"", 12995), Tuple.Create("\"", 13029)
             
             #line 295 "..\..\Views\Actions\Action.cshtml"
-, Tuple.Create(Tuple.Create("", 13005), Tuple.Create<System.Object, System.Int32>(Model.Page.GetType().Name
+, Tuple.Create(Tuple.Create("", 13003), Tuple.Create<System.Object, System.Int32>(Model.Page.GetType().Name
             
             #line default
             #line hidden
-, 13005), false)
+, 13003), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -1581,7 +1581,8 @@ WriteLiteral(" />                         \r\n\t\t\t\t\t </form>\r\n\t\t\t\t</di
             #line default
             #line hidden
 WriteLiteral(@"		<script>
-			$('#main-form-submit').click(function (e) {
+            $('#main-form-submit').click(function (e) {
+                console.log(e.form.checkValidity());
 				e.preventDefault()
 				var bValid = true;
 				$(document).find('input.required:visible').each(function () {
@@ -1611,7 +1612,7 @@ WriteLiteral(@"		<script>
 ");
 
             
-            #line 337 "..\..\Views\Actions\Action.cshtml"
+            #line 338 "..\..\Views\Actions\Action.cshtml"
 	}
 
             
@@ -1626,7 +1627,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\t");
 
             
-            #line 341 "..\..\Views\Actions\Action.cshtml"
+            #line 342 "..\..\Views\Actions\Action.cshtml"
 Write(Html.RenderDelayed());
 
             
