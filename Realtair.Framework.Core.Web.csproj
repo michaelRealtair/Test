@@ -180,6 +180,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_MultiSelectOptionsField.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_NoteWidget_WidgetField.generated.cs">
+      <DependentUpon>_NoteWidget_WidgetField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_RichTextWidget_WidgetField.generated.cs">
       <DependentUpon>_RichTextWidget_WidgetField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -360,13 +365,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_List.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Widgets\_RichText.generated.cs">
-      <DependentUpon>_RichText.cshtml</DependentUpon>
+    <Compile Include="Views\Shared\Widgets\_Paragraph.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Views\Shared\Widgets\_Paragraph.generated.cs">
       <DependentUpon>_Paragraph.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_RichText.generated.cs">
+      <DependentUpon>_RichText.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -3394,6 +3399,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_MultiSelectOptionsField.generated.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\Fields\_NoteWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NoteWidget_WidgetField.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Shared\Fields\_RichTextWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_RichTextWidget_WidgetField.generated.cs</LastGenOutput>
