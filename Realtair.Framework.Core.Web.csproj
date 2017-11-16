@@ -170,6 +170,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_DetailWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DetailWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_MultiSelectOptionsField.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2465,6 +2470,10 @@
     <Content Include="Content\plugins\images\users\sonu.jpg" />
     <Content Include="Content\plugins\images\users\varun.jpg" />
     <Content Include="Content\plugins\images\weather-bg.jpg" />
+    <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
     <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
