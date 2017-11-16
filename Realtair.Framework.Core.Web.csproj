@@ -165,6 +165,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_Address_AddressField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Address_AddressField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_Attachment_PreviewField.generated.cs">
       <DependentUpon>_Attachment_PreviewField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3380,6 +3385,10 @@
     <Content Include="Views\Shared\Fields\_TableWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TableWidget_WidgetField.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Fields\_Address_AddressField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Address_AddressField.generated.cs</LastGenOutput>
     </Content>
     <None Include="Views\Shared\Fields\_MultiSelectOptionsField.cshtml">
       <Generator>RazorGenerator</Generator>
