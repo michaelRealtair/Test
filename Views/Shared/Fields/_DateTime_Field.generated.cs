@@ -45,7 +45,7 @@ namespace ASP
   
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.DateTimeFieldAttribute;
     var Date = Convert.ToDateTime(Model.Value);
-
+    var dateFormat = "yyyy-MM-dd";
 
             
             #line default
@@ -75,79 +75,94 @@ WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <div");
 
-WriteAttribute("name", Tuple.Create(" \r\n               name=\"", 412), Tuple.Create("\"", 453)
+WriteLiteral(" class=\"input-group\"");
+
+WriteLiteral(">\r\n            <input");
+
+WriteAttribute("name", Tuple.Create(" \r\n                   name=\"", 485), Tuple.Create("\"", 530)
             
-            #line 16 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 17 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 513), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 436), false)
+, 513), false)
 );
 
-WriteLiteral(" \r\n               type=\"date\"");
+WriteLiteral(" \r\n                   type=\"text\"");
 
-WriteAttribute("value", Tuple.Create(" \r\n               value=\"", 483), Tuple.Create("\"", 571)
-, Tuple.Create(Tuple.Create("", 508), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteLiteral("\r\n                   class=\"form-control mydatepicker input-small\"");
+
+WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 630), Tuple.Create("\"", 719)
+, Tuple.Create(Tuple.Create("", 658), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
-            #line 18 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                       if (Date > DateTime.MinValue) { 
+            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                           if (Date > DateTime.MinValue) { 
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                WriteTo(__razor_attribute_value_writer, Date.ToString("yyyy-MM-dd"));
+            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                    WriteTo(__razor_attribute_value_writer, Date.ToString(dateFormat));
 
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                                                                    }
+            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                                                                      }
             
             #line default
             #line hidden
-}), 508), false)
+}), 658), false)
 );
 
-WriteLiteral("\r\n               ");
-
-            
-            #line 19 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-          Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\""+DateTime.Now.ToString("yyyy-MM-dd")+"\"" : ""));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n               class=\"form-control\">\r\n");
-
+WriteAttribute("placeholder", Tuple.Create("\r\n                   placeholder=\"", 720), Tuple.Create("\"", 765)
             
             #line 21 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-        
+, Tuple.Create(Tuple.Create("", 754), Tuple.Create<System.Object, System.Int32>(dateFormat
+            
+            #line default
+            #line hidden
+, 754), false)
+);
+
+WriteLiteral(">\r\n            <span");
+
+WriteLiteral(" class=\"input-group-addon\"");
+
+WriteLiteral(">\r\n                <i");
+
+WriteLiteral(" class=\"icon-calender\"");
+
+WriteLiteral("></i>\r\n            </span>\r\n");
+
+            
+            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            
             
             #line default
             #line hidden
             
-            #line 21 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-         if (Model.HasError)
-        {
+            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+             if (Model.HasError)
+            {
 
             
             #line default
             #line hidden
-WriteLiteral("            <span");
+WriteLiteral("                <span");
 
 WriteLiteral(" class=\"help-block\"");
 
 WriteLiteral(">");
 
             
-            #line 23 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                Write(Model.ErrorMessage);
+            #line 27 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                                    Write(Model.ErrorMessage);
 
             
             #line default
@@ -155,14 +170,71 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n");
 
             
-            #line 24 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-        }
+            #line 28 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            }
 
             
             #line default
             #line hidden
-WriteLiteral("    </div>\r\n</div>\r\n");
+WriteLiteral("        </div>\r\n\r\n        ");
 
+WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
+
+            
+            #line 44 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+ using (Html.Delayed(null, "date-time-field"))
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/" +
+"bootstrap-datepicker.min.css\"");
+
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(" />\r\n");
+
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/b" +
+"ootstrap-datepicker.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    <script>\r\n        $(function () {\r\n            $(\'.mydatepicker\').datepicker(" +
+"{\r\n                format: \'");
+
+            
+            #line 51 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                    Write(dateFormat);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\',\r\n");
+
+WriteLiteral("                ");
+
+            
+            #line 52 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+           Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : ""));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                autoclose: true\r\n            })\r\n        })\r\n    </script>\r\n");
+
+            
+            #line 57 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }
