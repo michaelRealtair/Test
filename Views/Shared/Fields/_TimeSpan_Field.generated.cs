@@ -131,24 +131,11 @@ WriteLiteral("    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteLiteral(@">
-        jQuery(function () {
-            jQuery('.mytimepicker').timepicker({
-                template: false
-            });
-        })
-
-        // Reset value to 12:00AM if the input is invalid...
-        //function validateInput(e) {
-        //    if (!e.validity.valid) {
-        //        e.value = ""00:00:00""
-        //    }
-        //}
-    </script>
-");
+WriteLiteral(">\r\n        jQuery(function () {\r\n            jQuery(\'.mytimepicker\').timepicker({" +
+"\r\n                template: false\r\n            });\r\n        })\r\n    </script>\r\n");
 
             
-            #line 37 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 30 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
 }
             
             #line default

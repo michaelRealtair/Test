@@ -136,7 +136,7 @@ WriteLiteral(" class=\"input-group-addon\"");
 
 WriteLiteral(">\r\n                <i");
 
-WriteLiteral(" class=\"icon-calender\"");
+WriteLiteral(" class=\"mdi mdi-calendar-blank\"");
 
 WriteLiteral("></i>\r\n            </span>\r\n");
 
@@ -176,12 +176,10 @@ WriteLiteral("</span>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        </div>\r\n\r\n        ");
-
-WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
+WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 44 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 33 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
  using (Html.Delayed(null, "date-time-field"))
 {
 
@@ -210,7 +208,7 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            $(\'.mydate
 "{\r\n                format: \'");
 
             
-            #line 51 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 40 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
                     Write(dateFormat);
 
             
@@ -221,7 +219,7 @@ WriteLiteral("\',\r\n");
 WriteLiteral("                ");
 
             
-            #line 52 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 41 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
            Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : ""));
 
             
@@ -230,7 +228,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n                autoclose: true\r\n            })\r\n        })\r\n    </script>\r\n");
 
             
-            #line 57 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 46 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default

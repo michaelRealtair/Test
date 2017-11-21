@@ -20,24 +20,13 @@
                    value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
                    placeholder="@dateFormat">
             <span class="input-group-addon">
-                <i class="icon-calender"></i>
+                <i class="mdi mdi-calendar-blank"></i>
             </span>
             @if (Model.HasError)
             {
                 <span class="help-block">@Model.ErrorMessage</span>
             }
         </div>
-
-        @*<input 
-               name="@Model.UniqueName" 
-               type="date" 
-               value="@if (Date > DateTime.MinValue) { @Date.ToString("yyyy-MM-dd") }"
-               @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\""+DateTime.Now.ToString("yyyy-MM-dd")+"\"" : "")
-               class="form-control">
-        @if (Model.HasError)
-        {
-            <span class="help-block">@Model.ErrorMessage</span>
-        }*@
     </div>
 </div>
 
