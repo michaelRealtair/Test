@@ -36,7 +36,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
             var actions = s.Settings().WithAccess(User, DbContext).ToList();
             foreach (var a in actions) a.Setup(DbContext, User, Auth);
-            var vm = new ViewModel { Entity = s, Description = s.Description(User), Actions = actions, SelectedAction = actions.First() };
+            var vm = new ViewModel { Entity = s, Description = s.Description(User), Actions = actions, SelectedAction = actions?.FirstOrDefault() };
 
             return View(vm);
         }
