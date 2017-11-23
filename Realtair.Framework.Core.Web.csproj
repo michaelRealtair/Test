@@ -195,6 +195,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_RichTextAreaField.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_StatusField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_StatusField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_TimeSpan_Field.generated.cs">
       <DependentUpon>_TimeSpan_Field.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2473,6 +2478,10 @@
     <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\_StatusField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_StatusField.generated.cs</LastGenOutput>
     </None>
     <Content Include="Views\web.config" />
   </ItemGroup>
