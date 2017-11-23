@@ -91,7 +91,24 @@ WriteLiteral("                <p>Cannot render widget view</p>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("    </div>\r\n</div>");
+WriteLiteral("    </div>\r\n</div>\r\n\r\n");
+
+DefineSection("Scripts", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 22 "..\..\Views\Report\Report.cshtml"
+Write(Html.RenderDelayed());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
 
         }
     }
