@@ -316,8 +316,13 @@ namespace Realtair.Framework.Core.Web.Controllers
             var returnUrl = string.Empty;
             try
             {
-                var uri = new Uri(Request.UrlReferrer.ToString());
-                returnUrl = (uri.Query != "" && uri.Query != "?") ? HttpUtility.ParseQueryString(uri.Query).Get("ReturnUrl").ToString() : "";
+                if (Request.Form["ReturnUrl"] != null)
+                    returnUrl = Request.Form["ReturnUrl"].ToString();
+                else
+                {
+                    var uri = new Uri(Request.UrlReferrer.ToString());
+                    returnUrl = (uri.Query != "" && uri.Query != "?") ? HttpUtility.ParseQueryString(uri.Query).Get("ReturnUrl").ToString() : "";
+                }                
             }
             catch (Exception)
             {
