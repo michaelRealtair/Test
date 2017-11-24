@@ -375,7 +375,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                             value = (object)($"<div style=\"text-align: initial;\">{Request.Unvalidated.Form.Get(field.UniqueName)}</div>");
                         }
                         else
-                            value = (object)Request.Form.Get(field.UniqueName);
+                            value = (object)Request.Unvalidated.Form.Get(field.UniqueName);
                     }
 
                     field.PropertyInfo.SetValue(action, new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType, value));
