@@ -27,6 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 5 "..\..\Views\Enquiry\Enquiry.cshtml"
+    using Realtair.Framework.Core.Actions.RedirectLocations;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
     
@@ -60,7 +66,7 @@ namespace ASP
 WriteLiteral("\r\n");
 
             
-            #line 6 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 7 "..\..\Views\Enquiry\Enquiry.cshtml"
 Write(Html.Partial("Menu"));
 
             
@@ -105,11 +111,58 @@ WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"chat-left-header text-truncate\"");
 
-WriteLiteral(">\r\n                        <button");
+WriteLiteral(">\r\n");
+
+            
+            #line 19 "..\..\Views\Enquiry\Enquiry.cshtml"
+                        
+            
+            #line default
+            #line hidden
+            
+            #line 19 "..\..\Views\Enquiry\Enquiry.cshtml"
+                          
+                            var backUrl = "/";
+                            if (Model.Workflow.Extension is IEnquiryRedirectLocation)
+                            {
+                                if ((Model.Workflow.Extension as IEnquiryRedirectLocation).RedirectTo() is RedirectToEntity)
+                                {
+                                    backUrl = (Model.Workflow.Extension as IEnquiryRedirectLocation).GetDetailsUrl(Html.LoggedInUser(), Url);
+                                }
+                                else if ((Model.Workflow.Extension as IEnquiryRedirectLocation).RedirectTo() is RedirectToAction)
+                                {
+                                    backUrl = ((Model.Workflow.Extension as IEnquiryRedirectLocation).RedirectTo() as RedirectToAction).Action.GetUrl(Url);
+                                }
+                                else if ((Model.Workflow.Extension as IEnquiryRedirectLocation).RedirectTo() is RedirectToURL)
+                                {
+                                    backUrl = ((Model.Workflow.Extension as IEnquiryRedirectLocation).RedirectTo() as RedirectToURL).Url;
+                                }
+                                else
+                                {
+                                    backUrl = "/";
+                                }
+                            }
+                        
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        <button");
 
 WriteLiteral(" class=\"chat-left-back btn btn-block btn-default\"");
 
-WriteLiteral(" onclick=\"location.href = \'/\';\"");
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2354), Tuple.Create("\"", 2393)
+, Tuple.Create(Tuple.Create("", 2364), Tuple.Create("location.href", 2364), true)
+, Tuple.Create(Tuple.Create(" ", 2377), Tuple.Create("=", 2378), true)
+, Tuple.Create(Tuple.Create(" ", 2379), Tuple.Create("\'", 2380), true)
+            
+            #line 41 "..\..\Views\Enquiry\Enquiry.cshtml"
+                            , Tuple.Create(Tuple.Create("", 2381), Tuple.Create<System.Object, System.Int32>(backUrl
+            
+            #line default
+            #line hidden
+, 2381), false)
+, Tuple.Create(Tuple.Create("", 2391), Tuple.Create("\';", 2391), true)
+);
 
 WriteLiteral(">\r\n                            <i");
 
@@ -121,14 +174,14 @@ WriteLiteral(" class=\"chat-left-description\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1071), Tuple.Create("\"", 1136)
+WriteAttribute("href", Tuple.Create(" href=\"", 2585), Tuple.Create("\"", 2650)
             
-            #line 22 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 1078), Tuple.Create<System.Object, System.Int32>(Model.Workflow.Extension.GetUrl(Html.LoggedInUser(), Url)
+            #line 45 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 2592), Tuple.Create<System.Object, System.Int32>(Model.Workflow.Extension.GetUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 1078), false)
+, 2592), false)
 );
 
 WriteLiteral(">\r\n");
@@ -136,7 +189,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                                ");
 
             
-            #line 23 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 46 "..\..\Views\Enquiry\Enquiry.cshtml"
                            Write(Model.Workflow.Extension.Description(Html.LoggedInUser()));
 
             
@@ -150,13 +203,13 @@ WriteLiteral(" class=\"chatonline style-none \"");
 WriteLiteral(">\r\n");
 
             
-            #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 28 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 51 "..\..\Views\Enquiry\Enquiry.cshtml"
                          foreach (var user in Model.Conversation.Users.Where(u => u != Html.LoggedInUser()))
                         {
 
@@ -174,7 +227,7 @@ WriteLiteral(" class=\"img-circle\"");
 WriteLiteral(">");
 
             
-            #line 31 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                   Write(user.Person.Initials);
 
             
@@ -183,7 +236,7 @@ WriteLiteral(">");
 WriteLiteral("</span> <span>");
 
             
-            #line 31 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                       Write(user.Person.Name);
 
             
@@ -196,7 +249,7 @@ WriteLiteral(" class=\"text-success\"");
 WriteLiteral(">");
 
             
-            #line 31 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 54 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                                                                     Write(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()));
 
             
@@ -205,7 +258,7 @@ WriteLiteral(">");
 WriteLiteral("</small></span></a>\r\n                            </li>\r\n");
 
             
-            #line 33 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 56 "..\..\Views\Enquiry\Enquiry.cshtml"
                         }
 
             
@@ -214,13 +267,13 @@ WriteLiteral("</small></span></a>\r\n                            </li>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 35 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 58 "..\..\Views\Enquiry\Enquiry.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 35 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 58 "..\..\Views\Enquiry\Enquiry.cshtml"
                          if (Model.Workflow.Extension is IHasRelatedUsers)
                         {
                             foreach (var user in (Model.Workflow.Extension as IHasRelatedUsers).RelatedUsers(Html.LoggedInUser()))
@@ -240,7 +293,7 @@ WriteLiteral(" class=\"img-circle\"");
 WriteLiteral(">");
 
             
-            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                       Write(user.Person.Initials);
 
             
@@ -249,7 +302,7 @@ WriteLiteral(">");
 WriteLiteral("</span> <span>");
 
             
-            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                           Write(user.Person.Name);
 
             
@@ -262,7 +315,7 @@ WriteLiteral(" class=\"text-success\"");
 WriteLiteral(">");
 
             
-            #line 40 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                                                                         Write(user.Role == null ? "Unknown" : user.Role.Description(Html.LoggedInUser()));
 
             
@@ -271,7 +324,7 @@ WriteLiteral(">");
 WriteLiteral("</small></span></a>\r\n                                </li>\r\n");
 
             
-            #line 42 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 65 "..\..\Views\Enquiry\Enquiry.cshtml"
                             }
                         }
 
@@ -297,7 +350,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 52 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 75 "..\..\Views\Enquiry\Enquiry.cshtml"
                    Write(Html.Partial("Timeline", Model.Timeline));
 
             
@@ -318,13 +371,13 @@ WriteLiteral(" class=\"col-sm-12\"");
 WriteLiteral(">\r\n");
 
             
-            #line 57 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 80 "..\..\Views\Enquiry\Enquiry.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 57 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 80 "..\..\Views\Enquiry\Enquiry.cshtml"
                              foreach (var action in Model.Workflow.Extension.Actions().WithAccess(Html.LoggedInUser(), ViewContext.DbContext()))
                             {
 
@@ -335,34 +388,34 @@ WriteLiteral("                                <form");
 
 WriteLiteral(" class=\"inline\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 3372), Tuple.Create("\"", 3400)
+WriteAttribute("action", Tuple.Create(" action=\"", 4886), Tuple.Create("\"", 4914)
             
-            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
-, Tuple.Create(Tuple.Create("", 3381), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
+            #line 82 "..\..\Views\Enquiry\Enquiry.cshtml"
+, Tuple.Create(Tuple.Create("", 4895), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Url)
             
             #line default
             #line hidden
-, 3381), false)
+, 4895), false)
 );
 
-WriteAttribute("target", Tuple.Create(" target=\"", 3401), Tuple.Create("\"", 3429)
+WriteAttribute("target", Tuple.Create(" target=\"", 4915), Tuple.Create("\"", 4943)
             
-            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
-          , Tuple.Create(Tuple.Create("", 3410), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
+            #line 82 "..\..\Views\Enquiry\Enquiry.cshtml"
+          , Tuple.Create(Tuple.Create("", 4924), Tuple.Create<System.Object, System.Int32>(action.GetTarget()
             
             #line default
             #line hidden
-, 3410), false)
+, 4924), false)
 );
 
-WriteAttribute("method", Tuple.Create(" method=\"", 3430), Tuple.Create("\"", 3485)
+WriteAttribute("method", Tuple.Create(" method=\"", 4944), Tuple.Create("\"", 4999)
             
-            #line 59 "..\..\Views\Enquiry\Enquiry.cshtml"
-                                        , Tuple.Create(Tuple.Create("", 3439), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
+            #line 82 "..\..\Views\Enquiry\Enquiry.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 4953), Tuple.Create<System.Object, System.Int32>(action.Fields.Count() >= 1 ? "GET" : "POST"
             
             #line default
             #line hidden
-, 3439), false)
+, 4953), false)
 );
 
 WriteLiteral(">\r\n                                    <input");
@@ -371,14 +424,14 @@ WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3562), Tuple.Create("\"", 3595)
+WriteAttribute("value", Tuple.Create(" value=\"", 5076), Tuple.Create("\"", 5109)
             
-            #line 60 "..\..\Views\Enquiry\Enquiry.cshtml"
- , Tuple.Create(Tuple.Create("", 3570), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+            #line 83 "..\..\Views\Enquiry\Enquiry.cshtml"
+ , Tuple.Create(Tuple.Create("", 5084), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 3570), false)
+, 5084), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -390,7 +443,7 @@ WriteLiteral(" type=\"submit\"");
 WriteLiteral(">");
 
             
-            #line 61 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 84 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                                                        Write(action.Description(Html.LoggedInUser()));
 
             
@@ -399,7 +452,7 @@ WriteLiteral(">");
 WriteLiteral("</button>\r\n                                </form>\r\n");
 
             
-            #line 63 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 86 "..\..\Views\Enquiry\Enquiry.cshtml"
                             }
 
             
@@ -698,7 +751,7 @@ WriteLiteral("></script>\r\n\r\n\r\n\r\n    <script>\r\n        $(function () {\
 "ndow.location.origin + \"/rest/users\", { query: \"\", enquiry: ");
 
             
-            #line 169 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 192 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                                 Write(Model.Workflow.Id);
 
             
@@ -715,7 +768,7 @@ WriteLiteral(@"@', {
                         }
                     }
                 });
-            });            
+            });
         });
 
     </script>
@@ -730,7 +783,7 @@ WriteLiteral(@"@', {
         var sendMessage = function () {
             tempSentMessageId++;
 
-            var messageId = ""sent-"" + tempSentMessageId;            
+            var messageId = ""sent-"" + tempSentMessageId;
             var attachments = $("".file-attachment .preview"");
             var existingAttachments = $("".file-attachment .existing-preview"");
 
@@ -747,7 +800,7 @@ WriteLiteral(@"@', {
                     url: '/enquiry/");
 
             
-            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 231 "..\..\Views\Enquiry\Enquiry.cshtml"
                               Write(Model.Workflow.Id);
 
             
@@ -756,7 +809,7 @@ WriteLiteral(@"@', {
 WriteLiteral("/chat/");
 
             
-            #line 208 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 231 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                       Write(Model.Conversation.Id);
 
             
@@ -781,12 +834,12 @@ WriteLiteral(@"/send-message',
         }
 
         var doPoll = function () {
-            if ( window.blurred ) { setTimeout(doPoll, pollTime); return; }  
+            if ( window.blurred ) { setTimeout(doPoll, pollTime); return; }
             $.ajax({
                 url: '/enquiry/");
 
             
-            #line 229 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 252 "..\..\Views\Enquiry\Enquiry.cshtml"
                           Write(Model.Workflow.Id);
 
             
@@ -795,7 +848,7 @@ WriteLiteral(@"/send-message',
 WriteLiteral("/chat/");
 
             
-            #line 229 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 252 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                   Write(Model.Conversation.Id);
 
             
@@ -826,34 +879,34 @@ WriteLiteral("/get-updated-timeline?isActive=\' + true,\r\n                type:
 "oads: 10,\r\n            previewTemplate: previewTemplate,\r\n            //autoQueu" +
 "e: false,\r\n            previewsContainer: \'#file-attachment\',\r\n            click" +
 "able: \'#attach-file\',\r\n            autoProcessQueue: false,\r\n            init: f" +
-"unction () {\r\n                this.on(\'addedfile\', function (file) {            " +
-"         \r\n                    var query = $(\'#file-attachment\');\r\n             " +
-"       var ext = file.name.split(\'.\').pop();\r\n                    if (ext == \"pd" +
-"f\") {\r\n                        $(file.previewElement).find(\"img\").attr(\"src\", \"h" +
-"ttps://static.realtair.com/images/pdf.png\");\r\n                    } else if (ext" +
-".indexOf(\"doc\") != -1) {\r\n                        $(file.previewElement).find(\"i" +
-"mg\").attr(\"src\", \"https://static.realtair.com/images/doc.png\");\r\n               " +
-"     } else if (ext.indexOf(\"xls\") != -1) {\r\n                        $(file.prev" +
-"iewElement).find(\"img\").attr(\"src\", \"https://static.realtair.com/images/xls.png\"" +
-");\r\n                    } else if (ext.indexOf(\"ppt\") != -1) {\r\n                " +
-"        $(file.previewElement).find(\"img\").attr(\"src\", \"https://static.realtair." +
-"com/images/ppt.png\");\r\n                    }\r\n                       \r\n         " +
-"           query.find(\'img\').attr(\'style\', \'width: 40px; height: 40px;\');\r\n     " +
-"               query.show();\r\n                },\r\n                this.on(\"compl" +
-"ete\", function (file) {\r\n                    if (this.getUploadingFiles().length" +
-" === 0 && this.getQueuedFiles().length === 0) {\r\n                        sendMes" +
-"sage();\r\n                        dz.removeAllFiles(true);\r\n                    }" +
-"\r\n                }));\r\n            }\r\n        });\r\n\r\n        // On-click Handle" +
-"rs\r\n        $(\'#send-button\').click(function () {\r\n\r\n            messageText = $" +
-"(\'textarea[name=messageText]\').val();\r\n\r\n            if (dz.files.length == 0 &&" +
-" jQuery.trim(messageText).length > 0) {\r\n                sendMessage();\r\n       " +
-"     } else if (dz.files.length > 0 || jQuery.trim(messageText).length > 0) {\r\n " +
-"               dz.processQueue();\r\n            } else {\r\n                return;" +
-"\r\n            }\r\n\r\n            var message = $(\'<li class=\"odd\">\' +\r\n           " +
-"                 \'<div class=\"chat-image\"> <span class=\"img-circle\">");
+"unction () {\r\n                this.on(\'addedfile\', function (file) {\r\n          " +
+"          var query = $(\'#file-attachment\');\r\n                    var ext = file" +
+".name.split(\'.\').pop();\r\n                    if (ext == \"pdf\") {\r\n              " +
+"          $(file.previewElement).find(\"img\").attr(\"src\", \"https://static.realtai" +
+"r.com/images/pdf.png\");\r\n                    } else if (ext.indexOf(\"doc\") != -1" +
+") {\r\n                        $(file.previewElement).find(\"img\").attr(\"src\", \"htt" +
+"ps://static.realtair.com/images/doc.png\");\r\n                    } else if (ext.i" +
+"ndexOf(\"xls\") != -1) {\r\n                        $(file.previewElement).find(\"img" +
+"\").attr(\"src\", \"https://static.realtair.com/images/xls.png\");\r\n                 " +
+"   } else if (ext.indexOf(\"ppt\") != -1) {\r\n                        $(file.previe" +
+"wElement).find(\"img\").attr(\"src\", \"https://static.realtair.com/images/ppt.png\");" +
+"\r\n                    }\r\n\r\n                    query.find(\'img\').attr(\'style\', \'" +
+"width: 40px; height: 40px;\');\r\n                    query.show();\r\n              " +
+"  },\r\n                this.on(\"complete\", function (file) {\r\n                   " +
+" if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0" +
+") {\r\n                        sendMessage();\r\n                        dz.removeAl" +
+"lFiles(true);\r\n                    }\r\n                }));\r\n            }\r\n     " +
+"   });\r\n\r\n        // On-click Handlers\r\n        $(\'#send-button\').click(function" +
+" () {\r\n\r\n            messageText = $(\'textarea[name=messageText]\').val();\r\n\r\n   " +
+"         if (dz.files.length == 0 && jQuery.trim(messageText).length > 0) {\r\n   " +
+"             sendMessage();\r\n            } else if (dz.files.length > 0 || jQuer" +
+"y.trim(messageText).length > 0) {\r\n                dz.processQueue();\r\n         " +
+"   } else {\r\n                return;\r\n            }\r\n\r\n            var message =" +
+" $(\'<li class=\"odd\">\' +\r\n                            \'<div class=\"chat-image\"> <" +
+"span class=\"img-circle\">");
 
             
-            #line 320 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 343 "..\..\Views\Enquiry\Enquiry.cshtml"
                                                                           Write(Html.LoggedInUser().Person.Initials);
 
             
@@ -864,7 +917,7 @@ WriteLiteral("</span> </div>\' +\r\n                            \'    <div class
 "            \'            <h4>");
 
             
-            #line 323 "..\..\Views\Enquiry\Enquiry.cshtml"
+            #line 346 "..\..\Views\Enquiry\Enquiry.cshtml"
                                          Write(Html.LoggedInUser().Person.Description(Html.LoggedInUser()));
 
             
