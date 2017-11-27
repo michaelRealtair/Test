@@ -2,12 +2,12 @@
 @using System.Text.RegularExpressions
 @model Realtair.Framework.Core.Entities.Display.DataTableWidget
 
-@{ 
+@{
     Guid guid = Guid.NewGuid();
     string uniqueId = guid.ToString();
 }
 <div class="panel panel-default">
-    <div class="panel-heading">@Model.Name</div>
+    <div class="panel-heading @uniqueId">@Model.Name</div>
     <div class="panel-wrapper collapse in">
         <table id="@uniqueId" class="table table-striped">
             @if (Model.Header != null)
@@ -28,7 +28,8 @@
                         @foreach (var column in row)
                         {
                             DateTime dt = new DateTime();
-                            if (column == null){
+                            if (column == null)
+                            {
                                 <td>&nbsp;</td>
                             }
                             else if (column is Attachment)
@@ -73,19 +74,69 @@
     </div>
 </div>
 
-<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css" rel="stylesheet" />
+@using (Html.Delayed(null, "data-table-widget"))
+{
+    <style type="text/css">
+        .dataTables_wrapper {
+            position: relative;
+        }
+        .dt-buttons {
+            float: right;
+            top: -55px;
+            right: 10px;
+            position: absolute;
+        }
 
-<script src="https://static.realtair.com/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#@uniqueId').DataTable({
-            "searching": false,
-            "lengthChange": false,
-            "paging": false,
-            "bInfo": false,
-            "responsive": true
+        .dt-buttons>a.buttons-excel>span{
+            display: inherit;
+        }
+        button.dt-button, div.dt-button, a.dt-button {
+            color: inherit;
+        }
+    </style>
+    @* DataTables *@
+    <script src="https://static.realtair.com/plugins/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+
+    @* DataTables - Buttons *@
+    <script src="https://static.realtair.com/plugins/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://static.realtair.com/plugins/bower_components/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="https://static.realtair.com/plugins/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="https://static.realtair.com/plugins/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+
+    @* DataTables - For Exporting to Excel *@
+    <script src="https://static.realtair.com/plugins/bower_components/jszip/dist/jszip.min.js"></script>
+
+    @* DataTables - Responsive *@
+    <script src="https://static.realtair.com/plugins/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+}
+
+@using (Html.Delayed())
+{
+    <script>
+        $(document).ready(function () {
+            var options = $.extend({}, {
+                "searching": false,
+                "lengthChange": false,
+                "paging": false,
+                "bInfo": false,
+                "responsive": true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: '@Model.Name'
+                    },
+                    'print'
+                ]
+            });
+
+            $('#@uniqueId').DataTable(options);
         });
-    });    
-</script>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.dt-buttons>a.buttons-excel>span').replaceWith('<div><i class="mdi mdi-table-large"></i><span>Export</span></div>');
+            $('.dt-buttons>a.buttons-print>span').replaceWith('<div><i class="mdi mdi-printer"></i><span>Print</span></div>');
+        });
+    </script>
+}
