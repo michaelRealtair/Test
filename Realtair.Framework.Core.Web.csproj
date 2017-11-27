@@ -165,15 +165,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_Address_AddressField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Address_AddressField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_Attachment_PreviewField.generated.cs">
       <DependentUpon>_Attachment_PreviewField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_DetailWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DetailWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_MultiSelectOptionsField.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_MultiSelectOptionsField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\_NoteWidget_WidgetField.generated.cs">
+      <DependentUpon>_NoteWidget_WidgetField.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Shared\Fields\_RichTextWidget_WidgetField.generated.cs">
       <DependentUpon>_RichTextWidget_WidgetField.cshtml</DependentUpon>
@@ -355,13 +370,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_List.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shared\Widgets\_RichText.generated.cs">
-      <DependentUpon>_RichText.cshtml</DependentUpon>
+    <Compile Include="Views\Shared\Widgets\_Paragraph.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Views\Shared\Widgets\_Paragraph.generated.cs">
       <DependentUpon>_Paragraph.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Widgets\_RichText.generated.cs">
+      <DependentUpon>_RichText.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -2465,6 +2480,10 @@
     <Content Include="Content\plugins\images\users\sonu.jpg" />
     <Content Include="Content\plugins\images\users\varun.jpg" />
     <Content Include="Content\plugins\images\weather-bg.jpg" />
+    <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
     <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -3381,10 +3400,18 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_TableWidget_WidgetField.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Shared\Fields\_Address_AddressField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Address_AddressField.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Shared\Fields\_MultiSelectOptionsField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_MultiSelectOptionsField.generated.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\Fields\_NoteWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NoteWidget_WidgetField.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Views\Shared\Fields\_RichTextWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_RichTextWidget_WidgetField.generated.cs</LastGenOutput>

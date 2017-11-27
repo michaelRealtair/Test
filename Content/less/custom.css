@@ -345,3 +345,9 @@ textarea.form-control.chat-box {
 .enquiry-footer .container {
   padding-top: 5px !important;
 }
+a.btn-summary {
+  color: inherit;
+}
+a.btn-summary > *:first-child:hover {
+  cursor: inherit !important;
+}

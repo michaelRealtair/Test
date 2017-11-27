@@ -21,7 +21,14 @@
                 <tr>
                     @foreach (var item in row)
                     {
-                        <td>@item</td>
+                        if (item is Attachment)
+                        {
+                            <td><a href="@Html.Raw((item as Attachment).Url(0))" target="_blank">@((item as Attachment).Url(0))</a></td>
+                        }
+                        else
+                        {
+                            <td>@item</td>
+                        }
                     }
                 </tr>
             }

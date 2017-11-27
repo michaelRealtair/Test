@@ -32,32 +32,40 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_ParagraphWidget_WidgetField.cshtml")]
-    public partial class _Views_Shared_Fields__ParagraphWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_NoteWidget_WidgetField.cshtml")]
+    public partial class _Views_Shared_Fields__NoteWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__ParagraphWidget_WidgetField_cshtml()
+        public _Views_Shared_Fields__NoteWidget_WidgetField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
   
-    var paragraph = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
+    var noteWidget = Model.Value as Realtair.Framework.Core.Entities.Display.NoteWidget;
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h3>");
+WriteLiteral("\r\n\r\n<div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n    <div");
+
+WriteLiteral(" class=\"col-md-12 col-sm-12\"");
+
+WriteLiteral(">\r\n        <label>");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
-Write(paragraph.Text);
+            #line 9 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+           Write($"NOTE: {noteWidget.Note}");
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>");
+WriteLiteral("</label>\r\n    </div>\r\n</div>\r\n");
 
         }
     }
