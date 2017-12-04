@@ -53,7 +53,7 @@ namespace ASP
         {
             
             #line 5 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-   
+  
     Guid guid = Guid.NewGuid();
     string uniqueId = guid.ToString();
 
@@ -66,13 +66,22 @@ WriteLiteral(" class=\"panel panel-default\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"panel-heading\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 272), Tuple.Create("\"", 303)
+, Tuple.Create(Tuple.Create("", 280), Tuple.Create("panel-heading", 280), true)
+            
+            #line 10 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+, Tuple.Create(Tuple.Create(" ", 293), Tuple.Create<System.Object, System.Int32>(uniqueId
+            
+            #line default
+            #line hidden
+, 294), false)
+);
 
 WriteLiteral(">");
 
             
             #line 10 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-                          Write(Model.Name);
+                                    Write(Model.Name);
 
             
             #line default
@@ -83,14 +92,14 @@ WriteLiteral(" class=\"panel-wrapper collapse in\"");
 
 WriteLiteral(">\r\n        <table");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 374), Tuple.Create("\"", 388)
+WriteAttribute("id", Tuple.Create(" id=\"", 383), Tuple.Create("\"", 397)
             
             #line 12 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 379), Tuple.Create<System.Object, System.Int32>(uniqueId
+, Tuple.Create(Tuple.Create("", 388), Tuple.Create<System.Object, System.Int32>(uniqueId
             
             #line default
             #line hidden
-, 379), false)
+, 388), false)
 );
 
 WriteLiteral(" class=\"table table-striped\"");
@@ -129,15 +138,15 @@ WriteLiteral("                <thead>\r\n                    <tr>\r\n");
             #line hidden
 WriteLiteral("                            <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 647), Tuple.Create("\"", 683)
-, Tuple.Create(Tuple.Create("", 655), Tuple.Create("col-xs-", 655), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 656), Tuple.Create("\"", 692)
+, Tuple.Create(Tuple.Create("", 664), Tuple.Create("col-xs-", 664), true)
             
             #line 19 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 662), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+, Tuple.Create(Tuple.Create("", 671), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 662), false)
+, 671), false)
 );
 
 WriteLiteral(">");
@@ -196,7 +205,8 @@ WriteLiteral("                    <tr>\r\n");
                          foreach (var column in row)
                         {
                             DateTime dt = new DateTime();
-                            if (column == null){
+                            if (column == null)
+                            {
 
             
             #line default
@@ -204,7 +214,7 @@ WriteLiteral("                    <tr>\r\n");
 WriteLiteral("                                <td>&nbsp;</td>\r\n");
 
             
-            #line 33 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 34 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (column is Attachment)
                             {
@@ -214,14 +224,14 @@ WriteLiteral("                                <td>&nbsp;</td>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1318), Tuple.Create("\"", 1365)
+WriteAttribute("href", Tuple.Create(" href=\"", 1357), Tuple.Create("\"", 1404)
             
-            #line 36 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 1325), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+            #line 37 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+, Tuple.Create(Tuple.Create("", 1364), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1325), false)
+, 1364), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -229,7 +239,7 @@ WriteLiteral(" target=\"_blank\"");
 WriteLiteral(">View</a></td>\r\n");
 
             
-            #line 37 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 38 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (column is IDisplayable)
                             {
@@ -240,7 +250,7 @@ WriteLiteral(">View</a></td>\r\n");
 WriteLiteral("                                <td>");
 
             
-            #line 40 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 41 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                Write(Html.Render(Url, column));
 
             
@@ -249,7 +259,7 @@ WriteLiteral("                                <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 41 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 42 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else if (Regex.IsMatch(column.ToString(), @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$"))
                             {
@@ -259,14 +269,14 @@ WriteLiteral("</td>\r\n");
             #line hidden
 WriteLiteral("                                <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1878), Tuple.Create("\"", 1892)
+WriteAttribute("href", Tuple.Create(" href=\"", 1917), Tuple.Create("\"", 1931)
             
-            #line 44 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-, Tuple.Create(Tuple.Create("", 1885), Tuple.Create<System.Object, System.Int32>(column
+            #line 45 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+, Tuple.Create(Tuple.Create("", 1924), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1885), false)
+, 1924), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -274,7 +284,7 @@ WriteLiteral(" target=\"_blank\"");
 WriteLiteral(">");
 
             
-            #line 44 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 45 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                                                  Write(column);
 
             
@@ -283,7 +293,7 @@ WriteLiteral(">");
 WriteLiteral("</a></td>\r\n");
 
             
-            #line 45 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 46 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             if (DateTime.TryParse(column.ToString(), out dt))
                             {
@@ -297,7 +307,7 @@ WriteLiteral("                                <td");
 WriteLiteral(" data-order=\"");
 
             
-            #line 49 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 50 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                            Write(unixTimestamp);
 
             
@@ -308,7 +318,7 @@ WriteLiteral("\"");
 WriteLiteral(">");
 
             
-            #line 49 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 50 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                                            Write(column);
 
             
@@ -317,7 +327,7 @@ WriteLiteral(">");
 WriteLiteral("</td>\r\n");
 
             
-            #line 50 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 51 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                             else
                             {
@@ -328,7 +338,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                                <td>");
 
             
-            #line 53 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 54 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                                Write(column);
 
             
@@ -337,7 +347,7 @@ WriteLiteral("                                <td>");
 WriteLiteral("</td>\r\n");
 
             
-            #line 54 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 55 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                             }
                         }
 
@@ -347,7 +357,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                    </tr>\r\n");
 
             
-            #line 57 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 58 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                 }
 
             
@@ -356,13 +366,13 @@ WriteLiteral("                    </tr>\r\n");
 WriteLiteral("            </tbody>\r\n");
 
             
-            #line 59 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 60 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 59 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 60 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
              if (Model.Totals != null)
             {
 
@@ -372,13 +382,13 @@ WriteLiteral("            </tbody>\r\n");
 WriteLiteral("                <tfoot>\r\n                    <tr>\r\n");
 
             
-            #line 63 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 64 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 63 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 64 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                          foreach (var total in Model.Totals)
                         {
 
@@ -390,7 +400,7 @@ WriteLiteral("                            <th>\r\n");
 WriteLiteral("                                ");
 
             
-            #line 66 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 67 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                            Write(total);
 
             
@@ -399,7 +409,7 @@ WriteLiteral("                                ");
 WriteLiteral("\r\n                            </th>\r\n");
 
             
-            #line 68 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 69 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
                         }
 
             
@@ -408,46 +418,214 @@ WriteLiteral("\r\n                            </th>\r\n");
 WriteLiteral("                    </tr>\r\n                </tfoot>\r\n");
 
             
-            #line 71 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+            #line 72 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
             }
 
             
             #line default
             #line hidden
-WriteLiteral("        </table>\r\n    </div>\r\n</div>\r\n\r\n<link");
-
-WriteLiteral(" href=\"https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min." +
-"css\"");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" />\r\n\r\n<script");
-
-WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables/jquery.data" +
-"Tables.min.js\"");
-
-WriteLiteral("></script>\r\n<script");
-
-WriteLiteral(" src=\"https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js\"");
-
-WriteLiteral("></script>\r\n<script");
-
-WriteLiteral(" src=\"https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js" +
-"\"");
-
-WriteLiteral("></script>\r\n<script>\r\n    $(document).ready(function () {\r\n        $(\'#");
+WriteLiteral("        </table>\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 83 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
-       Write(uniqueId);
+            #line 77 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+ using (Html.Delayed(null, "data-table-widget"))
+{
 
             
             #line default
             #line hidden
-WriteLiteral("\').DataTable({\r\n            \"searching\": false,\r\n            \"lengthChange\": fals" +
-"e,\r\n            \"paging\": false,\r\n            \"bInfo\": false,\r\n            \"resp" +
-"onsive\": true\r\n        });\r\n    });    \r\n</script>");
+WriteLiteral("    <style");
 
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(@">
+        .dataTables_wrapper {
+            position: relative;
+        }
+        .dt-buttons {
+            float: right;
+            top: -55px;
+            right: 10px;
+            position: absolute;
+        }
+
+        .dt-buttons>a.buttons-excel>span{
+            display: inherit;
+        }
+        button.dt-button, div.dt-button, a.dt-button {
+            color: inherit;
+        }
+    </style>
+");
+
+            
+            #line 97 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 97 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                    
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables/media/js/jq" +
+"uery.dataTables.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+            
+            #line 99 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+
+    
+            
+            #line default
+            #line hidden
+            
+            #line 100 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                              
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables.net-buttons" +
+"/js/dataTables.buttons.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables.net-buttons" +
+"/js/buttons.flash.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables.net-buttons" +
+"/js/buttons.html5.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables.net-buttons" +
+"/js/buttons.print.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+            
+            #line 105 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+
+    
+            
+            #line default
+            #line hidden
+            
+            #line 106 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                                             
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/jszip/dist/jszip.min.j" +
+"s\"");
+
+WriteLiteral("></script>\r\n");
+
+            
+            #line 108 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+
+    
+            
+            #line default
+            #line hidden
+            
+            #line 109 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                                 
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/datatables.net-respons" +
+"ive/js/dataTables.responsive.min.js\"");
+
+WriteLiteral("></script>\r\n");
+
+            
+            #line 111 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+}
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+            
+            #line 113 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+ using (Html.Delayed())
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"    <script>
+        $(document).ready(function () {
+            var options = $.extend({}, {
+                ""searching"": false,
+                ""lengthChange"": false,
+                ""paging"": false,
+                ""bInfo"": false,
+                ""responsive"": true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: '");
+
+            
+            #line 127 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+                           Write(Model.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\'\r\n                    },\r\n                    \'print\'\r\n                ]\r\n      " +
+"      });\r\n\r\n            $(\'#");
+
+            
+            #line 133 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+           Write(uniqueId);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\').DataTable(options);\r\n        });\r\n    </script>\r\n");
+
+WriteLiteral(@"    <script>
+        $(document).ready(function () {
+            $('.dt-buttons>a.buttons-excel>span').replaceWith('<div><i class=""mdi mdi-table-large""></i><span>Export</span></div>');
+            $('.dt-buttons>a.buttons-print>span').replaceWith('<div><i class=""mdi mdi-printer""></i><span>Print</span></div>');
+        });
+    </script>
+");
+
+            
+            #line 142 "..\..\Views\Shared\Widgets\_DataTable.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }
