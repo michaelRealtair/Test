@@ -13,6 +13,7 @@ using Realtair.Framework.Core.Actions.FieldAttributes;
 using Realtair.Framework.Core.Actions;
 using Realtair.Framework.Core.Data;
 using System.Data.Entity;
+using System.Globalization;
 
 namespace Realtair.Framework.Core.Web.Controllers
 {
@@ -84,7 +85,18 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         TimeSpan MapTimeSpan(object value)
         {
-            return TimeSpan.Parse(value.ToString());
+            var time = value.ToString();
+            var regex = new Regex("(1[012]|[1-9]):[0-5][0-9](\\s)?(?i) (am|pm)");
+
+            // Check if value is 12-hour format string
+            if (regex.IsMatch(time))
+            {
+                return DateTime.ParseExact(time, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
+            }
+            else
+            {
+                return TimeSpan.Parse(value.ToString());
+            }
         }
 
         string MapString(object value)
