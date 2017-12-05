@@ -60,6 +60,8 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"panel panel-default\"");
 
+WriteLiteral(" style=\"overflow-x:auto;\"");
+
 WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"panel-heading\"");
@@ -115,40 +117,40 @@ WriteLiteral("            <thead>\r\n                <tr>                \r\n");
             #line hidden
 WriteLiteral("                        <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 575), Tuple.Create("\"", 705)
-, Tuple.Create(Tuple.Create("", 583), Tuple.Create("col-xs-", 583), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 600), Tuple.Create("\"", 730)
+, Tuple.Create(Tuple.Create("", 608), Tuple.Create("col-xs-", 608), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 590), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+, Tuple.Create(Tuple.Create("", 615), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 590), false)
-, Tuple.Create(Tuple.Create(" ", 611), Tuple.Create("col-sm-", 612), true)
+, 615), false)
+, Tuple.Create(Tuple.Create(" ", 636), Tuple.Create("col-sm-", 637), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 619), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+, Tuple.Create(Tuple.Create("", 644), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 619), false)
-, Tuple.Create(Tuple.Create(" ", 640), Tuple.Create("col-md-", 641), true)
+, 644), false)
+, Tuple.Create(Tuple.Create(" ", 665), Tuple.Create("col-md-", 666), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                      , Tuple.Create(Tuple.Create("", 648), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+                      , Tuple.Create(Tuple.Create("", 673), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 648), false)
-, Tuple.Create(Tuple.Create(" ", 669), Tuple.Create("col-lg-", 670), true)
+, 673), false)
+, Tuple.Create(Tuple.Create(" ", 694), Tuple.Create("col-lg-", 695), true)
             
             #line 16 "..\..\Views\Shared\Widgets\_Table.cshtml"
-                                                   , Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
+                                                   , Tuple.Create(Tuple.Create("", 702), Tuple.Create<System.Object, System.Int32>(column.ColumnWidth
             
             #line default
             #line hidden
-, 677), false)
-, Tuple.Create(Tuple.Create(" ", 698), Tuple.Create("p-l-40", 699), true)
+, 702), false)
+, Tuple.Create(Tuple.Create(" ", 723), Tuple.Create("p-l-40", 724), true)
 );
 
 WriteLiteral(">");
@@ -229,14 +231,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1314), Tuple.Create("\"", 1361)
+WriteAttribute("href", Tuple.Create(" href=\"", 1339), Tuple.Create("\"", 1386)
             
             #line 33 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1321), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
+, Tuple.Create(Tuple.Create("", 1346), Tuple.Create<System.Object, System.Int32>(Html.Raw((column as Attachment).Url(0))
             
             #line default
             #line hidden
-, 1321), false)
+, 1346), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -282,14 +284,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1786), Tuple.Create("\"", 1800)
+WriteAttribute("href", Tuple.Create(" href=\"", 1811), Tuple.Create("\"", 1825)
             
             #line 41 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 1793), Tuple.Create<System.Object, System.Int32>(column
+, Tuple.Create(Tuple.Create("", 1818), Tuple.Create<System.Object, System.Int32>(column
             
             #line default
             #line hidden
-, 1793), false)
+, 1818), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -314,14 +316,14 @@ WriteLiteral(" class=\"p-l-40\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2250), Tuple.Create("\"", 2326)
+WriteAttribute("href", Tuple.Create(" href=\"", 2275), Tuple.Create("\"", 2351)
             
             #line 48 "..\..\Views\Shared\Widgets\_Table.cshtml"
-, Tuple.Create(Tuple.Create("", 2257), Tuple.Create<System.Object, System.Int32>((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 2282), Tuple.Create<System.Object, System.Int32>((valueObj as IDisplayable).GetDetailsUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 2257), false)
+, 2282), false)
 );
 
 WriteLiteral(">");
