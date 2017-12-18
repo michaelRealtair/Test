@@ -65,54 +65,77 @@ WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <div");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 235), Tuple.Create("\"", 259)
-            
-            #line 9 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 242), false)
-);
+WriteLiteral(" class=\"bootstrap-timepicker\"");
 
-WriteLiteral(" \r\n               type=\"time\"");
+WriteLiteral(">\r\n            <input");
 
-WriteAttribute("value", Tuple.Create(" \r\n               value=\"", 289), Tuple.Create("\"", 340)
+WriteAttribute("name", Tuple.Create(" name=\"", 283), Tuple.Create("\"", 307)
             
-            #line 11 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 314), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
+            #line 10 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 290), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 314), false)
+, 290), false)
 );
 
-WriteLiteral(" \r\n               class=\"form-control\"");
+WriteLiteral(" \r\n                   type=\"text\"");
 
-WriteLiteral("\r\n               onblur=\"validateInput(this);\"");
+WriteLiteral(" \r\n                   class=\"form-control mytimepicker input-small\"");
 
-WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n");
+WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 408), Tuple.Create("\"", 462)
+            
+            #line 13 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
+            
+            #line default
+            #line hidden
+, 436), false)
+);
+
+WriteLiteral(">\r\n            <i");
+
+WriteLiteral(" class=\"icon-time\"");
+
+WriteLiteral("></i>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 17 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
  using (Html.Delayed(null, "time-span-field"))
 {
 
             
             #line default
             #line hidden
+WriteLiteral("    <link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/" +
+"css/bootstrap-timepicker.min.css\"");
+
+WriteLiteral(" type=\"text/css\"");
+
+WriteLiteral(" />\r\n");
+
+WriteLiteral("    <script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/j" +
+"s/bootstrap-timepicker.js\"");
+
+WriteLiteral("></script>\r\n");
+
 WriteLiteral("    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteLiteral(">\r\n        // Reset value to 12:00AM if the input is invalid...\r\n        function" +
-" validateInput(e) {\r\n            if (!e.validity.valid) {\r\n                e.val" +
-"ue = \"00:00:00\"\r\n            }\r\n        }\r\n    </script>\r\n");
+WriteLiteral(">\r\n        jQuery(function () {\r\n            jQuery(\'.mytimepicker\').timepicker({" +
+"\r\n                template: false\r\n            });\r\n        })\r\n    </script>\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 30 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
 }
             
             #line default
