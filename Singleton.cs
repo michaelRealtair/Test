@@ -42,7 +42,7 @@ namespace Realtair.Framework.Core.Web
                     if (_dbContext == null)
                         _dbContext = dbContext;
                     return _dbContext;
-                }                
+                }
             }
         }
         public AssemblyCache AssemblyCache
