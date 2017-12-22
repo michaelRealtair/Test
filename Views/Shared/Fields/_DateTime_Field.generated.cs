@@ -103,10 +103,10 @@ WriteAttribute("name", Tuple.Create("\r\n                   name=\"", 508), Tupl
 
 WriteLiteral("\r\n                   type=\"text\"");
 
-WriteLiteral("\r\n                   class=\"form-control mydatepicker input-small\"");
+WriteLiteral("\r\n                   class=\"form-control datepicker input-small\"");
 
-WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 651), Tuple.Create("\"", 740)
-, Tuple.Create(Tuple.Create("", 679), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 649), Tuple.Create("\"", 738)
+, Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
@@ -127,31 +127,31 @@ WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 651), Tu
             
             #line default
             #line hidden
-}), 679), false)
+}), 677), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create("\r\n                   placeholder=\"", 741), Tuple.Create("\"", 786)
+WriteAttribute("placeholder", Tuple.Create("\r\n                   placeholder=\"", 739), Tuple.Create("\"", 784)
             
             #line 21 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 775), Tuple.Create<System.Object, System.Int32>(dateFormat
+, Tuple.Create(Tuple.Create("", 773), Tuple.Create<System.Object, System.Int32>(dateFormat
             
             #line default
             #line hidden
-, 775), false)
+, 773), false)
 );
 
 WriteLiteral(">\r\n            <label");
 
 WriteLiteral(" class=\"input-group-addon btn\"");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 838), Tuple.Create("\"", 861)
+WriteAttribute("for", Tuple.Create(" for=\"", 836), Tuple.Create("\"", 859)
             
             #line 22 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 844), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 842), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 844), false)
+, 842), false)
 );
 
 WriteLiteral(">\r\n                <span");
@@ -224,9 +224,17 @@ WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/bootst
 
 WriteLiteral("></script>\r\n");
 
-WriteLiteral("    <script>\r\n        $(function () {\r\n            $(\'.mydatepicker\').datepicker(" +
-"{\r\n                format: \'yyyy-mm-dd\',\r\n                startDate: new Date(20" +
-"00, 0, 1),\r\n");
+WriteLiteral("    <script>\r\n        $(function () {\r\n            var cal = $(\'#");
+
+            
+            #line 39 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+                     Write(Model.UniqueName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n                startDate" +
+": new Date(2000, 0, 1),\r\n");
 
 WriteLiteral("                ");
 
@@ -237,11 +245,28 @@ WriteLiteral("                ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                autoclose: true,\r\n                clearBtn: true\r\n            }" +
-");\r\n        })\r\n    </script>\r\n");
+WriteLiteral(@"
+                autoclose: true,
+                clearBtn: true
+            });
+
+            cal.keydown(function (event) {                
+                if (event.which == 13) { //enter key
+                    cal.blur();
+                }
+            });;
+
+            cal.on('blur', function () {
+                if (isNaN(Date.parse($this.val()))) {
+                    cal.val('');
+                }
+            });
+        })
+    </script>
+");
 
             
-            #line 48 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 60 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
