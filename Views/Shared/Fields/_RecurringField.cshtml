@@ -9,12 +9,15 @@
 <link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
 <link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.css" type="text/css" />
 <link rel="stylesheet" href="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.css" />
+<link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" type="text/css" />
 
 <script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
 <script src="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
 <script src="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.js"></script>
+<script src="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
 <script src="https://api.addressfinder.io/assets/v3/widget.js"></script>
+
 
 <label>
     @Model.Label
@@ -72,14 +75,15 @@
 
                     <div class="form-group">
                         <div class="col-md-3 col-sm-4">
-                            <label class="control-label">@Model.Label</label>
+                            <label class="control-label">@f.Label</label>
                         </div>
 
                         <div class="col-md-9 col-sm-8">
                             <input name="@(Model.UniqueName)_@(f.UniqueName)"
-                                   type="date"
+                                   type="text"
                                    @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
-                                   class="form-control field">
+                                   class="form-control datepicker input-small field"
+                                   style="padding-left: 10px;">
                         </div>
                     </div>
 
@@ -88,7 +92,7 @@
                 {
                     <div class="form-group">
                         <div class="col-md-3 col-sm-4">
-                            <label class="control-label">@Model.Label</label>
+                            <label class="control-label">@f.Label</label>
                         </div>
 
                         <div class="col-md-9 col-sm-8">
@@ -309,10 +313,11 @@
 
                                 <div class="col-md-9 col-sm-8">
                                     <input name="@(Model.UniqueName)_@(f.UniqueName)"
-                                           type="date"
+                                           type="text"
                                            value="@if (Date > DateTime.MinValue) { @Date.ToString("yyyy-MM-dd") }"
                                            @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
-                                           class="form-control">
+                                           class="form-control datepicker input-small"
+                                           style="padding-left: 10px;">
                                 </div>
                             </div>
 
@@ -452,7 +457,7 @@
                         else if (f.PropertyType == typeof(Address))
                         {
                             var address = v.GetType().GetProperty(f.UniqueName).GetValue(v) as Address;
-                            <div class="form-group">
+                            <div class="form-group address-field">
                                 <div class="col-md-3 col-sm-4">
                                     <label class="control-label">@f.Label</label>
                                 </div>
@@ -460,34 +465,32 @@
                                 <div class="col-md-9 col-sm-8">
                                     <div class="row form-group">
                                         <div class="col-sm-12">
-                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address" type="text" class="form-control" value="@(address.AddressLine1)">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address" type="text" class="form-control AddressLine1" value="@(address.AddressLine1)">
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-12">
-                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_2" type="text" class="form-control" value="@(address.AddressLine2)">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_2" type="text" class="form-control AddressLine2" value="@(address.AddressLine2)">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" type="text" class="form-control" value="@(address.Suburb)">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" type="text" class="form-control Suburb" value="@(address.Suburb)">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" type="text" class="form-control" value="@(address.State)">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" type="text" class="form-control State" value="@(address.State)">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" type="text" class="form-control" value="@(address.Postcode)">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" type="text" class="form-control Code" value="@(address.Postcode)">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetName" type="hidden">
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetType" type="hidden">
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetNumber" type="hidden">
+                                <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
 
-                            <input id="@(Model.UniqueName)_@(f.UniqueName)_streetName" type="hidden">
-                            <input id="@(Model.UniqueName)_@(f.UniqueName)_streetType" type="hidden">
-                            <input id="@(Model.UniqueName)_@(f.UniqueName)_streetNumber" type="hidden">
-                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" />
-
-                            <script>
+                                <script>
 
                                 var serialised = $('#@(uniqueId)').find('#@(Model.UniqueName)_@(f.UniqueName)')[0];
                                 serialised.value = JSON.stringify({
@@ -500,7 +503,8 @@
                                     StreetName: "@(address.StreetName)",
                                     StreetType: "@(address.StreetType)"
                                 });
-                            </script>
+                                </script>
+                            </div>
                         }
                     }
                     <a href="#" onclick="deleteItem(this)" class="btn btn-warning btn-sm">delete</a>
@@ -525,7 +529,7 @@
 
     initComponents();
 
-    $('#main-form').submit(saveData);    
+    $('#main-form').submit(saveData);
 
     function initComponents(){
         /* Select2  */
@@ -659,6 +663,33 @@
                 });
             });
         });
+
+        /* Datepicker */
+        $('.@(Model.UniqueName)_item').find('input.datepicker').each(function(){
+            var $this = $(this);
+
+            $this.datepicker({
+                format: 'yyyy-mm-dd',
+                startDate: new Date(2000, 0, 1),
+                autoclose: true,
+                clearBtn: true
+            });
+
+            $this.keydown(function(event) {
+                console.log(event.which);
+                if(event.which == 13){ //enter key
+                    $this.blur();
+                }
+            });;
+
+            $this.on('blur', function(){
+                if (isNaN(Date.parse($this.val()))){
+                    $this.val('');
+                }
+            });
+        });
+
+
     }
 
     function addItem() {
