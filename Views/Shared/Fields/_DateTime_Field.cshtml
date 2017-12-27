@@ -13,15 +13,15 @@
 
     <div class="col-md-9 col-sm-8">
         <div class="input-group">
-            <input 
-                   name="@Model.UniqueName" 
+            <input id="@Model.UniqueName"
+                   name="@Model.UniqueName"
                    type="text"
-                   class="form-control mydatepicker input-small"
+                   class="form-control datepicker input-small"
                    value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
                    placeholder="@dateFormat">
-            <span class="input-group-addon">
-                <i class="mdi mdi-calendar-blank"></i>
-            </span>
+            <label class="input-group-addon btn" for="@Model.UniqueName">
+                <span class="mdi mdi-calendar-blank"></span>
+            </label>
             @if (Model.HasError)
             {
                 <span class="help-block">@Model.ErrorMessage</span>
@@ -36,11 +36,25 @@
     <script src="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <script>
         $(function () {
-            $('.mydatepicker').datepicker({
-                format: '@dateFormat',
+            var cal = $('#@Model.UniqueName').datepicker({
+                format: 'yyyy-mm-dd',
+                startDate: new Date(2000, 0, 1),
                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
-                autoclose: true
-            })
+                autoclose: true,
+                clearBtn: true
+            });
+
+            cal.keydown(function (event) {                
+                if (event.which == 13) { //enter key
+                    cal.blur();
+                }
+            });;
+
+            cal.on('blur', function () {
+                if (isNaN(Date.parse($this.val()))) {
+                    cal.val('');
+                }
+            });
         })
     </script>
 }
