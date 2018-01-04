@@ -190,6 +190,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Shared\Fields\_RecurringField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RecurringField.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_RichTextWidget_WidgetField.generated.cs">
       <DependentUpon>_RichTextWidget_WidgetField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3616,6 +3621,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_NoteWidget_WidgetField.generated.cs</LastGenOutput>
     </Content>
+    <None Include="Views\Shared\Fields\_RecurringField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RecurringField.generated.cs</LastGenOutput>
+    </None>
     <None Include="Views\Shared\Fields\_RichTextWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_RichTextWidget_WidgetField.generated.cs</LastGenOutput>

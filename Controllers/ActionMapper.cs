@@ -208,8 +208,15 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         IEnumerable<Attachment> MapUnusedExistingFileAsset(object value)
         {
-            var strings = (string[])value;
-            var ids = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(strings.ElementAt(0));
+            int[] ids;
+            if (value.GetType() == typeof(string[]))
+            {
+                var strings = (string[])value;
+                ids = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(strings.ElementAt(0));
+            }else
+            {
+                ids = Array.ConvertAll(value.ToString().Split(','), s => int.Parse(s));                
+            }
             if (ids == null) return new Attachment[] { };
             var attachments = new List<Attachment>();
             foreach (var id in ids)
@@ -241,17 +248,33 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         IEnumerable<Entity> MapEntityArray(Type type, object value)
         {
-            if (value as string[] == null) return null;
-            if (string.IsNullOrEmpty((value as string[])[0])) return null;
+            if (value.GetType() == typeof(string[]))
+            {
+                if (value as string[] == null) return null;
+                if (string.IsNullOrEmpty((value as string[])[0])) return null;
 
-            var listType = typeof(List<>);
-            var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
-            var instance = Activator.CreateInstance(constructedListType) as IList;
+                var listType = typeof(List<>);
+                var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
+                var instance = Activator.CreateInstance(constructedListType) as IList;
 
-            foreach (var n in JsonConvert.DeserializeObject<int[]>((value as string[])[0]))
-                instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(n)));
+                foreach (var n in JsonConvert.DeserializeObject<int[]>((value as string[])[0]))
+                    instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(n)));
 
-            return instance as IEnumerable<Entity>;
+                return instance as IEnumerable<Entity>;
+            }
+            else
+            {
+                if (value.ToString() == "") return null;
+                var listType = typeof(List<>);
+                var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
+                var instance = Activator.CreateInstance(constructedListType) as IList;
+
+                var ids = Array.ConvertAll(value.ToString().Split(','), s => int.Parse(s));
+                foreach (var id in ids)                
+                    instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(id)));
+                              
+                return instance as IEnumerable<Entity>;
+            }            
         }
 
         public Attachment MapUploadedFile(object value, Field field)

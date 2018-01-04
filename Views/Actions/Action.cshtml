@@ -207,8 +207,15 @@
 						<div class="panel-footer">
 							@if ((bool)TempData["ShowSubmit"])
 							{
-								<button data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">Submit</button>
-							}
+                               @if (!Model.IsMultiPage) { 
+								<button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Action.SubmitValue</button>
+                               }
+                               else
+                               {
+                                <button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Page.SubmitValue</button>
+                               }
+
+                            }
 
 							@if (Model.SubmittedPages.Count != 0)
 							{
