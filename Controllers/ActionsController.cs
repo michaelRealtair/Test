@@ -14,14 +14,20 @@ namespace Realtair.Framework.Core.Web.Controllers
     using Utilities;
     using Interfaces;
     using System.Net;
+    using System.Configuration;
 
     public class ActionsController : BaseController
     {
+        private string dashboardUrl = ConfigurationManager.AppSettings["DashboardUrl"];
         bool PostValuesSet;
 
         public ActionsController(IAuthenticationFactory authenticationFactory) 
             : base(authenticationFactory)
         {
+            if (string.IsNullOrWhiteSpace(dashboardUrl))
+            {
+                dashboardUrl = "/dashboard";
+            }
         }
 
         public class ActionViewModel
@@ -203,7 +209,7 @@ namespace Realtair.Framework.Core.Web.Controllers
 
             if (RedirectLocation is RedirectToDashboard)
             {
-                return Redirect("/dashboard");
+                return Redirect(dashboardUrl);
             }
             else if (RedirectLocation is RedirectToEntity && (RedirectLocation as RedirectToEntity).Entity.Id != 0)
             {
