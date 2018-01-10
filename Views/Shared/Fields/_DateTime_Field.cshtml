@@ -30,7 +30,7 @@
     </div>
 </div>
 
-@using (Html.Delayed(null, "date-time-field"))
+@using (Html.Delayed(null))
 {
     <link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" type="text/css" />
     <script src="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
@@ -44,7 +44,7 @@
                 clearBtn: true
             });
 
-            cal.keydown(function (event) {                
+            cal.keydown(function (event) {
                 if (event.which == 13) { //enter key
                     cal.blur();
                 }
