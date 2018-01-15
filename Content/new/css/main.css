@@ -1,0 +1,2898 @@
+/*
+  Realtair My Tasks Sass Theme
+  Author: Ton Gregorio
+  Version: Alpha 1.0
+*/
+@import 'https://static.realtair.com/plugins/select2/css/select2.css';
+/* Base styles, variables, mixins, etc*/
+/* font-family */
+/* colors */
+/*Priority colors*/
+/*hack for margin of 1st column of table header*/
+/*paddings*/
+/*margins*/
+/*animations*/
+/*border*/
+/*border radius*/
+/*box shadow*/
+/*flexbox*/
+@import 'https://static.realtair.com/css/icons/material-design-iconic-font/css/materialdesignicons.min.css';
+/* line 1, F:/Realtair.UI/scss/base/_normalize.scss */
+.clear {
+  display: table-cell;
+  padding-left: 2px;
+  vertical-align: middle;
+}
+
+@-ms-viewport {
+  width: auto !important;
+}
+
+/* line 1, F:/Realtair.UI/scss/base/_base.scss */
+body {
+  background-color: #ffffff;
+  font-size: 12px;
+  font-family: "Sofia Pro", sans-serif !important;
+  color: #455A64;
+}
+
+/* line 3, F:/Realtair.UI/scss/base/_base.scss */
+body h1 {
+  font-size: 3.0em;
+}
+
+/* line 4, F:/Realtair.UI/scss/base/_base.scss */
+body h2 {
+  font-size: 2.0em;
+}
+
+/* line 5, F:/Realtair.UI/scss/base/_base.scss */
+body h3 {
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+/* line 6, F:/Realtair.UI/scss/base/_base.scss */
+body h4 {
+  font-size: 1.2em;
+}
+
+/* line 7, F:/Realtair.UI/scss/base/_base.scss */
+body p {
+  font-size: 1em;
+}
+
+/* line 8, F:/Realtair.UI/scss/base/_base.scss */
+body small {
+  font-size: .9em;
+}
+
+/* line 9, F:/Realtair.UI/scss/base/_base.scss */
+body .form-control {
+  font-size: 1.3em;
+}
+
+/* line 10, F:/Realtair.UI/scss/base/_base.scss */
+body a {
+  color: #455A64 !important;
+}
+
+/*links*/
+/* line 20, F:/Realtair.UI/scss/base/_base.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* Modules - individual components */
+@font-face {
+  font-family: 'Sofia Pro';
+  src: url("../fonts/SofiaProRegular.eot");
+  src: url("../fonts/SofiaProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/SofiaProRegular.woff") format("woff"), url("../fonts/SofiaProRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 11, F:/Realtair.UI/scss/modules/_typography.scss */
+.tasks p {
+  line-height: 2.3em;
+  margin: 0;
+}
+
+/* line 15, F:/Realtair.UI/scss/modules/_typography.scss */
+.truncate, .truncate p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 20, F:/Realtair.UI/scss/modules/_typography.scss */
+.truncate p {
+  width: 230px;
+}
+
+/* line 26, F:/Realtair.UI/scss/modules/_typography.scss */
+a:focus {
+  text-decoration: none;
+}
+
+/* line 30, F:/Realtair.UI/scss/modules/_typography.scss */
+.font-green {
+  color: #66BB6A;
+}
+
+/* line 31, F:/Realtair.UI/scss/modules/_typography.scss */
+.font-grey-dk {
+  color: #999999;
+}
+
+/* line 33, F:/Realtair.UI/scss/modules/_typography.scss */
+input[type="*"]::placeholder {
+  color: #F9F9F9;
+}
+
+/* line 36, F:/Realtair.UI/scss/modules/_typography.scss */
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* line 1, F:/Realtair.UI/scss/modules/_blocks.scss */
+.panel {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  -moz-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+}
+
+/* line 4, F:/Realtair.UI/scss/modules/_blocks.scss */
+.panel--no-margin {
+  margin: 0;
+}
+
+/* line 9, F:/Realtair.UI/scss/modules/_blocks.scss */
+.panel-body, .panel-body--kanban {
+  position: relative;
+}
+
+/* line 11, F:/Realtair.UI/scss/modules/_blocks.scss */
+.panel-body--header {
+  padding-top: 35px;
+}
+
+/*Priority color markers*/
+/* line 17, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority {
+  /*for checkbox/switch colors*/
+}
+
+/* line 19, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-blue {
+  border-left: 10px solid #80d3f9;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+/* line 23, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-red {
+  border-left: 10px solid #f6a8a6;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+/* line 26, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-yellow {
+  border-left: 10px solid #fff498;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+/* line 30, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-green {
+  border-left: 10px solid #b1dcb3;
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+/* line 33, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-th {
+  border-left: 10px solid transparent;
+  /*hack for margin of 1st column of table header*/
+}
+
+/* line 38, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-vip {
+  background-color: #80d3f9;
+}
+
+/* line 41, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-high {
+  background-color: #f6a8a6;
+}
+
+/* line 44, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-medium {
+  background-color: #fff498;
+}
+
+/* line 47, F:/Realtair.UI/scss/modules/_blocks.scss */
+.priority-low {
+  background-color: #b1dcb3;
+}
+
+/*accordion/collapse content*/
+/* line 55, F:/Realtair.UI/scss/modules/_blocks.scss */
+.property-sec-hdr {
+  padding-top: 5px;
+}
+
+/* line 56, F:/Realtair.UI/scss/modules/_blocks.scss */
+.property-sec-hdr li a {
+  font-size: 1.3em;
+}
+
+/* line 59, F:/Realtair.UI/scss/modules/_blocks.scss */
+.accordion-toggle:after {
+  /* symbol for "opening" panels */
+  font-family: 'FontAwesome';
+  /* essential for enabling glyphicon */
+  content: "\f078";
+  /* chevron icon */
+  float: left;
+  /* adjust as needed */
+  color: #455A64;
+  /* adjust as needed */
+  line-height: 1.3em;
+  width: 20px;
+}
+
+/* line 68, F:/Realtair.UI/scss/modules/_blocks.scss */
+.accordion-toggle.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f054";
+  /* chevron icon */
+  line-height: 1.5em;
+}
+
+/* line 75, F:/Realtair.UI/scss/modules/_blocks.scss */
+.collapse.in {
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -ms-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+/* line 79, F:/Realtair.UI/scss/modules/_blocks.scss */
+.collapsing {
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -ms-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+/* line 86, F:/Realtair.UI/scss/modules/_blocks.scss */
+.kanban-task p {
+  margin-bottom: 0px;
+  color: #CECECE;
+}
+
+/* line 89, F:/Realtair.UI/scss/modules/_blocks.scss */
+.kanban-task h4 {
+  font-size: 14px;
+  color: #455A64;
+  margin: 0;
+}
+
+/* line 93, F:/Realtair.UI/scss/modules/_blocks.scss */
+.kanban-task:hover {
+  background-color: #F9F9F9;
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -ms-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+  cursor: move;
+}
+
+/* line 98, F:/Realtair.UI/scss/modules/_blocks.scss */
+.loc-divider {
+  margin-top: 7px;
+  margin-bottom: 14px;
+}
+
+/* line 102, F:/Realtair.UI/scss/modules/_blocks.scss */
+.sec-divider {
+  margin-top: -6px;
+  margin-bottom: 2px;
+  border-top: 2px solid #455A64;
+}
+
+/* line 109, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-mob {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* line 120, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-dialog-mob {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: #F9F9F9;
+}
+
+/* line 131, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-content-mob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  background: #F9F9F9;
+}
+
+/* line 145, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-header {
+  border: 0 !important;
+  -webkit-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  background-clip: padding-box;
+}
+
+/* line 146, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-header-mob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  padding: 10px;
+  border: 0;
+}
+
+/* line 158, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-title-mob {
+  animation: fadeInText 300ms;
+  -moz-animation: fadeInText 300ms;
+  /* Firefox */
+  -webkit-animation: fadeInText 300ms;
+  /* Safari and Chrome */
+  -o-animation: fadeInText 300ms;
+  /* Opera */
+}
+
+/* line 168, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-body-mob {
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  width: 100%;
+  font-weight: 300;
+  overflow: auto;
+  opacity: 0;
+  animation: fadeInTop 200ms ease forwards;
+  animation-delay: 100ms;
+}
+
+/* line 182, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
+/* line 186, F:/Realtair.UI/scss/modules/_blocks.scss */
+.modal-footer {
+  border: 0 !important;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-clip: padding-box;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+/* line 200, F:/Realtair.UI/scss/modules/_blocks.scss */
+.kanban-status-mob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  z-index: 9;
+  padding: 5px;
+  -webkit-box-shadow: 0px 1px 5px rgba(204, 197, 185, 0.5);
+  -moz-box-shadow: 0px 1px 5px rgba(204, 197, 185, 0.5);
+  box-shadow: 0px 1px 5px rgba(204, 197, 185, 0.5);
+}
+
+/* line 212, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* line 220, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-container > * {
+  padding-top: 7px;
+  -webkit-box-flex: 1 320px;
+  -moz-box-flex: 1 320px;
+  -webkit-flex: 1 320px;
+  -ms-flex: 1 320px;
+  flex: 1 320px;
+  margin-right: 20px;
+  /*&:first-child{
+       @include margin-all(null, null, null, 0);
+     }*/
+}
+
+/* line 225, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-container > *:nth-last-child(1) {
+  margin-right: 0;
+}
+
+/* line 230, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-container-col {
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+/* line 236, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-inline {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+}
+
+/* line 241, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-inline > * {
+  -webkit-box-flex: 1 auto;
+  -moz-box-flex: 1 auto;
+  -webkit-flex: 1 auto;
+  -ms-flex: 1 auto;
+  flex: 1 auto;
+}
+
+/* line 245, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-inline > li:nth-child(2) {
+  -webkit-box-flex: 0 auto;
+  -moz-box-flex: 0 auto;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+}
+
+/* line 247, F:/Realtair.UI/scss/modules/_blocks.scss */
+.flex-inline > li:nth-child(2) > a > i {
+  margin-left: 10px;
+}
+
+/* line 3, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-grey {
+  background-color: transparent;
+  border: 3px solid #CECECE;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  display: initial;
+}
+
+/* line 4, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-grey:hover {
+  border: 3px solid #455A64;
+}
+
+/* line 7, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-grey.btn-campaign {
+  text-align: center;
+}
+
+/* line 13, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-green {
+  background-color: #66BB6A;
+  border: 3px solid #66BB6A;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  display: initial;
+  color: #ffffff !important;
+}
+
+/* line 14, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-green:hover {
+  background-color: #2E7D32;
+  border: 3px solid #2E7D32;
+  color: #ffffff;
+}
+
+/* line 21, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-trans-search {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-left: -15px !important;
+  z-index: 200;
+}
+
+/* line 23, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn {
+  text-align: left;
+  float: right;
+  padding-top: 4px;
+  padding-right: 6px;
+  padding-bottom: 4px;
+  padding-left: 0;
+  position: relative;
+}
+
+/* line 25, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn .caret {
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+}
+
+/* line 30, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn .btn-ico {
+  position: absolute;
+  margin-top: 3px;
+  right: 5px;
+}
+
+/* line 37, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-block {
+  display: block !important;
+}
+
+/* line 41, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-task {
+  font-size: 1em;
+  font-weight: bold;
+  padding-left: 6px;
+}
+
+/* line 47, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-mob-task {
+  position: absolute;
+  right: 3%;
+  top: 30%;
+  font-size: 1em;
+}
+
+/* line 50, F:/Realtair.UI/scss/modules/_buttons.scss */
+.close-btn {
+  position: absolute;
+  right: 3px;
+  top: 12px;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+}
+
+/* line 58, F:/Realtair.UI/scss/modules/_buttons.scss */
+.close-btn:hover {
+  opacity: 1;
+}
+
+/* line 62, F:/Realtair.UI/scss/modules/_buttons.scss */
+.close-btn:before, .close-btn:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 18px;
+  width: 2px;
+  background-color: #455A64;
+  opacity: 0;
+}
+
+/* line 73, F:/Realtair.UI/scss/modules/_buttons.scss */
+.close-btn:before {
+  animation: fadeRotateLeft .20s ease forwards;
+  animation-delay: .10s;
+}
+
+/* line 79, F:/Realtair.UI/scss/modules/_buttons.scss */
+.close-btn:after {
+  animation: fadeRotateRight .20s ease forwards;
+  animation-delay: .10s;
+}
+
+@keyframes fadeRotateLeft {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes fadeRotateRight {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+}
+
+/* line 109, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-next, .btn-prev {
+  padding-top: 5px;
+}
+
+/* line 111, F:/Realtair.UI/scss/modules/_buttons.scss */
+.btn-task.btn-form {
+  font-size: 1.4em;
+}
+
+/*stepper*/
+/* Colors */
+/* Stepper Styling */
+/* line 152, F:/Realtair.UI/scss/modules/_buttons.scss */
+.stepper-container {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  margin-bottom: 2em;
+  border-radius: 8px;
+}
+
+/* line 158, F:/Realtair.UI/scss/modules/_buttons.scss */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 163, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+}
+
+/* line 168, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: #d8dce1;
+}
+
+/* line 177, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: #d8dce1;
+}
+
+/* line 186, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:last-child {
+  flex-basis: 70%;
+}
+
+/* line 188, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:last-child:after {
+  display: none;
+}
+
+/* line 192, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:first-child {
+  flex-basis: 70%;
+}
+
+/* line 194, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step:first-child:before {
+  display: none;
+}
+
+/* line 199, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step.active {
+  color: white;
+}
+
+/* line 201, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step.active:before, .step.active:after {
+  background-color: #1EB53A;
+}
+
+/* line 205, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step.active + .step:not(.active):before {
+  background-color: #1EB53A;
+}
+
+/* line 210, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* line 217, F:/Realtair.UI/scss/modules/_buttons.scss */
+.active .step-circle {
+  background-color: #1EB53A;
+}
+
+/* line 220, F:/Realtair.UI/scss/modules/_buttons.scss */
+.step-circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background-color: #d8dce1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 235, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .stepper {
+  flex-direction: column;
+}
+
+/* line 238, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .step {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 3em;
+}
+
+/* line 244, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .step:after {
+  display: inline;
+  width: 3px;
+  position: absolute;
+  height: 100%;
+  left: .85em;
+  top: .5em;
+  z-index: -1;
+}
+
+/* line 253, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .step:before {
+  display: none;
+}
+
+/* line 256, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .step:last-child:after {
+  display: none;
+}
+
+/* line 261, F:/Realtair.UI/scss/modules/_buttons.scss */
+.vertical .step-content {
+  margin-left: 1em;
+  margin-top: -.5em;
+  color: #3C4859;
+  width: 100%;
+}
+
+/*vertical tabs / wizard
+ .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+ .nav-stacked > li + li {
+     margin-top: 0px;
+ }
+ .nav-tabs > li > a {
+     @include padding(20px);
+     color: #AAAAAA;
+     border: 0px;
+     border-radius: 0px;
+     background-color: $rt-grey;
+     margin: 0;
+     font-size: 1.1em;
+
+ }
+ .nav-tabs > li > a:hover, .nav-tabs > li > a:focus, .nav-tabs > li > a:hover > h2 {
+     background-color: $rt-grey-dk;
+     color: $rt-white;
+     z-index: 99;
+     //transition: all 100ms ease 0s;
+ }
+ .nav-tabs > li.active > a, .nav-tabs > li.active > a > h2 {
+    color: $rt-white;
+    background-color: $rt-grey-dk;
+     z-index: 100;
+ }
+ .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, {
+    color: $rt-white;
+    background-color: $rt-grey-dk;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, .6);
+    //transition: all 0.5s ease 0s;
+ }
+ /*.btn {
+   display: inline-block;
+   padding: 6px 12px;
+   margin-bottom: 0;
+   font-size: 14px;
+   font-weight: normal;
+   line-height: 1.42857143;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   -ms-touch-action: manipulation;
+       touch-action: manipulation;
+   cursor: pointer;
+   -webkit-user-select: none;
+      -moz-user-select: none;
+       -ms-user-select: none;
+           user-select: none;
+   background-image: none;
+   border: 1px solid transparent;
+   border-radius: 1px;
+   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+   transition: all 0.5s ease 0s;
+
+ }
+ .btn-primary {
+     background-color: #2962FF;
+ }
+ .btn-primary:hover, .btn-primary:focus {
+     background-color: #0D47A1;
+ }*/
+/* line 1, F:/Realtair.UI/scss/modules/_sections.scss */
+.content {
+  width: calc(100% - 250px);
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  z-index: 1;
+}
+
+/*@media (max-width: 1024px) {
+
+  .content {width: 100%; @include padding-all (0px, 0px, 10px, 0px);}
+
+}*/
+/*progress wizard*/
+/* Copyright 2013-2015 etc Chris Tabor. See https://github.com/christabor/css-progress-wizard/blob/master/LICENSE for details. */
+/* line 51, F:/Realtair.UI/scss/modules/_sections.scss */
+.flexer, .progress-indicator {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 58, F:/Realtair.UI/scss/modules/_sections.scss */
+.no-flexer, .progress-indicator.stacked {
+  display: block;
+}
+
+/* line 61, F:/Realtair.UI/scss/modules/_sections.scss */
+.no-flexer-element {
+  -ms-flex: 0;
+  -webkit-flex: 0;
+  -moz-flex: 0;
+  flex: 0;
+}
+
+/* line 67, F:/Realtair.UI/scss/modules/_sections.scss */
+.flexer-element, .progress-indicator > li {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+}
+
+/* line 73, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+/* line 78, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li {
+  list-style: none;
+  text-align: center;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-overflow: ellipsis;
+  color: #CECECE;
+  display: block;
+  max-height: 100px;
+}
+
+/* line 90, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li:hover {
+  color: #828282;
+}
+
+/* line 94, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li .bubble {
+  border-radius: 1000px;
+  width: 40px;
+  height: 40px;
+  background-color: #CECECE;
+  display: block;
+  margin: 0 auto 0.5em auto;
+}
+
+/* line 102, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li .bubble i {
+  color: #ffffff;
+  margin-top: 11px;
+}
+
+/* line 109, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li .bubble:before,
+.progress-indicator > li .bubble:after {
+  display: block;
+  position: absolute;
+  top: 39px;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: #CECECE;
+}
+
+/* line 119, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li .bubble:before {
+  left: 0;
+}
+
+/* line 122, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li .bubble:after {
+  right: 0;
+}
+
+/* line 126, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li:first-child .bubble:before,
+.progress-indicator > li:first-child .bubble:after {
+  width: 50%;
+  margin-left: 50%;
+}
+
+/* line 132, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li:last-child .bubble:before,
+.progress-indicator > li:last-child .bubble:after {
+  width: 50%;
+  margin-right: 50%;
+  display: none;
+}
+
+/* line 142, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.completed {
+  color: #66BB6A;
+}
+
+/* line 144, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.completed .bubble {
+  background-color: #66BB6A;
+  color: #66BB6A;
+  border-color: #2a5e2c;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.completed .bubble:before, .progress-indicator > li.completed .bubble:after {
+  background-color: #66BB6A;
+  border-color: #2a5e2c;
+}
+
+/* line 151, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.active {
+  color: #455A64;
+}
+
+/* line 153, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.active .bubble {
+  background-color: #455A64;
+  color: #455A64;
+  border-color: #070909;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.active .bubble:before, .progress-indicator > li.active .bubble:after {
+  background-color: #455A64;
+  border-color: #070909;
+}
+
+/* line 160, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li a:hover .bubble {
+  background-color: #999999;
+  color: #999999;
+  border-color: #4d4d4d;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li a:hover .bubble:before, .progress-indicator > li a:hover .bubble:after {
+  background-color: #999999;
+  border-color: #4d4d4d;
+}
+
+/* line 166, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.danger .bubble {
+  background-color: #d3140f;
+  color: #d3140f;
+  border-color: #440605;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.danger .bubble:before, .progress-indicator > li.danger .bubble:after {
+  background-color: #d3140f;
+  border-color: #440605;
+}
+
+/* line 169, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.warning .bubble {
+  background-color: #edb10a;
+  color: #edb10a;
+  border-color: #5a4304;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.warning .bubble:before, .progress-indicator > li.warning .bubble:after {
+  background-color: #edb10a;
+  border-color: #5a4304;
+}
+
+/* line 172, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.info .bubble {
+  background-color: #5b32d6;
+  color: #5b32d6;
+  border-color: #25135d;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator > li.info .bubble:before, .progress-indicator > li.info .bubble:after {
+  background-color: #5b32d6;
+  border-color: #25135d;
+}
+
+/* line 180, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked > li {
+  text-align: center;
+  display: block;
+}
+
+/* line 184, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked > li .bubble:before,
+.progress-indicator.stacked > li .bubble:after {
+  left: 50%;
+  margin-left: -1px;
+  width: 2px;
+  height: 100%;
+}
+
+/* line 191, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked .stacked-text {
+  position: relative;
+  z-index: 10;
+  top: -37px;
+  margin-left: 0% !important;
+  width: 45% !important;
+  display: inline-block;
+  text-align: left;
+  line-height: 1.2em;
+}
+
+/* line 201, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked > li a {
+  border: none;
+}
+
+/* line 206, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked.nocenter > li .bubble {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 210, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked.nocenter > li .bubble:before,
+.progress-indicator.stacked.nocenter > li .bubble:after {
+  left: 20px;
+}
+
+/* line 214, F:/Realtair.UI/scss/modules/_sections.scss */
+.progress-indicator.stacked.nocenter .stacked-text {
+  width: auto !important;
+  display: block;
+  margin-left: 50px !important;
+}
+
+@media handheld, screen and (max-width: 400px) {
+  /* line 223, F:/Realtair.UI/scss/modules/_sections.scss */
+  .progress-indicator {
+    font-size: 60%;
+  }
+}
+
+/*background-colors*/
+/* line 2, F:/Realtair.UI/scss/modules/_components.scss */
+.bg-grey {
+  background-color: #F9F9F9;
+}
+
+/* line 3, F:/Realtair.UI/scss/modules/_components.scss */
+.bg-grey-lt {
+  background-color: #f4f4f4;
+}
+
+/* line 4, F:/Realtair.UI/scss/modules/_components.scss */
+.bg-green-lt {
+  background-color: #C8E6C9;
+}
+
+/*paddings*/
+/* line 7, F:/Realtair.UI/scss/modules/_components.scss */
+.no-pad {
+  padding: 0;
+}
+
+/* line 10, F:/Realtair.UI/scss/modules/_components.scss */
+.no-pad-lft {
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+/* line 14, F:/Realtair.UI/scss/modules/_components.scss */
+.no-pad-rt {
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+/* line 19, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-sm {
+  padding: 10px;
+}
+
+/* line 23, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-md {
+  padding: 25px;
+}
+
+/* line 30, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-tb-xs {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* line 33, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-tb-sm {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 39, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-sides-sm {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* line 43, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-sides-md {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+/* line 47, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-sides-lg {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+/* line 54, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-lft-sm {
+  padding-left: 15px;
+}
+
+/* line 57, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-lft-md {
+  padding-left: 30px;
+}
+
+/* line 60, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-lft-lg {
+  padding-left: 50px;
+}
+
+/* line 65, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-sec-hdr {
+  /*padding for section header to align with the panels*/
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+/* line 69, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-kanban-hdr {
+  /*padding for section header of kanban*/
+  padding-top: 10px;
+  padding-right: 28px;
+  padding-left: 22px;
+}
+
+/* line 73, F:/Realtair.UI/scss/modules/_components.scss */
+.padding-utc {
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+}
+
+/* line 81, F:/Realtair.UI/scss/modules/_components.scss */
+.pad-kanban-status {
+  padding-right: 40px;
+  padding-left: 35px;
+}
+
+/*margins*/
+/* line 89, F:/Realtair.UI/scss/modules/_components.scss */
+.no-margin {
+  margin: 0;
+}
+
+/* line 90, F:/Realtair.UI/scss/modules/_components.scss */
+.no-margin-t {
+  margin-top: 0 !important;
+}
+
+/* line 91, F:/Realtair.UI/scss/modules/_components.scss */
+.no-margin-r {
+  margin-right: 0 !important;
+}
+
+/* line 92, F:/Realtair.UI/scss/modules/_components.scss */
+.no-margin-b {
+  margin-bottom: 0 !important;
+}
+
+/* line 93, F:/Realtair.UI/scss/modules/_components.scss */
+.no-margin-tb {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 97, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-t-sm {
+  margin-top: 10px;
+}
+
+/* line 101, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-t-md {
+  margin-top: 25px;
+}
+
+/* line 105, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-t-lg {
+  margin-top: 65px;
+}
+
+/* line 111, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-tb-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 115, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-tb-md {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* line 121, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-sides-sm {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* line 126, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-lft-sm {
+  margin-left: 10px;
+}
+
+/* line 130, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-tc {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+  /*special margin for task content*/
+}
+
+/* line 134, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-utc {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  /*special margin for unassigned tasks content*/
+}
+
+/* line 139, F:/Realtair.UI/scss/modules/_components.scss */
+.margin-t-kanban {
+  margin-top: 150px;
+  margin-left: 15px;
+}
+
+/* line 143, F:/Realtair.UI/scss/modules/_components.scss */
+.mytasks-hdr {
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+/* line 145, F:/Realtair.UI/scss/modules/_components.scss */
+.mytasks-hdr h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* line 151, F:/Realtair.UI/scss/modules/_components.scss */
+p.green-tooltip:hover {
+  cursor: help;
+}
+
+/* line 152, F:/Realtair.UI/scss/modules/_components.scss */
+.green-tooltip + .tooltip > .tooltip-inner {
+  background-color: #66BB6A;
+  color: #ffffff;
+}
+
+/* line 153, F:/Realtair.UI/scss/modules/_components.scss */
+.green-tooltip + .tooltip > .tooltip-arrow {
+  border-top-color: #66BB6A;
+}
+
+/* line 157, F:/Realtair.UI/scss/modules/_components.scss */
+.circle {
+  border-radius: 0.9em;
+  -moz-border-radius: 0.9em;
+  -webkit-border-radius: 0.9em;
+  color: #455A64;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.1em;
+  margin-right: 2px;
+  text-align: center;
+  width: 1.4em;
+  padding-bottom: 4px;
+  border: 2px solid #455A64;
+}
+
+/* line 170, F:/Realtair.UI/scss/modules/_components.scss */
+.circle-grey {
+  background-color: #F9F9F9;
+}
+
+/*.form-control.input, select.form-control, .btn-trans-dropdown, input.form-control {
+  background: transparent;
+  border: 0;
+  //@include border-custom('bottom', 2px, solid, $rt-black);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+
+}
+
+
+.form-control:focus {
+  outline: none;
+ border: 0;
+
+  // @include border-custom('bottom', 2px, solid, $rt-black);
+ -webkit-box-shadow: none !important;
+ -moz-box-shadow: none !important;
+ box-shadow: none !important;
+
+}*/
+/* line 25, F:/Realtair.UI/scss/modules/_forms.scss */
+form-control.input, .trans-search, .btn-trans-dropdown, .select2-container--default .select2-selection--single, .select2-container--default .select2-search--dropdown .select2-search__field, .select2-container--default .select2-selection--multiple, select.form-control, input.form-control, input.form-control.lite, select.form-control.lite, textarea.form-control.lite {
+  outline: none;
+  background: transparent no-repeat;
+  border: 0;
+  /* 2 imgs : 1px gray line (normal state) AND 2px black line (focus state) */
+  background-image: linear-gradient(to bottom, #455A64, #455A64), linear-gradient(to bottom, #CECECE, #CECECE);
+  /* sizes for the 2 images (default state) */
+  background-size: 0 2px, 100% 1px;
+  /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
+  background-position: 50% 100%, 50% 100%;
+  /* animation solely on background-size */
+  transition: background-size 500ms cubic-bezier(0.64, 0.09, 0.08, 1);
+  border-radius: 0;
+  padding: 0;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* line 45, F:/Realtair.UI/scss/modules/_forms.scss */
+.trans-search, .btn-trans-dropdown {
+  background-size: 0 2px, 100% 2px !important;
+}
+
+/* line 50, F:/Realtair.UI/scss/modules/_forms.scss */
+.btn-trans-dropdown {
+  min-width: 160px;
+  margin-left: 24px;
+  padding-top: 6px;
+  padding-right: 0;
+  padding-bottom: 6px;
+  padding-left: 0;
+  color: #999999;
+}
+
+/* line 59, F:/Realtair.UI/scss/modules/_forms.scss */
+.form-control.lite:focus, textarea {
+  /* sizes for the 2 images (focus state) */
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+}
+
+/* line 64, F:/Realtair.UI/scss/modules/_forms.scss */
+.form-control.lite:focus:invalid, textarea:invalid {
+  background-image: linear-gradient(to bottom, #f44336, #f44336), linear-gradient(to bottom, #CECECE, #CECECE);
+  transition: background-size 100ms cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+/* line 73, F:/Realtair.UI/scss/modules/_forms.scss */
+.navbar-right .dropdown-menu {
+  margin-top: 40px;
+}
+
+/* line 78, F:/Realtair.UI/scss/modules/_forms.scss */
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+}
+
+/* line 82, F:/Realtair.UI/scss/modules/_forms.scss */
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+/* line 89, F:/Realtair.UI/scss/modules/_forms.scss */
+input:focus, a:focus, select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+/*list styles*/
+/* line 99, F:/Realtair.UI/scss/modules/_forms.scss */
+li .list-group-item {
+  padding: 0;
+  border: 0;
+}
+
+/* line 102, F:/Realtair.UI/scss/modules/_forms.scss */
+li .list-group-item a {
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+}
+
+/* line 106, F:/Realtair.UI/scss/modules/_forms.scss */
+li .list-group-item--mobile {
+  padding: 10px 15px;
+  border: 1px solid #dddddd;
+}
+
+/* line 109, F:/Realtair.UI/scss/modules/_forms.scss */
+li .list-group-item--mobile a {
+  padding: 0;
+}
+
+/*filter switches (checkboxes)*/
+/* line 117, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch {
+  position: absolute;
+  right: 0;
+  z-index: 9;
+  top: 4px;
+}
+
+/* line 121, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > input[type="checkbox"] {
+  display: none;
+}
+
+/* line 125, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > label {
+  cursor: pointer;
+  height: 0px;
+  position: relative;
+  width: 36px;
+}
+
+/* line 132, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > label::before {
+  background: black;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  content: '';
+  height: 12px;
+  margin-top: -6px;
+  position: absolute;
+  opacity: 0.3;
+  transition: all 0.4s ease-in-out;
+  width: 24px;
+}
+
+/* line 144, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > label::after {
+  background: white;
+  border-radius: 18px;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 14px;
+  left: -4px;
+  margin-top: -3px;
+  position: absolute;
+  top: -4px;
+  transition: all 0.3s ease-in-out;
+  width: 14px;
+}
+
+/* line 157, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > input[type="checkbox"]:checked + label::before {
+  background: inherit;
+  opacity: 0.5;
+}
+
+/* line 161, F:/Realtair.UI/scss/modules/_forms.scss */
+.switch > input[type="checkbox"]:checked + label::after {
+  background: inherit;
+  left: 16px;
+}
+
+/* line 167, F:/Realtair.UI/scss/modules/_forms.scss */
+.filter-search-input {
+  padding: 3px;
+}
+
+/* line 172, F:/Realtair.UI/scss/modules/_forms.scss */
+.filter-search-input input {
+  border: 0;
+  box-shadow: none;
+}
+
+/*.filter-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    z-index: 99;
+}*/
+/* line 187, F:/Realtair.UI/scss/modules/_forms.scss */
+.filter-search-input button:hover {
+  border: 0;
+  box-shadow: none;
+}
+
+/* line 192, F:/Realtair.UI/scss/modules/_forms.scss */
+.filter-search-input .glyphicon-search {
+  font-size: 23px;
+}
+
+/* line 196, F:/Realtair.UI/scss/modules/_forms.scss */
+label {
+  font-size: 1.2em;
+}
+
+/* line 201, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transform: translateZ(0);
+  /*input[type=checkbox]:not(:checked) + .checkbox-material:before {
+    animation: rippleOff $checkbox-animation-ripple forwards ease-out;
+  }
+  input[type=checkbox]:checked + .checkbox-material:before {
+    animation: rippleOn $checkbox-animation-ripple forwards ease-out;
+  }
+
+  // Ripple effect on click
+  input[type=checkbox]:not(:checked) + .checkbox-material .check:after {
+    animation: rippleOff $checkbox-animation-ripple forwards ease-out;
+  }
+  input[type=checkbox]:checked + .checkbox-material .check:after {
+    animation: rippleOn $checkbox-animation-ripple forwards ease-out;
+  }*/
+}
+
+/* line 205, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox label {
+  cursor: pointer;
+  padding-left: 0;
+}
+
+/* line 211, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: 0;
+  pointer-events: none;
+}
+
+/* line 223, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox .checkbox-material {
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+}
+
+/* line 227, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox .checkbox-material:before {
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 4px;
+  width: 4px;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: 0;
+  margin: 0;
+}
+
+/* line 242, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox .checkbox-material .check {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* line 252, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox .checkbox-material .check:before {
+  position: absolute;
+  content: "";
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -6px;
+  margin-left: 4px;
+  width: 0;
+  height: 0;
+  box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+  animation: checkbox-off 0.3s forwards ease-out;
+}
+
+/* line 273, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
+  opacity: 0.2;
+}
+
+/* line 277, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
+  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  animation: checkbox-on 0.3s forwards ease-out;
+}
+
+/* line 304, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox input[type=checkbox][disabled]:not(:checked) ~ .checkbox-material .check:before,
+.checkbox input[type=checkbox][disabled] + .circle {
+  opacity: 0.5;
+}
+
+/* line 308, F:/Realtair.UI/scss/modules/_forms.scss */
+.checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
+  background-color: #F9F9F9;
+  transform: rotate(-45deg);
+}
+
+@keyframes checkbox-on {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@keyframes checkbox-off {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+
+/*@keyframes rippleOn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(13,13);
+  }
+}
+@keyframes rippleOff {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(13,13);
+  }
+}*/
+/*radio buttons*/
+/* line 434, F:/Realtair.UI/scss/modules/_forms.scss */
+.container-radiobtn ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 441, F:/Realtair.UI/scss/modules/_forms.scss */
+.container-radiobtn ul li {
+  color: #999999;
+  display: block;
+  position: relative;
+  float: left;
+  height: 30px;
+}
+
+/* line 450, F:/Realtair.UI/scss/modules/_forms.scss */
+ul li input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+
+/* line 455, F:/Realtair.UI/scss/modules/_forms.scss */
+.container-radiobtn ul li label {
+  display: block;
+  position: relative;
+  font-weight: 300;
+  padding-left: 20px;
+  margin-right: 20px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  color: #999999;
+}
+
+/* line 468, F:/Realtair.UI/scss/modules/_forms.scss */
+.container-radiobtn ul li:last-child label {
+  margin-right: 4px;
+}
+
+/* line 472, F:/Realtair.UI/scss/modules/_forms.scss */
+ul li .radiobtn {
+  display: block;
+  position: absolute;
+  border: 2px solid #999999;
+  border-radius: 100%;
+  height: 16px;
+  width: 16px;
+  top: 2px;
+  z-index: 5;
+  transition: border .25s linear;
+  -webkit-transition: border .25s linear;
+}
+
+/* line 485, F:/Realtair.UI/scss/modules/_forms.scss */
+.container-radiobtn ul li:hover label {
+  color: #455A64;
+}
+
+/* line 491, F:/Realtair.UI/scss/modules/_forms.scss */
+ul li:hover .radiobtn {
+  border: 2px solid #455A64;
+  cursor: pointer;
+}
+
+/* line 496, F:/Realtair.UI/scss/modules/_forms.scss */
+ul li .radiobtn::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+  height: 8px;
+  width: 8px;
+  top: 2px;
+  left: 2px;
+  margin: auto;
+  transition: background 500ms linear;
+  -webkit-transition: background 500ms linear;
+}
+
+/* line 510, F:/Realtair.UI/scss/modules/_forms.scss */
+input[type=radio]:checked ~ .radiobtn {
+  border: 2px solid #455A64;
+}
+
+/* line 514, F:/Realtair.UI/scss/modules/_forms.scss */
+input[type=radio]:checked ~ .radiobtn::before {
+  background: #455A64;
+}
+
+/* line 518, F:/Realtair.UI/scss/modules/_forms.scss */
+input[type=radio]:checked ~ label {
+  color: #455A64;
+}
+
+/* line 522, F:/Realtair.UI/scss/modules/_forms.scss */
+.form-list > li {
+  border-bottom: 1px solid #CECECE;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  /*&:last-child {
+    @include border-custom (bottom, 2px, solid, $rt-black);
+  }*/
+}
+
+/* line 528, F:/Realtair.UI/scss/modules/_forms.scss */
+.form-list > li h4 {
+  margin: 0;
+}
+
+/* line 533, F:/Realtair.UI/scss/modules/_forms.scss */
+.bootstrap-timepicker-widget input {
+  border-radius: 3px;
+  border: 2px;
+}
+
+/* line 538, F:/Realtair.UI/scss/modules/_forms.scss */
+.dropzone {
+  border: 1px solid #CECECE !important;
+}
+
+/* line 542, F:/Realtair.UI/scss/modules/_forms.scss */
+.dropzone .dz-preview.dz-file-preview .dz-image {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background: #F9F9F9;
+  border: 2px solid #CECECE;
+  -webkit-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  -moz-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+}
+
+/* line 549, F:/Realtair.UI/scss/modules/_forms.scss */
+.dropzone .dz-preview .dz-image {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  -moz-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+}
+
+/* line 553, F:/Realtair.UI/scss/modules/_forms.scss */
+.dropzone .dz-preview .dz-remove {
+  margin-top: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* line 557, F:/Realtair.UI/scss/modules/_forms.scss */
+.dropzone .dz-preview .dz-remove:hover {
+  text-decoration: none;
+}
+
+/* line 563, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: 0;
+  border-radius: 0;
+}
+
+/* line 571, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-dropdown {
+  border-radius: 0;
+}
+
+/* line 575, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-container .select2-selection--single .select2-selection__rendered, .select2-container--default .select2-search--dropdown .select2-search__field, .select2-results li {
+  font-size: 1.3em;
+}
+
+/* line 579, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #455A64;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.3em;
+}
+
+/* line 584, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #ffffff;
+}
+
+/* line 589, F:/Realtair.UI/scss/modules/_forms.scss */
+.select2-container--open .select2-dropdown--above {
+  border-bottom: 1px solid #CECECE;
+}
+
+/* line 594, F:/Realtair.UI/scss/modules/_forms.scss */
+.btn-group > .btn {
+  padding-left: 8px;
+}
+
+/* line 598, F:/Realtair.UI/scss/modules/_forms.scss */
+.panel-default > .panel-heading {
+  -webkit-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  background-clip: padding-box;
+}
+
+/* line 602, F:/Realtair.UI/scss/modules/_forms.scss */
+.note-editor.note-frame {
+  border: 1px solid #CECECE;
+}
+
+/* line 606, F:/Realtair.UI/scss/modules/_forms.scss */
+.note-editor.note-frame.panel {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* line 615, F:/Realtair.UI/scss/modules/_forms.scss */
+.note-editor.note-frame .note-statusbar {
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-clip: padding-box;
+}
+
+/* Layouts - Page layout styles */
+/* line 1, F:/Realtair.UI/scss/layouts/_header.scss */
+.header-kanban {
+  height: 150px;
+  position: fixed;
+  top: 0;
+  width: 88%;
+  z-index: 9999;
+  background-color: #ffffff;
+  margin-left: -20px;
+  -webkit-transition: top 500ms ease-in-out;
+  -moz-transition: top 500ms ease-in-out;
+  -ms-transition: top 500ms ease-in-out;
+  -o-transition: top 500ms ease-in-out;
+  transition: top 500ms ease-in-out;
+}
+
+/* line 12, F:/Realtair.UI/scss/layouts/_header.scss */
+.header-disappear {
+  top: -85px;
+  -webkit-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  -moz-box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+  box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
+}
+
+/* line 1, F:/Realtair.UI/scss/layouts/_nav.scss */
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+/* line 7, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav {
+  background-color: #F9F9F9;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 250px;
+  padding-right: 0;
+  padding-left: 0;
+  height: 100vh;
+  z-index: 999;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+/* line 11, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav ul {
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+}
+
+/* line 17, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a {
+  font-size: 1.25em;
+  line-height: 2.5em;
+  color: #999999;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+
+/* line 20, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a.active, .sidebar-nav li a.btn-trans-grey {
+  color: #455A64;
+}
+
+/* line 23, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a.active span, .sidebar-nav li a.btn-trans-grey span {
+  color: #66BB6A;
+}
+
+/* line 28, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a.btn-trans-grey {
+  line-height: 1.5em;
+}
+
+/* line 32, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a:hover {
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+  color: #455A64;
+}
+
+/* line 36, F:/Realtair.UI/scss/layouts/_nav.scss */
+.sidebar-nav li a:hover span {
+  color: #66BB6A;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+
+/* line 48, F:/Realtair.UI/scss/layouts/_nav.scss */
+.navbar-right {
+  margin-top: 15px;
+}
+
+/* line 55, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container {
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  height: 25px;
+  width: 17px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: opacity .25s ease;
+}
+
+/* line 65, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container:hover {
+  opacity: 1;
+}
+
+/* line 70, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container.active .top {
+  transform: translateY(5px) translateX(0) rotate(45deg);
+  background: #455A64;
+}
+
+/* line 74, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container.active .middle {
+  opacity: 0;
+  background: transparent;
+}
+
+/* line 79, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container.active .bottom {
+  transform: translateY(-5px) translateX(0) rotate(-45deg);
+  background: #455A64;
+}
+
+/* line 85, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container span {
+  background: #455A64;
+  border: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .35s ease;
+  cursor: pointer;
+}
+
+/* line 96, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container span:nth-of-type(2) {
+  top: 5px;
+}
+
+/* line 100, F:/Realtair.UI/scss/layouts/_nav.scss */
+.button_container span:nth-of-type(3) {
+  top: 10px;
+}
+
+/* line 106, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay {
+  position: fixed;
+  background: #F9F9F9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .20s, visibility .20s, height .20s;
+  overflow: hidden;
+}
+
+/* line 120, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+/* line 126, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay.open li {
+  animation: fadeInTop .20s ease forwards;
+  animation-delay: .20s;
+}
+
+/* line 131, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay nav {
+  position: relative;
+  height: 90%;
+  top: 45%;
+  transform: translateY(-50%);
+  font-weight: 400;
+  text-align: center;
+  overflow-y: auto;
+}
+
+/* line 143, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+
+/* line 152, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay ul li {
+  display: block;
+  height: calc(100% / 25);
+  min-height: 40px;
+  position: relative;
+  opacity: 0;
+}
+
+/* line 160, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* line 166, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+
+/* line 172, F:/Realtair.UI/scss/layouts/_nav.scss */
+.overlay ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  transition: .35s;
+}
+
+/* line 187, F:/Realtair.UI/scss/layouts/_nav.scss */
+.close {
+  color: #455A64;
+  opacity: 1;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 30px);
+  }
+}
+
+@media (max-width: 1800px) and (min-width: 1440px) {
+  /* line 4, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn {
+    padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1441px) {
+  /* line 10, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .mytasks-hdr {
+    margin-right: 80px;
+  }
+  /* line 13, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .navbar-right {
+    margin-right: 40px !important;
+  }
+}
+
+@media (max-width: 1599px) and (min-width: 1201px) {
+  /* line 19, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .sidebar-nav {
+    width: 200px;
+  }
+  /* line 22, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .content {
+    width: calc(100% - 200px);
+  }
+  /* line 27, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h1 {
+    font-size: 2.5em;
+  }
+  /* line 30, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2 {
+    font-size: 1.75em;
+  }
+  /* line 32, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2.mob-sec-hdr {
+    margin-top: 4px;
+    margin-left: 30px;
+  }
+  /* line 36, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h3 {
+    font-size: 1.25em;
+  }
+  /* line 41, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn-task {
+    font-size: .8em;
+    text-align: center;
+  }
+  /* line 46, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate p {
+    width: 150px;
+  }
+  /* line 49, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate div:nth-last-child(2) p {
+    width: 70px;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+  /* line 56, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .mytasks-hdr {
+    margin-right: 57px;
+    margin-left: 45px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+  /* line 62, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate p {
+    width: 120px;
+  }
+  /* line 63, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn-task {
+    font-size: .8em;
+    text-align: center;
+  }
+  /* line 64, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .no-pad-lft {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* line 70, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h1 {
+    font-size: 2.5em;
+  }
+  /* line 71, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2 {
+    font-size: 1.75em;
+  }
+  /* line 72, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2.mob-sec-hdr {
+    margin-top: 4px;
+    margin-left: 30px;
+  }
+  /* line 74, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h3 {
+    font-size: 1.25em;
+  }
+  /* line 76, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .sidebar-nav {
+    margin-left: -250px;
+  }
+  /* line 77, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .content {
+    width: 100%;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    top: 0;
+  }
+  /* line 78, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .content-kanban {
+    position: fixed;
+    height: 100%;
+  }
+  /* line 80, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .pad-tc-mob {
+    padding-top: 40px;
+    padding-right: 40px;
+  }
+  /* line 81, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .pad-form-mob {
+    padding-top: 40px;
+  }
+  /* line 82, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .header-mob {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 999;
+  }
+  /* line 87, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .mob-btn-hdr {
+    margin-top: 4px;
+  }
+  /* line 88, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn-trans-grey {
+    margin-top: 15px;
+  }
+  /* line 89, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate p {
+    width: 300px;
+  }
+  /* line 90, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks p {
+    line-height: 1.5em;
+  }
+  /* line 91, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn-mob-task {
+    right: 2%;
+  }
+  /* line 92, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .input-group {
+    width: 100% !important;
+  }
+  /* line 94, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .input-group {
+    width: 100% !important;
+  }
+  /* line 99, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel {
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+    -moz-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+    box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+  }
+  /* line 100, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel > .panel-body, .tasks > .panel > .panel-body--kanban {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+  }
+  /* line 101, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel > .panel-body > div, .tasks > .panel > .panel-body--kanban > div {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* line 108, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .margin-tc {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    /*special margin for task content*/
+  }
+  /* line 115, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .kanban-list-mob {
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+  /* line 117, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .header-disappear {
+    top: 0;
+  }
+  /* line 118, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .margin-t-kanban {
+    margin-top: 50px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+  }
+  /* line 120, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .container-radiobtn {
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  /* line 122, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .container-radiobtn > .pull-right {
+    float: none !important;
+  }
+  /* line 129, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .my-task:hover {
+    background-color: #F9F9F9;
+    -webkit-transition: 500ms ease-in-out;
+    -moz-transition: 500ms ease-in-out;
+    -ms-transition: 500ms ease-in-out;
+    -o-transition: 500ms ease-in-out;
+    transition: 500ms ease-in-out;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  /* line 141, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .kanban-list-mob {
+    height: 85vh;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  /* line 151, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .kanban-list-mob {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  /* line 159, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h1 {
+    font-size: 2.5em;
+  }
+  /* line 160, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2 {
+    font-size: 1.5em;
+  }
+  /* line 161, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2.mob-sec-hdr {
+    margin-top: 6px;
+    margin-left: 25px;
+  }
+  /* line 163, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h3 {
+    font-size: 1.25em;
+  }
+  /* line 165, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .pad-tc-mob {
+    padding-top: 40px;
+    padding-right: 30px;
+  }
+  /* line 166, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .mob-btn-hdr {
+    margin-top: 8px;
+  }
+  /* line 169, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .header-mob {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+  /* line 175, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .priority-blue {
+    border-left: 8px solid #80d3f9;
+  }
+  /* line 179, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .priority-red {
+    border-left: 8px solid #f6a8a6;
+  }
+  /* line 182, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .priority-yellow {
+    border-left: 8px solid #fff498;
+  }
+  /* line 186, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .priority-green {
+    border-left: 8px solid #b1dcb3;
+  }
+  /* line 189, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .priority-th {
+    border-left: 8px solid transparent;
+    /*hack for margin of 1st column of table header*/
+  }
+  /* line 195, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel {
+    margin-right: -5px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+    -moz-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+    box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
+  }
+  /* line 196, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel > .panel-body, .tasks > .panel > .panel-body--kanban {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+  }
+  /* line 197, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks > .panel > .panel-body > div, .tasks > .panel > .panel-body--kanban > div {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* line 206, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate-kanban h4 {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 222, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .kanban-list-mob {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 480px) {
+  /* line 231, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2 {
+    font-size: 1.5em;
+  }
+  /* line 232, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2.mob-sec-hdr {
+    margin-top: 9px;
+    margin-left: 20px;
+  }
+  /* line 235, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .truncate p {
+    width: 300px;
+  }
+  /* line 236, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .tasks p {
+    line-height: 1.5em;
+  }
+  /* line 237, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .btn-mob-task {
+    right: 3%;
+    top: 40%;
+  }
+  /* line 238, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .mob-btn-hdr {
+    margin-top: 7px;
+  }
+  /* line 239, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .header-mob {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+  }
+  /* line 243, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .flex-container > * {
+    min-width: 320px;
+  }
+  /* line 252, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .property-sec-hdr {
+    padding-top: 5px;
+    z-index: 9999;
+  }
+  /* line 253, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .property-sec-hdr li a {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 350px) {
+  /* line 261, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .header-mob {
+    padding-right: 12px;
+  }
+  /* line 262, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .pad-tc-mob {
+    padding-top: 40px;
+    padding-right: 40px;
+  }
+  /* line 264, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2 {
+    font-size: 1.5em;
+  }
+  /* line 265, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  body h2.mob-sec-hdr {
+    margin-top: 6px;
+    margin-left: 20px;
+  }
+  /* line 270, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .overlay nav {
+    height: 100%;
+  }
+  /* line 272, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .overlay ul li {
+    height: calc(100% / 30);
+    min-height: 30px;
+  }
+  /* line 279, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .flex-container > * {
+    min-width: 260px;
+  }
+  /* line 283, F:/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .kanban-list-mob {
+    padding-bottom: 20px;
+  }
+}
+
+/* React Components and Dependencies */
+/* line 1, F:/Realtair.UI/scss/react/_common.scss */
+.outline-none:focus {
+  outline: none;
+}
+
+/* line 5, F:/Realtair.UI/scss/react/_common.scss */
+.input-group--filters {
+  padding: 0 10px;
+}
+
+/* line 7, F:/Realtair.UI/scss/react/_common.scss */
+.input-group--filters-mobile {
+  padding: 0;
+}
+
+/* line 2, F:/Realtair.UI/scss/react/components/_header.scss */
+.rt-header-desktop--kanban {
+  padding: 10px 55px 0px 25px;
+}
+
+/* line 1, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu {
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 16px;
+  color: #373a3c;
+  text-align: left;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: .25rem;
+  outline: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease !important;
+}
+
+/* line 18, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item {
+  padding: 3px 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #373a3c;
+  text-align: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 30, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item.react-contextmenu-item--active,
+.react-contextmenu-item.react-contextmenu-item--selected {
+  color: #fff;
+  background-color: #20a0ff;
+  border-color: #20a0ff;
+  text-decoration: none;
+}
+
+/* line 1, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list {
+  padding: 2px;
+  overflow: hidden;
+}
+
+/* line 6, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list-column {
+  padding: 0;
+}
+
+/* line 10, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list-item {
+  margin: 0px 0px 20px 0px;
+  flex-basis: 62px;
+}
+
+/* line 13, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list-item > .outline-none {
+  margin-bottom: 20px;
+}
+
+/* line 16, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* line 19, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.kanban-task-list-item p {
+  margin: 0;
+}
+
+/* line 24, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.accordion-kanban, .accordion-my-tasks {
+  margin-left: 0;
+}
+
+/* line 28, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.margin-kanban-status {
+  margin: 0;
+  padding: 15px 0;
+}
+
+/* line 33, F:/Realtair.UI/scss/react/views/_kanban.scss */
+.panel-body--kanban {
+  padding-right: 0;
+}
+
+/* From Realtair Static Content */
+
+/*# sourceMappingURL=../../Realtair.Assist/Realtair.Assist/Realtair.Assist.Web/Content/css/main.map */
