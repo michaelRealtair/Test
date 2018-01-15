@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
   Realtair My Tasks Sass Theme
   Author: Ton Gregorio
@@ -2824,6 +2825,12 @@ input[type=radio]:checked ~ label {
 }
 
 /* line 18, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu.react-contextmenu--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* line 23, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
 .react-contextmenu-item {
   padding: 3px 20px;
   font-weight: 400;
@@ -2836,13 +2843,54 @@ input[type=radio]:checked ~ label {
   cursor: pointer;
 }
 
-/* line 30, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+/* line 35, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
 .react-contextmenu-item.react-contextmenu-item--active,
 .react-contextmenu-item.react-contextmenu-item--selected {
   color: #fff;
   background-color: #20a0ff;
   border-color: #20a0ff;
   text-decoration: none;
+}
+
+/* line 43, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item.react-contextmenu-item--disabled,
+.react-contextmenu-item.react-contextmenu-item--disabled:hover {
+  color: #878a8c;
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* line 50, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item--divider {
+  margin-bottom: 3px;
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: inherit;
+}
+
+/* line 56, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item--divider:hover {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* line 61, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item.react-contextmenu-submenu {
+  padding: 0;
+}
+
+/* line 68, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.react-contextmenu-item.react-contextmenu-submenu > .react-contextmenu-item:after {
+  content: "▶";
+  display: inline-block;
+  position: absolute;
+  right: 7px;
+}
+
+/* line 75, F:/Realtair.UI/scss/react/modules/_react-contextmenu.scss */
+.example-multiple-targets::after {
+  content: attr(data-count);
+  display: block;
 }
 
 /* line 1, F:/Realtair.UI/scss/react/views/_kanban.scss */
@@ -2895,4 +2943,4 @@ input[type=radio]:checked ~ label {
 
 /* From Realtair Static Content */
 
-/*# sourceMappingURL=../../Realtair.Assist/Realtair.Assist/Realtair.Assist.Web/Content/css/main.map */
+/*# sourceMappingURL=../../Realtair.Framework/Realtair.Framework.Core.Web/Content/new/css/main.map */
