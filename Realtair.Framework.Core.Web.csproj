@@ -543,6 +543,9 @@
     <Content Include="Content\plugins\bower_components\jszip\lib\zipEntry.js" />
     <Content Include="Content\plugins\bower_components\jszip\lib\zipObject.js" />
     <Content Include="Content\plugins\bower_components\jszip\vendor\FileSaver.js" />
+    <Content Include="Content\plugins\bower_components\mobile-detect\mobile-detect-modernizr.js" />
+    <Content Include="Content\plugins\bower_components\mobile-detect\mobile-detect.js" />
+    <Content Include="Content\plugins\bower_components\mobile-detect\mobile-detect.min.js" />
     <Content Include="Content\plugins\bower_components\pdfmake\build\pdfmake.js" />
     <Content Include="Content\plugins\bower_components\pdfmake\build\pdfmake.min.js" />
     <Content Include="Content\plugins\bower_components\pdfmake\build\vfs_fonts.js" />
@@ -2586,6 +2589,11 @@
     <Content Include="Content\plugins\images\users\sonu.jpg" />
     <Content Include="Content\plugins\images\users\varun.jpg" />
     <Content Include="Content\plugins\images\weather-bg.jpg" />
+    <None Include="Content\plugins\bower_components\mobile-detect\.bower.json" />
+    <None Include="Content\plugins\bower_components\mobile-detect\bower.json" />
+    <None Include="Content\plugins\bower_components\mobile-detect\CHANGELOG" />
+    <None Include="Content\plugins\bower_components\mobile-detect\LICENSE" />
+    <None Include="Content\plugins\bower_components\mobile-detect\README.md" />
     <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
@@ -3747,6 +3755,9 @@
     <Folder Include="Content\plugins\bower_components\etc\" />
     <Folder Include="Content\plugins\bower_components\pdfmake\libs\FileSaver.js\" />
     <Folder Include="Content\summernote\font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\plugins\bower_components\mobile-detect\mobile-detect.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
