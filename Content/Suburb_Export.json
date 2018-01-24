@@ -1,0 +1,4068 @@
+{
+  suburb: {
+    id: "NSW2959",
+    suburbName: "NEUTRAL BAY",
+    state: "NSW",
+    _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+  },
+  statistics: {
+    propertyType: {
+      house: {
+        statisticsSummary: {
+          medianSalePrice: 2201000,
+          medianRentalPrice: 1275,
+          suburbGrowth: 0.05462386200287494,
+          saleCount: 39,
+          rentalCount: 38,
+          suburbRentalYield: 0.03012267151294866
+        },
+        sales: {
+          timeseries: {
+            rolling12Month: {
+              period: {
+                year: 2015,
+                month: 6,
+                interval: 12,
+                count: 1
+              },
+              values: [
+                {
+                  count: 33,
+                  median: 2087000,
+                  high: 9275000,
+                  low: 525000,
+                  mean: 2560181.8181818184,
+                  total: 84486000,
+                  firstQuartile: 1700000,
+                  thirdQuartile: 2867000
+                },
+                {
+                  count: 39,
+                  median: 2201000,
+                  high: 9300000,
+                  low: 300000,
+                  mean: 2691105.128205128,
+                  total: 104953100,
+                  firstQuartile: 1977500,
+                  thirdQuartile: 2912500
+                }
+              ],
+              calculated: "2017-08-22T14:05:03.637+0000"
+            },
+            calendar12Month: {
+              period: {
+                year: 1999,
+                interval: 12,
+                count: 19
+              },
+              values: [
+                {
+                  count: 385,
+                  median: 345000,
+                  high: 2480000,
+                  low: 30000,
+                  mean: 415612.97402597405,
+                  total: 160010995,
+                  firstQuartile: 270000,
+                  thirdQuartile: 490000
+                },
+                {
+                  count: 322,
+                  median: 391000,
+                  high: 2550000,
+                  low: 32080,
+                  mean: 468747.85093167704,
+                  total: 150936808,
+                  firstQuartile: 285250,
+                  thirdQuartile: 535750,
+                  medianGrowth: 0.13333333333333333
+                },
+                {
+                  count: 78,
+                  median: 856000,
+                  high: 2800000,
+                  low: 270000,
+                  mean: 939882.0512820513,
+                  total: 73310800,
+                  firstQuartile: 628500,
+                  thirdQuartile: 1104500,
+                  medianGrowth: 1.1892583120204603
+                },
+                {
+                  count: 71,
+                  median: 835000,
+                  high: 4740000,
+                  low: 80000,
+                  mean: 992815.4929577465,
+                  total: 70489900,
+                  firstQuartile: 670000,
+                  thirdQuartile: 1120500,
+                  medianGrowth: -0.02453271028037383
+                },
+                {
+                  count: 61,
+                  median: 970000,
+                  high: 4250000,
+                  low: 240000,
+                  mean: 1198231.4590163934,
+                  total: 73092119,
+                  firstQuartile: 790000,
+                  thirdQuartile: 1420000,
+                  medianGrowth: 0.16167664670658682
+                },
+                {
+                  count: 44,
+                  median: 1106250,
+                  high: 2550000,
+                  low: 160000,
+                  mean: 1141280.2954545454,
+                  total: 50216333,
+                  firstQuartile: 667500,
+                  thirdQuartile: 1552500,
+                  medianGrowth: 0.1404639175257732
+                },
+                {
+                  count: 51,
+                  median: 1030000,
+                  high: 4900000,
+                  low: 150000,
+                  mean: 1243936.2745098039,
+                  total: 63440750,
+                  firstQuartile: 710500,
+                  thirdQuartile: 1283500,
+                  medianGrowth: -0.06892655367231638
+                },
+                {
+                  count: 55,
+                  median: 1010000,
+                  high: 3690000,
+                  low: 250000,
+                  mean: 1219445.4545454546,
+                  total: 67069500,
+                  firstQuartile: 830000,
+                  thirdQuartile: 1375000,
+                  medianGrowth: -0.019417475728155338
+                },
+                {
+                  count: 73,
+                  median: 968000,
+                  high: 4250000,
+                  low: 294000,
+                  mean: 1199719.1780821919,
+                  total: 87579500,
+                  firstQuartile: 801000,
+                  thirdQuartile: 1500000,
+                  medianGrowth: -0.041584158415841586
+                },
+                {
+                  count: 48,
+                  median: 1127500,
+                  high: 3300000,
+                  low: 660000,
+                  mean: 1326139.5833333333,
+                  total: 63654700,
+                  firstQuartile: 938750,
+                  thirdQuartile: 1545000,
+                  medianGrowth: 0.16477272727272727
+                },
+                {
+                  count: 54,
+                  median: 1055000,
+                  high: 6215000,
+                  low: 237500,
+                  mean: 1217738.888888889,
+                  total: 65757900,
+                  firstQuartile: 755000,
+                  thirdQuartile: 1451250,
+                  medianGrowth: -0.06430155210643015
+                },
+                {
+                  count: 65,
+                  median: 1500000,
+                  high: 4170000,
+                  low: 233333,
+                  mean: 1525283.5846153847,
+                  total: 99143433,
+                  firstQuartile: 1020000,
+                  thirdQuartile: 1960000,
+                  medianGrowth: 0.4218009478672986
+                },
+                {
+                  count: 47,
+                  median: 1187000,
+                  high: 4500000,
+                  low: 233333,
+                  mean: 1286192.1914893617,
+                  total: 60451033,
+                  firstQuartile: 888750,
+                  thirdQuartile: 1572500,
+                  medianGrowth: -0.20866666666666667
+                },
+                {
+                  count: 44,
+                  median: 1447500,
+                  high: 3900000,
+                  low: 385000,
+                  mean: 1610750,
+                  total: 70873000,
+                  firstQuartile: 1010000,
+                  thirdQuartile: 2062500,
+                  medianGrowth: 0.21946082561078348
+                },
+                {
+                  count: 49,
+                  median: 1400000,
+                  high: 2900000,
+                  low: 350000,
+                  mean: 1506000,
+                  total: 73794000,
+                  firstQuartile: 1165000,
+                  thirdQuartile: 1750000,
+                  medianGrowth: -0.03281519861830743
+                },
+                {
+                  count: 40,
+                  median: 1732500,
+                  high: 3975000,
+                  low: 665000,
+                  mean: 1839442.5,
+                  total: 73577700,
+                  firstQuartile: 1431775,
+                  thirdQuartile: 2202500,
+                  medianGrowth: 0.2375
+                },
+                {
+                  count: 33,
+                  median: 2087000,
+                  high: 4400000,
+                  low: 1350000,
+                  mean: 2308398.6666666665,
+                  total: 76177156,
+                  firstQuartile: 1700000,
+                  thirdQuartile: 2850000,
+                  medianGrowth: 0.20461760461760461
+                },
+                {
+                  count: 31,
+                  median: 2200000,
+                  high: 9300000,
+                  low: 525000,
+                  mean: 2976261.290322581,
+                  total: 92264100,
+                  firstQuartile: 1762500,
+                  thirdQuartile: 3050000,
+                  medianGrowth: 0.05414470531863919
+                },
+                {
+                  count: 23,
+                  median: 2100000,
+                  high: 5595000,
+                  low: 300000,
+                  mean: 2383521.7391304346,
+                  total: 54821000,
+                  firstQuartile: 1820000,
+                  thirdQuartile: 2825000,
+                  medianGrowth: -0.045454545454545456
+                }
+              ]
+            }
+          },
+          priceRangeSegments: {
+            segments: [
+              {
+                end: 300000,
+                label: "<$300k",
+                salesByMonth:
+                {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 300000,
+                end: 400000,
+                label: "$300k-$400k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 1
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 400000,
+                end: 500000,
+                label: "$400k-$500k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 500000,
+                end: 600000,
+                label: "$500k-$600k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 600000,
+                end: 700000,
+                label: "$600k-$700k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 700000,
+                end: 800000,
+                label: "$700k-$800k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april",
+                      value: 1
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 800000,
+                end: 900000,
+                label: "$800k-$900k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 900000,
+                end: 1000000,
+                label: "$900k-$1m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1000000,
+                end: 1200000,
+                label: "$1m-$1.2m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1200000,
+                end: 1500000,
+                label: "$1.2m-$1.5m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december",
+                      value: 1
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1500000,
+                end: 2000000,
+                label: "$1.5m-$2m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april",
+                      value: 1
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 2000000,
+                end: 2500000,
+                label: "$2m-$2.5m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february",
+                      value: 3
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october",
+                      value: 3
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december",
+                      value: 1
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 2500000,
+                end: 3000000,
+                label: "$2.5m-$3m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 1
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 1
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september",
+                      value: 1
+                    },
+                    {
+                      label: "october",
+                      value: 1
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 3000000,
+                label: ">
+                $3m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february",
+                      value: 1
+                    },
+                    {
+                      label: "march",
+                      value: 3
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 2
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october",
+                      value: 1
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december",
+                      value: 1
+                    }
+                  ]
+                }
+              }
+            ],
+            period: {
+              year: 2016,
+              month: 6,
+              interval: 1,
+              count: 13
+            }
+          },
+          peakSellingPeriods: {
+            period: {
+              year: 2017,
+              month: 12,
+              interval: 1,
+              count: 12
+            },
+            values: [
+              {
+                label: "january",
+                value: 1
+              },
+              {
+                label: "february",
+                value: 3
+              },
+              {
+                label: "march",
+                value: 3
+              },
+              {
+                label: "april",
+                value: 2
+              },
+              {
+                label: "may",
+                value: 3
+              },
+              {
+                label: "june",
+                value: 3.5
+              },
+              {
+                label: "july",
+                value: 2
+              },
+              {
+                label: "august",
+                value: 1.5
+              },
+              {
+                label: "september",
+                value: 2
+              },
+              {
+                label: "october",
+                value: 5
+              },
+              {
+                label: "november",
+                value: 3
+              },
+              {
+                label: "december",
+                value: 2
+              }
+            ]
+          }
+        },
+        rentals: {
+          beds: {
+            two: {
+              calendarQuarterly: {
+                period: {
+                  year: 2016,
+                  month: 9,
+                  interval: 3,
+                  count: 1
+                },
+                values: [
+                  {
+                    count: 1,
+                    median: 520,
+                    high: 520,
+                    low: 520
+                  },
+                  {
+                    count: 0
+                  },
+                  {
+                    count: 4,
+                    median: 920,
+                    high: 1400,
+                    low: 700
+                  },
+                  {
+                    count: 4,
+                    median: 825,
+                    high: 950,
+                    low: 630
+                  }
+                ],
+                calculated: "2017-07-31T20:25:20.524+0000"
+              }
+            },
+            three: {
+              calendarQuarterly: {
+                period: {
+                  year: 2016,
+                  month: 9,
+                  interval: 3,
+                  count: 1
+                },
+                values: [
+                  {
+                    count: 4,
+                    median: 1225,
+                    high: 1500,
+                    low: 995
+                  },
+                  {
+                    count: 4,
+                    median: 1300,
+                    high: 1500,
+                    low: 720
+                  },
+                  {
+                    count: 6,
+                    median: 1112.5,
+                    high: 1700,
+                    low: 850
+                  },
+                  {
+                    count: 2,
+                    median: 1075,
+                    high: 1300,
+                    low: 850
+                  }
+                ],
+                calculated: "2017-07-31T20:25:20.524+0000"
+              }
+            },
+            fourPlus: {
+              calendarQuarterly: {
+                period: {
+                  year: 2016,
+                  month: 9,
+                  interval: 3,
+                  count: 1
+                },
+                values: [
+                  {
+                    count: 6,
+                    median: 1595,
+                    high: 2000,
+                    low: 1250
+                  },
+                  {
+                    count: 3,
+                    median: 1700,
+                    high: 2350,
+                    low: 1200
+                  },
+                  {
+                    count: 3,
+                    median: 1475,
+                    high: 3000,
+                    low: 1250
+                  },
+                  {
+                    count: 1,
+                    median: 1400,
+                    high: 1400,
+                    low: 1400
+                  }
+                ],
+                calculated: "2017-07-31T20:25:20.524+0000"
+              }
+            }
+          }
+        }
+      },
+      unit: {
+        statisticsSummary: {
+          medianSalePrice: 908000,
+          medianRentalPrice: 600,
+          suburbGrowth: 0.019938219601235607,
+          saleCount: 216,
+          rentalCount: 719,
+          suburbRentalYield: 0.03436123348017621
+        },
+        sales: {
+          timeseries: {
+            rolling12Month: {
+              period: {
+                year: 2015,
+                month: 6,
+                interval: 12,
+                count: 1
+              },
+              values: [
+                {
+                  count: 236,
+                  median: 890250,
+                  high: 6800000,
+                  low: 186666,
+                  mean: 1076880.7584745763,
+                  total: 254143859,
+                  firstQuartile: 665000,
+                  thirdQuartile: 1208125
+                },
+                {
+                  count: 216,
+                  median: 908000,
+                  high: 7250000,
+                  low: 20000,
+                  mean: 1115111.5740740742,
+                  total: 240864100,
+                  firstQuartile: 703750,
+                  thirdQuartile: 1350000
+                }
+              ],
+              calculated: "2017-08-22T14:05:03.637+0000"
+            },
+            calendar12Month: {
+              period: {
+                year: 1999,
+                interval: 12,
+                count: 19
+              },
+              values: [
+                {
+                  count: 299,
+                  median: 340000,
+                  high: 3950000,
+                  low: 30000,
+                  mean: 407945.76923076925,
+                  total: 121975785,
+                  firstQuartile: 270000,
+                  thirdQuartile: 460000
+                },
+                {
+                  count: 240,
+                  median: 387500,
+                  high: 7800000,
+                  low: 13265,
+                  mean: 476979.98333333334,
+                  total: 114475196,
+                  firstQuartile: 299499.25,
+                  thirdQuartile: 530000,
+                  medianGrowth: 0.13970588235294118
+                },
+                {
+                  count: 397,
+                  median: 407000,
+                  high: 3280000,
+                  low: 5250,
+                  mean: 469834.60453400505,
+                  total: 186524338,
+                  firstQuartile: 330000,
+                  thirdQuartile: 510000,
+                  medianGrowth: 0.05032258064516129
+                },
+                {
+                  count: 337,
+                  median: 430000,
+                  high: 12500000,
+                  low: 100000,
+                  mean: 533926.2878338279,
+                  total: 179933159,
+                  firstQuartile: 350000,
+                  thirdQuartile: 565000,
+                  medianGrowth: 0.056511056511056514
+                },
+                {
+                  count: 333,
+                  median: 505000,
+                  high: 4500000,
+                  low: 20000,
+                  mean: 674288.5315315315,
+                  total: 224538081,
+                  firstQuartile: 385000,
+                  thirdQuartile: 680000,
+                  medianGrowth: 0.1744186046511628
+                },
+                {
+                  count: 295,
+                  median: 480000,
+                  high: 5175000,
+                  low: 5000,
+                  mean: 604932.433898305,
+                  total: 178455068,
+                  firstQuartile: 392000,
+                  thirdQuartile: 622250,
+                  medianGrowth: -0.04950495049504951
+                },
+                {
+                  count: 229,
+                  median: 490000,
+                  high: 3975000,
+                  low: 41000,
+                  mean: 552726.2751091704,
+                  total: 126574317,
+                  firstQuartile: 387000,
+                  thirdQuartile: 630000,
+                  medianGrowth: 0.020833333333333332
+                },
+                {
+                  count: 246,
+                  median: 472250,
+                  high: 3950000,
+                  low: 8500,
+                  mean: 524134.9837398374,
+                  total: 128937206,
+                  firstQuartile: 365625,
+                  thirdQuartile: 613750,
+                  medianGrowth: -0.036224489795918365
+                },
+                {
+                  count: 330,
+                  median: 522500,
+                  high: 2700000,
+                  low: 40833,
+                  mean: 577703.6,
+                  total: 190642188,
+                  firstQuartile: 382625,
+                  thirdQuartile: 688750,
+                  medianGrowth: 0.10640550555849657
+                },
+                {
+                  count: 297,
+                  median: 525000,
+                  high: 6125000,
+                  low: 25000,
+                  mean: 616856.2794612795,
+                  total: 183206315,
+                  firstQuartile: 395000,
+                  thirdQuartile: 685000,
+                  medianGrowth: 0.004784688995215311
+                },
+                {
+                  count: 368,
+                  median: 530000,
+                  high: 4200000,
+                  low: 39892,
+                  mean: 619842.9836956522,
+                  total: 228102218,
+                  firstQuartile: 417250,
+                  thirdQuartile: 738750,
+                  medianGrowth: 0.009523809523809525
+                },
+                {
+                  count: 343,
+                  median: 620000,
+                  high: 3500000,
+                  low: 95000,
+                  mean: 689136.387755102,
+                  total: 236373781,
+                  firstQuartile: 480500,
+                  thirdQuartile: 800000,
+                  medianGrowth: 0.16981132075471697
+                },
+                {
+                  count: 280,
+                  median: 589750,
+                  high: 2285000,
+                  low: 150000,
+                  mean: 658429.0357142857,
+                  total: 184360130,
+                  firstQuartile: 480000,
+                  thirdQuartile: 763125,
+                  medianGrowth: -0.04879032258064516
+                },
+                {
+                  count: 276,
+                  median: 665000,
+                  high: 3300000,
+                  low: 85000,
+                  mean: 748046.5579710145,
+                  total: 206460850,
+                  firstQuartile: 510000,
+                  thirdQuartile: 876750,
+                  medianGrowth: 0.12759643916913946
+                },
+                {
+                  count: 287,
+                  median: 710000,
+                  high: 2850000,
+                  low: 260000,
+                  mean: 810632.3170731707,
+                  total: 232651475,
+                  firstQuartile: 555000,
+                  thirdQuartile: 916000,
+                  medianGrowth: 0.06766917293233082
+                },
+                {
+                  count: 281,
+                  median: 755000,
+                  high: 5085000,
+                  low: 220000,
+                  mean: 903720.9537366548,
+                  total: 253945588,
+                  firstQuartile: 600000,
+                  thirdQuartile: 1000000,
+                  medianGrowth: 0.06338028169014084
+                },
+                {
+                  count: 280,
+                  median: 885000,
+                  high: 4850000,
+                  low: 130200,
+                  mean: 1026143.725,
+                  total: 287320243,
+                  firstQuartile: 650000,
+                  thirdQuartile: 1210000,
+                  medianGrowth: 0.17218543046357615
+                },
+                {
+                  count: 215,
+                  median: 890000,
+                  high: 7250000,
+                  low: 20000,
+                  mean: 1108990.7720930232,
+                  total: 238433016,
+                  firstQuartile: 695000,
+                  thirdQuartile: 1167500,
+                  medianGrowth: 0.005649717514124294
+                },
+                {
+                  count: 92,
+                  median: 954000,
+                  high: 2875000,
+                  low: 200000,
+                  mean: 1114315.2173913044,
+                  total: 102517000,
+                  firstQuartile: 705000,
+                  thirdQuartile: 1431250,
+                  medianGrowth: 0.07191011235955057
+                }
+              ]
+            }
+          },
+          priceRangeSegments: {
+            segments: [
+              {
+                end: 300000,
+                label: "<$300k",
+                salesByMonth:
+                {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april",
+                      value: 1
+                    },
+                    {
+                      label: "may",
+                      value: 1
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october",
+                      value: 2
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december",
+                      value: 1
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 300000,
+                end: 400000,
+                label: "$300k-$400k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september",
+                      value: 1
+                    },
+                    {
+                      label: "october",
+                      value: 2
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 400000,
+                end: 500000,
+                label: "$400k-$500k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december",
+                      value: 1
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 500000,
+                end: 600000,
+                label: "$500k-$600k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 3
+                    },
+                    {
+                      label: "february",
+                      value: 1
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april",
+                      value: 2
+                    },
+                    {
+                      label: "may",
+                      value: 3
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september",
+                      value: 5
+                    },
+                    {
+                      label: "october",
+                      value: 3
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 600000,
+                end: 700000,
+                label: "$600k-$700k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february",
+                      value: 1
+                    },
+                    {
+                      label: "march",
+                      value: 1
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 3
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august",
+                      value: 4
+                    },
+                    {
+                      label: "september",
+                      value: 1
+                    },
+                    {
+                      label: "october",
+                      value: 1
+                    },
+                    {
+                      label: "november",
+                      value: 3
+                    },
+                    {
+                      label: "december",
+                      value: 3
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 700000,
+                end: 800000,
+                label: "$700k-$800k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february",
+                      value: 3
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april",
+                      value: 4
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august",
+                      value: 3
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october",
+                      value: 2
+                    },
+                    {
+                      label: "november",
+                      value: 5
+                    },
+                    {
+                      label: "december",
+                      value: 2
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 800000,
+                end: 900000,
+                label: "$800k-$900k",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february",
+                      value: 2
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april",
+                      value: 2
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july",
+                      value: 3
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september",
+                      value: 6
+                    },
+                    {
+                      label: "october",
+                      value: 3
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december",
+                      value: 4
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 900000,
+                end: 1000000,
+                label: "$900k-$1m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february",
+                      value: 3
+                    },
+                    {
+                      label: "march",
+                      value: 3
+                    },
+                    {
+                      label: "april",
+                      value: 3
+                    },
+                    {
+                      label: "may",
+                      value: 2
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 3
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september",
+                      value: 2
+                    },
+                    {
+                      label: "october",
+                      value: 2
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december",
+                      value: 6
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1000000,
+                end: 1200000,
+                label: "$1m-$1.2m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 3
+                    },
+                    {
+                      label: "april",
+                      value: 2
+                    },
+                    {
+                      label: "may",
+                      value: 4
+                    },
+                    {
+                      label: "june",
+                      value: 1
+                    },
+                    {
+                      label: "july",
+                      value: 6
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september",
+                      value: 2
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november",
+                      value: 2
+                    },
+                    {
+                      label: "december",
+                      value: 6
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1200000,
+                end: 1500000,
+                label: "$1.2m-$1.5m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february",
+                      value: 2
+                    },
+                    {
+                      label: "march",
+                      value: 1
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 4
+                    },
+                    {
+                      label: "june",
+                      value: 3
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august",
+                      value: 1
+                    },
+                    {
+                      label: "september",
+                      value: 3
+                    },
+                    {
+                      label: "october",
+                      value: 2
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december",
+                      value: 3
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 1500000,
+                end: 2000000,
+                label: "$1.5m-$2m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january",
+                      value: 1
+                    },
+                    {
+                      label: "february",
+                      value: 2
+                    },
+                    {
+                      label: "march",
+                      value: 1
+                    },
+                    {
+                      label: "april",
+                      value: 3
+                    },
+                    {
+                      label: "may",
+                      value: 3
+                    },
+                    {
+                      label: "june",
+                      value: 2
+                    },
+                    {
+                      label: "july",
+                      value: 3
+                    },
+                    {
+                      label: "august",
+                      value: 2
+                    },
+                    {
+                      label: "september",
+                      value: 2
+                    },
+                    {
+                      label: "october",
+                      value: 3
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december",
+                      value: 6
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 2000000,
+                end: 2500000,
+                label: "$2m-$2.5m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april",
+                      value: 1
+                    },
+                    {
+                      label: "may",
+                      value: 1
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september",
+                      value: 1
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november",
+                      value: 1
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 2500000,
+                end: 3000000,
+                label: "$2.5m-$3m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march",
+                      value: 2
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may",
+                      value: 1
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july"
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september"
+                    },
+                    {
+                      label: "october"
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              },
+              {
+                begin: 3000000,
+                label: ">
+                $3m",
+                salesByMonth: {
+                  values: [
+                    {
+                      label: "january"
+                    },
+                    {
+                      label: "february"
+                    },
+                    {
+                      label: "march"
+                    },
+                    {
+                      label: "april"
+                    },
+                    {
+                      label: "may"
+                    },
+                    {
+                      label: "june"
+                    },
+                    {
+                      label: "july",
+                      value: 1
+                    },
+                    {
+                      label: "august"
+                    },
+                    {
+                      label: "september",
+                      value: 2
+                    },
+                    {
+                      label: "october",
+                      value: 1
+                    },
+                    {
+                      label: "november"
+                    },
+                    {
+                      label: "december"
+                    }
+                  ]
+                }
+              }
+            ],
+            period: {
+              year: 2016,
+              month: 6,
+              interval: 1,
+              count: 13
+            }
+          },
+          peakSellingPeriods: {
+            period: {
+              year: 2017,
+              month: 12,
+              interval: 1,
+              count: 12
+            },
+            values: [
+              {
+                label: "january",
+                value: 7
+              },
+              {
+                label: "february",
+                value: 14
+              },
+              {
+                label: "march",
+                value: 21
+              },
+              {
+                label: "april",
+                value: 18
+              },
+              {
+                label: "may",
+                value: 22
+              },
+              {
+                label: "june",
+                value: 15.5
+              },
+              {
+                label: "july",
+                value: 22
+              },
+              {
+                label: "august",
+                value: 18
+              },
+              {
+                label: "september",
+                value: 26
+              },
+              {
+                label: "october",
+                value: 23
+              },
+              {
+                label: "november",
+                value: 26
+              },
+              {
+                label: "december",
+                value: 19
+              }
+            ]
+          }
+        },
+        rentals: {
+          beds: {
+            two: {
+              calendarQuarterly: {
+                period: {
+                  year: 2016,
+                  month: 9,
+                  interval: 3,
+                  count: 1
+                },
+                values: [
+                  {
+                    count: 82,
+                    median: 620,
+                    high: 1000,
+                    low: 445
+                  },
+                  {
+                    count: 88,
+                    median: 660,
+                    high: 950,
+                    low: 300
+                  },
+                  {
+                    count: 94,
+                    median: 645,
+                    high: 950,
+                    low: 475
+                  },
+                  {
+                    count: 79,
+                    median: 650,
+                    high: 950,
+                    low: 500
+                  }
+                ],
+                calculated: "2017-07-31T20:25:20.524+0000"
+              }
+            },
+            three: {
+              calendarQuarterly: {
+                values: []
+              }
+            },
+            fourPlus: {
+              calendarQuarterly: {
+                values: []
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  demographics: {
+    censusTopics: [
+      {
+        topic: "Demographics",
+        title: "Age of Population (2011)",
+        total: 9384,
+        data: [
+          {
+            category: "Residents 0-9",
+            count: 737
+          },
+          {
+            category: "Residents 10-19",
+            count: 412
+          },
+          {
+            category: "Residents 20-29",
+            count: 1989
+          },
+          {
+            category: "Residents 30-39",
+            count: 2397
+          },
+          {
+            category: "Residents 40-49",
+            count: 1261
+          },
+          {
+            category: "Residents 50-59",
+            count: 1013
+          },
+          {
+            category: "Residents 60-69",
+            count: 825
+          },
+          {
+            category: "Residents 70-79",
+            count: 393
+          },
+          {
+            category: "Residents over 80",
+            count: 357
+          }
+        ]
+      },
+      {
+        topic: "Demographics",
+        title: "Family Composition (2011)",
+        total: 2339,
+        data: [
+          {
+            category: "Single Parent Families",
+            count: 231
+          },
+          {
+            category: "Other Families",
+            count: 71
+          },
+          {
+            category: "Couples Without Children",
+            count: 1368
+          },
+          {
+            category: "Couples With Children",
+            count: 669
+          }
+        ]
+      },
+      {
+        topic: "Housing",
+        title: "Household Income - Weekly (2011)",
+        total: 4440,
+        data: [
+          {
+            category: "$1 - $299",
+            count: 92
+          },
+          {
+            category: "$300 - $599",
+            count: 324
+          },
+          {
+            category: "$600 - $999",
+            count: 416
+          },
+          {
+            category: "$1000 - $1499",
+            count: 586
+          },
+          {
+            category: "$1500 - $1999",
+            count: 526
+          },
+          {
+            category: "$2000 - $2499",
+            count: 301
+          },
+          {
+            category: "$2500 - $2999",
+            count: 814
+          },
+          {
+            category: "3000+",
+            count: 995
+          },
+          {
+            category: "Not Stated",
+            count: 386
+          }
+        ]
+      },
+      {
+        topic: "Housing",
+        title: "Dwelling Structure (2011)",
+        total: 4440,
+        data: [
+          {
+            category: "House",
+            count: 450
+          },
+          {
+            category: "Semi-Detached / Townhouse",
+            count: 757
+          },
+          {
+            category: "Flat, Unit or Apartment",
+            count: 3217
+          },
+          {
+            category: "Other Dwelling",
+            count: 16
+          }
+        ]
+      },
+      {
+        topic: "Housing",
+        title: "Home Ownership (2011)",
+        total: 4439,
+        data: [
+          {
+            category: "Being Purchased",
+            count: 1021
+          },
+          {
+            category: "Being Rented",
+            count: 1857
+          },
+          {
+            category: "Fully Owned",
+            count: 1025
+          },
+          {
+            category: "Others",
+            count: 120
+          },
+          {
+            category: "Private Rental",
+            count: 399
+          },
+          {
+            category: "Social Housing",
+            count: 17
+          }
+        ]
+      },
+      {
+        topic: "Housing",
+        title: "Home Loan Repayments - Monthly (2011)",
+        total: 1020,
+        data: [
+          {
+            category: "$0 - $449",
+            count: 49
+          },
+          {
+            category: "$450 - $599",
+            count: 5
+          },
+          {
+            category: "$600 - $799",
+            count: 10
+          },
+          {
+            category: "$800 - $999",
+            count: 17
+          },
+          {
+            category: "$1000 - $1399",
+            count: 75
+          },
+          {
+            category: "$1400 - $1799",
+            count: 67
+          },
+          {
+            category: "$1800 - $2399",
+            count: 181
+          },
+          {
+            category: "$2400 - $2999",
+            count: 131
+          },
+          {
+            category: "$3000+",
+            count: 444
+          },
+          {
+            category: "Not Stated",
+            count: 41
+          }
+        ]
+      },
+      {
+        topic: "Housing",
+        title: "Rent Payments - Weekly (2011)",
+        total: 2315,
+        data: [
+          {
+            category: "$0 - $99",
+            count: 58
+          },
+          {
+            category: "$100 - $149",
+            count: 14
+          },
+          {
+            category: "$150 - $199",
+            count: 15
+          },
+          {
+            category: "$200 - $224",
+            count: 23
+          },
+          {
+            category: "$225 - $274",
+            count: 40
+          },
+          {
+            category: "$275 - $349",
+            count: 235
+          },
+          {
+            category: "$350 - $449",
+            count: 605
+          },
+          {
+            category: "$450 - $549",
+            count: 577
+          },
+          {
+            category: "$550 And Over",
+            count: 708
+          },
+          {
+            category: "Not stated",
+            count: 40
+          }
+        ]
+      },
+      {
+        topic: "Other Statistics",
+        title: "Non-School Qualification: Level of Education (2011)",
+        total: 6655,
+        data: [
+          {
+            category: "Postgraduate",
+            count: 1324
+          },
+          {
+            category: "Bachelor Degree",
+            count: 2740
+          },
+          {
+            category: "Diploma",
+            count: 962
+          },
+          {
+            category: "Certificate",
+            count: 690
+          },
+          {
+            category: "Not Stated",
+            count: 939
+          }
+        ]
+      },
+      {
+        topic: "Other Statistics",
+        title: "Employment (2011)",
+        total: 8389,
+        data: [
+          {
+            category: "Full-Time",
+            count: 4621
+          },
+          {
+            category: "Part-Time",
+            count: 1236
+          },
+          {
+            category: "Employed: away for work",
+            count: 186
+          },
+          {
+            category: "Unemployed, looking for work",
+            count: 191
+          },
+          {
+            category: "Not in the labour force",
+            count: 1604
+          },
+          {
+            category: "Labour force status not stated",
+            count: 551
+          }
+        ]
+      },
+      {
+        topic: "Other Statistics",
+        title: "Occupation (2011)",
+        total: 6100,
+        data: [
+          {
+            category: "Managers",
+            count: 1158
+          },
+          {
+            category: "Professionals",
+            count: 2540
+          },
+          {
+            category: "Technicians & Trades People",
+            count: 365
+          },
+          {
+            category: "Community & Personal Service",
+            count: 432
+          },
+          {
+            category: "Clerical/Administrative",
+            count: 857
+          },
+          {
+            category: "Sales",
+            count: 473
+          },
+          {
+            category: "Machinery Operators/Drivers",
+            count: 45
+          },
+          {
+            category: "Labourers",
+            count: 123
+          },
+          {
+            category: "Other",
+            count: 107
+          }
+        ]
+      },
+      {
+        topic: "Other Statistics",
+        title: "Method of Travel to Work (2011)",
+        total: 6142,
+        data: [
+          {
+            category: "Train",
+            count: 220
+          },
+          {
+            category: "Bus",
+            count: 1499
+          },
+          {
+            category: "Ferry",
+            count: 152
+          },
+          {
+            category: "Tram (other light rail)",
+            count: 3
+          },
+          {
+            category: "Car",
+            count: 2138
+          },
+          {
+            category: "Motorbike / Truck",
+            count: 66
+          },
+          {
+            category: "Bicycle",
+            count: 73
+          },
+          {
+            category: "Walked Only",
+            count: 718
+          },
+          {
+            category: "Other",
+            count: 1273
+          }
+        ]
+      }
+    ]
+  },
+  recentSales: {
+    sales: [
+      {
+        id: 61882714,
+        price: {
+          display: "$1,970,000",
+          value: 1970000,
+          withheld: false
+        },
+        saleDate: {
+          display: "11/07/2017",
+          value: "2017-07-10T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "21/07/2017",
+          value: "2017-07-20T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "11/07/2017",
+          value: "2017-07-10T14:00:00.000+0000"
+        },
+        image: {
+          id: 305094153,
+          _self: "https://api.pricefinder.com.au/v1/images/305094153"
+        },
+        property: {
+          id: 6488920,
+          _self: "https://api.pricefinder.com.au/v1/properties/6488920"
+        },
+        street: {
+          id: "NSW2824183"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {
+          name: "Stone McMahons Point - MCMAHONS POINT"
+        },
+        agent: {
+          name: "Heather McCartney",
+          phoneNumber: "0412 624 433"
+        },
+        location: {
+          lat: -33.8343444969361,
+          lon: 151.218411621516
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "BEN BOYD ROAD",
+          unit: "8",
+          streetNumber: "112",
+          streetAddress: "8/112 BEN BOYD ROAD",
+          locality: "NEUTRAL BAY",
+          streetLocation: "8/112",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 3,
+          bathrooms: 2,
+          carParks: 2
+        },
+        landDetails: {},
+        rpd: "8/SP33204",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "CROSBY",
+          purchasersSummary: "WRIGHT"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61882714"
+      },
+      {
+        id: 62098071,
+        price: {
+          display: "$807,204",
+          value: 807204,
+          withheld: false
+        },
+        saleDate: {
+          display: "07/07/2017",
+          value: "2017-07-06T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "14/08/2017",
+          value: "2017-08-13T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "07/07/2017",
+          value: "2017-07-06T14:00:00.000+0000"
+        },
+        image: {
+          id: 309724860,
+          _self: "https://api.pricefinder.com.au/v1/images/309724860"
+        },
+        property: {
+          id: 2476466,
+          _self: "https://api.pricefinder.com.au/v1/properties/2476466"
+        },
+        street: {
+          id: "NSW2867720"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "House",
+        saleType: "Normal Sale",
+        agency: {
+          name: "Hockeys Property - St Leonards"
+        },
+        agent: {
+          name: "Louise Marshall",
+          phoneNumber: "0449 848 505"
+        },
+        location: {
+          lat: -33.8376521289527,
+          lon: 151.219006398571
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "HARRIETTE STREET",
+          streetNumber: "1",
+          streetAddress: "1 HARRIETTE STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "1",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 1
+        },
+        landDetails: {
+          propertyArea: 505.9
+        },
+        rpd: "1/102481",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "NOBLE; STEWART; WU; ENGLENADER; HUENERBEIN; FLETCHER; UTBER; HUTT; PANG",
+          purchasersSummary: "ANSELL"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/62098071"
+      },
+      {
+        id: 62098076,
+        price: {
+          display: "$715,000",
+          value: 715000,
+          withheld: false
+        },
+        saleDate: {
+          display: "07/07/2017",
+          value: "2017-07-06T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "18/08/2017",
+          value: "2017-08-17T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "07/07/2017",
+          value: "2017-07-06T14:00:00.000+0000"
+        },
+        image: {
+          id: 306962913,
+          _self: "https://api.pricefinder.com.au/v1/images/306962913"
+        },
+        property: {
+          id: 5459953,
+          _self: "https://api.pricefinder.com.au/v1/properties/5459953"
+        },
+        street: {
+          id: "NSW2839062"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {
+          name: "The Agency - North"
+        },
+        agent: {
+          name: "Max Wagschall",
+          phoneNumber: "0401 859 103"
+        },
+        location: {
+          lat: -33.8354007873796,
+          lon: 151.213928432306
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "EATON STREET",
+          unit: "17",
+          streetNumber: "26",
+          streetAddress: "17/26 EATON STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "17/26",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1,
+          carParks: 1
+        },
+        landDetails: {},
+        rpd: "17/SP12271",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "SAMOLIS",
+          purchasersSummary: "TRANTER; SIMON"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/62098076"
+      },
+      {
+        id: 62064604,
+        price: {
+          display: "$550,000",
+          value: 550000,
+          withheld: false
+        },
+        saleDate: {
+          display: "05/07/2017",
+          value: "2017-07-04T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "16/08/2017",
+          value: "2017-08-15T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "05/07/2017",
+          value: "2017-07-04T14:00:00.000+0000"
+        },
+        image: {
+          id: 304390013,
+          _self: "https://api.pricefinder.com.au/v1/images/304390013"
+        },
+        property: {
+          id: 7941057,
+          _self: "https://api.pricefinder.com.au/v1/properties/7941057"
+        },
+        street: {
+          id: "NSW2858355"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {
+          name: "mosman1.nsw Office"
+        },
+        agent: {
+          name: "Clare Passlow",
+          phoneNumber: "+61 422 004 825"
+        },
+        location: {
+          lat: -33.8308847520388,
+          lon: 151.219871898231
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "MILITARY ROAD",
+          unit: "311",
+          streetNumber: "99",
+          streetAddress: "311/99 MILITARY ROAD",
+          locality: "NEUTRAL BAY",
+          streetLocation: "311/99",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1,
+          carParks: 1
+        },
+        landDetails: {},
+        rpd: "62/SP63422",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "LINTON",
+          purchasersSummary: "JALILI-BALEH"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/62064604"
+      },
+      {
+        id: 61955330,
+        price: {
+          display: "$680,000",
+          value: 680000,
+          withheld: false
+        },
+        saleDate: {
+          display: "03/07/2017",
+          value: "2017-07-02T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "27/07/2017",
+          value: "2017-07-26T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "03/07/2017",
+          value: "2017-07-02T14:00:00.000+0000"
+        },
+        image: {
+          id: 307001960,
+          _self: "https://api.pricefinder.com.au/v1/images/307001960"
+        },
+        property: {
+          id: 4866533,
+          _self: "https://api.pricefinder.com.au/v1/properties/4866533"
+        },
+        street: {
+          id: "NSW2817616"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {
+          name: "McGrath   - Neutral Bay"
+        },
+        agent: {
+          name: "Gareth Richards",
+          phoneNumber: "0420 975 175"
+        },
+        location: {
+          lat: -33.8327114523842,
+          lon: 151.213294598027
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "ALFRED STREET",
+          unit: "17",
+          streetNumber: "441",
+          streetAddress: "17/441 ALFRED STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "17/441",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1,
+          carParks: 1
+        },
+        landDetails: {},
+        rpd: "16/SP104",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "ALEXANDER",
+          purchasersSummary: "ADA YUE-YAN TSE; BELL"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61955330"
+      },
+      {
+        id: 61722166,
+        price: {
+          display: "$950,000",
+          value: 950000,
+          withheld: false
+        },
+        saleDate: {
+          display: "30/06/2017",
+          value: "2017-06-29T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "30/06/2017",
+          value: "2017-06-29T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "30/06/2017",
+          value: "2017-06-29T14:00:00.000+0000"
+        },
+        image: {
+          id: 282786577,
+          _self: "https://api.pricefinder.com.au/v1/images/282786577"
+        },
+        property: {
+          id: 9586859,
+          _self: "https://api.pricefinder.com.au/v1/properties/9586859"
+        },
+        street: {
+          id: "NSW2858355"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {},
+        agent: {},
+        location: {
+          lat: -33.8291283090149,
+          lon: 151.217007853037
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "MILITARY ROAD",
+          unit: "18",
+          streetNumber: "40",
+          streetAddress: "18/40 MILITARY ROAD",
+          locality: "NEUTRAL BAY",
+          streetLocation: "18/40",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 1,
+          carParks: 1
+        },
+        landDetails: {},
+        rpd: "18/SP14699",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "LEON MILCH PTY LTD SUPER FUND",
+          purchasersSummary: "MILCH"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61722166"
+      },
+      {
+        id: 61722194,
+        price: {
+          display: "$1,620,000",
+          value: 1620000,
+          withheld: false
+        },
+        saleDate: {
+          display: "29/06/2017",
+          value: "2017-06-28T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "03/07/2017",
+          value: "2017-07-02T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "29/06/2017",
+          value: "2017-06-28T14:00:00.000+0000"
+        },
+        image: {
+          id: 304872425,
+          _self: "https://api.pricefinder.com.au/v1/images/304872425"
+        },
+        property: {
+          id: 1499727487,
+          _self: "https://api.pricefinder.com.au/v1/properties/1499727487"
+        },
+        street: {
+          id: "NSW2921229"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {
+          name: "Richardson & Wrench Newtown - Newtown"
+        },
+        agent: {
+          name: "Steve Kremisis",
+          phoneNumber: "0414 818 317"
+        },
+        location: {
+          lat: -33.8305072238603,
+          lon: 151.221782862014
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "YOUNG STREET",
+          streetNumber: "9",
+          streetAddress: "9 YOUNG STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "9",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 2,
+          carParks: 1
+        },
+        landDetails: {
+          propertyArea: 214
+        },
+        rpd: "20/SP94970",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "JACOTA PTY LIMITED",
+          purchasersSummary: "UNITED FUNCTION PTY LTD"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61722194"
+      },
+      {
+        id: 62064613,
+        price: {
+          display: "$2,055,000",
+          value: 2055000,
+          withheld: false
+        },
+        saleDate: {
+          display: "23/06/2017",
+          value: "2017-06-22T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "04/08/2017",
+          value: "2017-08-03T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "23/06/2017",
+          value: "2017-06-22T14:00:00.000+0000"
+        },
+        image: {
+          id: 303701945,
+          _self: "https://api.pricefinder.com.au/v1/images/303701945"
+        },
+        property: {
+          id: 3026463,
+          _self: "https://api.pricefinder.com.au/v1/properties/3026463"
+        },
+        street: {
+          id: "NSW2934497"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "House",
+        saleType: "Normal Sale",
+        agency: {
+          name: "Sullivan Real Estate",
+          phoneNumber: "02 9960 8188"
+        },
+        agent: {
+          name: "John Sullivan",
+          phoneNumber: "0400 166 700"
+        },
+        location: {
+          lat: -33.8368103772325,
+          lon: 151.214320162519
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "RAWSON STREET",
+          streetNumber: "17",
+          streetAddress: "17 RAWSON STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "17",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 4,
+          bathrooms: 2
+        },
+        landDetails: {
+          propertyArea: 275.6
+        },
+        rpd: "11/577451",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "LORIMER",
+          purchasersSummary: "SMART"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/62064613"
+      },
+      {
+        id: 61988090,
+        price: {
+          display: "$2,400,000",
+          value: 2400000,
+          withheld: false
+        },
+        saleDate: {
+          display: "17/06/2017",
+          value: "2017-06-16T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "31/07/2017",
+          value: "2017-07-30T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "17/06/2017",
+          value: "2017-06-16T14:00:00.000+0000"
+        },
+        image: {
+          id: 301225137,
+          _self: "https://api.pricefinder.com.au/v1/images/301225137"
+        },
+        property: {
+          id: 4256386,
+          _self: "https://api.pricefinder.com.au/v1/properties/4256386"
+        },
+        street: {
+          id: "NSW2825688"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "House",
+        saleType: "Normal Sale",
+        agency: {
+          name: "McGrath Neutral Bay",
+          phoneNumber: "02 9908 6099"
+        },
+        agent: {
+          name: "Piers van Hamburg",
+          phoneNumber: "0411 322 666"
+        },
+        location: {
+          lat: -33.834211676194,
+          lon: 151.213263588842
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "BENT STREET",
+          streetNumber: "26",
+          streetAddress: "26 BENT STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "26",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 3,
+          bathrooms: 3,
+          carParks: 1
+        },
+        landDetails: {
+          propertyArea: 256
+        },
+        rpd: "2/1058072",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "ROBERTSON",
+          purchasersSummary: "DAW"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61988090"
+      },
+      {
+        id: 61882754,
+        price: {
+          display: "$900,000",
+          value: 900000,
+          withheld: false
+        },
+        saleDate: {
+          display: "15/06/2017",
+          value: "2017-06-14T14:00:00.000+0000"
+        },
+        settlementDate: {
+          display: "17/07/2017",
+          value: "2017-07-16T14:00:00.000+0000"
+        },
+        contractDate: {
+          display: "15/06/2017",
+          value: "2017-06-14T14:00:00.000+0000"
+        },
+        property: {
+          id: 3522727,
+          _self: "https://api.pricefinder.com.au/v1/properties/3522727"
+        },
+        street: {
+          id: "NSW2920984"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        propertyType: "Unit",
+        saleType: "Normal Sale",
+        agency: {},
+        agent: {},
+        location: {
+          lat: -33.8320553945819,
+          lon: 151.218080059124
+        },
+        metadata: {
+          governmentSale: true,
+          pending: false
+        },
+        address: {
+          street: "YEO STREET",
+          unit: "303",
+          streetNumber: "29",
+          streetAddress: "303/29 YEO STREET",
+          locality: "NEUTRAL BAY",
+          streetLocation: "303/29",
+          state: "NSW",
+          postcode: "2089",
+          countryCode: "AU",
+          lga: "NORTH SYDNEY COUNCIL"
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 1,
+          carParks: 1
+        },
+        landDetails: {},
+        rpd: "20/SP12756",
+        extra: {},
+        saleParticipants: {
+          vendorsSummary: "CROSSMAN",
+          purchasersSummary: "MYNHARDT"
+        },
+        _self: "https://api.pricefinder.com.au/v1/sales/61882754"
+      }
+    ]
+  },
+  recentRentals: {
+    listings: [
+      {
+        id: 65672992,
+        rental: true,
+        agents: [
+          {
+            name: "Marissa Hunter",
+            phoneNumber: "0418 609 928"
+          }
+        ],
+        agencies: [
+          {
+            id: 59342,
+            name: "Raine & Horne Neutral Bay",
+            phoneNumber: "02 99082722"
+          }
+        ],
+        price: {
+          display: "$1,450"
+        },
+        startDate: {
+          display: "26/08/2017",
+          value: "2017-08-25T20:00:15.000+0000"
+        },
+        image: {
+          id: 312614647,
+          _self: "https://api.pricefinder.com.au/v1/images/312614647"
+        },
+        property: {
+          id: 3196315,
+          _self: "https://api.pricefinder.com.au/v1/properties/3196315"
+        },
+        street: {
+          id: "NSW2824183"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8398309151329,
+          lon: 151.217097262534
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 4,
+          bathrooms: 3,
+          carParks: 2
+        },
+        address: {
+          street: "BEN BOYD ROAD",
+          unit: "4",
+          streetNumber: "10 -12",
+          streetAddress: "4/10 -12 BEN BOYD ROAD",
+          locality: "Neutral Bay",
+          streetLocation: "4/10 -12",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65672992"
+      },
+      {
+        id: 65673171,
+        rental: true,
+        agents: [
+          {
+            name: "Nick Georges",
+            phoneNumber: "0421 30 30 32"
+          }
+        ],
+        agencies: [
+          {
+            id: 58539,
+            name: "Croll",
+            phoneNumber: "02 99087777"
+          }
+        ],
+        price: {
+          display: "$495 per week"
+        },
+        startDate: {
+          display: "26/08/2017",
+          value: "2017-08-25T20:00:15.000+0000"
+        },
+        image: {
+          id: 312613929,
+          _self: "https://api.pricefinder.com.au/v1/images/312613929"
+        },
+        property: {
+          id: 6140934,
+          _self: "https://api.pricefinder.com.au/v1/properties/6140934"
+        },
+        street: {
+          id: "NSW2880065"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8383409459465,
+          lon: 151.214456744711
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1
+        },
+        address: {
+          street: "HOLDSWORTH STREET",
+          unit: "2",
+          streetNumber: "4",
+          streetAddress: "2/4 HOLDSWORTH STREET",
+          locality: "Neutral Bay",
+          streetLocation: "2/4",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 581.7,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65673171"
+      },
+      {
+        id: 65677893,
+        rental: true,
+        agents: [
+          {
+            name: "Kirsty Gorrie",
+            phoneNumber: "0426 953 353"
+          }
+        ],
+        agencies: [
+          {
+            id: 277080,
+            name: "Garwoods Estate Agents",
+            phoneNumber: "02 80650090"
+          }
+        ],
+        price: {
+          display: "$930"
+        },
+        startDate: {
+          display: "26/08/2017",
+          value: "2017-08-25T20:00:15.000+0000"
+        },
+        image: {
+          id: 312715036,
+          _self: "https://api.pricefinder.com.au/v1/images/312715036"
+        },
+        property: {
+          id: 5466362,
+          _self: "https://api.pricefinder.com.au/v1/properties/5466362"
+        },
+        street: {
+          id: "NSW2876069"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8334778814658,
+          lon: 151.218250663125
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 3,
+          bathrooms: 1,
+          carParks: 1
+        },
+        address: {
+          street: "LINDSAY STREET",
+          unit: "7",
+          streetNumber: "10",
+          streetAddress: "7/10 LINDSAY STREET",
+          locality: "Neutral Bay",
+          streetLocation: "7/10",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65677893"
+      },
+      {
+        id: 65660135,
+        rental: true,
+        agents: [
+          {
+            name: "Frank Digiacomo",
+            phoneNumber: "0422 264 889"
+          }
+        ],
+        agencies: [
+          {
+            id: 221245,
+            name: "Century 21 Southside Properties",
+            phoneNumber: "02 95881122"
+          }
+        ],
+        price: {
+          display: "$635 "
+        },
+        startDate: {
+          display: "24/08/2017",
+          value: "2017-08-24T01:35:56.000+0000"
+        },
+        image: {
+          id: 312457224,
+          _self: "https://api.pricefinder.com.au/v1/images/312457224"
+        },
+        property: {
+          id: 6002679,
+          _self: "https://api.pricefinder.com.au/v1/properties/6002679"
+        },
+        street: {
+          id: "NSW2817616"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8327114523842,
+          lon: 151.213294598027
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1,
+          carParks: 2
+        },
+        address: {
+          street: "ALFRED STREET",
+          streetNumber: "441",
+          streetAddress: "441 ALFRED STREET",
+          locality: "Neutral Bay",
+          streetLocation: "441",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 4250,
+          buildingArea: 49
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65660135"
+      },
+      {
+        id: 65649682,
+        rental: true,
+        agents: [
+          {
+            name: "India Breusch",
+            phoneNumber: "0413 777 982"
+          }
+        ],
+        agencies: [
+          {
+            id: 59046,
+            name: "Belle Property Neutral Bay",
+            phoneNumber: "02 9036 1000"
+          }
+        ],
+        price: {
+          display: "$1,100 per week"
+        },
+        startDate: {
+          display: "24/08/2017",
+          value: "2017-08-23T20:00:18.000+0000"
+        },
+        image: {
+          id: 312329901,
+          _self: "https://api.pricefinder.com.au/v1/images/312329901"
+        },
+        property: {
+          id: 6449386,
+          _self: "https://api.pricefinder.com.au/v1/properties/6449386"
+        },
+        street: {
+          id: "NSW2828478"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8392429656749,
+          lon: 151.218362308818
+        },
+        propertyType: "House",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 3,
+          bathrooms: 2,
+          carParks: 1
+        },
+        address: {
+          street: "AUBIN STREET",
+          unit: "1",
+          streetNumber: "25",
+          streetAddress: "1/25 AUBIN STREET",
+          locality: "Neutral Bay",
+          streetLocation: "1/25",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65649682"
+      },
+      {
+        id: 65646230,
+        rental: true,
+        agents: [
+          {
+            name: "Nicole Chen",
+            phoneNumber: "0450020575"
+          }
+        ],
+        agencies: [
+          {
+            id: 59898,
+            name: "Savills Cordeau Marshall Lindfield",
+            phoneNumber: "02 9416 9393"
+          }
+        ],
+        price: {
+          display: "$750 Per Week"
+        },
+        startDate: {
+          display: "24/08/2017",
+          value: "2017-08-23T20:00:18.000+0000"
+        },
+        image: {
+          id: 312290296,
+          _self: "https://api.pricefinder.com.au/v1/images/312290296"
+        },
+        property: {
+          id: 3520352,
+          _self: "https://api.pricefinder.com.au/v1/properties/3520352"
+        },
+        street: {
+          id: "NSW2839062"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.835363066199,
+          lon: 151.213626221528
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 2,
+          carParks: 1
+        },
+        address: {
+          street: "EATON STREET",
+          unit: "17",
+          streetNumber: "22",
+          streetAddress: "17/22 EATON STREET",
+          locality: "Neutral Bay",
+          streetLocation: "17/22",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65646230"
+      },
+      {
+        id: 65646130,
+        rental: true,
+        agents: [
+          {
+            name: "Jonathan Hooper",
+            phoneNumber: "0418 886 776"
+          }
+        ],
+        agencies: [
+          {
+            id: 59944,
+            name: "Laing+Simmons North Sydney",
+            phoneNumber: "02 9922 5177"
+          }
+        ],
+        price: {
+          display: "$750 per week"
+        },
+        startDate: {
+          display: "24/08/2017",
+          value: "2017-08-23T20:00:18.000+0000"
+        },
+        image: {
+          id: 312457659,
+          _self: "https://api.pricefinder.com.au/v1/images/312457659"
+        },
+        property: {
+          id: 6726263,
+          _self: "https://api.pricefinder.com.au/v1/properties/6726263"
+        },
+        street: {
+          id: "NSW2824183"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.829569550477,
+          lon: 151.219333772012
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 1,
+          carParks: 1
+        },
+        address: {
+          street: "BEN BOYD ROAD",
+          unit: "14",
+          streetNumber: "192",
+          streetAddress: "14/192 BEN BOYD ROAD",
+          locality: "Neutral Bay",
+          streetLocation: "14/192",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65646130"
+      },
+      {
+        id: 65682620,
+        rental: true,
+        agents: [
+          {
+            name: "Kirra De Giglio",
+            phoneNumber: "0414 850 784"
+          }
+        ],
+        agencies: [
+          {
+            id: 177115,
+            name: "Croll Real Estate - Neutral Bay"
+          }
+        ],
+        price: {
+          display: "For Rent"
+        },
+        startDate: {
+          display: "24/08/2017",
+          value: "2017-08-23T14:00:00.000+0000"
+        },
+        image: {
+          id: 154074790,
+          _self: "https://api.pricefinder.com.au/v1/images/154074790"
+        },
+        property: {
+          id: 6757051,
+          _self: "https://api.pricefinder.com.au/v1/properties/6757051"
+        },
+        street: {
+          id: "NSW2893094"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8350245339797,
+          lon: 151.216382849469
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false,
+          underOffer: false
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1
+        },
+        address: {
+          streetAddress: "Studio 4 Premier Street",
+          locality: "Neutral Bay",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 852.928588867187,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65682620"
+      },
+      {
+        id: 65634824,
+        rental: true,
+        agents: [
+          {
+            name: "Erin McNeill",
+            phoneNumber: "0466 605 318"
+          }
+        ],
+        agencies: [
+          {
+            id: 58841,
+            name: "Ray White Lower North Shore",
+            phoneNumber: "02 9969 1500"
+          }
+        ],
+        price: {
+          display: "$530"
+        },
+        startDate: {
+          display: "23/08/2017",
+          value: "2017-08-22T20:00:20.000+0000"
+        },
+        image: {
+          id: 310331755,
+          _self: "https://api.pricefinder.com.au/v1/images/310331755"
+        },
+        property: {
+          id: 1501184936,
+          _self: "https://api.pricefinder.com.au/v1/properties/1501184936"
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 1,
+          bathrooms: 1,
+          carParks: 1
+        },
+        address: {
+          street: "GROSVENOR STREET",
+          unit: "11",
+          streetNumber: "12 -14",
+          streetAddress: "11/12 -14 GROSVENOR STREET",
+          locality: "Neutral Bay",
+          streetLocation: "11/12 -14",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65634824"
+      },
+      {
+        id: 65635147,
+        rental: true,
+        agents: [
+          {
+            name: "Nick Georges",
+            phoneNumber: "0421 30 30 32"
+          }
+        ],
+        agencies: [
+          {
+            id: 58539,
+            name: "Croll",
+            phoneNumber: "02 99087777"
+          }
+        ],
+        price: {
+          display: "$765 per week "
+        },
+        startDate: {
+          display: "23/08/2017",
+          value: "2017-08-22T20:00:20.000+0000"
+        },
+        image: {
+          id: 312125462,
+          _self: "https://api.pricefinder.com.au/v1/images/312125462"
+        },
+        property: {
+          id: 16795675,
+          _self: "https://api.pricefinder.com.au/v1/properties/16795675"
+        },
+        street: {
+          id: "NSW2937387"
+        },
+        suburb: {
+          id: "NSW2959",
+          _self: "https://api.pricefinder.com.au/v1/suburbs/NSW2959"
+        },
+        location: {
+          lat: -33.8408265821784,
+          lon: 151.220482839019
+        },
+        propertyType: "Unit",
+        type: "RENT",
+        status: {
+          historic: false
+        },
+        propertyFeatures: {
+          bedrooms: 2,
+          bathrooms: 1,
+          carParks: 0
+        },
+        address: {
+          street: "LOWER WYCOMBE ROAD",
+          unit: "3",
+          streetNumber: "18",
+          streetAddress: "3/18 LOWER WYCOMBE ROAD",
+          locality: "Neutral Bay",
+          streetLocation: "3/18",
+          state: "NSW",
+          postcode: "2089"
+        },
+        landDetails: {
+          propertyArea: 0,
+          buildingArea: 0
+        },
+        _self: "https://api.pricefinder.com.au/v1/rentals/65635147"
+      }
+    ]
+  },
+  disclaimer: "&#169; The State of New South Wales (Land and Property Information - LPI) August/2017. Contains property sales information provided under licence from the Department of Finance and Services, Land and Property Information (LPI) Issue Date: 25/07/17 and may be combined with property attribute data and photographs from other third party data sources.  Ownership information derived from Non-Government sources. Please use as a guide only. Neither Veda nor LPI make any representations or warranties about accuracy, reliability, completeness or suitability of the data for any particular purpose and disclaims all responsibility and all liability (including without limitation, liability in negligence) for all expenses, losses, damages (including indirect or consequential damage) and costs which might be incurred as a result of the data being inaccurate or incomplete in any way and for any reason. Veda is authorised as a Property Sales Information provider of the Department of Finance and Services, Land and Property Information."
+}
