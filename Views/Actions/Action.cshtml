@@ -6,38 +6,44 @@
 @using System;
 
 @{
-	var detailsTemplate = "-";
+    var detailsTemplate = "-";
+    var cancelActionUrl = "";
 
-	if (Model.Action.This != null)
-	{
-		detailsTemplate = $"{Model.Action.This.ActualType().Name}/{Model.Action.GetType().Name}";
-	}
+    if (Request.QueryString["ReturnUrl"] != null)
+    {
+        cancelActionUrl = Request.QueryString["ReturnUrl"].ToString();
+    }
 
-	if (Html.ViewExists(detailsTemplate))
-	{
-		Layout = null;
-		Html.RenderPartial(detailsTemplate, Model.Action);
-	}
-	else
-	{
-		IEnumerable<Field> shown;
-		IEnumerable<Field> shownWithFieldSets;
-		IEnumerable<Field> hidden;
+    if (Model.Action.This != null)
+    {
+        detailsTemplate = $"{Model.Action.This.ActualType().Name}/{Model.Action.GetType().Name}";
+    }
 
-		TempData["ShowSubmit"] = true;
+    if (Html.ViewExists(detailsTemplate))
+    {
+        Layout = null;
+        Html.RenderPartial(detailsTemplate, Model.Action);
+    }
+    else
+    {
+        IEnumerable<Field> shown;
+        IEnumerable<Field> shownWithFieldSets;
+        IEnumerable<Field> hidden;
 
-		if (Model.IsMultiPage)
-		{
-			shown = Model.FieldsForPage;
-			shownWithFieldSets = Model.FieldsForPage.Where(f => f.FieldSetAttribute != null).ToList();
-			hidden = Model.HiddenFieldsForPage;
-		}
-		else
-		{
-			shown = Model.Fields;
-			shownWithFieldSets = Model.Fields.Where(f => f.FieldSetAttribute != null).ToList();
-			hidden = null;
-		}
+        TempData["ShowSubmit"] = true;
+
+        if (Model.IsMultiPage)
+        {
+            shown = Model.FieldsForPage;
+            shownWithFieldSets = Model.FieldsForPage.Where(f => f.FieldSetAttribute != null).ToList();
+            hidden = Model.HiddenFieldsForPage;
+        }
+        else
+        {
+            shown = Model.Fields;
+            shownWithFieldSets = Model.Fields.Where(f => f.FieldSetAttribute != null).ToList();
+            hidden = null;
+        }
 
 
 		@Html.Partial("Menu")
@@ -305,7 +311,7 @@
 							</form>
 						}
 					}
-					 <form method="post" id="cancel-form">
+					 <form method="post" id="cancel-form" action="@(cancelActionUrl)">
 						<input type="hidden" name="cancel" value="true" />                         
 					 </form>
 				</div>
