@@ -1150,6 +1150,16 @@ input[type="*"]::placeholder {
                                   supported by Chrome and Opera */
 }
 
+/* line 83, F:/Realtair.UI/scss/modules/_typography.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 87, F:/Realtair.UI/scss/modules/_typography.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
 /* line 1, F:/Realtair.UI/scss/modules/_blocks.scss */
 .panel {
   border-radius: 8px;
