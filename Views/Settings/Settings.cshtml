@@ -22,7 +22,7 @@
                 <div class="tab-content">
                     @foreach (var setting in Model.Actions)
                     {
-                        <div id="tab-@setting.UrlSafeName()" class="tab-pane fade in @(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
+                        <div id="tab-@setting.UrlSafeName()" class="main-form tab-pane fade in @(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : "")">
                             <form method="post" class="form-horizontal" action="/@Model.Entity.UrlSafeName()/@Model.Entity.Id/settings/@setting.UrlSafeName()">
                                 @if (setting.HasValidated && !setting.IsValid)
                                 {
