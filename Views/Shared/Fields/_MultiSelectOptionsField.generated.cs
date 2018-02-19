@@ -55,37 +55,33 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n        <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-                                Write(Model.Label);
+            #line 11 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+                                     Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-8\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
          if (options.Count() == 0)
         {
 
@@ -94,14 +90,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 693), Tuple.Create("\"", 716)
+WriteAttribute("id", Tuple.Create(" id=\"", 638), Tuple.Create("\"", 661)
             
-            #line 18 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 698), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 15 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+, Tuple.Create(Tuple.Create("", 643), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 698), false)
+, 643), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -110,7 +106,7 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
 "t>\r\n");
 
             
-            #line 21 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 18 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
         }
         else
         {
@@ -120,14 +116,14 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 878), Tuple.Create("\"", 901)
+WriteAttribute("id", Tuple.Create(" id=\"", 823), Tuple.Create("\"", 846)
             
-            #line 24 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 883), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 21 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+, Tuple.Create(Tuple.Create("", 828), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 883), false)
+, 828), false)
 );
 
 WriteLiteral(" class=\"form-control select2-multiple\"");
@@ -137,13 +133,13 @@ WriteLiteral(" multiple=\"multiple\"");
 WriteLiteral(">\r\n");
 
             
-            #line 25 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 22 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 22 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                  foreach (var option in options)
                 {
 
@@ -153,7 +149,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    <option ");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                         Write((Model.Value as IEnumerable<Entity>).Where(a => a.Id.ToString() == option.Id).Any() ? "selected" : "");
 
             
@@ -162,7 +158,7 @@ WriteLiteral("                    <option ");
 WriteLiteral(" value=\"");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                                                                                                                                        Write(option.Id.ToString());
 
             
@@ -171,7 +167,7 @@ WriteLiteral(" value=\"");
 WriteLiteral("\">");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                                                                                                                                                               Write(option.Description);
 
             
@@ -180,8 +176,8 @@ WriteLiteral("\">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 28 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-                    
+            #line 25 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+
                 }
 
             
@@ -190,21 +186,13 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("            </select>\r\n");
 
             
-            #line 31 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 28 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
         }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n        <link");
-
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" type=\"text/css\"");
-
-WriteLiteral(" href=\"https://static.realtair.com/plugins/select2/css/select2.min.css\"");
-
-WriteLiteral(">\r\n        <script");
+WriteLiteral("\r\n        <script");
 
 WriteLiteral(" src=\"https://static.realtair.com/plugins/select2/js/select2.min.js\"");
 
@@ -213,7 +201,7 @@ WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(fun
 "#");
 
             
-            #line 40 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 36 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
             Write(hopefullyUniqueId);
 
             
@@ -222,7 +210,7 @@ WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(fun
 WriteLiteral("\').select2();\r\n            $(\'#");
 
             
-            #line 41 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 37 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
            Write(hopefullyUniqueId);
 
             
@@ -231,7 +219,7 @@ WriteLiteral("\').select2();\r\n            $(\'#");
 WriteLiteral("\').change(function () {\r\n                $(\'#");
 
             
-            #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+            #line 38 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
                 Write(Model.UniqueName);
 
             
@@ -240,36 +228,36 @@ WriteLiteral("\').change(function () {\r\n                $(\'#");
 WriteLiteral("\').val(JSON.stringify($(this).val()));\r\n            });\r\n        </script>\r\n    <" +
 "/div>\r\n    <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1898), Tuple.Create("\"", 1924)
+WriteAttribute("name", Tuple.Create(" name=\"", 1703), Tuple.Create("\"", 1729)
             
-            #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1905), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+, Tuple.Create(Tuple.Create("", 1710), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1905), false)
+, 1710), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1925), Tuple.Create("\"", 1949)
+WriteAttribute("id", Tuple.Create(" id=\"", 1730), Tuple.Create("\"", 1754)
             
-            #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1930), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+, Tuple.Create(Tuple.Create("", 1735), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1930), false)
+, 1735), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1964), Tuple.Create("\"", 1981)
+WriteAttribute("value", Tuple.Create(" value=\"", 1769), Tuple.Create("\"", 1786)
             
-            #line 46 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-     , Tuple.Create(Tuple.Create("", 1972), Tuple.Create<System.Object, System.Int32>(Values
+            #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
+     , Tuple.Create(Tuple.Create("", 1777), Tuple.Create<System.Object, System.Int32>(Values
             
             #line default
             #line hidden
-, 1972), false)
+, 1777), false)
 );
 
 WriteLiteral(" />\r\n</div>\r\n");

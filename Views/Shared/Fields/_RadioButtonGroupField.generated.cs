@@ -60,9 +60,9 @@ namespace ASP
             
             #line 6 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
   
-	var attribute = Model.FieldAttribute as RadioButtonGroupFieldAttribute;
-	var options = attribute.Options(Model.Action, Html.LoggedInUser());
-	var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
+    var attribute = Model.FieldAttribute as RadioButtonGroupFieldAttribute;
+    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+    var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
 
             
             #line default
@@ -71,21 +71,21 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n\t<div");
+WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
-WriteLiteral(">\r\n\t\t<label");
+WriteLiteral(">\r\n        <label");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 464), Tuple.Create("\"", 535)
-, Tuple.Create(Tuple.Create("", 472), Tuple.Create("control-label", 472), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 487), Tuple.Create("\"", 558)
+, Tuple.Create(Tuple.Create("", 495), Tuple.Create("control-label", 495), true)
             
             #line 14 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create(" ", 485), Tuple.Create<System.Object, System.Int32>(Model.Label.Trim().Length == 0 ? "hidden" : ""
+, Tuple.Create(Tuple.Create(" ", 508), Tuple.Create<System.Object, System.Int32>(Model.Label.Trim().Length == 0 ? "hidden" : ""
             
             #line default
             #line hidden
-, 486), false)
+, 509), false)
 );
 
 WriteLiteral(">");
@@ -97,127 +97,114 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n\t</div>\r\n\r\n\t<div");
+WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n\t\t<div");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"rb-container\"");
+WriteLiteral(" class=\"container-radiobtn\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n            <ul>\r\n");
 
             
-            #line 19 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-			
-            
-            #line default
-            #line hidden
-            
-            #line 19 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-             if (options.Count() == 0)
-			{
-
+            #line 20 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+                
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t<div>\r\n\t\t\t\t\t<div");
+            
+            #line 20 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+                 if (options.Count() == 0)
+            {
 
-WriteLiteral(" class=\"radio-button\"");
-
-WriteLiteral(">\r\n\t\t\t\t\t\t<input");
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <li>\r\n                        <input");
 
 WriteLiteral(" type=\"radio\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 740), Tuple.Create("\"", 765)
+WriteAttribute("name", Tuple.Create(" name=\"", 813), Tuple.Create("\"", 838)
             
             #line 23 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create("", 747), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 820), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 747), false)
+, 820), false)
 );
 
-WriteLiteral(" disabled/>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<label");
+WriteLiteral(">\r\n                        <label>None to display</label>\r\n                      " +
+"  <div");
 
-WriteLiteral(" class=\"radio-button-label\"");
+WriteLiteral(" class=\"radiobtn\"");
 
-WriteLiteral(">None to display</label>\r\n\t\t\t\t</div>\r\n");
+WriteLiteral("></div>\r\n                    </li>\r\n");
 
             
             #line 27 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-			}
-			else
-			{
-				foreach (var option in options)
-				{
+                }
+                else
+                {
+                    foreach (var option in options)
+                    {
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<div");
+WriteLiteral("                        <li>\r\n");
 
-WriteLiteral(" class=\"rb\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("\t\t\t\t\t\t\t");
+WriteLiteral("                            ");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 33 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
                        Write(Html.RadioButton(
-								Model.UniqueName,
-								option.Value.ToString(),
-								option.Value.ToString() == Model.Value?.ToString(),
-								new { id = option.Id.ToString() }));
+                            Model.UniqueName,
+                            option.Value.ToString(),
+                            option.Value.ToString() == Model.Value?.ToString(),
+                            new { id = option.Id.ToString() }
+                        ));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<label");
+WriteLiteral("\r\n                            <label");
 
-WriteLiteral(" class=\"rb-label\"");
-
-WriteAttribute("for", Tuple.Create(" for=\"", 1205), Tuple.Create("\"", 1232)
+WriteAttribute("for", Tuple.Create(" for=\"", 1499), Tuple.Create("\"", 1526)
             
-            #line 40 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create("", 1211), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 39 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+, Tuple.Create(Tuple.Create("", 1505), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 1211), false)
+, 1505), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 40 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-                                                                       Write(option.Description);
+            #line 39 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+                                                          Write(option.Description);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n\t\t\t\t\t</div>\r\n");
+WriteLiteral("</label>\r\n                            <div");
+
+WriteLiteral(" class=\"radiobtn\"");
+
+WriteLiteral("></div>\r\n                        </li>\r\n");
 
             
             #line 42 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-				}
-			}
+                    }
+                }
 
             
             #line default
             #line hidden
-WriteLiteral("\t\t</div>\r\n\t\t<script>\r\n\t\t\t$(\'#");
-
-            
-            #line 46 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-            Write(hopefullyUniqueId);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\').select2();\r\n\t\t</script>\r\n\t</div>\r\n</div>\r\n\r\n");
+WriteLiteral("            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
         }
     }

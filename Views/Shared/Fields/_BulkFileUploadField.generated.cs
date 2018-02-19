@@ -58,38 +58,34 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n        <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-                                Write(Model.Label);
+            #line 8 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+                                     Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 371), Tuple.Create("\"", 402)
+WriteAttribute("id", Tuple.Create(" id=\"", 317), Tuple.Create("\"", 348)
             
-            #line 13 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 376), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 10 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 322), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 376), false)
-, Tuple.Create(Tuple.Create("", 395), Tuple.Create("_upload", 395), true)
+, 322), false)
+, Tuple.Create(Tuple.Create("", 341), Tuple.Create("_upload", 341), true)
 );
 
 WriteLiteral(" class=\"dropzone file-uploader\"");
@@ -98,27 +94,27 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"dz-default dz-clickable dz-message\"");
 
-WriteLiteral(">\r\n                <span>Drop files here to upload</span>\r\n            </div>\r\n  " +
-"      </div>\r\n        <input");
+WriteLiteral(">\r\n                <h3>Drop files here to upload</h3>\r\n            </div>\r\n      " +
+"  </div>\r\n        <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 605), Tuple.Create("\"", 631)
+WriteAttribute("name", Tuple.Create(" name=\"", 547), Tuple.Create("\"", 573)
             
-            #line 18 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 612), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 554), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 612), false)
+, 554), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 632), Tuple.Create("\"", 656)
+WriteAttribute("id", Tuple.Create(" id=\"", 574), Tuple.Create("\"", 598)
             
-            #line 18 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 637), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 579), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 637), false)
+, 579), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
@@ -128,9 +124,9 @@ WriteLiteral(" value=\"[]\"");
 WriteLiteral(" />\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 22 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
  using (Html.Delayed())
-{      
+{
 
             
             #line default
@@ -156,7 +152,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    <script>\r\n        Dropzone.autoDiscover = false;\r\n\r\n        var d = $(\"#");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                 Write(Model.UniqueName);
 
             
@@ -166,7 +162,7 @@ WriteLiteral("_upload\").dropzone({\r\n            url: \"/actions/functions/upl
 "           addRemoveLinks: true,\r\n            maxFiles: (");
 
             
-            #line 32 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 29 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                    Write(attribute.MaxFiles);
 
             
@@ -175,7 +171,7 @@ WriteLiteral("_upload\").dropzone({\r\n            url: \"/actions/functions/upl
 WriteLiteral(" > 0  && ");
 
             
-            #line 32 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 29 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                                                  Write(attribute.MaxFiles);
 
             
@@ -185,7 +181,7 @@ WriteLiteral(") || null,\r\n            success: function (file, response) {\r\n
 " imageId = parseInt(response);\r\n                var list = JSON.parse($(\'#");
 
             
-            #line 35 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 32 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                                       Write(Model.UniqueName);
 
             
@@ -194,7 +190,7 @@ WriteLiteral(") || null,\r\n            success: function (file, response) {\r\n
 WriteLiteral("\').val());\r\n                list.push(imageId);\r\n                $(\'#");
 
             
-            #line 37 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 34 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                 Write(Model.UniqueName);
 
             
@@ -212,7 +208,7 @@ WriteLiteral(@"').val(JSON.stringify(list));
                 var list = JSON.parse($('#");
 
             
-            #line 46 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 43 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                                       Write(Model.UniqueName);
 
             
@@ -223,7 +219,7 @@ WriteLiteral("\').val());\r\n                var imageId = parseInt(file.preview
 ") - 1, 1);\r\n                $(\'#");
 
             
-            #line 49 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 46 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
                 Write(Model.UniqueName);
 
             
@@ -242,7 +238,7 @@ WriteLiteral(@"').val(JSON.stringify(list));
 ");
 
             
-            #line 59 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
+            #line 56 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
 }
             
             #line default

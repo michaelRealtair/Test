@@ -44,65 +44,55 @@ WriteLiteral("<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n        <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-                                Write(Model.Label);
+            #line 4 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+                                     Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        <input");
 
-WriteLiteral(" class=\"bootstrap-timepicker\"");
+WriteLiteral(" type=\"text\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(" class=\"form-control lite mytimepicker\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 283), Tuple.Create("\"", 307)
+WriteAttribute("name", Tuple.Create(" name=\"", 231), Tuple.Create("\"", 255)
+            
+            #line 6 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 238), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 238), false)
+);
+
+WriteLiteral(" placeholder=\"Click to select time\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 291), Tuple.Create("\"", 325)
+            
+            #line 6 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+                                                       , Tuple.Create(Tuple.Create("", 299), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
+            
+            #line default
+            #line hidden
+, 299), false)
+);
+
+WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n");
+
             
             #line 10 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 290), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 290), false)
-);
-
-WriteLiteral(" \r\n                   type=\"text\"");
-
-WriteLiteral(" \r\n                   class=\"form-control mytimepicker input-small\"");
-
-WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 408), Tuple.Create("\"", 462)
-            
-            #line 13 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
-            
-            #line default
-            #line hidden
-, 436), false)
-);
-
-WriteLiteral(">\r\n            <i");
-
-WriteLiteral(" class=\"icon-time\"");
-
-WriteLiteral("></i>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
-
-            
-            #line 19 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
  using (Html.Delayed(null, "time-span-field"))
 {
 
@@ -131,11 +121,12 @@ WriteLiteral("    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteLiteral(">\r\n        jQuery(function () {\r\n            jQuery(\'.mytimepicker\').timepicker({" +
-"\r\n                template: false\r\n            });\r\n        })\r\n    </script>\r\n");
+WriteLiteral(">\r\n        $(function () {\r\n            $(\'.mytimepicker\').timepicker({\r\n        " +
+"      defaultTime: \'current\',\r\n              minuteStep: 1\r\n            });\r\n   " +
+"     })\r\n    </script>\r\n");
 
             
-            #line 30 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 22 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
 }
             
             #line default

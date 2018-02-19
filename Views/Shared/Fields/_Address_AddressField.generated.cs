@@ -27,7 +27,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
+    
+    #line 1 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
     using Realtair.Framework.Core.Entities;
+    
+    #line default
+    #line hidden
     using Realtair.Framework.Core.Interfaces;
     using Realtair.Framework.Core.Web.Utilities;
     
@@ -41,12 +46,12 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 2 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
   
-    Realtair.Framework.Core.Entities.Address Address = null;
+    Address Address = null;
     if (Model.Value != null)
     {
-        Address = (Realtair.Framework.Core.Entities.Address)Model?.Value;
+        Address = (Address)Model?.Value;
     }
 
             
@@ -56,227 +61,234 @@ WriteLiteral("\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n        <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
             #line 12 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-                                Write(Model.Label);
+                                     Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n        <div");
-
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 506), Tuple.Create("\"", 537)
-            
-            #line 18 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 511), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 511), false)
-, Tuple.Create(Tuple.Create("", 530), Tuple.Create("_line_1", 530), true)
-);
-
-WriteLiteral(" placeholder=\"Address\"");
+WriteLiteral(">\r\n        <input");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 572), Tuple.Create("\"", 604)
+WriteLiteral(" class=\"form-control lite\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 383), Tuple.Create("\"", 414)
             
-            #line 18 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-                  , Tuple.Create(Tuple.Create("", 580), Tuple.Create<System.Object, System.Int32>(Address?.AddressLine1
-            
-            #line default
-            #line hidden
-, 580), false)
-);
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(">\r\n            </div>\r\n        </div>\r\n        <div");
-
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 762), Tuple.Create("\"", 793)
-            
-            #line 23 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 767), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 14 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+, Tuple.Create(Tuple.Create("", 388), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 767), false)
-, Tuple.Create(Tuple.Create("", 786), Tuple.Create("_line_2", 786), true)
+, 388), false)
+, Tuple.Create(Tuple.Create("", 407), Tuple.Create("_line_1", 407), true)
 );
+
+WriteLiteral(" placeholder=\"Address Line 1\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 444), Tuple.Create("\"", 476)
+            
+            #line 14 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+                                           , Tuple.Create(Tuple.Create("", 452), Tuple.Create<System.Object, System.Int32>(Address?.AddressLine1
+            
+            #line default
+            #line hidden
+, 452), false)
+);
+
+WriteLiteral(" required>\r\n        <small>");
+
+            
+            #line 15 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+          Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n    <div");
+
+WriteLiteral(" class=\"col-sm-10\"");
+
+WriteLiteral(">\r\n        <input");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 806), Tuple.Create("\"", 838)
+WriteLiteral(" class=\"form-control lite\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 719), Tuple.Create("\"", 750)
             
-            #line 23 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 814), Tuple.Create<System.Object, System.Int32>(Address?.AddressLine2
+            #line 21 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+, Tuple.Create(Tuple.Create("", 724), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 814), false)
+, 724), false)
+, Tuple.Create(Tuple.Create("", 743), Tuple.Create("_line_2", 743), true)
 );
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" placeholder=\"Address Line 2\"");
 
-WriteLiteral(">\r\n            </div>\r\n        </div>\r\n        <div");
+WriteAttribute("value", Tuple.Create(" value=\"", 780), Tuple.Create("\"", 812)
+            
+            #line 21 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+                                           , Tuple.Create(Tuple.Create("", 788), Tuple.Create<System.Object, System.Int32>(Address?.AddressLine2
+            
+            #line default
+            #line hidden
+, 788), false)
+);
 
-WriteLiteral(" class=\"row\"");
+WriteLiteral(">\r\n        <small></small>\r\n    </div>\r\n</div>\r\n<div");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n    <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                <input");
+WriteLiteral(">\r\n        <input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 984), Tuple.Create("\"", 1015)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1019), Tuple.Create("\"", 1050)
             
             #line 28 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 989), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1024), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 989), false)
-, Tuple.Create(Tuple.Create("", 1008), Tuple.Create("_suburb", 1008), true)
+, 1024), false)
+, Tuple.Create(Tuple.Create("", 1043), Tuple.Create("_suburb", 1043), true)
 );
 
 WriteLiteral(" placeholder=\"Suburb\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1037), Tuple.Create("\"", 1063)
+WriteAttribute("value", Tuple.Create(" value=\"", 1072), Tuple.Create("\"", 1098)
             
             #line 28 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-    , Tuple.Create(Tuple.Create("", 1045), Tuple.Create<System.Object, System.Int32>(Address?.Suburb
+                                  , Tuple.Create(Tuple.Create("", 1080), Tuple.Create<System.Object, System.Int32>(Address?.Suburb
             
             #line default
             #line hidden
-, 1045), false)
+, 1080), false)
 );
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(">\r\n            </div>\r\n            <div");
+WriteLiteral(">\r\n    </div>\r\n    <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                <input");
+WriteLiteral(">\r\n        <input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1178), Tuple.Create("\"", 1208)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1194), Tuple.Create("\"", 1224)
             
             #line 31 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1183), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1199), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1183), false)
-, Tuple.Create(Tuple.Create("", 1202), Tuple.Create("_state", 1202), true)
+, 1199), false)
+, Tuple.Create(Tuple.Create("", 1218), Tuple.Create("_state", 1218), true)
 );
 
 WriteLiteral(" placeholder=\"State\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1229), Tuple.Create("\"", 1254)
+WriteAttribute("value", Tuple.Create(" value=\"", 1245), Tuple.Create("\"", 1270)
             
             #line 31 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-  , Tuple.Create(Tuple.Create("", 1237), Tuple.Create<System.Object, System.Int32>(Address?.State
+                                , Tuple.Create(Tuple.Create("", 1253), Tuple.Create<System.Object, System.Int32>(Address?.State
             
             #line default
             #line hidden
-, 1237), false)
+, 1253), false)
 );
+
+WriteLiteral(">\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"col-sm-2\"");
+
+WriteLiteral(">\r\n        <input");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" class=\"form-control lite\"");
 
-WriteLiteral(">\r\n            </div>\r\n            <div");
-
-WriteLiteral(" class=\"col-sm-4\"");
-
-WriteLiteral(">\r\n                <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 1369), Tuple.Create("\"", 1402)
+WriteAttribute("id", Tuple.Create(" id=\"", 1366), Tuple.Create("\"", 1399)
             
             #line 34 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1374), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1371), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1374), false)
-, Tuple.Create(Tuple.Create("", 1393), Tuple.Create("_postcode", 1393), true)
+, 1371), false)
+, Tuple.Create(Tuple.Create("", 1390), Tuple.Create("_postcode", 1390), true)
 );
 
 WriteLiteral(" placeholder=\"Post Code\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1427), Tuple.Create("\"", 1455)
+WriteAttribute("value", Tuple.Create(" value=\"", 1424), Tuple.Create("\"", 1452)
             
             #line 34 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-         , Tuple.Create(Tuple.Create("", 1435), Tuple.Create<System.Object, System.Int32>(Address?.Postcode
+                                       , Tuple.Create(Tuple.Create("", 1432), Tuple.Create<System.Object, System.Int32>(Address?.Postcode
             
             #line default
             #line hidden
-, 1435), false)
+, 1432), false)
 );
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control\"");
-
-WriteLiteral(">\r\n            </div>\r\n        </div>\r\n");
+WriteLiteral(">\r\n    </div>\r\n");
 
             
-            #line 37 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-        
+            #line 36 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+    
             
             #line default
             #line hidden
             
-            #line 37 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-         if (Model.HasError)
-        {
+            #line 36 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+     if (Model.HasError)
+    {
 
             
             #line default
             #line hidden
-WriteLiteral("            <span");
+WriteLiteral("        <span");
 
 WriteLiteral(" class=\"help-block\"");
 
 WriteLiteral(">");
 
             
-            #line 39 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-                                Write(Model.ErrorMessage);
+            #line 38 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+                            Write(Model.ErrorMessage);
 
             
             #line default
@@ -284,140 +296,140 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n");
 
             
-            #line 40 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-        }
+            #line 39 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+    }
 
             
             #line default
             #line hidden
-WriteLiteral("    </div>\r\n</div>\r\n\r\n<input");
+WriteLiteral("</div>\r\n\r\n\r\n<input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1673), Tuple.Create("\"", 1708)
+WriteAttribute("id", Tuple.Create(" id=\"", 1587), Tuple.Create("\"", 1622)
+            
+            #line 43 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+, Tuple.Create(Tuple.Create("", 1592), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 1592), false)
+, Tuple.Create(Tuple.Create("", 1611), Tuple.Create("_streetName", 1611), true)
+);
+
+WriteLiteral(" type=\"hidden\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 1637), Tuple.Create("\"", 1667)
+            
+            #line 43 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+, Tuple.Create(Tuple.Create("", 1645), Tuple.Create<System.Object, System.Int32>(Address?.StreetName
+            
+            #line default
+            #line hidden
+, 1645), false)
+);
+
+WriteLiteral(">\r\n<input");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1677), Tuple.Create("\"", 1712)
             
             #line 44 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1678), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1682), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1678), false)
-, Tuple.Create(Tuple.Create("", 1697), Tuple.Create("_streetName", 1697), true)
+, 1682), false)
+, Tuple.Create(Tuple.Create("", 1701), Tuple.Create("_streetType", 1701), true)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1723), Tuple.Create("\"", 1753)
+WriteAttribute("value", Tuple.Create(" value=\"", 1727), Tuple.Create("\"", 1757)
             
             #line 44 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1731), Tuple.Create<System.Object, System.Int32>(Address?.StreetName
+, Tuple.Create(Tuple.Create("", 1735), Tuple.Create<System.Object, System.Int32>(Address?.StreetType
             
             #line default
             #line hidden
-, 1731), false)
+, 1735), false)
 );
 
 WriteLiteral(">\r\n<input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1763), Tuple.Create("\"", 1798)
+WriteAttribute("id", Tuple.Create(" id=\"", 1767), Tuple.Create("\"", 1804)
             
             #line 45 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1768), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1772), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1768), false)
-, Tuple.Create(Tuple.Create("", 1787), Tuple.Create("_streetType", 1787), true)
+, 1772), false)
+, Tuple.Create(Tuple.Create("", 1791), Tuple.Create("_streetNumber", 1791), true)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1813), Tuple.Create("\"", 1843)
+WriteAttribute("value", Tuple.Create(" value=\"", 1819), Tuple.Create("\"", 1851)
             
             #line 45 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1821), Tuple.Create<System.Object, System.Int32>(Address?.StreetType
+, Tuple.Create(Tuple.Create("", 1827), Tuple.Create<System.Object, System.Int32>(Address?.StreetNumber
             
             #line default
             #line hidden
-, 1821), false)
+, 1827), false)
 );
 
 WriteLiteral(">\r\n<input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1853), Tuple.Create("\"", 1890)
+WriteAttribute("name", Tuple.Create(" name=\"", 1861), Tuple.Create("\"", 1885)
             
             #line 46 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1858), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1868), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1858), false)
-, Tuple.Create(Tuple.Create("", 1877), Tuple.Create("_streetNumber", 1877), true)
+, 1868), false)
+);
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1886), Tuple.Create("\"", 1908)
+            
+            #line 46 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+, Tuple.Create(Tuple.Create("", 1891), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 1891), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1905), Tuple.Create("\"", 1937)
+WriteAttribute("value", Tuple.Create(" value=\"", 1923), Tuple.Create("\"", 1977)
+, Tuple.Create(Tuple.Create("", 1931), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+
             
             #line 46 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1913), Tuple.Create<System.Object, System.Int32>(Address?.StreetNumber
-            
-            #line default
-            #line hidden
-, 1913), false)
-);
-
-WriteLiteral(">\r\n<input");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 1947), Tuple.Create("\"", 1971)
-            
-            #line 47 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1954), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 1954), false)
-);
-
-WriteAttribute("id", Tuple.Create(" id=\"", 1972), Tuple.Create("\"", 1994)
-            
-            #line 47 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
-, Tuple.Create(Tuple.Create("", 1977), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 1977), false)
-);
-
-WriteLiteral(" type=\"hidden\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 2009), Tuple.Create("\"", 2063)
-, Tuple.Create(Tuple.Create("", 2017), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
-
-            
-            #line 47 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                                                              if (Address != null) { 
             
             #line default
             #line hidden
             
-            #line 47 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 46 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                                              WriteTo(__razor_attribute_value_writer, Address.Serialize());
 
             
             #line default
             #line hidden
             
-            #line 47 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 46 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                                                                                                          }
             
             #line default
             #line hidden
-}), 2017), false)
+}), 1931), false)
 );
 
 WriteLiteral("/>\r\n\r\n\r\n<script>\r\n(function () {\r\n    var serialised = document.getElementById(\'");
 
             
-            #line 52 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 51 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                          Write(Model.UniqueName);
 
             
@@ -426,7 +438,7 @@ WriteLiteral("/>\r\n\r\n\r\n<script>\r\n(function () {\r\n    var serialised = d
 WriteLiteral("\')\r\n    var line_1 = document.getElementById(\'");
 
             
-            #line 53 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 52 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                       Write(Model.UniqueName);
 
             
@@ -435,7 +447,7 @@ WriteLiteral("\')\r\n    var line_1 = document.getElementById(\'");
 WriteLiteral("_line_1\');\r\n    var line_2 = document.getElementById(\'");
 
             
-            #line 54 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 53 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                       Write(Model.UniqueName);
 
             
@@ -444,7 +456,7 @@ WriteLiteral("_line_1\');\r\n    var line_2 = document.getElementById(\'");
 WriteLiteral("_line_2\');\r\n    var suburb = document.getElementById(\'");
 
             
-            #line 55 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 54 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                       Write(Model.UniqueName);
 
             
@@ -453,7 +465,7 @@ WriteLiteral("_line_2\');\r\n    var suburb = document.getElementById(\'");
 WriteLiteral("_suburb\');\r\n    var state = document.getElementById(\'");
 
             
-            #line 56 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 55 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                      Write(Model.UniqueName);
 
             
@@ -462,7 +474,7 @@ WriteLiteral("_suburb\');\r\n    var state = document.getElementById(\'");
 WriteLiteral("_state\');\r\n    var postcode = document.getElementById(\'");
 
             
-            #line 57 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 56 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                         Write(Model.UniqueName);
 
             
@@ -471,7 +483,7 @@ WriteLiteral("_state\');\r\n    var postcode = document.getElementById(\'");
 WriteLiteral("_postcode\');\r\n    var streetNumber = document.getElementById(\'");
 
             
-            #line 58 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 57 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                             Write(Model.UniqueName);
 
             
@@ -480,7 +492,7 @@ WriteLiteral("_postcode\');\r\n    var streetNumber = document.getElementById(\'
 WriteLiteral("_streetNumber\');\r\n    var streetName = document.getElementById(\'");
 
             
-            #line 59 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 58 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                           Write(Model.UniqueName);
 
             
@@ -489,7 +501,7 @@ WriteLiteral("_streetNumber\');\r\n    var streetName = document.getElementById(
 WriteLiteral("_streetName\');\r\n    var streetType = document.getElementById(\'");
 
             
-            #line 60 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 59 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                                           Write(Model.UniqueName);
 
             
@@ -499,7 +511,7 @@ WriteLiteral("_streetType\');\r\n\r\n    var widget, initAF = function () {\r\n 
 "sFinder.Widget(\r\n        document.getElementById(\'");
 
             
-            #line 64 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
+            #line 63 "..\..\Views\Shared\Fields\_Address_AddressField.cshtml"
                              Write(Model.UniqueName);
 
             

@@ -52,53 +52,77 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group has-error\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" for=\"inputEmail3\"");
 
-WriteLiteral(">\r\n            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-                                    Write(Model.Label);
+            #line 6 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                                                           Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 297), Tuple.Create("\"", 321)
+WriteLiteral(" class=\"form-control input-lg rich-text-area\"");
+
+WriteLiteral(" cols=\"20\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 310), Tuple.Create("\"", 332)
             
-            #line 11 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-, Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 9 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+  , Tuple.Create(Tuple.Create("", 315), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 304), false)
+, 315), false)
 );
 
-WriteLiteral(" placeholder=\"...\"");
+WriteAttribute("name", Tuple.Create(" name=\"", 333), Tuple.Create("\"", 357)
+            
+            #line 9 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                           , Tuple.Create(Tuple.Create("", 340), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 340), false)
+);
 
-WriteLiteral(" class=\"form-control\"");
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 358), Tuple.Create("\"", 384)
+            
+            #line 9 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                                                           , Tuple.Create(Tuple.Create("", 372), Tuple.Create<System.Object, System.Int32>(Model.Label
+            
+            #line default
+            #line hidden
+, 372), false)
+);
 
-WriteLiteral(">");
+WriteLiteral(" rows=\"20\"");
+
+WriteLiteral(" style=\"resize: none; width: 400px; display: none;\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("                ");
 
             
-            #line 11 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-                                                                                 Write(Model.Value);
+            #line 10 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+           Write(Model.Value);
 
             
             #line default
             #line hidden
-WriteLiteral("</textarea>\r\n            <span");
+WriteLiteral("\r\n            </textarea>\r\n            <span");
 
 WriteLiteral(" class=\"help-block\"");
 
@@ -126,26 +150,24 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" for=\"inputEmail3\"");
 
-WriteLiteral(">\r\n            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-                                    Write(Model.Label);
+            #line 19 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                                                           Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n            <textarea");
 
@@ -153,34 +175,34 @@ WriteLiteral(" class=\"form-control input-lg rich-text-area\"");
 
 WriteLiteral(" cols=\"20\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 761), Tuple.Create("\"", 783)
+WriteAttribute("id", Tuple.Create(" id=\"", 836), Tuple.Create("\"", 858)
             
-            #line 24 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-  , Tuple.Create(Tuple.Create("", 766), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 22 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+  , Tuple.Create(Tuple.Create("", 841), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 766), false)
+, 841), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 784), Tuple.Create("\"", 808)
+WriteAttribute("name", Tuple.Create(" name=\"", 859), Tuple.Create("\"", 883)
             
-            #line 24 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-                           , Tuple.Create(Tuple.Create("", 791), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 22 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                           , Tuple.Create(Tuple.Create("", 866), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 791), false)
+, 866), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 809), Tuple.Create("\"", 835)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 884), Tuple.Create("\"", 910)
             
-            #line 24 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
-                                                           , Tuple.Create(Tuple.Create("", 823), Tuple.Create<System.Object, System.Int32>(Model.Label
+            #line 22 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+                                                           , Tuple.Create(Tuple.Create("", 898), Tuple.Create<System.Object, System.Int32>(Model.Label
             
             #line default
             #line hidden
-, 823), false)
+, 898), false)
 );
 
 WriteLiteral(" rows=\"20\"");
@@ -192,7 +214,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                ");
 
             
-            #line 25 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+            #line 23 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
            Write(Model.Value);
 
             
@@ -201,7 +223,7 @@ WriteLiteral("                ");
 WriteLiteral("\r\n            </textarea>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\_RichTextAreaField.cshtml"
 }
 
             

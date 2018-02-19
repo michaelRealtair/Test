@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_Decimal_Field.cshtml")]
@@ -53,7 +54,7 @@ WriteLiteral(" class=\"form-group has-error\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-md-2 col-sm-2\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -68,20 +69,20 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n        </div>\r\n            \r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-md-10 col-sm-10\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 294), Tuple.Create("\"", 318)
+WriteAttribute("name", Tuple.Create(" name=\"", 308), Tuple.Create("\"", 332)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 301), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 315), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 301), false)
+, 315), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -90,14 +91,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 366), Tuple.Create("\"", 386)
+WriteAttribute("value", Tuple.Create(" value=\"", 380), Tuple.Create("\"", 400)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                   , Tuple.Create(Tuple.Create("", 374), Tuple.Create<System.Object, System.Int32>(Model.Value
+                   , Tuple.Create(Tuple.Create("", 388), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 374), false)
+, 388), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -130,7 +131,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-md-2 col-sm-2\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -147,18 +148,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-md-10 col-sm-10\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 706), Tuple.Create("\"", 730)
+WriteAttribute("name", Tuple.Create(" name=\"", 722), Tuple.Create("\"", 746)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 729), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 713), false)
+, 729), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -167,14 +168,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 778), Tuple.Create("\"", 798)
+WriteAttribute("value", Tuple.Create(" value=\"", 794), Tuple.Create("\"", 814)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                   , Tuple.Create(Tuple.Create("", 786), Tuple.Create<System.Object, System.Int32>(Model.Value
+                   , Tuple.Create(Tuple.Create("", 802), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 786), false)
+, 802), false)
 );
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");
