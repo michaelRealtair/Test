@@ -135,6 +135,11 @@
     <Compile Include="Utilities\IAuthenticationFactory.cs" />
     <Compile Include="Utilities\RenderSections.cs" />
     <Compile Include="Utilities\SingleSignOnAuthentication.cs" />
+    <Compile Include="Views\Actions\Action.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Action.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Actions\SecureActionSuccessful.generated.cs">
       <DependentUpon>SecureActionSuccessful.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -184,6 +189,11 @@
       <DependentUpon>_NoteWidget_WidgetField.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\_RecurringField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RecurringField.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Fields\_RichTextWidget_WidgetField.generated.cs">
       <DependentUpon>_RichTextWidget_WidgetField.cshtml</DependentUpon>
@@ -2584,9 +2594,17 @@
     <None Include="Content\plugins\bower_components\mobile-detect\CHANGELOG" />
     <None Include="Content\plugins\bower_components\mobile-detect\LICENSE" />
     <None Include="Content\plugins\bower_components\mobile-detect\README.md" />
+    <None Include="Views\Actions\Action.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Action.generated.cs</LastGenOutput>
+    </None>
     <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\_RecurringField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RecurringField.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Fields\_StatusField.cshtml">
       <Generator>RazorGenerator</Generator>
