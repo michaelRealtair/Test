@@ -5,14 +5,11 @@
 }
 
 <div class="form-group">
-    <div class="col-md-3 col-sm-4">
-        <label class="control-label">@Model.Label</label>
-    </div>
-
-    <div class="col-md-9 col-sm-8">
+    <label class="col-sm-2 control-label">@Model.Label</label>
+    <div class="col-sm-10">
         <div id="@(Model.UniqueName)_upload" class="dropzone file-uploader">
             <div class="dz-default dz-clickable dz-message">
-                <span>Drop files here to upload</span>
+                <h3>Drop files here to upload</h3>
             </div>
         </div>
         <input name="@(Model.UniqueName)" id="@(Model.UniqueName)" type="hidden" value="[]" />
@@ -20,7 +17,7 @@
 </div>
 
 @using (Html.Delayed())
-{      
+{
     <link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.css" type="text/css" />
     <script src="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
     <script>

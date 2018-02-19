@@ -4,47 +4,44 @@
 @model Realtair.Framework.Core.Actions.Field
 
 @{
-	var attribute = Model.FieldAttribute as RadioButtonGroupFieldAttribute;
-	var options = attribute.Options(Model.Action, Html.LoggedInUser());
-	var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
+    var attribute = Model.FieldAttribute as RadioButtonGroupFieldAttribute;
+    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+    var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
 }
 
 <div class="form-group">
-	<div class="col-md-3 col-sm-4">
-		<label class="control-label @(Model.Label.Trim().Length == 0 ? "hidden" : "")">@Model.Label</label>
-	</div>
+    <div class="col-sm-2 control-label">
+        <label class="control-label @(Model.Label.Trim().Length == 0 ? "hidden" : "")">@Model.Label</label>
+    </div>
 
-	<div class="col-md-9 col-sm-8">
-		<div class="rb-container">
-			@if (options.Count() == 0)
-			{
-				<div>
-					<div class="radio-button">
-						<input type="radio" name="@hopefullyUniqueId" disabled/>
-					</div>
-					<label class="radio-button-label">None to display</label>
-				</div>
-			}
-			else
-			{
-				foreach (var option in options)
-				{
-					<div>
-						<div class="rb">
-							@Html.RadioButton(
-								Model.UniqueName,
-								option.Value.ToString(),
-								option.Value.ToString() == Model.Value?.ToString(),
-								new { id = option.Id.ToString() })
-						</div>
-						<label class="rb-label" for="@option.Id.ToString()">@option.Description</label>
-					</div>
-				}
-			}
-		</div>
-		<script>
-			$('#@(hopefullyUniqueId)').select2();
-		</script>
-	</div>
+    <div class="col-sm-10">
+        <div class="container-radiobtn">
+            <ul>
+                @if (options.Count() == 0)
+            {
+                    <li>
+                        <input type="radio" name="@hopefullyUniqueId">
+                        <label>None to display</label>
+                        <div class="radiobtn"></div>
+                    </li>
+                }
+                else
+                {
+                    foreach (var option in options)
+                    {
+                        <li>
+                            @Html.RadioButton(
+                            Model.UniqueName,
+                            option.Value.ToString(),
+                            option.Value.ToString() == Model.Value?.ToString(),
+                            new { id = option.Id.ToString() }
+                        )
+                            <label for="@option.Id.ToString()">@option.Description</label>
+                            <div class="radiobtn"></div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
 </div>
-

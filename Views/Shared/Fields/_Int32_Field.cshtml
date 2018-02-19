@@ -3,11 +3,11 @@
 @if (Model.HasError)
 {
     <div class="form-group has-error">
-        <div class="col-md-3 col-sm-4">
+        <div class="col-md- col-sm-2">
             <label class="control-label">@Model.Label</label>
         </div>
 
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-10 col-sm-10">
             <input name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
             <span class="help-block">@Model.ErrorMessage</span>
         </div>
@@ -16,11 +16,11 @@
 else
 {
     <div class="form-group">
-        <div class="col-md-3 col-sm-4">
+        <div class="col-md-2 col-sm-2">
             <label class="control-label">@Model.Label</label>
         </div>
 
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-10 col-sm-10">
             <input name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
         </div>
     </div>

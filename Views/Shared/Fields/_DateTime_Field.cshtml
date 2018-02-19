@@ -7,26 +7,13 @@
 }
 
 <div class="form-group">
-    <div class="col-md-3 col-sm-4">
-        <label class="control-label">@Model.Label</label>
-    </div>
-
-    <div class="col-md-9 col-sm-8">
-        <div class="input-group">
-            <input id="@Model.UniqueName"
-                   name="@Model.UniqueName"
-                   type="text"
-                   class="form-control datepicker input-small"
-                   value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
-                   placeholder="@dateFormat">
-            <label class="input-group-addon btn" for="@Model.UniqueName">
-                <span class="mdi mdi-calendar-blank"></span>
-            </label>
-            @if (Model.HasError)
+    <label class="col-sm-2 control-label">@Model.Label</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
+        @if (Model.HasError)
             {
-                <span class="help-block">@Model.ErrorMessage</span>
-            }
-        </div>
+            <span class="help-block">@Model.ErrorMessage</span>
+        }
     </div>
 </div>
 
@@ -55,6 +42,16 @@
                     cal.val('');
                 }
             });
+        })
+    </script>
+    <script>
+        $(function () {
+            $('.mydatepicker').datepicker({
+                format: 'yyyy-MM-dd',
+
+                startDate: '+0d',
+                autoclose: true
+            })
         })
     </script>
 }
