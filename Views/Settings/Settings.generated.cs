@@ -196,17 +196,18 @@ WriteAttribute("id", Tuple.Create(" id=\"", 1152), Tuple.Create("\"", 1183)
 , 1161), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1184), Tuple.Create("\"", 1325)
-, Tuple.Create(Tuple.Create("", 1192), Tuple.Create("tab-pane", 1192), true)
-, Tuple.Create(Tuple.Create(" ", 1200), Tuple.Create("fade", 1201), true)
-, Tuple.Create(Tuple.Create(" ", 1205), Tuple.Create("in", 1206), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1184), Tuple.Create("\"", 1335)
+, Tuple.Create(Tuple.Create("", 1192), Tuple.Create("main-form", 1192), true)
+, Tuple.Create(Tuple.Create(" ", 1201), Tuple.Create("tab-pane", 1202), true)
+, Tuple.Create(Tuple.Create(" ", 1210), Tuple.Create("fade", 1211), true)
+, Tuple.Create(Tuple.Create(" ", 1215), Tuple.Create("in", 1216), true)
             
             #line 25 "..\..\Views\Settings\Settings.cshtml"
-     , Tuple.Create(Tuple.Create(" ", 1208), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
+               , Tuple.Create(Tuple.Create(" ", 1218), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser()) == Model.SelectedAction.Description(Html.LoggedInUser()) ? "active" : ""
             
             #line default
             #line hidden
-, 1209), false)
+, 1219), false)
 );
 
 WriteLiteral(">\r\n                            <form");
@@ -215,31 +216,31 @@ WriteLiteral(" method=\"post\"");
 
 WriteLiteral(" class=\"form-horizontal\"");
 
-WriteAttribute("action", Tuple.Create(" action=\"", 1400), Tuple.Create("\"", 1486)
-, Tuple.Create(Tuple.Create("", 1409), Tuple.Create("/", 1409), true)
+WriteAttribute("action", Tuple.Create(" action=\"", 1410), Tuple.Create("\"", 1496)
+, Tuple.Create(Tuple.Create("", 1419), Tuple.Create("/", 1419), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
- , Tuple.Create(Tuple.Create("", 1410), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
+ , Tuple.Create(Tuple.Create("", 1420), Tuple.Create<System.Object, System.Int32>(Model.Entity.UrlSafeName()
             
             #line default
             #line hidden
-, 1410), false)
-, Tuple.Create(Tuple.Create("", 1437), Tuple.Create("/", 1437), true)
+, 1420), false)
+, Tuple.Create(Tuple.Create("", 1447), Tuple.Create("/", 1447), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
-                             , Tuple.Create(Tuple.Create("", 1438), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
+                             , Tuple.Create(Tuple.Create("", 1448), Tuple.Create<System.Object, System.Int32>(Model.Entity.Id
             
             #line default
             #line hidden
-, 1438), false)
-, Tuple.Create(Tuple.Create("", 1454), Tuple.Create("/settings/", 1454), true)
+, 1448), false)
+, Tuple.Create(Tuple.Create("", 1464), Tuple.Create("/settings/", 1464), true)
             
             #line 26 "..\..\Views\Settings\Settings.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 1464), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
+                                                       , Tuple.Create(Tuple.Create("", 1474), Tuple.Create<System.Object, System.Int32>(setting.UrlSafeName()
             
             #line default
             #line hidden
-, 1464), false)
+, 1474), false)
 );
 
 WriteLiteral(">\r\n");
@@ -438,14 +439,14 @@ WriteLiteral("                                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4092), Tuple.Create("\"", 4141)
+WriteAttribute("value", Tuple.Create(" value=\"", 4102), Tuple.Create("\"", 4151)
             
             #line 66 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 4100), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
+, Tuple.Create(Tuple.Create("", 4110), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
             
             #line default
             #line hidden
-, 4100), false)
+, 4110), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right\"");
