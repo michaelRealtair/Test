@@ -42,14 +42,16 @@
 </div>
 
 <script>
-    var trueCheckbox = $('input#@trueCheckboxName');
-    var falseCheckbox = $('input#@falseCheckboxName');
+    (function () {
+        var trueCheckbox = $('input#@trueCheckboxName');
+        var falseCheckbox = $('input#@falseCheckboxName');
 
-    trueCheckbox.change(function () {
-        falseCheckbox.prop('checked', !$(this).prop('checked'));
-    });
+        trueCheckbox.change(function () {
+            falseCheckbox.prop('checked', !$(this).prop('checked'));
+        });
 
-    falseCheckbox.change(function () {
-        trueCheckbox.prop('checked', !$(this).prop('checked'));
-    });
+        falseCheckbox.change(function () {
+            trueCheckbox.prop('checked', !$(this).prop('checked'));
+        });
+    })();
 </script>

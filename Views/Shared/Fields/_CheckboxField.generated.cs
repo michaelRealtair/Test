@@ -195,28 +195,35 @@ WriteLiteral("                    ");
             #line default
             #line hidden
 WriteLiteral("\r\n                </label>\r\n            </p>\r\n        </div>\r\n    </div>    \r\n</d" +
-"iv>\r\n\r\n<script>\r\n    var trueCheckbox = $(\'input#");
-
-            
-            #line 45 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                           Write(trueCheckboxName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\');\r\n    var falseCheckbox = $(\'input#");
+"iv>\r\n\r\n<script>\r\n    (function () {\r\n        var trueCheckbox = $(\'input#");
 
             
             #line 46 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                            Write(falseCheckboxName);
+                               Write(trueCheckboxName);
 
             
             #line default
             #line hidden
-WriteLiteral("\');\r\n\r\n    trueCheckbox.change(function () {\r\n        falseCheckbox.prop(\'checked" +
-"\', !$(this).prop(\'checked\'));\r\n    });\r\n\r\n    falseCheckbox.change(function () {" +
-"\r\n        trueCheckbox.prop(\'checked\', !$(this).prop(\'checked\'));\r\n    });\r\n</sc" +
-"ript>");
+WriteLiteral("\');\r\n        var falseCheckbox = $(\'input#");
+
+            
+            #line 47 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                Write(falseCheckboxName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"');
+
+        trueCheckbox.change(function () {
+            falseCheckbox.prop('checked', !$(this).prop('checked'));
+        });
+
+        falseCheckbox.change(function () {
+            trueCheckbox.prop('checked', !$(this).prop('checked'));
+        });
+    })();
+</script>");
 
         }
     }
