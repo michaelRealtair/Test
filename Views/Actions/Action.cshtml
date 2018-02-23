@@ -258,6 +258,15 @@
                                     <div class="form-group margin-tb-md">
                                         <div class="col-sm-12">
                                             <ul class="pull-right list-inline">
+                                                @if (Model.SubmittedPages.Count != 0)
+                                                {
+                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-grey uppercase" onclick='$("#back-form").submit();'>BACK</a></li>
+                                                }
+                                                else
+                                                {
+                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-red uppercase" onclick='$("#cancel-form").submit();'>CANCEL</a></li>
+                                                }
+
                                                 @if ((bool)TempData["ShowSubmit"])
                                                 {
                                                     if (!Model.IsMultiPage)
@@ -268,15 +277,6 @@
                                                     {
                                                         <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-grey uppercase" onclick='$("#main-form").submit();'>@Model.Action.SubmitValue</a></li>
                                                     }
-                                                }
-
-                                                @if (Model.SubmittedPages.Count != 0)
-                                                {
-                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-grey uppercase" onclick='$("#back-form").submit();'>BACK</a></li>
-                                                }
-                                                else
-                                                {
-                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-red uppercase" onclick='$("#cancel-form").submit();'>CANCEL</a></li>
                                                 }
                                             </ul>
                                         </div>

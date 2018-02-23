@@ -1018,6 +1018,58 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 261 "..\..\Views\Actions\Action.cshtml"
+                                                 if (Model.SubmittedPages.Count != 0)
+                                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                    <li><a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-grey uppercase\"");
+
+WriteLiteral(" onclick=\'$(\"#back-form\").submit();\'");
+
+WriteLiteral(">BACK</a></li>\r\n");
+
+            
+            #line 264 "..\..\Views\Actions\Action.cshtml"
+                                                }
+                                                else
+                                                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                                    <li><a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-red uppercase\"");
+
+WriteLiteral(" onclick=\'$(\"#cancel-form\").submit();\'");
+
+WriteLiteral(">CANCEL</a></li>\r\n");
+
+            
+            #line 268 "..\..\Views\Actions\Action.cshtml"
+                                                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+            
+            #line 270 "..\..\Views\Actions\Action.cshtml"
+                                                
+            
+            #line default
+            #line hidden
+            
+            #line 270 "..\..\Views\Actions\Action.cshtml"
                                                  if ((bool)TempData["ShowSubmit"])
                                                 {
                                                     if (!Model.IsMultiPage)
@@ -1037,7 +1089,7 @@ WriteLiteral(" onclick=\'$(\"#main-form\").submit();\'");
 WriteLiteral(">");
 
             
-            #line 265 "..\..\Views\Actions\Action.cshtml"
+            #line 274 "..\..\Views\Actions\Action.cshtml"
                                                                                                                                                                                  Write(Model.Action.SubmitValue);
 
             
@@ -1046,7 +1098,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 266 "..\..\Views\Actions\Action.cshtml"
+            #line 275 "..\..\Views\Actions\Action.cshtml"
                                                     }
                                                     else
                                                     {
@@ -1065,7 +1117,7 @@ WriteLiteral(" onclick=\'$(\"#main-form\").submit();\'");
 WriteLiteral(">");
 
             
-            #line 269 "..\..\Views\Actions\Action.cshtml"
+            #line 278 "..\..\Views\Actions\Action.cshtml"
                                                                                                                                                                                 Write(Model.Action.SubmitValue);
 
             
@@ -1074,60 +1126,8 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 270 "..\..\Views\Actions\Action.cshtml"
+            #line 279 "..\..\Views\Actions\Action.cshtml"
                                                     }
-                                                }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n");
-
-            
-            #line 273 "..\..\Views\Actions\Action.cshtml"
-                                                
-            
-            #line default
-            #line hidden
-            
-            #line 273 "..\..\Views\Actions\Action.cshtml"
-                                                 if (Model.SubmittedPages.Count != 0)
-                                                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                    <li><a");
-
-WriteLiteral(" href=\"javascript:void(0);\"");
-
-WriteLiteral(" class=\"btn btn-task btn-form btn-trans-grey uppercase\"");
-
-WriteLiteral(" onclick=\'$(\"#back-form\").submit();\'");
-
-WriteLiteral(">BACK</a></li>\r\n");
-
-            
-            #line 276 "..\..\Views\Actions\Action.cshtml"
-                                                }
-                                                else
-                                                {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                                                    <li><a");
-
-WriteLiteral(" href=\"javascript:void(0);\"");
-
-WriteLiteral(" class=\"btn btn-task btn-form btn-trans-red uppercase\"");
-
-WriteLiteral(" onclick=\'$(\"#cancel-form\").submit();\'");
-
-WriteLiteral(">CANCEL</a></li>\r\n");
-
-            
-            #line 280 "..\..\Views\Actions\Action.cshtml"
                                                 }
 
             
