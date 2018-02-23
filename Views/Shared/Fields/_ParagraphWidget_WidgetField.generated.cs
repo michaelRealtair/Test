@@ -48,11 +48,15 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h3>");
+WriteLiteral("\r\n\r\n<h3");
+
+WriteLiteral(" class=\"no-margin-t\"");
+
+WriteLiteral(">");
 
             
             #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
-Write(paragraph.Text);
+                   Write(paragraph.Text);
 
             
             #line default
