@@ -61,7 +61,7 @@ WriteLiteral(">");
             
             #line default
             #line hidden
-WriteLiteral("</h3>");
+WriteLiteral("</h3>\r\n");
 
         }
     }
