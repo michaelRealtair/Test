@@ -114,9 +114,11 @@
   <ItemGroup>
     <Compile Include="App_Start\ConfigureSingleton.cs" />
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Attributes\AuthorizedUserAttribute.cs" />
     <Compile Include="Controllers\ActionMapper.cs" />
     <Compile Include="Controllers\ActionsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\Base\FlowerHornController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
