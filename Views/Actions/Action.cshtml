@@ -64,12 +64,15 @@
                             }
                         </h2>
 
-                        @if(Model.Action.This is IHasParentEnquiry) 
-                        {
-                            <h3 class="no-margin-tb">
-                                <i class="fa fa-home"></i> @((Model.Action.This as IHasParentEnquiry)?.ParentEnquiry.Description(Html.LoggedInUser()))
-                            </h3>
-                            <br />
+                        @{
+                            var parentEnquiry = (Model.Action.This as IHasParentEnquiry)?.ParentEnquiry;
+                            if (parentEnquiry != null)
+                            {
+                                <h3 class="no-margin-tb">
+                                    <i class="fa fa-home"></i> @(parentEnquiry.Description(Html.LoggedInUser()))
+                                </h3>
+                                <br />
+                            }
                         }
 
                         @* Validation Errors *@
