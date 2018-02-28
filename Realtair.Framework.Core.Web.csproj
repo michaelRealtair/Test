@@ -440,6 +440,7 @@
     <Content Include="Content\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
     <Content Include="Content\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Content\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\css\ionicons.min.css" />
     <Content Include="Content\css\pages.css" />
     <Content Include="Content\css\pages.min.css" />
     <Content Include="Content\css\photoswipe.css" />
@@ -3754,6 +3755,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\new\css\" />
     <Folder Include="Content\plugins\bower_components\etc\" />
     <Folder Include="Content\plugins\bower_components\pdfmake\libs\FileSaver.js\" />
     <Folder Include="Content\summernote\font\" />
