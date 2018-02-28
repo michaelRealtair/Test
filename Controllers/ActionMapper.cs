@@ -257,8 +257,12 @@ namespace Realtair.Framework.Core.Web.Controllers
                 var constructedListType = listType.MakeGenericType(type.GetGenericArguments()[0]);
                 var instance = Activator.CreateInstance(constructedListType) as IList;
 
-                foreach (var n in JsonConvert.DeserializeObject<int[]>((value as string[])[0]))
-                    instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(n)));
+                try
+                {
+                    foreach (var n in JsonConvert.DeserializeObject<int[]>((value as string[])[0]))
+                        instance.Add(Db.Set(type.GetGenericArguments()[0]).Find(Convert.ToInt32(n)));
+                }
+                catch { }
 
                 return instance as IEnumerable<Entity>;
             }
