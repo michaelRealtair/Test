@@ -229,27 +229,27 @@ a:hover {
 
 /* line 1, F:/Realtair.UI/scss/components/_graph.scss */
 .rv-discrete-color-legend-item__color {
-  height: 8px;
-  width: 8px;
-  vertical-align: middle;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  margin-bottom: 3px;
+  height: 8px !important;
+  width: 8px !important;
+  vertical-align: middle !important;
+  border-radius: 20px !important;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  -ms-border-radius: 20px !important;
+  -o-border-radius: 20px !important;
+  margin-bottom: 3px !important;
 }
 
 /* line 9, F:/Realtair.UI/scss/components/_graph.scss */
 .rv-discrete-color-legend-item.horizontal .rv-discrete-color-legend-item__title {
-  display: inline-block;
-  margin-left: 5px;
+  display: inline-block !important;
+  margin-left: 5px !important;
 }
 
 /* line 14, F:/Realtair.UI/scss/components/_graph.scss */
 .rv-discrete-color-legend-item {
-  margin-top: 10px;
-  float: right;
+  margin-top: 10px !important;
+  float: right !important;
 }
 
 /* line 1, F:/Realtair.UI/scss/components/_headline-nos.scss */
