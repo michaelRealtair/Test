@@ -1,0 +1,47 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var Table = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
+}
+
+@if (Table != null)
+{
+    <table class="table color-bordered-table muted-bordered-table" style="width: 100%">
+        <thead>
+            <tr>
+                @foreach (var h in Table.Header)
+                {
+                    <th class="col-md-@h.ColumnWidth">@h.Name</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Table.Contents)
+            {
+                <tr>
+                    @foreach (var item in row)
+                    {
+                        if (item is Attachment)
+                        {
+                            <td><a href="@Html.Raw((item as Attachment).Url(0))" target="_blank">@((item as Attachment).Url(0))</a></td>
+                        }
+                        else
+                        {
+                            <td>@item</td>
+                        }
+                    }
+                </tr>
+            }
+
+            @if (Table.Totals != null)
+            {
+                <tr style="background: #222; color: #fff;">
+                    @foreach (var item in Table.Totals)
+                    {
+                        <td>@item</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

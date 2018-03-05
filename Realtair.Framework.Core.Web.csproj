@@ -3755,6 +3755,7 @@
     <Folder Include="Content\plugins\bower_components\etc\" />
     <Folder Include="Content\plugins\bower_components\pdfmake\libs\FileSaver.js\" />
     <Folder Include="Content\summernote\font\" />
+    <Folder Include="Views\Shared\Fields\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\plugins\bower_components\mobile-detect\mobile-detect.d.ts" />

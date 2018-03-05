@@ -1,0 +1,739 @@
+﻿@using Realtair.Framework.Core.Actions.FieldAttributes
+@using Realtair.Framework.Core.Web.Utilities
+@model Realtair.Framework.Core.Actions.Field
+@{
+    var t = Model.PropertyType.GetGenericArguments()[0];
+    var fields = Realtair.Framework.Core.Actions.FieldAttributes.RecurringFieldModel.Fields(t, Model.Action);
+}
+
+<link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.css" type="text/css" />
+<link rel="stylesheet" href="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.css" />
+<link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" type="text/css" />
+
+<script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
+<script src="https://static.realtair.com/plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
+<script src="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.js"></script>
+<script src="https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+<script src="https://api.addressfinder.io/assets/v3/widget.js"></script>
+
+
+<label>
+    @Model.Label
+</label>
+
+<div class="form-group">
+    <div id="@(Model.UniqueName)_container" class="col-md-12 col-sm-12">
+        <div id="@(Model.UniqueName)_prototype" class="well prototype" style="background: transparent; display: none;">
+            @foreach (var f in fields)
+            {
+                if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(string))
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field @(f.FieldAttribute.Required ? "required" : "")">
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute))
+                {
+                    var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute;
+                    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            @if (options.Count() == 0)
+                            {
+                                <select id="@(Model.UniqueName)_@(f.UniqueName)" class="form-control" disabled>
+                                    <option>None to display</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <select class="form-control select2 field @(Model.UniqueName)_@(f.UniqueName)" name="@(Model.UniqueName)_@(f.UniqueName)">
+                                    @foreach (var option in options)
+                                    {
+                                        <option value="@option.Id.ToString()">@option.Description</option>
+                                    }
+                                </select>
+                            }
+                        </div>
+                    </div>
+                }
+                else if (f.PropertyType == typeof(DateTime))
+                {
+                    var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.DateTimeFieldAttribute;
+
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)"
+                                   type="text"
+                                   @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
+                                   class="form-control datepicker input-small field"
+                                   style="padding-left: 10px;">
+                        </div>
+                    </div>
+
+                }
+                else if (f.PropertyType == typeof(TimeSpan))
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)"
+                                   type="time"
+                                   class="form-control field"
+                                   onblur="validateTimespan(this);">
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute))
+                {
+                    var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute;
+                    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+                    var hopefullyUniqueId = Math.Abs(f.GetHashCode());
+                    var Values = "";
+
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            @if (options.Count() == 0)
+                            {
+                                <select id="@hopefullyUniqueId" class="form-control" disabled>
+                                    <option>None to display</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <select id="@hopefullyUniqueId" class="form-control select2" multiple="multiple">
+                                    @foreach (var option in options)
+                                    {
+                                        <option value="@option.Id.ToString()">@option.Description</option>
+
+                                    }
+                                </select>
+                            }
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(Values)" />
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.TextAreaFieldAttribute))
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <textarea name="@(Model.UniqueName)_@(f.UniqueName)" placeholder="..." class="form-control field"></textarea>
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(decimal))
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute))
+                {
+                    var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
+                    var uniqueid = new Guid().ToString();
+
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8 checkbox-grouping" style="padding-top: 8px;">
+                            <label class="radio-inline">
+                                <input type="radio" name="@(Model.UniqueName)_@(f.UniqueName)" value="true"> @attribute.LabelForTrue<br>
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="@(Model.UniqueName)_@(f.UniqueName)" value="false"> @attribute.LabelForFalse<br>
+                            </label>
+                            <input id="@(Model.UniqueName)_@(f.UniqueName)" name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                        </div>
+                    </div>
+                }
+                else if (f.PropertyType == typeof(PhoneNumber.PhoneNumberViewModel))
+                {
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <input type="tel" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")" />
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                        </div>
+                    </div>
+                }
+                else if (f.FieldAttribute.GetType() == typeof(BulkFileUploadFieldAttribute))
+                {
+                    var attribute = f.FieldAttribute as BulkFileUploadFieldAttribute;
+                    <div class="form-group">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <div id="@(Model.UniqueName)_@(f.UniqueName)_upload" class="@(Model.UniqueName)_@(f.UniqueName)_upload dropzone file-uploader">
+                                <div class="dz-default dz-clickable dz-message">
+                                    <span>Drop files here to upload</span>
+                                </div>
+                            </div>
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
+                        </div>
+                    </div>
+                }
+                else if (f.PropertyType == typeof(Address))
+                {
+                    <div class="form-group address-field">
+                        <div class="col-md-3 col-sm-4">
+                            <label class="control-label">@f.Label</label>
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address" type="text" class="form-control AddressLine1">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_line_2" type="text" class="form-control AddressLine2">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" type="text" class="form-control Suburb">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" type="text" class="form-control State">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" type="text" class="form-control PostCode">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" class="StreetName">
+                        <input type="hidden" class="StreetType">
+                        <input type="hidden" class="StreetNumber">
+                        <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
+                    </div>
+                }
+            }
+
+            <a href="#" onclick="deleteItem(this)" class="btn btn-warning btn-sm">delete</a>
+        </div>
+        @if (Model.Value != null)
+        {
+            var values = (Model.Value as IEnumerable<RecurringFieldModel>).Cast<RecurringFieldModel>().ToList();
+            foreach (var v in values)
+            {
+                var uniqueId = Guid.NewGuid().ToString().Replace("-", "");
+                <div id="@(uniqueId)" class="well @(Model.UniqueName)_item" style="background: transparent;">
+                    @foreach (var f in fields)
+                    {
+                        if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(string))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+                                <div class="col-md-9 col-sm-8">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))">
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute))
+                        {
+                            var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute;
+                            var options = attribute.Options(Model.Action, Html.LoggedInUser());
+
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    @if (options.Count() == 0)
+                                    {
+                                        <select id="@(Model.UniqueName)_@(f.UniqueName)" class="form-control" disabled>
+                                            <option>None to display</option>
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        <select class="form-control select2 field @(Model.UniqueName)_@(f.UniqueName)" name="@(Model.UniqueName)_@(f.UniqueName)">
+                                            @foreach (var option in options)
+                                            {
+                                                <option value="@option.Id.ToString()" @(v.GetType().GetProperty(f.UniqueName).GetValue(v).ToString() == option.Description.Replace(" ", "").ToString() ? "selected" : "")>@option.Description</option>
+                                            }
+                                        </select>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else if (f.PropertyType == typeof(DateTime))
+                        {
+                            var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.DateTimeFieldAttribute;
+                            var Date = Convert.ToDateTime(v.GetType().GetProperty(f.UniqueName).GetValue(v));
+
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)"
+                                           type="text"
+                                           value="@if (Date > DateTime.MinValue) { @Date.ToString("yyyy-MM-dd") }"
+                                           @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
+                                           class="form-control datepicker input-small"
+                                           style="padding-left: 10px;">
+                                </div>
+                            </div>
+
+                        }
+                        else if (f.PropertyType == typeof(TimeSpan))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)"
+                                           type="time"
+                                           value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))"
+                                           class="form-control"
+                                           onblur="validateTimespan(this);">
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute))
+                        {
+                            var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute;
+                            var options = attribute.Options(Model.Action, Html.LoggedInUser());
+                            var hopefullyUniqueId = Math.Abs(f.GetHashCode());
+                            var selectedValues = "";
+
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    @if (options.Count() == 0)
+                                    {
+                                        <select id="@hopefullyUniqueId" class="form-control" disabled>
+                                            <option>None to display</option>
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        <select id="@hopefullyUniqueId" class="form-control select2" multiple="multiple">
+                                            @foreach (var option in options)
+                                            {
+                                                if (((v.GetType().GetProperty(f.UniqueName).GetValue(v)) as IEnumerable<Entity>).Any(o => o.Id.ToString() == option.Id))
+                                                {
+                                                    selectedValues = option.Id + "," + selectedValues;
+                                                    <option value="@option.Id.ToString()" selected>@option.Description</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@option.Id.ToString()">@option.Description</option>
+                                                }
+                                            }
+                                        </select>
+                                    }
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(selectedValues.Substring(0, selectedValues.Length - 1))" />
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.TextAreaFieldAttribute))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <textarea name="@(Model.UniqueName)_@(f.UniqueName)" placeholder="..." class="form-control field">@(v.GetType().GetProperty(f.UniqueName).GetValue(v))</textarea>
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(decimal))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute))
+                        {
+                            var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8 checkbox-grouping" style="padding-top: 8px;">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="@(Model.UniqueName)_@(f.UniqueName)" @(Convert.ToBoolean(v.GetType().GetProperty(f.UniqueName).GetValue(v)) ? "checked" : "") value="true"> @attribute.LabelForTrue<br>
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="@(Model.UniqueName)_@(f.UniqueName)" @(!Convert.ToBoolean(v.GetType().GetProperty(f.UniqueName).GetValue(v)) ? "checked" : "") value="false"> @attribute.LabelForFalse<br>
+                                    </label>
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)" name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                                </div>
+                            </div>
+
+                        }
+                        else if (f.PropertyType == typeof(PhoneNumber.PhoneNumberViewModel))
+                        {
+                            var phoneNumber = v.GetType().GetProperty(f.UniqueName).GetValue(v) as PhoneNumber.PhoneNumberViewModel;
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <input type="tel" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")" value="@(phoneNumber.Number)" />
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                                </div>
+                            </div>
+                        }
+                        else if (f.FieldAttribute.GetType() == typeof(BulkFileUploadFieldAttribute))
+                        {
+                            var attribute = f.FieldAttribute as BulkFileUploadFieldAttribute;
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <div id="@(Model.UniqueName)_@(f.UniqueName)_upload" class="@(Model.UniqueName)_@(f.UniqueName)_upload dropzone file-uploader">
+                                        <div class="dz-default dz-clickable dz-message">
+                                            <span>Drop files here to upload</span>
+                                        </div>
+                                    </div>
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
+                                </div>
+                            </div>
+                        }
+                        else if (f.PropertyType == typeof(Address))
+                        {
+                            var address = v.GetType().GetProperty(f.UniqueName).GetValue(v) as Address;
+                            <div class="form-group address-field">
+                                <div class="col-md-3 col-sm-4">
+                                    <label class="control-label">@f.Label</label>
+                                </div>
+
+                                <div class="col-md-9 col-sm-8">
+                                    <div class="row form-group">
+                                        <div class="col-sm-12">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address" type="text" class="form-control AddressLine1" value="@(address.AddressLine1)">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-sm-12">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_line_2" type="text" class="form-control AddressLine2" value="@(address.AddressLine2)">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" type="text" class="form-control Suburb" value="@(address.Suburb)">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" type="text" class="form-control State" value="@(address.State)">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" type="text" class="form-control Code" value="@(address.Postcode)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetName" type="hidden">
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetType" type="hidden">
+                                <input id="@(Model.UniqueName)_@(f.UniqueName)_streetNumber" type="hidden">
+                                <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
+
+                                <script>
+
+                                var serialised = $('#@(uniqueId)').find('#@(Model.UniqueName)_@(f.UniqueName)')[0];
+                                serialised.value = JSON.stringify({
+                                    AddressLine1: "@(address.AddressLine1)",
+                                    AddressLine2: "@(address.AddressLine2)",
+                                    Suburb: "@(address.Suburb)",
+                                    Postcode: "@(address.Postcode)",
+                                    State: "@(address.State)",
+                                    StreetNumber: "@(address.StreetNumber)",
+                                    StreetName: "@(address.StreetName)",
+                                    StreetType: "@(address.StreetType)"
+                                });
+                                </script>
+                            </div>
+                        }
+                    }
+                    <a href="#" onclick="deleteItem(this)" class="btn btn-warning btn-sm">delete</a>
+                </div>
+            }
+        }
+        <a href="#" class="btn btn-info btn-sm pull-right" onclick="addItem()" id="@(Model.UniqueName)_add">add another</a>
+    </div>
+</div>
+
+
+<input name="@Model.UniqueName" type="hidden" />
+
+<script>
+
+    var addedEvent = new Event('itemAdded');
+    var hasValue = @((Model.Value as IEnumerable<RecurringFieldModel>).Cast<RecurringFieldModel>().ToList().Count() == 0 ? 0 : 1);
+    //var hasValue = 0;
+
+    if(hasValue == 0)
+        addItem();
+
+    initComponents();
+
+    $('.main-form').submit(saveData);
+
+    function initComponents(){
+        /* Select2  */
+        $('.@(Model.UniqueName)_item').find('select.select2').each(function(){
+            var $this = $(this);
+            if(!$this.hasClass('select.select2-hidden-accessible')){
+                var select2 = $(this).select2();
+                select2.change(function () {
+                    var val = $(this).val();
+                    var selectedValues = "";
+                    for(var m = 0; m < val.length; m++) selectedValues += val[m] + ",";
+                    selectedValues = selectedValues.substring(0, selectedValues.length - 1);
+                    $this.parent().find('input[type=hidden]').val(selectedValues);
+                });
+            }
+            $('.select2').css('width', "100%");
+        });
+
+        /* Checkbox */
+        $('.@(Model.UniqueName)_item').find('div.checkbox-grouping').each(function(){
+            var $this = $(this);
+            var randomId = Math.random().toString(36).slice(2);
+            $this.find('input[type=radio]').each(function(){
+                $(this).attr('uniqueid', randomId);
+                var name = $(this).attr('name');
+                $(this).attr('name', name+'_'+randomId);
+            });
+        });
+
+        /* Phone Number */
+        $('.@(Model.UniqueName)_item').find('input[type=tel]').each(function(){
+            var $this = $(this);
+            if(!$this.hasClass('phoneNumber')){
+                $this.intlTelInput({
+                    nationalMode: true,
+                    preferredCountries: ["au"],
+                    utilsScript: 'https://static.realtair.com/plugins/intl-tel-input/utils.js'// just for formatting/placeholders etc
+                });
+                $this.intlTelInput("setNumber", $this.val());
+                $this.intlTelInput("setCountry", "au");
+                $this.addClass('phoneNumber');
+                $this.on("keyup change click", function () {
+                    var countryData = $(this).closest("input").intlTelInput("getSelectedCountryData");
+                    var phoneNumber = {
+                        DialCode: '+' + countryData.dialCode,
+                        CountryName: countryData.name,
+                        Iso2: countryData.iso2.toUpperCase(),
+                        Number: $this.val() === '' ? $this.closest("input").intlTelInput("getNumber") : $this.val().replace('+' + countryData.dialCode, '')
+                    }
+
+                    $this.parent().parent().find('input[type=hidden]').val(JSON.stringify(phoneNumber));
+                });
+
+                if ($this.val() !== "") $this.trigger('click');
+            }
+        });
+
+        /* Dropzone */
+        $('.@(Model.UniqueName)_item').find('div.dropzone').each(function(){
+            var $this = $(this);
+            if(!$this.hasClass('div.dz-clickable')){
+                Dropzone.autoDiscover = false;
+                var d = $this.dropzone({
+                    url: "/actions/functions/upload-attachment",
+                    addRemoveLinks: true,
+                    success: function (file, response) {
+                        var imageId = parseInt(response);
+                        var input = d.parent().find('.dropzone-input')[0];
+                        input.value = imageId + ',' + input.value;
+
+                        if(input.value.substring(input.value.length - 1, input.value.length) == ',')
+                            input.value = input.value.substring(0, input.value.length - 1);
+
+                        file.previewElement.setAttribute('data-documentid', imageId);
+                        file.previewElement.classList.add("dz-success");
+                    },
+                    error: function (file, response) {
+                        file.previewElement.classList.add("dz-error");
+                    },
+                    removedfile: function (file) {
+                        file.previewElement.parentElement.removeChild(file.previewElement);
+                        var list = '';
+                        $this.find('div.dz-complete').each(function(){
+                            list = $(this).attr('data-documentid') + ',' + list;
+                        });
+
+                        if(list.substring(list.length - 1, list.length) == ',')
+                            list = list.substring(0, list.length - 1);
+
+                        $this.parent().find('input[type=hidden]').val(list);
+                        return true;
+                    }
+                });
+            }
+        });
+
+        /* Address */
+        $('.@(Model.UniqueName)_item').find('div.address-field').each(function(){
+            var $this = $(this);
+            var serialised = $this.find('input.AddressField')[0];
+            var line_1 = $this.find('input.AddressLine1')[0];
+            var line_2 = $this.find('input.AddressLine2')[0];
+            var suburb = $this.find('input.Suburb')[0];
+            var state = $this.find('input.State')[0];
+            var postcode = $this.find('input.PostCode')[0];
+            var streetNumber = $this.find('input.StreetNumber')[0];
+            var streetName = $this.find('input.StreetName')[0];
+            var streetType = $this.find('input.StreetType')[0];
+
+            var widget = new AddressFinder.Widget(line_1, 'YVBDJGHTNMLPEW46K73Q', 'AU', { });
+
+            widget.on('result:select', function (fullAddress, metaData) {
+                line_1.value = metaData.address_line_1;
+                line_2.value = metaData.address_line_2;
+                suburb.value = metaData.locality_name;
+                state.value = metaData.state_territory;
+                postcode.value = metaData.postcode;
+                streetNumber.value = (metaData.street_number_1 && !metaData.street_number_2) || ((metaData.street_number_1 && metaData.street_number_2)) || (metaData.lot_identifier);
+                streetName.value = metaData.street_name;
+                streetType.value = metaData.street_type;
+
+                serialised.value = JSON.stringify({
+                    AddressLine1: line_1.value,
+                    AddressLine2: line_2.value,
+                    Suburb: suburb.value,
+                    Postcode: postcode.value,
+                    State: state.value,
+                    StreetNumber: streetNumber.value,
+                    StreetName: streetName.value,
+                    StreetType: streetType.value
+                });
+            });
+        });
+
+        /* Datepicker */
+        $('.@(Model.UniqueName)_item').find('input.datepicker').each(function(){
+            var $this = $(this);
+
+            $this.datepicker({
+                format: 'yyyy-mm-dd',
+                startDate: new Date(2000, 0, 1),
+                autoclose: true,
+                clearBtn: true
+            });
+
+            $this.keydown(function(event) {
+                console.log(event.which);
+                if(event.which == 13){ //enter key
+                    $this.blur();
+                }
+            });;
+
+            $this.on('blur', function(){
+                if (isNaN(Date.parse($this.val()))){
+                    $this.val('');
+                }
+            });
+        });
+
+
+    }
+
+    function addItem() {
+        var i = $("#@(Model.UniqueName)_prototype").clone(true).attr('id', '').css('display', 'block').addClass('@(Model.UniqueName)_item');
+        i.insertBefore("#@(Model.UniqueName)_add");
+        $(document).trigger("itemAdded");
+
+        initComponents();
+    }
+
+    function deleteItem(item) {
+        $(item).parent().remove();
+    }
+
+    $('input[type=radio]').change(function(e){
+        var randomId = $(this).attr('uniqueid');
+        var name = $(this).attr('name');
+        var v = $(this).val();
+        $("#"+randomId).find('input[name='+name.replace('_'+randomId, '')+']').val(v);
+    });
+
+    function validateTimespan(e) {
+        if (!e.validity.valid) {
+            e.value = "00:00:00"
+        }
+    }
+
+    function saveData() {
+
+        var items = [];
+
+        $("input[type=radio]").each(function(){
+            var name = $(this).attr('name');
+            var uniqueid = $(this).attr('uniqueid');
+            $(this).attr('name', name.replace('_'+uniqueid, ''));
+            $(this).removeAttr('name');
+        });
+
+        $.each($(".@(Model.UniqueName)_item"), function (index, value) {
+            console.log(value);
+            items.push($(value).find("input.field, select.field, textarea.field").serializeArray());
+        });
+
+        $("input[name=@Model.UniqueName]").val(JSON.stringify(items));
+    }
+
+</script>

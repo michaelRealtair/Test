@@ -1,0 +1,7 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var RichText = Model.Value as Realtair.Framework.Core.Display.Widgets.RichTextWidget;
+}
+
+@Html.Render(Url, RichText.Text)
