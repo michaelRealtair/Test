@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_DateTime_Field.cshtml")]
-    public partial class _Views_Shared_Fields__DateTime_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_DateTime_Field.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__DateTime_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__DateTime_Field_cshtml()
+        public _Views_Shared_Fields_Settings__DateTime_Field_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
   
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.DateTimeFieldAttribute;
     var Date = Convert.ToDateTime(Model.Value);
@@ -65,7 +65,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 11 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                                 Write(Model.Label);
 
             
@@ -83,7 +83,7 @@ WriteLiteral(">\r\n            <input");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 485), Tuple.Create("\"", 507)
             
-            #line 16 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 490), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -93,7 +93,7 @@ WriteAttribute("id", Tuple.Create(" id=\"", 485), Tuple.Create("\"", 507)
 
 WriteAttribute("name", Tuple.Create("\r\n                   name=\"", 508), Tuple.Create("\"", 552)
             
-            #line 17 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 17 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 535), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -109,20 +109,20 @@ WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 649), Tu
 , Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
-            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                            if (Date > DateTime.MinValue) { 
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                     WriteTo(__razor_attribute_value_writer, Date.ToString(dateFormat));
 
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                                                                                       }
             
             #line default
@@ -132,7 +132,7 @@ WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 649), Tu
 
 WriteAttribute("placeholder", Tuple.Create("\r\n                   placeholder=\"", 739), Tuple.Create("\"", 784)
             
-            #line 21 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 21 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 773), Tuple.Create<System.Object, System.Int32>(dateFormat
             
             #line default
@@ -146,7 +146,7 @@ WriteLiteral(" class=\"input-group-addon btn\"");
 
 WriteAttribute("for", Tuple.Create(" for=\"", 836), Tuple.Create("\"", 859)
             
-            #line 22 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 22 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 842), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -161,13 +161,13 @@ WriteLiteral(" class=\"mdi mdi-calendar-blank\"");
 WriteLiteral("></span>\r\n            </label>\r\n");
 
             
-            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 25 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 25 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 25 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
              if (Model.HasError)
             {
 
@@ -181,7 +181,7 @@ WriteLiteral(" class=\"help-block\"");
 WriteLiteral(">");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                                     Write(Model.ErrorMessage);
 
             
@@ -190,7 +190,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n");
 
             
-            #line 28 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 28 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
             }
 
             
@@ -199,7 +199,7 @@ WriteLiteral("</span>\r\n");
 WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 33 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 33 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
  using (Html.Delayed(null))
 {
 
@@ -227,7 +227,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    <script>\r\n        $(function () {\r\n            var cal = $(\'#");
 
             
-            #line 39 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 39 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
                      Write(Model.UniqueName);
 
             
@@ -239,7 +239,7 @@ WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n   
 WriteLiteral("                ");
 
             
-            #line 42 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 42 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
            Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : ""));
 
             
@@ -266,7 +266,7 @@ WriteLiteral(@"
 ");
 
             
-            #line 60 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 60 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 }
             
             #line default

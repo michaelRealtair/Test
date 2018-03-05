@@ -28,7 +28,7 @@ namespace ASP
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
     
-    #line 1 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+    #line 1 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
     using Realtair.Framework.Core.Data;
     
     #line default
@@ -38,16 +38,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_StatusField.cshtml")]
-    public partial class _Views_Shared_Fields__StatusField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_StatusField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__StatusField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__StatusField_cshtml()
+        public _Views_Shared_Fields_Settings__StatusField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 4 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 4 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
   
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.StatusFieldAttribute;
     var options = attribute.Options(Model.Action, Html.LoggedInUser());
@@ -72,7 +72,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 13 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                                 Write(Model.Label);
 
             
@@ -85,13 +85,13 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 WriteLiteral(">\r\n");
 
             
-            #line 17 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 17 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 17 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 17 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
          if (options.Count() == 0)
         {
 
@@ -102,7 +102,7 @@ WriteLiteral("            <select");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 672), Tuple.Create("\"", 695)
             
-            #line 19 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
 , Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
@@ -116,7 +116,7 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
 "t>\r\n");
 
             
-            #line 22 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 22 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
         }
         else
         {
@@ -128,7 +128,7 @@ WriteLiteral("            <select");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 857), Tuple.Create("\"", 880)
             
-            #line 25 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 25 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
 , Tuple.Create(Tuple.Create("", 862), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
@@ -140,7 +140,7 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 902), Tuple.Create("\"", 933)
             
-            #line 25 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 25 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
 , Tuple.Create(Tuple.Create("", 909), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
@@ -151,13 +151,13 @@ WriteAttribute("name", Tuple.Create(" name=\"", 902), Tuple.Create("\"", 933)
 WriteLiteral(">\r\n");
 
             
-            #line 26 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                  foreach (var option in options)
                 {                    
 
@@ -167,7 +167,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    <option ");
 
             
-            #line 28 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 28 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                         Write(option.Id.ToString() == taskRecord.GetStatusId(SingletonDbContext.Db).ToString() ? "selected" : "");
 
             
@@ -176,7 +176,7 @@ WriteLiteral("                    <option ");
 WriteLiteral(" value=\"");
 
             
-            #line 28 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 28 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                                                                                                                                     Write(option.Id.ToString());
 
             
@@ -185,7 +185,7 @@ WriteLiteral(" value=\"");
 WriteLiteral("\">");
 
             
-            #line 28 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 28 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                                                                                                                                                            Write(option.Description);
 
             
@@ -194,7 +194,7 @@ WriteLiteral("\">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 29 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                 }
 
             
@@ -203,7 +203,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("            </select>\r\n");
 
             
-            #line 31 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 31 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
         }
 
             
@@ -226,7 +226,7 @@ WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(fun
 "#");
 
             
-            #line 40 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 40 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
             Write(hopefullyUniqueId);
 
             
@@ -235,7 +235,7 @@ WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(fun
 WriteLiteral("\').select2();\r\n\r\n            $(\'#");
 
             
-            #line 42 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 42 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
            Write(hopefullyUniqueId);
 
             
@@ -245,7 +245,7 @@ WriteLiteral("\').change(function () {\r\n                $.post(window.location
 "ord/");
 
             
-            #line 43 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 43 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                                                         Write(taskRecord.Id);
 
             
@@ -254,7 +254,7 @@ WriteLiteral("\').change(function () {\r\n                $.post(window.location
 WriteLiteral("/run/update-task-status\", { \"status\": $(\"#");
 
             
-            #line 43 "..\..\Views\Shared\Fields\_StatusField.cshtml"
+            #line 43 "..\..\Views\Shared\Fields\Settings\_StatusField.cshtml"
                                                                                                                  Write(hopefullyUniqueId);
 
             

@@ -32,10 +32,10 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_TimeSpan_Field.cshtml")]
-    public partial class _Views_Shared_Fields__TimeSpan_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_TimeSpan_Field.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__TimeSpan_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__TimeSpan_Field_cshtml()
+        public _Views_Shared_Fields_Settings__TimeSpan_Field_cshtml()
         {
         }
         public override void Execute()
@@ -55,7 +55,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 5 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 5 "..\..\Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml"
                                 Write(Model.Label);
 
             
@@ -73,7 +73,7 @@ WriteLiteral(">\r\n            <input");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 283), Tuple.Create("\"", 307)
             
-            #line 10 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 10 "..\..\Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 290), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -87,7 +87,7 @@ WriteLiteral(" \r\n                   class=\"form-control mytimepicker input-sm
 
 WriteAttribute("value", Tuple.Create("\r\n                   value=\"", 408), Tuple.Create("\"", 462)
             
-            #line 13 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
             
             #line default
@@ -102,7 +102,7 @@ WriteLiteral(" class=\"icon-time\"");
 WriteLiteral("></i>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
 
             
-            #line 19 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml"
  using (Html.Delayed(null, "time-span-field"))
 {
 
@@ -135,7 +135,7 @@ WriteLiteral(">\r\n        jQuery(function () {\r\n            jQuery(\'.mytimep
 "\r\n                template: false\r\n            });\r\n        })\r\n    </script>\r\n");
 
             
-            #line 30 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
+            #line 30 "..\..\Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml"
 }
             
             #line default

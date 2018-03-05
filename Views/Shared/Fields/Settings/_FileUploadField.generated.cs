@@ -28,25 +28,26 @@ namespace ASP
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
     
-    #line 1 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+    #line 1 "..\..\Views\Shared\Fields\Settings\_FileUploadField.cshtml"
     using Realtair.Framework.Core.Actions.FieldAttributes;
     
     #line default
     #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_FileUploadField.cshtml")]
-    public partial class _Views_Shared_Fields__FileUploadField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_FileUploadField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__FileUploadField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__FileUploadField_cshtml()
+        public _Views_Shared_Fields_Settings__FileUploadField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_FileUploadField.cshtml"
   
     var attribute = Model.FieldAttribute as FileUploadFieldAttribute;
     var acceptValue = string.IsNullOrEmpty(attribute.Filter) ? "text/csv,image/jpeg,image/png,application/pdf"  : attribute.Filter.Trim();
@@ -69,7 +70,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+            #line 9 "..\..\Views\Shared\Fields\Settings\_FileUploadField.cshtml"
                                 Write(Model.Label);
 
             
@@ -120,7 +121,7 @@ WriteLiteral(">\r\n                        <input");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 892), Tuple.Create("\"", 916)
             
-            #line 20 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_FileUploadField.cshtml"
 , Tuple.Create(Tuple.Create("", 899), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -130,7 +131,7 @@ WriteAttribute("name", Tuple.Create(" name=\"", 892), Tuple.Create("\"", 916)
 
 WriteAttribute("id", Tuple.Create(" id=\"", 917), Tuple.Create("\"", 939)
             
-            #line 20 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_FileUploadField.cshtml"
 , Tuple.Create(Tuple.Create("", 922), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default

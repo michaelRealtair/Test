@@ -337,8 +337,8 @@ WriteLiteral("\r\n");
             #line 46 "..\..\Views\Settings\Settings.cshtml"
                                  foreach (var field in setting.Fields)
                                 {
-                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithReturnType = $"Fields/Settings/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithoutReturnType = $"Fields/Settings/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
 
 
             
@@ -439,14 +439,14 @@ WriteLiteral("                                <input");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4102), Tuple.Create("\"", 4151)
+WriteAttribute("value", Tuple.Create(" value=\"", 4120), Tuple.Create("\"", 4169)
             
             #line 66 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 4110), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
+, Tuple.Create(Tuple.Create("", 4128), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
             
             #line default
             #line hidden
-, 4110), false)
+, 4128), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right\"");

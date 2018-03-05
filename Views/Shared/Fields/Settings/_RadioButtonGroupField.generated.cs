@@ -28,20 +28,20 @@ namespace ASP
     using System.Web.WebPages;
     using Realtair.Framework.Core.Actions;
     
-    #line 1 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+    #line 1 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
     using Realtair.Framework.Core.Actions.FieldAttributes;
     
     #line default
     #line hidden
     
-    #line 2 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+    #line 2 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
     using Realtair.Framework.Core.Entities;
     
     #line default
     #line hidden
     using Realtair.Framework.Core.Interfaces;
     
-    #line 3 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+    #line 3 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
     using Realtair.Framework.Core.Services;
     
     #line default
@@ -49,16 +49,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_RadioButtonGroupField.cshtml")]
-    public partial class _Views_Shared_Fields__RadioButtonGroupField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_RadioButtonGroupField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__RadioButtonGroupField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__RadioButtonGroupField_cshtml()
+        public _Views_Shared_Fields_Settings__RadioButtonGroupField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 6 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 6 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
   
 	var attribute = Model.FieldAttribute as RadioButtonGroupFieldAttribute;
 	var options = attribute.Options(Model.Action, Html.LoggedInUser());
@@ -80,7 +80,7 @@ WriteLiteral(">\r\n\t\t<label");
 WriteAttribute("class", Tuple.Create(" class=\"", 464), Tuple.Create("\"", 535)
 , Tuple.Create(Tuple.Create("", 472), Tuple.Create("control-label", 472), true)
             
-            #line 14 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 14 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 , Tuple.Create(Tuple.Create(" ", 485), Tuple.Create<System.Object, System.Int32>(Model.Label.Trim().Length == 0 ? "hidden" : ""
             
             #line default
@@ -91,7 +91,7 @@ WriteAttribute("class", Tuple.Create(" class=\"", 464), Tuple.Create("\"", 535)
 WriteLiteral(">");
 
             
-            #line 14 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 14 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
                                                                                   Write(Model.Label);
 
             
@@ -108,13 +108,13 @@ WriteLiteral(" class=\"rb-container\"");
 WriteLiteral(">\r\n");
 
             
-            #line 19 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 			
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
              if (options.Count() == 0)
 			{
 
@@ -131,7 +131,7 @@ WriteLiteral(" type=\"radio\"");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 740), Tuple.Create("\"", 765)
             
-            #line 23 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 23 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 , Tuple.Create(Tuple.Create("", 747), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
@@ -146,7 +146,7 @@ WriteLiteral(" class=\"radio-button-label\"");
 WriteLiteral(">None to display</label>\r\n\t\t\t\t</div>\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 			}
 			else
 			{
@@ -165,7 +165,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("\t\t\t\t\t\t\t");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 34 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
                        Write(Html.RadioButton(
 								Model.UniqueName,
 								option.Value.ToString(),
@@ -181,7 +181,7 @@ WriteLiteral(" class=\"rb-label\"");
 
 WriteAttribute("for", Tuple.Create(" for=\"", 1205), Tuple.Create("\"", 1232)
             
-            #line 40 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 40 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 , Tuple.Create(Tuple.Create("", 1211), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
@@ -192,7 +192,7 @@ WriteAttribute("for", Tuple.Create(" for=\"", 1205), Tuple.Create("\"", 1232)
 WriteLiteral(">");
 
             
-            #line 40 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 40 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
                                                                        Write(option.Description);
 
             
@@ -201,7 +201,7 @@ WriteLiteral(">");
 WriteLiteral("</label>\r\n\t\t\t\t\t</div>\r\n");
 
             
-            #line 42 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 42 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
 				}
 			}
 
@@ -211,7 +211,7 @@ WriteLiteral("</label>\r\n\t\t\t\t\t</div>\r\n");
 WriteLiteral("\t\t</div>\r\n\t\t<script>\r\n\t\t\t$(\'#");
 
             
-            #line 46 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
+            #line 46 "..\..\Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml"
             Write(hopefullyUniqueId);
 
             

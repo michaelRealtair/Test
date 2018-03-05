@@ -165,6 +165,151 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_Address_AddressField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Address_AddressField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_Attachment_PreviewField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Attachment_PreviewField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_BulkFileUploadField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BulkFileUploadField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_CheckboxField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CheckboxField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_ColourPickerField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ColourPickerField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_DateTime_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DateTime_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_Decimal_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Decimal_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_DetailWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DetailWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_FileUploadField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FileUploadField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_HiddenField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_HiddenField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_HttpPostedFileWrapper_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_HttpPostedFileWrapper_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_Int32_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Int32_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_MultiSelectOptionsField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_MultiSelectOptionsField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_NoteWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_NoteWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_OptionsField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_OptionsField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_ParagraphWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ParagraphWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_PhoneNumberViewModel_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PhoneNumberViewModel_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_RadioButtonGroupField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RadioButtonGroupField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_RecurringField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RecurringField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_RichTextAreaField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RichTextAreaField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_RichTextWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_RichTextWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_StatusField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_StatusField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_String_EmailField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_String_EmailField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_String_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_String_Field.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_String_PasswordField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_String_PasswordField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_String_PreviewField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_String_PreviewField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_TableWidget_WidgetField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TableWidget_WidgetField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_TextAreaField.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TextAreaField.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Fields\Settings\_TimeSpan_Field.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TimeSpan_Field.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Fields\_Address_AddressField.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2598,6 +2743,122 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Action.generated.cs</LastGenOutput>
     </None>
+    <None Include="Views\Shared\Fields\Settings\_Address_AddressField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Address_AddressField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_Attachment_PreviewField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Attachment_PreviewField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_BulkFileUploadField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_BulkFileUploadField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_CheckboxField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CheckboxField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_ColourPickerField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ColourPickerField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_DateTime_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DateTime_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_Decimal_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Decimal_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_FileUploadField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_FileUploadField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_HiddenField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_HiddenField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_HttpPostedFileWrapper_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_HttpPostedFileWrapper_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_Int32_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Int32_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_MultiSelectOptionsField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_MultiSelectOptionsField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_NoteWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_NoteWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_OptionsField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_OptionsField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_ParagraphWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ParagraphWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_PhoneNumberViewModel_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PhoneNumberViewModel_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_RadioButtonGroupField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RadioButtonGroupField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_RecurringField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RecurringField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_RichTextAreaField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RichTextAreaField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_RichTextWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_RichTextWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_StatusField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_StatusField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_String_EmailField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_EmailField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_String_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_Field.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_String_PasswordField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_PasswordField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_String_PreviewField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_String_PreviewField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_TableWidget_WidgetField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TableWidget_WidgetField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_TextAreaField.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TextAreaField.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Shared\Fields\Settings\_TimeSpan_Field.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TimeSpan_Field.generated.cs</LastGenOutput>
+    </None>
     <None Include="Views\Shared\Fields\_DetailWidget_WidgetField.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_DetailWidget_WidgetField.generated.cs</LastGenOutput>
@@ -3755,7 +4016,6 @@
     <Folder Include="Content\plugins\bower_components\etc\" />
     <Folder Include="Content\plugins\bower_components\pdfmake\libs\FileSaver.js\" />
     <Folder Include="Content\summernote\font\" />
-    <Folder Include="Views\Shared\Fields\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\plugins\bower_components\mobile-detect\mobile-detect.d.ts" />

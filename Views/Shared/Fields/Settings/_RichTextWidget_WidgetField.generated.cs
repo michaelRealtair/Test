@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_RichTextWidget_WidgetField.cshtml")]
-    public partial class _Views_Shared_Fields__RichTextWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_RichTextWidget_WidgetField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__RichTextWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__RichTextWidget_WidgetField_cshtml()
+        public _Views_Shared_Fields_Settings__RichTextWidget_WidgetField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_RichTextWidget_WidgetField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_RichTextWidget_WidgetField.cshtml"
   
     var RichText = Model.Value as Realtair.Framework.Core.Display.Widgets.RichTextWidget;
 
@@ -51,7 +51,7 @@ namespace ASP
 WriteLiteral("\r\n\r\n");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_RichTextWidget_WidgetField.cshtml"
+            #line 7 "..\..\Views\Shared\Fields\Settings\_RichTextWidget_WidgetField.cshtml"
 Write(Html.Render(Url, RichText.Text));
 
             

@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_NoteWidget_WidgetField.cshtml")]
-    public partial class _Views_Shared_Fields__NoteWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_NoteWidget_WidgetField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__NoteWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__NoteWidget_WidgetField_cshtml()
+        public _Views_Shared_Fields_Settings__NoteWidget_WidgetField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_NoteWidget_WidgetField.cshtml"
   
     var noteWidget = Model.Value as Realtair.Framework.Core.Entities.Display.NoteWidget;
 
@@ -59,7 +59,7 @@ WriteLiteral(" class=\"col-md-12 col-sm-12\"");
 WriteLiteral(">\r\n        <label>");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+            #line 9 "..\..\Views\Shared\Fields\Settings\_NoteWidget_WidgetField.cshtml"
            Write($"NOTE: {noteWidget.Note}");
 
             

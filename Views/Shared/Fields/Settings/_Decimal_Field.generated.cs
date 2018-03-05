@@ -29,18 +29,19 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_Decimal_Field.cshtml")]
-    public partial class _Views_Shared_Fields__Decimal_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_Decimal_Field.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__Decimal_Field_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__Decimal_Field_cshtml()
+        public _Views_Shared_Fields_Settings__Decimal_Field_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
  if (Model.HasError)
 {
 
@@ -62,7 +63,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 7 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
                                     Write(Model.Label);
 
             
@@ -76,7 +77,7 @@ WriteLiteral(">\r\n            <input");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 294), Tuple.Create("\"", 318)
             
-            #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 301), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -92,7 +93,7 @@ WriteLiteral(" step=\"0.01\"");
 
 WriteAttribute("value", Tuple.Create(" value=\"", 366), Tuple.Create("\"", 386)
             
-            #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
                    , Tuple.Create(Tuple.Create("", 374), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
@@ -107,7 +108,7 @@ WriteLiteral(" class=\"help-block\"");
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 12 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
                                 Write(Model.ErrorMessage);
 
             
@@ -116,7 +117,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 15 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
 }
 else
 {
@@ -139,7 +140,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
                                     Write(Model.Label);
 
             
@@ -153,7 +154,7 @@ WriteLiteral(">\r\n            <input");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 706), Tuple.Create("\"", 730)
             
-            #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
 , Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -169,7 +170,7 @@ WriteLiteral(" step=\"0.01\"");
 
 WriteAttribute("value", Tuple.Create(" value=\"", 778), Tuple.Create("\"", 798)
             
-            #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
                    , Tuple.Create(Tuple.Create("", 786), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
@@ -180,7 +181,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 778), Tuple.Create("\"", 798)
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\Settings\_Decimal_Field.cshtml"
 }
 
             

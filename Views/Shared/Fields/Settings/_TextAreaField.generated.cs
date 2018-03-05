@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_TextAreaField.cshtml")]
-    public partial class _Views_Shared_Fields__TextAreaField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_TextAreaField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__TextAreaField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__TextAreaField_cshtml()
+        public _Views_Shared_Fields_Settings__TextAreaField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
  if (Model.HasError)
 {
 
@@ -63,7 +63,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 7 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
                                     Write(Model.Label);
 
             
@@ -77,7 +77,7 @@ WriteLiteral(">\r\n            <textarea");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 297), Tuple.Create("\"", 321)
             
-            #line 11 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
 , Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -92,7 +92,7 @@ WriteLiteral(" class=\"form-control\"");
 WriteLiteral(">");
 
             
-            #line 11 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
                                                                                  Write(Model.Value);
 
             
@@ -105,7 +105,7 @@ WriteLiteral(" class=\"help-block\"");
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 12 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
                                 Write(Model.ErrorMessage);
 
             
@@ -114,7 +114,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 15 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
 }
 else
 {
@@ -137,7 +137,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
                                     Write(Model.Label);
 
             
@@ -151,7 +151,7 @@ WriteLiteral(">\r\n            <textarea");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 706), Tuple.Create("\"", 730)
             
-            #line 24 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
 , Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
@@ -166,7 +166,7 @@ WriteLiteral(" class=\"form-control\"");
 WriteLiteral(">");
 
             
-            #line 24 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
                                                                                  Write(Model.Value);
 
             
@@ -175,7 +175,7 @@ WriteLiteral(">");
 WriteLiteral("</textarea>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\Settings\_TextAreaField.cshtml"
 }
 
             

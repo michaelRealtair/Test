@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_OptionsField.cshtml")]
-    public partial class _Views_Shared_Fields__OptionsField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_OptionsField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__OptionsField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__OptionsField_cshtml()
+        public _Views_Shared_Fields_Settings__OptionsField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
   
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute;
     var options = attribute.Options(Model.Action, Html.LoggedInUser());
@@ -65,7 +65,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 11 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                                 Write(Model.Label);
 
             
@@ -78,13 +78,13 @@ WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 WriteLiteral(">\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 15 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 15 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
          if (options.Count() == 0)
         {
 
@@ -95,7 +95,7 @@ WriteLiteral("            <select");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 545), Tuple.Create("\"", 568)
             
-            #line 17 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 17 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
 , Tuple.Create(Tuple.Create("", 550), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
@@ -109,7 +109,7 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
 "t>\r\n");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
         }
         else
         {
@@ -121,7 +121,7 @@ WriteLiteral("            <select");
 
 WriteAttribute("id", Tuple.Create(" id=\"", 730), Tuple.Create("\"", 753)
             
-            #line 23 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 23 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
 , Tuple.Create(Tuple.Create("", 735), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
@@ -133,7 +133,7 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 775), Tuple.Create("\"", 806)
             
-            #line 23 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 23 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
 , Tuple.Create(Tuple.Create("", 782), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
@@ -144,13 +144,13 @@ WriteAttribute("name", Tuple.Create(" name=\"", 775), Tuple.Create("\"", 806)
 WriteLiteral(">\r\n");
 
             
-            #line 24 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 24 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                  foreach (var option in options)
                 {
 
@@ -160,7 +160,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    <option ");
 
             
-            #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                         Write(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "");
 
             
@@ -169,7 +169,7 @@ WriteLiteral("                    <option ");
 WriteLiteral(" value=\"");
 
             
-            #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                                                                                                       Write(option.Id.ToString());
 
             
@@ -178,7 +178,7 @@ WriteLiteral(" value=\"");
 WriteLiteral("\">");
 
             
-            #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 26 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                                                                                                                              Write(option.Description);
 
             
@@ -187,7 +187,7 @@ WriteLiteral("\">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 27 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
                 }
 
             
@@ -196,7 +196,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("            </select>\r\n");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 29 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
         }
 
             
@@ -218,7 +218,7 @@ WriteLiteral("></script>\r\n        <script>\r\n            $(window).resize(fun
 "         $(\'.select2\').css(\'width\', \"100%\");\r\n            });\r\n\r\n    \t    $(\'#");
 
             
-            #line 38 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
+            #line 38 "..\..\Views\Shared\Fields\Settings\_OptionsField.cshtml"
             Write(hopefullyUniqueId);
 
             

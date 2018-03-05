@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_CheckboxField.cshtml")]
-    public partial class _Views_Shared_Fields__CheckboxField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_CheckboxField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__CheckboxField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__CheckboxField_cshtml()
+        public _Views_Shared_Fields_Settings__CheckboxField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 2 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 2 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
   
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
 
@@ -63,7 +63,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 8 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 8 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
                                 Write(Model.Label);
 
             
@@ -85,7 +85,7 @@ WriteLiteral(" type=\"radio\"");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 440), Tuple.Create("\"", 471)
             
-            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
 , Tuple.Create(Tuple.Create("", 447), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
@@ -98,7 +98,7 @@ WriteLiteral(" value=\"true\"");
 WriteLiteral(" ");
 
             
-            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
                                                                          Write(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "");
 
             
@@ -107,7 +107,7 @@ WriteLiteral(" ");
 WriteLiteral("> ");
 
             
-            #line 13 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 13 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
                                                                                                                                       Write(attribute.LabelForTrue);
 
             
@@ -123,7 +123,7 @@ WriteLiteral(" type=\"radio\"");
 
 WriteAttribute("name", Tuple.Create(" name=\"", 664), Tuple.Create("\"", 695)
             
-            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
 , Tuple.Create(Tuple.Create("", 671), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
@@ -136,7 +136,7 @@ WriteLiteral(" value=\"false\"");
 WriteLiteral(" ");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
                                                                           Write(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "");
 
             
@@ -145,7 +145,7 @@ WriteLiteral(" ");
 WriteLiteral("> ");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\Settings\_CheckboxField.cshtml"
                                                                                                                                         Write(attribute.LabelForFalse);
 
             

@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_DetailWidget_WidgetField.cshtml")]
-    public partial class _Views_Shared_Fields__DetailWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_DetailWidget_WidgetField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__DetailWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__DetailWidget_WidgetField_cshtml()
+        public _Views_Shared_Fields_Settings__DetailWidget_WidgetField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
   
     var widget = Model.Value as Realtair.Framework.Core.Entities.Display.DetailWidget;
 
@@ -59,7 +59,7 @@ WriteLiteral(" class=\"panel-heading\"");
 WriteLiteral(">");
 
             
-            #line 8 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 8 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                           Write(widget.Name);
 
             
@@ -76,13 +76,13 @@ WriteLiteral(" class=\"table\"");
 WriteLiteral(">\r\n            <tbody>\r\n");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 12 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 12 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                  foreach (var describable in widget.Details)
                 {
 
@@ -96,7 +96,7 @@ WriteLiteral(" class=\"col-sm-4 p-l-40\"");
 WriteLiteral(">");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 15 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                                                Write(describable.Key);
 
             
@@ -107,7 +107,7 @@ WriteLiteral("</th>\r\n                        <td");
 WriteLiteral(" data-key=\"");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 16 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                                  Write(describable.Key);
 
             
@@ -120,7 +120,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                            ");
 
             
-            #line 17 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 17 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                        Write(Html.Render(Url, describable.Value));
 
             
@@ -129,7 +129,7 @@ WriteLiteral("                            ");
 WriteLiteral("\r\n                        </td>\r\n                    </tr>\r\n");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_DetailWidget_WidgetField.cshtml"
+            #line 20 "..\..\Views\Shared\Fields\Settings\_DetailWidget_WidgetField.cshtml"
                 }
 
             

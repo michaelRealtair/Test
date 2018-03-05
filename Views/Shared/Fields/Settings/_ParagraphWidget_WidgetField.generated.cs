@@ -32,16 +32,16 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_ParagraphWidget_WidgetField.cshtml")]
-    public partial class _Views_Shared_Fields__ParagraphWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_ParagraphWidget_WidgetField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__ParagraphWidget_WidgetField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__ParagraphWidget_WidgetField_cshtml()
+        public _Views_Shared_Fields_Settings__ParagraphWidget_WidgetField_cshtml()
         {
         }
         public override void Execute()
         {
             
-            #line 3 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+            #line 3 "..\..\Views\Shared\Fields\Settings\_ParagraphWidget_WidgetField.cshtml"
   
     var paragraph = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
 
@@ -51,7 +51,7 @@ namespace ASP
 WriteLiteral("\r\n\r\n<h3>");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+            #line 7 "..\..\Views\Shared\Fields\Settings\_ParagraphWidget_WidgetField.cshtml"
 Write(paragraph.Text);
 
             

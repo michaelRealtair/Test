@@ -32,10 +32,10 @@ namespace ASP
     using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_String_PreviewField.cshtml")]
-    public partial class _Views_Shared_Fields__String_PreviewField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
+    [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/Settings/_String_PreviewField.cshtml")]
+    public partial class _Views_Shared_Fields_Settings__String_PreviewField_cshtml : System.Web.Mvc.WebViewPage<Realtair.Framework.Core.Actions.Field>
     {
-        public _Views_Shared_Fields__String_PreviewField_cshtml()
+        public _Views_Shared_Fields_Settings__String_PreviewField_cshtml()
         {
         }
         public override void Execute()
