@@ -71,76 +71,78 @@ WriteLiteral("</label>\r\n    <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(" id=\"datepicker\"");
+
+WriteLiteral(">\r\n            <input");
 
 WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite mydatepicker\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 442), Tuple.Create("\"", 464)
+WriteAttribute("id", Tuple.Create(" id=\"", 462), Tuple.Create("\"", 484)
             
             #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 447), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 467), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 447), false)
+, 467), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 465), Tuple.Create("\"", 489)
+WriteAttribute("name", Tuple.Create(" name=\"", 485), Tuple.Create("\"", 509)
             
             #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 472), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+                    , Tuple.Create(Tuple.Create("", 492), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 472), false)
+, 492), false)
 );
 
 WriteLiteral(" placeholder=\"Click to select date\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 525), Tuple.Create("\"", 594)
-, Tuple.Create(Tuple.Create("", 533), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create(" value=\"", 545), Tuple.Create("\"", 614)
+, Tuple.Create(Tuple.Create("", 553), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                                                                                                                                             if (Date > DateTime.MinValue) { 
+                                                                                                                                                                 if (Date > DateTime.MinValue) { 
             
             #line default
             #line hidden
             
             #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                                                                                                                                      WriteTo(__razor_attribute_value_writer, Date.ToString(dateFormat));
+                                                                                                                                                          WriteTo(__razor_attribute_value_writer, Date.ToString(dateFormat));
 
             
             #line default
             #line hidden
             
             #line 12 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                            }
             
             #line default
             #line hidden
-}), 533), false)
+}), 553), false)
 );
 
 WriteLiteral(">\r\n");
 
             
             #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-        
+            
             
             #line default
             #line hidden
             
             #line 13 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-         if (Model.HasError)
+             if (Model.HasError)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("            <span");
+WriteLiteral("                <span");
 
 WriteLiteral(" class=\"help-block\"");
 
@@ -148,7 +150,7 @@ WriteLiteral(">");
 
             
             #line 15 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-                                Write(Model.ErrorMessage);
+                                    Write(Model.ErrorMessage);
 
             
             #line default
@@ -157,7 +159,7 @@ WriteLiteral("</span>\r\n");
 
             
             #line 16 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-        }
+            }
 
             
             #line default
@@ -213,7 +215,8 @@ WriteLiteral("                ");
             #line hidden
 WriteLiteral(@"
                 autoclose: true,
-                clearBtn: true
+                clearBtn: true, 
+                container: '#datepicker'
             });
 
             cal.keydown(function (event) {
@@ -236,7 +239,7 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            $(\'.mydate
 "               autoclose: true\r\n            })\r\n        })\r\n    </script>\r\n");
 
             
-            #line 57 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 58 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
