@@ -1,5 +1,7 @@
 ﻿@model Realtair.Framework.Core.Web.Controllers.ActionsController.ActionViewModel
-@Html.Partial("Menu")
+@*@Html.Partial("Menu")
+
+
 
 <div id="page-wrapper" class="with-background">
     <div class="panel panel-default container">
@@ -18,4 +20,30 @@
         </div>
     </div>
     <form style="display: none;" id="main-form" method="POST"></form>
+</div>*@
+@* New EmptyAction  *@
+
+<div class="content bg-grey-lt">
+    <div id="page-wrapper" class="padding-sides-sm pad-form-mob">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2>
+                    @Model.Action.Description(Html.LoggedInUser())
+                </h2>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="form-group margin-tb-md">
+                            <div class="col-sm-12">
+                                <ul class="pull-middle list-inline">
+                                    <li><a onclick="$('#main-form').submit()" class="btn btn-task btn-form btn-trans-green uppercase">Confirm</a></li>
+                                    <li><a href="/" class="btn btn-task btn-form btn-trans-grey uppercase">BACK</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form style="display: none;" id="main-form" method="POST"></form>
+            </div>
+        </div>
+    </div>
 </div>
