@@ -502,6 +502,28 @@ a:hover {
   }
 }
 
+/* line 186, F:/Realtair.UI/scss/components/_modals.scss */
+.flex-container-test {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 /* line 6, F:/Realtair.UI/scss/components/_key-figs.scss */
 .key-figs--txt2xl {
   line-height: .7em;
@@ -1253,46 +1275,51 @@ a:focus {
 }
 
 /* line 44, F:/Realtair.UI/scss/modules/_typography.scss */
+.font-green-lt {
+  color: #C8E6C9;
+}
+
+/* line 48, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-grey-dk {
   color: #999999;
 }
 
-/* line 48, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 52, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-red {
   color: #f6a8a6;
 }
 
-/* line 52, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 56, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-sofialight, .key-figs--txt2xl {
   font-family: 'Sofia Pro Ultra';
 }
 
-/* line 56, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 60, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-md, .key-figs--txtmd {
   font-size: 2.5em;
 }
 
-/* line 60, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 64, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-lg, .headline-nos--txtlg {
   font-size: 4.25em;
 }
 
-/* line 64, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 68, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-xl, .headline-nos--icolg {
   font-size: 7em;
 }
 
-/* line 68, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 72, F:/Realtair.UI/scss/modules/_typography.scss */
 .font-2xl, .key-figs--txt2xl {
   font-size: 10em;
 }
 
-/* line 72, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 76, F:/Realtair.UI/scss/modules/_typography.scss */
 input[type="*"]::placeholder {
   color: #F9F9F9;
 }
 
-/* line 77, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 81, F:/Realtair.UI/scss/modules/_typography.scss */
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -1309,17 +1336,17 @@ input[type="*"]::placeholder {
                                   supported by Chrome and Opera */
 }
 
-/* line 87, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 91, F:/Realtair.UI/scss/modules/_typography.scss */
 .uppercase {
   text-transform: uppercase;
 }
 
-/* line 91, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 95, F:/Realtair.UI/scss/modules/_typography.scss */
 .lowercase {
   text-transform: lowercase;
 }
 
-/* line 95, F:/Realtair.UI/scss/modules/_typography.scss */
+/* line 99, F:/Realtair.UI/scss/modules/_typography.scss */
 .graph-title {
   position: absolute;
 }
