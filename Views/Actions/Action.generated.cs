@@ -329,7 +329,7 @@ WriteLiteral(">\r\n                            ");
 
 WriteLiteral("\r\n                            <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-12\"");
 
 WriteLiteral(">\r\n                                ");
 
