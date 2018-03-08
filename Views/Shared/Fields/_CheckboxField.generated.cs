@@ -66,7 +66,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 11 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-     if (Model.Label.Count() > 30)
+     if (Model.Label.Count() > 20)
     {
 
             

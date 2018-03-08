@@ -118,7 +118,7 @@ WriteLiteral("</label>\r\n");
             #line hidden
 WriteLiteral("    <div");
 
-WriteLiteral(" class=\"col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
 WriteLiteral(">\r\n");
 

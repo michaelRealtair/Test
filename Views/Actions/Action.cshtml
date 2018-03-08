@@ -123,7 +123,7 @@
                             </div>*@
                             <div class="col-sm-12">
                                 @* Form *@
-                                <form class="form-horizontal panel panel-body" id="main-form" method="post">
+                                <form class="form-horizontal panel panel-body form-padding" id="main-form" method="post">
                                     @foreach (var field in shown)
                                     {
                                         if (field.FieldSetAttribute != null)
@@ -131,7 +131,7 @@
                                             var fieldSetItems = shownWithFieldSets.Where(s => s.FieldSetAttribute.Legend == field.FieldSetAttribute.Legend).ToList();
                                             if (fieldSetItems.Any())
                                             {
-                                                <fieldset style="padding: 1px;">
+                                                <fieldset class="margin-t-md">
                                                     <legend>@field.FieldSetAttribute.Legend</legend>
                                                     <div class="p-l-30">
                                                         @foreach (var item in fieldSetItems)
