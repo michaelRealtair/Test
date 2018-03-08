@@ -52,22 +52,45 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group has-error\"");
 
-WriteLiteral(">\r\n        <label");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 125), Tuple.Create("\"", 194)
+, Tuple.Create(Tuple.Create("", 133), Tuple.Create("col-sm-", 133), true)
+            
+            #line 6 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 140), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "2"
+            
+            #line default
+            #line hidden
+, 140), false)
+, Tuple.Create(Tuple.Create(" ", 180), Tuple.Create("control-label", 181), true)
+);
+
+WriteLiteral(">\r\n            <label");
+
+WriteLiteral(" class=\"control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 6 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                         Write(Model.Label);
+            #line 7 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                                    Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        <div");
+WriteLiteral("</label>\r\n        </div>\r\n        <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 289), Tuple.Create("\"", 345)
+, Tuple.Create(Tuple.Create("", 297), Tuple.Create("col-sm-", 297), true)
+            
+            #line 9 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "10"
+            
+            #line default
+            #line hidden
+, 304), false)
+);
 
 WriteLiteral(">\r\n            <input");
 
@@ -75,34 +98,34 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 270), Tuple.Create("\"", 294)
+WriteAttribute("name", Tuple.Create(" name=\"", 405), Tuple.Create("\"", 429)
             
-            #line 8 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 277), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 10 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 412), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 277), false)
+, 412), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 295), Tuple.Create("\"", 335)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 430), Tuple.Create("\"", 470)
             
-            #line 8 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 309), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+            #line 10 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                , Tuple.Create(Tuple.Create("", 444), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 309), false)
+, 444), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 336), Tuple.Create("\"", 356)
+WriteAttribute("value", Tuple.Create(" value=\"", 471), Tuple.Create("\"", 491)
             
-            #line 8 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                                   , Tuple.Create(Tuple.Create("", 344), Tuple.Create<System.Object, System.Int32>(Model.Value
+            #line 10 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                                                   , Tuple.Create(Tuple.Create("", 479), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 344), false)
+, 479), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -112,7 +135,7 @@ WriteLiteral(" class=\"help-block\"");
 WriteLiteral(">");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+            #line 11 "..\..\Views\Shared\Fields\_String_Field.cshtml"
                                 Write(Model.ErrorMessage);
 
             
@@ -121,7 +144,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+            #line 14 "..\..\Views\Shared\Fields\_String_Field.cshtml"
 }
 else
 {
@@ -135,20 +158,39 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 644), Tuple.Create("\"", 713)
+, Tuple.Create(Tuple.Create("", 652), Tuple.Create("col-sm-", 652), true)
+            
+            #line 18 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 659), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "2"
+            
+            #line default
+            #line hidden
+, 659), false)
+, Tuple.Create(Tuple.Create(" ", 699), Tuple.Create("control-label", 700), true)
+);
 
 WriteLiteral(">");
 
             
-            #line 16 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                         Write(Model.Label);
+            #line 18 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                                                                                Write(Model.Label);
 
             
             #line default
             #line hidden
 WriteLiteral("</label>\r\n        <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteAttribute("class", Tuple.Create(" class=\"", 749), Tuple.Create("\"", 804)
+, Tuple.Create(Tuple.Create("", 757), Tuple.Create("col-sm-", 757), true)
+            
+            #line 19 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 764), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "6" : "10"
+            
+            #line default
+            #line hidden
+, 764), false)
+);
 
 WriteLiteral(">\r\n            <input");
 
@@ -156,40 +198,40 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 652), Tuple.Create("\"", 676)
+WriteAttribute("name", Tuple.Create(" name=\"", 864), Tuple.Create("\"", 888)
             
-            #line 18 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 659), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 20 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+, Tuple.Create(Tuple.Create("", 871), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 659), false)
+, 871), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 677), Tuple.Create("\"", 717)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 889), Tuple.Create("\"", 929)
             
-            #line 18 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 691), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+            #line 20 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                , Tuple.Create(Tuple.Create("", 903), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 691), false)
+, 903), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 718), Tuple.Create("\"", 738)
+WriteAttribute("value", Tuple.Create(" value=\"", 930), Tuple.Create("\"", 950)
             
-            #line 18 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                                   , Tuple.Create(Tuple.Create("", 726), Tuple.Create<System.Object, System.Int32>(Model.Value
+            #line 20 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+                                                   , Tuple.Create(Tuple.Create("", 938), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 726), false)
+, 938), false)
 );
 
 WriteLiteral(">\r\n            <small>");
 
             
-            #line 19 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+            #line 21 "..\..\Views\Shared\Fields\_String_Field.cshtml"
               Write(Model.FieldAttribute.Help);
 
             
@@ -198,7 +240,7 @@ WriteLiteral(">\r\n            <small>");
 WriteLiteral("</small>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 22 "..\..\Views\Shared\Fields\_String_Field.cshtml"
+            #line 24 "..\..\Views\Shared\Fields\_String_Field.cshtml"
 }
 
             

@@ -7,7 +7,14 @@
 }
 
 <div class="form-group">
-    <label class="col-sm-2 control-label">@Model.Label</label>
+    @if (Model.Label.Count() > 20)
+    {    <label class="col-sm-12 control-label">@Model.Label</label>
+
+    }
+    else
+    {
+        <label class="col-sm-2 control-label">@Model.Label</label>
+    }
     <div class="col-sm-8">
         @if (options.Count() == 0)
         {
