@@ -1,4 +1,5 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
+@using System.Text.RegularExpressions;
 
 @if (Model.HasError)
 {
@@ -8,7 +9,13 @@
         </div>
         <div class="col-sm-@(Model.Label.Count() > 20 ? "12" : "10")">
             <input type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
-            <span class="help-block">@Model.ErrorMessage</span>
+            <span class="help-block">
+            @{
+                var newErrorMessage = Regex.Replace(Model.UniqueName, "(?<!^)_?([A-Z])", " $1");
+                var errorMsg = "The " + newErrorMessage + " field is required.";
+             }
+                @errorMsg
+            </span>
         </div>
     </div>
 }
