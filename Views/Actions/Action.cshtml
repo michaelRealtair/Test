@@ -47,9 +47,17 @@
             hidden = null;
         }
 
+        
+
         <div class="content bg-grey-lt">
+
             @Html.Partial("FlowerHorn/MobileNavigation")
             <div id="page-wrapper" class="padding-sides-sm pad-form-mob">
+                
+                <div id="loader-wrapper" class="hide-bg">
+                    <div id="loader"></div>
+                </div>
+
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         @* Header *@
@@ -370,6 +378,7 @@
             </div>
         </div>
         <script>
+            $(document).ready(function () { $("#loader-wrapper").css('display', 'none'); });
             $('#main-form-submit').click(function (e) {
 				e.preventDefault()
 				var bValid = true;
@@ -391,8 +400,8 @@
 				});
 
 				if (bValid) {
-					$('.preloader').css('display', 'block');
-					$('#main-form').submit.disabled = true;
+                    $("#loader-wrapper").css('display', 'block');
+                    $('#main-form').submit.disabled = true;
 					$('#main-form').submit();
 				}
 			});
