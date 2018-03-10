@@ -47,13 +47,13 @@
             hidden = null;
         }
 
-        
+
 
         <div class="content bg-grey-lt">
 
             @Html.Partial("FlowerHorn/MobileNavigation")
             <div id="page-wrapper" class="padding-sides-sm pad-form-mob">
-                
+
                 <div id="loader-wrapper" class="hide-bg">
                     <div id="loader"></div>
                 </div>
@@ -95,40 +95,40 @@
                         }
                         <div class="row">
                             @*<div class="col-sm-2 hidden-xs">
-                                <ul class="progress-indicator nocenter stacked">
-                                    <li class="completed">
-                                        <a href="#">
-                                            <span class="bubble"><h3><i class="fa fa-check"></i></h3></span>
+                                    <ul class="progress-indicator nocenter stacked">
+                                        <li class="completed">
+                                            <a href="#">
+                                                <span class="bubble"><h3><i class="fa fa-check"></i></h3></span>
+                                                <span class="stacked-text">
+                                                    <h3 class="no-margin-t">Agent</h3>
+                                                    <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <span class="bubble"><h3><i class="fa fa-pencil"></i></h3></span>
                                             <span class="stacked-text">
-                                                <h3 class="no-margin-t">Agent</h3>
+                                                <h3 class="no-margin-t">Property</h3>
                                                 <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
                                             </span>
-                                        </a>
-                                    </li>
-                                    <li class="active">
-                                        <span class="bubble"><h3><i class="fa fa-pencil"></i></h3></span>
-                                        <span class="stacked-text">
-                                            <h3 class="no-margin-t">Property</h3>
-                                            <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
-                                        </span>
-                                    </li>
-                                    <li class="incomplete">
-                                        <span class="bubble"><h2></h2></span>
-                                        <span class="stacked-text">
-                                            <h3 class="no-margin-t">Vendor</h3>
-                                            <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
-                                        </span>
-                                    </li>
-                                    <li class="incomplete">
-                                        <span class="bubble"><h2></h2></span>
-                                        <span class="stacked-text">
-                                            <h3 class="no-margin-t">Vendor 2</h3>
-                                            <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
-                                        </span>
-                                    </li>
+                                        </li>
+                                        <li class="incomplete">
+                                            <span class="bubble"><h2></h2></span>
+                                            <span class="stacked-text">
+                                                <h3 class="no-margin-t">Vendor</h3>
+                                                <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                            </span>
+                                        </li>
+                                        <li class="incomplete">
+                                            <span class="bubble"><h2></h2></span>
+                                            <span class="stacked-text">
+                                                <h3 class="no-margin-t">Vendor 2</h3>
+                                                <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                            </span>
+                                        </li>
 
-                                </ul>
-                            </div>*@
+                                    </ul>
+                                </div>*@
                             <div class="col-sm-12">
                                 @* Form *@
                                 <form class="form-horizontal panel panel-body form-padding" id="main-form" method="post">
@@ -378,35 +378,39 @@
             </div>
         </div>
         <script>
-            $(document).ready(function () { $("#loader-wrapper").css('display', 'none'); });
+            $(document).ready(function () {
+                $("#loader-wrapper").removeClass('hide-bg');
+                setTimeout(function () { $("#loader-wrapper").css('display', 'none'); }, 500);
+            });
             $('#main-form-submit').click(function (e) {
-				e.preventDefault()
-				var bValid = true;
-				$(document).find('input.required:visible').each(function () {
-					var formgroup = $(this).closest('.form-group');
-					if ($(this).val() === '') {
-						formgroup.addClass('has-error');
-						var label = formgroup.find('label.control-label').text();
+                e.preventDefault()
+                var bValid = true;
+                $(document).find('input.required:visible').each(function () {
+                    var formgroup = $(this).closest('.form-group');
+                    if ($(this).val() === '') {
+                        formgroup.addClass('has-error');
+                        var label = formgroup.find('label.control-label').text();
 
-						console.log(formgroup.find('div').index(0));
-						if ($(this).closest('.col-md-9').find('span.help-block').length == 0)
-							$(this).closest('.col-md-9').append('<span class="help-block">The ' + label + ' field is required.</span>');
+                        console.log(formgroup.find('div').index(0));
+                        if ($(this).closest('.col-md-9').find('span.help-block').length == 0)
+                            $(this).closest('.col-md-9').append('<span class="help-block">The ' + label + ' field is required.</span>');
 
-						bValid = false;
-					} else {
-						formgroup.removeClass('has-error');
-						formgroup.find('span.help-block').remove();
-					}
-				});
+                        bValid = false;
+                    } else {
+                        formgroup.removeClass('has-error');
+                        formgroup.find('span.help-block').remove();
+                    }
+                });
 
-				if (bValid) {
-                    $("#loader-wrapper").css('display', 'block');
+                if (bValid) {
+                    setTimeout(function () { $("#loader-wrapper").css('display', 'block'); }, 500);
+                    $("#loader-wrapper").addClass('hide-bg');
                     $('#main-form').submit.disabled = true;
-					$('#main-form').submit();
-				}
-			});
+                    $('#main-form').submit();
+                }
+            });
         </script>
-    }
+                            }
 }
 
 @section Scripts {
