@@ -18,9 +18,15 @@ namespace Realtair.Framework.Core.Web.Controllers
 
     public class ActionsController : BaseController
     {
+        // Fields
         private string dashboardUrl = ConfigurationManager.AppSettings["DashboardUrl"];
-        bool PostValuesSet;
+        private bool PostValuesSet;
 
+        // Properties
+        public bool HasAccessToNewActions => User.HasAccessToNewActions;
+        public string ActionViewName => HasAccessToNewActions ? "Action" : "Old/Action";
+
+        // Constructors
         public ActionsController(IAuthenticationFactory authenticationFactory) 
             : base(authenticationFactory)
         {
@@ -29,21 +35,34 @@ namespace Realtair.Framework.Core.Web.Controllers
                 dashboardUrl = "/dashboard";
             }
         }
-
+        
         public class ActionViewModel
         {
+            // Fields
             public Action Action;
             public MultiPageAction MultiPageAction;
             public bool IsMultiPage;
             public MultiPageAction.Page Page;
 
+            // Properties
+            public bool HasAccessToNewActions { get; private set; }
+            
+            // Constructors
+            public ActionViewModel()
+            {
+            }
+            public ActionViewModel(bool hasAccessToNewActions)
+            {
+                HasAccessToNewActions = hasAccessToNewActions; 
+            }
+
+            // Methods
             public ActionViewModel AdvanceToPage(MultiPageAction.Page nextPage)
             {
                 SubmittedPages.Add(Page);
                 Page = nextPage;
                 return this;
             }
-
             public List<MultiPageAction.Page> SubmittedPages { get; set; } = new List<MultiPageAction.Page>();
             public IEnumerable<Field> Fields => Action.Fields;
             public IEnumerable<Field> FieldsForPage => Page.Fields;
@@ -115,7 +134,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             MultiPageAction.Page givenPage = null;
 
-            var model = new ActionViewModel();
+            var model = new ActionViewModel(HasAccessToNewActions);
             model.Action = action;
 
             if (action is MultiPageAction)
@@ -142,7 +161,9 @@ namespace Realtair.Framework.Core.Web.Controllers
                 if (action.Fields.Count() == 0)
                     return View("EmptyAction", model);
                 else
-                    return View("Action", model); // method was not post
+                {
+                    return View(ActionViewName, model); // method was not post
+                }
             }
         }
 
@@ -151,7 +172,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             if (back)
             {
                 model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => p.GetType() == model.Page.GetType()));
-                return View("Action", model);
+                return View(ActionViewName, model);
             }
             else
             {
@@ -167,11 +188,11 @@ namespace Realtair.Framework.Core.Web.Controllers
                         if (nextPage == null)
                             return RunActionAndRedirect(action, auth);
                         else
-                            return View("Action", model.AdvanceToPage(nextPage));
+                            return View(ActionViewName, model.AdvanceToPage(nextPage));
                     else
                         return RunActionAndRedirect(action, auth);
                 else
-                    return View("Action", model);
+                    return View(ActionViewName, model);
             }
         }
 
