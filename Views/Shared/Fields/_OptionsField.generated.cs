@@ -131,10 +131,10 @@ WriteAttribute("id", Tuple.Create(" id=\"", 730), Tuple.Create("\"", 753)
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 775), Tuple.Create("\"", 806)
+WriteAttribute("name", Tuple.Create(" name=\"", 775), Tuple.Create("\"", 799)
             
             #line 23 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 782), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 782), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
@@ -161,7 +161,7 @@ WriteLiteral("                    <option ");
 
             
             #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                        Write(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "");
+                        Write(option.Id.ToString() == Model.FormValue?.ToString() ? "selected" : "");
 
             
             #line default
@@ -170,7 +170,7 @@ WriteLiteral(" value=\"");
 
             
             #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                                                                                                      Write(option.Id.ToString());
+                                                                                                       Write(option.Id.ToString());
 
             
             #line default
@@ -179,7 +179,7 @@ WriteLiteral("\">");
 
             
             #line 26 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                                                                                                                             Write(option.Description);
+                                                                                                                              Write(option.Description);
 
             
             #line default
