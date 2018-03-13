@@ -3665,6 +3665,32 @@ legend {
   margin-bottom: 10px;
 }
 
+/* line 746, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+.drop-down-menu--status > .dropdown-menu {
+  left: 25%;
+}
+
+/* line 750, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+.drop-down-menu--status .list-group-item {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+}
+
+/* line 755, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+.drop-down-menu--status .list-group-item:first-child {
+  border-top: 0;
+}
+
+/* line 759, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+.drop-down-menu--status .list-group-item:last-child {
+  border-bottom: 0;
+}
+
 /* Layouts - Page layout styles */
 /* line 1, D:/Realtair/Realtair.UI/scss/layouts/_header.scss */
 .header-kanban, .header-track {
