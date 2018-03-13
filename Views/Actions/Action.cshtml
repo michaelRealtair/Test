@@ -197,11 +197,11 @@
 									else
 									{
 										<input type="hidden" name="@field.UniqueName" value="@field.Value" />
-									}
-								}
+                                    }
+                                }
 
-								<input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
-								<input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p is MultiPageAction.CustomPage ? (p as MultiPageAction.CustomPage).Identifier : p.GetType().Name))" />
+								<input type="hidden" name="page" value="@(Model.Page is MultiPageAction.CustomPage ? (Model.Page as MultiPageAction.CustomPage).Identifier : Model.Page.GetType().Name)" />
 							}
 
 							<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
@@ -304,8 +304,8 @@
 											<input type="hidden" name="@field.UniqueName" value="@field.Value" />
 										}
 									}
-									<input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
-									<input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+									<input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p is MultiPageAction.CustomPage ? (p as MultiPageAction.CustomPage).Identifier : p.GetType().Name))" />
+                                    <input type="hidden" name="page" value="@(Model.Page is MultiPageAction.CustomPage ? (Model.Page as MultiPageAction.CustomPage).Identifier : Model.Page.GetType().Name)" />
 									<input type="hidden" name="back" value="true" />
 								}
 							</form>
