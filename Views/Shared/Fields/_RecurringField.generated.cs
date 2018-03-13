@@ -3429,7 +3429,7 @@ WriteLiteral(" />\r\n\r\n<script>\r\n\r\n    var addedEvent = new Event(\'itemAd
             #line default
             #line hidden
 WriteLiteral(";\r\n    //var hasValue = 0;\r\n\r\n    if(hasValue == 0)\r\n        addItem();\r\n\r\n    in" +
-"itComponents();\r\n\r\n    $(\'#main-form\').submit(saveData);\r\n\r\n    function initCom" +
+"itComponents();\r\n\r\n    $(\'.main-form\').submit(saveData);\r\n\r\n    function initCom" +
 "ponents(){\r\n        /* Select2  */\r\n        $(\'.");
 
             

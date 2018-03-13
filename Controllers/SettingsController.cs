@@ -1,4 +1,5 @@
-﻿using Realtair.Framework.Core.Entities;
+﻿using Realtair.Framework.Core.Actions.FieldAttributes;
+using Realtair.Framework.Core.Entities;
 using Realtair.Framework.Core.Interfaces;
 using Realtair.Framework.Core.Web.Utilities;
 using System;
@@ -53,6 +54,8 @@ namespace Realtair.Framework.Core.Web.Controllers
                 object value;
                 if (Request.Files.AllKeys.Contains(field.UniqueName))
                     value = (object)Request.Files.Get(field.UniqueName);
+                else if(field.FieldAttribute is RecurringFieldAttribute)
+                    value = HttpUtility.HtmlDecode(Request.Form.GetValues(field.UniqueName)[0]);
                 else if (typeof(IEnumerable<object>).IsAssignableFrom(field.PropertyType))
                     value = Request.Form.GetValues(field.UniqueName);
                 else
