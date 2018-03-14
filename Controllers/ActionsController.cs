@@ -82,7 +82,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         public ActionResult LoadWorkflowAction(string workflowName, int id, string actionName, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.User)User);
-            
+
             // Redirect right away if cancelled
             if (cancel) return HandleRedirect(action);
 
@@ -171,7 +171,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             if (back)
             {
-                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => p.GetType() == model.Page.GetType()));
+                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => (p is MultiPageAction.CustomPage && model.Page is MultiPageAction.CustomPage) ? (p as MultiPageAction.CustomPage).Identifier == (model.Page as MultiPageAction.CustomPage).Identifier : p.GetType() == model.Page.GetType()));
                 return View(ActionViewName, model);
             }
             else
@@ -204,7 +204,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             {
                 if (Auth.IsLoggedIn)
                 {
-                    return Redirect("/"); 
+                    return Redirect("/");
                 }
                 else
                 {
@@ -376,17 +376,17 @@ namespace Realtair.Framework.Core.Web.Controllers
             foreach (var field in fields)
             {
                 // check if it's a list of things, i.e. List<FileAsset>
-                if (field.PropertyInfo.PropertyType.IsGenericType && field.PropertyType.GetGenericTypeDefinition() == typeof(IList<>))
+                if (field.PropertyType.IsGenericType && field.PropertyType.GetGenericTypeDefinition() == typeof(IList<>))
                 {
                     if (Request.Form.GetValues(field.UniqueName) != null)
                     {
                         foreach (var value in Request.Form.GetValues(field.UniqueName))
                         {
-                            var mapped = new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType.GetGenericArguments().First(), value);
+                            var mapped = new ActionMapper(DbContext).Map(action, field, field.PropertyType.GetGenericArguments().First(), value);
                             if (mapped != null && field.FieldAttribute is FileUploadFieldAttribute)
                             {
                                 // have to do this for file uploads (why?), see its mapper below
-                                (field.PropertyInfo.GetValue(action) as dynamic).Add(mapped as dynamic);
+                                (field.Value as dynamic).Add(mapped as dynamic);
                             }
                         }
                     }
@@ -410,7 +410,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                             value = (object)Request.Unvalidated.Form.Get(field.UniqueName);
                     }
 
-                    field.PropertyInfo.SetValue(action, new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType, value));
+                    field.Value = new ActionMapper(DbContext).Map(action, field, field.PropertyType, value);
                 }
             }
         }
@@ -422,7 +422,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             SetGetParams(action);
             SetPostValues(action, action.Fields);
 
-            var fieldProvider = action.Fields.First(f => f.PropertyInfo.Name == fieldName).FieldAttribute.GetProvider();
+            var fieldProvider = action.Fields.First(f => f.UniqueName == fieldName).FieldAttribute.GetProvider();
 
             return View("Fields/_ListFieldQueryResults", fieldProvider.Options(action, (Framework.Core.Entities.User)User, query));
         }
