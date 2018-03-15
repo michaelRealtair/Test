@@ -60,52 +60,47 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"col-sm-10 col-sm-offset-1\"");
 
-WriteLiteral(">\r\n                <h2>\r\n");
+WriteLiteral(">\r\n                <br />\r\n                <br />\r\n                <div");
 
-WriteLiteral("                    ");
+WriteLiteral(" class=\"form-horizontal panel panel-body form-padding\"");
+
+WriteLiteral(">\r\n                    <h2>\r\n");
+
+WriteLiteral("                        ");
 
             
-            #line 31 "..\..\Views\Actions\EmptyAction.cshtml"
-               Write(Model.Action.Description(Html.LoggedInUser()));
+            #line 34 "..\..\Views\Actions\EmptyAction.cshtml"
+                   Write(Model.Action.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </h2>\r\n                <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                    <div");
-
-WriteLiteral(" class=\"col-sm-10\"");
-
-WriteLiteral(">\r\n                        <div");
+WriteLiteral("\r\n                    </h2>\r\n                </div>\r\n                <div");
 
 WriteLiteral(" class=\"form-group margin-tb-md\"");
 
-WriteLiteral(">\r\n                            <div");
+WriteLiteral(">\r\n                    <div");
 
 WriteLiteral(" class=\"col-sm-12\"");
 
-WriteLiteral(">\r\n                                <ul");
+WriteLiteral(">\r\n                        <ul");
 
-WriteLiteral(" class=\"pull-middle list-inline\"");
+WriteLiteral(" class=\"pull-right list-inline\"");
 
-WriteLiteral(">\r\n                                    <li><a");
+WriteLiteral(">\r\n                            <li><a");
 
 WriteLiteral(" onclick=\"$(\'#main-form\').submit()\"");
 
 WriteLiteral(" class=\"btn btn-task btn-form btn-trans-green uppercase\"");
 
-WriteLiteral(">Confirm</a></li>\r\n                                    <li><a");
+WriteLiteral(">Confirm</a></li>\r\n                            <li><a");
 
 WriteLiteral(" href=\"/\"");
 
 WriteLiteral(" class=\"btn btn-task btn-form btn-trans-grey uppercase\"");
 
-WriteLiteral(">BACK</a></li>\r\n                                </ul>\r\n                          " +
-"  </div>\r\n                        </div>\r\n                    </div>\r\n          " +
-"      </div>\r\n                <form");
+WriteLiteral(">BACK</a></li>\r\n                        </ul>\r\n                    </div>\r\n      " +
+"          </div>\r\n                <form");
 
 WriteLiteral(" style=\"display: none;\"");
 

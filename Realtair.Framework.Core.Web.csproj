@@ -147,6 +147,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Views\Actions\Old\EmptyAction.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyAction.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Actions\SecureActionSuccessful.generated.cs">
       <DependentUpon>SecureActionSuccessful.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2754,6 +2759,10 @@
     <None Include="Views\Actions\Old\Action.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Action.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Actions\Old\EmptyAction.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmptyAction.generated.cs</LastGenOutput>
     </None>
     <None Include="Views\Shared\Fields\Settings\_Address_AddressField.cshtml">
       <Generator>RazorGenerator</Generator>

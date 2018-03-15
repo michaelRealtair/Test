@@ -24,7 +24,9 @@ namespace Realtair.Framework.Core.Web.Controllers
 
         // Properties
         public bool HasAccessToNewActions => User.HasAccessToNewActions;
-        public string ActionViewName => HasAccessToNewActions ? "Action" : "Old/Action";
+        private string ActionViewPathPrefix => HasAccessToNewActions ? "Action" : "Old/Action";
+        private string EmptyActionViewPathPrefix => HasAccessToNewActions ? "EmptyAction" : "Old/EmptyAction";
+        private string SecuredActionViewPathPrefix => "SecureActionSuccessful";
 
         // Constructors
         public ActionsController(IAuthenticationFactory authenticationFactory) 
@@ -159,10 +161,10 @@ namespace Realtair.Framework.Core.Web.Controllers
                     Response.Redirect(Url.Action("MainPage", "LandingPage") + "?ReturnUrl=" + Request.Url);
 
                 if (action.Fields.Count() == 0)
-                    return View("EmptyAction", model);
+                    return View(EmptyActionViewPathPrefix, model);
                 else
                 {
-                    return View(ActionViewName, model); // method was not post
+                    return View(ActionViewPathPrefix, model); // method was not post
                 }
             }
         }
@@ -172,7 +174,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             if (back)
             {
                 model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => (p is MultiPageAction.CustomPage && model.Page is MultiPageAction.CustomPage) ? (p as MultiPageAction.CustomPage).Identifier == (model.Page as MultiPageAction.CustomPage).Identifier : p.GetType() == model.Page.GetType()));
-                return View(ActionViewName, model);
+                return View(ActionViewPathPrefix, model);
             }
             else
             {
@@ -188,11 +190,11 @@ namespace Realtair.Framework.Core.Web.Controllers
                         if (nextPage == null)
                             return RunActionAndRedirect(action, auth);
                         else
-                            return View(ActionViewName, model.AdvanceToPage(nextPage));
+                            return View(ActionViewPathPrefix, model.AdvanceToPage(nextPage));
                     else
                         return RunActionAndRedirect(action, auth);
                 else
-                    return View(ActionViewName, model);
+                    return View(ActionViewPathPrefix, model);
             }
         }
 
@@ -208,7 +210,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                 }
                 else
                 {
-                    return View("SecureActionSuccessful", action);
+                    return View(SecuredActionViewPathPrefix, action);
                 }
             }
 

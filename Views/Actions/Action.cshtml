@@ -3,6 +3,8 @@
 @using Realtair.Framework.Core.Interfaces;
 @using Realtair.Framework.Core.Actions;
 @using Realtair.Framework.Core.Web.Utilities;
+@using Realtair.Framework.Enquiries.Interfaces;
+@using Realtair.Framework.Enquiries.Entities;
 @using System;
 
 @{
@@ -46,310 +48,372 @@
         }
 
 
-		@Html.Partial("Menu")
 
-		<div id="page-wrapper" class="with-background">
-			<div class="container">
-				<div class="panel panel-default">
-                    @* Header *@
-					<div class="panel-heading">
-						@if (Model.IsMultiPage)
-						{
-							@Model.Page.Name.ToUpper()
-						}
-						else
-						{
-							@Model.Action.Description(Html.LoggedInUser()).ToUpper()
-						}
-					</div>
-                    @* Validation Errors *@
-					@if (Model.Action.HasValidated && !Model.Action.IsValid)
-					{
-						<div class="col-md-12" style="padding: 0;">
-							@foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
-							{
-                                <div class="alert alert-danger">@error.ErrorMessage</div>
+
+        <div class="content bg-grey-lt">
+
+            @Html.Partial("FlowerHorn/MobileNavigation")
+            <div id="page-wrapper" class="padding-sides-sm pad-form-mob">
+
+                <div id="loader-wrapper" class="hide-bg">
+                    <div id="loader"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        @* Header *@
+                        <h2>
+                            @if (Model.IsMultiPage)
+                            {
+                                @Model.Page.Name.ToUpper()
                             }
-						</div>
-					}
-                    @* Form *@
-					<form class="autoform form-horizontal main-form" id="main-form" method="post">
-						<div class="panel-body">
-							@foreach (var field in shown)
-							{
-								if (field.FieldSetAttribute != null)
-								{
-									var fieldSetItems = shownWithFieldSets.Where(s => s.FieldSetAttribute.Legend == field.FieldSetAttribute.Legend).ToList();
-									if (fieldSetItems.Any())
-									{
-										<fieldset style="padding: 1px;">
-											<legend>@field.FieldSetAttribute.Legend</legend>
-											<div class="p-l-30">
-												@foreach (var item in fieldSetItems)
-                                                {
-                                                    var fieldWithReturnType = $"Fields/_{item.PropertyType.Name}_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                                    var fieldWithoutReturnType = $"Fields/_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                                    var fieldThatWorksForBoth = $"Fields/_{item.PropertyType.Name}_Field";
+                            else
+                            {
+                                @Model.Action.Description(Html.LoggedInUser()).ToUpper()
+                            }
+                        </h2>
 
-                                                    if (Html.ViewExists(fieldWithReturnType))
+                        @{
+                            var parentEnquiry = (Model.Action.This as IHasParentEnquiry)?.ParentEnquiry;
+                            if (parentEnquiry != null)
+                            {
+                                <h3 class="no-margin-tb">
+                                    <i class="fa fa-home"></i> @(parentEnquiry.Description(Html.LoggedInUser()))
+                                </h3>
+                                <br />
+                            }
+                        }
+
+                        @* Validation Errors *@
+                        @if (Model.Action.HasValidated && !Model.Action.IsValid)
+                        {
+                            <div class="col-md-12" style="padding: 0;">
+                                @foreach (var error in Model.Action.Errors.Where(e => e.MemberNames.Count() == 0))
+                                {
+                                    <div class="alert alert-danger">@error.ErrorMessage</div>
+                                }
+                            </div>
+                        }
+                        <div class="row">
+                            @*<div class="col-sm-2 hidden-xs">
+                                    <ul class="progress-indicator nocenter stacked">
+                                        <li class="completed">
+                                            <a href="#">
+                                                <span class="bubble"><h3><i class="fa fa-check"></i></h3></span>
+                                                <span class="stacked-text">
+                                                    <h3 class="no-margin-t">Agent</h3>
+                                                    <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <span class="bubble"><h3><i class="fa fa-pencil"></i></h3></span>
+                                            <span class="stacked-text">
+                                                <h3 class="no-margin-t">Property</h3>
+                                                <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                            </span>
+                                        </li>
+                                        <li class="incomplete">
+                                            <span class="bubble"><h2></h2></span>
+                                            <span class="stacked-text">
+                                                <h3 class="no-margin-t">Vendor</h3>
+                                                <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                            </span>
+                                        </li>
+                                        <li class="incomplete">
+                                            <span class="bubble"><h2></h2></span>
+                                            <span class="stacked-text">
+                                                <h3 class="no-margin-t">Vendor 2</h3>
+                                                <!--<p>Aenean urna velit, ornare vel metus ultricies, varius bibendum tortor.</p>-->
+                                            </span>
+                                        </li>
+
+                                    </ul>
+                                </div>*@
+                            <div class="col-sm-12">
+                                @* Form *@
+                                <form class="form-horizontal panel panel-body form-padding" id="main-form" method="post">
+                                    @foreach (var field in shown)
+                                    {
+                                        if (field.FieldSetAttribute != null)
+                                        {
+                                            var fieldSetItems = shownWithFieldSets.Where(s => s.FieldSetAttribute.Legend == field.FieldSetAttribute.Legend).ToList();
+                                            if (fieldSetItems.Any())
+                                            {
+                                                <fieldset class="margin-t-md">
+                                                    <legend>@field.FieldSetAttribute.Legend</legend>
+                                                    <div class="p-l-30">
+                                                        @foreach (var item in fieldSetItems)
+                                                        {
+                                                            var fieldWithReturnType = $"Fields/_{item.PropertyType.Name}_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                                            var fieldWithoutReturnType = $"Fields/_{item.FieldAttribute.GetType().Name.Substring(0, item.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                                            var fieldThatWorksForBoth = $"Fields/_{item.PropertyType.Name}_Field";
+
+                                                            if (Html.ViewExists(fieldWithReturnType))
+                                                            {
+                                                                Html.RenderPartial(fieldWithReturnType, item);
+                                                            }
+                                                            else if (Html.ViewExists(fieldWithoutReturnType))
+                                                            {
+                                                                Html.RenderPartial(fieldWithoutReturnType, item);
+                                                            }
+                                                            else if (Html.ViewExists(fieldThatWorksForBoth))
+                                                            {
+                                                                Html.RenderPartial(fieldThatWorksForBoth, item);
+                                                            }
+                                                            else
+                                                            {
+
+                                                                <p> Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType </p>
+
+                                                            }
+                                                        }
+                                                    </div>
+                                                </fieldset>shownWithFieldSets = shownWithFieldSets.Except(fieldSetItems).ToList();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                            var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                            var fieldThatWorksForBoth = $"Fields/_{field.PropertyType.Name}_Field";
+
+                                            if (Html.ViewExists(fieldWithReturnType))
+                                            {
+                                                Html.RenderPartial(fieldWithReturnType, field);
+                                            }
+                                            else if (Html.ViewExists(fieldWithoutReturnType))
+                                            {
+                                                Html.RenderPartial(fieldWithoutReturnType, field);
+                                            }
+                                            else if (Html.ViewExists(fieldThatWorksForBoth))
+                                            {
+                                                Html.RenderPartial(fieldThatWorksForBoth, field);
+                                            }
+                                            else
+                                            {
+                                                <p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
+                                            }
+                                        }
+                                    }
+
+                                    @if (hidden != null)
+                                    {
+                                        foreach (var field in hidden)
+                                        {
+                                            if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
+                                            }
+                                            else if (field.Value is IList<Attachment>)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
+                                            }
+                                            else if (field.Value is ICustomViewModel)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
+                                            }
+                                            else if (field.Value is IEnumerable<ICustomViewModel>)
+                                            {
+                                                if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
+                                                {
+                                                    <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
+                                                }
+                                            }
+                                            else if (field.Value is IEnumerable<Entity>)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
+                                            }
+                                            else if (field.Value is Entity)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                            }
+                                            else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
+                                            {
+
+                                            }
+                                            else if (field.Value is bool?[])
+                                            {
+                                                var values = "";
+                                                foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
+                                                {
+                                                    if (v != null) { values += v + ","; }
+                                                    else { values += "null,"; }
+
+                                                }
+                                                <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                            }
+                                            else if (field.Value is DateTime)
+                                            {
+                                                var date = (DateTime)field.Value;
+                                                <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                            }
+                                            else if (field.Value is bool)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@field.Value" />
+                                            }
+                                        }
+
+                                        <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
+                                        <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                    }
+
+                                    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+                                </form>
+
+                                @if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
+                                {
+                                    <div class="form-group margin-tb-md">
+                                        <div class="col-sm-12">
+                                            <ul class="pull-right list-inline">
+                                                @if (Model.SubmittedPages.Count != 0)
+                                                {
+                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-grey uppercase" onclick='$("#back-form").submit();'>BACK</a></li>
+                                                }
+                                                else
+                                                {
+                                                    <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-red uppercase" onclick='$("#cancel-form").submit();'>CANCEL</a></li>
+                                                }
+
+                                                @if ((bool)TempData["ShowSubmit"])
+                                                {
+                                                    if (!Model.IsMultiPage)
                                                     {
-                                                        Html.RenderPartial(fieldWithReturnType, item);
-                                                    }
-                                                    else if (Html.ViewExists(fieldWithoutReturnType))
-                                                    {
-                                                        Html.RenderPartial(fieldWithoutReturnType, item);
-                                                    }
-                                                    else if (Html.ViewExists(fieldThatWorksForBoth))
-                                                    {
-                                                        Html.RenderPartial(fieldThatWorksForBoth, item);
+                                                        <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-green uppercase" onclick='$("#main-form").submit();'>@Model.Action.SubmitValue</a></li>
                                                     }
                                                     else
                                                     {
-
-                                                        <p> Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType </p>
-
+                                                        <li><a href="javascript:void(0);" class="btn btn-task btn-form btn-trans-grey uppercase" onclick='$("#main-form").submit();'>@Model.Action.SubmitValue</a></li>
                                                     }
                                                 }
-											</div>
-										</fieldset>shownWithFieldSets = shownWithFieldSets.Except(fieldSetItems).ToList();
-                                    }
+                                            </ul>
+                                        </div>
+                                    </div>
                                 }
-                                else
-                                {
-                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                    var fieldThatWorksForBoth = $"Fields/_{field.PropertyType.Name}_Field";
+                            </div>
+                        </div>
 
-                                    if (Html.ViewExists(fieldWithReturnType))
+                        @if (Model.IsMultiPage)
+                        {
+                            if (Model.SubmittedPages.Count != 0)
+                            {
+                                <form method="post" id="back-form">
+                                    @if (hidden != null)
                                     {
-                                        Html.RenderPartial(fieldWithReturnType, field);
+                                        foreach (var field in hidden)
+                                        {
+                                            if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
+                                            }
+                                            else if (field.Value is IEnumerable<Attachment>)
+                                            {
+                                                foreach (var file in (IEnumerable<Attachment>)field.Value)
+                                                {
+                                                    <input type="hidden" name="@field.UniqueName" value="@(file.Id)" />}
+                                            }
+                                            else if (field.Value is ICustomViewModel)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
+                                            }
+                                            else if (field.Value is IEnumerable<ICustomViewModel>)
+                                            {
+                                                if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
+                                                {
+                                                    <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />}
+                                            }
+                                            else if (field.Value is Entity)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                            }
+                                            else if (field.Value is IEnumerable<Entity>)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
+                                            }
+                                            else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
+                                            {
+
+                                            }
+                                            else if (field.Value is bool?[])
+                                            {
+                                                var values = "";
+                                                foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
+                                                {
+                                                    if (v != null) { values += v + ","; }
+                                                    else { values += "null,"; }
+
+                                                }
+                                                <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                            }
+                                            else if (field.Value is DateTime)
+                                            {
+                                                var date = (DateTime)field.Value;
+                                                <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                            }
+                                            else if (field.Value is bool)
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" name="@field.UniqueName" value="@field.Value" />
+                                            }
+                                        }
+                                        <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
+                                        <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                        <input type="hidden" name="back" value="true" />
                                     }
-                                    else if (Html.ViewExists(fieldWithoutReturnType))
-                                    {
-                                        Html.RenderPartial(fieldWithoutReturnType, field);
-                                    }
-                                    else if (Html.ViewExists(fieldThatWorksForBoth))
-                                    {
-                                        Html.RenderPartial(fieldThatWorksForBoth, field);
-                                    }
-                                    else
-                                    {
-										<p>Cannot render field view, looked for both @fieldWithReturnType and @fieldWithoutReturnType</p>
-									}
-								}
-							}
-
-							@if (hidden != null)
-							{
-								foreach (var field in hidden)
-								{
-									if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
-									{
-										<input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
-									}
-									else if (field.Value is IList<Attachment>)
-									{
-										<input type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
-									}
-									else if (field.Value is ICustomViewModel)
-									{
-										<input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
-									}
-									else if (field.Value is IEnumerable<ICustomViewModel>)
-									{
-										if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
-										{
-											<input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
-										}
-									}
-									else if (field.Value is IEnumerable<Entity>)
-									{
-										<input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
-									}
-									else if (field.Value is Entity)
-									{
-										<input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
-									}
-									else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
-									{
-
-									}
-									else if (field.Value is bool?[])
-									{
-										var values = "";
-										foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
-										{
-											if (v != null) { values += v + ","; }
-											else { values += "null,"; }
-
-										}
-										<input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
-									}
-									else if (field.Value is DateTime)
-									{
-										var date = (DateTime)field.Value;
-										<input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
-									}
-									else if (field.Value is bool)
-									{
-										<input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
-									}
-									else
-									{
-										<input type="hidden" name="@field.UniqueName" value="@field.Value" />
-                                    }
-                                }
-
-                                <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p is MultiPageAction.CustomPage ? (p as MultiPageAction.CustomPage).Identifier : p.GetType().Name))" />
-								<input type="hidden" name="page" value="@(Model.Page is MultiPageAction.CustomPage ? (Model.Page as MultiPageAction.CustomPage).Identifier : Model.Page.GetType().Name)" />
-							}
-
-							<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-						</div>
-					</form>
-
-				@if ((bool)TempData["ShowSubmit"] || Model.SubmittedPages.Count != 0)
-				{
-						<div class="panel-footer">
-							@if ((bool)TempData["ShowSubmit"])
-							{
-                               @if (!Model.IsMultiPage) { 
-								<button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Action.SubmitValue</button>
-                               }
-                               else
-                               {
-                                <button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Page.SubmitValue</button>
-                               }
-
+                                </form>
                             }
+                        }
+                        <form method="post" id="cancel-form" action="@(cancelActionUrl)">
+                            <input type="hidden" name="cancel" value="true" />
+                        </form>
+                    </div>
 
-							@if (Model.SubmittedPages.Count != 0)
-							{
-								<button class="btn btn-default pull-right" onclick='$("#back-form").submit();'>Back</button>
-							}
-							else
-							{
-								<button class="btn btn-default pull-right" onclick='$("#cancel-form").submit();'>Cancel</button>
-							}
-
-							<div class="clearfix"></div>
-						</div>
-					}
-
-				@if (Model.IsMultiPage)
-				{
-					if (Model.SubmittedPages.Count != 0)
-					{
-							<form method="post" id="back-form">
-								@if (hidden != null)
-								{
-									foreach (var field in hidden)
-									{
-										if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
-										{
-											<input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
-										}
-										else if (field.Value is IEnumerable<Attachment>)
-										{
-											foreach (var file in (IEnumerable<Attachment>)field.Value)
-											{
-												<input type="hidden" name="@field.UniqueName" value="@(file.Id)" />
-											}
-										}
-										else if (field.Value is ICustomViewModel)
-										{
-											<input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
-										}
-										else if (field.Value is IEnumerable<ICustomViewModel>)
-										{
-											if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
-											{
-												<input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
-											}
-										}
-										else if (field.Value is Entity)
-										{
-											<input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
-										}
-										else if (field.Value is IEnumerable<Entity>)
-										{
-											<input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
-										}
-										else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
-										{
-
-										}
-										else if (field.Value is bool?[])
-										{
-											var values = "";
-											foreach (var v in (field.Value as IEnumerable<bool?>).ToList())
-											{
-												if (v != null) { values += v + ","; }
-												else { values += "null,"; }
-
-											}
-											<input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
-										}
-										else if (field.Value is DateTime)
-										{
-											var date = (DateTime)field.Value;
-											<input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
-										}
-										else if (field.Value is bool)
-										{
-											<input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
-										}
-										else
-										{
-											<input type="hidden" name="@field.UniqueName" value="@field.Value" />
-										}
-									}
-									<input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p is MultiPageAction.CustomPage ? (p as MultiPageAction.CustomPage).Identifier : p.GetType().Name))" />
-                                    <input type="hidden" name="page" value="@(Model.Page is MultiPageAction.CustomPage ? (Model.Page as MultiPageAction.CustomPage).Identifier : Model.Page.GetType().Name)" />
-									<input type="hidden" name="back" value="true" />
-								}
-							</form>
-						}
-					}
-					 <form method="post" id="cancel-form" action="@(cancelActionUrl)">
-						<input type="hidden" name="cancel" value="true" />                         
-					 </form>
-				</div>
-
-			</div>
-		</div>
-        @Html.Partial("Footer")
-		<script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#loader-wrapper").removeClass('hide-bg');
+                setTimeout(function () { $("#loader-wrapper").css('display', 'none'); }, 500);
+            });
             $('#main-form-submit').click(function (e) {
-				e.preventDefault()
-				var bValid = true;
-				$(document).find('input.required:visible').each(function () {
-					var formgroup = $(this).closest('.form-group');
-					if ($(this).val() === '') {
-						formgroup.addClass('has-error');
-						var label = formgroup.find('label.control-label').text();
+                e.preventDefault()
+                var bValid = true;
+                $(document).find('input.required:visible').each(function () {
+                    var formgroup = $(this).closest('.form-group');
+                    if ($(this).val() === '') {
+                        formgroup.addClass('has-error');
+                        var label = formgroup.find('label.control-label').text();
 
-						console.log(formgroup.find('div').index(0));
-						if ($(this).closest('.col-md-9').find('span.help-block').length == 0)
-							$(this).closest('.col-md-9').append('<span class="help-block">The ' + label + ' field is required.</span>');
+                        console.log(formgroup.find('div').index(0));
+                        if ($(this).closest('.col-md-9').find('span.help-block').length == 0)
+                            $(this).closest('.col-md-9').append('<span class="help-block">The ' + label + ' field is required.</span>');
 
-						bValid = false;
-					} else {
-						formgroup.removeClass('has-error');
-						formgroup.find('span.help-block').remove();
-					}
-				});
+                        bValid = false;
+                    } else {
+                        formgroup.removeClass('has-error');
+                        formgroup.find('span.help-block').remove();
+                    }
+                });
 
-				if (bValid) {
-					$('.preloader').css('display', 'block');
-					$('#main-form').submit.disabled = true;
-					$('#main-form').submit();
-				}
-			});
-		</script>
-	}
+                if (bValid) {
+                    setTimeout(function () { $("#loader-wrapper").css('display', 'block'); }, 500);
+                    $("#loader-wrapper").addClass('hide-bg');
+                    $('#main-form').submit.disabled = true;
+                    $('#main-form').submit();
+                }
+            });
+        </script>
+                            }
 }
 
 @section Scripts {
-	@Html.RenderDelayed()
+    @Html.RenderDelayed()
 }

@@ -247,8 +247,8 @@ WriteLiteral("                    ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n                </label>\r\n            </p>\r\n        </div>\r\n    </div>    \r\n</d" +
-"iv>\r\n\r\n<script>\r\n    (function () {\r\n        var trueCheckbox = $(\'input#");
+WriteLiteral("\r\n                </label>\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>\r" +
+"\n\r\n<script>\r\n    (function () {\r\n        var trueCheckbox = $(\'input#");
 
             
             #line 55 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
