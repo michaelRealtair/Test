@@ -2701,70 +2701,75 @@ input[type="*"]::placeholder {
   padding: 25px;
 }
 
-/* line 43, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 44, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+.padding-b-xs {
+  padding-bottom: 5px !important;
+}
+
+/* line 50, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-tb-xs {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-/* line 47, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 54, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-tb-sm {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-/* line 54, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 61, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-sides-xs {
   padding-right: 5px;
   padding-left: 5px;
 }
 
-/* line 58, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 65, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-sides-sm {
   padding-right: 15px;
   padding-left: 15px;
 }
 
-/* line 62, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 69, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-sides-md {
   padding-right: 25px;
   padding-left: 25px;
 }
 
-/* line 66, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 73, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-sides-lg {
   padding-right: 50px;
   padding-left: 50px;
 }
 
-/* line 72, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 79, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-lft-sm {
   padding-left: 15px;
 }
 
-/* line 76, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 83, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-lft-sm2 {
   padding-left: 20px;
 }
 
-/* line 80, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 87, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-lft-md {
   padding-left: 30px;
 }
 
-/* line 84, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 91, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-lft-lg {
   padding-left: 50px;
 }
 
-/* line 89, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 96, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-sec-hdr {
   /*padding for section header to align with the panels*/
   padding-right: 0;
   padding-left: 10px;
 }
 
-/* line 94, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 101, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-kanban-hdr {
   /*padding for section header of kanban*/
   padding-top: 10px;
@@ -2772,101 +2777,101 @@ input[type="*"]::placeholder {
   padding-left: 22px;
 }
 
-/* line 99, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 106, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .padding-utc {
   padding-top: 5px;
   padding-bottom: 25px;
   padding-left: 25px;
 }
 
-/* line 107, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 114, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .pad-kanban-status {
   padding-right: 40px;
   padding-left: 35px;
 }
 
-/* line 111, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 118, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .pad-searchhdr {
   padding-right: 0;
   padding-left: 20px;
 }
 
 /*margins*/
-/* line 116, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 123, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-margin, .headline-nos--icolg, .key-figs--txtmd {
   margin: 0 !important;
 }
 
-/* line 119, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 126, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-margin-t, .headline-nos--hdr, .headline-nos--txtlg, .key-figs--txt2xl {
   margin-top: 0 !important;
 }
 
-/* line 123, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 130, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-margin-r {
   margin-right: 0 !important;
 }
 
-/* line 127, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 134, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-margin-b {
   margin-bottom: 0 !important;
 }
 
-/* line 131, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 138, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-margin-tb {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* line 137, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 144, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-xs {
   margin-top: 5px;
 }
 
-/* line 141, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 148, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-sm {
   margin-top: 10px;
 }
 
-/* line 145, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 152, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-md {
   margin-top: 25px;
 }
 
-/* line 149, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 156, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-md2 {
   margin-top: 45px;
 }
 
-/* line 153, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 160, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-lg {
   margin-top: 75px;
 }
 
-/* line 159, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 166, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-tb-sm {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* line 163, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 170, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-tb-md {
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
-/* line 169, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 176, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-sides-sm {
   margin-right: 10px;
   margin-left: 10px;
 }
 
-/* line 174, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 181, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-lft-sm {
   margin-left: 10px;
 }
 
-/* line 178, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 185, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-tc {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -2874,7 +2879,7 @@ input[type="*"]::placeholder {
   /*special margin for task content*/
 }
 
-/* line 182, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 189, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-utc {
   margin-top: 5px;
   margin-bottom: 25px;
@@ -2882,20 +2887,20 @@ input[type="*"]::placeholder {
   /*special margin for unassigned tasks content*/
 }
 
-/* line 187, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 194, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .margin-t-kanban {
   margin-top: 150px;
   margin-left: 15px;
 }
 
-/* line 191, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 198, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .mytasks-hdr {
   margin-top: 5px;
   margin-right: 45px;
   margin-left: 45px;
 }
 
-/* line 194, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 201, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .mytasks-hdr h4 {
   font-size: 1.2em;
   font-weight: 600;
@@ -2903,23 +2908,23 @@ input[type="*"]::placeholder {
   margin-bottom: 0;
 }
 
-/* line 201, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 208, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 p.green-tooltip:hover {
   cursor: help;
 }
 
-/* line 205, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 212, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .green-tooltip + .tooltip > .tooltip-inner {
   background-color: #66BB6A;
   color: #ffffff;
 }
 
-/* line 210, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 217, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .green-tooltip + .tooltip > .tooltip-arrow {
   border-top-color: #66BB6A;
 }
 
-/* line 214, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 221, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .circle {
   border-radius: 0.9em;
   -moz-border-radius: 0.9em;
@@ -2935,24 +2940,24 @@ p.green-tooltip:hover {
   border: 2px solid #455A64;
 }
 
-/* line 228, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 235, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .circle-grey {
   background-color: #F9F9F9;
 }
 
-/* line 233, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 240, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .border-lite {
   border: 1px solid #CECECE;
 }
 
-/* line 237, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 244, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .no-shadow {
   -webkit-box-shadow: 0 0 0 0;
   -moz-box-shadow: 0 0 0 0;
   box-shadow: 0 0 0 0;
 }
 
-/* line 241, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
+/* line 248, D:/Realtair/Realtair.UI/scss/modules/_components.scss */
 .overflow-vis {
   overflow: visible !important;
 }
