@@ -4,10 +4,10 @@
 @if (Model.HasError)
 {
     <div class="form-group has-error">
-        <div class="col-sm-@(Model.Label.Count() > 20 ? "12" : "2") control-label">
+        <div class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label">
             <label class="control-label">@Model.Label</label>
         </div>
-        <div class="col-sm-@(Model.Label.Count() > 20 ? "12" : "10")">
+        <div class="col-sm-@(Model.Label.Count() > 40 ? "12" : "9")">
             <input type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
             <span class="help-block">
             @{
@@ -22,8 +22,8 @@
 else
 {
     <div class="form-group">
-        <label class="col-sm-@(Model.Label.Count() > 20 ? "12" : "2") control-label">@Model.Label</label>
-        <div class="col-sm-@(Model.Label.Count() > 20 ? "6" : "10")">
+        <label class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label">@Model.Label</label>
+        <div class="col-sm-@(Model.Label.Count() > 40 ? "6" : "9")">
             <input type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
             <small>@Model.FieldAttribute.Help</small>
         </div>

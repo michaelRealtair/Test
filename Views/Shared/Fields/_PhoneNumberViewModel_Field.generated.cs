@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -58,7 +59,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-md-2 col-sm-2\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n        <label");
 
@@ -75,30 +76,30 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-md-10 col-sm-10\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
 WriteLiteral(">\r\n        <input");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 441), Tuple.Create("\"", 463)
+WriteAttribute("id", Tuple.Create(" id=\"", 421), Tuple.Create("\"", 443)
             
             #line 17 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 446), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 426), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 446), false)
+, 426), false)
 );
 
 WriteLiteral(" type=\"tel\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 475), Tuple.Create("\"", 496)
+WriteAttribute("value", Tuple.Create(" value=\"", 455), Tuple.Create("\"", 476)
             
             #line 17 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 483), Tuple.Create<System.Object, System.Int32>(phone.Number
+, Tuple.Create(Tuple.Create("", 463), Tuple.Create<System.Object, System.Int32>(phone.Number
             
             #line default
             #line hidden
-, 483), false)
+, 463), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -145,18 +146,18 @@ WriteLiteral("    </div>\r\n</div>\r\n\r\n<input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 680), Tuple.Create("\"", 704)
+WriteAttribute("name", Tuple.Create(" name=\"", 660), Tuple.Create("\"", 684)
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 687), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 667), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 687), false)
+, 667), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 705), Tuple.Create("\"", 755)
-, Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create(" value=\"", 685), Tuple.Create("\"", 735)
+, Tuple.Create(Tuple.Create("", 693), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
@@ -177,7 +178,7 @@ WriteAttribute("value", Tuple.Create(" value=\"", 705), Tuple.Create("\"", 755)
             
             #line default
             #line hidden
-}), 713), false)
+}), 693), false)
 );
 
 WriteLiteral(" />\r\n\r\n<link");

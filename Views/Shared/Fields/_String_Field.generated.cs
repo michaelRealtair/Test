@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -66,7 +67,7 @@ WriteAttribute("class", Tuple.Create(" class=\"", 165), Tuple.Create("\"", 234)
 , Tuple.Create(Tuple.Create("", 173), Tuple.Create("col-sm-", 173), true)
             
             #line 7 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 180), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "2"
+, Tuple.Create(Tuple.Create("", 180), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 40 ? "12" : "3"
             
             #line default
             #line hidden
@@ -89,11 +90,11 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n        <div");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 329), Tuple.Create("\"", 385)
+WriteAttribute("class", Tuple.Create(" class=\"", 329), Tuple.Create("\"", 384)
 , Tuple.Create(Tuple.Create("", 337), Tuple.Create("col-sm-", 337), true)
             
             #line 10 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 344), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "10"
+, Tuple.Create(Tuple.Create("", 344), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 40 ? "12" : "9"
             
             #line default
             #line hidden
@@ -106,34 +107,34 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 445), Tuple.Create("\"", 469)
+WriteAttribute("name", Tuple.Create(" name=\"", 444), Tuple.Create("\"", 468)
             
             #line 11 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 452), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 451), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 452), false)
+, 451), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 470), Tuple.Create("\"", 510)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 469), Tuple.Create("\"", 509)
             
             #line 11 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 484), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+                , Tuple.Create(Tuple.Create("", 483), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 484), false)
+, 483), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 511), Tuple.Create("\"", 531)
+WriteAttribute("value", Tuple.Create(" value=\"", 510), Tuple.Create("\"", 530)
             
             #line 11 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                                   , Tuple.Create(Tuple.Create("", 519), Tuple.Create<System.Object, System.Int32>(Model.Value
+                                                   , Tuple.Create(Tuple.Create("", 518), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 519), false)
+, 518), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -185,16 +186,16 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <label");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 918), Tuple.Create("\"", 987)
-, Tuple.Create(Tuple.Create("", 926), Tuple.Create("col-sm-", 926), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 917), Tuple.Create("\"", 986)
+, Tuple.Create(Tuple.Create("", 925), Tuple.Create("col-sm-", 925), true)
             
             #line 25 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 933), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "12" : "2"
+, Tuple.Create(Tuple.Create("", 932), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 40 ? "12" : "3"
             
             #line default
             #line hidden
-, 933), false)
-, Tuple.Create(Tuple.Create(" ", 973), Tuple.Create("control-label", 974), true)
+, 932), false)
+, Tuple.Create(Tuple.Create(" ", 972), Tuple.Create("control-label", 973), true)
 );
 
 WriteLiteral(">");
@@ -208,15 +209,15 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        <div");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 1023), Tuple.Create("\"", 1078)
-, Tuple.Create(Tuple.Create("", 1031), Tuple.Create("col-sm-", 1031), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 1022), Tuple.Create("\"", 1076)
+, Tuple.Create(Tuple.Create("", 1030), Tuple.Create("col-sm-", 1030), true)
             
             #line 26 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 1038), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 20 ? "6" : "10"
+, Tuple.Create(Tuple.Create("", 1037), Tuple.Create<System.Object, System.Int32>(Model.Label.Count() > 40 ? "6" : "9"
             
             #line default
             #line hidden
-, 1038), false)
+, 1037), false)
 );
 
 WriteLiteral(">\r\n            <input");
@@ -225,34 +226,34 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1138), Tuple.Create("\"", 1162)
+WriteAttribute("name", Tuple.Create(" name=\"", 1136), Tuple.Create("\"", 1160)
             
             #line 27 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 1145), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1143), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1145), false)
+, 1143), false)
 );
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 1163), Tuple.Create("\"", 1203)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 1161), Tuple.Create("\"", 1201)
             
             #line 27 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-               , Tuple.Create(Tuple.Create("", 1177), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+               , Tuple.Create(Tuple.Create("", 1175), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 1177), false)
+, 1175), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1204), Tuple.Create("\"", 1224)
+WriteAttribute("value", Tuple.Create(" value=\"", 1202), Tuple.Create("\"", 1222)
             
             #line 27 "..\..\Views\Shared\Fields\_String_Field.cshtml"
-                                                  , Tuple.Create(Tuple.Create("", 1212), Tuple.Create<System.Object, System.Int32>(Model.Value
+                                                  , Tuple.Create(Tuple.Create("", 1210), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 1212), false)
+, 1210), false)
 );
 
 WriteLiteral(">\r\n            <small>");

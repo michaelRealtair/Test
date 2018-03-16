@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -64,20 +65,20 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 10 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-     if (Model.Label.Count() > 20)
+     if (Model.Label.Count() > 40)
     {
             
             #line default
             #line hidden
 WriteLiteral("    <label");
 
-WriteLiteral(" class=\"col-sm-12 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
             
             #line 11 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                                           Write(Model.Label);
+                                          Write(Model.Label);
 
             
             #line default
@@ -96,7 +97,7 @@ WriteLiteral("</label>\r\n");
             #line hidden
 WriteLiteral("        <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -118,7 +119,7 @@ WriteLiteral("</label>\r\n");
             #line hidden
 WriteLiteral("    <div");
 
-WriteLiteral(" class=\"col-sm-4\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n");
 
@@ -138,14 +139,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 633), Tuple.Create("\"", 656)
+WriteAttribute("id", Tuple.Create(" id=\"", 632), Tuple.Create("\"", 655)
             
             #line 21 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 638), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 637), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 638), false)
+, 637), false)
 );
 
 WriteLiteral(" class=\"form-control lite\"");
@@ -164,26 +165,26 @@ WriteLiteral(" disabled>\r\n                <option>None to display</option>\r\n
             #line hidden
 WriteLiteral("            <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 823), Tuple.Create("\"", 846)
+WriteAttribute("id", Tuple.Create(" id=\"", 822), Tuple.Create("\"", 845)
             
             #line 27 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 828), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 827), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 828), false)
+, 827), false)
 );
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 873), Tuple.Create("\"", 904)
+WriteAttribute("name", Tuple.Create(" name=\"", 872), Tuple.Create("\"", 903)
             
             #line 27 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 880), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 879), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
             
             #line default
             #line hidden
-, 880), false)
+, 879), false)
 );
 
 WriteLiteral(">\r\n");

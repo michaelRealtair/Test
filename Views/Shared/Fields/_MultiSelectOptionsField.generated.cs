@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -57,7 +58,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 

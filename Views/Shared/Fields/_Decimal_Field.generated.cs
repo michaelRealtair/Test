@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -54,7 +55,7 @@ WriteLiteral(" class=\"form-group has-error\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-2 col-sm-2\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -71,18 +72,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n            \r\n        <div");
 
-WriteLiteral(" class=\"col-md-10 col-sm-10\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 308), Tuple.Create("\"", 332)
+WriteAttribute("name", Tuple.Create(" name=\"", 288), Tuple.Create("\"", 312)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 315), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 295), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 315), false)
+, 295), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -91,14 +92,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 380), Tuple.Create("\"", 400)
+WriteAttribute("value", Tuple.Create(" value=\"", 360), Tuple.Create("\"", 380)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                   , Tuple.Create(Tuple.Create("", 388), Tuple.Create<System.Object, System.Int32>(Model.Value
+                   , Tuple.Create(Tuple.Create("", 368), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 388), false)
+, 368), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -131,7 +132,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-2 col-sm-2\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -148,18 +149,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-10 col-sm-10\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 722), Tuple.Create("\"", 746)
+WriteAttribute("name", Tuple.Create(" name=\"", 682), Tuple.Create("\"", 706)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 729), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 689), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 729), false)
+, 689), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -168,14 +169,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 794), Tuple.Create("\"", 814)
+WriteAttribute("value", Tuple.Create(" value=\"", 754), Tuple.Create("\"", 774)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                   , Tuple.Create(Tuple.Create("", 802), Tuple.Create<System.Object, System.Int32>(Model.Value
+                   , Tuple.Create(Tuple.Create("", 762), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 802), false)
+, 762), false)
 );
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");

@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -48,20 +49,20 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h3");
+WriteLiteral("\r\n\r\n<h4");
 
-WriteLiteral(" class=\"no-margin-t\"");
+WriteLiteral(" class=\"no-margin-t margin-b-md\"");
 
 WriteLiteral(">");
 
             
             #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
-                   Write(paragraph.Text);
+                               Write(paragraph.Text);
 
             
             #line default
             #line hidden
-WriteLiteral("</h3>\r\n");
+WriteLiteral("</h4>\r\n");
 
         }
     }
