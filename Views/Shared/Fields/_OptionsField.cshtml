@@ -27,7 +27,7 @@
             <select id="@hopefullyUniqueId" class="form-control lite" name="@Model.PropertyInfo.Name">
                 @foreach (var option in options)
                 {
-                    <option @(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
+                    <option @(option.Id.ToString() == Model.FormValue?.ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
                 }
             </select>
         }

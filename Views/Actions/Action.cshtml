@@ -5,6 +5,7 @@
 @using Realtair.Framework.Core.Web.Utilities;
 @using Realtair.Framework.Enquiries.Interfaces;
 @using Realtair.Framework.Enquiries.Entities;
+@using System.Linq;
 @using System;
 
 @{
@@ -140,7 +141,7 @@
                                             var fieldSetItems = shownWithFieldSets.Where(s => s.FieldSetAttribute.Legend == field.FieldSetAttribute.Legend).ToList();
                                             if (fieldSetItems.Any())
                                             {
-                                                <fieldset class="margin-t-md">
+                                                <fieldset class="@(shownWithFieldSets.First().UniqueName == shown.First().UniqueName && fieldSetItems.First().UniqueName == field.UniqueName ? "" : "margin-t-md")">
                                                     <legend>@field.FieldSetAttribute.Legend</legend>
                                                     <div class="p-l-30">
                                                         @foreach (var item in fieldSetItems)

@@ -206,7 +206,7 @@ WriteLiteral("                    <option ");
 
             
             #line 30 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                        Write(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "");
+                        Write(option.Id.ToString() == Model.FormValue?.ToString() ? "selected" : "");
 
             
             #line default
@@ -215,7 +215,7 @@ WriteLiteral(" value=\"");
 
             
             #line 30 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                                                                                                      Write(option.Id.ToString());
+                                                                                                       Write(option.Id.ToString());
 
             
             #line default
@@ -224,7 +224,7 @@ WriteLiteral("\">");
 
             
             #line 30 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-                                                                                                                             Write(option.Description);
+                                                                                                                              Write(option.Description);
 
             
             #line default
