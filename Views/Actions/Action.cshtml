@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1">
                         @* Header *@
-                        <h2>
+                        <h2 class="hidden-xs">
                             @if (Model.IsMultiPage)
                             {
                                 @Model.Page.Name.ToUpper()
@@ -78,7 +78,7 @@
                             var parentEnquiry = (Model.Action.This as IHasParentEnquiry)?.ParentEnquiry;
                             if (parentEnquiry != null)
                             {
-                                <h3 class="no-margin-tb">
+                                <h3 class="action-sub-margin">
                                     <i class="fa fa-home"></i> @(parentEnquiry.Description(Html.LoggedInUser()))
                                 </h3>
                                 <br />

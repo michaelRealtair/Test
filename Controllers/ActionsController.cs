@@ -20,10 +20,14 @@ namespace Realtair.Framework.Core.Web.Controllers
     {
         // Fields
         private string dashboardUrl = ConfigurationManager.AppSettings["DashboardUrl"];
+        private ActionViewModel model;
         private bool PostValuesSet;
 
         // Properties
         public bool HasAccessToNewActions => User.HasAccessToNewActions;
+        public ActionViewModel Model => model;
+
+        // Private Properties
         private string ActionViewPathPrefix => HasAccessToNewActions ? "Action" : "Old/Action";
         private string EmptyActionViewPathPrefix => HasAccessToNewActions ? "EmptyAction" : "Old/EmptyAction";
         private string SecuredActionViewPathPrefix => "SecureActionSuccessful";
@@ -136,7 +140,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             MultiPageAction.Page givenPage = null;
 
-            var model = new ActionViewModel(HasAccessToNewActions);
+            model = new ActionViewModel(HasAccessToNewActions);
             model.Action = action;
 
             if (action is MultiPageAction)
