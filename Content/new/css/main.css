@@ -3862,11 +3862,6 @@ legend {
   margin-bottom: 0;
 }
 
-/* line 784, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
-fieldset {
-  margin-top: 50px !important;
-}
-
 /* line 786, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 fieldset legend {
   border-bottom: none !important;
@@ -3883,31 +3878,36 @@ fieldset legend {
   font-size: 1.2em;
 }
 
-/* line 801, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 800, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+.datepicker-dropdown {
+  z-index: 11111 !important;
+}
+
+/* line 802, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker-dropdown.datepicker-orient-right {
   left: 0 !important;
 }
 
-/* line 808, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 809, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active {
   background-color: #66BB6A !important;
   background-image: none;
   color: #ffffff;
 }
 
-/* line 814, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 815, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker table tr td.today {
   background-color: #999999 !important;
   background-image: none !important;
   color: #ffffff !important;
 }
 
-/* line 820, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 821, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 tr.selected td {
   background: #e9f5ea !important;
 }
 
-/* line 822, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 823, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 tr.selected td select {
   background: #e9f5ea !important;
 }
