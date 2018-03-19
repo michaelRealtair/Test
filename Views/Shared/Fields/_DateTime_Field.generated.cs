@@ -217,6 +217,8 @@ WriteLiteral("                ");
 WriteLiteral(@"
                 autoclose: true,
                 clearBtn: true, 
+                orientation: 'auto bottom',
+                todayHighlight: true, 
                 container: '#datepicker'
             });
 
@@ -235,12 +237,21 @@ WriteLiteral(@"
     </script>
 ");
 
-WriteLiteral("    <script>\r\n        $(function () {\r\n            $(\'.mydatepicker\').datepicker(" +
-"{\r\n                format: \'yyyy-MM-dd\',\r\n\r\n                startDate: \'+0d\',\r\n " +
-"               autoclose: true\r\n            })\r\n        })\r\n    </script>\r\n");
+WriteLiteral(@"    <script>
+        $(function () {
+            $('.mydatepicker').datepicker({
+                format: 'yyyy-MM-dd',
+                todayHighlight: true,
+                orientation: 'auto bottom',
+                startDate: '+0d',
+                autoclose: true
+            })
+        })
+    </script>
+");
 
             
-            #line 58 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 61 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
