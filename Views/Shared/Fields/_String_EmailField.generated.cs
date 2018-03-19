@@ -70,16 +70,16 @@ WriteLiteral("</label>\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 231), Tuple.Create("\"", 255)
+WriteAttribute("name", Tuple.Create(" name=\"", 241), Tuple.Create("\"", 265)
             
             #line 8 "..\..\Views\Shared\Fields\_String_EmailField.cshtml"
-, Tuple.Create(Tuple.Create("", 238), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 248), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 238), false)
+, 248), false)
 );
 
 WriteLiteral(" type=\"email\"");
@@ -90,14 +90,14 @@ WriteLiteral(" id=\"inputEmail3\"");
 
 WriteLiteral(" placeholder=\"E-mail\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 333), Tuple.Create("\"", 353)
+WriteAttribute("value", Tuple.Create(" value=\"", 343), Tuple.Create("\"", 363)
             
             #line 8 "..\..\Views\Shared\Fields\_String_EmailField.cshtml"
-                                                 , Tuple.Create(Tuple.Create("", 341), Tuple.Create<System.Object, System.Int32>(Model.Value
+                                                           , Tuple.Create(Tuple.Create("", 351), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 341), false)
+, 351), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -145,16 +145,16 @@ WriteLiteral("</label>\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 610), Tuple.Create("\"", 634)
+WriteAttribute("name", Tuple.Create(" name=\"", 630), Tuple.Create("\"", 654)
             
             #line 18 "..\..\Views\Shared\Fields\_String_EmailField.cshtml"
-, Tuple.Create(Tuple.Create("", 617), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 637), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 617), false)
+, 637), false)
 );
 
 WriteLiteral(" type=\"email\"");
@@ -165,14 +165,14 @@ WriteLiteral(" id=\"inputEmail3\"");
 
 WriteLiteral(" placeholder=\"E-mail\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 712), Tuple.Create("\"", 732)
+WriteAttribute("value", Tuple.Create(" value=\"", 732), Tuple.Create("\"", 752)
             
             #line 18 "..\..\Views\Shared\Fields\_String_EmailField.cshtml"
-                                                 , Tuple.Create(Tuple.Create("", 720), Tuple.Create<System.Object, System.Int32>(Model.Value
+                                                           , Tuple.Create(Tuple.Create("", 740), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 720), false)
+, 740), false)
 );
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");

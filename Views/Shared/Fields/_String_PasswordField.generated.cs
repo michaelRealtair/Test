@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -71,7 +72,7 @@ WriteLiteral("</label>\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
 WriteLiteral(" type=\"password\"");
 
@@ -79,14 +80,14 @@ WriteLiteral(" class=\"form-control lite\"");
 
 WriteLiteral(" id=\"inputEmail3\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 309), Tuple.Create("\"", 333)
+WriteAttribute("name", Tuple.Create(" name=\"", 319), Tuple.Create("\"", 343)
             
             #line 8 "..\..\Views\Shared\Fields\_String_PasswordField.cshtml"
-     , Tuple.Create(Tuple.Create("", 316), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+               , Tuple.Create(Tuple.Create("", 326), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 316), false)
+, 326), false)
 );
 
 WriteLiteral(" placeholder=\"...\"");
@@ -138,7 +139,7 @@ WriteLiteral("</label>\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
 WriteLiteral(" type=\"password\"");
 
@@ -146,14 +147,14 @@ WriteLiteral(" class=\"form-control lite\"");
 
 WriteLiteral(" id=\"inputEmail3\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 686), Tuple.Create("\"", 710)
+WriteAttribute("name", Tuple.Create(" name=\"", 706), Tuple.Create("\"", 730)
             
             #line 18 "..\..\Views\Shared\Fields\_String_PasswordField.cshtml"
-     , Tuple.Create(Tuple.Create("", 693), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+               , Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 693), false)
+, 713), false)
 );
 
 WriteLiteral(" placeholder=\"...\"");

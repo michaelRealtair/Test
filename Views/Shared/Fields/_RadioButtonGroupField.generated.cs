@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -73,7 +74,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">\r\n        <label");
 
@@ -99,7 +100,7 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n        <div");
 
@@ -121,18 +122,18 @@ WriteLiteral(">\r\n            <ul>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                    <li>\r\n                        <input");
+WriteLiteral("                    <li>\r\n                        <input autofocus");
 
 WriteLiteral(" type=\"radio\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 813), Tuple.Create("\"", 838)
+WriteAttribute("name", Tuple.Create(" name=\"", 822), Tuple.Create("\"", 847)
             
             #line 23 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create("", 820), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+, Tuple.Create(Tuple.Create("", 829), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 820), false)
+, 829), false)
 );
 
 WriteLiteral(">\r\n                        <label>None to display</label>\r\n                      " +
@@ -171,14 +172,14 @@ WriteLiteral("                            ");
             #line hidden
 WriteLiteral("\r\n                            <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 1499), Tuple.Create("\"", 1526)
+WriteAttribute("for", Tuple.Create(" for=\"", 1508), Tuple.Create("\"", 1535)
             
             #line 39 "..\..\Views\Shared\Fields\_RadioButtonGroupField.cshtml"
-, Tuple.Create(Tuple.Create("", 1505), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+, Tuple.Create(Tuple.Create("", 1514), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 1505), false)
+, 1514), false)
 );
 
 WriteLiteral(">");

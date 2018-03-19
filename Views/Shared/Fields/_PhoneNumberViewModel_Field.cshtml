@@ -14,7 +14,7 @@
     </div>
 
     <div class="col-sm-4">
-        <input id="@Model.UniqueName" type="tel" value="@phone.Number" class="form-control">
+        <input autofocus id="@Model.UniqueName" type="tel" value="@phone.Number" class="form-control">
         @if (Model.HasError)
         {
             <span class="help-block">@Model.ErrorMessage</span>
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<input type="hidden" name="@Model.UniqueName" value="@if (phone != null) { @phone.Serialize() }" />
+<input autofocus type="hidden" name="@Model.UniqueName" value="@if (phone != null) { @phone.Serialize() }" />
 
 <link rel="stylesheet" href="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.css" />
 <script src="https://static.realtair.com/plugins/intl-tel-input/intlTelInput.js"></script>

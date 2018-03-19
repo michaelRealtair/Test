@@ -1,7 +1,10 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 
 @{
-    var paragraph = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
+    var paragraphWidget = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
 }
 
-<h4 class="no-margin-t margin-b-md">@paragraph.Text</h4>
+@if (paragraphWidget != null)
+{
+    <h4 class="no-margin-t margin-b-md">@paragraphWidget.Text</h4>
+}

@@ -1,12 +1,12 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 
 <div class="form-group">
-    <div class="col-md-2 col-sm-2">
+    <div class="col-sm-3">
         <label class="control-label">@Model.Label</label>
     </div>
 
-    <div class="col-md-10 col-sm-10">
-        <input id="@Model.UniqueName" name="@Model.UniqueName" type="text" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value" class="jscolor form-control">
+    <div class="col-sm-3">
+        <input autofocus id="@Model.UniqueName" name="@Model.UniqueName" type="text" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value" class="jscolor form-control">
     </div>
 </div>
 

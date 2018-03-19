@@ -1,24 +1,27 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 
 @{
-    var widget = Model.Value as Realtair.Framework.Core.Entities.Display.DetailWidget;
+    var detailWidget = Model.Value as Realtair.Framework.Core.Entities.Display.DetailWidget;
 }
 
-<div class="panel">
-    <div class="panel-heading">@widget.Name</div>
-    <div class="panel-wrapper collapse in">
-        <table class="table">
-            <tbody>
-                @foreach (var describable in widget.Details)
+@if (detailWidget != null)
+{
+    <div class="panel">
+        <div class="panel-heading">@detailWidget.Name</div>
+        <div class="panel-wrapper collapse in">
+            <table class="table">
+                <tbody>
+                    @foreach (var describable in detailWidget.Details)
                 {
-                    <tr>
-                        <th class="col-sm-4 p-l-40">@describable.Key</th>
-                        <td data-key="@describable.Key">
-                            @Html.Render(Url, describable.Value)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                        <tr>
+                            <th class="col-sm-4 p-l-40">@describable.Key</th>
+                            <td data-key="@describable.Key">
+                                @Html.Render(Url, describable.Value)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+}

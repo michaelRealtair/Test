@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -46,7 +47,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-md-2 col-sm-2\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n        <label");
 
@@ -63,50 +64,50 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-md-10 col-sm-10\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 237), Tuple.Create("\"", 259)
+WriteAttribute("id", Tuple.Create(" id=\"", 227), Tuple.Create("\"", 249)
             
             #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 232), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 242), false)
+, 232), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 260), Tuple.Create("\"", 284)
+WriteAttribute("name", Tuple.Create(" name=\"", 250), Tuple.Create("\"", 274)
             
             #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-, Tuple.Create(Tuple.Create("", 267), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 257), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 267), false)
+, 257), false)
 );
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 297), Tuple.Create("\"", 337)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 287), Tuple.Create("\"", 327)
             
             #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-         , Tuple.Create(Tuple.Create("", 311), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
+                   , Tuple.Create(Tuple.Create("", 301), Tuple.Create<System.Object, System.Int32>(Model.FieldAttribute.Hint
             
             #line default
             #line hidden
-, 311), false)
+, 301), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 338), Tuple.Create("\"", 358)
+WriteAttribute("value", Tuple.Create(" value=\"", 328), Tuple.Create("\"", 348)
             
             #line 9 "..\..\Views\Shared\Fields\_ColourPickerField.cshtml"
-                                            , Tuple.Create(Tuple.Create("", 346), Tuple.Create<System.Object, System.Int32>(Model.Value
+                                                      , Tuple.Create(Tuple.Create("", 336), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 346), false)
+, 336), false)
 );
 
 WriteLiteral(" class=\"jscolor form-control\"");

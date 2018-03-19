@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -43,7 +44,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
   
-    var Table = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
+    var tableWidget = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
 
             
             #line default
@@ -52,7 +53,7 @@ WriteLiteral("\r\n\r\n");
 
             
             #line 7 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
- if (Table != null)
+ if (tableWidget != null)
 {
 
             
@@ -74,7 +75,7 @@ WriteLiteral(">\r\n        <thead>\r\n            <tr>\r\n");
             #line hidden
             
             #line 12 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                 foreach (var h in Table.Header)
+                 foreach (var h in tableWidget.Header)
                 {
 
             
@@ -82,15 +83,15 @@ WriteLiteral(">\r\n        <thead>\r\n            <tr>\r\n");
             #line hidden
 WriteLiteral("                    <th");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 383), Tuple.Create("\"", 412)
-, Tuple.Create(Tuple.Create("", 391), Tuple.Create("col-md-", 391), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 401), Tuple.Create("\"", 430)
+, Tuple.Create(Tuple.Create("", 409), Tuple.Create("col-md-", 409), true)
             
             #line 14 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-, Tuple.Create(Tuple.Create("", 398), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
+, Tuple.Create(Tuple.Create("", 416), Tuple.Create<System.Object, System.Int32>(h.ColumnWidth
             
             #line default
             #line hidden
-, 398), false)
+, 416), false)
 );
 
 WriteLiteral(">");
@@ -121,7 +122,7 @@ WriteLiteral("            </tr>\r\n        </thead>\r\n        <tbody>\r\n");
             #line hidden
             
             #line 19 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-             foreach (var row in Table.Contents)
+             foreach (var row in tableWidget.Contents)
             {
 
             
@@ -147,14 +148,14 @@ WriteLiteral("                <tr>\r\n");
             #line hidden
 WriteLiteral("                            <td><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 769), Tuple.Create("\"", 814)
+WriteAttribute("href", Tuple.Create(" href=\"", 793), Tuple.Create("\"", 838)
             
             #line 26 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-, Tuple.Create(Tuple.Create("", 776), Tuple.Create<System.Object, System.Int32>(Html.Raw((item as Attachment).Url(0))
+, Tuple.Create(Tuple.Create("", 800), Tuple.Create<System.Object, System.Int32>(Html.Raw((item as Attachment).Url(0))
             
             #line default
             #line hidden
-, 776), false)
+, 800), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
@@ -217,7 +218,7 @@ WriteLiteral("\r\n");
             #line hidden
             
             #line 36 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-             if (Table.Totals != null)
+             if (tableWidget.Totals != null)
             {
 
             
@@ -237,7 +238,7 @@ WriteLiteral(">\r\n");
             #line hidden
             
             #line 39 "..\..\Views\Shared\Fields\_TableWidget_WidgetField.cshtml"
-                     foreach (var item in Table.Totals)
+                     foreach (var item in tableWidget.Totals)
                     {
 
             
