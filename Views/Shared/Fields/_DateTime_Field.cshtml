@@ -25,14 +25,21 @@
         $(function () {
             var cal = $('#@Model.UniqueName').datepicker({
                 format: 'yyyy-mm-dd',
-                startDate: new Date(2000, 0, 1),
-                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
+                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
+                autoclose: true,
+                todayHighlight: true, 
+                clearBtn: true
+            });
+
+            @*var cal = $('#@Model.UniqueName').datepicker({
+                format: 'yyyy-mm-dd',
+                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
                 autoclose: true,
                 clearBtn: true, 
                 orientation: 'auto',
                 todayHighlight: true, 
                 container: '#datepicker'
-            });
+            });*@
 
             cal.keydown(function (event) {
                 if (event.which == 13) { //enter key

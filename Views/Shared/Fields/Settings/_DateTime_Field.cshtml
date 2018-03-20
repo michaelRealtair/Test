@@ -38,10 +38,11 @@
         $(function () {
             var cal = $('#@Model.UniqueName').datepicker({
                 format: 'yyyy-mm-dd',
-                startDate: new Date(2000, 0, 1),
-                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
+                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
                 autoclose: true,
-                clearBtn: true
+                clearBtn: true,
+                orientation: 'auto',
+                todayHighlight: true,
             });
 
             cal.keydown(function (event) {
