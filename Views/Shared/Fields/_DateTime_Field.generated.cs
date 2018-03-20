@@ -237,21 +237,8 @@ WriteLiteral(@"
     </script>
 ");
 
-WriteLiteral(@"    <script>
-        $(function () {
-            $('.mydatepicker').datepicker({
-                format: 'yyyy-MM-dd',
-                todayHighlight: true,
-                orientation: 'auto bottom',
-                startDate: '+0d',
-                autoclose: true
-            })
-        })
-    </script>
-");
-
             
-            #line 61 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 50 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
