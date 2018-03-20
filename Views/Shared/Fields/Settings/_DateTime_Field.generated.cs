@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -233,21 +234,22 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            var cal = $
             
             #line default
             #line hidden
-WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n                startDate" +
-": new Date(2000, 0, 1),\r\n");
+WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n");
 
 WriteLiteral("                ");
 
             
-            #line 42 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
-           Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : ""));
+            #line 41 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
+           Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),"));
 
             
             #line default
             #line hidden
 WriteLiteral(@"
                 autoclose: true,
-                clearBtn: true
+                clearBtn: true,
+                orientation: 'auto',
+                todayHighlight: true,
             });
 
             cal.keydown(function (event) {
@@ -266,7 +268,7 @@ WriteLiteral(@"
 ");
 
             
-            #line 60 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
+            #line 61 "..\..\Views\Shared\Fields\Settings\_DateTime_Field.cshtml"
 }
             
             #line default
