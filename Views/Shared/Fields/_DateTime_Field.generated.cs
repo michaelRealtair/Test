@@ -217,7 +217,7 @@ WriteLiteral("                ");
 WriteLiteral(@"
                 autoclose: true,
                 clearBtn: true, 
-                orientation: 'auto bottom',
+                orientation: 'auto',
                 todayHighlight: true, 
                 container: '#datepicker'
             });
