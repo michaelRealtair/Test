@@ -3,11 +3,11 @@
 @if (Model.HasError)
 {
     <label style="color:red">@Model.FieldAttribute.Label</label>
-    <input name="@Model.UniqueName" type="file" />
+    <input autofocus name="@Model.UniqueName" type="file" />
     <small style="color:red">@Model.ErrorMessage</small>
 }
 else
 {
     <label>@Model.FieldAttribute.Label</label>
-    <input name="@Model.UniqueName" type="file" />
+    <input autofocus name="@Model.UniqueName" type="file" />
 }

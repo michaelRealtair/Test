@@ -44,26 +44,43 @@ namespace ASP
             
             #line 3 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
   
-    var paragraph = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
+    var paragraphWidget = Model.Value as Realtair.Framework.Core.Entities.Display.ParagraphWidget;
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h4");
+WriteLiteral("\r\n\r\n");
+
+            
+            #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+ if (paragraphWidget != null)
+{
+
+            
+            #line default
+            #line hidden
+WriteLiteral("    <h4");
 
 WriteLiteral(" class=\"no-margin-t margin-b-md\"");
 
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
-                               Write(paragraph.Text);
+            #line 9 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+                                   Write(paragraphWidget.Text);
 
             
             #line default
             #line hidden
 WriteLiteral("</h4>\r\n");
 
+            
+            #line 10 "..\..\Views\Shared\Fields\_ParagraphWidget_WidgetField.cshtml"
+}
+
+            
+            #line default
+            #line hidden
         }
     }
 }

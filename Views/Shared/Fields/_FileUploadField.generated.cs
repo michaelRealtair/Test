@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -63,7 +64,7 @@ WriteLiteral(">\r\n    <label");
 
 WriteLiteral(" for=\"inputEmail3\"");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -76,31 +77,31 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-6\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <input autofocus");
 
 WriteLiteral(" type=\"file\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 482), Tuple.Create("\"", 510)
+WriteAttribute("name", Tuple.Create(" name=\"", 491), Tuple.Create("\"", 519)
             
             #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 489), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 498), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 489), false)
-, Tuple.Create(Tuple.Create("", 508), Tuple.Create("[]", 508), true)
+, 498), false)
+, Tuple.Create(Tuple.Create("", 517), Tuple.Create("[]", 517), true)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 511), Tuple.Create("\"", 533)
+WriteAttribute("id", Tuple.Create(" id=\"", 520), Tuple.Create("\"", 542)
             
             #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 516), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 525), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 516), false)
+, 525), false)
 );
 
 WriteLiteral(" class=\"inputfile\"");
@@ -109,14 +110,14 @@ WriteLiteral(" data-multiple-caption=\"{count} files selected\"");
 
 WriteLiteral(" multiple />\r\n        <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 627), Tuple.Create("\"", 650)
+WriteAttribute("for", Tuple.Create(" for=\"", 636), Tuple.Create("\"", 659)
             
             #line 11 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 633), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 642), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 633), false)
+, 642), false)
 );
 
 WriteLiteral(">\r\n            <span></span> \r\n            <strong> \r\n                <i");

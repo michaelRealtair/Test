@@ -227,38 +227,38 @@ WriteLiteral("\').change(function () {\r\n                $(\'#");
             #line default
             #line hidden
 WriteLiteral("\').val(JSON.stringify($(this).val()));\r\n            });\r\n        </script>\r\n    <" +
-"/div>\r\n    <input");
+"/div>\r\n    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1703), Tuple.Create("\"", 1729)
+WriteAttribute("name", Tuple.Create(" name=\"", 1713), Tuple.Create("\"", 1739)
             
             #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1710), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1720), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1710), false)
+, 1720), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1730), Tuple.Create("\"", 1754)
+WriteAttribute("id", Tuple.Create(" id=\"", 1740), Tuple.Create("\"", 1764)
             
             #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 1735), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 1745), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1735), false)
+, 1745), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1769), Tuple.Create("\"", 1786)
+WriteAttribute("value", Tuple.Create(" value=\"", 1779), Tuple.Create("\"", 1796)
             
             #line 42 "..\..\Views\Shared\Fields\_MultiSelectOptionsField.cshtml"
-     , Tuple.Create(Tuple.Create("", 1777), Tuple.Create<System.Object, System.Int32>(Values
+               , Tuple.Create(Tuple.Create("", 1787), Tuple.Create<System.Object, System.Int32>(Values
             
             #line default
             #line hidden
-, 1777), false)
+, 1787), false)
 );
 
 WriteLiteral(" />\r\n</div>\r\n");

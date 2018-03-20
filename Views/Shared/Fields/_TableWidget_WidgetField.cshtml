@@ -1,22 +1,22 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 
 @{
-    var Table = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
+    var tableWidget = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
 }
 
-@if (Table != null)
+@if (tableWidget != null)
 {
     <table class="table color-bordered-table muted-bordered-table" style="width: 100%">
         <thead>
             <tr>
-                @foreach (var h in Table.Header)
+                @foreach (var h in tableWidget.Header)
                 {
                     <th class="col-md-@h.ColumnWidth">@h.Name</th>
                 }
             </tr>
         </thead>
         <tbody>
-            @foreach (var row in Table.Contents)
+            @foreach (var row in tableWidget.Contents)
             {
                 <tr>
                     @foreach (var item in row)
@@ -33,10 +33,10 @@
                 </tr>
             }
 
-            @if (Table.Totals != null)
+            @if (tableWidget.Totals != null)
             {
                 <tr style="background: #222; color: #fff;">
-                    @foreach (var item in Table.Totals)
+                    @foreach (var item in tableWidget.Totals)
                     {
                         <td>@item</td>
                     }

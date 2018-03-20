@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -435,18 +436,18 @@ WriteLiteral("                                    </div>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("                                <input");
+WriteLiteral("                                <input autofocus");
 
 WriteLiteral(" type=\"submit\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4120), Tuple.Create("\"", 4169)
+WriteAttribute("value", Tuple.Create(" value=\"", 4130), Tuple.Create("\"", 4179)
             
             #line 66 "..\..\Views\Settings\Settings.cshtml"
-, Tuple.Create(Tuple.Create("", 4128), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
+, Tuple.Create(Tuple.Create("", 4138), Tuple.Create<System.Object, System.Int32>(setting.Description(Html.LoggedInUser())
             
             #line default
             #line hidden
-, 4128), false)
+, 4138), false)
 );
 
 WriteLiteral(" class=\"btn btn-primary pull-right\"");
