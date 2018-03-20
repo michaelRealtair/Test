@@ -202,25 +202,21 @@ WriteLiteral("    <script>\r\n        $(function () {\r\n            var cal = $
             
             #line default
             #line hidden
-WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n                startDate" +
-": new Date(2000, 0, 1),\r\n");
+WriteLiteral("\').datepicker({\r\n                format: \'yyyy-mm-dd\',\r\n");
 
-WriteLiteral("                ");
+WriteLiteral("                 ");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
-           Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : ""));
+            #line 28 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),"));
 
             
             #line default
             #line hidden
+WriteLiteral("\r\n                autoclose: true,\r\n                todayHighlight: true, \r\n     " +
+"           clearBtn: true\r\n            });\r\n\r\n            ");
+
 WriteLiteral(@"
-                autoclose: true,
-                clearBtn: true, 
-                orientation: 'auto bottom',
-                todayHighlight: true, 
-                container: '#datepicker'
-            });
 
             cal.keydown(function (event) {
                 if (event.which == 13) { //enter key
@@ -237,21 +233,8 @@ WriteLiteral(@"
     </script>
 ");
 
-WriteLiteral(@"    <script>
-        $(function () {
-            $('.mydatepicker').datepicker({
-                format: 'yyyy-MM-dd',
-                todayHighlight: true,
-                orientation: 'auto bottom',
-                startDate: '+0d',
-                autoclose: true
-            })
-        })
-    </script>
-");
-
             
-            #line 61 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 57 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
