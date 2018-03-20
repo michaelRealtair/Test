@@ -75,7 +75,7 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("        <div");
 
-WriteLiteral(" class=\"col-sm-4 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">\r\n            <label");
 

@@ -29,7 +29,7 @@
                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
                 autoclose: true,
                 clearBtn: true, 
-                orientation: 'auto bottom',
+                orientation: 'auto',
                 todayHighlight: true, 
                 container: '#datepicker'
             });
@@ -50,11 +50,12 @@
     <script>
         $(function () {
             $('.mydatepicker').datepicker({
-                format: 'yyyy-MM-dd',
+                format: 'yyyy-mm-dd',
                 todayHighlight: true,
-                orientation: 'auto bottom',
+                orientation: 'auto',
                 startDate: '+0d',
-                autoclose: true
+                autoclose: true,
+                container: '#datepicker'
             })
         })
     </script>

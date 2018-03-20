@@ -217,7 +217,7 @@ WriteLiteral("                ");
 WriteLiteral(@"
                 autoclose: true,
                 clearBtn: true, 
-                orientation: 'auto bottom',
+                orientation: 'auto',
                 todayHighlight: true, 
                 container: '#datepicker'
             });
@@ -240,18 +240,19 @@ WriteLiteral(@"
 WriteLiteral(@"    <script>
         $(function () {
             $('.mydatepicker').datepicker({
-                format: 'yyyy-MM-dd',
+                format: 'yyyy-mm-dd',
                 todayHighlight: true,
-                orientation: 'auto bottom',
+                orientation: 'auto',
                 startDate: '+0d',
-                autoclose: true
+                autoclose: true,
+                container: '#datepicker'
             })
         })
     </script>
 ");
 
             
-            #line 61 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
+            #line 62 "..\..\Views\Shared\Fields\_DateTime_Field.cshtml"
 }
             
             #line default
