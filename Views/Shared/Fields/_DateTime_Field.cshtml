@@ -7,9 +7,9 @@
 }
 
 <div class="form-group">
-    <label class="col-sm-2 control-label">@Model.Label</label>
-    <div class="col-sm-4" id="datepicker">
-            <input type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
+    <label class="col-sm-3 control-label">@Model.Label</label>
+    <div class="col-sm-3" id="datepicker">
+            <input autofocus type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
             @if (Model.HasError)
             {
                 <span class="help-block">@Model.ErrorMessage</span>
@@ -29,6 +29,8 @@
                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
                 autoclose: true,
                 clearBtn: true, 
+                orientation: 'auto bottom',
+                todayHighlight: true, 
                 container: '#datepicker'
             });
 
@@ -49,7 +51,8 @@
         $(function () {
             $('.mydatepicker').datepicker({
                 format: 'yyyy-MM-dd',
-
+                todayHighlight: true,
+                orientation: 'auto bottom',
                 startDate: '+0d',
                 autoclose: true
             })

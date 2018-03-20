@@ -3,9 +3,9 @@
 @if (Model.HasError)
 {
     <div class="form-group has-error">
-        <label class="col-sm-2 control-label">@Model.Label</label>
-        <div class="col-sm-10">
-            <input name="@Model.UniqueName" type="email" class="form-control lite" id="inputEmail3" placeholder="E-mail" value="@Model.Value">
+        <label class="col-sm-3 control-label">@Model.Label</label>
+        <div class="col-sm-4">
+            <input autofocus name="@Model.UniqueName" type="email" class="form-control lite" id="inputEmail3" placeholder="E-mail" value="@Model.Value">
             <span class="help-block">@Model.ErrorMessage</span>
         </div>
     </div>
@@ -13,9 +13,9 @@
 else
 {
     <div class="form-group">
-        <label class="col-sm-2 control-label">@Model.Label</label>
-        <div class="col-sm-10">
-            <input name="@Model.UniqueName" type="email" class="form-control lite" id="inputEmail3" placeholder="E-mail" value="@Model.Value">
+        <label class="col-sm-3 control-label">@Model.Label</label>
+        <div class="col-sm-4">
+            <input autofocus name="@Model.UniqueName" type="email" class="form-control lite" id="inputEmail3" placeholder="E-mail" value="@Model.Value">
         </div>
     </div>
 }

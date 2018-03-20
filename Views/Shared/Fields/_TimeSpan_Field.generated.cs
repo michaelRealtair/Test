@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -46,7 +47,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -59,34 +60,34 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-sm-4\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <input autofocus");
 
 WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"form-control lite mytimepicker\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 231), Tuple.Create("\"", 255)
+WriteAttribute("name", Tuple.Create(" name=\"", 241), Tuple.Create("\"", 265)
             
             #line 6 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 238), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+   , Tuple.Create(Tuple.Create("", 248), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 238), false)
+, 248), false)
 );
 
 WriteLiteral(" placeholder=\"Click to select time\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 291), Tuple.Create("\"", 325)
+WriteAttribute("value", Tuple.Create(" value=\"", 301), Tuple.Create("\"", 335)
             
             #line 6 "..\..\Views\Shared\Fields\_TimeSpan_Field.cshtml"
-                                                       , Tuple.Create(Tuple.Create("", 299), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
+                                                                 , Tuple.Create(Tuple.Create("", 309), Tuple.Create<System.Object, System.Int32>(((TimeSpan)Model.Value)
             
             #line default
             #line hidden
-, 299), false)
+, 309), false)
 );
 
 WriteLiteral(">\r\n    </div>\r\n</div>\r\n\r\n");

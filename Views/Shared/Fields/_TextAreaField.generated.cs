@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -54,7 +55,7 @@ WriteLiteral(" class=\"form-group has-error\"");
 
 WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -67,18 +68,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 235), Tuple.Create("\"", 259)
+WriteAttribute("name", Tuple.Create(" name=\"", 234), Tuple.Create("\"", 258)
             
             #line 8 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-, Tuple.Create(Tuple.Create("", 242), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 241), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 242), false)
+, 241), false)
 );
 
 WriteLiteral(" class=\"form-control lite\"");
@@ -126,7 +127,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -139,18 +140,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 596), Tuple.Create("\"", 620)
+WriteAttribute("name", Tuple.Create(" name=\"", 594), Tuple.Create("\"", 618)
             
             #line 18 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-, Tuple.Create(Tuple.Create("", 603), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 601), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 603), false)
+, 601), false)
 );
 
 WriteLiteral(" class=\"form-control lite\"");

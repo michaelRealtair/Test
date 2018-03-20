@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -60,7 +61,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-sm-2 control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
@@ -73,19 +74,19 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-sm-10\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 317), Tuple.Create("\"", 348)
+WriteAttribute("id", Tuple.Create(" id=\"", 316), Tuple.Create("\"", 347)
             
             #line 10 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 322), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 321), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 322), false)
-, Tuple.Create(Tuple.Create("", 341), Tuple.Create("_upload", 341), true)
+, 321), false)
+, Tuple.Create(Tuple.Create("", 340), Tuple.Create("_upload", 340), true)
 );
 
 WriteLiteral(" class=\"dropzone file-uploader\"");
@@ -94,27 +95,27 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"dz-default dz-clickable dz-message\"");
 
-WriteLiteral(">\r\n                <h3>Drop files here to upload</h3>\r\n            </div>\r\n      " +
-"  </div>\r\n        <input");
+WriteLiteral(">\r\n                <h4>Drop files here to upload</h4>\r\n            </div>\r\n      " +
+"  </div>\r\n        <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 547), Tuple.Create("\"", 573)
+WriteAttribute("name", Tuple.Create(" name=\"", 556), Tuple.Create("\"", 582)
             
             #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 554), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 563), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 554), false)
+, 563), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 574), Tuple.Create("\"", 598)
+WriteAttribute("id", Tuple.Create(" id=\"", 583), Tuple.Create("\"", 607)
             
             #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 579), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 588), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 579), false)
+, 588), false)
 );
 
 WriteLiteral(" type=\"hidden\"");

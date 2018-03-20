@@ -3,8 +3,8 @@
 @if (Model.HasError)
 {
     <div class="form-group has-error">
-        <label class="col-sm-2 control-label">@Model.Label</label>
-        <div class="col-sm-10">
+        <label class="col-sm-3 control-label">@Model.Label</label>
+        <div class="col-sm-9">
             <textarea name="@Model.UniqueName" class="form-control lite" rows="3" placeholder="...">@Model.Value</textarea>
             <span class="help-block">@Model.ErrorMessage</span>
         </div>
@@ -13,8 +13,8 @@
 else
 {
     <div class="form-group">
-        <label class="col-sm-2 control-label">@Model.Label</label>
-        <div class="col-sm-10">
+        <label class="col-sm-3 control-label">@Model.Label</label>
+        <div class="col-sm-9">
             <textarea name="@Model.UniqueName" class="form-control lite" rows="3" placeholder="...">@Model.Value</textarea>
             <small>@Model.FieldAttribute.Help</small>
         </div>
