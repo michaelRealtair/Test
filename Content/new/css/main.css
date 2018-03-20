@@ -1665,6 +1665,11 @@ input[type="*"]::placeholder {
 }
 
 /* line 95, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
+.l-h-md {
+  line-height: 1.35em !important;
+}
+
+/* line 101, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -1681,17 +1686,17 @@ input[type="*"]::placeholder {
                                   supported by Chrome and Opera */
 }
 
-/* line 105, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
+/* line 111, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
 .uppercase {
   text-transform: uppercase;
 }
 
-/* line 109, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
+/* line 115, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
 .lowercase {
   text-transform: lowercase;
 }
 
-/* line 113, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
+/* line 119, D:/Realtair/Realtair.UI/scss/modules/_typography.scss */
 .graph-title {
   position: absolute;
 }
@@ -3033,6 +3038,7 @@ form-control.input, .trans-search, .btn-trans-dropdown, .select2-container--defa
 /* line 22, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-padding {
   padding-right: 25px;
+  padding-bottom: 0px;
   padding-left: 20px;
 }
 
@@ -3041,14 +3047,14 @@ textarea.form-control.lite {
   padding-top: 7px;
 }
 
-/* line 34, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 38, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .trans-search, .btn-trans-dropdown {
   background-size: 0 2px, 100% 2px !important;
   padding-right: 15px !important;
   padding-bottom: 2px !important;
 }
 
-/* line 40, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 44, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .btn-trans-dropdown {
   min-width: 160px;
   margin-left: 24px;
@@ -3059,38 +3065,38 @@ textarea.form-control.lite {
   color: #999999;
 }
 
-/* line 49, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 53, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-control.lite:focus, textarea {
   /* sizes for the 2 images (focus state) */
   background-size: 100% 2px, 100% 1px;
   outline: none;
 }
 
-/* line 54, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 58, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-control.lite:focus:invalid, textarea:invalid {
   background-image: linear-gradient(to bottom, #f44336, #f44336), linear-gradient(to bottom, #CECECE, #CECECE);
   transition: background-size 100ms cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 
-/* line 63, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 67, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .navbar-right .dropdown-menu {
   margin-top: 40px;
 }
 
-/* line 68, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 72, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .btn-group.open .dropdown-toggle {
   -webkit-box-shadow: 0 0 0 0;
   -moz-box-shadow: 0 0 0 0;
   box-shadow: 0 0 0 0;
 }
 
-/* line 72, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 76, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-horizontal .control-label {
   text-align: left;
   font-weight: 300;
 }
 
-/* line 80, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 84, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 input:focus, a:focus, select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -3098,13 +3104,13 @@ input:focus, a:focus, select.form-control:focus {
 }
 
 /*list styles*/
-/* line 90, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 94, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li .list-group-item {
   padding: 0;
   border: 0;
 }
 
-/* line 93, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 97, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li .list-group-item a {
   padding-top: 4px;
   padding-right: 12px;
@@ -3112,19 +3118,19 @@ li .list-group-item a {
   padding-left: 12px;
 }
 
-/* line 97, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 101, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li .list-group-item--mobile {
   padding: 10px 15px;
   border: 1px solid #dddddd;
 }
 
-/* line 100, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 104, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li .list-group-item--mobile a {
   padding: 0;
 }
 
 /*filter switches (checkboxes)*/
-/* line 108, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 112, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch {
   position: absolute;
   right: 0;
@@ -3132,12 +3138,12 @@ li .list-group-item--mobile a {
   top: 4px;
 }
 
-/* line 112, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 116, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > input[type="checkbox"] {
   display: none;
 }
 
-/* line 116, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 120, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > label {
   cursor: pointer;
   height: 0px;
@@ -3145,7 +3151,7 @@ li .list-group-item--mobile a {
   width: 36px;
 }
 
-/* line 123, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 127, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > label::before {
   background: black;
   -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
@@ -3161,7 +3167,7 @@ li .list-group-item--mobile a {
   width: 24px;
 }
 
-/* line 135, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 139, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > label::after {
   background: white;
   border-radius: 18px;
@@ -3178,19 +3184,19 @@ li .list-group-item--mobile a {
   width: 14px;
 }
 
-/* line 148, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 152, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > input[type="checkbox"]:checked + label::before {
   background: inherit;
   opacity: 0.5;
 }
 
-/* line 152, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 156, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .switch > input[type="checkbox"]:checked + label::after {
   background: inherit;
   left: 16px;
 }
 
-/* line 158, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 162, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .filter-search-input {
   padding: 3px;
   font-size: 12px;
@@ -3210,28 +3216,28 @@ li .list-group-item--mobile a {
     padding: 0 8px 0 10px;
     z-index: 99;
 }*/
-/* line 179, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 183, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .filter-search-input button:hover {
   border: 0;
   box-shadow: none;
 }
 
-/* line 184, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 188, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .filter-search-input .glyphicon-search {
   font-size: 23px;
 }
 
-/* line 188, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 192, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 label {
   font-size: 1.2em;
 }
 
-/* line 193, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 197, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-horizontal .checkbox {
   padding-top: 15px;
 }
 
-/* line 196, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 200, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox {
   display: inline-block;
   padding-top: 10px;
@@ -3254,13 +3260,13 @@ label {
   }*/
 }
 
-/* line 201, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 205, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox label {
   cursor: pointer;
   padding-left: 0;
 }
 
-/* line 207, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 211, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox input[type=checkbox] {
   opacity: 0;
   position: absolute;
@@ -3273,14 +3279,14 @@ label {
   pointer-events: none;
 }
 
-/* line 219, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 223, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox .checkbox-material {
   vertical-align: middle;
   position: relative;
   top: 1px;
 }
 
-/* line 223, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 227, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox .checkbox-material:before {
   position: absolute;
   left: 5px;
@@ -3295,7 +3301,7 @@ label {
   margin: 0;
 }
 
-/* line 238, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 242, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox .checkbox-material .check {
   position: relative;
   display: inline-block;
@@ -3307,7 +3313,7 @@ label {
   z-index: 1;
 }
 
-/* line 248, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 252, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox .checkbox-material .check:before {
   position: absolute;
   content: "";
@@ -3321,24 +3327,24 @@ label {
   animation: checkbox-off 0.3s forwards ease-out;
 }
 
-/* line 269, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 273, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
   opacity: 0.2;
 }
 
-/* line 273, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 277, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
   box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
   animation: checkbox-on 0.3s forwards ease-out;
 }
 
-/* line 300, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 304, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox input[type=checkbox][disabled]:not(:checked) ~ .checkbox-material .check:before,
 .checkbox input[type=checkbox][disabled] + .circle {
   opacity: 0.5;
 }
 
-/* line 304, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 308, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
   background-color: #F9F9F9;
   transform: rotate(-45deg);
@@ -3408,7 +3414,7 @@ label {
   }
 }*/
 /*radio buttons*/
-/* line 430, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 434, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul {
   list-style: none;
   margin: 0;
@@ -3416,7 +3422,7 @@ label {
   overflow: hidden;
 }
 
-/* line 437, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 441, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul li {
   color: #999999;
   display: block;
@@ -3425,28 +3431,28 @@ label {
   height: 30px;
 }
 
-/* line 446, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 450, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul.status {
   overflow: visible;
 }
 
-/* line 450, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 454, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul.status li {
   float: none;
 }
 
-/* line 454, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 458, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul.list-inline li {
   float: right;
 }
 
-/* line 458, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 462, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 ul li input[type=radio] {
   position: absolute;
   visibility: hidden;
 }
 
-/* line 463, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 467, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 #selectRedirect {
   display: none;
   margin-bottom: 40px;
@@ -3457,7 +3463,7 @@ ul li input[type=radio] {
   transition: 500ms ease-in-out;
 }
 
-/* line 469, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 473, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul li label {
   display: block;
   position: relative;
@@ -3470,12 +3476,12 @@ ul li input[type=radio] {
   color: #999999;
 }
 
-/* line 482, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 486, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul li:last-child label {
   margin-right: 4px;
 }
 
-/* line 486, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 490, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 ul li .radiobtn {
   display: block;
   position: absolute;
@@ -3489,18 +3495,18 @@ ul li .radiobtn {
   -webkit-transition: border .25s linear;
 }
 
-/* line 499, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 503, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .container-radiobtn ul li:hover label {
   color: #455A64;
 }
 
-/* line 505, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 509, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 ul li:hover .radiobtn {
   border: 2px solid #455A64;
   cursor: pointer;
 }
 
-/* line 510, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 514, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 ul li .radiobtn::before {
   display: block;
   position: absolute;
@@ -3515,77 +3521,77 @@ ul li .radiobtn::before {
   -webkit-transition: background 500ms linear;
 }
 
-/* line 524, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 528, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 input[type=radio]:checked ~ .radiobtn {
   border: 2px solid #455A64;
 }
 
-/* line 528, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 532, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.available > input[type=radio]:checked ~ .radiobtn {
   border: 2px solid #66BB6A;
 }
 
-/* line 532, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 536, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.unavailable > input[type=radio]:checked ~ .radiobtn {
   border: 2px solid #f44336;
 }
 
-/* line 536, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 540, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 input[type=radio]:checked ~ .radiobtn::before {
   background: #455A64;
 }
 
-/* line 540, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 544, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.available > input[type=radio]:checked ~ .radiobtn::before {
   background: #66BB6A;
 }
 
-/* line 544, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 548, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.unavailable > input[type=radio]:checked ~ .radiobtn::before {
   background: #f44336;
 }
 
-/* line 548, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 552, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 input[type=radio]:checked ~ label {
   color: #455A64;
 }
 
-/* line 552, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 556, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.available > input[type=radio]:checked ~ label {
   color: #66BB6A;
 }
 
-/* line 555, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 559, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 li.unavailable > input[type=radio]:checked ~ label {
   color: #f44336;
 }
 
-/* line 559, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 563, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-list > li {
   border-bottom: 1px solid #f4f4f4;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
-/* line 562, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 566, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-list > li:last-child {
   border: 0;
 }
 
-/* line 565, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 569, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-list > li h4 {
   margin: 0;
   line-height: 1.15;
   margin-bottom: 12px;
 }
 
-/* line 574, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 578, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .bootstrap-timepicker-widget input {
   border-radius: 3px;
   border: 2px;
 }
 
-/* line 579, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 583, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .dropzone {
   border: 1px solid #CECECE !important;
   border-radius: 8px;
@@ -3595,7 +3601,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   -o-border-radius: 8px;
 }
 
-/* line 584, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 588, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .dropzone .dz-preview.dz-file-preview .dz-image {
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -3609,7 +3615,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
 }
 
-/* line 591, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 595, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .dropzone .dz-preview .dz-image {
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -3621,35 +3627,35 @@ li.unavailable > input[type=radio]:checked ~ label {
   box-shadow: 0px 1px 8px rgba(204, 197, 185, 0.5);
 }
 
-/* line 595, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 599, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .dropzone .dz-preview .dz-remove {
   margin-top: 12px;
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* line 599, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 603, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .dropzone .dz-preview .dz-remove:hover {
   text-decoration: none;
 }
 
-/* line 605, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 609, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple, .select2-container--default.select2-container--focus .select2-selection--multiple {
   border: 0;
   border-radius: 0;
 }
 
-/* line 613, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 617, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-dropdown {
   border-radius: 0;
 }
 
-/* line 617, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 621, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container .select2-selection--single .select2-selection__rendered, .select2-container--default .select2-search--dropdown .select2-search__field, .select2-container .select2-search--inline .select2-search__field, .select2-results li {
   font-size: 1.2em;
 }
 
-/* line 621, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 625, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #455A64;
   border: 0;
@@ -3657,37 +3663,37 @@ li.unavailable > input[type=radio]:checked ~ label {
   font-size: 1.3em;
 }
 
-/* line 626, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 630, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
   color: #ffffff;
 }
 
-/* line 631, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 635, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--open .select2-dropdown--above {
   border-bottom: 1px solid #CECECE;
 }
 
-/* line 635, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 639, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--default .select2-selection--single .select2-selection__arrow {
   top: 7px;
 }
 
-/* line 639, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 643, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container {
   display: block !important;
 }
 
-/* line 643, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 647, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container--default.select2-container--disabled .select2-selection--single {
   background-color: transparent;
 }
 
-/* line 649, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 653, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .btn-group > .btn {
   padding-left: 8px;
 }
 
-/* line 653, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 657, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .panel-default > .panel-heading {
   -webkit-border-top-right-radius: 8px;
   border-top-right-radius: 8px;
@@ -3696,19 +3702,19 @@ li.unavailable > input[type=radio]:checked ~ label {
   background-clip: padding-box;
 }
 
-/* line 657, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 661, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .note-editor.note-frame {
   border: 1px solid #CECECE;
 }
 
-/* line 661, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 665, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .note-editor.note-frame.panel {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
 
-/* line 670, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 674, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .note-editor.note-frame .note-statusbar {
   -webkit-border-bottom-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -3717,7 +3723,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   background-clip: padding-box;
 }
 
-/* line 675, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 679, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile {
   width: 0.1px;
   height: 0.1px;
@@ -3727,12 +3733,12 @@ li.unavailable > input[type=radio]:checked ~ label {
   z-index: -1;
 }
 
-/* line 684, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 688, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile + label {
   color: #455A64;
 }
 
-/* line 688, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 692, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile + label {
   border: 1px solid #CECECE;
   background-color: #ffffff;
@@ -3750,7 +3756,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   transition: all 500ms ease;
 }
 
-/* line 697, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 701, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile:focus + label,
 .inputfile.has-focus + label,
 .inputfile + label:hover {
@@ -3763,14 +3769,14 @@ li.unavailable > input[type=radio]:checked ~ label {
   transition: all 500ms ease;
 }
 
-/* line 705, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 709, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile + label span,
 .inputfile + label strong {
   padding: 0.625rem 1.25rem;
   /* 10px 20px */
 }
 
-/* line 711, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 715, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile + label span {
   width: 200px;
   min-height: 2em;
@@ -3781,7 +3787,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   vertical-align: top;
 }
 
-/* line 721, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 725, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile + label strong {
   height: 100%;
   color: #455A64;
@@ -3795,7 +3801,7 @@ li.unavailable > input[type=radio]:checked ~ label {
   transition: all 500ms ease;
 }
 
-/* line 730, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 734, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .inputfile:focus + label strong,
 .inputfile.has-focus + label strong,
 .inputfile + label:hover strong {
@@ -3808,39 +3814,39 @@ li.unavailable > input[type=radio]:checked ~ label {
   transition: all 500ms ease;
 }
 
-/* line 738, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 742, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .select2-container .select2-selection--single .select2-selection__rendered {
   padding-left: 0px !important;
 }
 
-/* line 742, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 746, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 td select {
   padding: 2px 0px !important;
   margin: 0px !important;
 }
 
-/* line 747, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 751, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 legend {
   margin-bottom: 10px;
 }
 
-/* line 753, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 757, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .drop-down-menu--status {
   float: left;
 }
 
-/* line 756, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 760, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .drop-down-menu--status > .dropdown-menu {
   left: 7%;
   padding: 0;
 }
 
-/* line 762, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 766, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .drop-down-menu--status > .btn-trans-dropdown {
   margin-left: 2px;
 }
 
-/* line 766, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 770, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .drop-down-menu--status .list-group-item {
   border-radius: 0;
   border: 0 !important;
@@ -3850,69 +3856,69 @@ legend {
   padding-left: 5px;
 }
 
-/* line 772, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 776, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .drop-down-menu--status .list-group-item :hover {
   background-color: #20a0ff;
   color: #ffffff;
 }
 
-/* line 780, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 784, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .action-sub-margin {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 786, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 790, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 fieldset legend {
   border-bottom: none !important;
   color: #999999;
 }
 
-/* line 792, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 796, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .form-group {
   margin-bottom: 25px;
 }
 
-/* line 796, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 800, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .alert {
   font-size: 1.2em;
 }
 
-/* line 800, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 804, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker-dropdown {
   z-index: 11111 !important;
 }
 
-/* line 802, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 806, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker-dropdown.datepicker-orient-right {
   left: 0 !important;
 }
 
-/* line 807, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 811, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker-dropdown.datepicker-orient-top {
   position: inherit;
 }
 
-/* line 812, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 816, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active {
   background-color: #66BB6A !important;
   background-image: none;
   color: #ffffff;
 }
 
-/* line 818, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 822, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 .datepicker table tr td.today {
   background-color: #999999 !important;
   background-image: none !important;
   color: #ffffff !important;
 }
 
-/* line 824, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 828, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 tr.selected td {
   background: #e9f5ea !important;
 }
 
-/* line 826, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
+/* line 830, D:/Realtair/Realtair.UI/scss/modules/_forms.scss */
 tr.selected td select {
   background: #e9f5ea !important;
 }
@@ -3960,10 +3966,10 @@ tr.selected td select {
   left: 0;
   position: fixed;
   width: 250px;
-  padding-right: 0;
-  padding-left: 0;
   height: 100vh;
   z-index: 999;
+  padding-right: 0;
+  padding-left: 0;
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   -ms-transition: all 300ms;
@@ -3971,7 +3977,7 @@ tr.selected td select {
   transition: all 300ms;
 }
 
-/* line 11, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 19, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul {
   padding-top: 25px;
   padding-right: 25px;
@@ -3979,7 +3985,7 @@ tr.selected td select {
   padding-left: 20px;
 }
 
-/* line 17, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 25, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a {
   font-size: 1.25em;
   line-height: 2.5em;
@@ -3992,22 +3998,22 @@ tr.selected td select {
   display: block;
 }
 
-/* line 20, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 28, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a.active, .sidebar-nav ul li a.btn-trans-grey {
   color: #455A64;
 }
 
-/* line 23, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 31, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a.active span, .sidebar-nav ul li a.btn-trans-grey span {
   color: #66BB6A;
 }
 
-/* line 28, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 36, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a.btn-trans-grey {
   line-height: 1.5em;
 }
 
-/* line 32, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 40, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a:hover {
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
@@ -4016,7 +4022,7 @@ tr.selected td select {
   transition: all 500ms;
 }
 
-/* line 35, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 43, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav ul li a:hover span {
   color: #66BB6A;
   -webkit-transition: all 500ms;
@@ -4026,17 +4032,17 @@ tr.selected td select {
   transition: all 500ms;
 }
 
-/* line 47, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 55, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .sidebar-nav img {
   max-height: 80px;
 }
 
-/* line 52, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 60, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .navbar-right {
   margin-top: 15px;
 }
 
-/* line 56, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 64, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
   content: '\e259';
   display: block;
@@ -4046,17 +4052,17 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
   font-size: 0.6em;
 }
 
-/* line 64, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 72, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 a[aria-expanded="true"]::before {
   content: '\e260';
 }
 
-/* line 68, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 76, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .submenu {
   padding-top: 0px !important;
 }
 
-/* line 72, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 86, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropup {
   position: fixed;
   bottom: 0;
@@ -4065,47 +4071,47 @@ a[aria-expanded="true"]::before {
   padding: 10px;
 }
 
-/* line 79, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 93, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropup .btn {
   background: transparent;
   width: 100%;
 }
 
-/* line 84, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 98, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropup .dropdown-menu {
   margin-left: 3px;
 }
 
-/* line 89, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 103, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropup ul {
   padding: 10px 0px;
   width: 240px;
 }
 
-/* line 92, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 106, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropup ul li a {
   font-size: 1.1em;
   line-height: 1.5em;
 }
 
-/* line 100, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 114, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .status-available {
   color: #66BB6A;
 }
 
-/* line 105, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 119, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropdown-submenu {
   position: relative;
 }
 
-/* line 109, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 123, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .dropdown-submenu .dropdown-menu {
   bottom: 0;
   left: 100%;
   margin-top: -1px;
 }
 
-/* line 118, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 132, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container {
   position: fixed;
   top: 15px;
@@ -4117,30 +4123,30 @@ a[aria-expanded="true"]::before {
   transition: opacity .25s ease;
 }
 
-/* line 128, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 142, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container:hover {
   opacity: 1;
 }
 
-/* line 133, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 147, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container.active .top {
   transform: translateY(5px) translateX(0) rotate(45deg);
   background: #455A64;
 }
 
-/* line 137, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 151, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container.active .middle {
   opacity: 0;
   background: transparent;
 }
 
-/* line 142, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 156, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container.active .bottom {
   transform: translateY(-5px) translateX(0) rotate(-45deg);
   background: #455A64;
 }
 
-/* line 148, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 162, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container span {
   background: #455A64;
   border: none;
@@ -4153,17 +4159,17 @@ a[aria-expanded="true"]::before {
   cursor: pointer;
 }
 
-/* line 159, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 173, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container span:nth-of-type(2) {
   top: 5px;
 }
 
-/* line 163, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 177, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .button_container span:nth-of-type(3) {
   top: 10px;
 }
 
-/* line 169, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 183, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay {
   position: fixed;
   background: #F9F9F9;
@@ -4177,20 +4183,20 @@ a[aria-expanded="true"]::before {
   overflow: hidden;
 }
 
-/* line 183, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 197, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay.open {
   opacity: 1;
   visibility: visible;
   height: 100%;
 }
 
-/* line 189, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 203, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay.open li {
   animation: fadeInTop .20s ease forwards;
   animation-delay: .20s;
 }
 
-/* line 194, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 208, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay nav {
   position: relative;
   height: 90%;
@@ -4201,7 +4207,7 @@ a[aria-expanded="true"]::before {
   overflow-y: auto;
 }
 
-/* line 206, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 220, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay ul {
   list-style: none;
   padding: 0;
@@ -4210,7 +4216,7 @@ a[aria-expanded="true"]::before {
   height: 100%;
 }
 
-/* line 215, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 229, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay ul li {
   display: block;
   height: calc(100% / 25);
@@ -4219,7 +4225,7 @@ a[aria-expanded="true"]::before {
   opacity: 0;
 }
 
-/* line 223, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 237, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay ul li a {
   display: block;
   position: relative;
@@ -4227,12 +4233,12 @@ a[aria-expanded="true"]::before {
   overflow: hidden;
 }
 
-/* line 229, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 243, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
   width: 100%;
 }
 
-/* line 235, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 249, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .overlay ul li a:after {
   content: '';
   position: absolute;
@@ -4244,13 +4250,13 @@ a[aria-expanded="true"]::before {
   transition: .35s;
 }
 
-/* line 250, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 264, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .close {
   color: #455A64;
   opacity: 1;
 }
 
-/* line 252, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 266, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .modal-header .close {
   margin-top: -.25em;
 }
@@ -4266,10 +4272,17 @@ a[aria-expanded="true"]::before {
   }
 }
 
-/* line 267, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+/* line 281, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
 .text-center--flex {
   display: flex;
   justify-content: center;
+}
+
+/* line 286, D:/Realtair/Realtair.UI/scss/layouts/_nav.scss */
+.brand {
+  position: fixed;
+  bottom: 50px;
+  background-color: #F9F9F9;
 }
 
 @media (max-width: 1800px) and (min-width: 1601px) {
@@ -4325,64 +4338,72 @@ a[aria-expanded="true"]::before {
   .sidebar-nav {
     width: 200px;
   }
-  /* line 35, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 34, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand {
+    width: 200px;
+  }
+  /* line 36, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand p {
+    font-size: .9em;
+  }
+  /* line 42, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav ul li a.btn-trans-grey {
     font-size: 1em;
   }
-  /* line 40, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 47, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .user-actions {
     width: 200px;
   }
-  /* line 44, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 51, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 150px;
   }
-  /* line 48, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 55, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .panel-body--header {
     width: 100%;
   }
-  /* line 51, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 58, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .mytasks-hdr {
     margin-right: 80px;
   }
-  /* line 55, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 62, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .navbar-right {
     margin-right: 40px !important;
   }
   /*start track font styles */
-  /* line 59, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 66, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 1.1em;
   }
-  /* line 63, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 70, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 3.75em;
   }
-  /* line 67, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 74, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 1.85em;
   }
-  /* line 71, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 78, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 7.5em;
   }
-  /* line 75, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 82, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 0;
   }
-  /* line 79, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 86, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 120px;
   }
   /*end track font styles */
-  /* line 83, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 90, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-trans-search {
     padding-top: 1px;
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
   }
-  /* line 85, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 92, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 31%;
     -moz-box-flex: 0 1 31%;
@@ -4391,88 +4412,96 @@ a[aria-expanded="true"]::before {
     flex: 0 1 31%;
     margin-left: 15px;
   }
-  /* line 90, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 97, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .dropup {
     width: 200px;
   }
 }
 
 @media (max-width: 1441px) and (min-width: 1367px) {
-  /* line 98, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 105, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content {
     width: calc(100% - 200px);
   }
-  /* line 102, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 109, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .rt-header-desktop--kanban {
     padding-top: 10px;
     padding-right: 70px !important;
     padding-bottom: 0;
     padding-left: 25px;
   }
-  /* line 106, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 113, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav {
     width: 200px;
   }
-  /* line 111, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 118, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav ul li a.btn-trans-grey {
     font-size: 1.1em;
   }
-  /* line 116, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 123, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand {
+    width: 200px;
+  }
+  /* line 125, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand p {
+    font-size: .9em;
+  }
+  /* line 130, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .user-actions {
     width: 200px;
   }
-  /* line 120, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 134, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 150px;
   }
-  /* line 124, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 138, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 200px;
   }
-  /* line 128, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 142, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .panel-body--header {
     width: 99%;
   }
   /*start track  styles */
-  /* line 133, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 147, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 0.9em;
   }
-  /* line 137, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 151, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--icolg {
     font-size: 5em;
   }
-  /* line 141, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 155, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 2.5em;
   }
-  /* line 145, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 159, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 1.65em;
   }
-  /* line 149, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 163, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 6.5em;
   }
-  /* line 154, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 168, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 20px;
   }
-  /* line 158, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 172, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 100px;
   }
   /*end track  styles */
-  /* line 162, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 176, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav li a {
     font-size: 1.05em;
   }
-  /* line 166, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 180, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container {
     padding-right: 5px;
     padding-left: 5px;
   }
-  /* line 170, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 184, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 31%;
     -moz-box-flex: 0 1 31%;
@@ -4481,98 +4510,106 @@ a[aria-expanded="true"]::before {
     flex: 0 1 31%;
     margin-left: 15px;
   }
-  /* line 175, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 189, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .dropup {
     width: 200px;
   }
 }
 
 @media (max-width: 1366px) and (min-width: 1201px) {
-  /* line 184, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 198, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content {
     width: calc(100% - 200px);
   }
-  /* line 188, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 202, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .rt-header-desktop--kanban {
     padding-top: 10px;
     padding-right: 70px !important;
     padding-bottom: 0;
     padding-left: 25px;
   }
-  /* line 192, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 206, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav {
     width: 200px;
   }
-  /* line 196, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 210, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav li a {
     font-size: 1.05em;
   }
-  /* line 201, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 215, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav ul li a.btn-trans-grey {
     font-size: 1.1em;
   }
-  /* line 206, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 220, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand {
+    width: 200px;
+  }
+  /* line 222, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  .brand p {
+    font-size: .9em;
+  }
+  /* line 227, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .user-actions {
     width: 200px;
   }
-  /* line 210, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 231, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 150px;
   }
-  /* line 214, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 235, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 150px;
   }
-  /* line 218, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 239, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .panel-body--header {
     width: 99%;
   }
-  /* line 221, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 242, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .mytasks-hdr {
     margin-right: 57px;
     margin-left: 45px;
   }
   /*start track  styles */
-  /* line 225, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 246, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 0.9em;
   }
-  /* line 229, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 250, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 2.5em;
   }
-  /* line 233, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 254, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 1.5em;
   }
-  /* line 237, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 258, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 6.25em;
   }
-  /* line 242, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 263, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 10px;
   }
-  /* line 246, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 267, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 100px;
   }
-  /* line 250, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 271, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container-colwrap {
     padding-left: 10px;
   }
   /*end track  styles */
-  /* line 254, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 275, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .pad-searchhdr {
     padding-right: 0;
     padding-left: 24px;
   }
-  /* line 260, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 281, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container {
     padding-right: 5px;
     padding-left: 5px;
   }
-  /* line 264, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 285, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 30.5%;
     -moz-box-flex: 0 1 30.5%;
@@ -4581,75 +4618,75 @@ a[aria-expanded="true"]::before {
     flex: 0 1 30.5%;
     margin-left: 15px;
   }
-  /* line 269, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 290, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .dropup {
     width: 200px;
   }
-  /* line 273, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 294, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .task-item h4 {
     font-size: 1.1em;
   }
 }
 
 @media (max-width: 1200px) and (min-width: 1025px) {
-  /* line 282, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 303, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content {
     width: calc(100% - 200px);
   }
-  /* line 286, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 307, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .rt-header-desktop--kanban {
     padding-top: 10px;
     padding-right: 90px !important;
     padding-bottom: 0;
     padding-left: 25px;
   }
-  /* line 290, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 311, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav {
     width: 200px;
   }
-  /* line 294, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 315, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav li a {
     font-size: 1.05em;
   }
-  /* line 299, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 320, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav ul li a.btn-trans-grey {
     font-size: 1.1em;
   }
-  /* line 304, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 325, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .user-actions {
     width: 200px;
   }
-  /* line 308, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 329, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .panel-body--header {
     width: 97%;
   }
-  /* line 312, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 333, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 120px;
   }
-  /* line 316, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 337, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info h3 {
     font-size: 1.3em;
   }
-  /* line 320, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 341, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 135px;
   }
-  /* line 324, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 345, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-task {
     font-size: 0.8em;
     text-align: center;
   }
-  /* line 329, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 350, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .no-pad-lft {
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 333, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 354, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-trans-dropdown {
     min-width: 125px;
   }
-  /* line 337, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 358, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 30%;
     -moz-box-flex: 0 1 30%;
@@ -4658,11 +4695,11 @@ a[aria-expanded="true"]::before {
     flex: 0 1 30%;
     margin-left: 15px;
   }
-  /* line 341, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 362, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .task-item h4 {
     font-size: 1em;
   }
-  /* line 345, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 366, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .action-sub-margin {
     margin-top: 15px;
     margin-bottom: 0px;
@@ -4670,48 +4707,48 @@ a[aria-expanded="true"]::before {
 }
 
 @media (max-width: 1024px) {
-  /* line 352, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 373, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h1 {
     font-size: 2.5em;
   }
-  /* line 356, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 377, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2 {
     font-size: 1.75em;
   }
-  /* line 359, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 380, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2.mob-sec-hdr {
     margin-top: 4px;
     margin-left: 30px;
   }
-  /* line 364, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 385, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h3 {
     font-size: 1.25em;
   }
-  /* line 369, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 390, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .sidebar-nav {
     margin-left: -250px;
   }
-  /* line 373, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 394, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content {
     width: 100%;
     padding: 0;
     top: 0;
   }
-  /* line 378, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 399, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content-kanban {
     position: fixed;
     height: 100%;
   }
-  /* line 384, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 405, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .pad-tc-mob {
     padding-top: 40px;
     padding-right: 40px;
   }
-  /* line 388, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 409, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .pad-form-mob {
     padding-top: 40px;
   }
-  /* line 392, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 413, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .header-mob {
     padding-top: 5px;
     padding-right: 10px;
@@ -4723,92 +4760,92 @@ a[aria-expanded="true"]::before {
     height: 45px;
     z-index: 9999;
   }
-  /* line 401, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 422, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .mob-btn-hdr {
     margin-top: 4px;
   }
-  /* line 405, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 426, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-trans-grey {
     margin-top: 15px;
   }
-  /* line 409, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 430, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 300px;
   }
-  /* line 412, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 433, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .input-group {
     width: 100% !important;
   }
-  /* line 416, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 437, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks p {
     line-height: 1.5em;
   }
-  /* line 420, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 441, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-mob-task {
     right: 2%;
   }
-  /* line 424, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 445, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .input-group {
     width: 100% !important;
   }
-  /* line 429, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 450, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel {
     margin-bottom: 10px;
     -webkit-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
     -moz-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
     box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
   }
-  /* line 433, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 454, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel > .panel-body, .tasks > .panel > .panel-body--kanban {
     padding-top: 5px;
     padding-right: 15px;
     padding-bottom: 5px;
     padding-left: 15px;
   }
-  /* line 436, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 457, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel > .panel-body > div, .tasks > .panel > .panel-body--kanban > div {
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 443, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 464, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .margin-tc {
     margin-top: 25px;
     margin-bottom: 10px;
     margin-left: 25px;
     /*special margin for task content*/
   }
-  /* line 448, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 469, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-list-mob {
     overflow-y: auto;
     padding-top: 30px;
     padding-right: 10px;
     padding-bottom: 20px;
   }
-  /* line 454, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 475, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .header-disappear {
     top: 0;
   }
-  /* line 458, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 479, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .margin-t-kanban {
     margin-top: 50px;
     margin-right: 15px;
     margin-bottom: 0;
     margin-left: 15px;
   }
-  /* line 462, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 483, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .container-radiobtn {
     margin-top: 12px;
     margin-bottom: 8px;
   }
-  /* line 465, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 486, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .container-radiobtn > .pull-right {
     float: none !important;
   }
-  /* line 470, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 491, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .inputfile + label strong {
     display: block;
   }
-  /* line 476, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 497, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .my-task:hover {
     background-color: #F9F9F9;
     -webkit-transition: 500ms ease-in-out;
@@ -4817,12 +4854,12 @@ a[aria-expanded="true"]::before {
     -o-transition: 500ms ease-in-out;
     transition: 500ms ease-in-out;
   }
-  /* line 482, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 503, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   #loader-wrapper .loader-section {
     top: 45px;
     height: 100%;
   }
-  /* line 487, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 508, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container, .flex-container-list {
     padding: 0;
     margin: 0;
@@ -4836,7 +4873,7 @@ a[aria-expanded="true"]::before {
     justify-content: space-between;
     -ms-flex-pack: space-between;
   }
-  /* line 495, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 516, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob {
     -webkit-box-flex: 1 1 480px;
     -moz-box-flex: 1 1 480px;
@@ -4848,46 +4885,46 @@ a[aria-expanded="true"]::before {
     padding-bottom: 30px;
     padding-left: 20px;
   }
-  /* line 502, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 523, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .margin-t-lg-grid {
     margin-top: 0;
   }
-  /* line 508, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 529, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info li a {
     margin-right: 25px;
   }
-  /* line 514, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 535, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-task-list-item:first-child {
     margin-top: 15px;
   }
-  /* line 518, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 539, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info > h3 {
     font-size: 1.5em !important;
   }
-  /* line 522, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 543, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container {
     padding: 0;
   }
-  /* line 526, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 547, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .action-sub-margin {
     margin-top: 15px;
     margin-bottom: 0px;
   }
-  /* line 530, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 551, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .address-mobile {
     margin-top: 50px;
   }
 }
 
 @media only screen and (min-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  /* line 538, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 559, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .content {
     padding-top: 0;
     padding-right: 0;
     padding-bottom: 10px;
     padding-left: 0;
   }
-  /* line 543, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 564, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 32%;
     -moz-box-flex: 0 1 32%;
@@ -4898,44 +4935,44 @@ a[aria-expanded="true"]::before {
 }
 
 @media only screen and (max-device-width: 768px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  /* line 551, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 572, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-list-mob {
     height: 85vh;
   }
   /*start track  styles */
-  /* line 556, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 577, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 1.75em;
   }
-  /* line 560, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 581, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 3em;
   }
-  /* line 564, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 585, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 2.5em;
   }
-  /* line 568, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 589, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 12em;
   }
-  /* line 574, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 595, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 13px;
   }
-  /* line 578, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 599, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 200px;
   }
-  /* line 582, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 603, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container p, .flex-container-list p {
     font-size: 1.25em;
   }
-  /* line 586, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 607, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container-colwrap {
     padding-left: 10px;
   }
-  /* line 591, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 612, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob {
     -webkit-box-flex: 1 1 320px;
     -moz-box-flex: 1 1 320px;
@@ -4944,15 +4981,15 @@ a[aria-expanded="true"]::before {
     flex: 1 1 320px;
   }
   /*end track  styles */
-  /* line 597, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 618, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
-  /* line 601, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 622, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal.left .modal-dialog {
     width: 100%;
   }
-  /* line 605, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 626, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 46%;
     -moz-box-flex: 0 1 46%;
@@ -4962,14 +4999,14 @@ a[aria-expanded="true"]::before {
     margin-right: 2%;
     margin-left: 2%;
   }
-  /* line 610, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 631, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info > h3 {
     font-size: 1.6em !important;
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  /* line 619, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 640, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 46%;
     -moz-box-flex: 0 1 46%;
@@ -4977,7 +5014,7 @@ a[aria-expanded="true"]::before {
     -ms-flex: 0 1 46%;
     flex: 0 1 46%;
   }
-  /* line 624, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 645, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-container > * {
     -webkit-box-flex: 1 0 320px;
     -moz-box-flex: 1 0 320px;
@@ -4988,31 +5025,31 @@ a[aria-expanded="true"]::before {
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-  /* line 634, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 655, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal.left .modal-dialog {
     width: 100%;
   }
 }
 
 @media (max-width: 768px) and (min-width: 481px) {
-  /* line 640, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 661, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h1 {
     font-size: 2.5em;
   }
-  /* line 644, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 665, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2 {
     font-size: 1.5em;
   }
-  /* line 647, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 668, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2.mob-sec-hdr {
     margin-top: 6px;
     margin-left: 25px;
   }
-  /* line 652, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 673, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h3 {
     font-size: 1.25em;
   }
-  /* line 657, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 678, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-container > * {
     -webkit-box-flex: 1 0 320px;
     -moz-box-flex: 1 0 320px;
@@ -5020,44 +5057,44 @@ a[aria-expanded="true"]::before {
     -ms-flex: 1 0 320px;
     flex: 1 0 320px;
   }
-  /* line 661, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 682, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .pad-tc-mob {
     padding-top: 40px;
     padding-right: 30px;
   }
-  /* line 665, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 686, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .mob-btn-hdr {
     margin-top: 8px;
   }
-  /* line 669, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 690, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .header-mob {
     padding-top: 5px;
     padding-right: 10px;
     padding-bottom: 5px;
     padding-left: 5px;
   }
-  /* line 674, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 695, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .priority-blue {
     border-left: 8px solid #80d3f9;
   }
-  /* line 678, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 699, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .priority-red {
     border-left: 8px solid #f6a8a6;
   }
-  /* line 682, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 703, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .priority-yellow {
     border-left: 8px solid #fff498;
   }
-  /* line 686, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 707, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .priority-green {
     border-left: 8px solid #b1dcb3;
   }
-  /* line 690, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 711, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .priority-th {
     border-left: 8px solid transparent;
     /*hack for margin of 1st column of table header*/
   }
-  /* line 697, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 718, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel {
     margin-right: -5px;
     margin-bottom: 10px;
@@ -5065,19 +5102,19 @@ a[aria-expanded="true"]::before {
     -moz-box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
     box-shadow: 0px 1px 4px rgba(204, 197, 185, 0.5);
   }
-  /* line 701, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 722, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel > .panel-body, .tasks > .panel > .panel-body--kanban {
     padding-top: 5px;
     padding-right: 15px;
     padding-bottom: 10px;
     padding-left: 15px;
   }
-  /* line 704, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 725, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks > .panel > .panel-body > div, .tasks > .panel > .panel-body--kanban > div {
     padding-right: 0;
     padding-left: 0;
   }
-  /* line 711, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 732, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-kanban h4 {
     width: 120px;
     white-space: nowrap;
@@ -5085,80 +5122,80 @@ a[aria-expanded="true"]::before {
     text-overflow: ellipsis;
     line-height: 1.2em;
   }
-  /* line 719, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 740, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   #carousel-track {
     padding-bottom: 35px;
   }
   /*start track  styles */
-  /* line 723, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 744, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 1.75em;
   }
-  /* line 727, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 748, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 3em;
   }
-  /* line 731, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 752, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 5em;
   }
-  /* line 735, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 756, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 20em;
   }
-  /* line 739, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 760, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 0;
   }
-  /* line 743, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 764, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 25px;
   }
-  /* line 747, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 768, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 200px;
   }
-  /* line 751, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 772, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container p, .flex-container-list p {
     font-size: 1.5em;
   }
-  /* line 755, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 776, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container-colwrap {
     padding-left: 10px;
   }
   /*end track  styles */
-  /* line 761, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 782, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  /* line 771, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 792, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   #carousel-track {
     padding-bottom: 30px;
   }
-  /* line 775, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 796, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .carousel-indicators {
     bottom: 5px;
   }
-  /* line 779, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 800, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 165px;
   }
-  /* line 783, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 804, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 150px;
   }
-  /* line 787, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 808, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
-  /* line 791, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 812, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal-content--search {
     width: 100%;
   }
-  /* line 796, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 817, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 46%;
     -moz-box-flex: 0 1 46%;
@@ -5168,11 +5205,11 @@ a[aria-expanded="true"]::before {
     margin-right: 2%;
     margin-left: 2%;
   }
-  /* line 801, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 822, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info > h3 {
     font-size: 1.3em !important;
   }
-  /* line 805, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 826, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box li a {
     margin-top: 0;
     margin-right: 10px;
@@ -5182,75 +5219,75 @@ a[aria-expanded="true"]::before {
 }
 
 @media (max-width: 480px) {
-  /* line 812, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 833, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2 {
     font-size: 1.5em;
   }
-  /* line 815, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 836, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2.mob-sec-hdr {
     margin-top: 9px;
     margin-left: 20px;
   }
-  /* line 821, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 842, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   #toolSubmenus {
     padding-bottom: 40px;
   }
-  /* line 825, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 846, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-list-mob {
     height: 80vh;
   }
-  /* line 829, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 850, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     right: 80px;
     top: 4px;
   }
-  /* line 836, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 857, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate p, .truncate-track p, .truncate-address p {
     width: 300px;
   }
-  /* line 840, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 861, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .tasks p {
     line-height: 1.5em;
   }
-  /* line 844, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 865, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn-mob-task {
     right: 3%;
     top: 40%;
   }
-  /* line 849, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 870, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .mob-btn-hdr {
     margin-top: 7px;
   }
-  /* line 853, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 874, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .header-mob {
     padding-top: 5px;
     padding-right: 10px;
     padding-bottom: 5px;
     padding-left: 10px;
   }
-  /* line 857, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 878, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .font-xl, .headline-nos--icolg {
     font-size: 6em;
   }
-  /* line 861, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 882, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .dropdown-filter {
     flex: 1;
     margin-right: 10px;
   }
-  /* line 866, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 887, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-container > * {
     min-width: 320px;
   }
-  /* line 871, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 892, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .property-sec-hdr {
     padding-top: 5px;
     z-index: 9999;
   }
-  /* line 875, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 896, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .property-sec-hdr li a {
     font-size: 1.2em;
   }
-  /* line 880, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 901, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob {
     border-top: 1px solid #f4f4f4;
     padding-top: 15px;
@@ -5258,7 +5295,7 @@ a[aria-expanded="true"]::before {
     padding-bottom: 15px;
     padding-left: 10px;
   }
-  /* line 883, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 904, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob:first-child {
     border-top: 0px;
     padding-top: 0px;
@@ -5267,102 +5304,102 @@ a[aria-expanded="true"]::before {
     padding-left: 10px;
     margin: 0;
   }
-  /* line 890, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 911, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
-  /* line 894, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 915, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .input-group-btn {
     position: absolute;
     top: 5px;
     right: 0;
   }
-  /* line 901, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 922, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal.left .modal-dialog {
     width: 100%;
   }
-  /* line 905, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 926, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal-header .close {
     margin-top: -.35em;
   }
-  /* line 911, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 932, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container {
     padding-right: 8px;
     padding-left: 8px;
   }
-  /* line 915, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 936, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box {
     height: 135px;
   }
-  /* line 920, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 941, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box {
     padding: 10px;
   }
-  /* line 923, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 944, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info {
     bottom: 10px;
   }
-  /* line 925, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 946, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info h3 {
     font-size: 1.3em !important;
   }
-  /* line 932, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 953, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 145px;
   }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 400px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  /* line 938, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 959, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-list-mob {
     height: 80vh;
   }
-  /* line 942, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 963, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .carousel-indicators {
     bottom: 5px;
   }
-  /* line 946, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 967, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     right: 70px;
   }
   /*start track  styles */
-  /* line 950, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 971, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 1.25em;
   }
-  /* line 954, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 975, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 3em;
   }
-  /* line 958, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 979, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 2.25em;
   }
-  /* line 962, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 983, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 10em;
   }
-  /* line 966, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 987, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 0;
   }
-  /* line 970, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 991, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 10px;
   }
-  /* line 974, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 995, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 163px;
   }
-  /* line 978, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 999, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container p, .flex-container-list p {
     font-size: 1em;
   }
-  /* line 982, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1003, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container-colwrap {
     padding-left: 10px;
   }
-  /* line 986, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1007, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob {
     border-top: 1px solid #f4f4f4;
     padding-top: 15px;
@@ -5371,20 +5408,20 @@ a[aria-expanded="true"]::before {
     padding-left: 10px;
   }
   /*end track  styles */
-  /* line 993, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1014, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
-  /* line 997, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1018, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal-content--search {
     width: 100%;
   }
-  /* line 1001, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1022, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container {
     padding-right: 2px;
     padding-left: 2px;
   }
-  /* line 1005, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1026, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-grid-container > * {
     -webkit-box-flex: 0 1 45%;
     -moz-box-flex: 0 1 45%;
@@ -5394,154 +5431,154 @@ a[aria-expanded="true"]::before {
     margin-right: 1%;
     margin-left: 3%;
   }
-  /* line 1010, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1031, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box {
     height: 115px;
   }
-  /* line 1012, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1033, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-info {
     padding: 8px;
   }
-  /* line 1016, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1037, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn {
     font-size: 1.1em;
   }
-  /* line 1020, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1041, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 145px;
   }
-  /* line 1024, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1045, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box {
     padding: 0px;
   }
-  /* line 1027, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1048, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info {
     bottom: 0;
   }
-  /* line 1029, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1050, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info h3 {
     font-size: 1.2em !important;
   }
 }
 
 @media (max-width: 350px) {
-  /* line 1040, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1061, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     right: 50px;
   }
-  /* line 1044, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1065, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .header-mob {
     padding-right: 12px;
   }
-  /* line 1048, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1069, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .pad-tc-mob {
     padding-top: 40px;
     padding-right: 40px;
   }
-  /* line 1053, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1074, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2 {
     font-size: 1.5em;
   }
-  /* line 1056, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1077, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   body h2.mob-sec-hdr {
     margin-top: 6px;
     margin-left: 20px;
   }
-  /* line 1063, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1084, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .overlay nav {
     height: 100%;
   }
-  /* line 1068, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1089, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .overlay ul li {
     height: calc(100% / 30);
     min-height: 30px;
   }
-  /* line 1075, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1096, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-container > * {
     min-width: 260px;
   }
-  /* line 1079, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1100, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .kanban-list-mob {
     padding-bottom: 20px;
   }
-  /* line 1083, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1104, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   #carousel-track {
     padding-bottom: 30px;
   }
-  /* line 1087, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1108, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .carousel-indicators {
     bottom: 5px;
   }
   /*start track  styles */
-  /* line 1091, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1112, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--hdr {
     font-size: 1em;
   }
-  /* line 1095, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1116, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--txtlg {
     font-size: 3em;
   }
-  /* line 1099, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1120, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .headline-nos--mob {
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
   }
-  /* line 1103, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1124, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txtmd {
     font-size: 2em;
   }
-  /* line 1107, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1128, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--txt2xl {
     font-size: 7.5em;
   }
-  /* line 1111, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1132, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 0;
   }
-  /* line 1115, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1136, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .key-figs--rtborder {
     padding-right: 13px;
   }
-  /* line 1119, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1140, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-track {
     width: 134px;
   }
-  /* line 1123, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1144, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container p, .flex-container-list p {
     font-size: 1em;
   }
-  /* line 1127, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1148, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .flex-widget-container-colwrap {
     padding-left: 10px;
   }
   /*end track  styles */
-  /* line 1132, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1153, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .search-contentmob {
     margin-top: 60px;
   }
-  /* line 1136, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1157, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .modal-content--search {
     width: 100%;
   }
-  /* line 1140, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1161, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .btn {
     font-size: .9em;
   }
-  /* line 1146, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1167, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box {
     padding: 5px;
   }
-  /* line 1149, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1170, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info {
     bottom: 10px;
   }
-  /* line 1151, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1172, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .grid-box .grid-info-box .grid-info h3 {
     font-size: 1.1em !important;
   }
-  /* line 1158, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
+  /* line 1179, D:/Realtair/Realtair.UI/scss/layouts/_mediaqueries.scss */
   .truncate-address {
     width: 125px;
   }
