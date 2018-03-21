@@ -9,11 +9,11 @@
 <div class="form-group">
     <label class="col-sm-3 control-label">@Model.Label</label>
     <div class="col-sm-3" id="datepicker">
-            <input autofocus type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
-            @if (Model.HasError)
+        <input type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
+        @if (Model.HasError)
             {
-                <span class="help-block">@Model.ErrorMessage</span>
-            }
+            <span class="help-block">@Model.ErrorMessage</span>
+        }
     </div>
 </div>
 
@@ -25,19 +25,19 @@
         $(function () {
             var cal = $('#@Model.UniqueName').datepicker({
                 format: 'yyyy-mm-dd',
-                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
+                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
                 autoclose: true,
-                todayHighlight: true, 
-                clearBtn: true
+                todayHighlight: true,
+                clearBtn: true,
             });
 
             @*var cal = $('#@Model.UniqueName').datepicker({
                 format: 'yyyy-mm-dd',
                 @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
                 autoclose: true,
-                clearBtn: true, 
+                clearBtn: true,
                 orientation: 'auto',
-                todayHighlight: true, 
+                todayHighlight: true,
                 container: '#datepicker'
             });*@
 
@@ -48,7 +48,7 @@
             });;
 
             cal.on('blur', function () {
-                if (isNaN(Date.parse($this.val()))) {
+                if (isNaN(Date.parse(cal.val()))) {
                     cal.val('');
                 }
             });
