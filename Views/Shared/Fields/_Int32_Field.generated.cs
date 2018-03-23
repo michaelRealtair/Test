@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -54,7 +55,7 @@ WriteLiteral(" class=\"form-group has-error\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -71,18 +72,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 294), Tuple.Create("\"", 318)
+WriteAttribute("name", Tuple.Create(" name=\"", 286), Tuple.Create("\"", 310)
             
             #line 11 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 301), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 293), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 301), false)
+, 293), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -91,14 +92,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"1\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 363), Tuple.Create("\"", 383)
+WriteAttribute("value", Tuple.Create(" value=\"", 355), Tuple.Create("\"", 375)
             
             #line 11 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 371), Tuple.Create<System.Object, System.Int32>(Model.Value
+                          , Tuple.Create(Tuple.Create("", 363), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 371), false)
+, 363), false)
 );
 
 WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");
@@ -135,7 +136,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n            <label");
 
@@ -152,18 +153,18 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n            <input");
+WriteLiteral(">\r\n            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 815), Tuple.Create("\"", 839)
+WriteAttribute("name", Tuple.Create(" name=\"", 799), Tuple.Create("\"", 823)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 822), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 806), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 822), false)
+, 806), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -172,14 +173,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"1\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 884), Tuple.Create("\"", 904)
+WriteAttribute("value", Tuple.Create(" value=\"", 868), Tuple.Create("\"", 888)
             
             #line 24 "..\..\Views\Shared\Fields\_Int32_Field.cshtml"
-                , Tuple.Create(Tuple.Create("", 892), Tuple.Create<System.Object, System.Int32>(Model.Value
+                          , Tuple.Create(Tuple.Create("", 876), Tuple.Create<System.Object, System.Int32>(Model.Value
             
             #line default
             #line hidden
-, 892), false)
+, 876), false)
 );
 
 WriteLiteral(" onkeypress=\"return event.charCode >= 48 && event.charCode <= 57\"");

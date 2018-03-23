@@ -1,0 +1,123 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+@{
+    Realtair.Framework.Core.Entities.Address Address = null;
+    if (Model.Value != null)
+    {
+        Address = (Realtair.Framework.Core.Entities.Address)Model?.Value;
+    }
+}
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <input id="@(Model.UniqueName)_line_1" placeholder="Address" type="text" value="@(Address?.AddressLine1)" class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <input id="@(Model.UniqueName)_line_2" type="text" value="@(Address?.AddressLine2)" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <input id="@(Model.UniqueName)_suburb" placeholder="Suburb" value="@(Address?.Suburb)" type="text" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <input id="@(Model.UniqueName)_state" placeholder="State" value="@(Address?.State)" type="text" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <input id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)" type="text" class="form-control">
+            </div>
+        </div>
+        @if (Model.HasError)
+        {
+            <span class="help-block">@Model.ErrorMessage</span>
+        }
+    </div>
+</div>
+
+<input id="@(Model.UniqueName)_streetName" type="hidden" value="@(Address?.StreetName)">
+<input id="@(Model.UniqueName)_streetType" type="hidden" value="@(Address?.StreetType)">
+<input id="@(Model.UniqueName)_streetNumber" type="hidden" value="@(Address?.StreetNumber)">
+<input name="@Model.UniqueName" id="@Model.UniqueName" type="hidden" value="@if (Address != null) { @Address.Serialize() }"/>
+
+
+<script>
+(function () {
+    var serialised = document.getElementById('@Model.UniqueName')
+    var line_1 = document.getElementById('@(Model.UniqueName)_line_1');
+    var line_2 = document.getElementById('@(Model.UniqueName)_line_2');
+    var suburb = document.getElementById('@(Model.UniqueName)_suburb');
+    var state = document.getElementById('@(Model.UniqueName)_state');
+    var postcode = document.getElementById('@(Model.UniqueName)_postcode');
+    var streetNumber = document.getElementById('@(Model.UniqueName)_streetNumber');
+    var streetName = document.getElementById('@(Model.UniqueName)_streetName');
+    var streetType = document.getElementById('@(Model.UniqueName)_streetType');
+
+    var widget, initAF = function () {
+    widget = new AddressFinder.Widget(
+        document.getElementById('@(Model.UniqueName)_line_1'),
+        'YVBDJGHTNMLPEW46K73Q',
+        'AU',
+    {
+    });
+
+    widget.on('result:select', function (fullAddress, metaData) {
+        line_1.value = metaData.address_line_1;
+        line_2.value = metaData.address_line_2;
+        suburb.value = metaData.locality_name;
+        state.value = metaData.state_territory;
+        postcode.value = metaData.postcode;
+        streetNumber.value = getStreetNumber(metaData);
+        streetName.value = metaData.street_name;
+        streetType.value = metaData.street_type;
+        generateJson();
+        });
+    };
+
+    function getStreetNumber(m) {
+        return (m.street_number_1 && !m.street_number_2) && '${m.street_number_1}' ||
+            ((m.street_number_1 && m.street_number_2) && '${m.street_number_1}-${m.street_number_2}') ||
+            (m.lot_identifier);
+    }
+
+    function downloadAF(f) {
+        var script = document.createElement('script');
+        script.src = 'https://api.addressfinder.io/assets/v3/widget.js';
+        script.async = true;
+        script.onload = f;
+        document.body.appendChild(script);
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        downloadAF(initAF);
+    });
+
+    $(line_1).change(generateJson);
+    $(line_2).change(generateJson);
+    $(suburb).change(generateJson);
+    $(state).change(generateJson);
+    $(postcode).change(generateJson);
+    $(streetNumber).change(generateJson);
+    $(streetName).change(generateJson);
+    $(streetName).change(generateJson);
+
+    function generateJson() {
+        serialised.value = JSON.stringify({
+            AddressLine1: line_1.value,
+            AddressLine2: line_2.value,
+            Suburb: suburb.value,
+            Postcode: postcode.value,
+            State: state.value,
+            StreetNumber: streetNumber.value,
+            StreetName: streetName.value,
+            StreetType: streetType.value
+        });
+    }
+})();
+</script>

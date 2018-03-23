@@ -1,53 +1,83 @@
-﻿@model Realtair.Framework.Core.Actions.Field
+﻿@using Realtair.Framework.Core.Entities 
+@model Realtair.Framework.Core.Actions.Field
 @{
-    Realtair.Framework.Core.Entities.Address Address = null;
+    Address Address = null;
     if (Model.Value != null)
     {
-        Address = (Realtair.Framework.Core.Entities.Address)Model?.Value;
+        Address = (Address)Model?.Value;
     }
 }
-
-<div class="form-group">
-    <div class="col-md-3 col-sm-4">
-        <label class="control-label">@Model.Label</label>
+@if (Model.HasError)
+{
+<div class="form-address-mob">
+    <div class="form-group has-error">
+        <label class="col-sm-3 control-label">@Model.Label</label>
+        <div class="col-sm-9">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_line_1" placeholder="Address Line 1" value="@(Address?.AddressLine1)">
+            <small>@Model.FieldAttribute.Help</small>
+        </div>
     </div>
-
-    <div class="col-md-9 col-sm-8">
-        <div class="row form-group">
-            <div class="col-sm-12">
-                <input id="@(Model.UniqueName)_line_1" placeholder="Address" type="text" value="@(Address?.AddressLine1)" class="form-control">
-            </div>
+    <div class="form-group">
+        <label class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label"></label>
+        <div class="col-sm-9">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_line_2" placeholder="Address Line 2" value="@(Address?.AddressLine2)">
+            <small></small>
         </div>
-        <div class="row form-group">
-            <div class="col-sm-12">
-                <input id="@(Model.UniqueName)_line_2" type="text" value="@(Address?.AddressLine2)" class="form-control">
-            </div>
+    </div>
+    <div class="form-group has-error">
+        <label class="col-sm-3 control-label"></label>
+        <div class="col-sm-4">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_suburb" placeholder="Suburb" value="@(Address?.Suburb)">
+            <span class="help-block has-error">@Model.ErrorMessage</span>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <input id="@(Model.UniqueName)_suburb" placeholder="Suburb" value="@(Address?.Suburb)" type="text" class="form-control">
-            </div>
-            <div class="col-sm-4">
-                <input id="@(Model.UniqueName)_state" placeholder="State" value="@(Address?.State)" type="text" class="form-control">
-            </div>
-            <div class="col-sm-4">
-                <input id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)" type="text" class="form-control">
-            </div>
+        <div class="col-xs-6 col-sm-3">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_state" placeholder="State" value="@(Address?.State)">
         </div>
-        @if (Model.HasError)
-        {
-            <span class="help-block">@Model.ErrorMessage</span>
-        }
+        <div class="col-xs-6 col-sm-2">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)">
+        </div>
     </div>
 </div>
+}
+else
+{<div class="form-address-mob">
+    <div class="form-group">
+        <label class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label">@Model.Label</label>
+        <div class="col-sm-9">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_line_1" placeholder="Address Line 1" value="@(Address?.AddressLine1)">
+            <small>@Model.FieldAttribute.Help</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"></label>
+        <div class="col-sm-9">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_line_2" placeholder="Address Line 2" value="@(Address?.AddressLine2)">
+            <small></small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"></label>
+        <div class="col-sm-4">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_suburb" placeholder="Suburb" value="@(Address?.Suburb)">
+        </div>
+        <div class="col-xs-6 col-sm-3 address-mobile">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_state" placeholder="State" value="@(Address?.State)">
+        </div>
+        <div class="col-xs-6 col-sm-2 address-mobile">
+            <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)">
+        </div>
+    </div>
+    </div>
+    }
 
-<input id="@(Model.UniqueName)_streetName" type="hidden" value="@(Address?.StreetName)">
-<input id="@(Model.UniqueName)_streetType" type="hidden" value="@(Address?.StreetType)">
-<input id="@(Model.UniqueName)_streetNumber" type="hidden" value="@(Address?.StreetNumber)">
-<input name="@Model.UniqueName" id="@Model.UniqueName" type="hidden" value="@if (Address != null) { @Address.Serialize() }"/>
+
+    <input autofocus id="@(Model.UniqueName)_streetName" type="hidden" value="@(Address?.StreetName)">
+    <input autofocus id="@(Model.UniqueName)_streetType" type="hidden" value="@(Address?.StreetType)">
+    <input autofocus id="@(Model.UniqueName)_streetNumber" type="hidden" value="@(Address?.StreetNumber)">
+    <input autofocus name="@Model.UniqueName" id="@Model.UniqueName" type="hidden" value="@if (Address != null) { @Address.Serialize() }" />
 
 
-<script>
+    <script>
 (function () {
     var serialised = document.getElementById('@Model.UniqueName')
     var line_1 = document.getElementById('@(Model.UniqueName)_line_1');
@@ -120,4 +150,4 @@
         });
     }
 })();
-</script>
+    </script>

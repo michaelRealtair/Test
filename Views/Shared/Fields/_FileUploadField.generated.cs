@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -35,6 +36,7 @@ namespace ASP
     #line hidden
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_FileUploadField.cshtml")]
@@ -49,8 +51,8 @@ namespace ASP
             #line 3 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
   
     var attribute = Model.FieldAttribute as FileUploadFieldAttribute;
-    var acceptValue = string.IsNullOrEmpty(attribute.Filter) ? "text/csv,image/jpeg,image/png,application/pdf"  : attribute.Filter.Trim();
- 
+    var acceptValue = string.IsNullOrEmpty(attribute.Filter) ? "text/csv,image/jpeg,image/png,application/pdf" : attribute.Filter.Trim();
+
             
             #line default
             #line hidden
@@ -58,133 +60,119 @@ WriteLiteral("\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n    <div");
+WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" for=\"inputEmail3\"");
 
-WriteLiteral(">\r\n        <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-                                Write(Model.Label);
+            #line 8 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+                                                       Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral("</label>\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-6\"");
 
-WriteLiteral(">\r\n        <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 509), Tuple.Create("\"", 532)
-, Tuple.Create(Tuple.Create("", 515), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/exif.js")
-, 515), false)
-);
-
-WriteLiteral("></script>\r\n        <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 560), Tuple.Create("\"", 589)
-, Tuple.Create(Tuple.Create("", 566), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/fileupload.js")
-, 566), false)
-);
-
-WriteLiteral("></script>\r\n        <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 617), Tuple.Create("\"", 650)
-, Tuple.Create(Tuple.Create("", 623), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/load-image.min.js")
-, 623), false)
-);
-
-WriteLiteral("></script>\r\n        <div");
-
-WriteLiteral(" class=\"file-attachment\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"row\"");
-
-WriteLiteral(">\r\n                <div");
-
-WriteLiteral(" class=\"col-md-4\"");
-
-WriteLiteral(">\r\n                    <label");
-
-WriteLiteral(" class=\"attachment-upload pull-left btn btn-info btn-border\"");
-
-WriteLiteral(">\r\n                        <input");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 892), Tuple.Create("\"", 916)
-            
-            #line 20 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 899), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 899), false)
-);
-
-WriteAttribute("id", Tuple.Create(" id=\"", 917), Tuple.Create("\"", 939)
-            
-            #line 20 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 922), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 922), false)
-);
-
-WriteLiteral(" class=\"hidden-upload\"");
-
-WriteLiteral(" accept=\"text/csv,image/jpeg,image/png,application/pdf\"");
-
-WriteLiteral(" multiple=\"\"");
-
-WriteLiteral(" capture=\"camera\"");
+WriteLiteral(">\r\n        <input autofocus");
 
 WriteLiteral(" type=\"file\"");
 
-WriteLiteral(">\r\n                        <a");
+WriteAttribute("name", Tuple.Create(" name=\"", 491), Tuple.Create("\"", 519)
+            
+            #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 498), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 498), false)
+, Tuple.Create(Tuple.Create("", 517), Tuple.Create("[]", 517), true)
+);
 
-WriteLiteral(" class=\"button\"");
+WriteAttribute("id", Tuple.Create(" id=\"", 520), Tuple.Create("\"", 542)
+            
+            #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 525), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 525), false)
+);
 
-WriteLiteral(">Attach Files or Photos <i");
+WriteLiteral(" class=\"inputfile\"");
 
-WriteLiteral(" class=\"icon icon-PaperClip\"");
+WriteLiteral(" data-multiple-caption=\"{count} files selected\"");
 
-WriteLiteral("></i></a>\r\n                    </label>\r\n                    <div");
+WriteLiteral(" multiple />\r\n        <label");
 
-WriteLiteral(" class=\"clearfix\"");
+WriteAttribute("for", Tuple.Create(" for=\"", 636), Tuple.Create("\"", 659)
+            
+            #line 11 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+, Tuple.Create(Tuple.Create("", 642), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 642), false)
+);
 
-WriteLiteral("></div>\r\n                </div>\r\n                <div");
+WriteLiteral(">\r\n            <span></span> \r\n            <strong> \r\n                <i");
 
-WriteLiteral(" class=\"col-md-9\"");
+WriteLiteral(" class=\"fa fa-upload\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral("></i>Attach Files or Photos&hellip;\r\n            </strong>\r\n        </label>\r\n   " +
+" </div>\r\n</div>\r\n\r\n");
 
-WriteLiteral(" class=\"file-attachment-thumbnails\"");
+            
+            #line 20 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+ using (Html.Delayed(null, "FileUploadField"))
+{
 
-WriteLiteral(@"></div>
-                </div>
-            </div>                       
-        </div>
-    </div>
-</div>
-<script>
-    $('.attachment-upload>input[type=""file""]').change(function () {
-        setInterval(function () {
-            $('.preview').css({
-                'width': '100',
-                'height': '100'
+            
+            #line default
+            #line hidden
+WriteLiteral(@"    <script>
+        'use strict';
+
+        (function( document, window, index )
+        {
+            var inputs = document.querySelectorAll( '.inputfile' );
+            Array.prototype.forEach.call( inputs, function( input )
+            {
+                var label = input.nextElementSibling, labelVal = label.innerHTML;
+
+                input.addEventListener( 'change', function( e )
+                {
+                    var fileName = '';
+                    if( this.files && this.files.length > 1 )
+                        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+                    else
+                        fileName = e.target.value.split( '\\' ).pop();
+
+                    if( fileName )
+                        label.querySelector( 'span' ).innerHTML = fileName;
+                    else
+                        label.innerHTML = labelVal;
+                });
+
+                // Firefox bug fix
+                input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+                input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
             });
-        }, 100);
-    });
-</script>");
+        })(document, window, 0);
+    </script>
+");
 
+            
+            #line 52 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
+}
+            
+            #line default
+            #line hidden
         }
     }
 }

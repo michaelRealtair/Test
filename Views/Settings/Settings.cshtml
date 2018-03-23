@@ -45,8 +45,8 @@
 
                                 @foreach (var field in setting.Fields)
                                 {
-                                    var fieldWithReturnType = $"Fields/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
-                                    var fieldWithoutReturnType = $"Fields/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithReturnType = $"Fields/Settings/_{field.PropertyType.Name}_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
+                                    var fieldWithoutReturnType = $"Fields/Settings/_{field.FieldAttribute.GetType().Name.Substring(0, field.FieldAttribute.GetType().Name.Length - "Attribute".Length)}";
 
                                     <div class="col-md-12">
                                         @if (Html.ViewExists(fieldWithReturnType))
@@ -63,7 +63,7 @@
                                         }
                                     </div>
                                 }
-                                <input type="submit" value="@setting.Description(Html.LoggedInUser())" class="btn btn-primary pull-right">
+                                <input autofocus type="submit" value="@setting.Description(Html.LoggedInUser())" class="btn btn-primary pull-right">
                             </form>
                         </div>
                     }

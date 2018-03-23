@@ -4,8 +4,11 @@
     var noteWidget = Model.Value as Realtair.Framework.Core.Entities.Display.NoteWidget;
 }
 
-<div class="form-group">
-    <div class="col-md-12 col-sm-12">
-        <label>@($"NOTE: {noteWidget.Note}")</label>
+@if (noteWidget != null)
+{
+    <div class="form-group">
+        <div class="col-md-12 col-sm-12">
+            <label>@($"NOTE: {noteWidget.Note}")</label>
+        </div>
     </div>
-</div>
+}

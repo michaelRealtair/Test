@@ -7,26 +7,13 @@
 }
 
 <div class="form-group">
-    <div class="col-md-3 col-sm-4">
-        <label class="control-label">@Model.Label</label>
-    </div>
-
-    <div class="col-md-9 col-sm-8">
-        <div class="input-group">
-            <input id="@Model.UniqueName"
-                   name="@Model.UniqueName"
-                   type="text"
-                   class="form-control datepicker input-small"
-                   value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
-                   placeholder="@dateFormat">
-            <label class="input-group-addon btn" for="@Model.UniqueName">
-                <span class="mdi mdi-calendar-blank"></span>
-            </label>
-            @if (Model.HasError)
+    <label class="col-sm-3 control-label">@Model.Label</label>
+    <div class="col-sm-3" id="datepicker">
+        <input type="text" class="form-control lite mydatepicker" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="Click to select date" value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }">
+        @if (Model.HasError)
             {
-                <span class="help-block">@Model.ErrorMessage</span>
-            }
-        </div>
+            <span class="help-block">@Model.ErrorMessage</span>
+        }
     </div>
 </div>
 
@@ -38,11 +25,21 @@
         $(function () {
             var cal = $('#@Model.UniqueName').datepicker({
                 format: 'yyyy-mm-dd',
-                startDate: new Date(2000, 0, 1),
-                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "")
+                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
                 autoclose: true,
-                clearBtn: true
+                todayHighlight: true,
+                clearBtn: true,
             });
+
+            @*var cal = $('#@Model.UniqueName').datepicker({
+                format: 'yyyy-mm-dd',
+                @Html.Raw(attribute != null && !attribute.AllowPastDates ? "startDate: '+0d'," : "startDate: new Date(2000, 0, 1),")
+                autoclose: true,
+                clearBtn: true,
+                orientation: 'auto',
+                todayHighlight: true,
+                container: '#datepicker'
+            });*@
 
             cal.keydown(function (event) {
                 if (event.which == 13) { //enter key
@@ -51,7 +48,7 @@
             });;
 
             cal.on('blur', function () {
-                if (isNaN(Date.parse($this.val()))) {
+                if (isNaN(Date.parse(cal.val()))) {
                     cal.val('');
                 }
             });
