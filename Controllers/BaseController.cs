@@ -33,7 +33,8 @@ namespace Realtair.Framework.Core.Web.Controllers
             get
             {
                 if (Auth.IsLoggedIn && (user == null || user.RoleType == BaseRoleType.LoggedOut))
-                    user = DbContext.Set<User>().Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
+                    user = DbContext.Set<User>()
+                        .Include(u => u.Person).FirstOrDefault(u => u.Id == Auth.LoggedInUserId);
                 else if (user == null)
                     user = DbContext.Set<User>().Include(u => u.Person).First(u => u.RoleType == BaseRoleType.LoggedOut);
 
