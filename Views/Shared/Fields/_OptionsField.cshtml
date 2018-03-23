@@ -7,28 +7,31 @@
 }
 
 <div class="form-group">
-    <div class="col-md-3 col-sm-4">
-        <label class="control-label">@Model.Label</label>
-    </div>
+    @if (Model.Label.Count() > 40)
+    {    <label class="col-sm-3 control-label">@Model.Label</label>
 
-    <div class="col-md-9 col-sm-8">
+    }
+    else
+    {
+        <label class="col-sm-3 control-label">@Model.Label</label>
+    }
+    <div class="col-sm-3">
         @if (options.Count() == 0)
         {
-            <select id="@hopefullyUniqueId" class="form-control" disabled>
+            <select id="@hopefullyUniqueId" class="form-control lite" disabled>
                 <option>None to display</option>
             </select>
         }
         else
         {
-            <select id="@hopefullyUniqueId" class="form-control" name="@Model.PropertyInfo.Name">
+            <select id="@hopefullyUniqueId" class="form-control lite" name="@Model.PropertyInfo.Name">
                 @foreach (var option in options)
                 {
-                    <option @(option.Id.ToString() == Model.FormValue.ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
+                    <option @(option.Id.ToString() == Model.FormValue?.ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
                 }
             </select>
         }
 
-        <link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
         <script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
         <script>
             $(window).resize(function () {

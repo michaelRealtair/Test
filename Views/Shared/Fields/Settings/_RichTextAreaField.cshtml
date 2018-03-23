@@ -1,0 +1,40 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+@if (Model.HasError)
+{
+    <div class="form-group has-error">
+        <div class="col-md-3 col-sm-4">
+            <label class="control-label">@Model.Label</label>
+        </div>
+
+        <div class="col-md-9 col-sm-8">
+            <textarea name="@Model.UniqueName" placeholder="..." class="form-control">@Model.Value</textarea>
+            <span class="help-block">@Model.ErrorMessage</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="form-group">
+        <div class="col-md-3 col-sm-4">
+            <label class="control-label">@Model.Label</label>
+        </div>
+
+        <div class="col-md-9 col-sm-8">
+            <textarea class="form-control input-lg rich-text-area" cols="20" id="@Model.UniqueName" name="@Model.UniqueName" placeholder="@Model.Label" rows="20" style="resize: none; width: 400px; display: none;">
+                @Model.Value
+            </textarea>
+        </div>
+    </div>
+}
+
+<link rel="stylesheet" href="https://static.realtair.com/summernote/summernote.css" />
+<script type="text/javascript" src="https://static.realtair.com/summernote/summernote.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.rich-text-area').summernote({
+            height: 480,
+            focus: true
+        });
+    });
+</script>

@@ -1,0 +1,30 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        <div class="bootstrap-timepicker">
+            <input name="@Model.UniqueName" 
+                   type="text" 
+                   class="form-control mytimepicker input-small"
+                   value="@(((TimeSpan)Model.Value))">
+            <i class="icon-time"></i>
+        </div>
+    </div>
+</div>
+
+@using (Html.Delayed(null, "time-span-field"))
+{
+    <link rel="stylesheet" href="https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/css/bootstrap-timepicker.min.css" type="text/css" />
+    <script src="https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('.mytimepicker').timepicker({
+                template: false
+            });
+        })
+    </script>
+}

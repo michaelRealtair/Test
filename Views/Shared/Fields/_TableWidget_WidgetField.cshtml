@@ -1,44 +1,45 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 
 @{
-    var Table = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
+    var tableWidget = Model.Value as Realtair.Framework.Core.Entities.Display.TableWidget;
 }
 
-@if (Table != null)
+@if (tableWidget != null)
 {
-    <table class="table color-bordered-table muted-bordered-table" style="width: 100%">
+    <table class="table color-bordered-table muted-bordered-table margin-b-md" style="width: 100%">
         <thead>
-            <tr>
-                @foreach (var h in Table.Header)
+            <tr >
+                @foreach (var h in tableWidget.Header)
                 {
-                    <th class="col-md-@h.ColumnWidth">@h.Name</th>
+                    <th class="col-md-@h.ColumnWidth table-header-pad"><h3 class="no-margin">@h.Name</h3></th>
                 }
             </tr>
         </thead>
         <tbody>
-            @foreach (var row in Table.Contents)
+            @foreach (var row in tableWidget.Contents)
             {
-                <tr>
-                    @foreach (var item in row)
-                    {
-                        if (item is Attachment)
+                <tr >
+                        @foreach (var item in row)
                         {
-                            <td><a href="@Html.Raw((item as Attachment).Url(0))" target="_blank">@((item as Attachment).Url(0))</a></td>
+                            if (item is Attachment)
+                            {
+                                <td class="td-nopad-lft"><a href="@Html.Raw((item as Attachment).Url(0))" target="_blank">@((item as Attachment).Url(0))</a></td>
+                            }
+                            else
+                            {
+                                <td class="td-nopad-lft"><h4 class="no-margin l-h-xl">@item</h4></td>
+                            }
                         }
-                        else
-                        {
-                            <td>@item</td>
-                        }
-                    }
-                </tr>
+                
+            </tr>
             }
 
-            @if (Table.Totals != null)
+            @if (tableWidget.Totals != null)
             {
                 <tr style="background: #222; color: #fff;">
-                    @foreach (var item in Table.Totals)
+                    @foreach (var item in tableWidget.Totals)
                     {
-                        <td>@item</td>
+                        <td><h4 class="no-margin l-h-md"><b>@item</b></h4></td>
                     }
                 </tr>
             }

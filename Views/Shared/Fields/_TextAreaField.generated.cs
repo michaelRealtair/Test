@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -52,48 +53,46 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group has-error\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 7 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-                                    Write(Model.Label);
+            #line 6 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+                                         Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 297), Tuple.Create("\"", 321)
+WriteAttribute("name", Tuple.Create(" name=\"", 234), Tuple.Create("\"", 258)
             
-            #line 11 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-, Tuple.Create(Tuple.Create("", 304), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 8 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+, Tuple.Create(Tuple.Create("", 241), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 304), false)
+, 241), false)
 );
 
-WriteLiteral(" placeholder=\"...\"");
+WriteLiteral(" class=\"form-control lite\"");
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" rows=\"3\"");
+
+WriteLiteral(" placeholder=\"...\"");
 
 WriteLiteral(">");
 
             
-            #line 11 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-                                                                                 Write(Model.Value);
+            #line 8 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+                                                                                               Write(Model.Value);
 
             
             #line default
@@ -105,7 +104,7 @@ WriteLiteral(" class=\"help-block\"");
 WriteLiteral(">");
 
             
-            #line 12 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 9 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
                                 Write(Model.ErrorMessage);
 
             
@@ -114,7 +113,7 @@ WriteLiteral(">");
 WriteLiteral("</span>\r\n        </div>\r\n    </div>\r\n");
 
             
-            #line 15 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 12 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
 }
 else
 {
@@ -126,56 +125,63 @@ WriteLiteral("    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-3 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 20 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-                                    Write(Model.Label);
+            #line 16 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+                                         Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
+WriteLiteral("</label>\r\n        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-9\"");
 
 WriteLiteral(">\r\n            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 706), Tuple.Create("\"", 730)
+WriteAttribute("name", Tuple.Create(" name=\"", 594), Tuple.Create("\"", 618)
             
-            #line 24 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-, Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 18 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+, Tuple.Create(Tuple.Create("", 601), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 713), false)
+, 601), false)
 );
 
-WriteLiteral(" placeholder=\"...\"");
+WriteLiteral(" class=\"form-control lite\"");
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" rows=\"3\"");
+
+WriteLiteral(" placeholder=\"...\"");
 
 WriteLiteral(">");
 
             
-            #line 24 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
-                                                                                 Write(Model.Value);
+            #line 18 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+                                                                                               Write(Model.Value);
 
             
             #line default
             #line hidden
-WriteLiteral("</textarea>\r\n        </div>\r\n    </div>\r\n");
+WriteLiteral("</textarea>\r\n            <small>");
 
             
-            #line 27 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+            #line 19 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
+              Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 22 "..\..\Views\Shared\Fields\_TextAreaField.cshtml"
 }
 
             

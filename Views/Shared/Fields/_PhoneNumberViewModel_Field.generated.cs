@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -58,7 +59,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-3\"");
 
 WriteLiteral(">\r\n        <label");
 
@@ -75,30 +76,30 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n        <input");
+WriteLiteral(">\r\n        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 439), Tuple.Create("\"", 461)
+WriteAttribute("id", Tuple.Create(" id=\"", 431), Tuple.Create("\"", 453)
             
             #line 17 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 444), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 444), false)
+, 436), false)
 );
 
 WriteLiteral(" type=\"tel\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 473), Tuple.Create("\"", 494)
+WriteAttribute("value", Tuple.Create(" value=\"", 465), Tuple.Create("\"", 486)
             
             #line 17 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 481), Tuple.Create<System.Object, System.Int32>(phone.Number
+, Tuple.Create(Tuple.Create("", 473), Tuple.Create<System.Object, System.Int32>(phone.Number
             
             #line default
             #line hidden
-, 481), false)
+, 473), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -141,43 +142,43 @@ WriteLiteral("</span>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("    </div>\r\n</div>\r\n\r\n<input");
+WriteLiteral("    </div>\r\n</div>\r\n\r\n<input autofocus");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 678), Tuple.Create("\"", 702)
+WriteAttribute("name", Tuple.Create(" name=\"", 680), Tuple.Create("\"", 704)
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 685), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 687), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 685), false)
+, 687), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 703), Tuple.Create("\"", 753)
-, Tuple.Create(Tuple.Create("", 711), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create(" value=\"", 705), Tuple.Create("\"", 755)
+, Tuple.Create(Tuple.Create("", 713), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-                                                      if (phone != null) { 
+                                                                if (phone != null) { 
             
             #line default
             #line hidden
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-                                    WriteTo(__razor_attribute_value_writer, phone.Serialize());
+                                              WriteTo(__razor_attribute_value_writer, phone.Serialize());
 
             
             #line default
             #line hidden
             
             #line 25 "..\..\Views\Shared\Fields\_PhoneNumberViewModel_Field.cshtml"
-                                                                                              }
+                                                                                                        }
             
             #line default
             #line hidden
-}), 711), false)
+}), 713), false)
 );
 
 WriteLiteral(" />\r\n\r\n<link");

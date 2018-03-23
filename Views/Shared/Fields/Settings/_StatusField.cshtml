@@ -1,0 +1,48 @@
+﻿@using Realtair.Framework.Core.Data
+@model Realtair.Framework.Core.Actions.Field
+
+@{
+    var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.StatusFieldAttribute;
+    var options = attribute.Options(Model.Action, Html.LoggedInUser());
+    var hopefullyUniqueId = Math.Abs(Model.GetHashCode());
+    var taskRecord = Model.Value as Realtair.Framework.Enquiries.Entities.TaskRecord;    
+}
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        @if (options.Count() == 0)
+        {
+            <select id="@hopefullyUniqueId" class="form-control" disabled>
+                <option>None to display</option>
+            </select>
+        }
+        else
+        {
+            <select id="@hopefullyUniqueId" class="form-control" name="@Model.PropertyInfo.Name">
+                @foreach (var option in options)
+                {                    
+                    <option @(option.Id.ToString() == taskRecord.GetStatusId(SingletonDbContext.Db).ToString() ? "selected" : "") value="@option.Id.ToString()">@option.Description</option>
+                }
+            </select>
+        }
+
+        <link rel="stylesheet" type="text/css" href="https://static.realtair.com/plugins/select2/css/select2.min.css">
+        <script src="https://static.realtair.com/plugins/select2/js/select2.min.js"></script>
+        <script>
+            $(window).resize(function () {
+                $('.select2').css('width', "100%");
+            });
+
+            $('#@(hopefullyUniqueId)').select2();
+
+            $('#@hopefullyUniqueId').change(function () {
+                $.post(window.location.origin+"/task-record/@(taskRecord.Id)/run/update-task-status", { "status": $("#@hopefullyUniqueId").val() }, function (data) { });
+            });
+        </script>
+    </div>
+</div>
+

@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -48,25 +49,42 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<div");
-
-WriteLiteral(" class=\"form-group\"");
-
-WriteLiteral(">\r\n    <div");
-
-WriteLiteral(" class=\"col-md-12 col-sm-12\"");
-
-WriteLiteral(">\r\n        <label>");
+WriteLiteral("\r\n\r\n");
 
             
-            #line 9 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
-           Write($"NOTE: {noteWidget.Note}");
+            #line 7 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+ if (noteWidget != null)
+{
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n    </div>\r\n</div>\r\n");
+WriteLiteral("    <div");
 
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"col-md-12 col-sm-12\"");
+
+WriteLiteral(">\r\n            <label>");
+
+            
+            #line 11 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+               Write($"NOTE: {noteWidget.Note}");
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</label>\r\n        </div>\r\n    </div>\r\n");
+
+            
+            #line 14 "..\..\Views\Shared\Fields\_NoteWidget_WidgetField.cshtml"
+}
+
+            
+            #line default
+            #line hidden
         }
     }
 }

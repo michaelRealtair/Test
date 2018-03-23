@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -29,6 +30,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_HttpPostedFileWrapper_Field.cshtml")]
@@ -62,16 +64,16 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n");
 
-WriteLiteral("    <input");
+WriteLiteral("    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 149), Tuple.Create("\"", 173)
+WriteAttribute("name", Tuple.Create(" name=\"", 159), Tuple.Create("\"", 183)
             
             #line 6 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 156), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 166), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 156), false)
+, 166), false)
 );
 
 WriteLiteral(" type=\"file\"");
@@ -113,16 +115,16 @@ WriteLiteral("    <label>");
             #line hidden
 WriteLiteral("</label>\r\n");
 
-WriteLiteral("    <input");
+WriteLiteral("    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 319), Tuple.Create("\"", 343)
+WriteAttribute("name", Tuple.Create(" name=\"", 339), Tuple.Create("\"", 363)
             
             #line 12 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 326), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 346), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 326), false)
+, 346), false)
 );
 
 WriteLiteral(" type=\"file\"");

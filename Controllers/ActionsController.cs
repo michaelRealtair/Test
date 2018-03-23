@@ -18,9 +18,21 @@ namespace Realtair.Framework.Core.Web.Controllers
 
     public class ActionsController : BaseController
     {
+        // Fields
         private string dashboardUrl = ConfigurationManager.AppSettings["DashboardUrl"];
-        bool PostValuesSet;
+        private ActionViewModel model;
+        private bool PostValuesSet;
 
+        // Properties
+        public bool HasAccessToNewActions => User.HasAccessToNewActions;
+        public ActionViewModel Model => model;
+
+        // Private Properties
+        private string ActionViewPathPrefix => HasAccessToNewActions ? "Action" : "Old/Action";
+        private string EmptyActionViewPathPrefix => HasAccessToNewActions ? "EmptyAction" : "Old/EmptyAction";
+        private string SecuredActionViewPathPrefix => "SecureActionSuccessful";
+
+        // Constructors
         public ActionsController(IAuthenticationFactory authenticationFactory) 
             : base(authenticationFactory)
         {
@@ -29,21 +41,34 @@ namespace Realtair.Framework.Core.Web.Controllers
                 dashboardUrl = "/dashboard";
             }
         }
-
+        
         public class ActionViewModel
         {
+            // Fields
             public Action Action;
             public MultiPageAction MultiPageAction;
             public bool IsMultiPage;
             public MultiPageAction.Page Page;
 
+            // Properties
+            public bool HasAccessToNewActions { get; private set; }
+            
+            // Constructors
+            public ActionViewModel()
+            {
+            }
+            public ActionViewModel(bool hasAccessToNewActions)
+            {
+                HasAccessToNewActions = hasAccessToNewActions; 
+            }
+
+            // Methods
             public ActionViewModel AdvanceToPage(MultiPageAction.Page nextPage)
             {
                 SubmittedPages.Add(Page);
                 Page = nextPage;
                 return this;
             }
-
             public List<MultiPageAction.Page> SubmittedPages { get; set; } = new List<MultiPageAction.Page>();
             public IEnumerable<Field> Fields => Action.Fields;
             public IEnumerable<Field> FieldsForPage => Page.Fields;
@@ -63,7 +88,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         public ActionResult LoadWorkflowAction(string workflowName, int id, string actionName, string page = null, string submittedpagenames = null, bool back = false, bool cancel = false)
         {
             var action = CoreExtensions.GetAction(DbContext, Auth, workflowName, id, actionName, (Framework.Core.Entities.User)User);
-            
+
             // Redirect right away if cancelled
             if (cancel) return HandleRedirect(action);
 
@@ -115,7 +140,7 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             MultiPageAction.Page givenPage = null;
 
-            var model = new ActionViewModel();
+            model = new ActionViewModel(HasAccessToNewActions);
             model.Action = action;
 
             if (action is MultiPageAction)
@@ -140,9 +165,11 @@ namespace Realtair.Framework.Core.Web.Controllers
                     Response.Redirect(Url.Action("MainPage", "LandingPage") + "?ReturnUrl=" + Request.Url);
 
                 if (action.Fields.Count() == 0)
-                    return View("EmptyAction", model);
+                    return View(EmptyActionViewPathPrefix, model);
                 else
-                    return View("Action", model); // method was not post
+                {
+                    return View(ActionViewPathPrefix, model); // method was not post
+                }
             }
         }
 
@@ -150,8 +177,8 @@ namespace Realtair.Framework.Core.Web.Controllers
         {
             if (back)
             {
-                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => p.GetType() == model.Page.GetType()));
-                return View("Action", model);
+                model.SubmittedPages.Remove(model.SubmittedPages.FirstOrDefault(p => (p is MultiPageAction.CustomPage && model.Page is MultiPageAction.CustomPage) ? (p as MultiPageAction.CustomPage).Identifier == (model.Page as MultiPageAction.CustomPage).Identifier : p.GetType() == model.Page.GetType()));
+                return View(ActionViewPathPrefix, model);
             }
             else
             {
@@ -167,11 +194,11 @@ namespace Realtair.Framework.Core.Web.Controllers
                         if (nextPage == null)
                             return RunActionAndRedirect(action, auth);
                         else
-                            return View("Action", model.AdvanceToPage(nextPage));
+                            return View(ActionViewPathPrefix, model.AdvanceToPage(nextPage));
                     else
                         return RunActionAndRedirect(action, auth);
                 else
-                    return View("Action", model);
+                    return View(ActionViewPathPrefix, model);
             }
         }
 
@@ -183,11 +210,11 @@ namespace Realtair.Framework.Core.Web.Controllers
             {
                 if (Auth.IsLoggedIn)
                 {
-                    return Redirect("/"); 
+                    return Redirect("/");
                 }
                 else
                 {
-                    return View("SecureActionSuccessful", action);
+                    return View(SecuredActionViewPathPrefix, action);
                 }
             }
 
@@ -355,17 +382,17 @@ namespace Realtair.Framework.Core.Web.Controllers
             foreach (var field in fields)
             {
                 // check if it's a list of things, i.e. List<FileAsset>
-                if (field.PropertyInfo.PropertyType.IsGenericType && field.PropertyType.GetGenericTypeDefinition() == typeof(IList<>))
+                if (field.PropertyType.IsGenericType && field.PropertyType.GetGenericTypeDefinition() == typeof(IList<>))
                 {
                     if (Request.Form.GetValues(field.UniqueName) != null)
                     {
                         foreach (var value in Request.Form.GetValues(field.UniqueName))
                         {
-                            var mapped = new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType.GetGenericArguments().First(), value);
+                            var mapped = new ActionMapper(DbContext).Map(action, field, field.PropertyType.GetGenericArguments().First(), value);
                             if (mapped != null && field.FieldAttribute is FileUploadFieldAttribute)
                             {
                                 // have to do this for file uploads (why?), see its mapper below
-                                (field.PropertyInfo.GetValue(action) as dynamic).Add(mapped as dynamic);
+                                (field.Value as dynamic).Add(mapped as dynamic);
                             }
                         }
                     }
@@ -389,7 +416,7 @@ namespace Realtair.Framework.Core.Web.Controllers
                             value = (object)Request.Unvalidated.Form.Get(field.UniqueName);
                     }
 
-                    field.PropertyInfo.SetValue(action, new ActionMapper(DbContext).Map(action, field, field.PropertyInfo.PropertyType, value));
+                    field.Value = new ActionMapper(DbContext).Map(action, field, field.PropertyType, value);
                 }
             }
         }
@@ -401,7 +428,7 @@ namespace Realtair.Framework.Core.Web.Controllers
             SetGetParams(action);
             SetPostValues(action, action.Fields);
 
-            var fieldProvider = action.Fields.First(f => f.PropertyInfo.Name == fieldName).FieldAttribute.GetProvider();
+            var fieldProvider = action.Fields.First(f => f.UniqueName == fieldName).FieldAttribute.GetProvider();
 
             return View("Fields/_ListFieldQueryResults", fieldProvider.Options(action, (Framework.Core.Entities.User)User, query));
         }

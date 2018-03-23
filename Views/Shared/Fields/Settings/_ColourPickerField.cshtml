@@ -1,0 +1,18 @@
+﻿@model Realtair.Framework.Core.Actions.Field
+
+<div class="form-group">
+    <div class="col-md-3 col-sm-4">
+        <label class="control-label">@Model.Label</label>
+    </div>
+
+    <div class="col-md-9 col-sm-8">
+        <input id="@Model.UniqueName" name="@Model.UniqueName" type="text" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value" class="jscolor form-control">
+    </div>
+</div>
+
+<script src="https://static.realtair.com/js/jscolor.min.js"></script>
+<script>
+    $(function () {
+        $('#@Model.UniqueName').css('background-color', '#@Model.Value');
+    });
+</script>

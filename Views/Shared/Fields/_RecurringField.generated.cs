@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -60,15 +61,9 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<link");
+WriteLiteral("\r\n\r\n");
 
-WriteLiteral(" rel=\"stylesheet\"");
-
-WriteLiteral(" type=\"text/css\"");
-
-WriteLiteral(" href=\"https://static.realtair.com/plugins/select2/css/select2.min.css\"");
-
-WriteLiteral(">\r\n<link");
+WriteLiteral("\r\n<link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -92,6 +87,15 @@ WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/boots
 
 WriteLiteral(" type=\"text/css\"");
 
+WriteLiteral(" />\r\n<link");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" href=\"https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/" +
+"css/bootstrap-timepicker.min.css\"");
+
+WriteLiteral(" type=\"text/css\"");
+
 WriteLiteral(" />\r\n\r\n<script");
 
 WriteLiteral(" src=\"https://static.realtair.com/plugins/select2/js/select2.min.js\"");
@@ -110,11 +114,16 @@ WriteLiteral("></script>\r\n<script");
 WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/bootstrap-datepicker/b" +
 "ootstrap-datepicker.min.js\"");
 
-WriteLiteral("></script>\r\n\r\n<script");
+WriteLiteral("></script>\r\n<script");
+
+WriteLiteral(" src=\"https://static.realtair.com/plugins/bower_components/bootstrap-timepicker/j" +
+"s/bootstrap-timepicker.js\"");
+
+WriteLiteral("></script>\r\n<script");
 
 WriteLiteral(" src=\"https://api.addressfinder.io/assets/v3/widget.js\"");
 
-WriteLiteral("></script>\r\n\r\n\r\n<label>\r\n");
+WriteLiteral("></script>\r\n\r\n<label>\r\n");
 
 WriteLiteral("    ");
 
@@ -125,36 +134,38 @@ Write(Model.Label);
             
             #line default
             #line hidden
-WriteLiteral("\r\n</label>\r\n\r\n<div");
+WriteLiteral("\r\n</label>\r\n\r\n\r\n<div");
 
 WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1402), Tuple.Create("\"", 1436)
+WriteAttribute("id", Tuple.Create(" id=\"", 1687), Tuple.Create("\"", 1721)
             
-            #line 27 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 1407), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 28 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 1692), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1407), false)
-, Tuple.Create(Tuple.Create("", 1426), Tuple.Create("_container", 1426), true)
+, 1692), false)
+, Tuple.Create(Tuple.Create("", 1711), Tuple.Create("_container", 1711), true)
 );
 
 WriteLiteral(" class=\"col-md-12 col-sm-12\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n        ");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1480), Tuple.Create("\"", 1514)
+WriteLiteral("\r\n        <div");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1799), Tuple.Create("\"", 1833)
             
-            #line 28 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 1485), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 30 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 1804), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 1485), false)
-, Tuple.Create(Tuple.Create("", 1504), Tuple.Create("_prototype", 1504), true)
+, 1804), false)
+, Tuple.Create(Tuple.Create("", 1823), Tuple.Create("_prototype", 1823), true)
 );
 
 WriteLiteral(" class=\"well prototype\"");
@@ -164,13 +175,13 @@ WriteLiteral(" style=\"background: transparent; display: none;\"");
 WriteLiteral(">\r\n");
 
             
-            #line 29 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 31 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 29 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 31 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
              foreach (var f in fields)
             {
                 if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(string))
@@ -183,80 +194,86 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 35 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 36 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 2125), Tuple.Create("\"", 2167)
+WriteAttribute("name", Tuple.Create(" name=\"", 2360), Tuple.Create("\"", 2402)
             
-            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 2132), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 38 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 2367), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 2132), false)
-, Tuple.Create(Tuple.Create("", 2151), Tuple.Create("_", 2151), true)
+, 2367), false)
+, Tuple.Create(Tuple.Create("", 2386), Tuple.Create("_", 2386), true)
             
-            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 2152), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 38 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 2387), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 2152), false)
+, 2387), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2168), Tuple.Create("\"", 2208)
+WriteAttribute("id", Tuple.Create(" id=\"", 2403), Tuple.Create("\"", 2443)
             
-            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-   , Tuple.Create(Tuple.Create("", 2173), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 2173), false)
-, Tuple.Create(Tuple.Create("", 2192), Tuple.Create("_", 2192), true)
-            
-            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                       , Tuple.Create(Tuple.Create("", 2193), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 38 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+             , Tuple.Create(Tuple.Create("", 2408), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 2193), false)
+, 2408), false)
+, Tuple.Create(Tuple.Create("", 2427), Tuple.Create("_", 2427), true)
+            
+            #line 38 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                 , Tuple.Create(Tuple.Create("", 2428), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 2428), false)
 );
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 2221), Tuple.Create("\"", 2294)
-, Tuple.Create(Tuple.Create("", 2229), Tuple.Create("form-control", 2229), true)
-, Tuple.Create(Tuple.Create(" ", 2241), Tuple.Create("field", 2242), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 2456), Tuple.Create("\"", 2534)
+, Tuple.Create(Tuple.Create("", 2464), Tuple.Create("form-control", 2464), true)
+, Tuple.Create(Tuple.Create(" ", 2476), Tuple.Create("field", 2477), true)
+, Tuple.Create(Tuple.Create(" ", 2482), Tuple.Create("lite", 2483), true)
             
-            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                             , Tuple.Create(Tuple.Create(" ", 2247), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            #line 38 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                            , Tuple.Create(Tuple.Create(" ", 2487), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
             
             #line default
             #line hidden
-, 2248), false)
+, 2488), false)
 );
 
-WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
+WriteLiteral(">\r\n                            <small>");
+
+            
+            #line 39 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                              Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                        </div>\r\n                    </div>\r\n");
 
             
             #line 42 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
@@ -274,37 +291,33 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 50 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 49 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-8\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 54 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 51 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 54 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 51 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                              if (options.Count() == 0)
                             {
 
@@ -313,31 +326,31 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 3145), Tuple.Create("\"", 3185)
+WriteAttribute("id", Tuple.Create(" id=\"", 3361), Tuple.Create("\"", 3401)
             
-            #line 56 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 3150), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 3150), false)
-, Tuple.Create(Tuple.Create("", 3169), Tuple.Create("_", 3169), true)
-            
-            #line 56 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 3170), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 53 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 3366), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 3170), false)
+, 3366), false)
+, Tuple.Create(Tuple.Create("", 3385), Tuple.Create("_", 3385), true)
+            
+            #line 53 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 3386), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 3386), false)
 );
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" class=\"form-control lite\"");
 
 WriteLiteral(" disabled>\r\n                                    <option>None to display</option>\r" +
 "\n                                </select>\r\n");
 
             
-            #line 59 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 56 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             }
                             else
                             {
@@ -347,55 +360,56 @@ WriteLiteral(" disabled>\r\n                                    <option>None to 
             #line hidden
 WriteLiteral("                                <select");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 3467), Tuple.Create("\"", 3537)
-, Tuple.Create(Tuple.Create("", 3475), Tuple.Create("form-control", 3475), true)
-, Tuple.Create(Tuple.Create(" ", 3487), Tuple.Create("select2", 3488), true)
-, Tuple.Create(Tuple.Create(" ", 3495), Tuple.Create("field", 3496), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 3688), Tuple.Create("\"", 3763)
+, Tuple.Create(Tuple.Create("", 3696), Tuple.Create("form-control", 3696), true)
+, Tuple.Create(Tuple.Create(" ", 3708), Tuple.Create("select2", 3709), true)
+, Tuple.Create(Tuple.Create(" ", 3716), Tuple.Create("field", 3717), true)
+, Tuple.Create(Tuple.Create(" ", 3722), Tuple.Create("lite", 3723), true)
             
-            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create(" ", 3501), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 3502), false)
-, Tuple.Create(Tuple.Create("", 3521), Tuple.Create("_", 3521), true)
-            
-            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-               , Tuple.Create(Tuple.Create("", 3522), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 59 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create(" ", 3727), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 3522), false)
+, 3728), false)
+, Tuple.Create(Tuple.Create("", 3747), Tuple.Create("_", 3747), true)
+            
+            #line 59 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 3748), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 3748), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 3538), Tuple.Create("\"", 3580)
+WriteAttribute("name", Tuple.Create(" name=\"", 3764), Tuple.Create("\"", 3806)
             
-            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                      , Tuple.Create(Tuple.Create("", 3545), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 3545), false)
-, Tuple.Create(Tuple.Create("", 3564), Tuple.Create("_", 3564), true)
-            
-            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                          , Tuple.Create(Tuple.Create("", 3565), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 59 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                           , Tuple.Create(Tuple.Create("", 3771), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 3565), false)
+, 3771), false)
+, Tuple.Create(Tuple.Create("", 3790), Tuple.Create("_", 3790), true)
+            
+            #line 59 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                               , Tuple.Create(Tuple.Create("", 3791), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 3791), false)
 );
 
 WriteLiteral(">\r\n");
 
             
-            #line 63 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 60 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 63 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 60 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                      foreach (var option in options)
                                     {
 
@@ -404,20 +418,20 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                        <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 3740), Tuple.Create("\"", 3769)
+WriteAttribute("value", Tuple.Create(" value=\"", 3966), Tuple.Create("\"", 3995)
             
-            #line 65 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 3748), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 3974), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 3748), false)
+, 3974), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 65 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 62 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                          Write(option.Description);
 
             
@@ -426,7 +440,7 @@ WriteLiteral(">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 66 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 63 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
 
             
@@ -435,7 +449,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("                                </select>\r\n");
 
             
-            #line 68 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 65 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             }
 
             
@@ -444,7 +458,7 @@ WriteLiteral("                                </select>\r\n");
 WriteLiteral("                        </div>\r\n                    </div>\r\n");
 
             
-            #line 71 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 68 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.PropertyType == typeof(DateTime))
                 {
@@ -458,45 +472,41 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 78 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 74 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 4508), Tuple.Create("\"", 4550)
+WriteAttribute("name", Tuple.Create(" name=\"", 4649), Tuple.Create("\"", 4691)
             
-            #line 82 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 4515), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 76 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 4656), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 4515), false)
-, Tuple.Create(Tuple.Create("", 4534), Tuple.Create("_", 4534), true)
+, 4656), false)
+, Tuple.Create(Tuple.Create("", 4675), Tuple.Create("_", 4675), true)
             
-            #line 82 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 4535), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 76 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 4676), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 4535), false)
+, 4676), false)
 );
 
 WriteLiteral("\r\n                                   type=\"text\"");
@@ -504,18 +514,55 @@ WriteLiteral("\r\n                                   type=\"text\"");
 WriteLiteral("\r\n                                   ");
 
             
-            #line 84 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 78 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                               Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : ""));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                                   class=\"form-control datepicker input-small f" +
-"ield\"\r\n                                   style=\"padding-left: 10px;\">\r\n        " +
-"                </div>\r\n                    </div>\r\n");
+"ield lite\"\r\n                                   style=\"padding-left: 10px;\">\r\n");
 
             
-            #line 89 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 81 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            
+            
+            #line default
+            #line hidden
+            
+            #line 81 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                             if (Model.HasError)
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 83 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    Write(Model.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 84 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        </div>\r\n                    </div>\r\n");
+
+            
+            #line 87 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
 
                 }
                 else if (f.PropertyType == typeof(TimeSpan))
@@ -528,57 +575,56 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 95 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 92 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 5372), Tuple.Create("\"", 5414)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" \r\n                                   class=\"form-control lite mytimepicker field" +
+"\"");
+
+WriteAttribute("name", Tuple.Create(" \r\n                                   name=\"", 5724), Tuple.Create("\"", 5803)
             
-            #line 99 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 5379), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 96 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 5768), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 5379), false)
-, Tuple.Create(Tuple.Create("", 5398), Tuple.Create("_", 5398), true)
+, 5768), false)
+, Tuple.Create(Tuple.Create("", 5787), Tuple.Create("_", 5787), true)
             
-            #line 99 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 5399), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 96 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 5788), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 5399), false)
+, 5788), false)
 );
 
-WriteLiteral("\r\n                                   type=\"time\"");
-
-WriteLiteral("\r\n                                   class=\"form-control field\"");
+WriteLiteral(" \r\n                                   placeholder=\"Click to select time\"");
 
 WriteLiteral("\r\n                                   onblur=\"validateTimespan(this);\"");
 
 WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 105 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 101 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute))
                 {
@@ -595,37 +641,33 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 115 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 110 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-8\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 119 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 112 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             
             
             #line default
             #line hidden
             
-            #line 119 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 112 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                              if (options.Count() == 0)
                             {
 
@@ -634,14 +676,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 6577), Tuple.Create("\"", 6600)
+WriteAttribute("id", Tuple.Create(" id=\"", 6832), Tuple.Create("\"", 6855)
             
-            #line 121 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 6582), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 114 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 6837), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 6582), false)
+, 6837), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -650,7 +692,7 @@ WriteLiteral(" disabled>\r\n                                    <option>None to 
 "\n                                </select>\r\n");
 
             
-            #line 124 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 117 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             }
                             else
                             {
@@ -660,14 +702,14 @@ WriteLiteral(" disabled>\r\n                                    <option>None to 
             #line hidden
 WriteLiteral("                                <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 6882), Tuple.Create("\"", 6905)
+WriteAttribute("id", Tuple.Create(" id=\"", 7137), Tuple.Create("\"", 7160)
             
-            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 6887), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 120 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 7142), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 6887), false)
+, 7142), false)
 );
 
 WriteLiteral(" class=\"form-control select2\"");
@@ -677,13 +719,13 @@ WriteLiteral(" multiple=\"multiple\"");
 WriteLiteral(">\r\n");
 
             
-            #line 128 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 121 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 128 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 121 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                      foreach (var option in options)
                                     {
 
@@ -692,20 +734,20 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                        <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 7114), Tuple.Create("\"", 7143)
+WriteAttribute("value", Tuple.Create(" value=\"", 7369), Tuple.Create("\"", 7398)
             
-            #line 130 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 7122), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 123 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 7377), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 7122), false)
+, 7377), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 130 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 123 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                          Write(option.Description);
 
             
@@ -714,8 +756,7 @@ WriteLiteral(">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 131 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-
+            #line 124 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
 
             
@@ -724,68 +765,68 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("                                </select>\r\n");
 
             
-            #line 134 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 126 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                             }
 
             
             #line default
             #line hidden
-WriteLiteral("                            <input");
+WriteLiteral("                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 7324), Tuple.Create("\"", 7366)
+WriteAttribute("name", Tuple.Create(" name=\"", 7587), Tuple.Create("\"", 7629)
             
-            #line 135 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 7331), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 7331), false)
-, Tuple.Create(Tuple.Create("", 7350), Tuple.Create("_", 7350), true)
-            
-            #line 135 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 7351), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 7594), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 7351), false)
+, 7594), false)
+, Tuple.Create(Tuple.Create("", 7613), Tuple.Create("_", 7613), true)
+            
+            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 7614), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 7614), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 7367), Tuple.Create("\"", 7407)
+WriteAttribute("id", Tuple.Create(" id=\"", 7630), Tuple.Create("\"", 7670)
             
-            #line 135 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-   , Tuple.Create(Tuple.Create("", 7372), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 7372), false)
-, Tuple.Create(Tuple.Create("", 7391), Tuple.Create("_", 7391), true)
-            
-            #line 135 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                       , Tuple.Create(Tuple.Create("", 7392), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+             , Tuple.Create(Tuple.Create("", 7635), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 7392), false)
+, 7635), false)
+, Tuple.Create(Tuple.Create("", 7654), Tuple.Create("_", 7654), true)
+            
+            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                 , Tuple.Create(Tuple.Create("", 7655), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 7655), false)
 );
 
 WriteLiteral(" class=\"field\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 7436), Tuple.Create("\"", 7453)
+WriteAttribute("value", Tuple.Create(" value=\"", 7699), Tuple.Create("\"", 7716)
             
-            #line 135 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                           , Tuple.Create(Tuple.Create("", 7444), Tuple.Create<System.Object, System.Int32>(Values
+            #line 127 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                     , Tuple.Create(Tuple.Create("", 7707), Tuple.Create<System.Object, System.Int32>(Values
             
             #line default
             #line hidden
-, 7444), false)
+, 7707), false)
 );
 
 WriteLiteral(" />\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 138 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 130 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.TextAreaFieldAttribute))
                 {
@@ -797,55 +838,62 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 143 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 134 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n                            <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 7999), Tuple.Create("\"", 8041)
+WriteAttribute("name", Tuple.Create(" name=\"", 8168), Tuple.Create("\"", 8210)
             
-            #line 147 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 8006), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 8006), false)
-, Tuple.Create(Tuple.Create("", 8025), Tuple.Create("_", 8025), true)
-            
-            #line 147 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 8026), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 136 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 8175), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 8026), false)
+, 8175), false)
+, Tuple.Create(Tuple.Create("", 8194), Tuple.Create("_", 8194), true)
+            
+            #line 136 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 8195), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 8195), false)
 );
+
+WriteLiteral(" class=\"form-control field lite\"");
+
+WriteLiteral(" rows=\"3\"");
 
 WriteLiteral(" placeholder=\"...\"");
 
-WriteLiteral(" class=\"form-control field\"");
-
-WriteLiteral("></textarea>\r\n                        </div>\r\n                    </div>\r\n");
+WriteLiteral("></textarea>\r\n                            <small>");
 
             
-            #line 150 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 137 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                              Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                        </div>\r\n                    </div>\r\n");
+
+            
+            #line 140 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(decimal))
                 {
@@ -868,7 +916,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 155 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 145 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                     Write(f.Label);
 
             
@@ -878,38 +926,38 @@ WriteLiteral("</label>\r\n                        </div>\r\n\r\n                
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 8667), Tuple.Create("\"", 8709)
+WriteAttribute("name", Tuple.Create(" name=\"", 8931), Tuple.Create("\"", 8973)
             
-            #line 159 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 8674), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 8674), false)
-, Tuple.Create(Tuple.Create("", 8693), Tuple.Create("_", 8693), true)
-            
-            #line 159 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 8694), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 149 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 8938), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 8694), false)
+, 8938), false)
+, Tuple.Create(Tuple.Create("", 8957), Tuple.Create("_", 8957), true)
+            
+            #line 149 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 8958), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 8958), false)
 );
 
 WriteLiteral(" type=\"number\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 8724), Tuple.Create("\"", 8797)
-, Tuple.Create(Tuple.Create("", 8732), Tuple.Create("form-control", 8732), true)
-, Tuple.Create(Tuple.Create(" ", 8744), Tuple.Create("field", 8745), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 8988), Tuple.Create("\"", 9061)
+, Tuple.Create(Tuple.Create("", 8996), Tuple.Create("form-control", 8996), true)
+, Tuple.Create(Tuple.Create(" ", 9008), Tuple.Create("field", 9009), true)
             
-            #line 159 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                      , Tuple.Create(Tuple.Create(" ", 8750), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            #line 149 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                , Tuple.Create(Tuple.Create(" ", 9014), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
             
             #line default
             #line hidden
-, 8751), false)
+, 9015), false)
 );
 
 WriteLiteral(" step=\"0.01\"");
@@ -917,12 +965,14 @@ WriteLiteral(" step=\"0.01\"");
 WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 162 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 152 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute))
                 {
                     var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
-                    var uniqueid = new Guid().ToString();
+                    var propertyname = $"{Model.UniqueName}_{f.UniqueName}";
+                    var trueCheckboxName = $"{propertyname}-true";
+                    var falseCheckboxName = $"{propertyname}-false";
 
 
             
@@ -934,7 +984,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">\r\n                            <label");
 
@@ -943,141 +993,138 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 170 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 162 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    Write(Model.Label);
 
             
             #line default
             #line hidden
 WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8 checkbox-grouping\"");
+WriteLiteral(" class=\"col-sm-10 checkbox-grouping\"");
 
-WriteLiteral(" style=\"padding-top: 8px;\"");
+WriteLiteral(">\r\n                            <div");
 
-WriteLiteral(">\r\n                            <label");
+WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(" class=\"radio-inline\"");
+WriteLiteral(">\r\n                                <p>\r\n                                    <labe" +
+"l>\r\n                                        <input autofocus");
 
-WriteLiteral(">\r\n                                <input");
-
-WriteLiteral(" type=\"radio\"");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 9659), Tuple.Create("\"", 9701)
+WriteAttribute("id", Tuple.Create(" id=\"", 10136), Tuple.Create("\"", 10158)
             
-            #line 175 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 9666), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 169 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 10141), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
             
             #line default
             #line hidden
-, 9666), false)
-, Tuple.Create(Tuple.Create("", 9685), Tuple.Create("_", 9685), true)
+, 10141), false)
+);
+
+WriteLiteral(" class=\"field\"");
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 10189), Tuple.Create("\"", 10209)
             
-            #line 175 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 9686), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 169 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                   , Tuple.Create(Tuple.Create("", 10196), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 9686), false)
+, 10196), false)
 );
 
 WriteLiteral(" value=\"true\"");
 
-WriteLiteral("> ");
+WriteLiteral(">\r\n                                        <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                            <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                            </span>\r\n                         " +
+"               </span>\r\n");
+
+WriteLiteral("                                        ");
 
             
-            #line 175 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                        Write(attribute.LabelForTrue);
+            #line 174 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                   Write(attribute.LabelForTrue);
 
             
             #line default
             #line hidden
-WriteLiteral("<br>\r\n                            </label>\r\n                            <label");
+WriteLiteral("\r\n                                    </label>\r\n                                <" +
+"/p>\r\n                            </div>\r\n                            &nbsp;\r\n   " +
+"                         <div");
 
-WriteLiteral(" class=\"radio-inline\"");
+WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(">\r\n                                <input");
+WriteLiteral(">\r\n                                <p>\r\n                                    <labe" +
+"l>\r\n                                        <input autofocus");
 
-WriteLiteral(" type=\"radio\"");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 9893), Tuple.Create("\"", 9935)
+WriteAttribute("id", Tuple.Create(" id=\"", 10879), Tuple.Create("\"", 10902)
             
-            #line 178 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 9900), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 9900), false)
-, Tuple.Create(Tuple.Create("", 9919), Tuple.Create("_", 9919), true)
-            
-            #line 178 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 9920), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 182 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 10884), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
             
             #line default
             #line hidden
-, 9920), false)
+, 10884), false)
+);
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 10919), Tuple.Create("\"", 10939)
+            
+            #line 182 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                      , Tuple.Create(Tuple.Create("", 10926), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 10926), false)
 );
 
 WriteLiteral(" value=\"false\"");
 
-WriteLiteral("> ");
+WriteLiteral(">\r\n                                        <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                            <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                            </span>\r\n                         " +
+"               </span>\r\n");
+
+WriteLiteral("                                        ");
 
             
-            #line 178 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                         Write(attribute.LabelForFalse);
+            #line 187 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                   Write(attribute.LabelForFalse);
 
             
             #line default
             #line hidden
-WriteLiteral("<br>\r\n                            </label>\r\n                            <input");
+WriteLiteral("\r\n                                    </label>\r\n                                <" +
+"/p>\r\n                            </div>\r\n                            ");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 10054), Tuple.Create("\"", 10094)
-            
-            #line 180 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10059), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 10059), false)
-, Tuple.Create(Tuple.Create("", 10078), Tuple.Create("_", 10078), true)
-            
-            #line 180 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10079), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 10079), false)
-);
-
-WriteAttribute("name", Tuple.Create(" name=\"", 10095), Tuple.Create("\"", 10137)
-            
-            #line 180 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-  , Tuple.Create(Tuple.Create("", 10102), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 10102), false)
-, Tuple.Create(Tuple.Create("", 10121), Tuple.Create("_", 10121), true)
-            
-            #line 180 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                      , Tuple.Create(Tuple.Create("", 10122), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 10122), false)
-);
-
-WriteLiteral(" type=\"hidden\"");
-
-WriteLiteral(" class=\"field\"");
-
-WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
+WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 183 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 194 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.PropertyType == typeof(PhoneNumber.PhoneNumberViewModel))
                 {
+                    var phone = new PhoneNumber.PhoneNumberViewModel();
+                    if (Model.Value is PhoneNumber.PhoneNumberViewModel)
+                    {
+                        phone = Model.Value as PhoneNumber.PhoneNumberViewModel;
+                    }
+
 
             
             #line default
@@ -1088,7 +1135,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-md-2 col-sm-2\"");
 
 WriteLiteral(">\r\n                            <label");
 
@@ -1097,7 +1144,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 188 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 205 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                     Write(f.Label);
 
             
@@ -1105,71 +1152,128 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-md-10 col-sm-10\"");
 
-WriteLiteral(">\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 12302), Tuple.Create("\"", 12342)
+            
+            #line 209 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 12307), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 12307), false)
+, Tuple.Create(Tuple.Create("", 12326), Tuple.Create("_", 12326), true)
+            
+            #line 209 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 12327), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 12327), false)
+);
 
 WriteLiteral(" type=\"tel\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 10667), Tuple.Create("\"", 10770)
+WriteAttribute("class", Tuple.Create(" class=\"", 12354), Tuple.Create("\"", 12457)
             
-            #line 192 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10675), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 10675), false)
-, Tuple.Create(Tuple.Create("", 10694), Tuple.Create("_", 10694), true)
-            
-            #line 192 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10695), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 209 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                        , Tuple.Create(Tuple.Create("", 12362), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 10695), false)
-, Tuple.Create(Tuple.Create(" ", 10710), Tuple.Create("form-control", 10711), true)
+, 12362), false)
+, Tuple.Create(Tuple.Create("", 12381), Tuple.Create("_", 12381), true)
             
-            #line 192 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                     , Tuple.Create(Tuple.Create(" ", 10723), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            #line 209 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                            , Tuple.Create(Tuple.Create("", 12382), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 10724), false)
+, 12382), false)
+, Tuple.Create(Tuple.Create(" ", 12397), Tuple.Create("form-control", 12398), true)
+            
+            #line 209 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                        , Tuple.Create(Tuple.Create(" ", 12410), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            
+            #line default
+            #line hidden
+, 12411), false)
 );
 
-WriteLiteral(" />\r\n                            <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 10810), Tuple.Create("\"", 10852)
+WriteAttribute("name", Tuple.Create(" name=\"", 12505), Tuple.Create("\"", 12547)
             
-            #line 193 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10817), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 10817), false)
-, Tuple.Create(Tuple.Create("", 10836), Tuple.Create("_", 10836), true)
-            
-            #line 193 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 10837), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 210 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 12512), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 10837), false)
+, 12512), false)
+, Tuple.Create(Tuple.Create("", 12531), Tuple.Create("_", 12531), true)
+            
+            #line 210 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 12532), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 12532), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" class=\"field\"");
 
-WriteLiteral(">\r\n                        </div>\r\n                    </div>\r\n");
+WriteLiteral(">\r\n");
 
             
-            #line 196 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            
+            
+            #line default
+            #line hidden
+            
+            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                             if (Model.HasError)
+                            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 213 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    Write(Model.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 214 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                        </div>\r\n                    </div>\r\n");
+
+            
+            #line 217 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.FieldAttribute.GetType() == typeof(BulkFileUploadFieldAttribute))
                 {
                     var attribute = f.FieldAttribute as BulkFileUploadFieldAttribute;
 
+
             
             #line default
             #line hidden
@@ -1177,111 +1281,107 @@ WriteLiteral("                    <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                        <div");
+WriteLiteral(">\r\n                        <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                            <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 202 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 223 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                         Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n                            <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 11464), Tuple.Create("\"", 11511)
+WriteAttribute("id", Tuple.Create(" id=\"", 13264), Tuple.Create("\"", 13311)
             
-            #line 206 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 11469), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 11469), false)
-, Tuple.Create(Tuple.Create("", 11488), Tuple.Create("_", 11488), true)
-            
-            #line 206 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 11489), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 13269), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 11489), false)
-, Tuple.Create(Tuple.Create("", 11504), Tuple.Create("_upload", 11504), true)
+, 13269), false)
+, Tuple.Create(Tuple.Create("", 13288), Tuple.Create("_", 13288), true)
+            
+            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 13289), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 13289), false)
+, Tuple.Create(Tuple.Create("", 13304), Tuple.Create("_upload", 13304), true)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 11512), Tuple.Create("\"", 11585)
+WriteAttribute("class", Tuple.Create(" class=\"", 13312), Tuple.Create("\"", 13385)
             
-            #line 206 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-        , Tuple.Create(Tuple.Create("", 11520), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 11520), false)
-, Tuple.Create(Tuple.Create("", 11539), Tuple.Create("_", 11539), true)
-            
-            #line 206 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                            , Tuple.Create(Tuple.Create("", 11540), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+        , Tuple.Create(Tuple.Create("", 13320), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 11540), false)
-, Tuple.Create(Tuple.Create("", 11555), Tuple.Create("_upload", 11555), true)
-, Tuple.Create(Tuple.Create(" ", 11562), Tuple.Create("dropzone", 11563), true)
-, Tuple.Create(Tuple.Create(" ", 11571), Tuple.Create("file-uploader", 11572), true)
+, 13320), false)
+, Tuple.Create(Tuple.Create("", 13339), Tuple.Create("_", 13339), true)
+            
+            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            , Tuple.Create(Tuple.Create("", 13340), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 13340), false)
+, Tuple.Create(Tuple.Create("", 13355), Tuple.Create("_upload", 13355), true)
+, Tuple.Create(Tuple.Create(" ", 13362), Tuple.Create("dropzone", 13363), true)
+, Tuple.Create(Tuple.Create(" ", 13371), Tuple.Create("file-uploader", 13372), true)
 );
 
 WriteLiteral(">\r\n                                <div");
 
 WriteLiteral(" class=\"dz-default dz-clickable dz-message\"");
 
-WriteLiteral(">\r\n                                    <span>Drop files here to upload</span>\r\n  " +
-"                              </div>\r\n                            </div>\r\n      " +
-"                      <input");
+WriteLiteral(">\r\n                                    <h3>Drop files here to upload</h3>\r\n      " +
+"                          </div>\r\n                            </div>\r\n          " +
+"                  <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 11857), Tuple.Create("\"", 11899)
+WriteAttribute("name", Tuple.Create(" name=\"", 13663), Tuple.Create("\"", 13705)
             
-            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 11864), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 11864), false)
-, Tuple.Create(Tuple.Create("", 11883), Tuple.Create("_", 11883), true)
-            
-            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 11884), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 13670), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 11884), false)
+, 13670), false)
+, Tuple.Create(Tuple.Create("", 13689), Tuple.Create("_", 13689), true)
+            
+            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 13690), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 13690), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 11900), Tuple.Create("\"", 11940)
+WriteAttribute("id", Tuple.Create(" id=\"", 13706), Tuple.Create("\"", 13746)
             
-            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-  , Tuple.Create(Tuple.Create("", 11905), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 11905), false)
-, Tuple.Create(Tuple.Create("", 11924), Tuple.Create("_", 11924), true)
-            
-            #line 211 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                      , Tuple.Create(Tuple.Create("", 11925), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            , Tuple.Create(Tuple.Create("", 13711), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 11925), false)
+, 13711), false)
+, Tuple.Create(Tuple.Create("", 13730), Tuple.Create("_", 13730), true)
+            
+            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                , Tuple.Create(Tuple.Create("", 13731), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 13731), false)
 );
 
 WriteLiteral(" class=\"dropzone-input field\"");
@@ -1293,7 +1393,7 @@ WriteLiteral(" value=\"\"");
 WriteLiteral(" />\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 214 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 233 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
                 else if (f.PropertyType == typeof(Address))
                 {
@@ -1303,285 +1403,350 @@ WriteLiteral(" />\r\n                        </div>\r\n                    </div
             #line hidden
 WriteLiteral("                    <div");
 
-WriteLiteral(" class=\"form-group address-field\"");
+WriteLiteral(" class=\"address-field\"");
 
 WriteLiteral(">\r\n                        <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                            <label");
 
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 219 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                    Write(f.Label);
+            #line 238 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                             Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                        </div>\r\n\r\n                        <div");
+WriteLiteral("</label>\r\n                            <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n                            <div");
-
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                                    <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 12597), Tuple.Create("\"", 12644)
-            
-            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 12602), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 12602), false)
-, Tuple.Create(Tuple.Create("", 12621), Tuple.Create("_", 12621), true)
-            
-            #line 225 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 12622), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 12622), false)
-, Tuple.Create(Tuple.Create("", 12637), Tuple.Create("_line_1", 12637), true)
-);
-
-WriteLiteral(" placeholder=\"Address\"");
+WriteLiteral(">\r\n                                <input autofocus");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control AddressLine1\"");
+WriteLiteral(" class=\"form-control lite AddressLine1\"");
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
-
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n                                <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                                    <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 12949), Tuple.Create("\"", 12996)
+WriteAttribute("id", Tuple.Create(" id=\"", 14298), Tuple.Create("\"", 14345)
             
-            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 12954), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 240 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                        , Tuple.Create(Tuple.Create("", 14303), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 12954), false)
-, Tuple.Create(Tuple.Create("", 12973), Tuple.Create("_", 12973), true)
+, 14303), false)
+, Tuple.Create(Tuple.Create("", 14322), Tuple.Create("_", 14322), true)
             
-            #line 230 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 12974), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 240 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                            , Tuple.Create(Tuple.Create("", 14323), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 12974), false)
-, Tuple.Create(Tuple.Create("", 12989), Tuple.Create("_line_2", 12989), true)
+, 14323), false)
+, Tuple.Create(Tuple.Create("", 14338), Tuple.Create("_line_1", 14338), true)
 );
+
+WriteLiteral(" placeholder=\"Address Line 1\"");
+
+WriteLiteral(" required>\r\n                                <small>");
+
+            
+            #line 241 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                  Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                            </div>\r\n                        </div>\r\n   " +
+"                     <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                            <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n                            <div");
+
+WriteLiteral(" class=\"col-sm-10\"");
+
+WriteLiteral(">\r\n                                <input autofocus");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control AddressLine2\"");
+WriteLiteral(" class=\"form-control lite AddressLine2\"");
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                          <div");
+WriteAttribute("id", Tuple.Create(" id=\"", 14808), Tuple.Create("\"", 14855)
+            
+            #line 247 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                        , Tuple.Create(Tuple.Create("", 14813), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 14813), false)
+, Tuple.Create(Tuple.Create("", 14832), Tuple.Create("_", 14832), true)
+            
+            #line 247 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                            , Tuple.Create(Tuple.Create("", 14833), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 14833), false)
+, Tuple.Create(Tuple.Create("", 14848), Tuple.Create("_line_2", 14848), true)
+);
 
-WriteLiteral(" class=\"row\"");
+WriteLiteral(" placeholder=\"Address Line 2\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <small></small>\r\n                            <" +
+"/div>\r\n                        </div>\r\n                        <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                            <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n                            <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 13267), Tuple.Create("\"", 13314)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite Suburb\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 15276), Tuple.Create("\"", 15323)
             
-            #line 235 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13272), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 13272), false)
-, Tuple.Create(Tuple.Create("", 13291), Tuple.Create("_", 13291), true)
-            
-            #line 235 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13292), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 254 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                  , Tuple.Create(Tuple.Create("", 15281), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 13292), false)
-, Tuple.Create(Tuple.Create("", 13307), Tuple.Create("_suburb", 13307), true)
+, 15281), false)
+, Tuple.Create(Tuple.Create("", 15300), Tuple.Create("_", 15300), true)
+            
+            #line 254 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                      , Tuple.Create(Tuple.Create("", 15301), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 15301), false)
+, Tuple.Create(Tuple.Create("", 15316), Tuple.Create("_suburb", 15316), true)
 );
 
 WriteLiteral(" placeholder=\"Suburb\"");
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control Suburb\"");
-
-WriteLiteral(">\r\n                                </div>\r\n                                <div");
+WriteLiteral(">\r\n                            </div>\r\n                            <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 13517), Tuple.Create("\"", 13563)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite State\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 15528), Tuple.Create("\"", 15574)
             
-            #line 238 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13522), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 13522), false)
-, Tuple.Create(Tuple.Create("", 13541), Tuple.Create("_", 13541), true)
-            
-            #line 238 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13542), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 257 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                 , Tuple.Create(Tuple.Create("", 15533), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 13542), false)
-, Tuple.Create(Tuple.Create("", 13557), Tuple.Create("_state", 13557), true)
+, 15533), false)
+, Tuple.Create(Tuple.Create("", 15552), Tuple.Create("_", 15552), true)
+            
+            #line 257 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                     , Tuple.Create(Tuple.Create("", 15553), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 15553), false)
+, Tuple.Create(Tuple.Create("", 15568), Tuple.Create("_state", 15568), true)
 );
 
 WriteLiteral(" placeholder=\"State\"");
 
+WriteLiteral(">\r\n                            </div>\r\n                            <div");
+
+WriteLiteral(" class=\"col-sm-2\"");
+
+WriteLiteral(">\r\n                                <input autofocus");
+
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control State\"");
+WriteLiteral(" class=\"form-control lite PostCode\"");
 
-WriteLiteral(">\r\n                                </div>\r\n                                <div");
-
-WriteLiteral(" class=\"col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 13764), Tuple.Create("\"", 13813)
+WriteAttribute("id", Tuple.Create(" id=\"", 15781), Tuple.Create("\"", 15830)
             
-            #line 241 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13769), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 260 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 15786), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 13769), false)
-, Tuple.Create(Tuple.Create("", 13788), Tuple.Create("_", 13788), true)
+, 15786), false)
+, Tuple.Create(Tuple.Create("", 15805), Tuple.Create("_", 15805), true)
             
-            #line 241 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 13789), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 260 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 15806), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 13789), false)
-, Tuple.Create(Tuple.Create("", 13804), Tuple.Create("_postcode", 13804), true)
+, 15806), false)
+, Tuple.Create(Tuple.Create("", 15821), Tuple.Create("_postcode", 15821), true)
 );
 
 WriteLiteral(" placeholder=\"Post Code\"");
 
-WriteLiteral(" type=\"text\"");
+WriteLiteral(">\r\n                            </div>\r\n");
 
-WriteLiteral(" class=\"form-control PostCode\"");
+            
+            #line 262 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            
+            
+            #line default
+            #line hidden
+            
+            #line 262 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                             if (Model.HasError)
+                            {
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n  " +
-"                      </div>\r\n                        <input");
+            
+            #line default
+            #line hidden
+WriteLiteral("                                <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 264 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    Write(f.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 265 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                            <input autofocus");
 
 WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" class=\"StreetName\"");
 
-WriteLiteral(">\r\n                        <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
 WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" class=\"StreetType\"");
 
-WriteLiteral(">\r\n                        <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
 WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" class=\"StreetNumber\"");
 
-WriteLiteral(">\r\n                        <input");
+WriteLiteral(">\r\n                            <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 14221), Tuple.Create("\"", 14263)
+WriteAttribute("name", Tuple.Create(" name=\"", 16373), Tuple.Create("\"", 16415)
             
-            #line 248 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 14228), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 14228), false)
-, Tuple.Create(Tuple.Create("", 14247), Tuple.Create("_", 14247), true)
-            
-            #line 248 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 14248), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 269 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 16380), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 14248), false)
+, 16380), false)
+, Tuple.Create(Tuple.Create("", 16399), Tuple.Create("_", 16399), true)
+            
+            #line 269 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 16400), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 16400), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 14264), Tuple.Create("\"", 14304)
+WriteAttribute("id", Tuple.Create(" id=\"", 16416), Tuple.Create("\"", 16456)
             
-            #line 248 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 14269), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 14269), false)
-, Tuple.Create(Tuple.Create("", 14288), Tuple.Create("_", 14288), true)
-            
-            #line 248 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                  , Tuple.Create(Tuple.Create("", 14289), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 269 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            , Tuple.Create(Tuple.Create("", 16421), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 14289), false)
+, 16421), false)
+, Tuple.Create(Tuple.Create("", 16440), Tuple.Create("_", 16440), true)
+            
+            #line 269 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                , Tuple.Create(Tuple.Create("", 16441), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 16441), false)
 );
 
 WriteLiteral(" class=\"field AddressField\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(" />\r\n                    </div>\r\n");
+WriteLiteral(" />\r\n                        </div>\r\n                    </div>\r\n");
 
             
-            #line 250 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 272 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 }
             }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n            <a");
+WriteLiteral("            <div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" class=\"row recurring-footer\"");
 
-WriteLiteral(" onclick=\"deleteItem(this)\"");
+WriteLiteral(">\r\n                <div");
 
-WriteLiteral(" class=\"btn btn-warning btn-sm\"");
+WriteLiteral(" class=\"col-sm-12\"");
 
-WriteLiteral(">delete</a>\r\n        </div>\r\n");
+WriteLiteral(">\r\n                    <ul");
+
+WriteLiteral(" class=\"pull-right list-inline\"");
+
+WriteLiteral(">\r\n                        <li>\r\n                            <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" onclick=\"deleteItem(this, \'div.recurring-footer\')\"");
+
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-red uppercase\"");
+
+WriteLiteral(">delete</a>\r\n                        </li>\r\n                    </ul>\r\n          " +
+"      </div>\r\n            </div>\r\n        </div>\r\n        ");
+
+WriteLiteral("\r\n        \r\n        ");
+
+WriteLiteral("\r\n");
 
             
-            #line 255 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 287 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 255 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 287 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
          if (Model.Value != null)
         {
             var values = (Model.Value as IEnumerable<RecurringFieldModel>).Cast<RecurringFieldModel>().ToList();
@@ -1594,26 +1759,26 @@ WriteLiteral(">delete</a>\r\n        </div>\r\n");
             #line hidden
 WriteLiteral("                <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 14835), Tuple.Create("\"", 14851)
+WriteAttribute("id", Tuple.Create(" id=\"", 17470), Tuple.Create("\"", 17486)
             
-            #line 261 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 14840), Tuple.Create<System.Object, System.Int32>(uniqueId
+            #line 293 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 17475), Tuple.Create<System.Object, System.Int32>(uniqueId
             
             #line default
             #line hidden
-, 14840), false)
+, 17475), false)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 14852), Tuple.Create("\"", 14889)
-, Tuple.Create(Tuple.Create("", 14860), Tuple.Create("well", 14860), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 17487), Tuple.Create("\"", 17524)
+, Tuple.Create(Tuple.Create("", 17495), Tuple.Create("well", 17495), true)
             
-            #line 261 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create(" ", 14864), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 293 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create(" ", 17499), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 14865), false)
-, Tuple.Create(Tuple.Create("", 14884), Tuple.Create("_item", 14884), true)
+, 17500), false)
+, Tuple.Create(Tuple.Create("", 17519), Tuple.Create("_item", 17519), true)
 );
 
 WriteLiteral(" style=\"background: transparent;\"");
@@ -1621,13 +1786,13 @@ WriteLiteral(" style=\"background: transparent;\"");
 WriteLiteral(">\r\n");
 
             
-            #line 262 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 262 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                      foreach (var f in fields)
                     {
                         if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(string))
@@ -1640,94 +1805,100 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 268 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 299 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n                               " +
-" <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 15540), Tuple.Create("\"", 15582)
+WriteAttribute("name", Tuple.Create(" name=\"", 18077), Tuple.Create("\"", 18119)
             
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 15547), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 18084), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 15547), false)
-, Tuple.Create(Tuple.Create("", 15566), Tuple.Create("_", 15566), true)
+, 18084), false)
+, Tuple.Create(Tuple.Create("", 18103), Tuple.Create("_", 18103), true)
             
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 15567), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 18104), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 15567), false)
+, 18104), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 15583), Tuple.Create("\"", 15623)
+WriteAttribute("id", Tuple.Create(" id=\"", 18120), Tuple.Create("\"", 18160)
             
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-          , Tuple.Create(Tuple.Create("", 15588), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 15588), false)
-, Tuple.Create(Tuple.Create("", 15607), Tuple.Create("_", 15607), true)
-            
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                              , Tuple.Create(Tuple.Create("", 15608), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 18125), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 15608), false)
+, 18125), false)
+, Tuple.Create(Tuple.Create("", 18144), Tuple.Create("_", 18144), true)
+            
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 18145), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 18145), false)
 );
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 15636), Tuple.Create("\"", 15709)
-, Tuple.Create(Tuple.Create("", 15644), Tuple.Create("form-control", 15644), true)
-, Tuple.Create(Tuple.Create(" ", 15656), Tuple.Create("field", 15657), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 18173), Tuple.Create("\"", 18251)
+, Tuple.Create(Tuple.Create("", 18181), Tuple.Create("form-control", 18181), true)
+, Tuple.Create(Tuple.Create(" ", 18193), Tuple.Create("field", 18194), true)
+, Tuple.Create(Tuple.Create(" ", 18199), Tuple.Create("lite", 18200), true)
             
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                    , Tuple.Create(Tuple.Create(" ", 15662), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
-            
-            #line default
-            #line hidden
-, 15663), false)
-);
-
-WriteAttribute("value", Tuple.Create(" value=\"", 15710), Tuple.Create("\"", 15770)
-            
-            #line 271 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                                                            , Tuple.Create(Tuple.Create("", 15718), Tuple.Create<System.Object, System.Int32>(v.GetType().GetProperty(f.UniqueName).GetValue(v)
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                   , Tuple.Create(Tuple.Create(" ", 18204), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
             
             #line default
             #line hidden
-, 15718), false)
+, 18205), false)
 );
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n");
+WriteAttribute("value", Tuple.Create(" value=\"", 18252), Tuple.Create("\"", 18312)
+            
+            #line 301 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                                                           , Tuple.Create(Tuple.Create("", 18260), Tuple.Create<System.Object, System.Int32>(v.GetType().GetProperty(f.UniqueName).GetValue(v)
+            
+            #line default
+            #line hidden
+, 18260), false)
+);
+
+WriteLiteral(">\r\n                                    <small>");
 
             
-            #line 274 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 302 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                      Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                                </div>\r\n                            </d" +
+"iv>\r\n");
+
+            
+            #line 305 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.OptionsFieldAttribute))
                         {
@@ -1742,38 +1913,33 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 282 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 312 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-8\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 286 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 314 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 286 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 314 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                      if (options.Count() == 0)
                                     {
 
@@ -1782,31 +1948,31 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                        <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 16741), Tuple.Create("\"", 16781)
+WriteAttribute("id", Tuple.Create(" id=\"", 19251), Tuple.Create("\"", 19291)
             
-            #line 288 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 16746), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 16746), false)
-, Tuple.Create(Tuple.Create("", 16765), Tuple.Create("_", 16765), true)
-            
-            #line 288 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 16766), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 316 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 19256), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 16766), false)
+, 19256), false)
+, Tuple.Create(Tuple.Create("", 19275), Tuple.Create("_", 19275), true)
+            
+            #line 316 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 19276), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 19276), false)
 );
 
-WriteLiteral(" class=\"form-control\"");
+WriteLiteral(" class=\"form-control lite\"");
 
 WriteLiteral(" disabled>\r\n                                            <option>None to display</" +
 "option>\r\n                                        </select>\r\n");
 
             
-            #line 291 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 319 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
                                     else
                                     {
@@ -1816,55 +1982,56 @@ WriteLiteral(" disabled>\r\n                                            <option>
             #line hidden
 WriteLiteral("                                        <select");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 17111), Tuple.Create("\"", 17181)
-, Tuple.Create(Tuple.Create("", 17119), Tuple.Create("form-control", 17119), true)
-, Tuple.Create(Tuple.Create(" ", 17131), Tuple.Create("select2", 17132), true)
-, Tuple.Create(Tuple.Create(" ", 17139), Tuple.Create("field", 17140), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 19626), Tuple.Create("\"", 19701)
+, Tuple.Create(Tuple.Create("", 19634), Tuple.Create("form-control", 19634), true)
+, Tuple.Create(Tuple.Create(" ", 19646), Tuple.Create("select2", 19647), true)
+, Tuple.Create(Tuple.Create(" ", 19654), Tuple.Create("field", 19655), true)
+, Tuple.Create(Tuple.Create(" ", 19660), Tuple.Create("lite", 19661), true)
             
-            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
- , Tuple.Create(Tuple.Create(" ", 17145), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 17146), false)
-, Tuple.Create(Tuple.Create("", 17165), Tuple.Create("_", 17165), true)
-            
-            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                      , Tuple.Create(Tuple.Create("", 17166), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 322 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+      , Tuple.Create(Tuple.Create(" ", 19665), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 17166), false)
+, 19666), false)
+, Tuple.Create(Tuple.Create("", 19685), Tuple.Create("_", 19685), true)
+            
+            #line 322 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                           , Tuple.Create(Tuple.Create("", 19686), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 19686), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 17182), Tuple.Create("\"", 17224)
+WriteAttribute("name", Tuple.Create(" name=\"", 19702), Tuple.Create("\"", 19744)
             
-            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                             , Tuple.Create(Tuple.Create("", 17189), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 17189), false)
-, Tuple.Create(Tuple.Create("", 17208), Tuple.Create("_", 17208), true)
-            
-            #line 294 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                 , Tuple.Create(Tuple.Create("", 17209), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 322 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                  , Tuple.Create(Tuple.Create("", 19709), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 17209), false)
+, 19709), false)
+, Tuple.Create(Tuple.Create("", 19728), Tuple.Create("_", 19728), true)
+            
+            #line 322 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                      , Tuple.Create(Tuple.Create("", 19729), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 19729), false)
 );
 
 WriteLiteral(">\r\n");
 
             
-            #line 295 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 323 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                             
             
             #line default
             #line hidden
             
-            #line 295 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 323 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                              foreach (var option in options)
                                             {
 
@@ -1873,20 +2040,20 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                                <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 17408), Tuple.Create("\"", 17437)
+WriteAttribute("value", Tuple.Create(" value=\"", 19928), Tuple.Create("\"", 19957)
             
-            #line 297 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 17416), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 325 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 19936), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 17416), false)
+, 19936), false)
 );
 
 WriteLiteral(" ");
 
             
-            #line 297 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 325 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                                   Write(v.GetType().GetProperty(f.UniqueName).GetValue(v).ToString() == option.Description.Replace(" ", "").ToString() ? "selected" : "");
 
             
@@ -1895,7 +2062,7 @@ WriteLiteral(" ");
 WriteLiteral(">");
 
             
-            #line 297 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 325 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                                                                                                                                                                      Write(option.Description);
 
             
@@ -1904,7 +2071,7 @@ WriteLiteral(">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 298 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 326 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                             }
 
             
@@ -1913,7 +2080,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("                                        </select>\r\n");
 
             
-            #line 300 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 328 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
 
             
@@ -1922,12 +2089,13 @@ WriteLiteral("                                        </select>\r\n");
 WriteLiteral("                                </div>\r\n                            </div>\r\n");
 
             
-            #line 303 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 331 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.PropertyType == typeof(DateTime))
                         {
                             var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.DateTimeFieldAttribute;
                             var Date = Convert.ToDateTime(v.GetType().GetProperty(f.UniqueName).GetValue(v));
+                            var dateFormat = "yyyy-MM-dd";
 
 
             
@@ -1937,91 +2105,123 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 311 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 339 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 18539), Tuple.Create("\"", 18581)
+WriteAttribute("name", Tuple.Create(" name=\"", 21018), Tuple.Create("\"", 21060)
             
-            #line 315 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 18546), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 341 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 21025), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 18546), false)
-, Tuple.Create(Tuple.Create("", 18565), Tuple.Create("_", 18565), true)
+, 21025), false)
+, Tuple.Create(Tuple.Create("", 21044), Tuple.Create("_", 21044), true)
             
-            #line 315 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 18566), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 341 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 21045), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 18566), false)
+, 21045), false)
 );
 
 WriteLiteral("\r\n                                           type=\"text\"");
 
-WriteAttribute("value", Tuple.Create("\r\n                                           value=\"", 18638), Tuple.Create("\"", 18753)
-, Tuple.Create(Tuple.Create("", 18690), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
+WriteAttribute("value", Tuple.Create("\r\n                                           value=\"", 21117), Tuple.Create("\"", 21230)
+, Tuple.Create(Tuple.Create("", 21169), Tuple.Create<System.Object, System.Int32>(new System.Web.WebPages.HelperResult(__razor_attribute_value_writer => {
 
             
-            #line 317 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 343 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                    if (Date > DateTime.MinValue) { 
             
             #line default
             #line hidden
             
-            #line 317 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                            WriteTo(__razor_attribute_value_writer, Date.ToString("yyyy-MM-dd"));
+            #line 343 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                            WriteTo(__razor_attribute_value_writer, Date.ToString(dateFormat));
 
             
             #line default
             #line hidden
             
-            #line 317 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                                }
+            #line 343 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                              }
             
             #line default
             #line hidden
-}), 18690), false)
+}), 21169), false)
 );
 
 WriteLiteral("\r\n                                           ");
 
             
-            #line 318 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                      Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : ""));
+            #line 344 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                      Write(Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString(dateFormat) + "\"" : ""));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n                                           class=\"form-control datepicker input" +
-"-small\"\r\n                                           style=\"padding-left: 10px;\">" +
-"\r\n                                </div>\r\n                            </div>\r\n");
+"-small lite\"\r\n                                           style=\"padding-left: 10" +
+"px;\">\r\n");
 
             
-            #line 323 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 347 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    
+            
+            #line default
+            #line hidden
+            
+            #line 347 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                     if (Model.HasError)
+                                    {
 
+            
+            #line default
+            #line hidden
+WriteLiteral("                                        <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 349 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                            Write(Model.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 350 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                </div>\r\n                            </div>\r\n");
+
+            
+            #line 353 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.PropertyType == typeof(TimeSpan))
                         {
@@ -2033,68 +2233,66 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 329 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 357 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 19633), Tuple.Create("\"", 19675)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" \r\n                                           class=\"form-control lite mytimepick" +
+"er field\"");
+
+WriteAttribute("name", Tuple.Create(" \r\n                                           name=\"", 22341), Tuple.Create("\"", 22428)
             
-            #line 333 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 19640), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 361 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 22393), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 19640), false)
-, Tuple.Create(Tuple.Create("", 19659), Tuple.Create("_", 19659), true)
+, 22393), false)
+, Tuple.Create(Tuple.Create("", 22412), Tuple.Create("_", 22412), true)
             
-            #line 333 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 19660), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 361 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 22413), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 19660), false)
+, 22413), false)
 );
 
-WriteLiteral("\r\n                                           type=\"time\"");
+WriteLiteral(" \r\n                                           placeholder=\"Click to select time\"");
 
-WriteAttribute("value", Tuple.Create("\r\n                                           value=\"", 19732), Tuple.Create("\"", 19836)
+WriteAttribute("value", Tuple.Create(" \r\n                                           value=\"", 22509), Tuple.Create("\"", 22626)
             
-            #line 335 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 19784), Tuple.Create<System.Object, System.Int32>(v.GetType().GetProperty(f.UniqueName).GetValue(v)
+            #line 363 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 22562), Tuple.Create<System.Object, System.Int32>(((TimeSpan)v.GetType().GetProperty(f.UniqueName).GetValue(v))
             
             #line default
             #line hidden
-, 19784), false)
+, 22562), false)
 );
-
-WriteLiteral("\r\n                                           class=\"form-control\"");
 
 WriteLiteral("\r\n                                           onblur=\"validateTimespan(this);\"");
 
 WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n");
 
             
-            #line 340 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 367 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.MultiSelectOptionsFieldAttribute))
                         {
@@ -2111,38 +2309,33 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 350 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 376 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-8\"");
 
 WriteLiteral(">\r\n");
 
             
-            #line 354 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 378 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     
             
             #line default
             #line hidden
             
-            #line 354 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 378 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                      if (options.Count() == 0)
                                     {
 
@@ -2151,14 +2344,14 @@ WriteLiteral(">\r\n");
             #line hidden
 WriteLiteral("                                        <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 21105), Tuple.Create("\"", 21128)
+WriteAttribute("id", Tuple.Create(" id=\"", 23719), Tuple.Create("\"", 23742)
             
-            #line 356 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 21110), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 380 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 23724), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 21110), false)
+, 23724), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
@@ -2167,7 +2360,7 @@ WriteLiteral(" disabled>\r\n                                            <option>
 "option>\r\n                                        </select>\r\n");
 
             
-            #line 359 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 383 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
                                     else
                                     {
@@ -2177,14 +2370,14 @@ WriteLiteral(" disabled>\r\n                                            <option>
             #line hidden
 WriteLiteral("                                        <select");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 21458), Tuple.Create("\"", 21481)
+WriteAttribute("id", Tuple.Create(" id=\"", 24072), Tuple.Create("\"", 24095)
             
-            #line 362 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 21463), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
+            #line 386 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 24077), Tuple.Create<System.Object, System.Int32>(hopefullyUniqueId
             
             #line default
             #line hidden
-, 21463), false)
+, 24077), false)
 );
 
 WriteLiteral(" class=\"form-control select2\"");
@@ -2194,38 +2387,38 @@ WriteLiteral(" multiple=\"multiple\"");
 WriteLiteral(">\r\n");
 
             
-            #line 363 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 387 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                             
             
             #line default
             #line hidden
             
-            #line 363 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 387 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                              foreach (var option in options)
                                             {
+                                                selectedValues = option.Id + "," + selectedValues;
                                                 if (((v.GetType().GetProperty(f.UniqueName).GetValue(v)) as IEnumerable<Entity>).Any(o => o.Id.ToString() == option.Id))
                                                 {
-                                                    selectedValues = option.Id + "," + selectedValues;
 
             
             #line default
             #line hidden
 WriteLiteral("                                                    <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 22043), Tuple.Create("\"", 22072)
+WriteAttribute("value", Tuple.Create(" value=\"", 24653), Tuple.Create("\"", 24682)
             
-            #line 368 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 22051), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 392 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 24661), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 22051), false)
+, 24661), false)
 );
 
 WriteLiteral(" selected>");
 
             
-            #line 368 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 392 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                                               Write(option.Description);
 
             
@@ -2234,7 +2427,7 @@ WriteLiteral(" selected>");
 WriteLiteral("</option>\r\n");
 
             
-            #line 369 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 393 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                 }
                                                 else
                                                 {
@@ -2244,20 +2437,20 @@ WriteLiteral("</option>\r\n");
             #line hidden
 WriteLiteral("                                                    <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 22328), Tuple.Create("\"", 22357)
+WriteAttribute("value", Tuple.Create(" value=\"", 24938), Tuple.Create("\"", 24967)
             
-            #line 372 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 22336), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
+            #line 396 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 24946), Tuple.Create<System.Object, System.Int32>(option.Id.ToString()
             
             #line default
             #line hidden
-, 22336), false)
+, 24946), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 372 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 396 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                                      Write(option.Description);
 
             
@@ -2266,7 +2459,7 @@ WriteLiteral(">");
 WriteLiteral("</option>\r\n");
 
             
-            #line 373 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 397 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                 }
                                             }
 
@@ -2276,69 +2469,69 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("                                        </select>\r\n");
 
             
-            #line 376 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 400 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                     }
 
             
             #line default
             #line hidden
-WriteLiteral("                                    <input");
+WriteLiteral("                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 22619), Tuple.Create("\"", 22661)
+WriteAttribute("name", Tuple.Create(" name=\"", 25239), Tuple.Create("\"", 25281)
             
-            #line 377 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 22626), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 22626), false)
-, Tuple.Create(Tuple.Create("", 22645), Tuple.Create("_", 22645), true)
-            
-            #line 377 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 22646), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 25246), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 22646), false)
+, 25246), false)
+, Tuple.Create(Tuple.Create("", 25265), Tuple.Create("_", 25265), true)
+            
+            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 25266), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 25266), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 22662), Tuple.Create("\"", 22702)
+WriteAttribute("id", Tuple.Create(" id=\"", 25282), Tuple.Create("\"", 25322)
             
-            #line 377 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-          , Tuple.Create(Tuple.Create("", 22667), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 22667), false)
-, Tuple.Create(Tuple.Create("", 22686), Tuple.Create("_", 22686), true)
-            
-            #line 377 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                              , Tuple.Create(Tuple.Create("", 22687), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 25287), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 22687), false)
+, 25287), false)
+, Tuple.Create(Tuple.Create("", 25306), Tuple.Create("_", 25306), true)
+            
+            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 25307), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 25307), false)
 );
 
 WriteLiteral(" class=\"field\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 22731), Tuple.Create("\"", 22796)
+WriteAttribute("value", Tuple.Create(" value=\"", 25351), Tuple.Create("\"", 25416)
             
-            #line 377 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                  , Tuple.Create(Tuple.Create("", 22739), Tuple.Create<System.Object, System.Int32>(selectedValues.Substring(0, selectedValues.Length - 1)
+            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                            , Tuple.Create(Tuple.Create("", 25359), Tuple.Create<System.Object, System.Int32>(selectedValues.Substring(0, selectedValues.Length - 1)
             
             #line default
             #line hidden
-, 22739), false)
+, 25359), false)
 );
 
 WriteLiteral(" />\r\n                                </div>\r\n                            </div>\r\n" +
 "");
 
             
-            #line 380 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 404 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.TextAreaFieldAttribute))
                         {
@@ -2350,66 +2543,70 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 385 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 408 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n                                    <textarea");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 23430), Tuple.Create("\"", 23472)
+WriteAttribute("name", Tuple.Create(" name=\"", 25940), Tuple.Create("\"", 25982)
             
-            #line 389 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 23437), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 23437), false)
-, Tuple.Create(Tuple.Create("", 23456), Tuple.Create("_", 23456), true)
-            
-            #line 389 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 23457), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 410 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 25947), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 23457), false)
+, 25947), false)
+, Tuple.Create(Tuple.Create("", 25966), Tuple.Create("_", 25966), true)
+            
+            #line 410 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 25967), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 25967), false)
 );
 
 WriteLiteral(" placeholder=\"...\"");
 
-WriteLiteral(" class=\"form-control field\"");
+WriteLiteral(" class=\"form-control field lite\"");
 
 WriteLiteral(">");
 
             
-            #line 389 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                                                  Write(v.GetType().GetProperty(f.UniqueName).GetValue(v));
+            #line 410 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                                       Write(v.GetType().GetProperty(f.UniqueName).GetValue(v));
 
             
             #line default
             #line hidden
-WriteLiteral("</textarea>\r\n                                </div>\r\n                            " +
-"</div>\r\n");
+WriteLiteral("</textarea>\r\n                                    <small>");
 
             
-            #line 392 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 411 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                      Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                                </div>\r\n                            </d" +
+"iv>\r\n");
+
+            
+            #line 414 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.FieldAttribute) && f.PropertyType == typeof(decimal))
                         {
@@ -2432,7 +2629,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 397 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 419 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                             Write(f.Label);
 
             
@@ -2443,38 +2640,38 @@ WriteLiteral("</label>\r\n                                </div>\r\n\r\n        
 
 WriteLiteral(" class=\"col-md-9 col-sm-8\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 24238), Tuple.Create("\"", 24280)
+WriteAttribute("name", Tuple.Create(" name=\"", 26842), Tuple.Create("\"", 26884)
             
-            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 24245), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 24245), false)
-, Tuple.Create(Tuple.Create("", 24264), Tuple.Create("_", 24264), true)
-            
-            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 24265), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 423 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 26849), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 24265), false)
+, 26849), false)
+, Tuple.Create(Tuple.Create("", 26868), Tuple.Create("_", 26868), true)
+            
+            #line 423 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 26869), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 26869), false)
 );
 
 WriteLiteral(" type=\"number\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 24295), Tuple.Create("\"", 24368)
-, Tuple.Create(Tuple.Create("", 24303), Tuple.Create("form-control", 24303), true)
-, Tuple.Create(Tuple.Create(" ", 24315), Tuple.Create("field", 24316), true)
+WriteAttribute("class", Tuple.Create(" class=\"", 26899), Tuple.Create("\"", 26972)
+, Tuple.Create(Tuple.Create("", 26907), Tuple.Create("form-control", 26907), true)
+, Tuple.Create(Tuple.Create(" ", 26919), Tuple.Create("field", 26920), true)
             
-            #line 401 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                             , Tuple.Create(Tuple.Create(" ", 24321), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            #line 423 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                       , Tuple.Create(Tuple.Create(" ", 26925), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
             
             #line default
             #line hidden
-, 24322), false)
+, 26926), false)
 );
 
 WriteLiteral(" step=\"0.01\"");
@@ -2482,11 +2679,16 @@ WriteLiteral(" step=\"0.01\"");
 WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n");
 
             
-            #line 404 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 426 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute))
                         {
                             var attribute = f.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
+                            var propertyname = $"{Model.UniqueName}_{f.UniqueName}";
+                            var value = v.GetType().GetProperty(f.UniqueName).GetValue(v);
+                            var trueCheckboxName = $"{propertyname}-true";
+                            var falseCheckboxName = $"{propertyname}-false";
+
 
             
             #line default
@@ -2497,7 +2699,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">\r\n                                    <label");
 
@@ -2506,7 +2708,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 410 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 437 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                             Write(f.Label);
 
             
@@ -2515,136 +2717,156 @@ WriteLiteral(">");
 WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
 "   <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8 checkbox-grouping\"");
+WriteLiteral(" class=\"col-sm-10 checkbox-grouping\"");
 
-WriteLiteral(" style=\"padding-top: 8px;\"");
+WriteLiteral(">\r\n                                    <div");
 
-WriteLiteral(">\r\n                                    <label");
+WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(" class=\"radio-inline\"");
+WriteLiteral(">\r\n                                        <p>\r\n                                 " +
+"           <label>\r\n                                                <input autof" +
+"ocus");
 
-WriteLiteral(">\r\n                                        <input");
-
-WriteLiteral(" type=\"radio\"");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 25273), Tuple.Create("\"", 25315)
+WriteAttribute("id", Tuple.Create(" id=\"", 28279), Tuple.Create("\"", 28301)
             
-            #line 415 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 25280), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 444 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 28284), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
             
             #line default
             #line hidden
-, 25280), false)
-, Tuple.Create(Tuple.Create("", 25299), Tuple.Create("_", 25299), true)
-            
-            #line 415 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-      , Tuple.Create(Tuple.Create("", 25300), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 25300), false)
+, 28284), false)
 );
+
+WriteLiteral(" class=\"field\"");
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 28332), Tuple.Create("\"", 28352)
+            
+            #line 444 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                           , Tuple.Create(Tuple.Create("", 28339), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 28339), false)
+);
+
+WriteLiteral(" value=\"true\"");
 
 WriteLiteral(" ");
 
             
-            #line 415 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                   Write(Convert.ToBoolean(v.GetType().GetProperty(f.UniqueName).GetValue(v)) ? "checked" : "");
+            #line 444 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                                                    Write(Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(" value=\"true\"> ");
+WriteLiteral(">\r\n                                                <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                                    <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                                    </span>\r\n                 " +
+"                               </span>\r\n");
+
+WriteLiteral("                                                ");
 
             
-            #line 415 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                                                                                                                         Write(attribute.LabelForTrue);
+            #line 449 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                           Write(attribute.LabelForTrue);
 
             
             #line default
             #line hidden
-WriteLiteral("<br>\r\n                                    </label>\r\n                             " +
-"       <label");
+WriteLiteral("\r\n                                            </label>\r\n                         " +
+"               </p>\r\n                                    </div>\r\n               " +
+"                     &nbsp;\r\n                                    <div");
 
-WriteLiteral(" class=\"radio-inline\"");
+WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(">\r\n                                        <input");
+WriteLiteral(">\r\n                                        <p>\r\n                                 " +
+"           <label>\r\n                                                <input autof" +
+"ocus");
 
-WriteLiteral(" type=\"radio\"");
-
-WriteAttribute("name", Tuple.Create(" name=\"", 25620), Tuple.Create("\"", 25662)
+WriteAttribute("id", Tuple.Create(" id=\"", 29181), Tuple.Create("\"", 29204)
             
-            #line 418 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 25627), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 25627), false)
-, Tuple.Create(Tuple.Create("", 25646), Tuple.Create("_", 25646), true)
-            
-            #line 418 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-      , Tuple.Create(Tuple.Create("", 25647), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 457 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 29186), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
             
             #line default
             #line hidden
-, 25647), false)
+, 29186), false)
 );
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 29221), Tuple.Create("\"", 29241)
+            
+            #line 457 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                              , Tuple.Create(Tuple.Create("", 29228), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 29228), false)
+);
+
+WriteLiteral(" value=\"false\"");
 
 WriteLiteral(" ");
 
             
-            #line 418 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                   Write(!Convert.ToBoolean(v.GetType().GetProperty(f.UniqueName).GetValue(v)) ? "checked" : "");
+            #line 457 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                                        Write(!Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(" value=\"false\"> ");
+WriteLiteral(">\r\n                                                <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                                    <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                                    </span>\r\n                 " +
+"                               </span>\r\n");
+
+WriteLiteral("                                                ");
 
             
-            #line 418 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                                                                                                                                           Write(attribute.LabelForFalse);
+            #line 462 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                           Write(attribute.LabelForFalse);
 
             
             #line default
             #line hidden
-WriteLiteral("<br>\r\n                                    </label>\r\n                             " +
-"       <input");
+WriteLiteral("\r\n                                            </label>\r\n                         " +
+"               </p>\r\n                                    </div>\r\n               " +
+"                     <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 25887), Tuple.Create("\"", 25927)
+WriteAttribute("id", Tuple.Create(" id=\"", 29859), Tuple.Create("\"", 29877)
             
-            #line 420 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 25892), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 25892), false)
-, Tuple.Create(Tuple.Create("", 25911), Tuple.Create("_", 25911), true)
-            
-            #line 420 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 25912), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 466 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 29864), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 25912), false)
+, 29864), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 25928), Tuple.Create("\"", 25970)
+WriteAttribute("name", Tuple.Create(" name=\"", 29878), Tuple.Create("\"", 29898)
             
-            #line 420 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-          , Tuple.Create(Tuple.Create("", 25935), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 25935), false)
-, Tuple.Create(Tuple.Create("", 25954), Tuple.Create("_", 25954), true)
-            
-            #line 420 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                              , Tuple.Create(Tuple.Create("", 25955), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 466 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 29885), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 25955), false)
+, 29885), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
@@ -2654,12 +2876,16 @@ WriteLiteral(" class=\"field\"");
 WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n");
 
             
-            #line 423 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-
+            #line 469 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.PropertyType == typeof(PhoneNumber.PhoneNumberViewModel))
                         {
-                            var phoneNumber = v.GetType().GetProperty(f.UniqueName).GetValue(v) as PhoneNumber.PhoneNumberViewModel;
+                            var phone = new PhoneNumber.PhoneNumberViewModel();
+                            if (v.GetType().GetProperty(f.UniqueName).GetValue(v) is PhoneNumber.PhoneNumberViewModel)
+                            {
+                                phone = v.GetType().GetProperty(f.UniqueName).GetValue(v) as PhoneNumber.PhoneNumberViewModel;
+                            }
+
 
             
             #line default
@@ -2670,7 +2896,7 @@ WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"col-md-2 col-sm-2\"");
 
 WriteLiteral(">\r\n                                    <label");
 
@@ -2679,7 +2905,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 430 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 480 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                             Write(f.Label);
 
             
@@ -2688,81 +2914,138 @@ WriteLiteral(">");
 WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
 "   <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-md-10 col-sm-10\"");
 
-WriteLiteral(">\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 30910), Tuple.Create("\"", 30950)
+            
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 30915), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 30915), false)
+, Tuple.Create(Tuple.Create("", 30934), Tuple.Create("_", 30934), true)
+            
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 30935), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 30935), false)
+);
 
 WriteLiteral(" type=\"tel\"");
 
-WriteAttribute("class", Tuple.Create(" class=\"", 26724), Tuple.Create("\"", 26827)
+WriteAttribute("value", Tuple.Create(" value=\"", 30962), Tuple.Create("\"", 30983)
             
-            #line 434 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 26732), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 26732), false)
-, Tuple.Create(Tuple.Create("", 26751), Tuple.Create("_", 26751), true)
-            
-            #line 434 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
- , Tuple.Create(Tuple.Create("", 26752), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                               , Tuple.Create(Tuple.Create("", 30970), Tuple.Create<System.Object, System.Int32>(phone.Number
             
             #line default
             #line hidden
-, 26752), false)
-, Tuple.Create(Tuple.Create(" ", 26767), Tuple.Create("form-control", 26768), true)
-            
-            #line 434 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                             , Tuple.Create(Tuple.Create(" ", 26780), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
-            
-            #line default
-            #line hidden
-, 26781), false)
+, 30970), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 26828), Tuple.Create("\"", 26857)
+WriteAttribute("class", Tuple.Create(" class=\"", 30984), Tuple.Create("\"", 31087)
             
-            #line 434 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                     , Tuple.Create(Tuple.Create("", 26836), Tuple.Create<System.Object, System.Int32>(phoneNumber.Number
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                      , Tuple.Create(Tuple.Create("", 30992), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 26836), false)
+, 30992), false)
+, Tuple.Create(Tuple.Create("", 31011), Tuple.Create("_", 31011), true)
+            
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                          , Tuple.Create(Tuple.Create("", 31012), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 31012), false)
+, Tuple.Create(Tuple.Create(" ", 31027), Tuple.Create("form-control", 31028), true)
+            
+            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                      , Tuple.Create(Tuple.Create(" ", 31040), Tuple.Create<System.Object, System.Int32>(f.FieldAttribute.Required ? "required" : ""
+            
+            #line default
+            #line hidden
+, 31041), false)
 );
 
-WriteLiteral(" />\r\n                                    <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 26905), Tuple.Create("\"", 26947)
+WriteAttribute("name", Tuple.Create(" name=\"", 31143), Tuple.Create("\"", 31185)
             
-            #line 435 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 26912), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 26912), false)
-, Tuple.Create(Tuple.Create("", 26931), Tuple.Create("_", 26931), true)
-            
-            #line 435 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 26932), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 485 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 31150), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 26932), false)
+, 31150), false)
+, Tuple.Create(Tuple.Create("", 31169), Tuple.Create("_", 31169), true)
+            
+            #line 485 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 31170), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 31170), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" class=\"field\"");
 
-WriteLiteral(">\r\n                                </div>\r\n                            </div>\r\n");
+WriteLiteral(">\r\n");
 
             
-            #line 438 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 486 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    
+            
+            #line default
+            #line hidden
+            
+            #line 486 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                     if (Model.HasError)
+                                    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                        <span");
+
+WriteLiteral(" class=\"help-block\"");
+
+WriteLiteral(">");
+
+            
+            #line 488 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                            Write(Model.ErrorMessage);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</span>\r\n");
+
+            
+            #line 489 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                                </div>\r\n                            </div>\r\n");
+
+            
+            #line 492 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.FieldAttribute.GetType() == typeof(BulkFileUploadFieldAttribute))
                         {
                             var attribute = f.FieldAttribute as BulkFileUploadFieldAttribute;
 
+
             
             #line default
             #line hidden
@@ -2770,112 +3053,107 @@ WriteLiteral("                            <div");
 
 WriteLiteral(" class=\"form-group\"");
 
-WriteLiteral(">\r\n                                <div");
+WriteLiteral(">\r\n                                <label");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
-
-WriteLiteral(">\r\n                                    <label");
-
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 444 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 498 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                 Write(f.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
 WriteLiteral(">\r\n                                    <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 27655), Tuple.Create("\"", 27702)
+WriteAttribute("id", Tuple.Create(" id=\"", 32014), Tuple.Create("\"", 32061)
             
-            #line 448 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 27660), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 27660), false)
-, Tuple.Create(Tuple.Create("", 27679), Tuple.Create("_", 27679), true)
-            
-            #line 448 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 27680), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 500 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 32019), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 27680), false)
-, Tuple.Create(Tuple.Create("", 27695), Tuple.Create("_upload", 27695), true)
+, 32019), false)
+, Tuple.Create(Tuple.Create("", 32038), Tuple.Create("_", 32038), true)
+            
+            #line 500 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 32039), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 32039), false)
+, Tuple.Create(Tuple.Create("", 32054), Tuple.Create("_upload", 32054), true)
 );
 
-WriteAttribute("class", Tuple.Create(" class=\"", 27703), Tuple.Create("\"", 27776)
+WriteAttribute("class", Tuple.Create(" class=\"", 32062), Tuple.Create("\"", 32135)
             
-            #line 448 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                , Tuple.Create(Tuple.Create("", 27711), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 27711), false)
-, Tuple.Create(Tuple.Create("", 27730), Tuple.Create("_", 27730), true)
-            
-            #line 448 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                    , Tuple.Create(Tuple.Create("", 27731), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 500 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                , Tuple.Create(Tuple.Create("", 32070), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 27731), false)
-, Tuple.Create(Tuple.Create("", 27746), Tuple.Create("_upload", 27746), true)
-, Tuple.Create(Tuple.Create(" ", 27753), Tuple.Create("dropzone", 27754), true)
-, Tuple.Create(Tuple.Create(" ", 27762), Tuple.Create("file-uploader", 27763), true)
+, 32070), false)
+, Tuple.Create(Tuple.Create("", 32089), Tuple.Create("_", 32089), true)
+            
+            #line 500 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    , Tuple.Create(Tuple.Create("", 32090), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 32090), false)
+, Tuple.Create(Tuple.Create("", 32105), Tuple.Create("_upload", 32105), true)
+, Tuple.Create(Tuple.Create(" ", 32112), Tuple.Create("dropzone", 32113), true)
+, Tuple.Create(Tuple.Create(" ", 32121), Tuple.Create("file-uploader", 32122), true)
 );
 
 WriteLiteral(">\r\n                                        <div");
 
 WriteLiteral(" class=\"dz-default dz-clickable dz-message\"");
 
-WriteLiteral(">\r\n                                            <span>Drop files here to upload</s" +
-"pan>\r\n                                        </div>\r\n                          " +
-"          </div>\r\n                                    <input");
+WriteLiteral(">\r\n                                            <h3>Drop files here to upload</h3>" +
+"\r\n                                        </div>\r\n                              " +
+"      </div>\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 28088), Tuple.Create("\"", 28130)
+WriteAttribute("name", Tuple.Create(" name=\"", 32453), Tuple.Create("\"", 32495)
             
-            #line 453 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 28095), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 28095), false)
-, Tuple.Create(Tuple.Create("", 28114), Tuple.Create("_", 28114), true)
-            
-            #line 453 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 28115), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 505 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 32460), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 28115), false)
+, 32460), false)
+, Tuple.Create(Tuple.Create("", 32479), Tuple.Create("_", 32479), true)
+            
+            #line 505 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 32480), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 32480), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 28131), Tuple.Create("\"", 28171)
+WriteAttribute("id", Tuple.Create(" id=\"", 32496), Tuple.Create("\"", 32536)
             
-            #line 453 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-          , Tuple.Create(Tuple.Create("", 28136), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 28136), false)
-, Tuple.Create(Tuple.Create("", 28155), Tuple.Create("_", 28155), true)
-            
-            #line 453 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                              , Tuple.Create(Tuple.Create("", 28156), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 505 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 32501), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 28156), false)
+, 32501), false)
+, Tuple.Create(Tuple.Create("", 32520), Tuple.Create("_", 32520), true)
+            
+            #line 505 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 32521), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 32521), false)
 );
 
 WriteLiteral(" class=\"dropzone-input field\"");
@@ -2888,379 +3166,427 @@ WriteLiteral(" />\r\n                                </div>\r\n                 
 "");
 
             
-            #line 456 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 508 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                         else if (f.PropertyType == typeof(Address))
                         {
                             var address = v.GetType().GetProperty(f.UniqueName).GetValue(v) as Address;
+
 
             
             #line default
             #line hidden
 WriteLiteral("                            <div");
 
-WriteLiteral(" class=\"form-group address-field\"");
+WriteLiteral(" class=\"address-field\"");
 
 WriteLiteral(">\r\n                                <div");
 
-WriteLiteral(" class=\"col-md-3 col-sm-4\"");
+WriteLiteral(" class=\"form-group\"");
 
 WriteLiteral(">\r\n                                    <label");
 
-WriteLiteral(" class=\"control-label\"");
+WriteLiteral(" class=\"col-sm-2 control-label\"");
 
 WriteLiteral(">");
 
             
-            #line 462 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                            Write(f.Label);
+            #line 515 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                     Write(Model.Label);
 
             
             #line default
             #line hidden
-WriteLiteral("</label>\r\n                                </div>\r\n\r\n                             " +
-"   <div");
+WriteLiteral("</label>\r\n                                    <div");
 
-WriteLiteral(" class=\"col-md-9 col-sm-8\"");
+WriteLiteral(" class=\"col-sm-10\"");
 
-WriteLiteral(">\r\n                                    <div");
-
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n                                        <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                                            <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 29037), Tuple.Create("\"", 29084)
-            
-            #line 468 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29042), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 29042), false)
-, Tuple.Create(Tuple.Create("", 29061), Tuple.Create("_", 29061), true)
-            
-            #line 468 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29062), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 29062), false)
-, Tuple.Create(Tuple.Create("", 29077), Tuple.Create("_line_1", 29077), true)
-);
-
-WriteLiteral(" placeholder=\"Address\"");
+WriteLiteral(">\r\n                                        <input autofocus");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control AddressLine1\"");
+WriteLiteral(" class=\"form-control lite AddressLine1\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 29153), Tuple.Create("\"", 29184)
+WriteAttribute("id", Tuple.Create(" id=\"", 33279), Tuple.Create("\"", 33326)
             
-            #line 468 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                              , Tuple.Create(Tuple.Create("", 29161), Tuple.Create<System.Object, System.Int32>(address.AddressLine1
+            #line 517 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                , Tuple.Create(Tuple.Create("", 33284), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 29161), false)
+, 33284), false)
+, Tuple.Create(Tuple.Create("", 33303), Tuple.Create("_", 33303), true)
+            
+            #line 517 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    , Tuple.Create(Tuple.Create("", 33304), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 33304), false)
+, Tuple.Create(Tuple.Create("", 33319), Tuple.Create("_line_1", 33319), true)
 );
 
-WriteLiteral(">\r\n                                        </div>\r\n                              " +
-"      </div>\r\n                                    <div");
+WriteLiteral(" placeholder=\"Address Line 1\"");
 
-WriteLiteral(" class=\"row form-group\"");
-
-WriteLiteral(">\r\n                                        <div");
-
-WriteLiteral(" class=\"col-sm-12\"");
-
-WriteLiteral(">\r\n                                            <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 29461), Tuple.Create("\"", 29508)
+WriteAttribute("value", Tuple.Create(" value=\"", 33356), Tuple.Create("\"", 33388)
             
-            #line 473 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29466), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 517 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                , Tuple.Create(Tuple.Create("", 33364), Tuple.Create<System.Object, System.Int32>(address?.AddressLine1
             
             #line default
             #line hidden
-, 29466), false)
-, Tuple.Create(Tuple.Create("", 29485), Tuple.Create("_", 29485), true)
-            
-            #line 473 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29486), Tuple.Create<System.Object, System.Int32>(f.UniqueName
-            
-            #line default
-            #line hidden
-, 29486), false)
-, Tuple.Create(Tuple.Create("", 29501), Tuple.Create("_line_2", 29501), true)
+, 33364), false)
 );
+
+WriteLiteral(" required>\r\n                                        <small>");
+
+            
+            #line 518 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                          Write(Model.FieldAttribute.Help);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</small>\r\n                                    </div>\r\n                           " +
+"     </div>\r\n                                <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                                    <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n                                    <div");
+
+WriteLiteral(" class=\"col-sm-10\"");
+
+WriteLiteral(">\r\n                                        <input autofocus");
 
 WriteLiteral(" type=\"text\"");
 
-WriteLiteral(" class=\"form-control AddressLine2\"");
+WriteLiteral(" class=\"form-control lite AddressLine2\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 29555), Tuple.Create("\"", 29586)
+WriteAttribute("id", Tuple.Create(" id=\"", 33878), Tuple.Create("\"", 33925)
             
-            #line 473 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                        , Tuple.Create(Tuple.Create("", 29563), Tuple.Create<System.Object, System.Int32>(address.AddressLine2
+            #line 524 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                , Tuple.Create(Tuple.Create("", 33883), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 29563), false)
+, 33883), false)
+, Tuple.Create(Tuple.Create("", 33902), Tuple.Create("_", 33902), true)
+            
+            #line 524 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                    , Tuple.Create(Tuple.Create("", 33903), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 33903), false)
+, Tuple.Create(Tuple.Create("", 33918), Tuple.Create("_line_2", 33918), true)
 );
 
-WriteLiteral(">\r\n                                        </div>\r\n                              " +
-"      </div>\r\n                                    <div");
+WriteLiteral(" placeholder=\"Address Line 2\"");
 
-WriteLiteral(" class=\"row\"");
+WriteAttribute("value", Tuple.Create(" value=\"", 33955), Tuple.Create("\"", 33987)
+            
+            #line 524 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                                , Tuple.Create(Tuple.Create("", 33963), Tuple.Create<System.Object, System.Int32>(address?.AddressLine2
+            
+            #line default
+            #line hidden
+, 33963), false)
+);
 
-WriteLiteral(">\r\n                                        <div");
+WriteLiteral(">\r\n                                        <small></small>\r\n                     " +
+"               </div>\r\n                                </div>\r\n                 " +
+"               <div");
+
+WriteLiteral(" class=\"form-group\"");
+
+WriteLiteral(">\r\n                                    <label");
+
+WriteLiteral(" class=\"col-sm-2 control-label\"");
+
+WriteLiteral("></label>\r\n                                    <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                            <input");
+WriteLiteral(">\r\n                                        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 29851), Tuple.Create("\"", 29898)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite Suburb\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 34435), Tuple.Create("\"", 34482)
             
-            #line 478 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29856), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 29856), false)
-, Tuple.Create(Tuple.Create("", 29875), Tuple.Create("_", 29875), true)
-            
-            #line 478 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 29876), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 531 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                          , Tuple.Create(Tuple.Create("", 34440), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 29876), false)
-, Tuple.Create(Tuple.Create("", 29891), Tuple.Create("_suburb", 29891), true)
+, 34440), false)
+, Tuple.Create(Tuple.Create("", 34459), Tuple.Create("_", 34459), true)
+            
+            #line 531 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                              , Tuple.Create(Tuple.Create("", 34460), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 34460), false)
+, Tuple.Create(Tuple.Create("", 34475), Tuple.Create("_suburb", 34475), true)
 );
 
 WriteLiteral(" placeholder=\"Suburb\"");
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control Suburb\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 29960), Tuple.Create("\"", 29985)
+WriteAttribute("value", Tuple.Create(" value=\"", 34504), Tuple.Create("\"", 34530)
             
-            #line 478 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                       , Tuple.Create(Tuple.Create("", 29968), Tuple.Create<System.Object, System.Int32>(address.Suburb
+            #line 531 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                  , Tuple.Create(Tuple.Create("", 34512), Tuple.Create<System.Object, System.Int32>(address?.Suburb
             
             #line default
             #line hidden
-, 29968), false)
+, 34512), false)
 );
 
-WriteLiteral(">\r\n                                        </div>\r\n                              " +
-"          <div");
+WriteLiteral(">\r\n                                    </div>\r\n                                  " +
+"  <div");
 
 WriteLiteral(" class=\"col-sm-4\"");
 
-WriteLiteral(">\r\n                                            <input");
+WriteLiteral(">\r\n                                        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 30151), Tuple.Create("\"", 30197)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite State\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 34738), Tuple.Create("\"", 34784)
             
-            #line 481 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30156), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 30156), false)
-, Tuple.Create(Tuple.Create("", 30175), Tuple.Create("_", 30175), true)
-            
-            #line 481 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30176), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 534 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                         , Tuple.Create(Tuple.Create("", 34743), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 30176), false)
-, Tuple.Create(Tuple.Create("", 30191), Tuple.Create("_state", 30191), true)
+, 34743), false)
+, Tuple.Create(Tuple.Create("", 34762), Tuple.Create("_", 34762), true)
+            
+            #line 534 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                             , Tuple.Create(Tuple.Create("", 34763), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 34763), false)
+, Tuple.Create(Tuple.Create("", 34778), Tuple.Create("_state", 34778), true)
 );
 
 WriteLiteral(" placeholder=\"State\"");
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control State\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 30257), Tuple.Create("\"", 30281)
+WriteAttribute("value", Tuple.Create(" value=\"", 34805), Tuple.Create("\"", 34830)
             
-            #line 481 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                    , Tuple.Create(Tuple.Create("", 30265), Tuple.Create<System.Object, System.Int32>(address.State
+            #line 534 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                               , Tuple.Create(Tuple.Create("", 34813), Tuple.Create<System.Object, System.Int32>(address?.State
             
             #line default
             #line hidden
-, 30265), false)
+, 34813), false)
 );
 
-WriteLiteral(">\r\n                                        </div>\r\n                              " +
-"          <div");
+WriteLiteral(">\r\n                                    </div>\r\n                                  " +
+"  <div");
 
-WriteLiteral(" class=\"col-sm-4\"");
+WriteLiteral(" class=\"col-sm-2\"");
 
-WriteLiteral(">\r\n                                            <input");
+WriteLiteral(">\r\n                                        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 30447), Tuple.Create("\"", 30496)
+WriteLiteral(" type=\"text\"");
+
+WriteLiteral(" class=\"form-control lite PostCode\"");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 35041), Tuple.Create("\"", 35090)
             
-            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30452), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 537 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                            , Tuple.Create(Tuple.Create("", 35046), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 30452), false)
-, Tuple.Create(Tuple.Create("", 30471), Tuple.Create("_", 30471), true)
+, 35046), false)
+, Tuple.Create(Tuple.Create("", 35065), Tuple.Create("_", 35065), true)
             
-            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30472), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 537 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                , Tuple.Create(Tuple.Create("", 35066), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 30472), false)
-, Tuple.Create(Tuple.Create("", 30487), Tuple.Create("_postcode", 30487), true)
+, 35066), false)
+, Tuple.Create(Tuple.Create("", 35081), Tuple.Create("_postcode", 35081), true)
 );
 
 WriteLiteral(" placeholder=\"Post Code\"");
 
-WriteLiteral(" type=\"text\"");
-
-WriteLiteral(" class=\"form-control Code\"");
-
-WriteAttribute("value", Tuple.Create(" value=\"", 30559), Tuple.Create("\"", 30586)
+WriteAttribute("value", Tuple.Create(" value=\"", 35115), Tuple.Create("\"", 35143)
             
-            #line 484 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                          , Tuple.Create(Tuple.Create("", 30567), Tuple.Create<System.Object, System.Int32>(address.Postcode
+            #line 537 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                                         , Tuple.Create(Tuple.Create("", 35123), Tuple.Create<System.Object, System.Int32>(address?.Postcode
             
             #line default
             #line hidden
-, 30567), false)
+, 35123), false)
 );
 
-WriteLiteral(">\r\n                                        </div>\r\n                              " +
-"      </div>\r\n                                </div>\r\n                          " +
-"      <input");
+WriteLiteral(">\r\n                                    </div>\r\n");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 30760), Tuple.Create("\"", 30811)
             
-            #line 488 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30765), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 539 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    
             
             #line default
             #line hidden
-, 30765), false)
-, Tuple.Create(Tuple.Create("", 30784), Tuple.Create("_", 30784), true)
             
-            #line 488 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30785), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 539 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                     if (Model.HasError)
+                                    {
+
             
             #line default
             #line hidden
-, 30785), false)
-, Tuple.Create(Tuple.Create("", 30800), Tuple.Create("_streetName", 30800), true)
-);
+WriteLiteral("                                        <span");
 
-WriteLiteral(" type=\"hidden\"");
+WriteLiteral(" class=\"help-block\"");
 
-WriteLiteral(">\r\n                                <input");
+WriteLiteral(">");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 30867), Tuple.Create("\"", 30918)
             
-            #line 489 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30872), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 541 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                            Write(Model.ErrorMessage);
+
             
             #line default
             #line hidden
-, 30872), false)
-, Tuple.Create(Tuple.Create("", 30891), Tuple.Create("_", 30891), true)
+WriteLiteral("</span>\r\n");
+
             
-            #line 489 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30892), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 542 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                    }
+
             
             #line default
             #line hidden
-, 30892), false)
-, Tuple.Create(Tuple.Create("", 30907), Tuple.Create("_streetType", 30907), true)
-);
+WriteLiteral("                                    <input autofocus");
 
-WriteLiteral(" type=\"hidden\"");
-
-WriteLiteral(">\r\n                                <input");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 30974), Tuple.Create("\"", 31027)
+WriteAttribute("id", Tuple.Create(" id=\"", 35472), Tuple.Create("\"", 35523)
             
-            #line 490 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30979), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 543 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35477), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 30979), false)
-, Tuple.Create(Tuple.Create("", 30998), Tuple.Create("_", 30998), true)
+, 35477), false)
+, Tuple.Create(Tuple.Create("", 35496), Tuple.Create("_", 35496), true)
             
-            #line 490 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 30999), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 543 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35497), Tuple.Create<System.Object, System.Int32>(f.UniqueName
             
             #line default
             #line hidden
-, 30999), false)
-, Tuple.Create(Tuple.Create("", 31014), Tuple.Create("_streetNumber", 31014), true)
+, 35497), false)
+, Tuple.Create(Tuple.Create("", 35512), Tuple.Create("_streetName", 35512), true)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(">\r\n                                <input");
+WriteLiteral(">\r\n                                    <input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 31083), Tuple.Create("\"", 31125)
+WriteAttribute("id", Tuple.Create(" id=\"", 35593), Tuple.Create("\"", 35644)
             
-            #line 491 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 31090), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 31090), false)
-, Tuple.Create(Tuple.Create("", 31109), Tuple.Create("_", 31109), true)
-            
-            #line 491 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 31110), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 544 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35598), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 31110), false)
+, 35598), false)
+, Tuple.Create(Tuple.Create("", 35617), Tuple.Create("_", 35617), true)
+            
+            #line 544 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35618), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 35618), false)
+, Tuple.Create(Tuple.Create("", 35633), Tuple.Create("_streetType", 35633), true)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 31126), Tuple.Create("\"", 31166)
+WriteLiteral(" type=\"hidden\"");
+
+WriteLiteral(">\r\n                                    <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 35714), Tuple.Create("\"", 35767)
             
-            #line 491 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-      , Tuple.Create(Tuple.Create("", 31131), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
-            
-            #line default
-            #line hidden
-, 31131), false)
-, Tuple.Create(Tuple.Create("", 31150), Tuple.Create("_", 31150), true)
-            
-            #line 491 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                          , Tuple.Create(Tuple.Create("", 31151), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            #line 545 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35719), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 31151), false)
+, 35719), false)
+, Tuple.Create(Tuple.Create("", 35738), Tuple.Create("_", 35738), true)
+            
+            #line 545 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35739), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 35739), false)
+, Tuple.Create(Tuple.Create("", 35754), Tuple.Create("_streetNumber", 35754), true)
+);
+
+WriteLiteral(" type=\"hidden\"");
+
+WriteLiteral(">\r\n                                    <input autofocus");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 35837), Tuple.Create("\"", 35879)
+            
+            #line 546 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35844), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 35844), false)
+, Tuple.Create(Tuple.Create("", 35863), Tuple.Create("_", 35863), true)
+            
+            #line 546 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 35864), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 35864), false)
+);
+
+WriteAttribute("id", Tuple.Create(" id=\"", 35880), Tuple.Create("\"", 35920)
+            
+            #line 546 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                    , Tuple.Create(Tuple.Create("", 35885), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            
+            #line default
+            #line hidden
+, 35885), false)
+, Tuple.Create(Tuple.Create("", 35904), Tuple.Create("_", 35904), true)
+            
+            #line 546 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                        , Tuple.Create(Tuple.Create("", 35905), Tuple.Create<System.Object, System.Int32>(f.UniqueName
+            
+            #line default
+            #line hidden
+, 35905), false)
 );
 
 WriteLiteral(" class=\"field AddressField\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteLiteral(" />\r\n\r\n                                <script>\r\n\r\n                              " +
-"  var serialised = $(\'#");
+WriteLiteral(" />\r\n\r\n                                    <script>\r\n\r\n                          " +
+"          var serialised = $(\'#");
 
             
-            #line 495 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                 Write(uniqueId);
+            #line 550 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                     Write(uniqueId);
 
             
             #line default
@@ -3268,8 +3594,8 @@ WriteLiteral(" />\r\n\r\n                                <script>\r\n\r\n       
 WriteLiteral("\').find(\'#");
 
             
-            #line 495 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                      Write(Model.UniqueName);
+            #line 550 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                          Write(Model.UniqueName);
 
             
             #line default
@@ -3277,143 +3603,165 @@ WriteLiteral("\').find(\'#");
 WriteLiteral("_");
 
             
-            #line 495 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                                                                          Write(f.UniqueName);
+            #line 550 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                                                              Write(f.UniqueName);
 
             
             #line default
             #line hidden
-WriteLiteral("\')[0];\r\n                                serialised.value = JSON.stringify({\r\n    " +
-"                                AddressLine1: \"");
+WriteLiteral("\')[0];\r\n                                    serialised.value = JSON.stringify({\r\n" +
+"                                        AddressLine1: \"");
 
             
-            #line 497 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                               Write(address.AddressLine1);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\",\r\n                                    AddressLine2: \"");
-
-            
-            #line 498 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                               Write(address.AddressLine2);
+            #line 552 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                   Write(address?.AddressLine1);
 
             
             #line default
             #line hidden
-WriteLiteral("\",\r\n                                    Suburb: \"");
+WriteLiteral("\",\r\n                                        AddressLine2: \"");
 
             
-            #line 499 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                         Write(address.Suburb);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\",\r\n                                    Postcode: \"");
-
-            
-            #line 500 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                           Write(address.Postcode);
+            #line 553 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                   Write(address?.AddressLine2);
 
             
             #line default
             #line hidden
-WriteLiteral("\",\r\n                                    State: \"");
+WriteLiteral("\",\r\n                                        Suburb: \"");
 
             
-            #line 501 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                        Write(address.State);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\",\r\n                                    StreetNumber: \"");
-
-            
-            #line 502 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                               Write(address.StreetNumber);
+            #line 554 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                             Write(address?.Suburb);
 
             
             #line default
             #line hidden
-WriteLiteral("\",\r\n                                    StreetName: \"");
+WriteLiteral("\",\r\n                                        Postcode: \"");
 
             
-            #line 503 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                             Write(address.StreetName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\",\r\n                                    StreetType: \"");
-
-            
-            #line 504 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-                                             Write(address.StreetType);
+            #line 555 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                               Write(address?.Postcode);
 
             
             #line default
             #line hidden
-WriteLiteral("\"\r\n                                });\r\n                                </script>" +
-"\r\n                            </div>\r\n");
+WriteLiteral("\",\r\n                                        State: \"");
 
             
-            #line 508 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 556 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                            Write(address?.State);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\",\r\n                                        StreetNumber: \"");
+
+            
+            #line 557 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                   Write(address?.StreetNumber);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\",\r\n                                        StreetName: \"");
+
+            
+            #line 558 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                 Write(address?.StreetName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\",\r\n                                        StreetType: \"");
+
+            
+            #line 559 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                 Write(address?.StreetType);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\"\r\n                                    });\r\n                                    <" +
+"/script>\r\n                                </div>\r\n                            </" +
+"div>\r\n");
+
+            
+            #line 564 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                         }
                     }
 
             
             #line default
             #line hidden
-WriteLiteral("                    <a");
+WriteLiteral("                    <div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" class=\"row recurring-footer\"");
 
-WriteLiteral(" onclick=\"deleteItem(this)\"");
+WriteLiteral(">\r\n                        <div");
 
-WriteLiteral(" class=\"btn btn-warning btn-sm\"");
+WriteLiteral(" class=\"col-sm-12\"");
 
-WriteLiteral(">delete</a>\r\n                </div>\r\n");
+WriteLiteral(">\r\n                            <ul");
+
+WriteLiteral(" class=\"pull-right list-inline\"");
+
+WriteLiteral(">\r\n                                <li>\r\n                                    <a");
+
+WriteLiteral(" href=\"javascript:void(0);\"");
+
+WriteLiteral(" onclick=\"deleteItem(this, \'div.recurring-footer\')\"");
+
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-red uppercase\"");
+
+WriteLiteral(">delete</a>\r\n                                </li>\r\n                            <" +
+"/ul>\r\n                        </div>\r\n                    </div>\r\n              " +
+"  </div>\r\n");
 
             
-            #line 512 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 576 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
             }
         }
+        
+            
+            #line default
+            #line hidden
+            
+            #line 578 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                                
 
             
             #line default
             #line hidden
-WriteLiteral("        <a");
+WriteLiteral("\r\n        <a");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" href=\"javascript:void(0);\"");
 
-WriteLiteral(" class=\"btn btn-info btn-sm pull-right\"");
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-green uppercase\"");
 
 WriteLiteral(" onclick=\"addItem()\"");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 32422), Tuple.Create("\"", 32450)
+WriteAttribute("id", Tuple.Create(" id=\"", 37786), Tuple.Create("\"", 37814)
             
-            #line 514 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-   , Tuple.Create(Tuple.Create("", 32427), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 580 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+                                      , Tuple.Create(Tuple.Create("", 37791), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 32427), false)
-, Tuple.Create(Tuple.Create("", 32446), Tuple.Create("_add", 32446), true)
+, 37791), false)
+, Tuple.Create(Tuple.Create("", 37810), Tuple.Create("_add", 37810), true)
 );
 
-WriteLiteral(">add another</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<input");
+WriteLiteral(">add another</a>\r\n    </div>\r\n</div>\r\n\r\n\r\n<input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 32499), Tuple.Create("\"", 32523)
+WriteAttribute("name", Tuple.Create(" name=\"", 37873), Tuple.Create("\"", 37897)
             
-            #line 519 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
-, Tuple.Create(Tuple.Create("", 32506), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+            #line 585 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+, Tuple.Create(Tuple.Create("", 37880), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 32506), false)
+, 37880), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
@@ -3422,7 +3770,7 @@ WriteLiteral(" />\r\n\r\n<script>\r\n\r\n    var addedEvent = new Event(\'itemAd
 " = ");
 
             
-            #line 524 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 590 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                Write((Model.Value as IEnumerable<RecurringFieldModel>).Cast<RecurringFieldModel>().ToList().Count() == 0 ? 0 : 1);
 
             
@@ -3433,7 +3781,7 @@ WriteLiteral(";\r\n    //var hasValue = 0;\r\n\r\n    if(hasValue == 0)\r\n     
 "ponents(){\r\n        /* Select2  */\r\n        $(\'.");
 
             
-            #line 536 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 602 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3458,7 +3806,7 @@ WriteLiteral(@"_item').find('select.select2').each(function(){
         $('.");
 
             
-            #line 552 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 618 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3467,18 +3815,40 @@ WriteLiteral(@"_item').find('select.select2').each(function(){
 WriteLiteral(@"_item').find('div.checkbox-grouping').each(function(){
             var $this = $(this);
             var randomId = Math.random().toString(36).slice(2);
-            $this.find('input[type=radio]').each(function(){
-                $(this).attr('uniqueid', randomId);
-                var name = $(this).attr('name');
-                $(this).attr('name', name+'_'+randomId);
-            });
+
+            $this
+                .find('input[type=checkbox]')
+                .not('input[uniqueid]') // Inlude only those that does not have a unique ID yet...
+                .each(function(){
+                    // Set the unique Id of the element
+                    $(this).attr('uniqueid', randomId);
+
+                    // Get the name of the element
+                    var name = $(this).attr('name');
+
+                    // Create and set a unique name 
+                    var uniqueName = name+'_'+randomId;
+                    $(this).attr('name', uniqueName);
+
+                    // These event handlers flip the values of the checkboxes
+                    var cbTrue = $('input[name='+uniqueName+']#'+name+'-true');
+                    var cbFalse = $('input[name='+uniqueName+']#'+name+'-false');
+
+                    cbTrue.change(function () {
+                        cbFalse.prop('checked', !$(this).prop('checked'));
+                    });
+
+                    cbFalse.change(function () {
+                        cbTrue.prop('checked', !$(this).prop('checked'));
+                    });
+                });
         });
 
         /* Phone Number */
         $('.");
 
             
-            #line 563 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 651 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3515,7 +3885,7 @@ WriteLiteral(@"_item').find('input[type=tel]').each(function(){
         $('.");
 
             
-            #line 591 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 679 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3547,7 +3917,7 @@ WriteLiteral("_item\').find(\'div.dropzone\').each(function(){\r\n            va
 ";\r\n\r\n        /* Address */\r\n        $(\'.");
 
             
-            #line 630 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 718 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3580,7 +3950,7 @@ WriteLiteral("_item\').find(\'div.address-field\').each(function(){\r\n         
 "/\r\n        $(\'.");
 
             
-            #line 668 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 756 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
         Write(Model.UniqueName);
 
             
@@ -3601,7 +3971,7 @@ WriteLiteral(@"_item').find('input.datepicker').each(function(){
                 if(event.which == 13){ //enter key
                     $this.blur();
                 }
-            });;
+            });
 
             $this.on('blur', function(){
                 if (isNaN(Date.parse($this.val()))){
@@ -3610,14 +3980,30 @@ WriteLiteral(@"_item').find('input.datepicker').each(function(){
             });
         });
 
+        /* Timepicker */
+        $('.");
 
+            
+            #line 781 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+        Write(Model.UniqueName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"_item').find('.mytimepicker').each(function() {
+            var $this = $(this);
+            $this.timepicker({
+                defaultTime: 'current',
+                minuteStep: 1
+            })
+        });
     }
 
     function addItem() {
         var i = $(""#");
 
             
-            #line 696 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 791 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                 Write(Model.UniqueName);
 
             
@@ -3626,7 +4012,7 @@ WriteLiteral(@"_item').find('input.datepicker').each(function(){
 WriteLiteral("_prototype\").clone(true).attr(\'id\', \'\').css(\'display\', \'block\').addClass(\'");
 
             
-            #line 696 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 791 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                                                                                                              Write(Model.UniqueName);
 
             
@@ -3635,7 +4021,7 @@ WriteLiteral("_prototype\").clone(true).attr(\'id\', \'\').css(\'display\', \'bl
 WriteLiteral("_item\');\r\n        i.insertBefore(\"#");
 
             
-            #line 697 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 792 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                      Write(Model.UniqueName);
 
             
@@ -3647,16 +4033,20 @@ WriteLiteral(@"_add"");
         initComponents();
     }
 
-    function deleteItem(item) {
-        $(item).parent().remove();
+    function deleteItem(item, selector) {
+        var el = $(item);
+        if (!!selector) {
+            el = el.closest(selector);
+        }
+        el.parent().remove();
     }
 
-    $('input[type=radio]').change(function(e){
-        var randomId = $(this).attr('uniqueid');
-        var name = $(this).attr('name');
-        var v = $(this).val();
-        $(""#""+randomId).find('input[name='+name.replace('_'+randomId, '')+']').val(v);
-    });
+    //$('input[type=radio]').change(function(e){
+    //    var randomId = $(this).attr('uniqueid');
+    //    var name = $(this).attr('name');
+    //    var v = $(this).val();
+    //    $(""#""+randomId).find('input[name='+name.replace('_'+randomId, '')+']').val(v);
+    //});
 
     function validateTimespan(e) {
         if (!e.validity.valid) {
@@ -3668,17 +4058,17 @@ WriteLiteral(@"_add"");
 
         var items = [];
 
-        $(""input[type=radio]"").each(function(){
+        $(""input[type=checkbox][uniqueid]"").each(function(){
             var name = $(this).attr('name');
             var uniqueid = $(this).attr('uniqueid');
             $(this).attr('name', name.replace('_'+uniqueid, ''));
-            $(this).removeAttr('name');
+            //$(this).removeAttr('name');
         });
 
         $.each($("".");
 
             
-            #line 731 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 830 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                Write(Model.UniqueName);
 
             
@@ -3686,10 +4076,10 @@ WriteLiteral(@"_add"");
             #line hidden
 WriteLiteral("_item\"), function (index, value) {\r\n            console.log(value);\r\n            " +
 "items.push($(value).find(\"input.field, select.field, textarea.field\").serializeA" +
-"rray());\r\n        });\r\n\r\n        $(\"input[name=");
+"rray());\r\n        });\r\n\r\n\r\n        $(\"input[name=");
 
             
-            #line 736 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
+            #line 836 "..\..\Views\Shared\Fields\_RecurringField.cshtml"
                  Write(Model.UniqueName);
 
             

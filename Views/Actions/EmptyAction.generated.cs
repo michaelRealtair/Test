@@ -29,6 +29,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Actions/EmptyAction.cshtml")]
@@ -39,67 +40,67 @@ namespace ASP
         }
         public override void Execute()
         {
-            
-            #line 2 "..\..\Views\Actions\EmptyAction.cshtml"
-Write(Html.Partial("Menu"));
+WriteLiteral("\r\n");
 
-            
-            #line default
-            #line hidden
 WriteLiteral("\r\n\r\n<div");
 
-WriteLiteral(" id=\"page-wrapper\"");
-
-WriteLiteral(" class=\"with-background\"");
+WriteLiteral(" class=\"content bg-grey-lt\"");
 
 WriteLiteral(">\r\n    <div");
 
-WriteLiteral(" class=\"panel panel-default container\"");
+WriteLiteral(" id=\"page-wrapper\"");
+
+WriteLiteral(" class=\"padding-sides-sm pad-form-mob\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"content-table\"");
+WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n            <div");
 
-WriteLiteral(" class=\"content-vertical middle\"");
+WriteLiteral(" class=\"col-sm-10 col-sm-offset-1\"");
 
-WriteLiteral(">\r\n                <div");
+WriteLiteral(">\r\n                <br />\r\n                <br />\r\n                <div");
 
-WriteLiteral(" class=\"row\"");
+WriteLiteral(" class=\"form-horizontal panel panel-body form-padding\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral(">\r\n                    <h2>\r\n");
 
-WriteLiteral(" class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-" +
-"4\"");
-
-WriteLiteral(">\r\n                        <h1>");
+WriteLiteral("                        ");
 
             
-            #line 10 "..\..\Views\Actions\EmptyAction.cshtml"
-                       Write(Model.Action.Description(Html.LoggedInUser()));
+            #line 34 "..\..\Views\Actions\EmptyAction.cshtml"
+                   Write(Model.Action.Description(Html.LoggedInUser()));
 
             
             #line default
             #line hidden
-WriteLiteral("</h1>\r\n                        <div");
+WriteLiteral("\r\n                    </h2>\r\n                </div>\r\n                <div");
 
-WriteLiteral(" class=\"pull-middle\"");
+WriteLiteral(" class=\"form-group margin-tb-md\"");
 
-WriteLiteral(">\r\n                            <a");
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"col-sm-12\"");
+
+WriteLiteral(">\r\n                        <ul");
+
+WriteLiteral(" class=\"pull-right list-inline\"");
+
+WriteLiteral(">\r\n                            <li><a");
 
 WriteLiteral(" onclick=\"$(\'#main-form\').submit()\"");
 
-WriteLiteral(" class=\"btn-primary btn-lg btn\"");
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-green uppercase\"");
 
-WriteLiteral(">Confirm</a>\r\n                            <a");
-
-WriteLiteral(" class=\"btn-warning btn-lg btn\"");
+WriteLiteral(">Confirm</a></li>\r\n                            <li><a");
 
 WriteLiteral(" href=\"/\"");
 
-WriteLiteral(">Cancel</a>\r\n                        </div>\r\n                    </div>\r\n        " +
-"        </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <form");
+WriteLiteral(" class=\"btn btn-task btn-form btn-trans-grey uppercase\"");
+
+WriteLiteral(">BACK</a></li>\r\n                        </ul>\r\n                    </div>\r\n      " +
+"          </div>\r\n                <form");
 
 WriteLiteral(" style=\"display: none;\"");
 
@@ -107,7 +108,7 @@ WriteLiteral(" id=\"main-form\"");
 
 WriteLiteral(" method=\"POST\"");
 
-WriteLiteral("></form>\r\n</div>");
+WriteLiteral("></form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
         }
     }

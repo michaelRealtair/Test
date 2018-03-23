@@ -15,7 +15,7 @@
             {
                 <!-- Action Buttons -->
                 <form class="inline" action="@action.GetUrl(Url)" method="@(action.Fields.Count() >= 1 ? "GET" : "POST")">
-                    <input name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
+                    <input autofocus name="ReturnUrl" type="hidden" value="@Request.Url.AbsolutePath" />
                     <button class="btn btn-sm btn-info btn-outline btn-rounded m-l-10 m-b-10" type="submit">@action.Description(Html.LoggedInUser())</button>
                 </form>
                 <!-- End of Action Buttons -->

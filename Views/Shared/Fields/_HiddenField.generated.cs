@@ -12,6 +12,7 @@
 namespace ASP
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -29,6 +30,7 @@ namespace ASP
     using Realtair.Framework.Core.Actions;
     using Realtair.Framework.Core.Entities;
     using Realtair.Framework.Core.Interfaces;
+    using Realtair.Framework.Core.Web.Utilities;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Shared/Fields/_HiddenField.cshtml")]
@@ -39,28 +41,28 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("<input");
+WriteLiteral("<input autofocus");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 54), Tuple.Create("\"", 78)
+WriteAttribute("name", Tuple.Create(" name=\"", 64), Tuple.Create("\"", 88)
             
             #line 3 "..\..\Views\Shared\Fields\_HiddenField.cshtml"
-, Tuple.Create(Tuple.Create("", 61), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 71), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 61), false)
+, 71), false)
 );
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 93), Tuple.Create("\"", 117)
+WriteAttribute("value", Tuple.Create(" value=\"", 103), Tuple.Create("\"", 127)
             
             #line 3 "..\..\Views\Shared\Fields\_HiddenField.cshtml"
-, Tuple.Create(Tuple.Create("", 101), Tuple.Create<System.Object, System.Int32>(Model.FormValue
+, Tuple.Create(Tuple.Create("", 111), Tuple.Create<System.Object, System.Int32>(Model.FormValue
             
             #line default
             #line hidden
-, 101), false)
+, 111), false)
 );
 
 WriteLiteral(" />");
