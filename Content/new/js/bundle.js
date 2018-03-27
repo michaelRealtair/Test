@@ -66916,12 +66916,12 @@ var AgentDashboardStore = (_class = function () {
     }
   }, {
     key: 'viewMore',
-    value: function viewMore() {
-      var lastIndex = this.campaignsWithTask.map(function (p) {
+    value: function viewMore(dataSource) {
+      var lastIndex = dataSource.map(function (p) {
         return p.isVisible;
       }).lastIndexOf(true);
-      for (var i = lastIndex + 1; i <= lastIndex + this.pageSize && i < this.campaignsWithTask.length; i++) {
-        (0, _mobx.extendObservable)(this.campaignsWithTask[i], { isVisible: true });
+      for (var i = lastIndex + 1; i <= lastIndex + this.pageSize && i < dataSource.length; i++) {
+        (0, _mobx.extendObservable)(dataSource[i], { isVisible: true });
       }
     }
   }, {
@@ -94230,6 +94230,7 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
   var PropertyGrid = (0, _mobxReact.observer)(function (props) {
     var gridResults = props.gridResults;
 
+
     var visiblePeople = gridResults.filter(function (a) {
       return a.isVisible == true;
     });
@@ -94244,6 +94245,19 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
     });
     var withdrawn = gridResults.filter(function (a) {
       return a.hasOwnProperty("hasTask") == false && a.status == 9;
+    });
+
+    var currentVisible = current.filter(function (a) {
+      return a.isVisible == true;
+    });
+    var appraisalVisible = appraisal.filter(function (a) {
+      return a.isVisible == true;
+    });
+    var withdrawnVisible = withdrawn.filter(function (a) {
+      return a.isVisible == true;
+    });
+    var soldVisible = sold.filter(function (a) {
+      return a.isVisible == true;
     });
 
     return _react2.default.createElement(
@@ -94314,15 +94328,15 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
             _react2.default.createElement(
               'div',
               { className: 'flex-grid-container' },
-              gridResults.filter(function (a) {
-                return a.hasOwnProperty("hasTask") == false && a.status <= 4 && a.status != 1;
-              }).map(function (campaign, index) {
+              current.map(function (campaign, index) {
 
                 if (campaign.isVisible == true) {
                   return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: index }, campaign));
                 }
               }),
-              !!visiblePeople.length && visiblePeople.length < current.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: viewMoreHandler })
+              !!currentVisible.length && currentVisible.length < current.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: function onClick() {
+                  viewMoreHandler(current);
+                } })
             )
           )
         ) : "",
@@ -94352,14 +94366,14 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
             _react2.default.createElement(
               'div',
               { className: 'flex-grid-container' },
-              gridResults.filter(function (a) {
-                return a.hasOwnProperty("hasTask") == false && a.status <= 1;
-              }).map(function (campaign, i) {
+              appraisal.map(function (campaign, i) {
                 if (campaign.isVisible == true) {
                   return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: i }, campaign));
                 }
               }),
-              !!visiblePeople.length && visiblePeople.length < appraisal.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: viewMoreHandler })
+              !!appraisalVisible.length && appraisalVisible.length < appraisal.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: function onClick() {
+                  viewMoreHandler(appraisal);
+                } })
             )
           )
         ) : "",
@@ -94389,14 +94403,14 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
             _react2.default.createElement(
               'div',
               { className: 'flex-grid-container' },
-              gridResults.map(function (campaign, i) {
-                if (campaign.hasOwnProperty("hasTask") == false && campaign.status == 9) {
-                  if (campaign.isVisible == true) {
-                    return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: i }, campaign));
-                  }
+              withdrawn.map(function (campaign, i) {
+                if (campaign.isVisible == true) {
+                  return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: i }, campaign));
                 }
               }),
-              !!visiblePeople.length && visiblePeople.length < withdrawn.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: viewMoreHandler })
+              !!withdrawnVisible.length && withdrawnVisible.length < withdrawn.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: function onClick() {
+                  viewMoreHandler(withdrawn);
+                } })
             )
           )
         ) : "",
@@ -94426,14 +94440,14 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
             _react2.default.createElement(
               'div',
               { className: 'flex-grid-container' },
-              gridResults.map(function (campaign, i) {
-                if (campaign.hasOwnProperty("hasTask") == false && campaign.status > 4 && campaign.status != 7 && campaign.status != 9) {
-                  if (campaign.isVisible == true) {
-                    return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: i }, campaign));
-                  }
+              sold.map(function (campaign, i) {
+                if (campaign.isVisible == true) {
+                  return _react2.default.createElement(_PropertyGridItem2.default, _extends({ key: i }, campaign));
                 }
               }),
-              !!visiblePeople.length && visiblePeople.length < sold.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: viewMoreHandler })
+              !!soldVisible.length && soldVisible.length < sold.length && _react2.default.createElement(_PropertyGridItem2.default, { onClick: function onClick() {
+                  viewMoreHandler(sold);
+                } })
             )
           )
         ) : ""
@@ -94446,9 +94460,8 @@ var AgentDashboard = (0, _mobxReact.observer)(function (props) {
     return item.address.toLowerCase().includes(value) || item.suburb.toLowerCase().includes(value) && item.isVisible == true;
   };
 
-  var viewMoreHandler = function viewMoreHandler(e) {
-    e.preventDefault();
-    _MainStore2.default.agentDashboardStore.viewMore();
+  var viewMoreHandler = function viewMoreHandler(dataSource) {
+    _MainStore2.default.agentDashboardStore.viewMore(dataSource);
   };
 
   if (agentDashboardStore.campaignsWithTask.length == 0) {
