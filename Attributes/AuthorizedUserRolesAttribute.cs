@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Realtair.Assist.Web.Attributes
+namespace Realtair.Framework.Web.Attributes
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public sealed class AuthorizedUserRolesAttribute : Attribute

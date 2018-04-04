@@ -9,6 +9,7 @@
 }
 @if (Model.HasError)
 {
+<div class="form-address-mob">
     <div class="form-group has-error">
         <label class="col-sm-3 control-label">@Model.Label</label>
         <div class="col-sm-9">
@@ -36,10 +37,10 @@
             <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)">
         </div>
     </div>
-
+</div>
 }
 else
-{
+{<div class="form-address-mob">
     <div class="form-group">
         <label class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label">@Model.Label</label>
         <div class="col-sm-9">
@@ -66,16 +67,17 @@ else
             <input autofocus type="text" class="form-control lite" id="@(Model.UniqueName)_postcode" placeholder="Post Code" value="@(Address?.Postcode)">
         </div>
     </div>
-}
+    </div>
+    }
 
 
-<input autofocus id="@(Model.UniqueName)_streetName" type="hidden" value="@(Address?.StreetName)">
-<input autofocus id="@(Model.UniqueName)_streetType" type="hidden" value="@(Address?.StreetType)">
-<input autofocus id="@(Model.UniqueName)_streetNumber" type="hidden" value="@(Address?.StreetNumber)">
-<input autofocus name="@Model.UniqueName" id="@Model.UniqueName" type="hidden" value="@if (Address != null) { @Address.Serialize() }"/>
+    <input autofocus id="@(Model.UniqueName)_streetName" type="hidden" value="@(Address?.StreetName)">
+    <input autofocus id="@(Model.UniqueName)_streetType" type="hidden" value="@(Address?.StreetType)">
+    <input autofocus id="@(Model.UniqueName)_streetNumber" type="hidden" value="@(Address?.StreetNumber)">
+    <input autofocus name="@Model.UniqueName" id="@Model.UniqueName" type="hidden" value="@if (Address != null) { @Address.Serialize() }" />
 
 
-<script>
+    <script>
 (function () {
     var serialised = document.getElementById('@Model.UniqueName')
     var line_1 = document.getElementById('@(Model.UniqueName)_line_1');
@@ -148,4 +150,4 @@ else
         });
     }
 })();
-</script>
+    </script>
