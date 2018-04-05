@@ -7,13 +7,30 @@
     <div class="col-md-3 col-sm-4">
         <label class="control-label">@Model.Label</label>
     </div>
+    @{
+        if (@attribute.Nullable == true)
+        {
+            <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
+                <label class="radio-inline">
+                    <input type="radio" name="@Model.PropertyInfo.Name" value="true"> @attribute.LabelForTrue<br>
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="@Model.PropertyInfo.Name" value="false"> @attribute.LabelForFalse<br>
+                </label>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
+                <label class="radio-inline">
+                    <input type="radio" name="@Model.PropertyInfo.Name" value="true" @(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForTrue<br>
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="@Model.PropertyInfo.Name" value="false" @(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForFalse<br>
+                </label>
+            </div>
+        }
+    }
 
-    <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
-        <label class="radio-inline">
-            <input type="radio" name="@Model.PropertyInfo.Name" value="true" @(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForTrue<br>
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="@Model.PropertyInfo.Name" value="false" @(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForFalse<br>
-        </label>
-    </div>
+   
 </div>
