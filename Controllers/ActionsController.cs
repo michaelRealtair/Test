@@ -34,13 +34,10 @@ namespace Realtair.Framework.Core.Web.Controllers
         // Constructors
         public ActionsController(IAuthenticationFactory authenticationFactory) 
             : base(authenticationFactory)
-        {
-           
+        {  
         }
 
-        
-        
-        public class ActionViewModel
+        public class ActionViewModel : ILayoutViewModel
         {
             // Fields
             public Action Action;

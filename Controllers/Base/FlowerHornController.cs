@@ -1,4 +1,5 @@
 ﻿using Realtair.Framework.Core.Entities;
+using Realtair.Framework.Core.Web;
 using Realtair.Framework.Core.Web.Controllers;
 using Realtair.Framework.Core.Web.Utilities;
 using Realtair.Framework.Web.Attributes;
@@ -63,7 +64,7 @@ namespace Realtair.Framework.Web.Controllers
         }
 
         #region View Models
-        public class ViewModel
+        public class ViewModel : ILayoutViewModel
         {
             public string type { get; set; }
             public string subType { get; set; }
