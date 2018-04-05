@@ -1,4 +1,5 @@
-﻿@model Realtair.Framework.Core.Actions.Field
+﻿
+@model Realtair.Framework.Core.Actions.Field
 @{
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
 }
@@ -8,7 +9,8 @@
         <label class="control-label">@Model.Label</label>
     </div>
     @{
-        if (@attribute.Nullable == true)
+
+        if (Model.PropertyType.Name == "Nullable`1")
         {
             <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
                 <label class="radio-inline">
