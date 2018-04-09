@@ -8,7 +8,7 @@
             <label class="control-label">@Model.Label</label>
         </div>
         <div class="col-sm-@(Model.Label.Count() > 40 ? "12" : "9")">
-            <input autofocus type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
+            <input type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
             <span class="help-block">
             @{
                 var newErrorMessage = Regex.Replace(Model.UniqueName, "(?<!^)_?([A-Z])", " $1");
@@ -24,7 +24,7 @@ else
     <div class="form-group">
         <label class="col-sm-@(Model.Label.Count() > 40 ? "12" : "3") control-label">@Model.Label</label>
         <div class="col-sm-@(Model.Label.Count() > 40 ? "6" : "9")">
-            <input autofocus type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
+            <input type="text" class="form-control lite" name="@Model.UniqueName" placeholder="@Model.FieldAttribute.Hint" value="@Model.Value">
             <small>@Model.FieldAttribute.Help</small>
         </div>
     </div>

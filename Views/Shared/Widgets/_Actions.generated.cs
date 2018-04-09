@@ -123,20 +123,20 @@ WriteAttribute("method", Tuple.Create(" method=\"", 566), Tuple.Create("\"", 621
 , 575), false)
 );
 
-WriteLiteral(">\r\n                    <input autofocus");
+WriteLiteral(">\r\n                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 692), Tuple.Create("\"", 725)
+WriteAttribute("value", Tuple.Create(" value=\"", 682), Tuple.Create("\"", 715)
             
             #line 18 "..\..\Views\Shared\Widgets\_Actions.cshtml"
-, Tuple.Create(Tuple.Create("", 700), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+, Tuple.Create(Tuple.Create("", 690), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 700), false)
+, 690), false)
 );
 
 WriteLiteral(" />\r\n                    <button");

@@ -145,30 +145,30 @@
                                 {
                                     if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
+                                        <input  type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
                                     }
                                     else if (field.Value is IList<Attachment>)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
+                                        <input  type="hidden" name="@field.UniqueName" value="[@(string.Join(",",((IList<Attachment>)field.Value).Select(f => f.Id.ToString())))]" />
                                     }
                                     else if (field.Value is ICustomViewModel)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
+                                        <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
                                     }
                                     else if (field.Value is IEnumerable<ICustomViewModel>)
                                     {
                                         if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
+                                            <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />
                                         }
                                     }
                                     else if (field.Value is IEnumerable<Entity>)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
+                                        <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
                                     }
                                     else if (field.Value is Entity)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                        <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
                                     }
                                     else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
                                     {
@@ -183,28 +183,28 @@
                                             else { values += "null,"; }
 
                                         }
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                        <input  type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
                                     }
                                     else if (field.Value is DateTime)
                                     {
                                         var date = (DateTime)field.Value;
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                        <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
                                     }
                                     else if (field.Value is bool)
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
+                                        <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
                                     }
                                     else
                                     {
-                                        <input autofocus type="hidden" name="@field.UniqueName" value="@field.Value" />
+                                        <input type="hidden" name="@field.UniqueName" value="@field.Value" />
                                     }
                                 }
 
-                                <input autofocus type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
-                                <input autofocus type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
+                                <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
                             }
 
-                            <input autofocus type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+                            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
                         </div>
                     </form>
 
@@ -248,31 +248,31 @@
                                     {
                                         if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.BulkFileUploadFieldAttribute && field.Value is IEnumerable<Attachment>)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
+                                            <input type="hidden" name="@field.UniqueName" value="[@foreach (var a in field.Value as IEnumerable<Attachment>) { @(a.Id + ",") }]" />
                                         }
                                         else if (field.Value is IEnumerable<Attachment>)
                                         {
                                             foreach (var file in (IEnumerable<Attachment>)field.Value)
                                             {
-                                                <input autofocus type="hidden" name="@field.UniqueName" value="@(file.Id)" />}
+                                                <input type="hidden" name="@field.UniqueName" value="@(file.Id)" />}
                                         }
                                         else if (field.Value is ICustomViewModel)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
+                                            <input type="hidden" name="@field.UniqueName" value="@((field.Value as ICustomViewModel).Serialize())" />
                                         }
                                         else if (field.Value is IEnumerable<ICustomViewModel>)
                                         {
                                             if ((field.Value as IEnumerable<ICustomViewModel>).Count() > 0)
                                             {
-                                                <input autofocus type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />}
+                                                <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<ICustomViewModel>).Select(s => s.Serialize())))]" />}
                                         }
                                         else if (field.Value is Entity)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
+                                            <input type="hidden" name="@field.UniqueName" value="@((field.Value as Entity).Id)" />
                                         }
                                         else if (field.Value is IEnumerable<Entity>)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
+                                            <input type="hidden" name="@field.UniqueName" value="[@(string.Join(",", (field.Value as IEnumerable<Entity>).Select(e => e.Id.ToString())))]" />
                                         }
                                         else if (field.FieldAttribute is Realtair.Framework.Core.Actions.FieldAttributes.WidgetFieldAttribute)
                                         {
@@ -287,31 +287,31 @@
                                                 else { values += "null,"; }
 
                                             }
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
+                                            <input type="hidden" name="@field.UniqueName" value="[@(values.Substring(0, values.Length - 1).ToLower())]" />
                                         }
                                         else if (field.Value is DateTime)
                                         {
                                             var date = (DateTime)field.Value;
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
+                                            <input type="hidden" name="@field.UniqueName" value="@if(date > DateTime.MinValue) { @date.ToString("yyyy-MM-dd") }" />
                                         }
                                         else if (field.Value is bool)
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
+                                            <input type="hidden" name="@field.UniqueName" value="@field.Value.ToString()" />
                                         }
                                         else
                                         {
-                                            <input autofocus type="hidden" name="@field.UniqueName" value="@field.Value" />
+                                            <input type="hidden" name="@field.UniqueName" value="@field.Value" />
                                         }
                                     }
-                                    <input autofocus type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
-                                    <input autofocus type="hidden" name="page" value="@Model.Page.GetType().Name" />
-                                    <input autofocus type="hidden" name="back" value="true" />
+                                    <input type="hidden" name="submittedpagenames" value="@string.Join(",", Model.SubmittedPages.Select(p => p.GetType().Name))" />
+                                    <input type="hidden" name="page" value="@Model.Page.GetType().Name" />
+                                    <input type="hidden" name="back" value="true" />
                                 }
                             </form>
                         }
                     }
                     <form method="post" id="cancel-form" action="@(cancelActionUrl)">
-                        <input autofocus type="hidden" name="cancel" value="true" />
+                        <input type="hidden" name="cancel" value="true" />
                     </form>
                 </div>
 
@@ -319,6 +319,13 @@
         </div>
         @Html.Partial("Footer")
         <script>
+            $(document).ready(function () {
+                var firstInput = $('form').find('input[type=text],input[type=password],input[type=radio],input[type=checkbox],textarea,select').filter(':visible:first');
+                if (firstInput != null) {
+                    firstInput.focus();
+                }
+            });
+
             $('#main-form-submit').click(function (e) {
 				e.preventDefault()
 				var bValid = true;
@@ -338,12 +345,11 @@
 						formgroup.find('span.help-block').remove();
 					}
 				});
-
 				if (bValid) {
 					$('.preloader').css('display', 'block');
 					$('#main-form').submit.disabled = true;
 					$('#main-form').submit();
-				}
+                }
 			});
         </script>
     }

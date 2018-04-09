@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-sm-3">
-            <input autofocus name="@Model.UniqueName" type="number" class="form-control" step="0.01" value="@(((decimal)Model.Value) == 0 ? null : Model.Value)">
+            <input name="@Model.UniqueName" type="number" class="form-control" step="0.01" value="@(((decimal)Model.Value) == 0 ? null : Model.Value)">
             <span class="help-block">@Model.ErrorMessage</span>
         </div>
     </div>
@@ -21,7 +21,7 @@ else
         </div>
 
         <div class="col-sm-3">
-            <input autofocus name="@Model.UniqueName" type="number" class="form-control" step="0.01" value="@(((decimal)Model.Value) == 0 ? null : Model.Value)">
+            <input name="@Model.UniqueName" type="number" class="form-control" step="0.01" value="@(((decimal)Model.Value) == 0 ? null : Model.Value)">
         </div>
     </div>
 }
