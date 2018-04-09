@@ -95,41 +95,162 @@ WriteLiteral("</label>\r\n        </div>\r\n");
             
             #line 16 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
 
+        if (Model.PropertyType.Name == "Nullable`1")
+        {
 
             
             #line default
             #line hidden
-WriteLiteral("        <div");
+WriteLiteral("            <div");
 
 WriteLiteral(" class=\"col-sm-6\"");
 
-WriteLiteral(">\r\n            <div");
+WriteLiteral(">\r\n                <div");
 
 WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(">\r\n                <p>\r\n                    <label>\r\n                        <inp" +
-"ut autofocus");
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 711), Tuple.Create("\"", 733)
+WriteAttribute("id", Tuple.Create(" id=\"", 796), Tuple.Create("\"", 818)
             
-            #line 21 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 716), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
+            #line 23 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 801), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
             
             #line default
             #line hidden
-, 716), false)
+, 801), false)
 );
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 750), Tuple.Create("\"", 770)
+WriteAttribute("name", Tuple.Create(" name=\"", 835), Tuple.Create("\"", 855)
             
-            #line 21 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-       , Tuple.Create(Tuple.Create("", 757), Tuple.Create<System.Object, System.Int32>(propertyname
+            #line 23 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+           , Tuple.Create(Tuple.Create("", 842), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 757), false)
+, 842), false)
+);
+
+WriteLiteral(" value=\"true\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
+
+WriteLiteral("                            ");
+
+            
+            #line 28 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForTrue);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n                &nbsp;\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 1369), Tuple.Create("\"", 1392)
+            
+            #line 36 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 1374), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
+            
+            #line default
+            #line hidden
+, 1374), false)
+);
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 1409), Tuple.Create("\"", 1429)
+            
+            #line 36 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+           , Tuple.Create(Tuple.Create("", 1416), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 1416), false)
+);
+
+WriteLiteral(" value=\"false\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
+
+WriteLiteral("                            ");
+
+            
+            #line 41 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForFalse);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n            </div>\r\n");
+
+            
+            #line 46 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+        }
+        else
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"col-sm-6\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 2013), Tuple.Create("\"", 2035)
+            
+            #line 53 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 2018), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
+            
+            #line default
+            #line hidden
+, 2018), false)
+);
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 2052), Tuple.Create("\"", 2072)
+            
+            #line 53 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+          , Tuple.Create(Tuple.Create("", 2059), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 2059), false)
 );
 
 WriteLiteral(" value=\"true\"");
@@ -137,59 +258,60 @@ WriteLiteral(" value=\"true\"");
 WriteLiteral(" ");
 
             
-            #line 21 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                              Write(Convert.ToBoolean(value) ? "checked='checked'" : "");
+            #line 53 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                  Write(Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(">\r\n                        <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"checkbox-material\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"check\"");
 
-WriteLiteral(">\r\n                            </span>\r\n                        </span>\r\n");
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
 
-WriteLiteral("                        ");
+WriteLiteral("                            ");
 
             
-            #line 26 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                   Write(attribute.LabelForTrue);
+            #line 58 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForTrue);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </label>\r\n                </p>\r\n            </div>\r\n       " +
-"     &nbsp;\r\n            <div");
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n                &nbsp;\r\n                <div");
 
 WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(">\r\n                <p>\r\n                    <label>\r\n                        <inp" +
-"ut autofocus");
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1287), Tuple.Create("\"", 1310)
+WriteAttribute("id", Tuple.Create(" id=\"", 2641), Tuple.Create("\"", 2664)
             
-            #line 34 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 1292), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
+            #line 66 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 2646), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
             
             #line default
             #line hidden
-, 1292), false)
+, 2646), false)
 );
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1327), Tuple.Create("\"", 1347)
+WriteAttribute("name", Tuple.Create(" name=\"", 2681), Tuple.Create("\"", 2701)
             
-            #line 34 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-       , Tuple.Create(Tuple.Create("", 1334), Tuple.Create<System.Object, System.Int32>(propertyname
+            #line 66 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+           , Tuple.Create(Tuple.Create("", 2688), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 1334), false)
+, 2688), false)
 );
 
 WriteLiteral(" value=\"false\"");
@@ -197,36 +319,38 @@ WriteLiteral(" value=\"false\"");
 WriteLiteral(" ");
 
             
-            #line 34 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                                Write(!Convert.ToBoolean(value) ? "checked='checked'" : "");
+            #line 66 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                    Write(!Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(">\r\n                        <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"checkbox-material\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"check\"");
 
-WriteLiteral(">\r\n                            </span>\r\n                        </span>\r\n");
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
 
-WriteLiteral("                        ");
+WriteLiteral("                            ");
 
             
-            #line 39 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                   Write(attribute.LabelForFalse);
+            #line 71 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForFalse);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </label>\r\n                </p>\r\n            </div>\r\n       " +
-" </div>\r\n");
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n            </div>\r\n");
 
             
-            #line 44 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 76 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+        }
     }
     else
     {
@@ -245,7 +369,7 @@ WriteLiteral(" class=\"control-label\"");
 WriteLiteral(">");
 
             
-            #line 48 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 81 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                     Write(Model.Label);
 
             
@@ -253,37 +377,165 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n        </div>\r\n");
 
-WriteLiteral("        <div");
-
-WriteLiteral(" class=\"col-sm-9\"");
-
-WriteLiteral(">\r\n            <div");
-
-WriteLiteral(" class=\"checkbox\"");
-
-WriteLiteral(">\r\n                <p>\r\n                    <label>\r\n                        <inp" +
-"ut autofocus");
-
-WriteAttribute("id", Tuple.Create(" id=\"", 2044), Tuple.Create("\"", 2066)
             
-            #line 54 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 2049), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
+            #line 83 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+
+        if (Model.PropertyType.Name == "Nullable`1")
+        {
+
             
             #line default
             #line hidden
-, 2049), false)
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"col-sm-9\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 3532), Tuple.Create("\"", 3554)
+            
+            #line 90 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 3537), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
+            
+            #line default
+            #line hidden
+, 3537), false)
 );
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 2083), Tuple.Create("\"", 2103)
+WriteAttribute("name", Tuple.Create(" name=\"", 3571), Tuple.Create("\"", 3591)
             
-            #line 54 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-      , Tuple.Create(Tuple.Create("", 2090), Tuple.Create<System.Object, System.Int32>(propertyname
+            #line 90 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+          , Tuple.Create(Tuple.Create("", 3578), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 2090), false)
+, 3578), false)
+);
+
+WriteLiteral(" value=\"true\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
+
+WriteLiteral("                            ");
+
+            
+            #line 95 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForTrue);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n                &nbsp;\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 4105), Tuple.Create("\"", 4128)
+            
+            #line 103 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 4110), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
+            
+            #line default
+            #line hidden
+, 4110), false)
+);
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 4145), Tuple.Create("\"", 4165)
+            
+            #line 103 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+           , Tuple.Create(Tuple.Create("", 4152), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 4152), false)
+);
+
+WriteLiteral(" value=\"false\"");
+
+WriteLiteral(")>\r\n                            <span");
+
+WriteLiteral(" class=\"checkbox-material\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" class=\"check\"");
+
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
+
+WriteLiteral("                            ");
+
+            
+            #line 108 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForFalse);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n            </div>\r\n");
+
+            
+            #line 113 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+        }
+        else
+        {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            <div");
+
+WriteLiteral(" class=\"col-sm-9\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"checkbox\"");
+
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
+
+WriteAttribute("id", Tuple.Create(" id=\"", 4750), Tuple.Create("\"", 4772)
+            
+            #line 120 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 4755), Tuple.Create<System.Object, System.Int32>(trueCheckboxName
+            
+            #line default
+            #line hidden
+, 4755), false)
+);
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteAttribute("name", Tuple.Create(" name=\"", 4789), Tuple.Create("\"", 4809)
+            
+            #line 120 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+          , Tuple.Create(Tuple.Create("", 4796), Tuple.Create<System.Object, System.Int32>(propertyname
+            
+            #line default
+            #line hidden
+, 4796), false)
 );
 
 WriteLiteral(" value=\"true\"");
@@ -291,59 +543,60 @@ WriteLiteral(" value=\"true\"");
 WriteLiteral(" ");
 
             
-            #line 54 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                              Write(Convert.ToBoolean(value) ? "checked='checked'" : "");
+            #line 120 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                  Write(Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(">\r\n                        <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"checkbox-material\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"check\"");
 
-WriteLiteral(">\r\n                            </span>\r\n                        </span>\r\n");
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
 
-WriteLiteral("                        ");
+WriteLiteral("                            ");
 
             
-            #line 59 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                   Write(attribute.LabelForTrue);
+            #line 125 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForTrue);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </label>\r\n                </p>\r\n            </div>\r\n       " +
-"     &nbsp;\r\n            <div");
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n                &nbsp;\r\n                <div");
 
 WriteLiteral(" class=\"checkbox\"");
 
-WriteLiteral(">\r\n                <p>\r\n                    <label>\r\n                        <inp" +
-"ut autofocus");
+WriteLiteral(">\r\n                    <p>\r\n                        <label>\r\n                    " +
+"        <input autofocus");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 2620), Tuple.Create("\"", 2643)
+WriteAttribute("id", Tuple.Create(" id=\"", 5378), Tuple.Create("\"", 5401)
             
-            #line 67 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-, Tuple.Create(Tuple.Create("", 2625), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
+            #line 133 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+, Tuple.Create(Tuple.Create("", 5383), Tuple.Create<System.Object, System.Int32>(falseCheckboxName
             
             #line default
             #line hidden
-, 2625), false)
+, 5383), false)
 );
 
 WriteLiteral(" type=\"checkbox\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 2660), Tuple.Create("\"", 2680)
+WriteAttribute("name", Tuple.Create(" name=\"", 5418), Tuple.Create("\"", 5438)
             
-            #line 67 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-       , Tuple.Create(Tuple.Create("", 2667), Tuple.Create<System.Object, System.Int32>(propertyname
+            #line 133 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+           , Tuple.Create(Tuple.Create("", 5425), Tuple.Create<System.Object, System.Int32>(propertyname
             
             #line default
             #line hidden
-, 2667), false)
+, 5425), false)
 );
 
 WriteLiteral(" value=\"false\"");
@@ -351,36 +604,39 @@ WriteLiteral(" value=\"false\"");
 WriteLiteral(" ");
 
             
-            #line 67 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                                                                                                                Write(!Convert.ToBoolean(value) ? "checked='checked'" : "");
+            #line 133 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                                                                                                                    Write(!Convert.ToBoolean(value) ? "checked='checked'" : "");
 
             
             #line default
             #line hidden
-WriteLiteral(">\r\n                        <span");
+WriteLiteral(">\r\n                            <span");
 
 WriteLiteral(" class=\"checkbox-material\"");
 
-WriteLiteral(">\r\n                            <span");
+WriteLiteral(">\r\n                                <span");
 
 WriteLiteral(" class=\"check\"");
 
-WriteLiteral(">\r\n                            </span>\r\n                        </span>\r\n");
+WriteLiteral(">\r\n                                </span>\r\n                            </span>\r\n" +
+"");
 
-WriteLiteral("                        ");
+WriteLiteral("                            ");
 
             
-            #line 72 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
-                   Write(attribute.LabelForFalse);
+            #line 138 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+                       Write(attribute.LabelForFalse);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n                    </label>\r\n                </p>\r\n            </div>\r\n       " +
-" </div>\r\n");
+WriteLiteral("\r\n                        </label>\r\n                    </p>\r\n                </d" +
+"iv>\r\n            </div>\r\n");
 
             
-            #line 77 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 143 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+        }
+
     }
 
             
@@ -389,7 +645,7 @@ WriteLiteral("\r\n                    </label>\r\n                </p>\r\n      
 WriteLiteral("\r\n\r\n</div>\r\n\r\n<script>\r\n    (function () {\r\n        var trueCheckbox = $(\'input#");
 
             
-            #line 84 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 152 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                Write(trueCheckboxName);
 
             
@@ -398,7 +654,7 @@ WriteLiteral("\r\n\r\n</div>\r\n\r\n<script>\r\n    (function () {\r\n        va
 WriteLiteral("\');\r\n        var falseCheckbox = $(\'input#");
 
             
-            #line 85 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
+            #line 153 "..\..\Views\Shared\Fields\_CheckboxField.cshtml"
                                 Write(falseCheckboxName);
 
             
