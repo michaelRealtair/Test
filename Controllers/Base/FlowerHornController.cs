@@ -1,7 +1,8 @@
-﻿using Realtair.Assist.Web.Attributes;
-using Realtair.Framework.Core.Entities;
+﻿using Realtair.Framework.Core.Entities;
+using Realtair.Framework.Core.Web;
 using Realtair.Framework.Core.Web.Controllers;
 using Realtair.Framework.Core.Web.Utilities;
+using Realtair.Framework.Web.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -50,7 +51,7 @@ namespace Realtair.Framework.Web.Controllers
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                 {
                     controller = "dashboard",
-                    action = "dashboard"
+                    action = "dashboard"    
                 }));
             }
         }
@@ -63,7 +64,7 @@ namespace Realtair.Framework.Web.Controllers
         }
 
         #region View Models
-        public class ViewModel
+        public class ViewModel : ILayoutViewModel
         {
             public string type { get; set; }
             public string subType { get; set; }
