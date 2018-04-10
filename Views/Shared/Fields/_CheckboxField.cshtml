@@ -14,66 +14,134 @@
             <label class="control-label">@Model.Label</label>
         </div>
 
-        <div class="col-sm-6">
-            <div class="checkbox">
-                <p>
-                    <label>
-                        <input autofocus id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
-                        <span class="checkbox-material">
-                            <span class="check">
+        if (Model.PropertyType.Name == "Nullable`1")
+        {
+            <div class="col-sm-6">
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true">
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
                             </span>
-                        </span>
-                        @attribute.LabelForTrue
-                    </label>
-                </p>
-            </div>
-            &nbsp;
-            <div class="checkbox">
-                <p>
-                    <label>
-                        <input autofocus id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
-                        <span class="checkbox-material">
-                            <span class="check">
+                            @attribute.LabelForTrue
+                        </label>
+                    </p>
+                </div>
+                &nbsp;
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false">
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
                             </span>
-                        </span>
-                        @attribute.LabelForFalse
-                    </label>
-                </p>
+                            @attribute.LabelForFalse
+                        </label>
+                    </p>
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="col-sm-6">
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
+                            </span>
+                            @attribute.LabelForTrue
+                        </label>
+                    </p>
+                </div>
+                &nbsp;
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
+                            </span>
+                            @attribute.LabelForFalse
+                        </label>
+                    </p>
+                </div>
+            </div>
+        }
     }
     else
     {
         <div class="col-sm-3 control-label">
             <label class="control-label">@Model.Label</label>
         </div>
-        <div class="col-sm-9">
-            <div class="checkbox">
-                <p>
-                    <label>
-                        <input autofocus id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
-                        <span class="checkbox-material">
-                            <span class="check">
+
+        if (Model.PropertyType.Name == "Nullable`1")
+        {
+            <div class="col-sm-9">
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true">
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
                             </span>
-                        </span>
-                        @attribute.LabelForTrue
-                    </label>
-                </p>
-            </div>
-            &nbsp;
-            <div class="checkbox">
-                <p>
-                    <label>
-                        <input autofocus id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
-                        <span class="checkbox-material">
-                            <span class="check">
+                            @attribute.LabelForTrue
+                        </label>
+                    </p>
+                </div>
+                &nbsp;
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false")>
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
                             </span>
-                        </span>
-                        @attribute.LabelForFalse
-                    </label>
-                </p>
+                            @attribute.LabelForFalse
+                        </label>
+                    </p>
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="col-sm-9">
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@trueCheckboxName" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
+                            </span>
+                            @attribute.LabelForTrue
+                        </label>
+                    </p>
+                </div>
+                &nbsp;
+                <div class="checkbox">
+                    <p>
+                        <label>
+                            <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                            <span class="checkbox-material">
+                                <span class="check">
+                                </span>
+                            </span>
+                            @attribute.LabelForFalse
+                        </label>
+                    </p>
+                </div>
+            </div>
+        }
+
     }
 
 

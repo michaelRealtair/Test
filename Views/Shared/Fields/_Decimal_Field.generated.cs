@@ -74,16 +74,16 @@ WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n            <input autofocus");
+WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 286), Tuple.Create("\"", 310)
+WriteAttribute("name", Tuple.Create(" name=\"", 276), Tuple.Create("\"", 300)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 293), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 283), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 293), false)
+, 283), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -92,14 +92,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 358), Tuple.Create("\"", 417)
+WriteAttribute("value", Tuple.Create(" value=\"", 348), Tuple.Create("\"", 407)
             
             #line 11 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                              , Tuple.Create(Tuple.Create("", 366), Tuple.Create<System.Object, System.Int32>(((decimal)Model.Value) == 0 ? null : Model.Value
+                    , Tuple.Create(Tuple.Create("", 356), Tuple.Create<System.Object, System.Int32>(((decimal)Model.Value) == 0 ? null : Model.Value
             
             #line default
             #line hidden
-, 366), false)
+, 356), false)
 );
 
 WriteLiteral(">\r\n            <span");
@@ -151,16 +151,16 @@ WriteLiteral("</label>\r\n        </div>\r\n\r\n        <div");
 
 WriteLiteral(" class=\"col-sm-3\"");
 
-WriteLiteral(">\r\n            <input autofocus");
+WriteLiteral(">\r\n            <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 729), Tuple.Create("\"", 753)
+WriteAttribute("name", Tuple.Create(" name=\"", 709), Tuple.Create("\"", 733)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 736), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 716), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 736), false)
+, 716), false)
 );
 
 WriteLiteral(" type=\"number\"");
@@ -169,14 +169,14 @@ WriteLiteral(" class=\"form-control\"");
 
 WriteLiteral(" step=\"0.01\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 801), Tuple.Create("\"", 860)
+WriteAttribute("value", Tuple.Create(" value=\"", 781), Tuple.Create("\"", 840)
             
             #line 24 "..\..\Views\Shared\Fields\_Decimal_Field.cshtml"
-                              , Tuple.Create(Tuple.Create("", 809), Tuple.Create<System.Object, System.Int32>(((decimal)Model.Value) == 0 ? null : Model.Value
+                    , Tuple.Create(Tuple.Create("", 789), Tuple.Create<System.Object, System.Int32>(((decimal)Model.Value) == 0 ? null : Model.Value
             
             #line default
             #line hidden
-, 809), false)
+, 789), false)
 );
 
 WriteLiteral(">\r\n        </div>\r\n    </div>\r\n");

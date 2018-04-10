@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-sm-3">
-            <input autofocus name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
+            <input name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
             <span class="help-block">@Model.ErrorMessage</span>
         </div>
     </div>
@@ -21,7 +21,7 @@ else
         </div>
 
         <div class="col-sm-3">
-            <input autofocus name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
+            <input name="@Model.UniqueName" type="number" class="form-control" step="1" value="@Model.Value" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onchange="this.value = Math.round(this.value)">
         </div>
     </div>
 }
