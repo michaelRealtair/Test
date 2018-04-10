@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">@f.Label</label>
                         <div class="col-sm-10">
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field lite @(f.FieldAttribute.Required ? "required" : "")">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field lite @(f.FieldAttribute.Required ? "required" : "")">
                             <small>@Model.FieldAttribute.Help</small>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">@f.Label</label>
                         <div class="col-sm-4">
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)"
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)"
                                    type="text"
                                    @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
                                    class="form-control datepicker input-small field lite"
@@ -91,7 +91,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">@f.Label</label>
                         <div class="col-sm-4">
-                            <input autofocus type="text" 
+                            <input type="text" 
                                    class="form-control lite mytimepicker field" 
                                    name="@(Model.UniqueName)_@(f.UniqueName)" 
                                    placeholder="Click to select time"
@@ -124,7 +124,7 @@
                                     }
                                 </select>
                             }
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(Values)" />
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(Values)" />
                         </div>
                     </div>
                 }
@@ -146,7 +146,7 @@
                         </div>
 
                         <div class="col-md-9 col-sm-8">
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
                         </div>
                     </div>
                 }
@@ -166,7 +166,7 @@
                             <div class="checkbox">
                                 <p>
                                     <label>
-                                        <input autofocus id="@trueCheckboxName" class="field" type="checkbox" name="@propertyname" value="true">
+                                        <input id="@trueCheckboxName" class="field" type="checkbox" name="@propertyname" value="true">
                                         <span class="checkbox-material">
                                             <span class="check">
                                             </span>
@@ -179,7 +179,7 @@
                             <div class="checkbox">
                                 <p>
                                     <label>
-                                        <input autofocus id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false">
+                                        <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false">
                                         <span class="checkbox-material">
                                             <span class="check">
                                             </span>
@@ -188,7 +188,7 @@
                                     </label>
                                 </p>
                             </div>
-                            @*<input autofocus id="@(Model.UniqueName)_@(f.UniqueName)" name="@propertyname" type="hidden" class="field">*@
+                            @*<input id="@(Model.UniqueName)_@(f.UniqueName)" name="@propertyname" type="hidden" class="field">*@
                         </div>
                     </div>
                 }
@@ -206,8 +206,8 @@
                         </div>
 
                         <div class="col-md-10 col-sm-10">
-                            <input autofocus id="@(Model.UniqueName)_@(f.UniqueName)" type="tel" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")">
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                            <input id="@(Model.UniqueName)_@(f.UniqueName)" type="tel" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
                             @if (Model.HasError)
                             {
                                 <span class="help-block">@Model.ErrorMessage</span>
@@ -227,7 +227,7 @@
                                     <h3>Drop files here to upload</h3>
                                 </div>
                             </div>
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
                         </div>
                     </div>
                 }
@@ -237,36 +237,36 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">@f.Label</label>
                             <div class="col-sm-10">
-                                <input autofocus type="text" class="form-control lite AddressLine1" id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address Line 1" required>
+                                <input type="text" class="form-control lite AddressLine1" id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address Line 1" required>
                                 <small>@Model.FieldAttribute.Help</small>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label"></label>
                             <div class="col-sm-10">
-                                <input autofocus type="text" class="form-control lite AddressLine2" id="@(Model.UniqueName)_@(f.UniqueName)_line_2" placeholder="Address Line 2">
+                                <input type="text" class="form-control lite AddressLine2" id="@(Model.UniqueName)_@(f.UniqueName)_line_2" placeholder="Address Line 2">
                                 <small></small>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label"></label>
                             <div class="col-sm-4">
-                                <input autofocus type="text" class="form-control lite Suburb" id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb">
+                                <input type="text" class="form-control lite Suburb" id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb">
                             </div>
                             <div class="col-sm-4">
-                                <input autofocus type="text" class="form-control lite State" id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State">
+                                <input type="text" class="form-control lite State" id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State">
                             </div>
                             <div class="col-sm-2">
-                                <input autofocus type="text" class="form-control lite PostCode" id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code">
+                                <input type="text" class="form-control lite PostCode" id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code">
                             </div>
                             @if (Model.HasError)
                             {
                                 <span class="help-block">@f.ErrorMessage</span>
                             }
-                            <input autofocus type="hidden" class="StreetName">
-                            <input autofocus type="hidden" class="StreetType">
-                            <input autofocus type="hidden" class="StreetNumber">
-                            <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
+                            <input type="hidden" class="StreetName">
+                            <input type="hidden" class="StreetType">
+                            <input type="hidden" class="StreetNumber">
+                            <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
                         </div>
                     </div>
                 }
@@ -298,7 +298,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@f.Label</label>
                                 <div class="col-sm-10">
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field lite @(f.FieldAttribute.Required ? "required" : "")" value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" type="text" class="form-control field lite @(f.FieldAttribute.Required ? "required" : "")" value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))">
                                     <small>@Model.FieldAttribute.Help</small>
                                 </div>
                             </div>
@@ -338,7 +338,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@f.Label</label>
                                 <div class="col-sm-4">
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)"
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)"
                                            type="text"
                                            value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
                                            @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString(dateFormat) + "\"" : "")
@@ -356,7 +356,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">@f.Label</label>
                                 <div class="col-sm-4">
-                                    <input autofocus type="text" 
+                                    <input type="text" 
                                            class="form-control lite mytimepicker field" 
                                            name="@(Model.UniqueName)_@(f.UniqueName)" 
                                            placeholder="Click to select time" 
@@ -398,7 +398,7 @@
                                             }
                                         </select>
                                     }
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(selectedValues.Substring(0, selectedValues.Length - 1))" />
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field" type="hidden" value="@(selectedValues.Substring(0, selectedValues.Length - 1))" />
                                 </div>
                             </div>
                         }
@@ -420,7 +420,7 @@
                                 </div>
 
                                 <div class="col-md-9 col-sm-8">
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
                                 </div>
                             </div>
                         }
@@ -441,7 +441,7 @@
                                     <div class="checkbox">
                                         <p>
                                             <label>
-                                                <input autofocus id="@trueCheckboxName" class="field" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                                                <input id="@trueCheckboxName" class="field" type="checkbox" name="@propertyname" value="true" @(Convert.ToBoolean(value) ? "checked='checked'" : "")>
                                                 <span class="checkbox-material">
                                                     <span class="check">
                                                     </span>
@@ -454,7 +454,7 @@
                                     <div class="checkbox">
                                         <p>
                                             <label>
-                                                <input autofocus id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
+                                                <input id="@falseCheckboxName" type="checkbox" name="@propertyname" value="false" @(!Convert.ToBoolean(value) ? "checked='checked'" : "")>
                                                 <span class="checkbox-material">
                                                     <span class="check">
                                                     </span>
@@ -463,7 +463,7 @@
                                             </label>
                                         </p>
                                     </div>
-                                    <input autofocus id="@propertyname" name="@propertyname" type="hidden" class="field">
+                                    <input id="@propertyname" name="@propertyname" type="hidden" class="field">
                                 </div>
                             </div>
                         }
@@ -481,8 +481,8 @@
                                 </div>
 
                                 <div class="col-md-10 col-sm-10">
-                                    <input autofocus id="@(Model.UniqueName)_@(f.UniqueName)" type="tel" value="@phone.Number" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")">
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)" type="tel" value="@phone.Number" class="@(Model.UniqueName)_@(f.UniqueName) form-control @(f.FieldAttribute.Required ? "required" : "")">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="hidden" class="field">
                                     @if (Model.HasError)
                                     {
                                         <span class="help-block">@Model.ErrorMessage</span>
@@ -502,7 +502,7 @@
                                             <h3>Drop files here to upload</h3>
                                         </div>
                                     </div>
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="dropzone-input field" type="hidden" value="" />
                                 </div>
                             </div>
                         }
@@ -514,36 +514,36 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">@Model.Label</label>
                                     <div class="col-sm-10">
-                                        <input autofocus type="text" class="form-control lite AddressLine1" id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address Line 1" value="@(address?.AddressLine1)" required>
+                                        <input type="text" class="form-control lite AddressLine1" id="@(Model.UniqueName)_@(f.UniqueName)_line_1" placeholder="Address Line 1" value="@(address?.AddressLine1)" required>
                                         <small>@Model.FieldAttribute.Help</small>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"></label>
                                     <div class="col-sm-10">
-                                        <input autofocus type="text" class="form-control lite AddressLine2" id="@(Model.UniqueName)_@(f.UniqueName)_line_2" placeholder="Address Line 2" value="@(address?.AddressLine2)">
+                                        <input type="text" class="form-control lite AddressLine2" id="@(Model.UniqueName)_@(f.UniqueName)_line_2" placeholder="Address Line 2" value="@(address?.AddressLine2)">
                                         <small></small>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"></label>
                                     <div class="col-sm-4">
-                                        <input autofocus type="text" class="form-control lite Suburb" id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" value="@(address?.Suburb)">
+                                        <input type="text" class="form-control lite Suburb" id="@(Model.UniqueName)_@(f.UniqueName)_suburb" placeholder="Suburb" value="@(address?.Suburb)">
                                     </div>
                                     <div class="col-sm-4">
-                                        <input autofocus type="text" class="form-control lite State" id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" value="@(address?.State)">
+                                        <input type="text" class="form-control lite State" id="@(Model.UniqueName)_@(f.UniqueName)_state" placeholder="State" value="@(address?.State)">
                                     </div>
                                     <div class="col-sm-2">
-                                        <input autofocus type="text" class="form-control lite PostCode" id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" value="@(address?.Postcode)">
+                                        <input type="text" class="form-control lite PostCode" id="@(Model.UniqueName)_@(f.UniqueName)_postcode" placeholder="Post Code" value="@(address?.Postcode)">
                                     </div>
                                     @if (Model.HasError)
                                     {
                                         <span class="help-block">@Model.ErrorMessage</span>
                                     }
-                                    <input autofocus id="@(Model.UniqueName)_@(f.UniqueName)_streetName" type="hidden">
-                                    <input autofocus id="@(Model.UniqueName)_@(f.UniqueName)_streetType" type="hidden">
-                                    <input autofocus id="@(Model.UniqueName)_@(f.UniqueName)_streetNumber" type="hidden">
-                                    <input autofocus name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_streetName" type="hidden">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_streetType" type="hidden">
+                                    <input id="@(Model.UniqueName)_@(f.UniqueName)_streetNumber" type="hidden">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" id="@(Model.UniqueName)_@(f.UniqueName)" class="field AddressField" type="hidden" />
 
                                     <script>
 
@@ -582,7 +582,7 @@
 </div>
 
 
-<input autofocus name="@Model.UniqueName" type="hidden" />
+<input name="@Model.UniqueName" type="hidden" />
 
 <script>
 

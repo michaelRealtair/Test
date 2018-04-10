@@ -64,16 +64,16 @@ WriteLiteral(">");
             #line hidden
 WriteLiteral("</label>\r\n");
 
-WriteLiteral("    <input autofocus");
+WriteLiteral("    <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 159), Tuple.Create("\"", 183)
+WriteAttribute("name", Tuple.Create(" name=\"", 149), Tuple.Create("\"", 173)
             
             #line 6 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 166), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 156), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 166), false)
+, 156), false)
 );
 
 WriteLiteral(" type=\"file\"");
@@ -115,16 +115,16 @@ WriteLiteral("    <label>");
             #line hidden
 WriteLiteral("</label>\r\n");
 
-WriteLiteral("    <input autofocus");
+WriteLiteral("    <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 339), Tuple.Create("\"", 363)
+WriteAttribute("name", Tuple.Create(" name=\"", 319), Tuple.Create("\"", 343)
             
             #line 12 "..\..\Views\Shared\Fields\_HttpPostedFileWrapper_Field.cshtml"
-, Tuple.Create(Tuple.Create("", 346), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 326), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 346), false)
+, 326), false)
 );
 
 WriteLiteral(" type=\"file\"");

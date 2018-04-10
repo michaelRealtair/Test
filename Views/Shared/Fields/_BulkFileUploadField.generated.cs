@@ -96,26 +96,26 @@ WriteLiteral(">\r\n            <div");
 WriteLiteral(" class=\"dz-default dz-clickable dz-message\"");
 
 WriteLiteral(">\r\n                <h4>Drop files here to upload</h4>\r\n            </div>\r\n      " +
-"  </div>\r\n        <input autofocus");
+"  </div>\r\n        <input");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 556), Tuple.Create("\"", 582)
+WriteAttribute("name", Tuple.Create(" name=\"", 546), Tuple.Create("\"", 572)
             
             #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 563), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 553), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 563), false)
+, 553), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 583), Tuple.Create("\"", 607)
+WriteAttribute("id", Tuple.Create(" id=\"", 573), Tuple.Create("\"", 597)
             
             #line 15 "..\..\Views\Shared\Fields\_BulkFileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 588), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 578), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 588), false)
+, 578), false)
 );
 
 WriteLiteral(" type=\"hidden\"");

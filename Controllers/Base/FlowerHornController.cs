@@ -1,4 +1,5 @@
 ﻿using Realtair.Framework.Core.Entities;
+using Realtair.Framework.Core.Web;
 using Realtair.Framework.Core.Web.Controllers;
 using Realtair.Framework.Core.Web.Utilities;
 using Realtair.Framework.Web.Attributes;
@@ -61,5 +62,15 @@ namespace Realtair.Framework.Web.Controllers
             var dateDiff = (int)Math.Floor((DateTime.Now - created).TotalHours);
             return ColorCodes.FirstOrDefault(c => c.Value == (isVip ? 3 : (dateDiff <= 2 ? dateDiff : 2))).Key;
         }
+
+        #region View Models
+        public class ViewModel : ILayoutViewModel
+        {
+            public string type { get; set; }
+            public string subType { get; set; }
+            public string title { get; set; }
+            public List<KeyValuePair<int, string>> statusLevels { get; set; }
+        }
+        #endregion
     }
 }
