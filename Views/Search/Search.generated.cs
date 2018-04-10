@@ -72,7 +72,7 @@ WriteLiteral(">\r\n            <div");
 
 WriteLiteral(" class=\"input-group\"");
 
-WriteLiteral(">\r\n                <input autofocus");
+WriteLiteral(">\r\n                <input");
 
 WriteLiteral(" id=\"search-box\"");
 
@@ -80,27 +80,27 @@ WriteLiteral(" name=\"query\"");
 
 WriteLiteral(" type=\"text\"");
 
-WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 394), Tuple.Create("\"", 435)
-, Tuple.Create(Tuple.Create("", 408), Tuple.Create("Find", 408), true)
+WriteAttribute("placeholder", Tuple.Create(" placeholder=\"", 384), Tuple.Create("\"", 425)
+, Tuple.Create(Tuple.Create("", 398), Tuple.Create("Find", 398), true)
             
             #line 10 "..\..\Views\Search\Search.cshtml"
-            , Tuple.Create(Tuple.Create(" ", 412), Tuple.Create<System.Object, System.Int32>(Model.Results.SetName
+  , Tuple.Create(Tuple.Create(" ", 402), Tuple.Create<System.Object, System.Int32>(Model.Results.SetName
             
             #line default
             #line hidden
-, 413), false)
+, 403), false)
 );
 
 WriteLiteral(" class=\"form-control\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 457), Tuple.Create("\"", 485)
+WriteAttribute("value", Tuple.Create(" value=\"", 447), Tuple.Create("\"", 475)
             
             #line 10 "..\..\Views\Search\Search.cshtml"
-                                                                 , Tuple.Create(Tuple.Create("", 465), Tuple.Create<System.Object, System.Int32>(Model.Results.Query
+                                                       , Tuple.Create(Tuple.Create("", 455), Tuple.Create<System.Object, System.Int32>(Model.Results.Query
             
             #line default
             #line hidden
-, 465), false)
+, 455), false)
 );
 
 WriteLiteral(" autofocus");
@@ -161,22 +161,22 @@ WriteLiteral(" class=\"col-md-3\"");
 
 WriteLiteral(">\r\n                            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1051), Tuple.Create("\"", 1134)
+WriteAttribute("href", Tuple.Create(" href=\"", 1041), Tuple.Create("\"", 1124)
             
             #line 23 "..\..\Views\Search\Search.cshtml"
-, Tuple.Create(Tuple.Create("", 1058), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
+, Tuple.Create(Tuple.Create("", 1048), Tuple.Create<System.Object, System.Int32>(action.GetUrl(Html.LoggedInUser(), Url)
             
             #line default
             #line hidden
-, 1058), false)
-, Tuple.Create(Tuple.Create("", 1098), Tuple.Create("?ReturnUrl=", 1098), true)
+, 1048), false)
+, Tuple.Create(Tuple.Create("", 1088), Tuple.Create("?ReturnUrl=", 1088), true)
             
             #line 23 "..\..\Views\Search\Search.cshtml"
-        , Tuple.Create(Tuple.Create("", 1109), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+        , Tuple.Create(Tuple.Create("", 1099), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 1109), false)
+, 1099), false)
 );
 
 WriteLiteral(" class=\"btn btn-success btn-md btn-outline btn-rounded\"");

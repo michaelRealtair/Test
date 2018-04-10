@@ -79,29 +79,29 @@ WriteLiteral("</label>\r\n    <div");
 
 WriteLiteral(" class=\"col-sm-6\"");
 
-WriteLiteral(">\r\n        <input autofocus");
+WriteLiteral(">\r\n        <input");
 
 WriteLiteral(" type=\"file\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 491), Tuple.Create("\"", 519)
+WriteAttribute("name", Tuple.Create(" name=\"", 481), Tuple.Create("\"", 509)
             
             #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 498), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 488), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 498), false)
-, Tuple.Create(Tuple.Create("", 517), Tuple.Create("[]", 517), true)
+, 488), false)
+, Tuple.Create(Tuple.Create("", 507), Tuple.Create("[]", 507), true)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 520), Tuple.Create("\"", 542)
+WriteAttribute("id", Tuple.Create(" id=\"", 510), Tuple.Create("\"", 532)
             
             #line 10 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 525), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 515), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 525), false)
+, 515), false)
 );
 
 WriteLiteral(" class=\"inputfile\"");
@@ -110,14 +110,14 @@ WriteLiteral(" data-multiple-caption=\"{count} files selected\"");
 
 WriteLiteral(" multiple />\r\n        <label");
 
-WriteAttribute("for", Tuple.Create(" for=\"", 636), Tuple.Create("\"", 659)
+WriteAttribute("for", Tuple.Create(" for=\"", 626), Tuple.Create("\"", 649)
             
             #line 11 "..\..\Views\Shared\Fields\_FileUploadField.cshtml"
-, Tuple.Create(Tuple.Create("", 642), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
+, Tuple.Create(Tuple.Create("", 632), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
-, 642), false)
+, 632), false)
 );
 
 WriteLiteral(">\r\n            <span></span> \r\n            <strong> \r\n                <i");

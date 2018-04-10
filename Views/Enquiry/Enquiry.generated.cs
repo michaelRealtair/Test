@@ -419,20 +419,20 @@ WriteAttribute("method", Tuple.Create(" method=\"", 4944), Tuple.Create("\"", 49
 , 4953), false)
 );
 
-WriteLiteral(">\r\n                                    <input autofocus");
+WriteLiteral(">\r\n                                    <input");
 
 WriteLiteral(" name=\"ReturnUrl\"");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 5086), Tuple.Create("\"", 5119)
+WriteAttribute("value", Tuple.Create(" value=\"", 5076), Tuple.Create("\"", 5109)
             
             #line 83 "..\..\Views\Enquiry\Enquiry.cshtml"
-           , Tuple.Create(Tuple.Create("", 5094), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
+ , Tuple.Create(Tuple.Create("", 5084), Tuple.Create<System.Object, System.Int32>(Request.Url.AbsolutePath
             
             #line default
             #line hidden
-, 5094), false)
+, 5084), false)
 );
 
 WriteLiteral(" />\r\n                                    <button");
@@ -943,29 +943,29 @@ WriteLiteral("</h4>\' +\r\n                            \'            <p> \' + $(
 "eguid\');\r\n                    $(\'.file-attachment-thumbnails\').append($(\'<div cl" +
 "ass=\"existing-preview\" storageguid=\"\' + storageguid + \'\" style=\"background-image" +
 ": url(\' + image + \')\"><a class=\"close-file\"><i class=\"fa fa-times\"></i></a><inpu" +
-"t autofocus type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid + \'\"" +
-"></div>\'));\r\n                    $(\'.file-attachment, .file-attachment-thumbnail" +
-"s\').show();\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n             " +
-"       $(\'.existing-preview\').each(function () {\r\n                        var $t" +
-"his = $(this);\r\n                        $(this).find(\'a.close-file\').click(funct" +
-"ion () { $this.remove(); });\r\n                    });\r\n                });\r\n    " +
-"        });*/\r\n\r\n            /* Auto popup gallery */\r\n            var url = win" +
-"dow.location.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1);\r" +
-"\n            var queries = hash.split(\"&\");\r\n            for (var i = 0; i < que" +
-"ries.length; i++) {\r\n                if (queries[i].indexOf(\"pid\")) {\r\n         " +
-"           var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + pid)" +
-".trigger(\'click\');\r\n                }\r\n            }\r\n\r\n            var textarea" +
-" = document.querySelector(\'textarea[name=messageText]\');\r\n            textarea.a" +
-"ddEventListener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n    " +
-"            var el = this;\r\n                setTimeout(function () {\r\n          " +
-"          el.style.cssText = \'height:auto; padding:0\';\r\n                    // f" +
-"or box-sizing other than \"content-box\" use:\r\n                    // el.style.css" +
-"Text = \'-moz-box-sizing:content-box\';\r\n                    el.style.cssText = \'h" +
-"eight:\' + el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n    " +
-"        $(window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\");\r" +
-"\n\r\n        });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n        window.onblur =" +
-" function() { window.blurred = true; };\r\n        window.onfocus = function() { w" +
-"indow.blurred = false; };\r\n    </script>\r\n");
+"t type=\"hidden\" name=\"existingAttachments\" value=\"\' + storageguid + \'\"></div>\'))" +
+";\r\n                    $(\'.file-attachment, .file-attachment-thumbnails\').show()" +
+";\r\n                    $(this).toggleClass(\"picked\");\r\n\r\n                    $(\'" +
+".existing-preview\').each(function () {\r\n                        var $this = $(th" +
+"is);\r\n                        $(this).find(\'a.close-file\').click(function () { $" +
+"this.remove(); });\r\n                    });\r\n                });\r\n            })" +
+";*/\r\n\r\n            /* Auto popup gallery */\r\n            var url = window.locati" +
+"on.href;\r\n            var hash = url.substring(url.indexOf(\'#\') + 1);\r\n         " +
+"   var queries = hash.split(\"&\");\r\n            for (var i = 0; i < queries.lengt" +
+"h; i++) {\r\n                if (queries[i].indexOf(\"pid\")) {\r\n                   " +
+" var pid = queries[i].split(\"=\")[1];\r\n                    $(\'#\' + pid).trigger(\'" +
+"click\');\r\n                }\r\n            }\r\n\r\n            var textarea = documen" +
+"t.querySelector(\'textarea[name=messageText]\');\r\n            textarea.addEventLis" +
+"tener(\'keydown\', autosize);\r\n\r\n            function autosize() {\r\n              " +
+"  var el = this;\r\n                setTimeout(function () {\r\n                    " +
+"el.style.cssText = \'height:auto; padding:0\';\r\n                    // for box-siz" +
+"ing other than \"content-box\" use:\r\n                    // el.style.cssText = \'-m" +
+"oz-box-sizing:content-box\';\r\n                    el.style.cssText = \'height:\' + " +
+"el.scrollHeight + \'px\';\r\n                }, 0);\r\n            }\r\n\r\n            $(" +
+"window).scrollTop(parseInt($(\'.chat-list\')[0].scrollHeight), \"slow\");\r\n\r\n       " +
+" });\r\n\r\n        setTimeout(doPoll, pollTime);\r\n        window.onblur = function(" +
+") { window.blurred = true; };\r\n        window.onfocus = function() { window.blur" +
+"red = false; };\r\n    </script>\r\n");
 
 });
 
