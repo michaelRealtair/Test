@@ -10,10 +10,10 @@
 
     <div class="col-md-9 col-sm-8" style="padding-top: 8px;">
         <label class="radio-inline">
-            <input type="radio" name="@Model.PropertyInfo.Name" value="true" @(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForTrue<br>
+            <input type="radio" name="@Model.UniqueName" value="true" @(Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForTrue<br>
         </label>
         <label class="radio-inline">
-            <input type="radio" name="@Model.PropertyInfo.Name" value="false" @(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForFalse<br>
+            <input type="radio" name="@Model.UniqueName" value="false" @(!Convert.ToBoolean(Model.Value) ? "checked='checked'" : "")> @attribute.LabelForFalse<br>
         </label>
     </div>
 </div>
