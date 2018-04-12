@@ -1,7 +1,7 @@
 ﻿@model Realtair.Framework.Core.Actions.Field
 @{
     var attribute = Model.FieldAttribute as Realtair.Framework.Core.Actions.FieldAttributes.CheckboxFieldAttribute;
-    var propertyname = Model.PropertyInfo.Name;
+    var propertyname = Model.UniqueName;
     var value = Model.Value;
     var trueCheckboxName = $"{propertyname}-true";
     var falseCheckboxName = $"{propertyname}-false";

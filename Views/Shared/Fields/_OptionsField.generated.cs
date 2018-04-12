@@ -177,10 +177,10 @@ WriteAttribute("id", Tuple.Create(" id=\"", 822), Tuple.Create("\"", 845)
 
 WriteLiteral(" class=\"form-control lite\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 872), Tuple.Create("\"", 903)
+WriteAttribute("name", Tuple.Create(" name=\"", 872), Tuple.Create("\"", 896)
             
             #line 27 "..\..\Views\Shared\Fields\_OptionsField.cshtml"
-, Tuple.Create(Tuple.Create("", 879), Tuple.Create<System.Object, System.Int32>(Model.PropertyInfo.Name
+, Tuple.Create(Tuple.Create("", 879), Tuple.Create<System.Object, System.Int32>(Model.UniqueName
             
             #line default
             #line hidden
