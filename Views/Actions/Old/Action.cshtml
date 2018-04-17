@@ -73,7 +73,7 @@
                         </div>
                     }
                     @* Form *@
-                    <form class="autoform form-horizontal" id="main-form" method="post">
+                    <form class="autoform form-horizontal main-form" id="main-form" method="post">
                         <div class="panel-body">
                             @foreach (var field in shown)
                             {
@@ -215,11 +215,11 @@
                             {
                                 @if (!Model.IsMultiPage)
                                 {
-                                    <button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Action.SubmitValue</button>
+                                    <button type="submit" data-next class="btn btn-primary pull-right m-l-20 main-form" id="main-form-submit">@Model.Action.SubmitValue</button>
                                 }
                                 else
                                 {
-                                    <button type="submit" data-next class="btn btn-primary pull-right m-l-20" id="main-form-submit">@Model.Page.SubmitValue</button>
+                                    <button type="submit" data-next class="btn btn-primary pull-right m-l-20 main-form" id="main-form-submit">@Model.Page.SubmitValue</button>
                                 }
 
                             }
