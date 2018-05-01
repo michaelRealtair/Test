@@ -316,7 +316,7 @@
                                            type="text"
                                            value="@if (Date > DateTime.MinValue) { @Date.ToString("yyyy-MM-dd") }"
                                            @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString("yyyy-MM-dd") + "\"" : "")
-                                           class="form-control datepicker input-small"
+                                           class="form-control datepicker input-small field"
                                            style="padding-left: 10px;">
                                 </div>
                             </div>
@@ -333,7 +333,7 @@
                                     <input name="@(Model.UniqueName)_@(f.UniqueName)"
                                            type="time"
                                            value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))"
-                                           class="form-control"
+                                           class="form-control field"
                                            onblur="validateTimespan(this);">
                                 </div>
                             </div>
@@ -398,7 +398,7 @@
                                 </div>
 
                                 <div class="col-md-9 col-sm-8">
-                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01">
+                                    <input name="@(Model.UniqueName)_@(f.UniqueName)" type="number" class="form-control field @(f.FieldAttribute.Required ? "required" : "")" step="0.01" value="@(v.GetType().GetProperty(f.UniqueName).GetValue(v))">
                                 </div>
                             </div>
                         }

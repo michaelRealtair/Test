@@ -342,7 +342,7 @@
                                            type="text"
                                            value="@if (Date > DateTime.MinValue) { @Date.ToString(dateFormat) }"
                                            @Html.Raw(attribute != null && !attribute.AllowPastDates ? "min=\"" + DateTime.Now.ToString(dateFormat) + "\"" : "")
-                                           class="form-control datepicker input-small lite"
+                                           class="form-control datepicker input-small lite field"
                                            style="padding-left: 10px;">
                                     @if (Model.HasError)
                                     {
