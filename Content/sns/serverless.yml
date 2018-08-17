@@ -1,0 +1,90 @@
+
+service: sns-test
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  # Create Campaigns
+  HandlerCreateCampaign:
+    handler: handler.CreateCampaign
+    events:
+      - http:
+          path: api/central/create-campaign
+          method: post
+          cors: true
+
+  CreateCampaignAssist:
+    handler: campaign.CreateCampaignAssist
+    events:
+      - sns:
+         topicName: CreateCampaign
+  CreateCampaignSign:
+    handler: campaign.CreateCampaignSign
+    events:
+      - sns:
+         topicName: CreateCampaign 
+  CreateCampaignPitch:
+    handler: campaign.CreateCampaignPitch
+    events:
+      - sns:
+         topicName: CreateCampaign 
+
+  # Update Campaigns
+  HandlerUpdateCampaign:
+    handler: handler.UpdateCampaign
+    events:
+      - http:
+          path: api/central/update-campaign
+          method: post
+          cors: true
+
+  UpdateCampaignAssist:
+    handler: campaign.UpdateCampaignAssist
+    events:
+      - sns:
+         topicName: UpdateCampaign
+  UpdateCampaignSign:
+    handler: campaign.UpdateCampaignSign
+    events:
+      - sns:
+         topicName: UpdateCampaign 
+  UpdateCampaignPitch:
+    handler: campaign.UpdateCampaignPitch
+    events:
+      - sns:
+         topicName: UpdateCampaign 
+  
+  # Update Vendor
+  HandlerUpdateVendor:
+    handler: handler.UpdateVendor
+    events:
+      - http:
+          path: vendor
+          method: post
+          cors: true
+          
+  UpdateVendorAssist:
+    handler: vendor.UpdateVendorAssist
+    events:
+      - sns:
+         topicName: UpdateVendor
+  UpdateVendorSign:
+    handler: vendor.UpdateVendorSign
+    events:
+      - sns:
+         topicName: UpdateVendor 
+  UpdateVendorPitch:
+    handler: vendor.UpdateVendorPitch
+    events:
+      - sns:
+         topicName: UpdateVendor 
+
+plugins:
+  - serverless-offline-sns
+  - serverless-offline
+custom:
+  serverless-offline-sns:
+    port: 4002
+    debug: false 
