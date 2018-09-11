@@ -160,7 +160,12 @@ namespace Realtair.Framework.Core.Web.Controllers
                     Response.Redirect(Url.Action("MainPage", "LandingPage") + "?ReturnUrl=" + Request.Url);
 
                 if (action.Fields.Count() == 0)
+                {
+                    if (action.RedirectLocation != null && action.RedirectLocation is RedirectToURL)                    
+                        Response.Redirect((action.RedirectLocation as RedirectToURL).Url);                    
+                    
                     return View(EmptyActionViewPathPrefix, model);
+                }                    
                 else
                 {
                     return View(ActionViewPathPrefix, model); // method was not post
