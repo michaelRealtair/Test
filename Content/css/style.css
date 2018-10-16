@@ -16712,6 +16712,14 @@ ul.pro-amenities li span i {
   .sidebar:hover .nav-third-level li a {
     padding-left: 60px;
   }
+
+  /*-----login-----*/
+
+    .new-login-register {
+        position: relative;
+        overflow: hidden;
+    }
+
 }
 @media (max-width: 480px) {
   .vtabs .tabs-vertical {
@@ -16747,6 +16755,14 @@ ul.pro-amenities li span i {
     width: 300px;
     margin-top: 10%;
   }
+
+    /*-----login-----*/
+
+    .new-login-register {
+        position: relative;
+        overflow: hidden;
+    }
+
 }
 @media (min-width: 768px) {
   #page-wrapper {
