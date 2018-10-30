@@ -1,0 +1,56 @@
+// Place your settings in this file to overwrite the default settings
+{
+  // Editor
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "100",
+  "editor.letterSpacing": -0.3,
+  "editor.lineHeight": 13,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "window.zoomLevel": -1,
+  "workbench.colorTheme": "Visual Studio Dark",
+
+  // Terminal
+  "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",  
+  "terminal.integrated.fontSize": 15,
+
+  // Telemetry
+  "telemetry.enableTelemetry": false,  
+
+  // Git
+  "git.autofetch": true,
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // npm
+  "npm-intellisense.importQuotes": "'",
+  // Hide items in vscode
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    ".vscode": true,
+    "**/*.config": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/*.asax*": true,
+    "**/*.csproj*": true,
+    "App_*": true,
+    "**/*.cs": true
+  },
+  "eslint.enable": false
+}
